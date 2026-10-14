@@ -5,8 +5,8 @@
   "runtime": "RimWorld 1.7 Waylith unstable beta",
   "rimworld_refs": "Krafs.Rimworld.Ref 1.7.4977-alpha.1",
   "harmony_refs": "Lib.Harmony 3.0.0-rc.2",
-  "source_commit": "d175296ebe97653a11a72eb0cf3a0b73cea84e49",
-  "dll_sha256": "6fa030a8f313b1aa104cf7a7f741f147485f32b71f5abae8f55e43d45a800100",
+  "source_commit": "49bbd6939f798d6d42a95ed7735f98c56f1d02fb",
+  "dll_sha256": "a830dffc4b7a826031aeb593314eae7a32aed968779901a705a7b7039819b17e",
   "dll_size": 987136,
-  "built_utc": "2026-10-14T21:14:29.931762+00:00"
+  "built_utc": "2026-10-14T21:17:12.627074+00:00"
 }
