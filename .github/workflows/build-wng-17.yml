@@ -1,0 +1,90 @@
+name: WNG 1.7 Waylith build and dual-version package
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'PORTING-1.7.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wng17-managed-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 10 for Waylith
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore Waylith and Harmony 3 reference assemblies
+        run: dotnet restore Source/WraithNaniteGravtech/WraithNaniteGravtech.csproj --verbosity minimal
+
+      - name: Compile separate 1.7 WNG DLL
+        run: |
+          dotnet build Source/WraithNaniteGravtech/WraithNaniteGravtech.csproj -c Release --no-restore \
+            -p:WNGSourceCommit="${GITHUB_SHA}" -p:WNGSourceFingerprint="WAYLITH_17"
+          test -f 1.7/Assemblies/WraithNaniteGravtech.dll
+
+      - name: Write 1.7 assembly hash provenance
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,hashlib,datetime,pathlib
+          dll=pathlib.Path('1.7/Assemblies/WraithNaniteGravtech.dll')
+          p=pathlib.Path('1.7/Assemblies/WraithNaniteGravtech.buildinfo.json')
+          p.write_text(json.dumps({
+            'schema':1,
+            'assembly':dll.name,
+            'target_framework':'net10.0',
+            'runtime':'RimWorld 1.7 Waylith unstable beta',
+            'rimworld_refs':'Krafs.Rimworld.Ref 1.7.4977-alpha.1',
+            'harmony_refs':'Lib.Harmony 3.0.0-rc.2',
+            'source_commit':__import__('os').environ['GITHUB_SHA'],
+            'dll_sha256':hashlib.sha256(dll.read_bytes()).hexdigest(),
+            'dll_size':dll.stat().st_size,
+            'built_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()
+          },indent=2)+'\n',encoding='utf-8')
+          PY
+
+      - name: Audit shared WNG definitions and assets
+        run: |
+          python3 .github/artqa/worldgen.py
+          python3 .github/artqa/workgiver_worktype.py
+          python3 .github/artqa/human_form_asuran_copy.py
+          python3 .github/artqa/resource_conservation.py
+          python3 .github/artqa/texture_graphic_family.py
+
+      - name: Produce and validate portable WNG 1.6/1.7 ZIP
+        run: |
+          python3 Tools/build_17_release.py
+          unzip -t Wraith-Nanite-Gravtech-1.7-dual-version.zip | tail -n 1
+
+      - name: Upload complete portable WNG build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wraith-Nanite-Gravtech-1.7-with-1.6-compat
+          path: Wraith-Nanite-Gravtech-1.7-dual-version.zip
+          retention-days: 14
+
+      - name: Commit new compiled 1.7 assembly
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f 1.7/Assemblies/WraithNaniteGravtech.dll 1.7/Assemblies/WraithNaniteGravtech.buildinfo.json
+          if [ -f 1.7/Assemblies/WraithNaniteGravtech.pdb ]; then
+            git add -f 1.7/Assemblies/WraithNaniteGravtech.pdb
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Compile RimWorld 1.7 Waylith WNG DLL [skip ci]"
+          git push origin HEAD:main
