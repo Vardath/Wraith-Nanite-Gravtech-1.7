@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths-ignore:
       - 'PORTING-1.7.md'
+      - '1.7/Assemblies/**'
   workflow_dispatch:
 
 permissions:
@@ -86,5 +87,11 @@ jobs:
             git add -f 1.7/Assemblies/WraithNaniteGravtech.pdb
           fi
           if git diff --cached --quiet; then exit 0; fi
+          # On concurrent push runs, never overwrite a newer branch head.
+          git fetch origin main
+          if [ "$(git rev-parse refs/remotes/origin/main)" != "$GITHUB_SHA" ]; then
+            echo "Main has advanced since this build was checked out; do not push a stale assembly."
+            exit 0
+          fi
           git commit -m "Compile RimWorld 1.7 Waylith WNG DLL [skip ci]"
           git push origin HEAD:main
