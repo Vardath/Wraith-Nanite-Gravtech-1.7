@@ -5,8 +5,9 @@
   <packageId>vardath.adaptiveerrorpatch</packageId>
   <supportedVersions>
     <li>1.6</li>
+    <li>1.7</li>
   </supportedVersions>
-  <description>Private late-loading compatibility and error-cancellation layer for Vardath's RimWorld 1.6 modlist. Uses guarded XML repairs plus narrowly targeted runtime sanitation where XML alone cannot safely correct the active mod stack.</description>
+  <description>Private late-loading compatibility and error-cancellation layer for Vardath's RimWorld 1.6 / 1.7 modlist. Uses guarded XML repairs plus narrowly targeted runtime sanitation where XML alone cannot safely correct the active mod stack.</description>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
