@@ -1,0 +1,37 @@
+name: Z Adaptive 1.7 runtime port
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'CompanionMods/Z-Adaptive-Error-Patch/**'
+      - '.github/workflows/z-adaptive-17-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: z-adaptive-waylith-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore Z Adaptive 1.7 reference assemblies
+        run: dotnet restore CompanionMods/Z-Adaptive-Error-Patch/Source/ZAdaptiveRuntime/ZAdaptiveRuntime.csproj --verbosity minimal
+      - name: Compile Z Adaptive 1.7 runtime
+        run: dotnet build CompanionMods/Z-Adaptive-Error-Patch/Source/ZAdaptiveRuntime/ZAdaptiveRuntime.csproj -c Release --no-restore --verbosity minimal
+      - name: Save DLL artifact for compatibility packaging
+        uses: actions/upload-artifact@v4
+        with:
+          name: z-adaptive-waylith-17-assembly
+          path: CompanionMods/Z-Adaptive-Error-Patch/1.7/Assemblies/ZAdaptiveRuntime.dll
+          if-no-files-found: error
+          retention-days: 14
