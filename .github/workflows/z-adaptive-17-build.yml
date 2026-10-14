@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: z-adaptive-waylith-${{ github.ref }}
@@ -24,14 +24,39 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
+      - name: Restore and compile Z Adaptive 1.6 without changing its API
+        run: |
+          dotnet restore CompanionMods/Z-Adaptive-Error-Patch/Source/ZAdaptiveRuntime/ZAdaptiveRuntime16.csproj --verbosity minimal
+          dotnet build CompanionMods/Z-Adaptive-Error-Patch/Source/ZAdaptiveRuntime/ZAdaptiveRuntime16.csproj -c Release --no-restore --verbosity minimal
+          test -f CompanionMods/Z-Adaptive-Error-Patch/1.6/Assemblies/ZAdaptiveRuntime.dll
       - name: Restore Z Adaptive 1.7 reference assemblies
         run: dotnet restore CompanionMods/Z-Adaptive-Error-Patch/Source/ZAdaptiveRuntime/ZAdaptiveRuntime.csproj --verbosity minimal
       - name: Compile Z Adaptive 1.7 runtime
         run: dotnet build CompanionMods/Z-Adaptive-Error-Patch/Source/ZAdaptiveRuntime/ZAdaptiveRuntime.csproj -c Release --no-restore --verbosity minimal
-      - name: Save DLL artifact for compatibility packaging
+      - name: Package both versioned Z Adaptive DLLs and quarantine 1.6-only XML
+        run: python3 CompanionMods/Z-Adaptive-Error-Patch/Tools/build_dual_version.py
+
+      - name: Upload complete dual-version installable Z Adaptive mod
         uses: actions/upload-artifact@v4
         with:
-          name: z-adaptive-waylith-17-assembly
-          path: CompanionMods/Z-Adaptive-Error-Patch/1.7/Assemblies/ZAdaptiveRuntime.dll
+          name: z-adaptive-1.6-and-1.7-installable-mod
+          path: CompanionMods/Z-Adaptive-Error-Patch/out/Z-Adaptive-Error-Patch-1.6-and-1.7.zip
           if-no-files-found: error
           retention-days: 14
+
+      - name: Publish managed assemblies in the 1.7 repository
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f CompanionMods/Z-Adaptive-Error-Patch/1.6/Assemblies/ZAdaptiveRuntime.dll
+          git add -f CompanionMods/Z-Adaptive-Error-Patch/1.7/Assemblies/ZAdaptiveRuntime.dll
+          if git diff --cached --quiet; then exit 0; fi
+          git fetch origin main
+          if [ "$(git rev-parse refs/remotes/origin/main)" != "$GITHUB_SHA" ]; then
+            echo "Newer branch head detected; release artifact is still available. Refusing stale DLL push."
+            exit 0
+          fi
+          git commit -m "Compile dual-version Z Adaptive assemblies [skip ci]"
+          git push origin HEAD:main
