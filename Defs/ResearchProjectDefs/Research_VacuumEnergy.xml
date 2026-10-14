@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_VacuumEnergyContainment</defName>
+    <label>vacuum-energy field containment</label>
+    <description>Study a collapsed Ancient containment shell and reproduce the field geometry needed to bottle a finite metastable energy reserve. This unlocks newly built containment modules and a grid-connected extraction tap; neither is an infinite-power device.</description>
+    <techLevel>Ultra</techLevel>
+    <baseCost>7600</baseCost>
+    <researchViewX>19</researchViewX>
+    <researchViewY>10.4</researchViewY>
+    <prerequisites>
+      <li>WNG_AncientDroneControl</li>
+      <li>WNG_PrecursorFabrication</li>
+    </prerequisites>
+    <requiredAnalyzed><li>WNG_RecoveredVacuumEnergyModule</li></requiredAnalyzed>
+  </ResearchProjectDef>
+</Defs>

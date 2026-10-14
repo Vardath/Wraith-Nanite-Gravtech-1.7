@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>WNG_IratusBug</defName>
+    <label>Iratus bug</label>
+    <description>A predatory Pegasus-galaxy insect closely tied to Wraith evolution. An Iratus bug lunges for the neck, clamps onto a living victim, and drains life while rapidly regenerating. Pulling at an attached bug is dangerous; controlled medical detachment is the safest known method.</description>
+    <statBases>
+      <MoveSpeed>4.6</MoveSpeed>
+      <MarketValue>350</MarketValue>
+      <ComfyTemperatureMin>5</ComfyTemperatureMin>
+      <ComfyTemperatureMax>55</ComfyTemperatureMax>
+      <Wildness>1.0</Wildness>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+      <MinimumContainmentStrength>30</MinimumContainmentStrength>
+    </statBases>
+    <uiIconScale>1.4</uiIconScale>
+    <inspectorTabs>
+      <li>ITab_StudyNotes</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Studiable">
+        <frequencyTicks>120000</frequencyTicks>
+        <knowledgeCategory>Basic</knowledgeCategory>
+        <anomalyKnowledge>1.25</anomalyKnowledge>
+        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+        <requiresHoldingPlatform>true</requiresHoldingPlatform>
+      </li>
+      <li Class="WraithNaniteGravtech.Anomaly.CompProperties_WNGStudyGateAnalyzable">
+        <analysisID>860107</analysisID>
+        <analysisRequiredRange>1</analysisRequiredRange>
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <label>feeding appendages</label>
+        <capacities>
+          <li>WNG_IratusLatch</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>1.8</cooldownTime>
+        <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <race>
+      <thinkTreeMain>Animal</thinkTreeMain>
+      <thinkTreeConstant>AnimalConstant</thinkTreeConstant>
+      <fleshType>Insectoid</fleshType>
+      <body>BeetleLike</body>
+      <bloodDef>Filth_BloodInsect</bloodDef>
+      <predator>true</predator>
+      <maxPreyBodySize>2.2</maxPreyBodySize>
+      <baseBodySize>0.28</baseBodySize>
+      <baseHungerRate>0.08</baseHungerRate>
+      <baseHealthScale>0.85</baseHealthScale>
+      <foodType>CarnivoreAnimal</foodType>
+      <petness>0</petness>
+      <manhunterOnDamageChance>0.85</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+      <trainability>None</trainability>
+      <playerCanChangeMaster>false</playerCanChangeMaster>
+      <showTrainables>false</showTrainables>
+      <lifeExpectancy>12</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Megascarab_Wounded</soundWounded>
+          <soundDeath>Pawn_Megascarab_Death</soundDeath>
+          <soundCall>Pawn_Megascarab_Call</soundCall>
+          <soundAngry>Pawn_Megascarab_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Insectoid_Eat</soundEating>
+    </race>
+  </ThingDef>
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>WNG_IratusBug</defName>
+    <label>Iratus bug</label>
+    <race>WNG_IratusBug</race>
+    <combatPower>75</combatPower>
+    <ecoSystemWeight>0.12</ecoSystemWeight>
+    <wildGroupSize>1</wildGroupSize>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Iratus/WNG_IratusBug</texPath>
+          <drawSize>1.25</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Iratus/WNG_IratusBugDessicated</texPath>
+          <drawSize>1.25</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

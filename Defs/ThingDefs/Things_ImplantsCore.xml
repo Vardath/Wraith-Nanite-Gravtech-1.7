@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_PredatorReflexOrgan</defName>
+    <label>predator reflex organ</label>
+    <description>A Wraith-derived reflex organ that sharpens target tracking, close-quarters evasion and predatory response timing.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>900</MarketValue><Mass>0.08</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_MyomerReinforcementGland</defName><label>myomer reinforcement gland</label>
+    <description>A cultivated Wraith gland that reinforces neuromuscular output, improving manipulation and melee force.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>1100</MarketValue><Mass>0.12</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_RegenerativeVesicle</defName><label>regenerative vesicle</label>
+    <description>A living Wraith vesicle that accelerates ordinary tissue repair and helps control blood loss.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>1250</MarketValue><Mass>0.10</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_MetabolicReserveNode</defName><label>metabolic reserve node</label>
+    <description>A Wraith metabolic node that reduces food demand and slows exhaustion by buffering stored biological energy.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>1150</MarketValue><Mass>0.10</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_SensoryCrownOrgan</defName><label>sensory crown organ</label>
+    <description>A Wraith neural-sensory crown that heightens sight, hearing and low-level psychic sensitivity.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>1400</MarketValue><Mass>0.07</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_VitalFeedbackOrgan</defName><label>vital feedback organ</label>
+    <description>A defensive Wraith-derived organ intended to interfere with hostile life-force transfer and punish a feeding attacker.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>1650</MarketValue><Mass>0.09</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_NaniteMotorLattice</defName><label>nanite motor lattice</label>
+    <description>An Asuran-derived motor lattice that reinforces movement, manipulation and weapon alignment.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Implant/WNG_SovereignNeuralLattice</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>2100</MarketValue><Mass>0.06</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_AutonomicEfficiencyLattice</defName><label>autonomic efficiency lattice</label>
+    <description>An Asuran autonomic lattice that reduces metabolic and rest demand.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Implant/WNG_SovereignNeuralLattice</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>2200</MarketValue><Mass>0.05</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_AdaptiveSensorMesh</defName><label>adaptive sensor mesh</label>
+    <description>An Asuran sensory mesh that improves sight, hearing and ranged target acquisition.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Implant/WNG_SovereignNeuralLattice</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>2350</MarketValue><Mass>0.05</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_ReconstructionMicroforge</defName><label>reconstruction microforge</label>
+    <description>A compact Asuran microforge that assists slow repair of non-permanent injuries.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Implant/WNG_SovereignNeuralLattice</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>2800</MarketValue><Mass>0.10</Mass></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_EMPShuntLattice</defName><label>EMP shunt lattice</label>
+    <description>An Asuran shunt lattice designed to shorten disruptive EMP cascades through synthetic nanite physiology.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories><stackLimit>1</stackLimit><recipeMaker IsNull="True" />
+    <graphicData><texPath>Things/Item/Implant/WNG_SovereignNeuralLattice</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>2600</MarketValue><Mass>0.06</Mass></statBases>
+  </ThingDef>
+</Defs>

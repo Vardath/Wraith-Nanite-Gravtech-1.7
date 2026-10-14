@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- CE-only ballistic representation of the Ha'tak heavy plasma pulse. -->
+  <ThingDef ParentName="BaseBulletCE">
+    <defName>WNG_CE_Projectile_GoauldHeavyPlasma</defName>
+    <label>Ha'tak heavy plasma pulse</label>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Goauld/WNG_GoauldHeavyPlasma</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>(0.7,0.7)</drawSize>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>38</damageAmountBase>
+      <armorPenetrationSharp>12</armorPenetrationSharp>
+      <armorPenetrationBlunt>35</armorPenetrationBlunt>
+      <speed>85</speed>
+      <explosionRadius>1.6</explosionRadius>
+      <explosionChanceToStartFire>0.12</explosionChanceToStartFire>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <suppressionFactor>2.0</suppressionFactor>
+      <dangerFactor>2.0</dangerFactor>
+      <airborneSuppressionFactor>0.25</airborneSuppressionFactor>
+      <ballisticCoefficient>2.0~2.0</ballisticCoefficient>
+      <mass>950~950</mass>
+      <diameter>70~70</diameter>
+    </projectile>
+  </ThingDef>
+</Defs>

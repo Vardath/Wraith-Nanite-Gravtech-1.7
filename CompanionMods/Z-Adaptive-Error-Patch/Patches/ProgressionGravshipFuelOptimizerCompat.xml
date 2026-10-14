@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Progression: Gravship 1.6 / ferny.ProgressionGravship (3522893553).
+    The original VGE Chapter 1 patch unconditionally Replaces
+    ThingDef[FuelOptimizer]/researchPrerequisites and fails when that
+    child node is not present in the active Vanilla Gravship Expanded def.
+    Restore the mod's intended Ferny research prerequisite ONLY if the
+    actual FuelOptimizer exists but has no such node. Do not invent
+    missing ThingDefs or override genuine upstream prerequisites.
+  -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/ThingDef[defName="FuelOptimizer" and not(researchPrerequisites)]</xpath>
+      </li>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/ResearchProjectDef[defName="Ferny_AstrofuelOptimizer"]</xpath>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="FuelOptimizer" and not(researchPrerequisites)]</xpath>
+        <value>
+          <researchPrerequisites Inherit="False">
+            <li>Ferny_AstrofuelOptimizer</li>
+          </researchPrerequisites>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

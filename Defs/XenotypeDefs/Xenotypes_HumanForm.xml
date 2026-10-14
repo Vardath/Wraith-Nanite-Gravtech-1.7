@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <XenotypeDef>
+    <defName>WNG_NanitePrecursor</defName>
+    <label>nanite precursor</label>
+    <iconPath>UI/WNG/Xenotypes/NanitePrecursor</iconPath>
+    <description>A synthetic humanoid whose biological presentation is supported by a reconstructive nanite body. Ordinary food supplies nanite feedstock, Nanite Reserve accelerates repair, and nearby same-faction synthetic minds can coordinate reconstruction through a local collective link. Electromagnetic disruption temporarily desynchronizes both body and collective connection.</description>
+    <descriptionShort>Synthetic humanoid sustained and reconstructed by a food-fed nanite reserve.</descriptionShort>
+    <genes>
+      <li>WNG_NaniteBody</li>
+      <li>WNG_NaniteReserve</li>
+      <li>WNG_NaniteReconstruction</li>
+      <li>WNG_EMPSensitiveNanites</li>
+      <li>WNG_AsuranCollectiveLink</li>
+      <li>WNG_NeuralInterface</li>
+    </genes>
+  </XenotypeDef>
+
+  <XenotypeDef>
+    <defName>WNG_HumanFormReplicator</defName>
+    <label>human-form replicator</label>
+    <iconPath>Things/Item/Resource/Replicator/WNG_ReplicatorCoreFragment</iconPath>
+    <description>A synthetic human-form Replicator built from coordinated nanomachines. It can pass as a human at ordinary inspection while its food-fed Nanite Reserve powers accelerated reconstruction. Its lattice remains vulnerable to EMP, which also severs its local collective coordination. Infiltration, Neural Interface functions, pattern archives and block-Replicator controller authority remain separate systems rather than hidden properties of this xenotype.</description>
+    <descriptionShort>Human-mimicking synthetic Replicator with reconstructive nanite physiology.</descriptionShort>
+    <genes>
+      <li>WNG_NaniteBody</li>
+      <li>WNG_NaniteReserve</li>
+      <li>WNG_NaniteReconstruction</li>
+      <li>WNG_EMPSensitiveNanites</li>
+      <li>WNG_AsuranCollectiveLink</li>
+      <li>WNG_NeuralInterface</li>
+      <li>Deathless</li>
+      <li>VacuumResistant</li>
+    </genes>
+  </XenotypeDef>
+</Defs>

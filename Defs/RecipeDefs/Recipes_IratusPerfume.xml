@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>WNG_MakeIratusPerfume</defName>
+    <label>make Iratus pheromone perfume</label>
+    <description>Refine hazardous Iratus pheromones with psychoid leaves and neutroamine into a safe cosmetic social-enhancing perfume.</description>
+    <jobString>Blending Iratus perfume.</jobString>
+    <workAmount>1100</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <skillRequirements><Crafting>6</Crafting></skillRequirements>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <recipeUsers><li>DrugLab</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_IratusPheromones</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>PsychoidLeaves</li></thingDefs></filter><count>6</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>3</count></li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WNG_IratusPheromones</li>
+        <li>PsychoidLeaves</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products><WNG_IratusPerfume>1</WNG_IratusPerfume></products>
+  </RecipeDef>
+</Defs>

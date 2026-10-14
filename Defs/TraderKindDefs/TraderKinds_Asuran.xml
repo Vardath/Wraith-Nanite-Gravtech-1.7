@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TraderKindDef>
+    <defName>WNG_AsuranArtifactExchange</defName>
+    <label>lattice artifact broker</label>
+    <commonality>0.65</commonality>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>500~1800</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentIndustrial</thingDef>
+        <countRange>5~18</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentSpacer</thingDef>
+        <countRange>1~5</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Plasteel</thingDef>
+        <countRange>30~120</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>WNG_AsuranNaniteSlurry</thingDef>
+        <countRange>20~80</countRange>
+      </li>
+      <li Class="WraithNaniteGravtech.StockGenerator_AsuranTrapStatue">
+        <thingDef>WNG_AsuranSleeperStatue</thingDef>
+        <chance>0.18</chance>
+      </li>
+      <li Class="WraithNaniteGravtech.StockGenerator_AsuranTrapStatue">
+        <thingDef>WNG_AsuranFeederStatue</thingDef>
+        <chance>0.14</chance>
+      </li>
+      <li Class="WraithNaniteGravtech.StockGenerator_AsuranTrapStatue">
+        <thingDef>WNG_AsuranReplicatorReliquary</thingDef>
+        <chance>0.12</chance>
+      </li>
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+    </stockGenerators>
+  </TraderKindDef>
+</Defs>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationAdd"><xpath>/Defs/BiomeDef[defName="TemperateForest"]/wildAnimals</xpath><value><WNG_IratusBug>0.012</WNG_IratusBug><WNG_IratusQueen>0.0005</WNG_IratusQueen></value></li>
+      <li Class="PatchOperationAdd"><xpath>/Defs/BiomeDef[defName="TemperateSwamp"]/wildAnimals</xpath><value><WNG_IratusBug>0.018</WNG_IratusBug><WNG_IratusQueen>0.001</WNG_IratusQueen></value></li>
+      <li Class="PatchOperationAdd"><xpath>/Defs/BiomeDef[defName="TropicalRainforest"]/wildAnimals</xpath><value><WNG_IratusBug>0.018</WNG_IratusBug><WNG_IratusQueen>0.001</WNG_IratusQueen></value></li>
+      <li Class="PatchOperationAdd"><xpath>/Defs/BiomeDef[defName="TropicalSwamp"]/wildAnimals</xpath><value><WNG_IratusBug>0.024</WNG_IratusBug><WNG_IratusQueen>0.002</WNG_IratusQueen></value></li>
+    </operations>
+  </Operation>
+</Patch>

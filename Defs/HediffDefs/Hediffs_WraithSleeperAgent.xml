@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_WraithSleeperConditioning</defName>
+    <label>residual wraith conditioning</label>
+    <description>This pawn was recovered after a fully committed Wraith Enthrallment. Their faction and ordinary guest status have been restored, but deeply embedded psychic conditioning remains. While living freely in the colony, the exact pawn can occasionally sabotage ordinary machinery or leak strategic information back to the Wraith lineage that conditioned them. This is a post-rescue espionage consequence, not an alternate ownership or slavery state.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <duplicationAllowed>false</duplicationAllowed>
+    <comps>
+      <li Class="WraithNaniteGravtech.HediffCompProperties_WraithSleeperAgent">
+        <sabotageIntervalTicks>180000~360000</sabotageIntervalTicks>
+        <sabotageChance>0.55</sabotageChance>
+        <intelligenceIntervalTicks>300000~600000</intelligenceIntervalTicks>
+        <intelligenceLeakChance>0.30</intelligenceLeakChance>
+        <noTargetRetryTicks>60000</noTargetRetryTicks>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

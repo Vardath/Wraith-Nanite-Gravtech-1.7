@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Wraith settlement-defense turret: living, self-metabolizing architecture with no external power grid. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_WraithLivingTurret</defName>
+    <label>wraith living turret</label>
+    <description>A rooted defensive organism grown around a rotating bio-weapon lobe. It metabolizes internally rather than drawing colony electricity, tracks hostiles using native turret behavior, and fires hardened bioelectric salvos.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <!-- Native 1.6 turret top is rendered by DrawAt, not by the static map mesh. -->
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Defense/WNG/WNG_WraithLivingTurret</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <size>(2,2)</size>
+    <rotatable>true</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.48</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <researchPrerequisites>
+      <li>WNG_AdvancedCarapace</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+    <uiOrder>2410</uiOrder>
+    <statBases>
+      <MaxHitPoints>430</MaxHitPoints>
+      <Flammability>0.18</Flammability>
+      <WorkToBuild>7000</WorkToBuild>
+      <Mass>42</Mass>
+      <Beauty>-1</Beauty>
+      <ShootingAccuracyTurret>0.90</ShootingAccuracyTurret>
+    </statBases>
+    <costList>
+      <WNG_Biomass>85</WNG_Biomass>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <building>
+      <turretGunDef>WNG_Gun_WraithLivingTurret</turretGunDef>
+      <turretBurstWarmupTime>1.2</turretBurstWarmupTime>
+      <turretBurstCooldownTime>3.1</turretBurstCooldownTime>
+      <turretTopDrawSize>1.7</turretTopDrawSize>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <combatPower>48</combatPower>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>WNG_Gun_WraithLivingTurret</defName>
+    <label>wraith living turret lobe</label>
+    <description>The rotating grown firing organ of a Wraith living turret.</description>
+    <smeltable>false</smeltable>
+    <graphicData>
+      <texPath>Things/Building/Defense/WNG/WNG_WraithLivingTurretTop</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>420</MarketValue>
+      <Mass>18</Mass>
+      <AccuracyTouch>0.55</AccuracyTouch>
+      <AccuracyShort>0.78</AccuracyShort>
+      <AccuracyMedium>0.76</AccuracyMedium>
+      <AccuracyLong>0.64</AccuracyLong>
+      <RangedWeapon_Cooldown>3.1</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags><li>TurretGun</li></weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>WNG_ProjectileHeavyBio</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>31.9</range>
+        <minRange>2</minRange>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>13</ticksBetweenBurstShots>
+        <soundCast>WNG_WraithHeavyBioWeapon_Fire</soundCast>
+        <muzzleFlashScale>5</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- Asuran settlement-defense turret: autonomous nanite-composite system with internal energy storage. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranAutoturret</defName>
+    <label>Asuran autonomous turret</label>
+    <description>A compact Asuran defensive node whose nanite composite contains its own field-energy reservoir and targeting submind. It requires no external power connection and uses native turret targeting to deliver precise pulse bursts.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <!-- Native 1.6 turret top is rendered by DrawAt, not by the static map mesh. -->
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Defense/WNG/WNG_AsuranAutoturret</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <size>(2,2)</size>
+    <rotatable>true</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.45</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <researchPrerequisites>
+      <li>WNG_PrecursorFabrication</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+    <uiOrder>2420</uiOrder>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>9800</WorkToBuild>
+      <Mass>48</Mass>
+      <Beauty>3</Beauty>
+      <ShootingAccuracyTurret>0.97</ShootingAccuracyTurret>
+    </statBases>
+    <costList>
+      <Plasteel>90</Plasteel>
+      <WNG_ReplicatorMatter>28</WNG_ReplicatorMatter>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <building>
+      <turretGunDef>WNG_Gun_AsuranAutoturret</turretGunDef>
+      <turretBurstWarmupTime>0.9</turretBurstWarmupTime>
+      <turretBurstCooldownTime>2.6</turretBurstCooldownTime>
+      <turretTopDrawSize>1.65</turretTopDrawSize>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <combatPower>65</combatPower>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>WNG_Gun_AsuranAutoturret</defName>
+    <label>Asuran turret emitter</label>
+    <description>The self-aligning field emitter of an Asuran autonomous turret.</description>
+    <smeltable>false</smeltable>
+    <graphicData>
+      <texPath>Things/Building/Defense/WNG/WNG_AsuranAutoturretTop</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>680</MarketValue>
+      <Mass>16</Mass>
+      <AccuracyTouch>0.58</AccuracyTouch>
+      <AccuracyShort>0.88</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.82</AccuracyLong>
+      <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags><li>TurretGun</li></weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>WNG_ProjectilePrecursorPulse</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>36.9</range>
+        <minRange>2</minRange>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <soundCast>WNG_PrecursorPulseRifle_Fire</soundCast>
+        <muzzleFlashScale>5</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+</Defs>

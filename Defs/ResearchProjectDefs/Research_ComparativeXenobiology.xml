@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_ComparativeXenobiology</defName>
+    <label>comparative xenobiology</label>
+    <description>Formalize comparative study of ordinary and exotic organisms. Iratus physiology provides the conceptual breakthrough, while observations across multiple ordinary animal species establish a baseline for distinguishing mundane adaptation from truly alien biology. Completing this project improves the knowledge yield from systematic animal study and forms a prerequisite for later WNG xenopharmacology and biological implant research.</description>
+    <tab>Anomaly</tab>
+    <prerequisites>
+      <li>EntityContainment</li>
+    </prerequisites>
+    <requiredAnalyzed>
+      <li>WNG_IratusBug</li>
+      <li>WNG_AnimalDiversitySurvey</li>
+    </requiredAnalyzed>
+    <knowledgeCost>8</knowledgeCost>
+    <knowledgeCategory>Basic</knowledgeCategory>
+    <researchViewX>7.50</researchViewX>
+    <researchViewY>4.00</researchViewY>
+    <customUnlockTexts>
+      <li>Improves Basic Anomaly knowledge gained from systematic study of contained ordinary animals.</li>
+      <li>Opens the WNG comparative-biology prerequisite path for later xenopharmacology, implants, and organic-synthetic medicine.</li>
+    </customUnlockTexts>
+  </ResearchProjectDef>
+</Defs>

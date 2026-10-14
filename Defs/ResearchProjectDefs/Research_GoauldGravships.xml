@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_GoauldGravships</defName>
+    <label>Ha'tak mothership architecture</label>
+    <description>Scale verified Goa'uld technology into a true Odyssey gravship family: reinforced substructure, pel'tac control, isolated ship power, shields and heavy plasma batteries. WNG uses vanilla fallback materials and fuel when ONAC is absent, and ONAC's Goa'uld economy when it is installed.</description>
+    <baseCost>6200</baseCost><techLevel>Ultra</techLevel>
+    <prerequisites><li>WNG_GoauldShuttles</li><li>BasicGravtech</li></prerequisites>
+    <researchViewX>22.5</researchViewX><researchViewY>13</researchViewY>
+  </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Oct 11 live Colony Manager Redux: helper mech HL_Milian_FloatUnit_MechControl
+       claims meat while no meatDef resolves. Do not invent a meat ThingDef.
+       Change only this exact helper race, and only while meatDef is absent. -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/ThingDef[defName="HL_Milian_FloatUnit_MechControl" and race[not(meatDef) or not(normalize-space(meatDef))] and race/hasMeat[translate(normalize-space(text()), "TRUE", "true")="true"]]</xpath>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="HL_Milian_FloatUnit_MechControl"]/race/hasMeat</xpath>
+        <value><hasMeat>false</hasMeat></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/ThingDef[defName="HL_Milian_FloatUnit_MechControl" and race[not(meatDef) or not(normalize-space(meatDef))] and not(race/hasMeat)]</xpath>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="HL_Milian_FloatUnit_MechControl"]/race</xpath>
+        <value><hasMeat>false</hasMeat></value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

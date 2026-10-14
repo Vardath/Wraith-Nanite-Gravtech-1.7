@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_RemoveIratusBug</defName>
+    <label>controlled Iratus detachment</label>
+    <description>Detach a living Iratus bug under controlled medical conditions. The procedure anesthetizes and monitors the patient, briefly arrests the heart so the parasite stops feeding, then uses defibrillation and immediate resuscitation while the exact attached organism is physically removed. A failed operation can make the bug clamp down harder.</description>
+    <workerClass>WraithNaniteGravtech.Anomaly.Recipe_RemoveIratusBug</workerClass>
+    <jobString>Detaching Iratus bug from TargetA.</jobString>
+    <workAmount>2200</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgerySuccessChanceFactor>0.90</surgerySuccessChanceFactor>
+    <deathOnFailedSurgeryChance>0.08</deathOnFailedSurgeryChance>
+    <skillRequirements>
+      <Medicine>8</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs><li>MedicineIndustrial</li></thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs><li>ComponentIndustrial</li></thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineIndustrial</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

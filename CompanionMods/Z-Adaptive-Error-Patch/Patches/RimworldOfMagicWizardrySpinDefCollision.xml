@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Source-verified RimWorld 1.6 conflict (Steam 1201382956 + 3551419391).
+    Both A RimWorld of Magic and Lord of the Rims - Wizardry define a concrete
+    ThingDef named FlyingObject_Spinning but with INCOMPATIBLE thingClasses:
+      TorannMagic.FlyingObject_Spinning  vs.  Wizardry.FlyingObject_Spinning.
+    The former is cast explicitly by Torann's Attraction, Repulsion, Scorn,
+    Psychic Shock, Encase, Dragon Strike, and AI/skeleton code, explaining
+    the observed InvalidCastException. Keep Torann's original name, rename
+    ONLY Wizardry's concrete projectile to a unique name, and use the optional
+    ZAdaptiveRuntime.WizardrySpinDefBinding shim to rebind its DefOf field.
+
+    Guard against missing mods and upstream renames. No changes to movement,
+    projectile damage, spell balance or unrelated ThingDefs.
+  -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>/Defs/ThingDef[defName="FlyingObject_Spinning" and thingClass="Wizardry.FlyingObject_Spinning" and ../ThingDef[defName="FlyingObject_Spinning" and thingClass="TorannMagic.FlyingObject_Spinning"]]</xpath>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="FlyingObject_Spinning" and thingClass="Wizardry.FlyingObject_Spinning"]/defName</xpath>
+        <value><defName>LotRW_FlyingObject_Spinning</defName></value>
+      </li>
+      <li Class="PatchOperationAttributeSet">
+        <xpath>/Defs/ThingDef[defName="LotRW_FlyingObject_Spinning" and thingClass="Wizardry.FlyingObject_Spinning"]</xpath>
+        <attribute>Name</attribute>
+        <value>LotRW_FlyingObject_Spinning</value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

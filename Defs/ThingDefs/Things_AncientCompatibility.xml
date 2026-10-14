@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_AncientNeuralInterface</defName>
+    <label>Ancient control interface</label>
+    <description>An artificial translator intended to reproduce the neural authentication pattern of the Ancient technology activation gene. A completed integration attempt is safe but difficult to retain: only about 15% of procedures produce a lasting interface. Its purpose is compatibility only; it does not add nanite or sovereign abilities.</description>
+    <stackLimit>1</stackLimit>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories>
+    <recipeMaker IsNull="True" />
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Implant/WNG_AncientNeuralInterface</texPath>
+    </graphicData>
+    <statBases>
+      <Mass>0.08</Mass>
+      <MarketValue>1900</MarketValue>
+    </statBases>
+  </ThingDef>
+</Defs>

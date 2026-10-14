@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_LifeForceStarved</defName>
+    <label>starved life force</label>
+    <description>The Wraith's usable Life Force has fallen into a critical reserve. Movement, manipulation and consciousness all degrade while regenerative capacity is sharply constrained.</description>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>true</isBad>
+    <stages><li><capMods>
+      <li><capacity>Consciousness</capacity><offset>-0.10</offset></li>
+      <li><capacity>Manipulation</capacity><offset>-0.15</offset></li>
+      <li><capacity>Moving</capacity><offset>-0.20</offset></li>
+    </capMods></li></stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_LifeForceTorpor</defName>
+    <label>life-force collapse</label>
+    <description>Almost no usable Life Force remains. The body has dropped into a barely active survival condition that is not itself fatal but leaves the Wraith nearly unable to act until vitality is restored.</description>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>true</isBad>
+    <stages><li><capMods>
+      <li><capacity>Consciousness</capacity><setMax>0.15</setMax></li>
+      <li><capacity>Manipulation</capacity><setMax>0.05</setMax></li>
+      <li><capacity>Moving</capacity><setMax>0.02</setMax></li>
+    </capMods></li></stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_WraithHibernating</defName>
+    <label>deep Wraith hibernation</label>
+    <description>The Wraith has intentionally reduced its body to a near-inert state. Life Force expenditure falls dramatically, trading almost all movement and manipulation for long-term survival.</description>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>false</isBad>
+    <stages><li><capMods>
+      <li><capacity>Consciousness</capacity><setMax>0.20</setMax></li>
+      <li><capacity>Manipulation</capacity><setMax>0.05</setMax></li>
+      <li><capacity>Moving</capacity><setMax>0.02</setMax></li>
+    </capMods></li></stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_LifeDrained</defName>
+    <label>feeding trauma</label>
+    <description>A Wraith feeding has stripped away a large portion of this pawn's vitality. The immediate physical weakness fades over time, but the biological aging remains and another full feeding before recovery can be fatal.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>true</isBad>
+    <stages><li><capMods>
+      <li><capacity>Manipulation</capacity><offset>-0.08</offset></li>
+      <li><capacity>Moving</capacity><offset>-0.12</offset></li>
+    </capMods></li></stages>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>60000~120000</disappearsAfterTicks></li></comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_FedRecently</defName>
+    <label>recently fed</label>
+    <description>Recently acquired vitality is still stabilizing through the Wraith's tissues. This temporary marker records a fresh feeding event while the Life Force reserve settles.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>false</isBad>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>60000~60000</disappearsAfterTicks></li></comps>
+  </HediffDef>
+  <HediffDef>
+    <defName>WNG_WraithFeedingStock</defName>
+    <label>wraith feeding stock</label>
+    <description>The Wraith are deliberately keeping this exact captive alive as a renewable feeding reserve between controlled feeding cycles. The marker is temporary custody state; biological aging and feeding trauma inflicted during captivity remain real after rescue.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>90000~90000</disappearsAfterTicks></li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_WraithConditionedCaptive</defName>
+    <label>wraith-conditioned captive</label>
+    <description>Repeated psychic pressure has eroded this captive's independent responses. The conditioning is short of a committed native Enthrallment transition but leaves the subject unusually receptive to Wraith influence while captivity continues.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.10</MentalBreakThreshold>
+          <PsychicSensitivity>0.30</PsychicSensitivity>
+        </statOffsets>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.06</offset></li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>300000~300000</disappearsAfterTicks></li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_WraithExperimentSubject</defName>
+    <label>wraith experiment subject</label>
+    <description>Invasive Wraith examination has left temporary neurological and motor disruption. The subject remains the same prisoner and retains normal custody and identity.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <PsychicSensitivity>0.15</PsychicSensitivity>
+        </statOffsets>
+        <capMods>
+          <li><capacity>Manipulation</capacity><offset>-0.08</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.04</offset></li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>180000~180000</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_WraithExperimentalInsight</defName>
+    <label>wraith experimental insight</label>
+    <description>Recent observations from a living captive have temporarily sharpened this Wraith's understanding of biological systems.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <ResearchSpeed>0.20</ResearchSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+  <HediffDef>
+    <defName>WNG_HybridizationIncubation</defName>
+    <label>wraith hybrid graft integration</label>
+    <description>A Growth Chamber is forcing Wraith-derived tissue and genetic material into this exact subject. The integration state is physically debilitating and remains separate from the finished hybrid phenotype.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><setMax>0.08</setMax></li>
+          <li><capacity>Manipulation</capacity><setMax>0.10</setMax></li>
+          <li><capacity>Consciousness</capacity><setMax>0.45</setMax></li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>600000~600000</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_UnstableWraithHybridState</defName>
+    <label>unstable Wraith-human graft</label>
+    <description>This exact pawn survived a deliberate Wraith-human hybrid graft. Their original identity and ordinary nutritional biology remain intact beneath a permanent, incomplete Wraith-derived xenogene package.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <PsychicSensitivity>0.15</PsychicSensitivity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_HybridInstabilityFlare</defName>
+    <label>wraith-human instability flare</label>
+    <description>The grafted human and Wraith-derived systems have temporarily fallen out of synchronisation, producing neurological noise, metabolic rejection and impaired motor control.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>-0.12</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.14</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.12</offset></li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>18000~30000</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_TelepathicallyProbed</defName>
+    <label>telepathically probed</label>
+    <description>A limited Wraith-derived mind has forced contact with this pawn's surface thoughts. Concentration and perception remain disrupted after the contact ends.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <duplicationAllowed>false</duplicationAllowed>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.08</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.06</offset></li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>45000~75000</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+</Defs>

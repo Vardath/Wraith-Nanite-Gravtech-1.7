@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Hidden native-shuttle sibling used only by scripted hostile System-Lord operations. -->
+  <TransportShipDef>
+    <defName>WNG_Ship_GoauldDeathGliderNPC</defName>
+    <label>Death Glider</label>
+    <shipThing>WNG_GoauldDeathGlider_NPC</shipThing>
+    <arrivingSkyfaller>WNG_GoauldDeathGliderIncoming</arrivingSkyfaller>
+    <leavingSkyfaller>WNG_GoauldDeathGliderLeaving</leavingSkyfaller>
+    <worldObject>WNG_GoauldDeathGliderWorld</worldObject>
+    <maxLaunchDistance>35</maxLaunchDistance>
+    <playerShuttle>false</playerShuttle>
+  </TransportShipDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldDeathGlider_NPC</defName>
+    <label>hostile Death Glider</label>
+    <description>A non-player Goa'uld Death Glider used by scripted System-Lord operations. It preserves Odyssey's native shuttle, transporter, fuel and launch lifecycle without exposing player boarding allowances or construction controls.</description>
+    <thingClass>Building_PassengerShuttle</thingClass>
+    <preventDroppingThingsOn>true</preventDroppingThingsOn>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost><blockWind>true</blockWind><passability>PassThroughOnly</passability><fillPercent>0.35</fillPercent>
+    <size>(5,4)</size><drawHighlight>true</drawHighlight><highlightColor>(0.58,0.42,0.18)</highlightColor><uiIconScale>1</uiIconScale>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Goauld/Shuttle/WNG_GoauldDeathGlider</texPath>
+      <shaderType>CutoutComplex</shaderType><drawSize>(5.5,4.4)</drawSize>
+      <shadowData><volume>(4.2,1,3.2)</volume><offset>(0,0,0)</offset></shadowData>
+    </graphicData>
+    <uiIconPath>Things/Building/Goauld/Shuttle/WNG_GoauldDeathGlider</uiIconPath>
+    <statBases><MaxHitPoints>1800</MaxHitPoints><Flammability>0.12</Flammability><Mass>190</Mass><Comfort>0.45</Comfort></statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>true</canOverlapZones><rotatable>true</rotatable><hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-3)</interactionCellOffset><defaultPlacingRot>North</defaultPlacingRot><selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded><soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn><drawerType>RealtimeOnly</drawerType><repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>false</forceDebugSpawnable>
+    <building>
+      <claimable>false</claimable><deconstructible>false</deconstructible><neverBuildable>true</neverBuildable>
+      <paintable>false</paintable><isInert>true</isInert><destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <inspectorTabs><li>ITab_ContentsTransporter</li></inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Shuttle"><shipDef>WNG_Ship_GoauldDeathGliderNPC</shipDef></li>
+      <li Class="CompProperties_Launchable"><fuelPerTile>2.6</fuelPerTile><minFuelCost>25</minFuelCost><skyfallerLeaving>WNG_GoauldDeathGliderLeaving</skyfallerLeaving><worldObjectDef>WNG_GoauldDeathGliderWorld</worldObjectDef><cooldownTicks>1800</cooldownTicks><fixedLaunchDistanceMax>35</fixedLaunchDistanceMax><cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage></li>
+      <li Class="CompProperties_Transporter"><massCapacity>220</massCapacity><max1PerGroup>true</max1PerGroup><canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting><pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound><pawnExitSound>Shuttle_PawnExit</pawnExitSound><showMassInInspectString>true</showMassInInspectString></li>
+      <li Class="CompProperties_Refuelable"><fuelCapacity>170</fuelCapacity><targetFuelLevelConfigurable>false</targetFuelLevelConfigurable><fuelFilter><thingDefs><li>Chemfuel</li></thingDefs></fuelFilter><fuelLabel>Chemfuel</fuelLabel><fuelGizmoLabel>Chemfuel</fuelGizmoLabel><consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><showFuelGizmo>false</showFuelGizmo><drawOutOfFuelOverlay>false</drawOutOfFuelOverlay><showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle><canEjectFuel>false</canEjectFuel></li>
+      <li Class="CompProperties_AmbientSound"><sound>ShuttleIdle_Ambience</sound></li>
+      <li Class="WraithNaniteGravtech.CompProperties_GoauldDeathGliderMission"><attackPasses>2</attackPasses><boltsPerPass>2</boltsPerPass><acquisitionRadius>45</acquisitionRadius><sortieFuelCost>30</sortieFuelCost><requiredCrew>2</requiredCrew><projectile>WNG_Projectile_GoauldDeathGliderStaffPulse</projectile></li>
+    </comps>
+    <placeWorkers><li>PlaceWorker_NotUnderRoof</li></placeWorkers>
+  </ThingDef>
+</Defs>

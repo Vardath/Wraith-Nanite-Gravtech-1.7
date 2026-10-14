@@ -1,0 +1,76 @@
+{
+  "id": "wraith_hunter_coat",
+  "item": "WNG_HunterCoat",
+  "faction": "Wraith",
+  "output_dir": "Wraith",
+  "research": {
+    "rule": "Stargate production costume and prop references first; no historical WNG apparel",
+    "status": "stage_1_locked",
+    "sources": [
+      {
+        "type": "screen_used_auction_record",
+        "title": "Wraith commander/hunter production costume",
+        "url": "https://www.stargate-fusion.com/fiches/coulisses/23-costumes-uniformes/5733-commandant-wraith-lunion-fait-la-force.html"
+      },
+      {
+        "type": "screen_used_auction_record",
+        "title": "Wraith commander costume",
+        "url": "https://www.stargate-fusion.com/fiches/6511-costume-commandant-wraith.html"
+      },
+      {
+        "type": "costume_designer_primary",
+        "title": "Val Halverson Q&A",
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/"
+      }
+    ],
+    "required_visual_language": [
+      "long green-black leather trenchcoat",
+      "black reptile-pattern leather vest",
+      "layered textured epaulettes",
+      "soft drape and vertical coat panels",
+      "lacing, snaps and zipper hardware",
+      "rubbed edges and handmade wear"
+    ],
+    "avoid": [
+      "historical WNG apparel",
+      "generic sci-fi armour",
+      "flat vector geometry",
+      "neon piping",
+      "ship parts on clothing"
+    ]
+  },
+  "rimworld": {
+    "family": "Duster",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "tile_scale": 0.8,
+    "cover_body": true
+  },
+  "masters": {
+    "south": "master_south.png",
+    "north": "master_north.png",
+    "east": "master_east.png"
+  },
+  "qa": {
+    "min_contrast": 14,
+    "max_white_fraction": 0.02,
+    "max_edge_lift": 26
+  },
+  "external_art_spec": {
+    "minimum_master_resolution": 1024,
+    "orthographic_views": [
+      "south/front",
+      "north/back",
+      "east/side"
+    ],
+    "background": "transparent",
+    "instruction": "finished professional painted RimWorld apparel master",
+    "silhouette": "vanilla RimWorld Duster outer silhouette with matching vanilla body coverage union; coat must cover the pawn torso while preserving Duster length and proportions",
+    "source_priority": "Stargate production Wraith leather wardrobe first"
+  }
+}

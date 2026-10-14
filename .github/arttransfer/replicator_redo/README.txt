@@ -1,0 +1,1 @@
+Staging area for the professional six-legged Replicator pawn redo. Base64 chunks are reconstructed by the one-time installer; the live mod uses only the generated PNGs under Textures/Things/Pawn/Replicator.

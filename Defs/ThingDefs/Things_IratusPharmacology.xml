@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_IratusGlandExtract</defName>
+    <label>Iratus biological extract</label>
+    <description>A chilled sample of secretions and glandular material harvested from a living Iratus bug. The extract contains compounds associated with the bug's feeding-induced immobilisation and extreme regenerative physiology. It is unstable biological feedstock, not a finished medicine.</description>
+    <graphicData>
+      <texPath>Things/Item/WraithMedical/WNG_IratusGlandExtract</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>25</stackLimit>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>42</MarketValue>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <thingCategories><li>ItemsMisc</li></thingCategories>
+    <tradeability>Sellable</tradeability>
+    <tradeTags><li>ExoticMisc</li></tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>WNG_IratusParalytic</defName>
+    <recipeMaker IsNull="True" />
+    <label>Iratus paralytic</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>A stabilized injectable derived from Iratus feeding secretions. It sharply suppresses voluntary movement while leaving respiration and basic awareness comparatively intact, making it useful for dangerous biological handling and controlled restraint. The formulation is a WNG xenopharmacological extrapolation from Iratus biology rather than a named Atlantis medicine.</description>
+    <descriptionHyperlinks><HediffDef>WNG_IratusParalysis</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/WraithMedical/WNG_IratusParalytic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>68</MarketValue>
+      <Mass>0.06</Mass>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>80</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <chairSearchRadius>0</chairSearchRadius>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_IratusParalysis</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <costList>
+      <WNG_IratusGlandExtract>1</WNG_IratusGlandExtract>
+      <Neutroamine>2</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>980</listOrder>
+        <overdoseSeverityOffset>0.04~0.08</overdoseSeverityOffset>
+      </li>
+    </comps>
+    <tradeability>Sellable</tradeability>
+    <tradeTags><li>ExoticMisc</li></tradeTags>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>WNG_IratusSamplingRecovery</defName>
+    <label>Iratus sampling recovery</label>
+    <description>This Iratus bug was recently subjected to invasive biological sampling. Its regenerative biology is repairing the sampled glands and tissues, but another extraction would risk invalid material and excessive trauma.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.3333333</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods><li><capacity>Moving</capacity><offset>-0.10</offset></li></capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_IratusParalysis</defName>
+    <label>Iratus paralytic</label>
+    <description>Stabilized Iratus feeding compounds are suppressing neuromuscular control. The subject remains alive and partly aware, but voluntary movement is severely restricted until the compounds clear.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.65</painFactor>
+        <capMods>
+          <li><capacity>Moving</capacity><setMax>0.08</setMax></li>
+          <li><capacity>Manipulation</capacity><setMax>0.25</setMax></li>
+          <li><capacity>Consciousness</capacity><setMax>0.65</setMax></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

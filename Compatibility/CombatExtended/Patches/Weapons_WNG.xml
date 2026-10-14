@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Wraith ranged weapons: no ammo exists in normal WNG; these conversions load only with CE. -->
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_WraithStunStaff</defName>
+    <statBases><Mass>3.4</Mass><RangedWeapon_Cooldown>2.2</RangedWeapon_Cooldown><SightsEfficiency>0.75</SightsEfficiency><ShotSpread>0.30</ShotSpread><SwayFactor>1.0</SwayFactor><Bulk>2.2</Bulk></statBases>
+    <Properties><recoilAmount>0.35</recoilAmount><verbClass>CombatExtended.Verb_ShootCE</verbClass><hasStandardCommand>true</hasStandardCommand><defaultProjectile>WNG_CE_Projectile_WraithStunStaff</defaultProjectile><warmupTime>0.35</warmupTime><range>12.9</range></Properties>
+    <AmmoUser><magazineSize>6</magazineSize><reloadTime>3.0</reloadTime><ammoSet>WNG_CE_AmmoSet_WraithStunStaff</ammoSet></AmmoUser><FireModes/>
+  </Operation>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_WraithStunner</defName>
+    <statBases><Mass>2.2</Mass><RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown><SightsEfficiency>1.0</SightsEfficiency><ShotSpread>0.18</ShotSpread><SwayFactor>0.8</SwayFactor><Bulk>1.6</Bulk></statBases>
+    <Properties><recoilAmount>0.25</recoilAmount><verbClass>CombatExtended.Verb_ShootCE</verbClass><hasStandardCommand>true</hasStandardCommand><defaultProjectile>WNG_CE_Projectile_WraithStunner</defaultProjectile><warmupTime>0.8</warmupTime><range>22.9</range></Properties>
+    <AmmoUser><magazineSize>12</magazineSize><reloadTime>2.8</reloadTime><ammoSet>WNG_CE_AmmoSet_WraithStunner</ammoSet></AmmoUser><FireModes/>
+  </Operation>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_WraithCarbine</defName>
+    <statBases><Mass>3.6</Mass><RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown><SightsEfficiency>1.15</SightsEfficiency><ShotSpread>0.12</ShotSpread><SwayFactor>0.75</SwayFactor><Bulk>3.2</Bulk></statBases>
+    <Properties><recoilAmount>0.8</recoilAmount><verbClass>CombatExtended.Verb_ShootCE</verbClass><hasStandardCommand>true</hasStandardCommand><defaultProjectile>WNG_CE_Projectile_WraithCarbine</defaultProjectile><warmupTime>0.9</warmupTime><range>27.9</range><ticksBetweenBurstShots>12</ticksBetweenBurstShots><burstShotCount>3</burstShotCount></Properties>
+    <AmmoUser><magazineSize>30</magazineSize><reloadTime>3.0</reloadTime><ammoSet>WNG_CE_AmmoSet_WraithCarbine</ammoSet></AmmoUser><FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+  </Operation>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_WraithHeavyBioWeapon</defName>
+    <statBases><Mass>7.5</Mass><RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown><SightsEfficiency>1.2</SightsEfficiency><ShotSpread>0.10</ShotSpread><SwayFactor>0.9</SwayFactor><Bulk>6.5</Bulk></statBases>
+    <Properties><recoilAmount>1.8</recoilAmount><verbClass>CombatExtended.Verb_ShootCE</verbClass><hasStandardCommand>true</hasStandardCommand><defaultProjectile>WNG_CE_Projectile_WraithHeavy</defaultProjectile><warmupTime>1.4</warmupTime><range>31.9</range><ticksBetweenBurstShots>10</ticksBetweenBurstShots><burstShotCount>4</burstShotCount></Properties>
+    <AmmoUser><magazineSize>24</magazineSize><reloadTime>4.2</reloadTime><ammoSet>WNG_CE_AmmoSet_WraithHeavy</ammoSet></AmmoUser><FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+  </Operation>
+
+  <!-- Integrated Replicator weapons receive CE ammunition too. -->
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_ReplicatorPulseCaster</defName>
+    <statBases><Mass>0.35</Mass><RangedWeapon_Cooldown>2.15</RangedWeapon_Cooldown><SightsEfficiency>1.25</SightsEfficiency><ShotSpread>0.08</ShotSpread><SwayFactor>0.25</SwayFactor><Bulk>0.5</Bulk></statBases>
+    <Properties><recoilAmount>0.15</recoilAmount><verbClass>CombatExtended.Verb_ShootCE</verbClass><hasStandardCommand>true</hasStandardCommand><defaultProjectile>WNG_CE_Projectile_ReplicatorPulse</defaultProjectile><warmupTime>0.9</warmupTime><range>19.9</range><ticksBetweenBurstShots>13</ticksBetweenBurstShots><burstShotCount>3</burstShotCount></Properties>
+    <AmmoUser><magazineSize>36</magazineSize><reloadTime>2.5</reloadTime><ammoSet>WNG_CE_AmmoSet_ReplicatorPulse</ammoSet></AmmoUser><FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+  </Operation>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_ReplicatorShieldDisruptor</defName>
+    <statBases><Mass>0.45</Mass><RangedWeapon_Cooldown>3.4</RangedWeapon_Cooldown><SightsEfficiency>1.2</SightsEfficiency><ShotSpread>0.06</ShotSpread><SwayFactor>0.2</SwayFactor><Bulk>0.6</Bulk></statBases>
+    <Properties><recoilAmount>0.1</recoilAmount><verbClass>CombatExtended.Verb_ShootCE</verbClass><hasStandardCommand>true</hasStandardCommand><defaultProjectile>WNG_CE_Projectile_ReplicatorDisruptor</defaultProjectile><warmupTime>1.15</warmupTime><range>17.9</range><burstShotCount>1</burstShotCount></Properties>
+    <AmmoUser><magazineSize>6</magazineSize><reloadTime>3.0</reloadTime><ammoSet>WNG_CE_AmmoSet_ReplicatorDisruptor</ammoSet></AmmoUser><FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+  </Operation>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_ReplicatorArtilleryCaster</defName>
+    <statBases><Mass>0.8</Mass><RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown><SightsEfficiency>1.45</SightsEfficiency><ShotSpread>0.05</ShotSpread><SwayFactor>0.15</SwayFactor><Bulk>1.0</Bulk></statBases>
+    <Properties><recoilAmount>0.45</recoilAmount><verbClass>CombatExtended.Verb_ShootCE</verbClass><hasStandardCommand>true</hasStandardCommand><defaultProjectile>WNG_CE_Projectile_ReplicatorArtillery</defaultProjectile><warmupTime>2.4</warmupTime><range>43.9</range><ticksBetweenBurstShots>18</ticksBetweenBurstShots><burstShotCount>2</burstShotCount></Properties>
+    <AmmoUser><magazineSize>8</magazineSize><reloadTime>4.8</reloadTime><ammoSet>WNG_CE_AmmoSet_ReplicatorArtillery</ammoSet></AmmoUser><FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+  </Operation>
+</Patch>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Dedicated Asuran/Precursor settlement lighting. -->
+  <ThingDef ParentName="LampBase">
+    <defName>WNG_PrecursorLumen</defName>
+    <label>precursor lumen</label>
+    <description>A compact field-driven precursor lumen with a faceted composite housing and a contained cyan light core.</description>
+    <graphicData><texPath>Things/Building/Precursor/Furniture/WNG_PrecursorLumen</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(0.8,0.8)</drawSize></graphicData>
+    <designationCategory>Furniture</designationCategory>
+    <researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <costList><Plasteel>6</Plasteel><Steel>8</Steel><ComponentIndustrial>1</ComponentIndustrial></costList>
+    <statBases><MaxHitPoints>140</MaxHitPoints><Mass>4</Mass><Flammability>0.05</Flammability><Beauty>7</Beauty></statBases>
+    <comps Inherit="False">
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><basePowerConsumption>10</basePowerConsumption></li>
+      <li Class="CompProperties_Glower"><glowRadius>13</glowRadius><glowColor>(172,204,232,0)</glowColor><colorPickerEnabled>true</colorPickerEnabled></li>
+    </comps>
+    <uiOrder>2961</uiOrder>
+  </ThingDef>
+  <ThingDef ParentName="LampBase">
+    <defName>WNG_PrecursorWallLumen</defName>
+    <label>precursor wall lumen</label>
+    <description>A slim wall-mounted precursor lumen that projects a controlled field glow from a faceted composite housing.</description>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Precursor/Furniture/WNG_PrecursorWallLumen</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(0.65,0.65)</drawSize>
+      <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <designationCategory>Furniture</designationCategory>
+    <researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <costList><Plasteel>4</Plasteel><Steel>6</Steel></costList>
+    <statBases><MaxHitPoints>100</MaxHitPoints><Mass>1.5</Mass><Flammability>0.05</Flammability><Beauty>5</Beauty></statBases>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <minifiedDrawOffset>(0, 0, 0.2)</minifiedDrawOffset>
+    <building>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><basePowerConsumption>8</basePowerConsumption></li>
+      <li Class="CompProperties_Glower"><glowRadius>11</glowRadius><glowColor>(172,204,232,0)</glowColor><colorPickerEnabled>true</colorPickerEnabled></li>
+    </comps>
+    <uiOrder>2962</uiOrder>
+  </ThingDef>
+</Defs>

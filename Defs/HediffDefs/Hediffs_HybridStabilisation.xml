@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_HybridStabilised</defName>
+    <label>hybrid stabilised</label>
+    <description>A temporary stabilisation cocktail is damping the biological feedback that can cause an abruptly suppressed Wraith phenotype to reassert itself. This is an adjunct to retroviral suppression, not a cure; if both ordinary suppression and stabilisation lapse, the recorded Wraith state returns.</description>
+    <hediffClass>WraithNaniteGravtech.Hediff_HybridStabilised</hediffClass>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+  </HediffDef>
+</Defs>

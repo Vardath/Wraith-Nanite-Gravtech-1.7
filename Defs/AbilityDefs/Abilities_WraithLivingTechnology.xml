@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_HostSeedGestation</defName>
+    <label>seed living forge growth</label>
+    <description>Place a living-tech seed into a biological humanlike host, or consume a suitable corpse into an incubation mass. A viable living host matures the organ over one day; at maturity the host is killed, its corpse remains without the incubation, and a minified Living Forge emerges nearby. Death before maturation destroys an immature living-host implant.</description>
+    <iconPath>UI/WNG/Genes/WraithRegeneration</iconPath>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>60000~60000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <stunTargetOnCastStart>true</stunTargetOnCastStart>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetItems>true</canTargetItems>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+      <soundCast>WNG_WraithHostSeed</soundCast>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityHostSeedGestation">
+        <incubationHediff>WNG_HostSeedIncubation</incubationHediff>
+        <corpseIncubationDefName>WNG_CorpseLivingForgeIncubation</corpseIncubationDefName>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

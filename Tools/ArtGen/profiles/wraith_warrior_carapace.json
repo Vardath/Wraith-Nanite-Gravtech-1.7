@@ -1,0 +1,251 @@
+{
+  "id": "wraith_warrior_carapace",
+  "item": "WNG_WarriorCarapace",
+  "faction": "Wraith",
+  "purpose": "Screen-used Stargate Atlantis Wraith drone/footsoldier carapace translated onto vanilla RimWorld PowerArmor geometry: silver hard-rubber torso shell, simulated-bone shoulder/limb armor, black leather under-vest, practical fasteners and a restrained chest self-destruct unit.",
+  "stage_1_stargate": {
+    "sources": [
+      {
+        "url": "https://abcdocz.com/doc/68928/",
+        "role": "propworx_wraith_drone_uniform_technical_description",
+        "required_terms": [
+          "Carapace torso armor",
+          "hard rubber silver front and back armor",
+          "simulated bone silver shoulder armor",
+          "black leather under-vest"
+        ],
+        "image_policy": "metadata_only"
+      },
+      {
+        "url": "https://www.gateworld.net/news/2010/07/propworx-stargate-auctions-week-23/",
+        "role": "wraith_drone_footsoldier_costume",
+        "required_terms": [
+          "Wraith Drone Costume",
+          "footsoldiers"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.stargate-fusion.com/fiches/coulisses/23-costumes-uniformes/5733-commandant-wraith-lunion-fait-la-force.html",
+        "role": "wraith_commander_material_construction",
+        "required_terms": [
+          "Wraith costume",
+          "cuir",
+          "épaulettes"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.stargate-fusion.com/fiches/6511-costume-commandant-wraith.html",
+        "role": "wraith_male_layered_shoulders",
+        "required_terms": [
+          "Wraith Costume",
+          "cuir souple",
+          "panneaux texturés"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/",
+        "role": "costume_designer_primary",
+        "required_terms": [
+          "WRAITH COSTUME",
+          "LEATHER",
+          "GAUNTLETS"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.stargate-fusion.com/fiches/5691-costume-wraith-teyla-la-nouvelle-reine.html",
+        "role": "reptile_leather_and_armored_rank_language",
+        "required_terms": [
+          "reptile",
+          "cuir",
+          "corset"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.stargate-fusion.com/fiches/coulisses/37-accessoires-de-tournage/5938-dispositif-douverture-de-porte-wraith-2.html",
+        "role": "organic_wraith_surface_language",
+        "required_terms": [
+          "organique",
+          "latex",
+          "vert"
+        ],
+        "image_policy": "og_and_relevant"
+      }
+    ],
+    "minimum_live_sources": 5,
+    "minimum_visual_references": 2,
+    "design_rules": {
+      "material_priority": [
+        [
+          "silver_hard_rubber_grown_carapace",
+          0.42
+        ],
+        [
+          "black_leather_under_vest_and_jointing",
+          0.22
+        ],
+        [
+          "silver_simulated_bone_shoulders_and_limb_armor",
+          0.16
+        ],
+        [
+          "dark_regenerative_membrane",
+          0.1
+        ],
+        [
+          "clear_translucent_chest_cover",
+          0.05
+        ],
+        [
+          "aged_fasteners_and_ridged_detail",
+          0.03
+        ],
+        [
+          "subtle_biotech_self_destruct_core",
+          0.02
+        ]
+      ],
+      "construction": [
+        "hard-rubber silver front and back torso carapace",
+        "black leather under-vest visible between shell sections",
+        "silver simulated-bone shoulder armor",
+        "silver thigh knee and shin armor over black leather chaps and greaves",
+        "black leather gauntlet language",
+        "central self-destruct unit under a translucent chest covering",
+        "intricate ridged Wraith detailing",
+        "grown-organic transitions rather than machine panel seams"
+      ],
+      "motifs": [
+        "insect exoskeleton articulation",
+        "reptile leather understructure",
+        "predatory anatomical symmetry with small irregularities",
+        "bone and chitin rather than hard-surface robot panels",
+        "organic Wraith technology"
+      ],
+      "avoid": [
+        "green armor as dominant material",
+        "flat vector armour panels",
+        "superhero chest plate",
+        "neon piping",
+        "generic marine armour paintover",
+        "purple geometric shapes",
+        "ship fins pasted onto a pawn",
+        "clean white sci-fi plating"
+      ]
+    }
+  },
+  "stage_2_rimworld": {
+    "implementation_mode": "powerarmor_svg_deformed",
+    "vanilla_family": "PowerArmor",
+    "tile_family": "PowerArmor",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "facings": [
+      "south",
+      "north",
+      "east",
+      "west"
+    ],
+    "silhouette_rule": "vanilla_powerarmor_contour_authoritative",
+    "readability_rule": "details must survive at 192x192 and normal pawn zoom",
+    "legacy_bare_directions": true
+  },
+  "stage_3_synthesis": {
+    "wNG_quality_benchmarks": [
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithDart_south.png",
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithStrikeCraft_south.png",
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithCruiser_south.png"
+    ],
+    "historical_continuity": [],
+    "palette": {
+      "shell_shadow": [
+        24,
+        29,
+        29
+      ],
+      "shell_mid": [
+        64,
+        72,
+        70
+      ],
+      "shell_high": [
+        148,
+        158,
+        154
+      ],
+      "membrane_shadow": [
+        4,
+        5,
+        6
+      ],
+      "membrane_mid": [
+        17,
+        20,
+        20
+      ],
+      "membrane_high": [
+        50,
+        55,
+        54
+      ],
+      "bone_shadow": [
+        48,
+        50,
+        53
+      ],
+      "bone_mid": [
+        104,
+        108,
+        110
+      ],
+      "bone_high": [
+        188,
+        192,
+        193
+      ],
+      "biotech": [
+        65,
+        120,
+        116
+      ],
+      "metal": [
+        126,
+        130,
+        132
+      ]
+    },
+    "quality": {
+      "silhouette_iou_min": 0.985,
+      "max_luminous_area_fraction": 0.005,
+      "min_local_contrast": 18,
+      "max_symmetry_score": 0.94,
+      "microdetail_scale_px": [
+        1,
+        5
+      ],
+      "render_scale": 4
+    },
+    "renderer": "wraith_warrior_carapace",
+    "post_downsample_contrast": 1.12,
+    "detail_rules": {
+      "plate_outline": "rounded grown carapace zones clipped to the vanilla PowerArmor contour; no vector-hard polygon read",
+      "material_read": "silver hard-rubber/chitin shell must remain distinct from black leather/flexible under-vest at 192px",
+      "shoulders": "layered simulated-bone shoulder armor based on production Wraith drone construction",
+      "articulation": "abdominal and back armor broken into overlapping courses with visible dark membrane joints",
+      "surface": "directional grown ridges, subtle historical high-frequency relief, pits, rubbed edges and sparse scars",
+      "fasteners": "small dark straps/snaps/lacing only where they read as costume construction, never glowing piping",
+      "asymmetry": "minor functional lacing/fastener asymmetry; no superhero-perfect mirrored ornament",
+      "glow": "only the tiny chest biotech/self-destruct unit may carry restrained blue-green luminance"
+    }
+  },
+  "profile_revision": "2026-10-02-warrior-production-carapace-pass"
+}

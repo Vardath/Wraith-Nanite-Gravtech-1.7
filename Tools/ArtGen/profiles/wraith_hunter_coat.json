@@ -1,0 +1,1738 @@
+{
+  "id": "wraith_hunter_coat",
+  "item": "WNG_HunterCoat",
+  "faction": "Wraith",
+  "purpose": "Screen-used Stargate Atlantis Wraith commander/hunter clothing translated to RimWorld's vanilla Duster family: a long green-black leather trenchcoat over a black reptile-leather vest, layered textured epaulettes, concealed snaps/zipper, side/back lacing, dark blue satin lining and production wear. It must read first as Stargate wardrobe, not as segmented sci-fi armour.",
+  "stage_1_stargate": {
+    "sources": [
+      {
+        "url": "https://www.stargate-fusion.com/fiches/coulisses/23-costumes-uniformes/5733-commandant-wraith-lunion-fait-la-force.html",
+        "role": "primary_hunter_coat_production_costume",
+        "required_terms": [
+          "Wraith costume",
+          "trenchcoat",
+          "cuir"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.stargate-fusion.com/fiches/6511-costume-commandant-wraith.html",
+        "role": "secondary_commander_coat_production_costume",
+        "required_terms": [
+          "Wraith Costume",
+          "longue veste",
+          "cuir"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/",
+        "role": "costume_designer_primary",
+        "required_terms": [
+          "WRAITH COSTUME",
+          "LEATHER"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://buggybag.wordpress.com/2010/10/19/queen-of-the-wraith/",
+        "role": "wraith_queen_costume_construction",
+        "required_terms": [
+          "Wraith Queen",
+          "leather"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.wormholeriders.com/blog/2009/04/19/valerie-halversons-qa/",
+        "role": "costume_designer_secondary",
+        "required_terms": [
+          "Wraith Queen",
+          "costume"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.gateworld.net/news/2009/08/stitches-in-time/",
+        "role": "original_wraith_visual_language",
+        "required_terms": [
+          "Wraith",
+          "bone armor"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.gateworld.net/news/2010/07/propworx-stargate-auctions-week-23/",
+        "role": "production_costume",
+        "required_terms": [
+          "Wraith Drone Costume"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.gateworld.net/wiki/Wraith_hive",
+        "role": "organic_technology_lore",
+        "required_terms": [
+          "grown organically"
+        ],
+        "image_policy": "og_and_relevant"
+      }
+    ],
+    "design_rules": {
+      "material_priority": [
+        [
+          "green_black_leather_trenchcoat",
+          0.44
+        ],
+        [
+          "black_reptile_pattern_leather_vest",
+          0.22
+        ],
+        [
+          "black_soft_leather_lapels_and_structure",
+          0.13
+        ],
+        [
+          "layered_textured_epaulettes",
+          0.08
+        ],
+        [
+          "dark_blue_satin_lining",
+          0.04
+        ],
+        [
+          "lacing_snaps_zipper_and_belt_hardware",
+          0.05
+        ],
+        [
+          "wear_rub_marks_and_handmade_variation",
+          0.04
+        ]
+      ],
+      "construction": [
+        "long green leather trenchcoat with soft drape rather than rigid armor segmentation",
+        "long black reptile-pattern leather vest worn beneath the coat",
+        "layered textured epaulettes built as clothing pieces over the shoulders",
+        "contrast leather lapels and inset construction around the front opening",
+        "hidden snaps and zipper-like front closure hardware",
+        "black side and back lacing for fit and visible hand-built construction",
+        "dark blue satin lining visible only in narrow inner folds and vents",
+        "motorcycle/rocker leather tailoring logic with Stargate Wraith refinement",
+        "production wear, rubbed edges and small irregularities rather than sterile surfaces"
+      ],
+      "motifs": [
+        "predatory longcoat silhouette",
+        "three-piece Wraith costume logic",
+        "reptile leather texture",
+        "layered shoulder construction",
+        "tailored vertical seam rhythm",
+        "regal but worn Wraith commander finish"
+      ],
+      "avoid": [
+        "armour plates where the screen costume is leather clothing",
+        "anonymous panel shapes",
+        "flat vector geometry",
+        "purple armour with cyan lines",
+        "uniform glowing piping",
+        "ship parts pasted onto clothing",
+        "superhero symmetry",
+        "cloud noise as material",
+        "muddy texture transfer",
+        "oversized shoulder fins",
+        "hard polygon hems or scalloped procedural edges"
+      ]
+    },
+    "minimum_live_sources": 4,
+    "minimum_visual_references": 1
+  },
+  "stage_2_rimworld": {
+    "vanilla_family": "Duster",
+    "tile_family": "Duster",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "facings": [
+      "south",
+      "north",
+      "east",
+      "west"
+    ],
+    "silhouette_rule": "vanilla_duster_alpha_authoritative",
+    "readability_rule": "must read as a long coat/vest ensemble at 192x192 and normal pawn zoom; material and construction cues must survive without changing the vanilla Duster contour",
+    "implementation_mode": "svg_family_deformed",
+    "tile_scale": 0.8
+  },
+  "stage_3_synthesis": {
+    "wNG_quality_benchmarks": [
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithDart_south.png",
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithStrikeCraft_south.png",
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithCruiser_south.png"
+    ],
+    "historical_continuity": [],
+    "renderer": "costume_blueprint_v2",
+    "post_downsample_contrast": 1.1,
+    "tile_contrast": 1.08,
+    "palette": {
+      "leather_shadow": [
+        6,
+        8,
+        7
+      ],
+      "leather_mid": [
+        26,
+        34,
+        29
+      ],
+      "leather_high": [
+        83,
+        96,
+        86
+      ],
+      "contrast_shadow": [
+        5,
+        5,
+        6
+      ],
+      "contrast_mid": [
+        21,
+        22,
+        23
+      ],
+      "contrast_high": [
+        63,
+        65,
+        65
+      ],
+      "reptile_shadow": [
+        4,
+        5,
+        5
+      ],
+      "reptile_mid": [
+        24,
+        27,
+        25
+      ],
+      "reptile_high": [
+        76,
+        82,
+        77
+      ],
+      "metal": [
+        132,
+        128,
+        124
+      ],
+      "biotech": [
+        70,
+        88,
+        83
+      ]
+    },
+    "materials": {
+      "green_leather": {
+        "kind": "leather",
+        "shadow": [
+          5,
+          8,
+          7
+        ],
+        "mid": [
+          24,
+          34,
+          28
+        ],
+        "high": [
+          78,
+          92,
+          81
+        ],
+        "roughness": 0.52,
+        "grain": 0.1,
+        "specular_tint": [
+          25,
+          29,
+          26
+        ]
+      },
+      "aged_green_leather": {
+        "kind": "leather",
+        "shadow": [
+          7,
+          10,
+          8
+        ],
+        "mid": [
+          31,
+          40,
+          34
+        ],
+        "high": [
+          91,
+          103,
+          91
+        ],
+        "roughness": 0.57,
+        "grain": 0.13,
+        "specular_tint": [
+          27,
+          31,
+          28
+        ]
+      },
+      "black_leather": {
+        "kind": "leather",
+        "shadow": [
+          3,
+          4,
+          4
+        ],
+        "mid": [
+          17,
+          20,
+          19
+        ],
+        "high": [
+          54,
+          59,
+          56
+        ],
+        "roughness": 0.52,
+        "grain": 0.08,
+        "specular_tint": [
+          28,
+          28,
+          27
+        ]
+      },
+      "black_reptile": {
+        "kind": "reptile_leather",
+        "shadow": [
+          4,
+          4,
+          5
+        ],
+        "mid": [
+          27,
+          30,
+          29
+        ],
+        "high": [
+          87,
+          92,
+          88
+        ],
+        "roughness": 0.44,
+        "grain": 0.07,
+        "specular_tint": [
+          31,
+          31,
+          30
+        ]
+      },
+      "blue_satin": {
+        "kind": "satin",
+        "shadow": [
+          4,
+          6,
+          13
+        ],
+        "mid": [
+          11,
+          19,
+          35
+        ],
+        "high": [
+          39,
+          52,
+          75
+        ],
+        "roughness": 0.38,
+        "grain": 0.03,
+        "specular_tint": [
+          14,
+          19,
+          27
+        ]
+      }
+    },
+    "garment_contract": {
+      "max_single_piece_fraction": 0.34,
+      "min_base_garment_visible_fraction": 0.4,
+      "max_semantic_pieces_per_view": 10,
+      "min_seams_per_view": 3
+    },
+    "garment_blueprint": {
+      "design_class": "coat",
+      "base_material": "green_leather",
+      "views": {
+        "south": {
+          "folds": [
+            {
+              "points": [
+                [
+                  0.24,
+                  0.18
+                ],
+                [
+                  0.2,
+                  0.54
+                ],
+                [
+                  0.18,
+                  0.91
+                ]
+              ],
+              "width": 0.022,
+              "strength": 0.9
+            },
+            {
+              "points": [
+                [
+                  0.76,
+                  0.18
+                ],
+                [
+                  0.8,
+                  0.54
+                ],
+                [
+                  0.82,
+                  0.91
+                ]
+              ],
+              "width": 0.022,
+              "strength": 0.82
+            },
+            {
+              "points": [
+                [
+                  0.34,
+                  0.3
+                ],
+                [
+                  0.32,
+                  0.62
+                ],
+                [
+                  0.34,
+                  0.94
+                ]
+              ],
+              "width": 0.017,
+              "strength": 0.58
+            },
+            {
+              "points": [
+                [
+                  0.66,
+                  0.31
+                ],
+                [
+                  0.68,
+                  0.62
+                ],
+                [
+                  0.66,
+                  0.94
+                ]
+              ],
+              "width": 0.017,
+              "strength": 0.52
+            }
+          ],
+          "pieces": [
+            {
+              "name": "long reptile vest",
+              "role": "vest",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.36,
+                  0.055
+                ],
+                [
+                  0.64,
+                  0.055
+                ],
+                [
+                  0.625,
+                  0.29
+                ],
+                [
+                  0.6,
+                  0.75
+                ],
+                [
+                  0.55,
+                  0.86
+                ],
+                [
+                  0.45,
+                  0.86
+                ],
+                [
+                  0.4,
+                  0.75
+                ],
+                [
+                  0.375,
+                  0.29
+                ]
+              ],
+              "folds": [
+                {
+                  "points": [
+                    [
+                      0.45,
+                      0.12
+                    ],
+                    [
+                      0.44,
+                      0.47
+                    ],
+                    [
+                      0.45,
+                      0.79
+                    ]
+                  ],
+                  "width": 0.015,
+                  "strength": 0.5
+                },
+                {
+                  "points": [
+                    [
+                      0.55,
+                      0.12
+                    ],
+                    [
+                      0.56,
+                      0.47
+                    ],
+                    [
+                      0.55,
+                      0.79
+                    ]
+                  ],
+                  "width": 0.015,
+                  "strength": 0.45
+                }
+              ]
+            },
+            {
+              "name": "left contrast lapel",
+              "role": "lapel",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.3,
+                  0.07
+                ],
+                [
+                  0.405,
+                  0.045
+                ],
+                [
+                  0.485,
+                  0.19
+                ],
+                [
+                  0.425,
+                  0.44
+                ],
+                [
+                  0.345,
+                  0.38
+                ]
+              ],
+              "folds": [
+                {
+                  "points": [
+                    [
+                      0.37,
+                      0.1
+                    ],
+                    [
+                      0.42,
+                      0.31
+                    ]
+                  ],
+                  "width": 0.013,
+                  "strength": 0.75
+                }
+              ]
+            },
+            {
+              "name": "right contrast lapel",
+              "role": "lapel",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.7,
+                  0.07
+                ],
+                [
+                  0.595,
+                  0.045
+                ],
+                [
+                  0.515,
+                  0.19
+                ],
+                [
+                  0.575,
+                  0.44
+                ],
+                [
+                  0.655,
+                  0.38
+                ]
+              ],
+              "folds": [
+                {
+                  "points": [
+                    [
+                      0.63,
+                      0.1
+                    ],
+                    [
+                      0.58,
+                      0.31
+                    ]
+                  ],
+                  "width": 0.013,
+                  "strength": 0.68
+                }
+              ]
+            },
+            {
+              "name": "left outer epaulette",
+              "role": "epaulette",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.075,
+                  0.095
+                ],
+                [
+                  0.18,
+                  0.035
+                ],
+                [
+                  0.3,
+                  0.075
+                ],
+                [
+                  0.29,
+                  0.155
+                ],
+                [
+                  0.13,
+                  0.19
+                ]
+              ],
+              "folds": [
+                {
+                  "points": [
+                    [
+                      0.14,
+                      0.1
+                    ],
+                    [
+                      0.25,
+                      0.1
+                    ]
+                  ],
+                  "width": 0.012,
+                  "strength": 0.4
+                }
+              ]
+            },
+            {
+              "name": "left inner shoulder layer",
+              "role": "shoulder_layer",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.12,
+                  0.165
+                ],
+                [
+                  0.22,
+                  0.1
+                ],
+                [
+                  0.32,
+                  0.135
+                ],
+                [
+                  0.3,
+                  0.22
+                ],
+                [
+                  0.16,
+                  0.235
+                ]
+              ]
+            },
+            {
+              "name": "right outer epaulette",
+              "role": "epaulette",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.925,
+                  0.095
+                ],
+                [
+                  0.82,
+                  0.035
+                ],
+                [
+                  0.7,
+                  0.075
+                ],
+                [
+                  0.71,
+                  0.155
+                ],
+                [
+                  0.87,
+                  0.19
+                ]
+              ],
+              "folds": [
+                {
+                  "points": [
+                    [
+                      0.86,
+                      0.1
+                    ],
+                    [
+                      0.75,
+                      0.1
+                    ]
+                  ],
+                  "width": 0.012,
+                  "strength": 0.34
+                }
+              ]
+            },
+            {
+              "name": "right inner shoulder layer",
+              "role": "shoulder_layer",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.88,
+                  0.165
+                ],
+                [
+                  0.78,
+                  0.1
+                ],
+                [
+                  0.68,
+                  0.135
+                ],
+                [
+                  0.7,
+                  0.22
+                ],
+                [
+                  0.84,
+                  0.235
+                ]
+              ]
+            },
+            {
+              "name": "left satin inner fold",
+              "role": "side_insert",
+              "material": "blue_satin",
+              "points": [
+                [
+                  0.35,
+                  0.27
+                ],
+                [
+                  0.368,
+                  0.245
+                ],
+                [
+                  0.382,
+                  0.63
+                ],
+                [
+                  0.372,
+                  0.77
+                ],
+                [
+                  0.357,
+                  0.62
+                ]
+              ]
+            },
+            {
+              "name": "right satin inner fold",
+              "role": "side_insert",
+              "material": "blue_satin",
+              "points": [
+                [
+                  0.65,
+                  0.27
+                ],
+                [
+                  0.632,
+                  0.245
+                ],
+                [
+                  0.618,
+                  0.63
+                ],
+                [
+                  0.628,
+                  0.77
+                ],
+                [
+                  0.643,
+                  0.62
+                ]
+              ]
+            }
+          ],
+          "seams": [
+            {
+              "points": [
+                [
+                  0.28,
+                  0.22
+                ],
+                [
+                  0.24,
+                  0.55
+                ],
+                [
+                  0.25,
+                  0.91
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.04
+            },
+            {
+              "points": [
+                [
+                  0.72,
+                  0.22
+                ],
+                [
+                  0.76,
+                  0.55
+                ],
+                [
+                  0.75,
+                  0.91
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.04
+            },
+            {
+              "points": [
+                [
+                  0.12,
+                  0.2
+                ],
+                [
+                  0.18,
+                  0.34
+                ],
+                [
+                  0.16,
+                  0.8
+                ]
+              ],
+              "stitch": false
+            },
+            {
+              "points": [
+                [
+                  0.88,
+                  0.2
+                ],
+                [
+                  0.82,
+                  0.34
+                ],
+                [
+                  0.84,
+                  0.8
+                ]
+              ],
+              "stitch": false
+            },
+            {
+              "points": [
+                [
+                  0.18,
+                  0.92
+                ],
+                [
+                  0.5,
+                  0.96
+                ],
+                [
+                  0.82,
+                  0.92
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.045
+            },
+            {
+              "points": [
+                [
+                  0.09,
+                  0.125
+                ],
+                [
+                  0.19,
+                  0.105
+                ],
+                [
+                  0.285,
+                  0.125
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                96,
+                98,
+                92
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.91,
+                  0.125
+                ],
+                [
+                  0.81,
+                  0.105
+                ],
+                [
+                  0.715,
+                  0.125
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                96,
+                98,
+                92
+              ]
+            }
+          ],
+          "closures": [
+            {
+              "type": "zipper",
+              "from": [
+                0.5,
+                0.12
+              ],
+              "to": [
+                0.5,
+                0.63
+              ],
+              "teeth": 11
+            },
+            {
+              "type": "snaps",
+              "from": [
+                0.52,
+                0.27
+              ],
+              "to": [
+                0.52,
+                0.57
+              ],
+              "count": 5,
+              "radius": 0.006
+            },
+            {
+              "type": "lacing",
+              "left": [
+                [
+                  0.17,
+                  0.42
+                ],
+                [
+                  0.18,
+                  0.72
+                ]
+              ],
+              "right": [
+                [
+                  0.22,
+                  0.42
+                ],
+                [
+                  0.23,
+                  0.72
+                ]
+              ],
+              "pairs": 6
+            }
+          ],
+          "wear": {
+            "seed": 31,
+            "count": 5,
+            "x_range": [
+              0.14,
+              0.86
+            ],
+            "y_range": [
+              0.24,
+              0.92
+            ],
+            "highlight": [
+              151,
+              157,
+              145
+            ]
+          }
+        },
+        "north": {
+          "folds": [
+            {
+              "points": [
+                [
+                  0.22,
+                  0.22
+                ],
+                [
+                  0.18,
+                  0.58
+                ],
+                [
+                  0.2,
+                  0.93
+                ]
+              ],
+              "width": 0.022,
+              "strength": 0.76
+            },
+            {
+              "points": [
+                [
+                  0.78,
+                  0.22
+                ],
+                [
+                  0.82,
+                  0.58
+                ],
+                [
+                  0.8,
+                  0.93
+                ]
+              ],
+              "width": 0.022,
+              "strength": 0.7
+            },
+            {
+              "points": [
+                [
+                  0.46,
+                  0.3
+                ],
+                [
+                  0.45,
+                  0.64
+                ],
+                [
+                  0.46,
+                  0.92
+                ]
+              ],
+              "width": 0.015,
+              "strength": 0.4
+            }
+          ],
+          "pieces": [
+            {
+              "name": "textured back yoke",
+              "role": "yoke",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.13,
+                  0.075
+                ],
+                [
+                  0.87,
+                  0.075
+                ],
+                [
+                  0.82,
+                  0.19
+                ],
+                [
+                  0.68,
+                  0.25
+                ],
+                [
+                  0.5,
+                  0.28
+                ],
+                [
+                  0.32,
+                  0.25
+                ],
+                [
+                  0.18,
+                  0.19
+                ]
+              ]
+            },
+            {
+              "name": "left back epaulette",
+              "role": "epaulette",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.075,
+                  0.1
+                ],
+                [
+                  0.18,
+                  0.035
+                ],
+                [
+                  0.31,
+                  0.085
+                ],
+                [
+                  0.29,
+                  0.17
+                ],
+                [
+                  0.13,
+                  0.2
+                ]
+              ]
+            },
+            {
+              "name": "right back epaulette",
+              "role": "epaulette",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.925,
+                  0.1
+                ],
+                [
+                  0.82,
+                  0.035
+                ],
+                [
+                  0.69,
+                  0.085
+                ],
+                [
+                  0.71,
+                  0.17
+                ],
+                [
+                  0.87,
+                  0.2
+                ]
+              ]
+            },
+            {
+              "name": "long back vest insert",
+              "role": "back_insert",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.43,
+                  0.21
+                ],
+                [
+                  0.57,
+                  0.21
+                ],
+                [
+                  0.56,
+                  0.76
+                ],
+                [
+                  0.53,
+                  0.87
+                ],
+                [
+                  0.47,
+                  0.87
+                ],
+                [
+                  0.44,
+                  0.76
+                ]
+              ]
+            },
+            {
+              "name": "narrow satin rear vent",
+              "role": "side_insert",
+              "material": "blue_satin",
+              "points": [
+                [
+                  0.475,
+                  0.68
+                ],
+                [
+                  0.525,
+                  0.68
+                ],
+                [
+                  0.535,
+                  0.95
+                ],
+                [
+                  0.5,
+                  0.975
+                ],
+                [
+                  0.465,
+                  0.95
+                ]
+              ]
+            }
+          ],
+          "seams": [
+            {
+              "points": [
+                [
+                  0.16,
+                  0.27
+                ],
+                [
+                  0.2,
+                  0.52
+                ],
+                [
+                  0.19,
+                  0.9
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.042
+            },
+            {
+              "points": [
+                [
+                  0.84,
+                  0.27
+                ],
+                [
+                  0.8,
+                  0.52
+                ],
+                [
+                  0.81,
+                  0.9
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.042
+            },
+            {
+              "points": [
+                [
+                  0.5,
+                  0.29
+                ],
+                [
+                  0.5,
+                  0.66
+                ],
+                [
+                  0.5,
+                  0.94
+                ]
+              ],
+              "stitch": false
+            },
+            {
+              "points": [
+                [
+                  0.18,
+                  0.91
+                ],
+                [
+                  0.5,
+                  0.96
+                ],
+                [
+                  0.82,
+                  0.91
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.045
+            },
+            {
+              "points": [
+                [
+                  0.09,
+                  0.13
+                ],
+                [
+                  0.19,
+                  0.11
+                ],
+                [
+                  0.29,
+                  0.135
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                91,
+                94,
+                90
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.91,
+                  0.13
+                ],
+                [
+                  0.81,
+                  0.11
+                ],
+                [
+                  0.71,
+                  0.135
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                91,
+                94,
+                90
+              ]
+            }
+          ],
+          "closures": [
+            {
+              "type": "lacing",
+              "left": [
+                [
+                  0.69,
+                  0.38
+                ],
+                [
+                  0.68,
+                  0.7
+                ]
+              ],
+              "right": [
+                [
+                  0.74,
+                  0.38
+                ],
+                [
+                  0.73,
+                  0.7
+                ]
+              ],
+              "pairs": 7
+            }
+          ],
+          "wear": {
+            "seed": 32,
+            "count": 4,
+            "x_range": [
+              0.16,
+              0.84
+            ],
+            "y_range": [
+              0.28,
+              0.91
+            ],
+            "highlight": [
+              144,
+              150,
+              139
+            ]
+          }
+        },
+        "east": {
+          "folds": [
+            {
+              "points": [
+                [
+                  0.33,
+                  0.2
+                ],
+                [
+                  0.28,
+                  0.56
+                ],
+                [
+                  0.3,
+                  0.92
+                ]
+              ],
+              "width": 0.021,
+              "strength": 0.76
+            },
+            {
+              "points": [
+                [
+                  0.67,
+                  0.24
+                ],
+                [
+                  0.72,
+                  0.57
+                ],
+                [
+                  0.7,
+                  0.9
+                ]
+              ],
+              "width": 0.018,
+              "strength": 0.55
+            }
+          ],
+          "pieces": [
+            {
+              "name": "side reptile vest",
+              "role": "vest",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.47,
+                  0.1
+                ],
+                [
+                  0.64,
+                  0.08
+                ],
+                [
+                  0.68,
+                  0.72
+                ],
+                [
+                  0.61,
+                  0.84
+                ],
+                [
+                  0.5,
+                  0.74
+                ]
+              ]
+            },
+            {
+              "name": "side contrast lapel",
+              "role": "lapel",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.32,
+                  0.09
+                ],
+                [
+                  0.49,
+                  0.05
+                ],
+                [
+                  0.58,
+                  0.2
+                ],
+                [
+                  0.53,
+                  0.41
+                ],
+                [
+                  0.38,
+                  0.34
+                ]
+              ]
+            },
+            {
+              "name": "outer side epaulette",
+              "role": "epaulette",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.2,
+                  0.095
+                ],
+                [
+                  0.43,
+                  0.03
+                ],
+                [
+                  0.69,
+                  0.09
+                ],
+                [
+                  0.78,
+                  0.17
+                ],
+                [
+                  0.63,
+                  0.235
+                ],
+                [
+                  0.34,
+                  0.245
+                ]
+              ]
+            },
+            {
+              "name": "inner side shoulder layer",
+              "role": "shoulder_layer",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.28,
+                  0.18
+                ],
+                [
+                  0.48,
+                  0.11
+                ],
+                [
+                  0.72,
+                  0.18
+                ],
+                [
+                  0.7,
+                  0.27
+                ],
+                [
+                  0.47,
+                  0.31
+                ],
+                [
+                  0.31,
+                  0.27
+                ]
+              ]
+            },
+            {
+              "name": "satin opening fold",
+              "role": "side_insert",
+              "material": "blue_satin",
+              "points": [
+                [
+                  0.445,
+                  0.28
+                ],
+                [
+                  0.467,
+                  0.245
+                ],
+                [
+                  0.478,
+                  0.62
+                ],
+                [
+                  0.465,
+                  0.77
+                ],
+                [
+                  0.448,
+                  0.61
+                ]
+              ]
+            }
+          ],
+          "seams": [
+            {
+              "points": [
+                [
+                  0.31,
+                  0.27
+                ],
+                [
+                  0.29,
+                  0.58
+                ],
+                [
+                  0.31,
+                  0.91
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.04
+            },
+            {
+              "points": [
+                [
+                  0.69,
+                  0.31
+                ],
+                [
+                  0.72,
+                  0.57
+                ],
+                [
+                  0.7,
+                  0.87
+                ]
+              ],
+              "stitch": false
+            },
+            {
+              "points": [
+                [
+                  0.36,
+                  0.9
+                ],
+                [
+                  0.55,
+                  0.95
+                ],
+                [
+                  0.72,
+                  0.89
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.045
+            },
+            {
+              "points": [
+                [
+                  0.22,
+                  0.125
+                ],
+                [
+                  0.43,
+                  0.105
+                ],
+                [
+                  0.68,
+                  0.14
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.03,
+              "highlight": [
+                94,
+                97,
+                91
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.3,
+                  0.205
+                ],
+                [
+                  0.49,
+                  0.17
+                ],
+                [
+                  0.69,
+                  0.215
+                ]
+              ],
+              "stitch": false,
+              "highlight": [
+                80,
+                83,
+                79
+              ]
+            }
+          ],
+          "closures": [
+            {
+              "type": "lacing",
+              "left": [
+                [
+                  0.3,
+                  0.4
+                ],
+                [
+                  0.31,
+                  0.7
+                ]
+              ],
+              "right": [
+                [
+                  0.35,
+                  0.4
+                ],
+                [
+                  0.36,
+                  0.7
+                ]
+              ],
+              "pairs": 6
+            },
+            {
+              "type": "snaps",
+              "from": [
+                0.61,
+                0.35
+              ],
+              "to": [
+                0.62,
+                0.62
+              ],
+              "count": 4,
+              "radius": 0.006
+            }
+          ],
+          "wear": {
+            "seed": 33,
+            "count": 4,
+            "x_range": [
+              0.2,
+              0.78
+            ],
+            "y_range": [
+              0.28,
+              0.9
+            ],
+            "highlight": [
+              148,
+              154,
+              143
+            ]
+          }
+        }
+      }
+    },
+    "quality": {
+      "silhouette_iou_min": 0.985,
+      "max_luminous_area_fraction": 0.003,
+      "min_local_contrast": 18,
+      "max_symmetry_score": 0.96,
+      "microdetail_scale_px": [
+        1,
+        5
+      ],
+      "render_scale": 4
+    },
+    "painting_mode": "raster_brush_v3"
+  },
+  "profile_revision": "2026-10-02-hunter-costume-blueprint-v2-visual-pass-raster-v3-ready"
+}

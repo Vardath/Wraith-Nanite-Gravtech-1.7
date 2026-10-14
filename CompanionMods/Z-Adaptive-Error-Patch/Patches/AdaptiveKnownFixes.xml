@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Z Adaptive Error Patch
+    Personal late-loading compatibility/error-cancellation layer for the current mod list.
+    All optional repairs use vanilla PatchOperations and are guarded so absent upstream content
+    does not create errors of its own.
+  -->
+
+  <!-- RimWorld 1.6 JobDef.checkOverrideOnDamage is an enum, not the old bool. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/JobDef//checkOverrideOnDamage[translate(normalize-space(text()), "TRUE", "true")="true"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/JobDef//checkOverrideOnDamage[translate(normalize-space(text()), "TRUE", "true")="true"]</xpath><value><checkOverrideOnDamage>Always</checkOverrideOnDamage></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/JobDef//checkOverrideOnDamage[translate(normalize-space(text()), "FALSE", "false")="false"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/JobDef//checkOverrideOnDamage[translate(normalize-space(text()), "FALSE", "false")="false"]</xpath><value><checkOverrideOnDamage>Never</checkOverrideOnDamage></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/JobDef//checkOverrideOnDamageMode</xpath></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/JobDef//checkOverrideOnDamageMode</xpath></li>
+  </operations></Operation>
+
+  <!-- Hospital legacy texture/parent repairs. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef//texPath[normalize-space(text())="Beds/HospitalBed"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef//texPath[normalize-space(text())="Beds/HospitalBed"]</xpath><value><texPath>Things/Building/Furniture/Bed/HospitalBed</texPath></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[@ParentName="Beds/HospitalBed"]</xpath></li>
+    <li Class="PatchOperationAttributeSet"><xpath>Defs/ThingDef[@ParentName="Beds/HospitalBed"]</xpath><attribute>ParentName</attribute><value>BedBase</value></li>
+  </operations></Operation>
+
+  <!-- Removed StuffProperties field. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef/stuffProps/soundImpactStuff</xpath></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/ThingDef/stuffProps/soundImpactStuff</xpath></li>
+  </operations></Operation>
+
+  <!-- Rim Giantess hidden save-compatibility beds. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[@ParentName="BS_BigBedBaseSansComfort"]</xpath></li>
+    <li Class="PatchOperationAttributeSet"><xpath>Defs/ThingDef[@ParentName="BS_BigBedBaseSansComfort"]</xpath><attribute>ParentName</attribute><value>BedBase</value></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/ThingDef[defName="BS_MegaUniversalBed" or defName="BS_MegaUniversalDoubleBed"]/comps/li[@Class="BigAndSmall.CompProperties_Bed"]</xpath></li>
+  </operations></Operation>
+
+  <!-- Remove stale optional facility links only when the facility itself is absent. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="SOA_NuclearThruster" and not(translate(normalize-space(@Abstract), "TRUE", "true")="true")]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//linkableFacilities/li[normalize-space(text())="SOA_NuclearThruster" or *[normalize-space(text())="SOA_NuclearThruster"]] | Defs/*//facilityQualityOffsets/li[normalize-space(text())="SOA_NuclearThruster" or *[normalize-space(text())="SOA_NuclearThruster"]]</xpath></li>
+  </operations></Operation>
+
+  <!-- Removed optional alien leathers. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="O21_AlienLeather_Thin"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//excludedThingDefs/li[text()="O21_AlienLeather_Thin"]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="O21_AlienLeather_Thick"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//excludedThingDefs/li[text()="O21_AlienLeather_Thick"]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="O21_AlienLeather_Scaled"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//excludedThingDefs/li[text()="O21_AlienLeather_Scaled"]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="O21_AlienLeather_Furry"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//excludedThingDefs/li[text()="O21_AlienLeather_Furry"]</xpath></li>
+  </operations></Operation>
+
+  <!-- Removed research tag and gene references. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ResearchProjectTagDef[defName="DankPyon_MedievalStart"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//startingResearchTags/li[text()="DankPyon_MedievalStart"]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/GeneDef[defName="VacuumResistant"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//genes/li[text()="VacuumResistant"]</xpath></li>
+  </operations></Operation>
+
+  <!-- Removed Biotech animal meats referenced by CulinaryCraft. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="Meat_WasteRat"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//thingDefs/li[text()="Meat_WasteRat"]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="Meat_Toxalope"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//thingDefs/li[text()="Meat_Toxalope"]</xpath></li>
+  </operations></Operation>
+
+  <!-- Old guinea-pig leather references. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="Leather_GuineaPig"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//thingDefs/li[text()="Leather_GuineaPig"] | Defs/*//excludedThingDefs/li[text()="Leather_GuineaPig"] | Defs/*//li[thingDef="Leather_GuineaPig"]</xpath></li>
+  </operations></Operation>
+
+  <!-- Current replacement for removed GlobalWorkSpeed. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="GlobalWorkSpeed"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="GeneralLaborSpeed"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/*//stat[text()="GlobalWorkSpeed"]</xpath><value><stat>GeneralLaborSpeed</stat></value></li>
+  </operations></Operation>
+
+  <!-- Vanilla resurrection effect must target corpses/items, not live pawns. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/AbilityDef[comps/li[@Class="CompProperties_AbilityResurrect" or @Class="RimWorld.CompProperties_AbilityResurrect"]]/verbProperties/targetParams/canTargetPawns</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/AbilityDef[comps/li[@Class="CompProperties_AbilityResurrect" or @Class="RimWorld.CompProperties_AbilityResurrect"]]/verbProperties/targetParams/canTargetPawns</xpath><value><canTargetPawns>false</canTargetPawns></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/AbilityDef[comps/li[@Class="CompProperties_AbilityResurrect" or @Class="RimWorld.CompProperties_AbilityResurrect"]]/verbProperties/targetParams[not(canTargetPawns)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/AbilityDef[comps/li[@Class="CompProperties_AbilityResurrect" or @Class="RimWorld.CompProperties_AbilityResurrect"]]/verbProperties/targetParams[not(canTargetPawns)]</xpath><value><canTargetPawns>false</canTargetPawns></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/AbilityDef[comps/li[@Class="CompProperties_AbilityResurrect" or @Class="RimWorld.CompProperties_AbilityResurrect"]]/verbProperties/targetParams/canTargetItems</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/AbilityDef[comps/li[@Class="CompProperties_AbilityResurrect" or @Class="RimWorld.CompProperties_AbilityResurrect"]]/verbProperties/targetParams/canTargetItems</xpath><value><canTargetItems>true</canTargetItems></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/AbilityDef[comps/li[@Class="CompProperties_AbilityResurrect" or @Class="RimWorld.CompProperties_AbilityResurrect"]]/verbProperties/targetParams[not(canTargetItems)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/AbilityDef[comps/li[@Class="CompProperties_AbilityResurrect" or @Class="RimWorld.CompProperties_AbilityResurrect"]]/verbProperties/targetParams[not(canTargetItems)]</xpath><value><canTargetItems>true</canTargetItems></value></li>
+  </operations></Operation>
+
+  <!-- Exact predator/diet contradictions from this stack. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="SD_Fey" or defName="L24_Animal_Jellyphid" or defName="L24_Animal_Chemphid" or defName="L24_Animal_Bluephid" or defName="L24_Animal_Mutaphid" or defName="L24_Animal_Mediphid"]/race/predator[translate(normalize-space(text()), "TRUE", "true")="true"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="SD_Fey" or defName="L24_Animal_Jellyphid" or defName="L24_Animal_Chemphid" or defName="L24_Animal_Bluephid" or defName="L24_Animal_Mutaphid" or defName="L24_Animal_Mediphid"]/race/predator[translate(normalize-space(text()), "TRUE", "true")="true"]</xpath><value><predator>false</predator></value></li>
+  </operations></Operation>
+
+  <!-- RimFactory power-cell hopper contradiction. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/*[defName="RR_CreatePowerCell" or defName="RR_CreatePowerCellX4"]/autoGrabFromHoppers[translate(normalize-space(text()), "TRUE", "true")="true"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/*[defName="RR_CreatePowerCell" or defName="RR_CreatePowerCellX4"]/autoGrabFromHoppers[translate(normalize-space(text()), "TRUE", "true")="true"]</xpath><value><autoGrabFromHoppers>false</autoGrabFromHoppers></value></li>
+  </operations></Operation>
+
+  <!-- Request bell requires map context. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/SoundDef[defName="MM_RequestBell"]/context</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/SoundDef[defName="MM_RequestBell"]/context</xpath><value><context>MapOnly</context></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/SoundDef[defName="MM_RequestBell" and not(context)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/SoundDef[defName="MM_RequestBell" and not(context)]</xpath><value><context>MapOnly</context></value></li>
+  </operations></Operation>
+
+  <!-- RimWorld 1.6 no longer provides BulletImpact_Stone in this active stack.
+       Remove exact stale references only when the SoundDef is genuinely absent. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/SoundDef[defName="BulletImpact_Stone"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[normalize-space(text())="BulletImpact_Stone"]</xpath></li>
+  </operations></Operation>
+
+  <!-- Missing optional sounds: remove stale references only when the SoundDef is absent. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/SoundDef[defName="MNGravitySwitch"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[normalize-space(text())="MNGravitySwitch"]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/SoundDef[defName="MNDownpourImpact"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[normalize-space(text())="MNDownpourImpact"]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/SoundDef[defName="MNCallDown"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[normalize-space(text())="MNCallDown"]</xpath></li>
+  </operations></Operation>
+
+  <!-- Some current 1.6 content contains leading/trailing whitespace inside otherwise valid
+       optional sound references. Remove only the malformed whitespace-bearing reference so a
+       correctly-authored reference remains untouched when the SoundDef exists. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/*//*[normalize-space(text())="MNGravitySwitch" and not(text()="MNGravitySwitch")]</xpath></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[normalize-space(text())="MNGravitySwitch" and not(text()="MNGravitySwitch")]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/*//*[normalize-space(text())="MNDownpourImpact" and not(text()="MNDownpourImpact")]</xpath></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[normalize-space(text())="MNDownpourImpact" and not(text()="MNDownpourImpact")]</xpath></li>
+  </operations></Operation>
+
+  <!-- Helper races reported as meat-producing even though meatDef is null. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="HL_BMT_Bees" or defName="HL_RustMech_Scyther" or defName="HL_RustMech_Lancer" or defName="HL_MT_VandaliteRace" or defName="HL_MT_EyelyeRace" or defName="HL_MT_DoublingPinRace" or defName="HL_MT_OddogRace" or defName="HL_MT_FriglinRace" or defName="HL_MT_SparkiliteRace" or defName="HL_MT_DingerRace"]/race/hasMeat</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="HL_BMT_Bees" or defName="HL_RustMech_Scyther" or defName="HL_RustMech_Lancer" or defName="HL_MT_VandaliteRace" or defName="HL_MT_EyelyeRace" or defName="HL_MT_DoublingPinRace" or defName="HL_MT_OddogRace" or defName="HL_MT_FriglinRace" or defName="HL_MT_SparkiliteRace" or defName="HL_MT_DingerRace"]/race/hasMeat</xpath><value><hasMeat>false</hasMeat></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[(defName="HL_BMT_Bees" or defName="HL_RustMech_Scyther" or defName="HL_RustMech_Lancer" or defName="HL_MT_VandaliteRace" or defName="HL_MT_EyelyeRace" or defName="HL_MT_DoublingPinRace" or defName="HL_MT_OddogRace" or defName="HL_MT_FriglinRace" or defName="HL_MT_SparkiliteRace" or defName="HL_MT_DingerRace") and race and not(race/hasMeat)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/ThingDef[(defName="HL_BMT_Bees" or defName="HL_RustMech_Scyther" or defName="HL_RustMech_Lancer" or defName="HL_MT_VandaliteRace" or defName="HL_MT_EyelyeRace" or defName="HL_MT_DoublingPinRace" or defName="HL_MT_OddogRace" or defName="HL_MT_FriglinRace" or defName="HL_MT_SparkiliteRace" or defName="HL_MT_DingerRace")]/race</xpath><value><hasMeat>false</hasMeat></value></li>
+  </operations></Operation>
+
+  <!-- Null Graphic_Multi path guard. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[graphicData/graphicClass="Graphic_Multi" and graphicData/texPath and not(normalize-space(graphicData/texPath))]/graphicData/texPath</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[graphicData/graphicClass="Graphic_Multi" and graphicData/texPath and not(normalize-space(graphicData/texPath))]/graphicData/texPath</xpath><value><texPath>ZAdaptive/Placeholder</texPath></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[graphicData/graphicClass="Graphic_Multi" and not(graphicData/texPath)]/graphicData</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/ThingDef[graphicData/graphicClass="Graphic_Multi" and not(graphicData/texPath)]/graphicData</xpath><value><texPath>ZAdaptive/Placeholder</texPath></value></li>
+  </operations></Operation>
+
+  <!-- Current live log: several animal defs point at non-existent '*Pack' texture stems.  These
+       are exact path aliases only; if an upstream update changes the path, the guarded repair stops. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef//texPath[normalize-space(text())="Things/Pawn/Animal/Megascarab/MegascarabPack"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef//texPath[normalize-space(text())="Things/Pawn/Animal/Megascarab/MegascarabPack"]</xpath><value><texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef//texPath[normalize-space(text())="Things/Pawn/Animal/Spelopede/SpelopedePack"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef//texPath[normalize-space(text())="Things/Pawn/Animal/Spelopede/SpelopedePack"]</xpath><value><texPath>Things/Pawn/Animal/Spelopede/Spelopede</texPath></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef//texPath[normalize-space(text())="BMT_Bees/Things/Animal/Bees/BeeSwarmPack"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef//texPath[normalize-space(text())="BMT_Bees/Things/Animal/Bees/BeeSwarmPack"]</xpath><value><texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef//texPath[normalize-space(text())="Things/Pawn/Animal/Creamgrub/CreamgrubPack"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef//texPath[normalize-space(text())="Things/Pawn/Animal/Creamgrub/CreamgrubPack"]</xpath><value><texPath>Things/Pawn/Animal/Creamgrub/Creamgrub</texPath></value></li>
+  </operations></Operation>
+
+
+
+  <!-- Current 1.6 stack: additional removed sound defs. Strip only exact stale references and
+       only while the corresponding SoundDef is absent. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/SoundDef[defName="Pawn_Melee_Punch_HitBuilding"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[normalize-space(text())="Pawn_Melee_Punch_HitBuilding"]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/SoundDef[defName="hammerImpact"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[normalize-space(text())="hammerImpact"]</xpath></li>
+  </operations></Operation>
+
+  <!-- Biomes Caverns 1.6 uses Jellypot, not the obsolete JellypotPack texture stem. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef//texPath[normalize-space(text())="BMT_Caverns/Things/Animal/Jellypot/JellypotPack"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef//texPath[normalize-space(text())="BMT_Caverns/Things/Animal/Jellypot/JellypotPack"]</xpath><value><texPath>BMT_Caverns/Things/Animal/Jellypot/Jellypot</texPath></value></li>
+  </operations></Operation>
+
+  <!-- Optional Biomes Caverns content removed in 1.6 but still referenced by older quest/flight data. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/PawnKindDef[defName="BMT_CrystalCrab_Sandstone"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//extraKinds/li[normalize-space(text())="BMT_CrystalCrab_Sandstone"]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/PawnKindDef[defName="BMT_WoollySpider" and not(translate(normalize-space(@Abstract), "TRUE", "true")="true")]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[@Class="QuestEditor_Library.PawnSpawnData" and *[normalize-space(text())="BMT_WoollySpider"]]</xpath></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="BMT_EggWoollySpiderFertilized"]</xpath><success>Invert</success></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/*//*[@Class="QuestEditor_Library.CQFThingDefCount" and *[normalize-space(text())="BMT_EggWoollySpiderFertilized"]]</xpath></li>
+  </operations></Operation>
+
+  <!-- Wildspawn declares no nutrition, so 1.6 requires NeverForNutrition. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="WildspawnPlant"]/ingestible/preferability</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WildspawnPlant"]/ingestible/preferability</xpath><value><preferability>NeverForNutrition</preferability></value></li>
+  </operations></Operation>
+
+  <!-- Kindred artifacts/hunter gear inherit smeltability but define no smelting return. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[(defName="Kindred_Artifact_Dirge" or defName="Kindred_Artifact_SeventhCircle" or defName="Kindred_Artifact_Lamentation" or defName="Kindred_Artifact_ThornedCrown" or defName="Kindred_Artifact_AegisOfAsh" or defName="Kindred_Hunter_Cleaver" or defName="Kindred_Hunter_Blunderbuss" or defName="Kindred_Hunter_Pistol" or defName="Kindred_Hunter_Tricorn" or defName="Kindred_Hunter_Greatcoat") and smeltable]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[(defName="Kindred_Artifact_Dirge" or defName="Kindred_Artifact_SeventhCircle" or defName="Kindred_Artifact_Lamentation" or defName="Kindred_Artifact_ThornedCrown" or defName="Kindred_Artifact_AegisOfAsh" or defName="Kindred_Hunter_Cleaver" or defName="Kindred_Hunter_Blunderbuss" or defName="Kindred_Hunter_Pistol" or defName="Kindred_Hunter_Tricorn" or defName="Kindred_Hunter_Greatcoat")]/smeltable</xpath><value><smeltable>false</smeltable></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[(defName="Kindred_Artifact_Dirge" or defName="Kindred_Artifact_SeventhCircle" or defName="Kindred_Artifact_Lamentation" or defName="Kindred_Artifact_ThornedCrown" or defName="Kindred_Artifact_AegisOfAsh" or defName="Kindred_Hunter_Cleaver" or defName="Kindred_Hunter_Blunderbuss" or defName="Kindred_Hunter_Pistol" or defName="Kindred_Hunter_Tricorn" or defName="Kindred_Hunter_Greatcoat") and not(smeltable)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/ThingDef[(defName="Kindred_Artifact_Dirge" or defName="Kindred_Artifact_SeventhCircle" or defName="Kindred_Artifact_Lamentation" or defName="Kindred_Artifact_ThornedCrown" or defName="Kindred_Artifact_AegisOfAsh" or defName="Kindred_Hunter_Cleaver" or defName="Kindred_Hunter_Blunderbuss" or defName="Kindred_Hunter_Pistol" or defName="Kindred_Hunter_Tricorn" or defName="Kindred_Hunter_Greatcoat") and not(smeltable)]</xpath><value><smeltable>false</smeltable></value></li>
+  </operations></Operation>
+
+  <!-- Kindred awardable titles omitted the required 1.6 heir-change quest point field. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/RoyalTitleDef[(defName="Kindred_Title_Recognised" or defName="Kindred_Title_Ancilla" or defName="Kindred_Title_Primogen" or defName="Kindred_Title_Prince" or defName="Kindred_Title_Justicar") and not(changeHeirQuestPoints)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/RoyalTitleDef[(defName="Kindred_Title_Recognised" or defName="Kindred_Title_Ancilla" or defName="Kindred_Title_Primogen" or defName="Kindred_Title_Prince" or defName="Kindred_Title_Justicar") and not(changeHeirQuestPoints)]</xpath><value><changeHeirQuestPoints>1000</changeHeirQuestPoints></value></li>
+  </operations></Operation>
+
+  <!-- Exact whitespace config repairs from the active stack. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="Gun_PGI_PerfectFrostbiteTurret" and not(description)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="Gun_PGI_PerfectFrostbiteTurret" and not(description)]</xpath><value><description>Perfect frost turret.</description></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[defName="CheatShelf10k"]/description</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="CheatShelf10k"]/description</xpath><value><description>A compact storage unit utilizing questionable spatial compression technology. Holds an absurd number of item stacks within a single tile, dramatically reducing storage footprint. Warehouse? Never heard of it.</description></value></li>
+  </operations></Operation>
+
+  <!-- Ideology grammar inheritance repairs from the 2026-10-07 live new-game log.
+       These add only vanilla global grammar packs that the affected custom RulePackDefs omitted. -->
+
+  <!-- Monolyn deity namer: supplies the vanilla r_deityName root while preserving Monolyn's own name rules. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/RulePackDef[defName="DeityMaker_Monolyn" and include and not(include/li[normalize-space(text())="NamerDeityGlobal"])]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/RulePackDef[defName="DeityMaker_Monolyn"]/include</xpath><value><li>NamerDeityGlobal</li></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/RulePackDef[defName="DeityMaker_Monolyn" and not(include)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/RulePackDef[defName="DeityMaker_Monolyn"]</xpath><value><include><li>NamerDeityGlobal</li></include></value></li>
+  </operations></Operation>
+
+  <!-- Monolyn ideology namer: supplies hyphenPrefix/global ideology grammar without replacing custom rules. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/RulePackDef[defName="NamerIdeoMonolyn" and include and not(include/li[normalize-space(text())="NamerIdeoGlobal"])]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/RulePackDef[defName="NamerIdeoMonolyn"]/include</xpath><value><li>NamerIdeoGlobal</li></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/RulePackDef[defName="NamerIdeoMonolyn" and not(include)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/RulePackDef[defName="NamerIdeoMonolyn"]</xpath><value><include><li>NamerIdeoGlobal</li></include></value></li>
+  </operations></Operation>
+
+  <!-- Ultima Fellowship ideology namer: same missing vanilla ideology grammar inheritance. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/RulePackDef[defName="Ultima_NamerIdeoFellowship" and include and not(include/li[normalize-space(text())="NamerIdeoGlobal"])]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/RulePackDef[defName="Ultima_NamerIdeoFellowship"]/include</xpath><value><li>NamerIdeoGlobal</li></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/RulePackDef[defName="Ultima_NamerIdeoFellowship" and not(include)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/RulePackDef[defName="Ultima_NamerIdeoFellowship"]</xpath><value><include><li>NamerIdeoGlobal</li></include></value></li>
+  </operations></Operation>
+
+
+  <!-- Map Mode Framework 1.6 Growing Period cache performs planet-temperature work on a
+       background Task. In the active Odyssey/Worldbuilder stack that reaches Burst-backed
+       PlanetLayer tile geometry off the main thread and can hard-crash the native process.
+       Keep the map mode available but disable only its asynchronous pre-cache. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/MapModeFramework.MapModeDef[defName="GrowingPeriod"]/canCache[translate(normalize-space(text()), "TRUE", "true")="true"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/MapModeFramework.MapModeDef[defName="GrowingPeriod"]/canCache</xpath><value><canCache>false</canCache></value></li>
+  </operations></Operation>
+
+
+  <!-- 2026-10-08 RimDoctor: three Star Trek phaser racks are haulable but lack an
+       authored Mass stat. Supply a modest non-zero mass only where missing. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[(defName="DG_PhaserChargingRack" or defName="DG_TypeIPhaserChargingRack" or defName="DG_TypeIIIPhaserChargingRack") and statBases and not(statBases/Mass)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/ThingDef[(defName="DG_PhaserChargingRack" or defName="DG_TypeIPhaserChargingRack" or defName="DG_TypeIIIPhaserChargingRack") and statBases and not(statBases/Mass)]/statBases</xpath><value><Mass>10</Mass></value></li>
+  </operations></Operation>
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/ThingDef[(defName="DG_PhaserChargingRack" or defName="DG_TypeIPhaserChargingRack" or defName="DG_TypeIIIPhaserChargingRack") and not(statBases)]</xpath></li>
+    <li Class="PatchOperationAdd"><xpath>Defs/ThingDef[(defName="DG_PhaserChargingRack" or defName="DG_TypeIPhaserChargingRack" or defName="DG_TypeIIIPhaserChargingRack") and not(statBases)]</xpath><value><statBases><Mass>10</Mass></statBases></value></li>
+  </operations></Operation>
+
+
+  <!-- The vanilla History hotkey is F9. The Level Schedule mod currently also
+       defaults to F9, causing two duplicate key binding conflict warnings.
+       Preserve History's shortcut and remove only the conflicting optional
+       Level Schedule default; the tab remains accessible via its button. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/KeyBindingDef[defName="MainTab_CQFA_LevelSchedule"]/defaultKeyCode[normalize-space(text())="F9"]</xpath></li>
+    <li Class="PatchOperationReplace"><xpath>Defs/KeyBindingDef[defName="MainTab_CQFA_LevelSchedule"]/defaultKeyCode[normalize-space(text())="F9"]</xpath><value><defaultKeyCode>None</defaultKeyCode></value></li>
+  </operations></Operation>
+
+
+  <!-- 2026-10-08 live log: an AudioGrain with an empty clipPath asks Unity to
+       load AudioClip at ''. A clip with no path cannot produce sound. Remove
+       only malformed grain entries, leaving valid sound clips untouched. -->
+  <Operation Class="PatchOperationSequence"><success>Always</success><operations>
+    <li Class="PatchOperationTest"><xpath>Defs/SoundDef//grains/li[clipPath and not(normalize-space(clipPath))]</xpath></li>
+    <li Class="PatchOperationRemove"><xpath>Defs/SoundDef//grains/li[clipPath and not(normalize-space(clipPath))]</xpath></li>
+  </operations></Operation>
+
+
+  <!-- 2026-10-09 Ocean Floor (we1tall.depths) 1.0.0 compatibility:
+       Correct stale WorkSpeedGlobal references to the 1.6 GeneralLaborSpeed StatDef
+       only when that old def does not exist. These target the actual Ocean Floor
+       authored WaterPhysics stat part and captain/mech hediff work factors. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Ocean Floor</li></mods>
+    <match Class="PatchOperationSequence"><success>Always</success><operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="WorkSpeedGlobal"]</xpath><success>Invert</success></li>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="GeneralLaborSpeed" and parts and not(parts/li[@Class="Depths.StatPart_WaterWork"])]/parts</xpath></li>
+      <li Class="PatchOperationAdd"><xpath>Defs/StatDef[defName="GeneralLaborSpeed"]/parts</xpath><value><li Class="Depths.StatPart_WaterWork" /></value></li>
+    </operations></match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Ocean Floor</li></mods>
+    <match Class="PatchOperationSequence"><success>Always</success><operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="WorkSpeedGlobal"]</xpath><success>Invert</success></li>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="GeneralLaborSpeed" and not(parts)]</xpath></li>
+      <li Class="PatchOperationAdd"><xpath>Defs/StatDef[defName="GeneralLaborSpeed" and not(parts)]</xpath><value><parts><li Class="Depths.StatPart_WaterWork" /></parts></value></li>
+    </operations></match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Ocean Floor</li></mods>
+    <match Class="PatchOperationSequence"><success>Always</success><operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="WorkSpeedGlobal"]</xpath><success>Invert</success></li>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="GeneralLaborSpeed"]</xpath></li>
+      <li Class="PatchOperationTest"><xpath>Defs/HediffDef[defName="DP_OrderAllHands"]//statFactors/WorkSpeedGlobal[normalize-space(text())="1.2"]</xpath></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/HediffDef[defName="DP_OrderAllHands"]//statFactors/WorkSpeedGlobal[normalize-space(text())="1.2"]</xpath><value><GeneralLaborSpeed>1.2</GeneralLaborSpeed></value></li>
+    </operations></match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Ocean Floor</li></mods>
+    <match Class="PatchOperationSequence"><success>Always</success><operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="WorkSpeedGlobal"]</xpath><success>Invert</success></li>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="GeneralLaborSpeed"]</xpath></li>
+      <li Class="PatchOperationTest"><xpath>Defs/HediffDef[defName="DP_OrderWorn"]//statFactors/WorkSpeedGlobal[normalize-space(text())="0.9"]</xpath></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/HediffDef[defName="DP_OrderWorn"]//statFactors/WorkSpeedGlobal[normalize-space(text())="0.9"]</xpath><value><GeneralLaborSpeed>0.9</GeneralLaborSpeed></value></li>
+    </operations></match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Ocean Floor</li></mods>
+    <match Class="PatchOperationSequence"><success>Always</success><operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="WorkSpeedGlobal"]</xpath><success>Invert</success></li>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="GeneralLaborSpeed"]</xpath></li>
+      <li Class="PatchOperationTest"><xpath>Defs/HediffDef[defName="DP_OrderFreeWatch"]//statFactors/WorkSpeedGlobal[normalize-space(text())="0.8"]</xpath></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/HediffDef[defName="DP_OrderFreeWatch"]//statFactors/WorkSpeedGlobal[normalize-space(text())="0.8"]</xpath><value><GeneralLaborSpeed>0.8</GeneralLaborSpeed></value></li>
+    </operations></match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Ocean Floor</li></mods>
+    <match Class="PatchOperationSequence"><success>Always</success><operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="WorkSpeedGlobal"]</xpath><success>Invert</success></li>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="GeneralLaborSpeed"]</xpath></li>
+      <li Class="PatchOperationTest"><xpath>Defs/HediffDef[defName="DP_MechPraised"]//statFactors/WorkSpeedGlobal[normalize-space(text())="1.12"]</xpath></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/HediffDef[defName="DP_MechPraised"]//statFactors/WorkSpeedGlobal[normalize-space(text())="1.12"]</xpath><value><GeneralLaborSpeed>1.12</GeneralLaborSpeed></value></li>
+    </operations></match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Ocean Floor</li></mods>
+    <match Class="PatchOperationSequence"><success>Always</success><operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="WorkSpeedGlobal"]</xpath><success>Invert</success></li>
+      <li Class="PatchOperationTest"><xpath>Defs/StatDef[defName="GeneralLaborSpeed"]</xpath></li>
+      <li Class="PatchOperationTest"><xpath>Defs/HediffDef[defName="DP_MechScolded"]//statFactors/WorkSpeedGlobal[normalize-space(text())="0.93"]</xpath></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/HediffDef[defName="DP_MechScolded"]//statFactors/WorkSpeedGlobal[normalize-space(text())="0.93"]</xpath><value><GeneralLaborSpeed>0.93</GeneralLaborSpeed></value></li>
+    </operations></match>
+  </Operation>
+
+</Patch>

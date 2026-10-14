@@ -1,0 +1,1773 @@
+{
+  "id": "wraith_queen_raiment",
+  "item": "WNG_QueenRaiment",
+  "faction": "Wraith",
+  "purpose": "Wraith Queen regalia based on Stargate Atlantis production wardrobe, translated onto vanilla RimWorld RoyalRobe geometry. It must read as royal Wraith clothing: gold-black reptile leather, patterned velvet, fitted corsetry, integrated collar, straps, closures and a mobile split riding-skirt/robe construction—not purple sci-fi plates.",
+  "stage_1_stargate": {
+    "sources": [
+      {
+        "url": "https://www.stargate-fusion.com/fiches/5691-costume-wraith-teyla-la-nouvelle-reine.html",
+        "role": "screen_used_teyla_wraith_queen_costume_propworx",
+        "required_terms": [
+          "reptile",
+          "corset",
+          "cuir",
+          "velours"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/",
+        "role": "costume_designer_primary_wraith_queen",
+        "required_terms": [
+          "WRAITH QUEEN",
+          "LATEX",
+          "LEATHER"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.wormholeriders.com/blog/2009/04/19/valerie-halversons-qa/",
+        "role": "costume_designer_queen_riding_skirt_construction",
+        "required_terms": [
+          "Wraith Queen",
+          "riding skirt",
+          "leather"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.gateworld.net/atlantis/s5/the-queen/",
+        "role": "episode_screen_context_teyla_queen",
+        "required_terms": [
+          "Wraith queen",
+          "wardrobe",
+          "Teyla"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.gateworld.net/atlantis/s2/allies/transcript/",
+        "role": "alternate_wraith_queen_long_coat_language",
+        "required_terms": [
+          "female",
+          "long white coat",
+          "Wraith"
+        ],
+        "image_policy": "metadata_only"
+      },
+      {
+        "url": "https://www.gateworld.net/atlantis/s5/the-queen/transcript/",
+        "role": "screen_context_queen_bearing_throne_and_costume",
+        "required_terms": [
+          "Wraith Queen",
+          "Teyla",
+          "throne"
+        ],
+        "image_policy": "metadata_only"
+      },
+      {
+        "url": "https://www.gateworld.net/atlantis/s4/spoils-of-war/",
+        "role": "spoils_of_war_screen_queen_dress_and_armour_context",
+        "required_terms": [
+          "Wraith Queen",
+          "Spoils of War",
+          "Andee Frizzell"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.gateworld.net/atlantis/s4/spoils-of-war/transcript/",
+        "role": "spoils_of_war_hive_queen_screen_context",
+        "required_terms": [
+          "Wraith Hive Queen",
+          "Queen",
+          "Wraith"
+        ],
+        "image_policy": "metadata_only"
+      }
+    ],
+    "minimum_live_sources": 3,
+    "minimum_visual_references": 1,
+    "design_rules": {
+      "material_priority": [
+        [
+          "gold_black_reptile_leather_half_jacket",
+          0.23
+        ],
+        [
+          "black_patterned_velvet_sleeves_and_robe",
+          0.18
+        ],
+        [
+          "gold_black_structured_corset",
+          0.2
+        ],
+        [
+          "gold_torn_pattern_stretch_fabric",
+          0.1
+        ],
+        [
+          "gold_black_woven_riding_skirt_robe",
+          0.16
+        ],
+        [
+          "gloss_black_leather_side_inserts",
+          0.06
+        ],
+        [
+          "aged_metal_buttons_zipper_straps",
+          0.04
+        ],
+        [
+          "subtle_laser_cut_leather_or_latex_organic_detail",
+          0.03
+        ]
+      ],
+      "construction": [
+        "cropped gold reptile-pattern leather half-jacket over the upper torso",
+        "black patterned velvet sleeves with soft nap and drape",
+        "fitted gold-and-black corset with front straps across the chest",
+        "integrated high neck collar as part of the corset construction",
+        "front zipper and small metal button details",
+        "gold torn-pattern fitted stretch-fabric underlayer",
+        "split riding-skirt/robe lower construction so the Queen can move physically",
+        "gold-black woven lower garment with glossy black leather side inserts",
+        "restrained laser-cut leather or latex organic detailing only where supported by Queen production design"
+      ],
+      "motifs": [
+        "regal predatory Wraith Queen tailoring",
+        "reptile leather and patterned textile contrast",
+        "corseted vertical authority",
+        "high collar and chest-strap rank language",
+        "flowing but physically functional lower robe",
+        "subtle organic Wraith detail without turning clothing into a spaceship"
+      ],
+      "avoid": [
+        "purple generic sci-fi armour",
+        "anonymous panel shapes",
+        "flat vector corset polygons",
+        "neon piping",
+        "huge gemstones",
+        "superhero breastplate",
+        "ship fins on shoulders",
+        "uniform glow lines",
+        "clean plastic surfaces",
+        "cloud noise",
+        "overly symmetrical geometric plate stacks"
+      ]
+    },
+    "primary_research_basis": [
+      "Propworx screen-used Teyla Wraith Queen costume technical description",
+      "Val Halverson costume-designer Q&A covering Wraith Queen dress/armour, latex and leather",
+      "Val Halverson wardrobe Q&A confirming the riding-skirt lower construction for physical movement"
+    ]
+  },
+  "stage_2_rimworld": {
+    "implementation_mode": "svg_family_deformed",
+    "vanilla_family": "RoyalRobe",
+    "tile_family": "RoyalRobe",
+    "tile_scale": 0.82,
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "facings": [
+      "south",
+      "north",
+      "east",
+      "west"
+    ],
+    "silhouette_rule": "vanilla_royalrobe_alpha_authoritative",
+    "readability_rule": "must read as royal layered clothing at 192x192 and normal pawn zoom; Queen costume materials and construction must survive without changing the RoyalRobe contour"
+  },
+  "stage_3_synthesis": {
+    "wNG_quality_benchmarks": [
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithDart_south.png",
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithStrikeCraft_south.png",
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithCruiser_south.png"
+    ],
+    "historical_continuity": [],
+    "renderer": "costume_blueprint_v2",
+    "post_downsample_contrast": 1.1,
+    "tile_contrast": 1.08,
+    "palette": {
+      "leather_shadow": [
+        13,
+        8,
+        5
+      ],
+      "leather_mid": [
+        58,
+        40,
+        22
+      ],
+      "leather_high": [
+        148,
+        115,
+        65
+      ],
+      "contrast_shadow": [
+        5,
+        4,
+        5
+      ],
+      "contrast_mid": [
+        20,
+        16,
+        20
+      ],
+      "contrast_high": [
+        63,
+        53,
+        62
+      ],
+      "reptile_shadow": [
+        12,
+        8,
+        5
+      ],
+      "reptile_mid": [
+        56,
+        39,
+        20
+      ],
+      "reptile_high": [
+        152,
+        118,
+        65
+      ],
+      "metal": [
+        148,
+        132,
+        105
+      ],
+      "biotech": [
+        76,
+        84,
+        65
+      ]
+    },
+    "materials": {
+      "gold_reptile": {
+        "kind": "reptile_leather",
+        "shadow": [
+          14,
+          9,
+          5
+        ],
+        "mid": [
+          62,
+          43,
+          21
+        ],
+        "high": [
+          158,
+          122,
+          67
+        ],
+        "roughness": 0.46,
+        "grain": 0.07,
+        "specular_tint": [
+          37,
+          30,
+          19
+        ]
+      },
+      "black_velvet": {
+        "kind": "velvet",
+        "shadow": [
+          3,
+          3,
+          4
+        ],
+        "mid": [
+          16,
+          13,
+          17
+        ],
+        "high": [
+          48,
+          42,
+          50
+        ],
+        "roughness": 0.76,
+        "grain": 0.04,
+        "specular_tint": [
+          18,
+          16,
+          20
+        ]
+      },
+      "gold_spandex": {
+        "kind": "spandex",
+        "shadow": [
+          18,
+          12,
+          6
+        ],
+        "mid": [
+          74,
+          51,
+          23
+        ],
+        "high": [
+          151,
+          119,
+          61
+        ],
+        "roughness": 0.38,
+        "grain": 0.025,
+        "specular_tint": [
+          34,
+          28,
+          17
+        ]
+      },
+      "corset_brocade": {
+        "kind": "woven",
+        "shadow": [
+          12,
+          8,
+          8
+        ],
+        "mid": [
+          58,
+          39,
+          28
+        ],
+        "high": [
+          139,
+          104,
+          62
+        ],
+        "roughness": 0.58,
+        "grain": 0.11,
+        "specular_tint": [
+          24,
+          20,
+          16
+        ]
+      },
+      "gold_black_wool": {
+        "kind": "wool",
+        "shadow": [
+          8,
+          6,
+          7
+        ],
+        "mid": [
+          42,
+          32,
+          24
+        ],
+        "high": [
+          106,
+          83,
+          52
+        ],
+        "roughness": 0.72,
+        "grain": 0.14,
+        "specular_tint": [
+          18,
+          16,
+          13
+        ]
+      },
+      "gloss_black_leather": {
+        "kind": "leather",
+        "shadow": [
+          2,
+          3,
+          4
+        ],
+        "mid": [
+          15,
+          16,
+          18
+        ],
+        "high": [
+          63,
+          66,
+          69
+        ],
+        "roughness": 0.31,
+        "grain": 0.055,
+        "specular_tint": [
+          42,
+          42,
+          43
+        ]
+      }
+    },
+    "garment_contract": {
+      "max_single_piece_fraction": 0.36,
+      "min_base_garment_visible_fraction": 0.3,
+      "max_semantic_pieces_per_view": 12,
+      "min_seams_per_view": 3
+    },
+    "garment_blueprint": {
+      "design_class": "raiment",
+      "base_material": "gold_black_wool",
+      "views": {
+        "south": {
+          "folds": [
+            {
+              "points": [
+                [
+                  0.22,
+                  0.3
+                ],
+                [
+                  0.18,
+                  0.62
+                ],
+                [
+                  0.2,
+                  0.94
+                ]
+              ],
+              "width": 0.021,
+              "strength": 0.72
+            },
+            {
+              "points": [
+                [
+                  0.78,
+                  0.3
+                ],
+                [
+                  0.82,
+                  0.62
+                ],
+                [
+                  0.8,
+                  0.94
+                ]
+              ],
+              "width": 0.021,
+              "strength": 0.68
+            },
+            {
+              "points": [
+                [
+                  0.4,
+                  0.49
+                ],
+                [
+                  0.37,
+                  0.71
+                ],
+                [
+                  0.35,
+                  0.94
+                ]
+              ],
+              "width": 0.016,
+              "strength": 0.52
+            },
+            {
+              "points": [
+                [
+                  0.6,
+                  0.49
+                ],
+                [
+                  0.63,
+                  0.71
+                ],
+                [
+                  0.65,
+                  0.94
+                ]
+              ],
+              "width": 0.016,
+              "strength": 0.48
+            }
+          ],
+          "pieces": [
+            {
+              "name": "gold reptile cropped queen jacket",
+              "role": "tunic_overlay",
+              "material": "gold_reptile",
+              "points": [
+                [
+                  0.11,
+                  0.09
+                ],
+                [
+                  0.27,
+                  0.035
+                ],
+                [
+                  0.39,
+                  0.075
+                ],
+                [
+                  0.42,
+                  0.3
+                ],
+                [
+                  0.32,
+                  0.39
+                ],
+                [
+                  0.13,
+                  0.32
+                ]
+              ],
+              "mirror_x": true,
+              "folds": [
+                {
+                  "points": [
+                    [
+                      0.18,
+                      0.11
+                    ],
+                    [
+                      0.29,
+                      0.24
+                    ]
+                  ],
+                  "width": 0.012,
+                  "strength": 0.44
+                }
+              ]
+            },
+            {
+              "name": "black velvet left sleeve field",
+              "role": "sleeve_overlay",
+              "material": "black_velvet",
+              "points": [
+                [
+                  0.045,
+                  0.13
+                ],
+                [
+                  0.15,
+                  0.09
+                ],
+                [
+                  0.22,
+                  0.19
+                ],
+                [
+                  0.205,
+                  0.48
+                ],
+                [
+                  0.1,
+                  0.52
+                ],
+                [
+                  0.035,
+                  0.38
+                ]
+              ]
+            },
+            {
+              "name": "black velvet right sleeve field",
+              "role": "sleeve_overlay",
+              "material": "black_velvet",
+              "points": [
+                [
+                  0.955,
+                  0.13
+                ],
+                [
+                  0.85,
+                  0.09
+                ],
+                [
+                  0.78,
+                  0.19
+                ],
+                [
+                  0.795,
+                  0.48
+                ],
+                [
+                  0.9,
+                  0.52
+                ],
+                [
+                  0.965,
+                  0.38
+                ]
+              ]
+            },
+            {
+              "name": "gold torn stretch underlayer",
+              "role": "bib",
+              "material": "gold_spandex",
+              "points": [
+                [
+                  0.35,
+                  0.075
+                ],
+                [
+                  0.65,
+                  0.075
+                ],
+                [
+                  0.62,
+                  0.44
+                ],
+                [
+                  0.57,
+                  0.53
+                ],
+                [
+                  0.43,
+                  0.53
+                ],
+                [
+                  0.38,
+                  0.44
+                ]
+              ]
+            },
+            {
+              "name": "queen structured corset",
+              "role": "corset",
+              "material": "corset_brocade",
+              "points": [
+                [
+                  0.31,
+                  0.18
+                ],
+                [
+                  0.69,
+                  0.18
+                ],
+                [
+                  0.655,
+                  0.52
+                ],
+                [
+                  0.59,
+                  0.67
+                ],
+                [
+                  0.41,
+                  0.67
+                ],
+                [
+                  0.345,
+                  0.52
+                ]
+              ],
+              "folds": [
+                {
+                  "points": [
+                    [
+                      0.41,
+                      0.22
+                    ],
+                    [
+                      0.43,
+                      0.58
+                    ]
+                  ],
+                  "width": 0.011,
+                  "strength": 0.58
+                },
+                {
+                  "points": [
+                    [
+                      0.59,
+                      0.22
+                    ],
+                    [
+                      0.57,
+                      0.58
+                    ]
+                  ],
+                  "width": 0.011,
+                  "strength": 0.52
+                }
+              ]
+            },
+            {
+              "name": "integrated high queen collar",
+              "role": "collar",
+              "material": "gold_reptile",
+              "points": [
+                [
+                  0.37,
+                  0.025
+                ],
+                [
+                  0.63,
+                  0.025
+                ],
+                [
+                  0.66,
+                  0.13
+                ],
+                [
+                  0.58,
+                  0.19
+                ],
+                [
+                  0.42,
+                  0.19
+                ],
+                [
+                  0.34,
+                  0.13
+                ]
+              ]
+            },
+            {
+              "name": "left glossy riding skirt insert",
+              "role": "side_insert",
+              "material": "gloss_black_leather",
+              "points": [
+                [
+                  0.14,
+                  0.54
+                ],
+                [
+                  0.27,
+                  0.5
+                ],
+                [
+                  0.31,
+                  0.95
+                ],
+                [
+                  0.16,
+                  0.96
+                ],
+                [
+                  0.09,
+                  0.78
+                ]
+              ]
+            },
+            {
+              "name": "right glossy riding skirt insert",
+              "role": "side_insert",
+              "material": "gloss_black_leather",
+              "points": [
+                [
+                  0.86,
+                  0.54
+                ],
+                [
+                  0.73,
+                  0.5
+                ],
+                [
+                  0.69,
+                  0.95
+                ],
+                [
+                  0.84,
+                  0.96
+                ],
+                [
+                  0.91,
+                  0.78
+                ]
+              ]
+            },
+            {
+              "name": "front split riding skirt",
+              "role": "skirt",
+              "material": "black_velvet",
+              "points": [
+                [
+                  0.39,
+                  0.63
+                ],
+                [
+                  0.61,
+                  0.63
+                ],
+                [
+                  0.64,
+                  0.95
+                ],
+                [
+                  0.53,
+                  0.98
+                ],
+                [
+                  0.5,
+                  0.78
+                ],
+                [
+                  0.47,
+                  0.98
+                ],
+                [
+                  0.36,
+                  0.95
+                ]
+              ]
+            }
+          ],
+          "seams": [
+            {
+              "points": [
+                [
+                  0.31,
+                  0.21
+                ],
+                [
+                  0.35,
+                  0.48
+                ],
+                [
+                  0.41,
+                  0.65
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.034,
+              "highlight": [
+                119,
+                93,
+                59
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.69,
+                  0.21
+                ],
+                [
+                  0.65,
+                  0.48
+                ],
+                [
+                  0.59,
+                  0.65
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.034,
+              "highlight": [
+                119,
+                93,
+                59
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.17,
+                  0.55
+                ],
+                [
+                  0.18,
+                  0.75
+                ],
+                [
+                  0.19,
+                  0.94
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.04,
+              "highlight": [
+                73,
+                65,
+                58
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.83,
+                  0.55
+                ],
+                [
+                  0.82,
+                  0.75
+                ],
+                [
+                  0.81,
+                  0.94
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.04,
+              "highlight": [
+                73,
+                65,
+                58
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.5,
+                  0.67
+                ],
+                [
+                  0.5,
+                  0.96
+                ]
+              ],
+              "stitch": false,
+              "highlight": [
+                69,
+                57,
+                44
+              ]
+            }
+          ],
+          "closures": [
+            {
+              "type": "zipper",
+              "from": [
+                0.5,
+                0.19
+              ],
+              "to": [
+                0.5,
+                0.6
+              ],
+              "teeth": 10
+            },
+            {
+              "type": "snaps",
+              "from": [
+                0.38,
+                0.27
+              ],
+              "to": [
+                0.62,
+                0.27
+              ],
+              "count": 4,
+              "radius": 0.006
+            },
+            {
+              "type": "belt",
+              "from": [
+                0.35,
+                0.61
+              ],
+              "to": [
+                0.65,
+                0.61
+              ],
+              "width": 0.014
+            }
+          ],
+          "wear": {
+            "seed": 41,
+            "count": 4,
+            "x_range": [
+              0.12,
+              0.88
+            ],
+            "y_range": [
+              0.2,
+              0.92
+            ],
+            "highlight": [
+              156,
+              132,
+              84
+            ]
+          }
+        },
+        "north": {
+          "folds": [
+            {
+              "points": [
+                [
+                  0.2,
+                  0.31
+                ],
+                [
+                  0.16,
+                  0.62
+                ],
+                [
+                  0.19,
+                  0.94
+                ]
+              ],
+              "width": 0.02,
+              "strength": 0.68
+            },
+            {
+              "points": [
+                [
+                  0.8,
+                  0.31
+                ],
+                [
+                  0.84,
+                  0.62
+                ],
+                [
+                  0.81,
+                  0.94
+                ]
+              ],
+              "width": 0.02,
+              "strength": 0.64
+            },
+            {
+              "points": [
+                [
+                  0.48,
+                  0.44
+                ],
+                [
+                  0.47,
+                  0.7
+                ],
+                [
+                  0.48,
+                  0.94
+                ]
+              ],
+              "width": 0.014,
+              "strength": 0.4
+            }
+          ],
+          "pieces": [
+            {
+              "name": "reptile queen back yoke",
+              "role": "yoke",
+              "material": "gold_reptile",
+              "points": [
+                [
+                  0.12,
+                  0.08
+                ],
+                [
+                  0.88,
+                  0.08
+                ],
+                [
+                  0.82,
+                  0.26
+                ],
+                [
+                  0.67,
+                  0.31
+                ],
+                [
+                  0.5,
+                  0.34
+                ],
+                [
+                  0.33,
+                  0.31
+                ],
+                [
+                  0.18,
+                  0.26
+                ]
+              ]
+            },
+            {
+              "name": "rear integrated collar",
+              "role": "collar",
+              "material": "gold_reptile",
+              "points": [
+                [
+                  0.36,
+                  0.025
+                ],
+                [
+                  0.64,
+                  0.025
+                ],
+                [
+                  0.66,
+                  0.13
+                ],
+                [
+                  0.58,
+                  0.18
+                ],
+                [
+                  0.42,
+                  0.18
+                ],
+                [
+                  0.34,
+                  0.13
+                ]
+              ]
+            },
+            {
+              "name": "black velvet rear bodice",
+              "role": "back_insert",
+              "material": "black_velvet",
+              "points": [
+                [
+                  0.37,
+                  0.23
+                ],
+                [
+                  0.63,
+                  0.23
+                ],
+                [
+                  0.6,
+                  0.63
+                ],
+                [
+                  0.55,
+                  0.7
+                ],
+                [
+                  0.45,
+                  0.7
+                ],
+                [
+                  0.4,
+                  0.63
+                ]
+              ]
+            },
+            {
+              "name": "left gloss leather skirt insert",
+              "role": "side_insert",
+              "material": "gloss_black_leather",
+              "points": [
+                [
+                  0.12,
+                  0.53
+                ],
+                [
+                  0.27,
+                  0.49
+                ],
+                [
+                  0.3,
+                  0.95
+                ],
+                [
+                  0.15,
+                  0.96
+                ],
+                [
+                  0.08,
+                  0.77
+                ]
+              ]
+            },
+            {
+              "name": "right gloss leather skirt insert",
+              "role": "side_insert",
+              "material": "gloss_black_leather",
+              "points": [
+                [
+                  0.88,
+                  0.53
+                ],
+                [
+                  0.73,
+                  0.49
+                ],
+                [
+                  0.7,
+                  0.95
+                ],
+                [
+                  0.85,
+                  0.96
+                ],
+                [
+                  0.92,
+                  0.77
+                ]
+              ]
+            },
+            {
+              "name": "rear split velvet skirt",
+              "role": "skirt",
+              "material": "black_velvet",
+              "points": [
+                [
+                  0.36,
+                  0.62
+                ],
+                [
+                  0.64,
+                  0.62
+                ],
+                [
+                  0.66,
+                  0.96
+                ],
+                [
+                  0.53,
+                  0.98
+                ],
+                [
+                  0.5,
+                  0.78
+                ],
+                [
+                  0.47,
+                  0.98
+                ],
+                [
+                  0.34,
+                  0.96
+                ]
+              ]
+            }
+          ],
+          "seams": [
+            {
+              "points": [
+                [
+                  0.21,
+                  0.3
+                ],
+                [
+                  0.2,
+                  0.6
+                ],
+                [
+                  0.18,
+                  0.93
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.04,
+              "highlight": [
+                78,
+                68,
+                58
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.79,
+                  0.3
+                ],
+                [
+                  0.8,
+                  0.6
+                ],
+                [
+                  0.82,
+                  0.93
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.04,
+              "highlight": [
+                78,
+                68,
+                58
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.37,
+                  0.28
+                ],
+                [
+                  0.4,
+                  0.52
+                ],
+                [
+                  0.45,
+                  0.69
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.034,
+              "highlight": [
+                105,
+                84,
+                57
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.63,
+                  0.28
+                ],
+                [
+                  0.6,
+                  0.52
+                ],
+                [
+                  0.55,
+                  0.69
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.034,
+              "highlight": [
+                105,
+                84,
+                57
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.5,
+                  0.7
+                ],
+                [
+                  0.5,
+                  0.96
+                ]
+              ],
+              "stitch": false,
+              "highlight": [
+                66,
+                55,
+                43
+              ]
+            }
+          ],
+          "closures": [
+            {
+              "type": "zipper",
+              "from": [
+                0.5,
+                0.24
+              ],
+              "to": [
+                0.5,
+                0.59
+              ],
+              "teeth": 9
+            },
+            {
+              "type": "belt",
+              "from": [
+                0.34,
+                0.61
+              ],
+              "to": [
+                0.66,
+                0.61
+              ],
+              "width": 0.014
+            }
+          ],
+          "wear": {
+            "seed": 42,
+            "count": 3,
+            "x_range": [
+              0.12,
+              0.88
+            ],
+            "y_range": [
+              0.24,
+              0.92
+            ],
+            "highlight": [
+              142,
+              120,
+              78
+            ]
+          }
+        },
+        "east": {
+          "folds": [
+            {
+              "points": [
+                [
+                  0.3,
+                  0.28
+                ],
+                [
+                  0.25,
+                  0.62
+                ],
+                [
+                  0.29,
+                  0.94
+                ]
+              ],
+              "width": 0.019,
+              "strength": 0.68
+            },
+            {
+              "points": [
+                [
+                  0.68,
+                  0.32
+                ],
+                [
+                  0.73,
+                  0.63
+                ],
+                [
+                  0.69,
+                  0.93
+                ]
+              ],
+              "width": 0.016,
+              "strength": 0.48
+            }
+          ],
+          "pieces": [
+            {
+              "name": "side queen reptile half jacket",
+              "role": "tunic_overlay",
+              "material": "gold_reptile",
+              "points": [
+                [
+                  0.19,
+                  0.08
+                ],
+                [
+                  0.47,
+                  0.025
+                ],
+                [
+                  0.73,
+                  0.1
+                ],
+                [
+                  0.76,
+                  0.26
+                ],
+                [
+                  0.58,
+                  0.35
+                ],
+                [
+                  0.28,
+                  0.31
+                ]
+              ]
+            },
+            {
+              "name": "side black velvet sleeve",
+              "role": "sleeve_overlay",
+              "material": "black_velvet",
+              "points": [
+                [
+                  0.12,
+                  0.12
+                ],
+                [
+                  0.27,
+                  0.08
+                ],
+                [
+                  0.38,
+                  0.19
+                ],
+                [
+                  0.34,
+                  0.49
+                ],
+                [
+                  0.2,
+                  0.52
+                ],
+                [
+                  0.1,
+                  0.38
+                ]
+              ]
+            },
+            {
+              "name": "side gold stretch underlayer",
+              "role": "bib",
+              "material": "gold_spandex",
+              "points": [
+                [
+                  0.43,
+                  0.08
+                ],
+                [
+                  0.62,
+                  0.09
+                ],
+                [
+                  0.64,
+                  0.44
+                ],
+                [
+                  0.57,
+                  0.53
+                ],
+                [
+                  0.47,
+                  0.49
+                ]
+              ]
+            },
+            {
+              "name": "side structured corset",
+              "role": "corset",
+              "material": "corset_brocade",
+              "points": [
+                [
+                  0.35,
+                  0.19
+                ],
+                [
+                  0.66,
+                  0.18
+                ],
+                [
+                  0.69,
+                  0.51
+                ],
+                [
+                  0.59,
+                  0.66
+                ],
+                [
+                  0.41,
+                  0.62
+                ]
+              ]
+            },
+            {
+              "name": "side high queen collar",
+              "role": "collar",
+              "material": "gold_reptile",
+              "points": [
+                [
+                  0.34,
+                  0.03
+                ],
+                [
+                  0.61,
+                  0.03
+                ],
+                [
+                  0.69,
+                  0.14
+                ],
+                [
+                  0.57,
+                  0.2
+                ],
+                [
+                  0.4,
+                  0.18
+                ]
+              ]
+            },
+            {
+              "name": "side glossy skirt insert",
+              "role": "side_insert",
+              "material": "gloss_black_leather",
+              "points": [
+                [
+                  0.25,
+                  0.54
+                ],
+                [
+                  0.42,
+                  0.5
+                ],
+                [
+                  0.47,
+                  0.94
+                ],
+                [
+                  0.29,
+                  0.97
+                ],
+                [
+                  0.17,
+                  0.78
+                ]
+              ]
+            },
+            {
+              "name": "side velvet riding skirt",
+              "role": "skirt",
+              "material": "black_velvet",
+              "points": [
+                [
+                  0.45,
+                  0.61
+                ],
+                [
+                  0.7,
+                  0.6
+                ],
+                [
+                  0.74,
+                  0.94
+                ],
+                [
+                  0.6,
+                  0.98
+                ],
+                [
+                  0.48,
+                  0.9
+                ]
+              ]
+            }
+          ],
+          "seams": [
+            {
+              "points": [
+                [
+                  0.28,
+                  0.24
+                ],
+                [
+                  0.31,
+                  0.47
+                ],
+                [
+                  0.38,
+                  0.63
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.034,
+              "highlight": [
+                111,
+                89,
+                59
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.68,
+                  0.28
+                ],
+                [
+                  0.7,
+                  0.52
+                ],
+                [
+                  0.68,
+                  0.91
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.04,
+              "highlight": [
+                76,
+                67,
+                58
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.23,
+                  0.55
+                ],
+                [
+                  0.25,
+                  0.76
+                ],
+                [
+                  0.29,
+                  0.94
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.04,
+              "highlight": [
+                75,
+                66,
+                58
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.5,
+                  0.65
+                ],
+                [
+                  0.52,
+                  0.94
+                ]
+              ],
+              "stitch": false,
+              "highlight": [
+                67,
+                55,
+                43
+              ]
+            }
+          ],
+          "closures": [
+            {
+              "type": "zipper",
+              "from": [
+                0.55,
+                0.21
+              ],
+              "to": [
+                0.58,
+                0.58
+              ],
+              "teeth": 9
+            },
+            {
+              "type": "snaps",
+              "from": [
+                0.42,
+                0.27
+              ],
+              "to": [
+                0.6,
+                0.29
+              ],
+              "count": 3,
+              "radius": 0.006
+            }
+          ],
+          "wear": {
+            "seed": 43,
+            "count": 3,
+            "x_range": [
+              0.16,
+              0.76
+            ],
+            "y_range": [
+              0.22,
+              0.91
+            ],
+            "highlight": [
+              148,
+              125,
+              81
+            ]
+          }
+        }
+      }
+    },
+    "quality": {
+      "silhouette_iou_min": 0.985,
+      "max_luminous_area_fraction": 0.002,
+      "min_local_contrast": 18,
+      "max_symmetry_score": 0.96,
+      "microdetail_scale_px": [
+        1,
+        5
+      ],
+      "render_scale": 4
+    },
+    "painting_mode": "raster_brush_v3"
+  },
+  "profile_revision": "2026-10-02-queen-costume-blueprint-v2-layered-contract-final-raster-v3-ready"
+}

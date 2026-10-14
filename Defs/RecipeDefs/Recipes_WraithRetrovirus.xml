@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_AdministerWraithRetrovirus</defName>
+    <label>administer Wraith retrovirus</label>
+    <description>Inject a Wraith with the retroviral treatment that suppresses its Iratus-derived Wraith biology. The exact same pawn is retained; this begins a humanized state that requires ongoing suppression injections.</description>
+    <workerClass>WraithNaniteGravtech.Recipe_AdministerWraithRetrovirus</workerClass>
+    <jobString>Administering Wraith retrovirus to TargetA.</jobString>
+    <researchPrerequisite>WNG_WraithRetroviralTherapy</researchPrerequisite>
+    <workAmount>900</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize>
+    <skillRequirements><Medicine>8</Medicine></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_WraithRetrovirusDose</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_WraithRetrovirusDose</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_AdministerWraithSuppression</defName>
+    <label>administer Wraith suppression injection</label>
+    <description>Give a retrovirally humanized Wraith its maintenance suppression injection. The dose refreshes the current suppression window rather than stacking multiple days of protection.</description>
+    <workerClass>WraithNaniteGravtech.Recipe_AdministerWraithSuppression</workerClass>
+    <jobString>Administering Wraith suppression injection to TargetA.</jobString>
+    <researchPrerequisite>WNG_WraithRetroviralTherapy</researchPrerequisite>
+    <workAmount>450</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize>
+    <skillRequirements><Medicine>5</Medicine></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_WraithSuppressionDose</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_WraithSuppressionDose</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>WNG_PrecursorCollective</defName>
+    <label>hostile human-form collective</label>
+    <fixedName>The Lattice Collective</fixedName>
+    <description>A hostile society of human-form synthetic beings built from self-organising nanite systems and inherited precursor technology.</description>
+    <basicMemberKind>WNG_HumanFormReplicator</basicMemberKind>
+    <pawnSingular>human-form replicator</pawnSingular>
+    <pawnsPlural>human-form replicators</pawnsPlural>
+    <leaderTitle>coordinator</leaderTitle>
+    <fixedLeaderKinds><li>WNG_PrecursorCommander</li></fixedLeaderKinds>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>124</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <settlementGenerationWeight>0.35</settlementGenerationWeight>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <techLevel>Spacer</techLevel>
+    <humanlikeFaction>true</humanlikeFaction>
+    <permanentEnemy>true</permanentEnemy>
+    <earliestRaidDays>12</earliestRaidDays>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <autoFlee>false</autoFlee>
+    <rescueesCanJoin>false</rescueesCanJoin>
+    <backstoryCategories><li>Outlander</li><li>Offworld</li></backstoryCategories>
+    <allowedArrivalTemperatureRange>-80~80</allowedArrivalTemperatureRange>
+    <colorSpectrum><li>(0.72,0.78,0.82)</li><li>(0.38,0.60,0.68)</li></colorSpectrum>
+    <xenotypeSet><xenotypeChances><WNG_NanitePrecursor>999</WNG_NanitePrecursor></xenotypeChances></xenotypeSet>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0,0.065)</li>
+        <li>(1200,0.085)</li>
+        <li>(3000,0.095)</li>
+        <li>(100000,0.10)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve><points><li>(0,110)</li><li>(500,220)</li><li>(1800,300)</li><li>(100000,10000)</li></points></maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef><commonality>100</commonality>
+        <options><WNG_HumanFormReplicator>16</WNG_HumanFormReplicator><WNG_PrecursorSoldier>4</WNG_PrecursorSoldier><WNG_PrecursorCommander>1.5</WNG_PrecursorCommander></options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><WNG_HumanFormReplicator>10</WNG_HumanFormReplicator><WNG_PrecursorEngineer>4</WNG_PrecursorEngineer><WNG_PrecursorCommander>2</WNG_PrecursorCommander></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>WNG_HumanFormEnclave</defName>
+    <label>human-form enclave</label>
+    <fixedName>The Quiet Lattice</fixedName>
+    <description>A non-hostile human-form Replicator enclave that has chosen controlled replication and negotiated coexistence over unrestricted expansion.</description>
+    <basicMemberKind>WNG_HumanFormReplicator</basicMemberKind>
+    <pawnSingular>human-form replicator</pawnSingular>
+    <pawnsPlural>human-form replicators</pawnsPlural>
+    <leaderTitle>coordinator</leaderTitle>
+    <fixedLeaderKinds><li>WNG_PrecursorCommander</li></fixedLeaderKinds>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>125</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <settlementGenerationWeight>0.22</settlementGenerationWeight>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <techLevel>Spacer</techLevel>
+    <humanlikeFaction>true</humanlikeFaction>
+    <permanentEnemy>false</permanentEnemy>
+    <earliestRaidDays>14</earliestRaidDays>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <autoFlee>true</autoFlee>
+    <rescueesCanJoin>true</rescueesCanJoin>
+    <caravanTraderKinds><li>WNG_AsuranArtifactExchange</li></caravanTraderKinds>
+    <visitorTraderKinds><li>WNG_AsuranArtifactExchange</li></visitorTraderKinds>
+    <baseTraderKinds><li>WNG_AsuranArtifactExchange</li></baseTraderKinds>
+    <backstoryCategories><li>Outlander</li><li>Offworld</li></backstoryCategories>
+    <allowedArrivalTemperatureRange>-80~80</allowedArrivalTemperatureRange>
+    <xenotypeSet><xenotypeChances><WNG_NanitePrecursor>999</WNG_NanitePrecursor></xenotypeChances></xenotypeSet>
+    <raidCommonalityFromPointsCurve><points><li>(0,0.02)</li><li>(1800,0.03)</li><li>(100000,0.035)</li></points></raidCommonalityFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve><points><li>(0,110)</li><li>(500,220)</li><li>(1800,300)</li><li>(100000,10000)</li></points></maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef><commonality>100</commonality>
+        <options><WNG_HumanFormReplicator>12</WNG_HumanFormReplicator><WNG_PrecursorSoldier>4</WNG_PrecursorSoldier><WNG_PrecursorEngineer>1</WNG_PrecursorEngineer></options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef><commonality>80</commonality>
+        <options><WNG_HumanFormReplicator>8</WNG_HumanFormReplicator><WNG_PrecursorEngineer>4</WNG_PrecursorEngineer></options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><WNG_HumanFormReplicator>9</WNG_HumanFormReplicator><WNG_PrecursorEngineer>5</WNG_PrecursorEngineer><WNG_PrecursorCommander>1</WNG_PrecursorCommander></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

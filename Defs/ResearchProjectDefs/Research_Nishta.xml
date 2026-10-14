@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_NishtaBiocontrol</defName>
+    <label>Nish'ta biocontrol</label>
+    <description>Culture and contain the Goa'uld Nish'ta conditioning organism, package it into single-use dispersal canisters, and develop controlled electrical deprogramming procedures. Nish'ta is a biological coercion system rather than a recreational drug.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_GoauldBiochemicalControl</li>
+    </prerequisites>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+  </ResearchProjectDef>
+</Defs>

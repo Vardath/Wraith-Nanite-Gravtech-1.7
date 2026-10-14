@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="Wall">
+    <defName>WNG_WraithLivingWall</defName>
+    <label>wraith living wall</label>
+    <description>A dense ribbed barrier of cultivated tissue and chitin. It seals rooms, supports roofs like an ordinary wall, and slowly regenerates damage while alive.</description>
+    <graphicData><texPath>Things/Building/Wraith/Structure/WNG_LivingWall_Atlas</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1,1)</drawSize><linkType>CornerFiller</linkType><linkFlags Inherit="False"><li>Wall</li><li>Rock</li></linkFlags></graphicData>
+    <uiIconPath>UI/WNG/Build/WNG_WraithLivingWall</uiIconPath>
+    <stuffCategories Inherit="False"/><costStuffCount>0</costStuffCount><useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <costList><WNG_Biomass>5</WNG_Biomass></costList>
+    <statBases><MaxHitPoints>420</MaxHitPoints><WorkToBuild>180</WorkToBuild><Flammability>0.25</Flammability><Beauty>2</Beauty></statBases>
+    <designationCategory>Structure</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <tickerType>Rare</tickerType>
+    <comps><li Class="WraithNaniteGravtech.CompProperties_WraithLivingStructureRegeneration"><repairIntervalTicks>500</repairIntervalTicks><hitPointsPerPulse>1</hitPointsPerPulse></li></comps>
+    <building><isAirtight>true</isAirtight><isStuffableAirtight>false</isStuffableAirtight></building>
+  </ThingDef>
+
+  <ThingDef ParentName="DoorBase">
+    <defName>WNG_WraithMembraneDoor</defName>
+    <label>wraith membrane door</label>
+    <description>A muscular living partition that contracts aside for authorised passage, seals itself afterwards, and slowly regenerates damage while alive.</description>
+    <rotatable>false</rotatable>
+    <graphicData><texPath>Things/Building/Wraith/Structure/WNG_MembraneDoor_Mover</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.15,1.15)</drawSize><damageData><enabled>false</enabled></damageData><linkFlags><li>Wall</li><li>Rock</li></linkFlags></graphicData>
+    <stuffCategories Inherit="False"/><costStuffCount>0</costStuffCount><useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <costList><WNG_Biomass>18</WNG_Biomass></costList>
+    <statBases><MaxHitPoints>260</MaxHitPoints><WorkToBuild>950</WorkToBuild><Flammability>0.25</Flammability></statBases>
+    <designationCategory>Structure</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
+    </placeWorkers>
+    <comps><li Class="WraithNaniteGravtech.CompProperties_WraithLivingStructureRegeneration"><repairIntervalTicks>500</repairIntervalTicks><hitPointsPerPulse>1</hitPointsPerPulse></li></comps>
+    <building>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <blueprintClass>Blueprint_Door</blueprintClass>
+      <paintable>false</paintable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureBase">
+    <defName>WNG_WraithNutrientNiche</defName>
+    <label>living nutrient niche</label>
+    <description>A shallow grown alcove and work surface for biomass, tools and harvested organic materials within a Wraith settlement.</description>
+    <graphicData><texPath>Things/Building/Wraith/Storage/WNG_NutrientNiche</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MaxHitPoints>210</MaxHitPoints><WorkToBuild>550</WorkToBuild><Beauty>1</Beauty><Mass>7</Mass><Flammability>0.25</Flammability></statBases>
+    <costList><WNG_Biomass>12</WNG_Biomass></costList><surfaceType>Item</surfaceType>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_BioelectricOrgan</defName>
+    <label>wraith bioelectric organ</label>
+    <description>A cultivated organ that metabolises cultured Wraith biomass and converts it into electricity for an ordinary colony power network.</description>
+    <thingClass>Building</thingClass><drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData><texPath>Things/Building/Wraith/Power/WNG_BioelectricOrgan</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2,2)</drawSize></graphicData>
+    <passability>PassThroughOnly</passability><fillPercent>0.9</fillPercent><tickerType>Normal</tickerType><size>(2,2)</size>
+    <costList><WNG_Biomass>65</WNG_Biomass></costList>
+    <statBases><MaxHitPoints>420</MaxHitPoints><WorkToBuild>3200</WorkToBuild><Flammability>0.35</Flammability><Beauty>-4</Beauty></statBases>
+    <comps>
+      <li Class="CompProperties_Power"><compClass>CompPowerPlant</compClass><basePowerConsumption>-1400</basePowerConsumption><transmitsPower>true</transmitsPower></li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable"><fuelConsumptionRate>18</fuelConsumptionRate><fuelCapacity>60</fuelCapacity><fuelFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fuelFilter><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel></li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded><designationCategory>Power</designationCategory>
+    <researchPrerequisites><li>WNG_BioelectricOrgans</li></researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_LivingPowerCell</defName>
+    <label>wraith living power cell</label>
+    <description>A layered electrochemical organ grown to store electricity on an ordinary colony power network.</description>
+    <drawerType>MapMeshAndRealTime</drawerType><thingClass>Building_Battery</thingClass>
+    <graphicData><texPath>Things/Building/Wraith/Power/WNG_LivingPowerCell</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(1,2)</drawSize></graphicData>
+    <passability>PassThroughOnly</passability><tickerType>Normal</tickerType><minifiedDef>MinifiedThing</minifiedDef><thingCategories><li>BuildingsPower</li></thingCategories>
+    <statBases><MaxHitPoints>260</MaxHitPoints><WorkToBuild>1800</WorkToBuild><Mass>18</Mass><Flammability>0.25</Flammability><Beauty>-2</Beauty></statBases>
+    <size>(1,2)</size><costList><WNG_Biomass>40</WNG_Biomass><ComponentIndustrial>1</ComponentIndustrial></costList>
+    <comps><li Class="CompProperties_Battery"><storedEnergyMax>750</storedEnergyMax><efficiency>0.7</efficiency><shortCircuitInRain>false</shortCircuitInRain><transmitsPower>true</transmitsPower></li></comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded><designationCategory>Power</designationCategory>
+    <researchPrerequisites><li>WNG_BioelectricOrgans</li></researchPrerequisites>
+  </ThingDef>
+</Defs>

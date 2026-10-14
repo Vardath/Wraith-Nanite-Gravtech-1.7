@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>WNG_RawWraithEnzyme</defName>
+    <label>raw Wraith enzyme</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>A concentrated extract of the biochemical enzyme Wraith bodies use to sustain extreme physical performance and keep feeding victims alive. In non-Wraith physiology it produces a violent surge of strength, speed, consciousness and tissue repair. The effect is extraordinarily habit-forming, and dependence can become medically dangerous.</description>
+    <descriptionHyperlinks>
+      <HediffDef>WNG_WraithEnzymeHigh</HediffDef>
+      <HediffDef>WNG_WraithEnzymeAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Resource/WNG_WraithBiofluidFuel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>95</MarketValue>
+      <Mass>0.08</Mass>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker IsNull="True" />
+    <ingestible>
+      <joyKind>Chemical</joyKind>
+      <joy>0.30</joy>
+      <drugCategory>Hard</drugCategory>
+      <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>80</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <chairSearchRadius>0</chairSearchRadius>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_WraithEnzymeHigh</hediffDef>
+          <severity>0.5</severity>
+          <toleranceChemical>WNG_WraithEnzyme</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.30</offset>
+          <toleranceChemical>WNG_WraithEnzyme</toleranceChemical>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>WNG_WraithEnzyme</chemical>
+        <addictiveness>0.12</addictiveness>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>1.0</needLevelOffset>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>250</listOrder>
+        <overdoseSeverityOffset>0.22~0.40</overdoseSeverityOffset>
+        <largeOverdoseChance>0.02</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ChemicalDef>
+    <defName>WNG_WraithEnzyme</defName>
+    <label>Wraith enzyme</label>
+    <addictionHediff>WNG_WraithEnzymeAddiction</addictionHediff>
+    <toleranceHediff>WNG_WraithEnzymeTolerance</toleranceHediff>
+    <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+    <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+  </ChemicalDef>
+
+  <HediffDef>
+    <defName>WNG_WraithEnzymeHigh</defName>
+    <label>Wraith enzyme surge</label>
+    <labelNoun>a Wraith enzyme surge</labelNoun>
+    <description>Raw Wraith enzyme is forcing the body into an unsustainably enhanced state. Pain is suppressed, physical output and awareness are amplified, and damaged tissue repairs at abnormal speed.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.15</painFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.30</offset></li>
+          <li><capacity>Moving</capacity><offset>0.45</offset></li>
+          <li><capacity>Manipulation</capacity><offset>0.20</offset></li>
+          <li><capacity>Sight</capacity><offset>0.20</offset></li>
+        </capMods>
+        <statFactors>
+          <MeleeDamageFactor>1.45</MeleeDamageFactor>
+          <InjuryHealingFactor>2.5</InjuryHealingFactor>
+          <ImmunityGainSpeed>1.35</ImmunityGainSpeed>
+        </statFactors>
+        <mentalStateGivers>
+          <li><mentalState>Berserk</mentalState><mtbDays>6</mtbDays></li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>WNG_WraithEnzymeHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>WNG_WraithEnzymeHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>surging on Wraith enzyme</label>
+        <description>Everything feels immediate. Pain barely matters, my body responds before I think, and I feel almost impossible to stop.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Chemical_WNG_WraithEnzyme</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>Wraith enzyme</label>
+    <description>Because of Wraith enzyme dependence, this person needs repeated doses to prevent severe physiological withdrawal.</description>
+    <fallPerDay>0.50</fallPerDay>
+    <listPriority>55</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="AddictionBase">
+    <defName>WNG_WraithEnzymeAddiction</defName>
+    <label>Wraith enzyme addiction</label>
+    <description>Repeated Wraith enzyme exposure has forced the body to adapt around a biochemical state it cannot safely maintain on its own. Withdrawal causes profound weakness, pain, cognitive impairment and dangerous behavioral instability.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <chemicalNeed>Chemical_WNG_WraithEnzyme</chemicalNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.02</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li />
+      <li>
+        <label>severe enzyme withdrawal</label>
+        <painFactor>3.5</painFactor>
+        <socialFightChanceFactor>2.5</socialFightChanceFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.35</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.30</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.30</offset></li>
+        </capMods>
+        <mentalStateGivers>
+          <li><mentalState>Binging_DrugExtreme</mentalState><mtbDays>20</mtbDays></li>
+          <li><mentalState>Wander_Psychotic</mentalState><mtbDays>12</mtbDays></li>
+          <li><mentalState>Berserk</mentalState><mtbDays>30</mtbDays></li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>WNG_WraithEnzymeWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>WNG_WraithEnzymeAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li><visible>false</visible></li>
+      <li>
+        <label>Wraith enzyme withdrawal</label>
+        <description>My whole body feels like it is failing. Everything hurts, I can barely move, and I cannot stop thinking about another dose.</description>
+        <baseMoodEffect>-28</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>WNG_WraithEnzymeTolerance</defName>
+    <label>Wraith enzyme tolerance</label>
+    <description>A growing tolerance to Wraith enzyme. Increasing doses are required to force the same abnormal physical response, greatly increasing overdose and long-term damage risk.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay"><severityPerDay>-0.01</severityPerDay></li>
+      <li Class="HediffCompProperties_DrugEffectFactor"><chemical>WNG_WraithEnzyme</chemical></li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageSevere</hediff>
+        <severityToMtbDaysCurve>
+          <points>
+            <li>(0.35, 99999)</li>
+            <li>(0.5, 90)</li>
+            <li>(1, 45)</li>
+          </points>
+        </severityToMtbDaysCurve>
+        <partsToAffect><li>Brain</li></partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+</Defs>

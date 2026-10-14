@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>WNG_ReplicatorAssimilate</defName>
+    <driverClass>WraithNaniteGravtech.JobDriver_ReplicatorAssimilate</driverClass>
+    <reportString>breaking down TargetA for replication.</reportString>
+    <overrideFlyChance>1</overrideFlyChance>
+    <tryStartFlying>true</tryStartFlying>
+  </JobDef>
+  <JobDef>
+    <defName>WNG_ReplicatorAssimilateCell</defName>
+    <driverClass>WraithNaniteGravtech.JobDriver_ReplicatorAssimilateCell</driverClass>
+    <reportString>stripping TargetA for replication.</reportString>
+    <overrideFlyChance>1</overrideFlyChance>
+    <tryStartFlying>true</tryStartFlying>
+  </JobDef>
+  <JobDef>
+    <defName>WNG_ReplicatorAssimilateBiological</defName>
+    <driverClass>WraithNaniteGravtech.JobDriver_ReplicatorAssimilateBiological</driverClass>
+    <reportString>converting TargetA into replicator mass.</reportString>
+    <overrideFlyChance>1</overrideFlyChance>
+    <tryStartFlying>true</tryStartFlying>
+  </JobDef>
+  <JobDef>
+    <defName>WNG_ReplicatorRepairAlly</defName>
+    <driverClass>WraithNaniteGravtech.JobDriver_ReplicatorRepairAlly</driverClass>
+    <reportString>rebuilding damaged Replicator TargetA.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>WNG_ChildsToyReplicate</defName>
+    <driverClass>WraithNaniteGravtech.JobDriver_ChildsToyReplicate</driverClass>
+    <reportString>converting TargetA into Child's Toy material.</reportString>
+  </JobDef>
+</Defs>

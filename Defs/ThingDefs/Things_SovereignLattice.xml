@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_ReplicatorCoreFragment</defName>
+    <label>replicator core fragment</label>
+    <thingCategories Inherit="False"><li>Manufactured</li></thingCategories>
+    <description>A fractured but reusable Replicator command-lattice fragment sometimes recovered when a stronger block-form Replicator is genuinely destroyed. The surviving control architecture is a required substrate for Sovereign Neural Lattice fabrication.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Replicator/WNG_ReplicatorCoreFragment</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>25</stackLimit>
+    <alwaysHaulable>true</alwaysHaulable>
+    <statBases>
+      <MarketValue>90</MarketValue>
+      <Mass>0.35</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WNG_SovereignNeuralLattice</defName>
+    <label>sovereign neural lattice</label>
+    <description>A physical neural controller lattice built around a mechlink handshake, Replicator Blocks and a recovered Replicator core fragment. It grants bounded multi-unit block-Replicator authority without making its bearer a Replicator Queen.</description>
+    <thingCategories><li>BodyPartsBionic</li></thingCategories>
+    <stackLimit>1</stackLimit>
+    <recipeMaker IsNull="True" />
+    <graphicData>
+      <texPath>Things/Item/Implant/WNG_SovereignNeuralLattice</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>4200</MarketValue>
+      <Mass>0.14</Mass>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BenchBase">
+    <defName>WNG_PrecursorFabricator</defName>
+    <label>Asuran fabricator</label>
+    <description>A compact high-precision fabrication platform reconstructed from Asuran nanite-manufacturing principles. It fabricates recovered Asuran and Ancient-derived devices once their specific research and archaeological requirements are satisfied.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Precursor/Production/WNG_PrecursorFabricator</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(3,2)</size>
+    <tickerType>Normal</tickerType>
+    <designationCategory>Production</designationCategory>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <WorkToBuild>9000</WorkToBuild>
+      <MaxHitPoints>450</MaxHitPoints>
+      <Beauty>6</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <inspectorTabs><li>ITab_Bills</li></inspectorTabs>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranArchiveRepair"><repairIntervalTicks>900</repairIntervalTicks><healPerPulse>3</healPerPulse><archiveRadius>45</archiveRadius></li>
+    </comps>
+    <building><spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity></building>
+  </ThingDef>
+</Defs>

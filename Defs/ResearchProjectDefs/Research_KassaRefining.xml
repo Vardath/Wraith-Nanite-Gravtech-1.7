@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_KassaRefining</defName>
+    <label>kassa refining</label>
+    <description>Concentrate and stabilize Kassa psycho-stimulants into high-value hard drugs. These formulations are more potent and dangerous than the raw crop and preserve the same underlying Kassa dependency, making existing consumers especially vulnerable to escalation.</description>
+    <baseCost>900</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>WNG_KassaCultivation</li>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>1.40</researchViewY>
+  </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Nish'ta remains a single-use biological aerosol. CE owns flight; WNG's projectile comp owns conditioning. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="WNG_ProjectileNishtaCanister"]/thingClass</xpath>
+    <value><thingClass>CombatExtended.ProjectileCE_Explosive</thingClass></value>
+  </Operation>
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>Defs/ThingDef[defName="WNG_ProjectileNishtaCanister"]/projectile</xpath>
+    <attribute>Class</attribute>
+    <value>CombatExtended.ProjectilePropertiesCE</value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="WNG_ProjectileNishtaCanister"]</xpath>
+    <value>
+      <comps>
+        <li Class="WraithNaniteGravtech.CompProperties_NishtaExposure"/>
+      </comps>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="WNG_ProjectileNishtaCanister"]/projectile</xpath>
+    <value>
+      <suppressionFactor>0.4</suppressionFactor>
+      <dangerFactor>0.2</dangerFactor>
+      <airborneSuppressionFactor>0.1</airborneSuppressionFactor>
+      <ballisticCoefficient>1.5~1.5</ballisticCoefficient>
+      <mass>800~800</mass>
+      <diameter>65~65</diameter>
+    </value>
+  </Operation>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_NishtaCanister</defName>
+    <statBases>
+      <Mass>0.8</Mass>
+      <Bulk>1.2</Bulk>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+      <SightsEfficiency>1</SightsEfficiency>
+    </statBases>
+    <Properties>
+      <label>throw Nish'ta canister</label>
+      <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <range>12.9</range>
+      <warmupTime>1.5</warmupTime>
+      <noiseRadius>3</noiseRadius>
+      <soundCast>ThrowGrenade</soundCast>
+      <targetParams><canTargetLocations>true</canTargetLocations></targetParams>
+      <defaultProjectile>WNG_ProjectileNishtaCanister</defaultProjectile>
+      <onlyManualCast>true</onlyManualCast>
+      <ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+      <ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius>
+    </Properties>
+    <weaponTags><li>CE_AI_AOE</li><li>CE_AI_Grenade</li><li>CE_OneHandedWeapon</li></weaponTags>
+  </Operation>
+
+  <!-- The Ha'tak battery exists only with ONAC. Keep its CE conversion equally optional. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>ONAC</li></mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+          <defName>WNG_Gun_GoauldHeavyPlasmaCannon</defName>
+          <statBases>
+            <Mass>45</Mass>
+            <RangedWeapon_Cooldown>3.8</RangedWeapon_Cooldown>
+            <SightsEfficiency>1.4</SightsEfficiency>
+            <ShotSpread>0.04</ShotSpread>
+            <SwayFactor>0.25</SwayFactor>
+          </statBases>
+          <Properties>
+            <recoilAmount>1.8</recoilAmount>
+            <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>WNG_CE_Projectile_GoauldHeavyPlasma</defaultProjectile>
+            <warmupTime>0</warmupTime>
+            <range>45.9</range>
+            <minRange>6</minRange>
+            <burstShotCount>3</burstShotCount>
+            <ticksBetweenBurstShots>16</ticksBetweenBurstShots>
+            <soundCast>ChargeLance_Fire</soundCast>
+            <muzzleFlashScale>12</muzzleFlashScale>
+            <recoilPattern>Mounted</recoilPattern>
+          </Properties>
+          <FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="WNG_GoauldHeavyPlasmaBattery"]/thingClass</xpath>
+          <value><thingClass>CombatExtended.Building_TurretGunCE</thingClass></value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

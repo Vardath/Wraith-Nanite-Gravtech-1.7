@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Retained caste-distinct equipment. These Defs restore role identity now while
+    deliberately reusing the current accepted base visuals until professional replacements land.
+    Their gameplay balance tracks the current equipment they previously substituted for.
+  -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_WraithKeeperMantle</defName>
+    <recipeMaker IsNull="True" />
+    <label>wraith keeper mantle</label>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <description>A senior Keeper's living shell: command-grade carapace grown into a mantle suited to caretakers of dormant Hive populations and long-duration biological systems. The current Commander-carapace visual is temporary pending the professional Keeper art replacement.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_CommanderCarapace</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>320</MaxHitPoints><WorkToMake>36000</WorkToMake><Mass>10</Mass><EquipDelay>4</EquipDelay>
+      <ArmorRating_Sharp>1.45</ArmorRating_Sharp><ArmorRating_Blunt>0.65</ArmorRating_Blunt><ArmorRating_Heat>0.78</ArmorRating_Heat><Beauty>3</Beauty>
+    </statBases>
+    <costList><WNG_Biomass>65</WNG_Biomass><ComponentIndustrial>2</ComponentIndustrial></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <layers><li>Shell</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_CommanderCarapace</wornGraphicPath>
+      <tags><li>WraithArmor</li><li>WraithKeeperArmor</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+    </apparel>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>5</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_PrecursorCommandArmor</defName>
+    <recipeMaker IsNull="True" />
+    <label>precursor command armor</label>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <description>A command-grade precursor armor shell used by senior coordinators and Ancient-technology specialists. Gold command tracery overlays the pale field plates while a reinforced luminous core manages suit power and battlefield telemetry.</description>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_PrecursorCommandArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints><WorkToMake>60000</WorkToMake><Mass>9</Mass><EquipDelay>3.5</EquipDelay><MarketValue>1850</MarketValue>
+      <ArmorRating_Sharp>1.72</ArmorRating_Sharp><ArmorRating_Blunt>0.82</ArmorRating_Blunt><ArmorRating_Heat>1.05</ArmorRating_Heat>
+    </statBases>
+    <costList><Plasteel>70</Plasteel><ComponentSpacer>3</ComponentSpacer></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <layers><li>Shell</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_PrecursorCommandArmor</wornGraphicPath>
+      <tags><li>WNG_PrecursorArmor</li><li>WNG_PrecursorCommandArmor</li></tags>
+      <defaultOutfitTags><li>Worker</li><li>Soldier</li><li>Spacefarer</li></defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+</Defs>

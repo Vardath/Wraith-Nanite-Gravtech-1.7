@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Explicit WNG item crafting recipes.
+    These replace ThingDef.recipeMaker-generated recipes so WNG does not participate in
+    RimWorld's global generated make-recipe pass. Recipe users are declared explicitly:
+    historically intended vanilla workbenches are restored without clearing or replacing
+    vanilla or third-party bill lists, while specialist alien fabrication remains WNG-owned.
+  -->
+  <RecipeDef>
+    <defName>WNG_Make_WraithHunterCoat</defName>
+    <label>make wraith hunter coat</label>
+    <description>Manufacture wraith hunter coat using WNG's dedicated production chain.</description>
+    <jobString>Making wraith hunter coat.</jobString>
+    <workAmount>14000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_BiologicalCultivation</researchPrerequisite>
+    <skillRequirements><Crafting>4</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>24</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithHunterCoat>1</WNG_WraithHunterCoat></products>
+    <recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithWarriorCarapace</defName>
+    <label>make wraith warrior carapace</label>
+    <description>Manufacture wraith warrior carapace using WNG's dedicated production chain.</description>
+    <jobString>Making wraith warrior carapace.</jobString>
+    <workAmount>24000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_AdvancedCarapace</researchPrerequisite>
+    <skillRequirements><Crafting>6</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>45</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithWarriorCarapace>1</WNG_WraithWarriorCarapace></products>
+    <recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithCommanderCarapace</defName>
+    <label>make wraith commander carapace</label>
+    <description>Manufacture wraith commander carapace using WNG's dedicated production chain.</description>
+    <jobString>Making wraith commander carapace.</jobString>
+    <workAmount>36000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_AdvancedCarapace</researchPrerequisite>
+    <skillRequirements><Crafting>8</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>65</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithCommanderCarapace>1</WNG_WraithCommanderCarapace></products>
+    <recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithQueenRaiment</defName>
+    <label>make wraith queen raiment</label>
+    <description>Manufacture wraith queen raiment using WNG's dedicated production chain.</description>
+    <jobString>Making wraith queen raiment.</jobString>
+    <workAmount>26000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_AdvancedCarapace</researchPrerequisite>
+    <skillRequirements><Crafting>7</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>38</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithQueenRaiment>1</WNG_WraithQueenRaiment></products>
+    <recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_HumanFormCombatArmor</defName>
+    <label>make human-form replicator combat armor</label>
+    <description>Manufacture human-form replicator combat armor using WNG's dedicated production chain.</description>
+    <jobString>Making human-form replicator combat armor.</jobString>
+    <workAmount>52000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>8</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>80</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>3</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>ComponentSpacer</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_HumanFormCombatArmor>1</WNG_HumanFormCombatArmor></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_HumanFormUniform</defName>
+    <label>make human-form replicator uniform</label>
+    <description>Manufacture human-form replicator uniform using WNG's dedicated production chain.</description>
+    <jobString>Making human-form replicator uniform.</jobString>
+    <workAmount>18000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>5</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Synthread</li></thingDefs></filter><count>45</count></li>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>10</count></li>
+      <li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>8</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Synthread</li><li>Plasteel</li><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_HumanFormUniform>1</WNG_HumanFormUniform></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_AsuranPhaseBlade</defName>
+    <label>make Asuran phase blade</label>
+    <description>Manufacture Asuran phase blade using WNG's dedicated production chain.</description>
+    <jobString>Making Asuran phase blade.</jobString>
+    <workAmount>18000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>8</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>14</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_AsuranPhaseBlade>1</WNG_AsuranPhaseBlade></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_AsuranFieldLance</defName>
+    <label>make Asuran field lance</label>
+    <description>Manufacture Asuran field lance using WNG's dedicated production chain.</description>
+    <jobString>Making Asuran field lance.</jobString>
+    <workAmount>30000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>9</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>20</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_AsuranFieldLance>1</WNG_AsuranFieldLance></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithRetrovirusDose</defName>
+    <label>make Wraith retrovirus dose</label>
+    <description>Manufacture Wraith retrovirus dose using WNG's dedicated production chain.</description>
+    <jobString>Making Wraith retrovirus dose.</jobString>
+    <workAmount>2400</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_WraithRetroviralTherapy</researchPrerequisite>
+    <skillRequirements><Intellectual>10</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_IratusGlandExtract</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>WNG_RefinedWraithEnzyme</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>6</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_IratusGlandExtract</li><li>WNG_RefinedWraithEnzyme</li><li>Neutroamine</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithRetrovirusDose>1</WNG_WraithRetrovirusDose></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1840</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithSuppressionDose</defName>
+    <label>make Wraith suppression injection</label>
+    <description>Manufacture Wraith suppression injection using WNG's dedicated production chain.</description>
+    <jobString>Making Wraith suppression injection.</jobString>
+    <workAmount>1600</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_WraithRetroviralTherapy</researchPrerequisite>
+    <skillRequirements><Intellectual>9</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_RefinedWraithEnzyme</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>4</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_RefinedWraithEnzyme</li><li>Neutroamine</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithSuppressionDose>4</WNG_WraithSuppressionDose></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1830</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WhispersAcousticNode</defName>
+    <label>make Whispers acoustic sensory node</label>
+    <description>Manufacture Whispers acoustic sensory node using WNG's dedicated production chain.</description>
+    <jobString>Making Whispers acoustic sensory node.</jobString>
+    <workAmount>3200</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_WhispersDerivedImplants</researchPrerequisite>
+    <skillRequirements>
+    <Intellectual>10</Intellectual>
+    </skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_WhispersHybridTissue</li></thingDefs></filter><count>2</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>4</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_WhispersHybridTissue</li><li>Neutroamine</li><li>ComponentSpacer</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WhispersAcousticNode>1</WNG_WhispersAcousticNode></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1910</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WhispersMistGland</defName>
+    <label>make Whispers mist gland</label>
+    <description>Manufacture Whispers mist gland using WNG's dedicated production chain.</description>
+    <jobString>Making Whispers mist gland.</jobString>
+    <workAmount>3600</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_WhispersDerivedImplants</researchPrerequisite>
+    <skillRequirements>
+    <Intellectual>10</Intellectual>
+    </skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_WhispersHybridTissue</li></thingDefs></filter><count>3</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>6</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_WhispersHybridTissue</li><li>Neutroamine</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WhispersMistGland>1</WNG_WhispersMistGland></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1900</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithKeeperMantle</defName>
+    <label>make wraith keeper mantle</label>
+    <description>Manufacture wraith keeper mantle using WNG's dedicated production chain.</description>
+    <jobString>Making wraith keeper mantle.</jobString>
+    <workAmount>36000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_AdvancedCarapace</researchPrerequisite>
+    <skillRequirements><Crafting>8</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>65</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithKeeperMantle>1</WNG_WraithKeeperMantle></products>
+    <recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_PrecursorCommandArmor</defName>
+    <label>make precursor command armor</label>
+    <description>Manufacture precursor command armor using WNG's dedicated production chain.</description>
+    <jobString>Making precursor command armor.</jobString>
+    <workAmount>60000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>8</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>70</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>3</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>ComponentSpacer</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_PrecursorCommandArmor>1</WNG_PrecursorCommandArmor></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_HybridStabiliserDose</defName>
+    <label>make hybrid stabiliser dose</label>
+    <description>Manufacture hybrid stabiliser dose using WNG's dedicated production chain.</description>
+    <jobString>Making hybrid stabiliser dose.</jobString>
+    <workAmount>2600</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_HybridStabilisation</researchPrerequisite>
+    <skillRequirements><Intellectual>11</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_WhispersHybridTissue</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>WNG_IratusGlandExtract</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>WNG_RefinedWraithEnzyme</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>4</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_WhispersHybridTissue</li><li>WNG_IratusGlandExtract</li><li>WNG_RefinedWraithEnzyme</li><li>Neutroamine</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_HybridStabiliserDose>1</WNG_HybridStabiliserDose></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1820</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithBoneBlade</defName>
+    <label>make living boneblade</label>
+    <description>Manufacture living boneblade using WNG's dedicated production chain.</description>
+    <jobString>Making living boneblade.</jobString>
+    <workAmount>11000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_LivingWeapons</researchPrerequisite>
+    <skillRequirements>
+    <Crafting>5</Crafting>
+    </skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>18</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithBoneBlade>1</WNG_WraithBoneBlade></products>
+    <recipeUsers>
+    <li>WNG_LivingForge</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithWarGlaive</defName>
+    <label>make living war glaive</label>
+    <description>Manufacture living war glaive using WNG's dedicated production chain.</description>
+    <jobString>Making living war glaive.</jobString>
+    <workAmount>21000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_AdvancedCarapace</researchPrerequisite>
+    <skillRequirements>
+    <Crafting>7</Crafting>
+    </skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>36</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithWarGlaive>1</WNG_WraithWarGlaive></products>
+    <recipeUsers>
+    <li>WNG_LivingForge</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithStunStaff</defName>
+    <label>make wraith stun staff</label>
+    <description>Manufacture wraith stun staff using WNG's dedicated production chain.</description>
+    <jobString>Making wraith stun staff.</jobString>
+    <workAmount>15000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_LivingWeapons</researchPrerequisite>
+    <skillRequirements>
+    <Crafting>5</Crafting>
+    </skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>24</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithStunStaff>1</WNG_WraithStunStaff></products>
+    <recipeUsers>
+    <li>WNG_LivingForge</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithStunner</defName>
+    <label>make living stunner</label>
+    <description>Manufacture living stunner using WNG's dedicated production chain.</description>
+    <jobString>Making living stunner.</jobString>
+    <workAmount>12000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_LivingWeapons</researchPrerequisite>
+    <skillRequirements>
+    <Crafting>5</Crafting>
+    </skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>18</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithStunner>1</WNG_WraithStunner></products>
+    <recipeUsers>
+    <li>WNG_LivingForge</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithCarbine</defName>
+    <label>make living carbine</label>
+    <description>Manufacture living carbine using WNG's dedicated production chain.</description>
+    <jobString>Making living carbine.</jobString>
+    <workAmount>18000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_LivingWeapons</researchPrerequisite>
+    <skillRequirements>
+    <Crafting>6</Crafting>
+    </skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>28</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithCarbine>1</WNG_WraithCarbine></products>
+    <recipeUsers>
+    <li>WNG_LivingForge</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithHeavyBioWeapon</defName>
+    <label>make heavy bio-weapon</label>
+    <description>Manufacture heavy bio-weapon using WNG's dedicated production chain.</description>
+    <jobString>Making heavy bio-weapon.</jobString>
+    <workAmount>30000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_AdvancedCarapace</researchPrerequisite>
+    <skillRequirements>
+    <Crafting>8</Crafting>
+    </skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>55</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithHeavyBioWeapon>1</WNG_WraithHeavyBioWeapon></products>
+    <recipeUsers>
+    <li>WNG_LivingForge</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_PrecursorPulseRifle</defName>
+    <label>make precursor pulse rifle</label>
+    <description>Manufacture precursor pulse rifle using WNG's dedicated production chain.</description>
+    <jobString>Making precursor pulse rifle.</jobString>
+    <workAmount>42000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>8</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>45</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>ComponentSpacer</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_PrecursorPulseRifle>1</WNG_PrecursorPulseRifle></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_NishtaCanister</defName>
+    <label>make Nish'ta dispersal canister</label>
+    <description>Manufacture Nish'ta dispersal canister using WNG's dedicated production chain.</description>
+    <jobString>Making Nish'ta dispersal canister.</jobString>
+    <workAmount>9000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_NishtaBiocontrol</researchPrerequisite>
+    <skillRequirements><Crafting>6</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Steel</li></thingDefs></filter><count>10</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>6</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>Neutroamine</li><li>MedicineIndustrial</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_NishtaCanister>1</WNG_NishtaCanister></products>
+    <recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_HoffanSerum</defName>
+    <label>make prototype Hoffan serum</label>
+    <description>Manufacture prototype Hoffan serum using WNG's dedicated production chain.</description>
+    <jobString>Making prototype Hoffan serum.</jobString>
+    <workAmount>1500</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_HoffanCountermeasure</researchPrerequisite>
+    <skillRequirements><Intellectual>8</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_RawWraithEnzyme</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>10</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_RawWraithEnzyme</li><li>Neutroamine</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_HoffanSerum>2</WNG_HoffanSerum></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1870</displayPriority>
+  </RecipeDef>
+
+
+  <RecipeDef>
+    <defName>WNG_Make_PrecursorUniform</defName>
+    <label>make precursor uniform</label>
+    <description>Manufacture a precursor uniform using WNG's dedicated production chain.</description>
+    <jobString>Making precursor uniform.</jobString>
+    <workAmount>24000</workAmount><workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>6</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Synthread</li></thingDefs></filter><count>55</count></li>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>12</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Synthread</li><li>Plasteel</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_PrecursorUniform>1</WNG_PrecursorUniform></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_PrecursorFieldArmor</defName>
+    <label>make precursor field armor</label>
+    <description>Manufacture precursor field armor using WNG's dedicated production chain.</description>
+    <jobString>Making precursor field armor.</jobString>
+    <workAmount>60000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>8</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>70</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>3</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>ComponentSpacer</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_PrecursorFieldArmor>1</WNG_PrecursorFieldArmor></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_PrecursorPersonalShield</defName>
+    <label>make precursor personal shield</label>
+    <description>Manufacture precursor personal shield using WNG's dedicated production chain.</description>
+    <jobString>Making precursor personal shield.</jobString>
+    <workAmount>28000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorPersonalShields</researchPrerequisite>
+    <skillRequirements><Crafting>8</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>25</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>2</count></li>
+      <li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>8</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>ComponentSpacer</li><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_PrecursorPersonalShield>1</WNG_PrecursorPersonalShield></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_FeedingIndependenceVector</defName>
+    <label>make feeding-independence gene vector</label>
+    <description>Manufacture feeding-independence gene vector using WNG's dedicated production chain.</description>
+    <jobString>Making feeding-independence gene vector.</jobString>
+    <workAmount>4200</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_WraithFeedingIndependence</researchPrerequisite>
+    <skillRequirements><Intellectual>12</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_WraithRetrovirusDose</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>WNG_IratusQueenExtract</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>WNG_RefinedWraithEnzyme</li></thingDefs></filter><count>2</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>8</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_WraithRetrovirusDose</li><li>WNG_IratusQueenExtract</li><li>WNG_RefinedWraithEnzyme</li><li>Neutroamine</li><li>ComponentSpacer</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_FeedingIndependenceVector>1</WNG_FeedingIndependenceVector></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1930</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_VitalResistanceDose</defName>
+    <label>make vital resistance dose</label>
+    <description>Manufacture vital resistance dose using WNG's dedicated production chain.</description>
+    <jobString>Making vital resistance dose.</jobString>
+    <workAmount>900</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_FeedingResistance</researchPrerequisite>
+    <skillRequirements><Intellectual>6</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>5</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Neutroamine</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_VitalResistanceDose>1</WNG_VitalResistanceDose></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1810</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_IratusQueenRestorative</defName>
+    <label>make Iratus queen restorative</label>
+    <description>Manufacture Iratus queen restorative using WNG's dedicated production chain.</description>
+    <jobString>Making Iratus queen restorative.</jobString>
+    <workAmount>2200</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_IratusQueenRestoration</researchPrerequisite>
+    <skillRequirements><Intellectual>10</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_IratusQueenExtract</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>WNG_RefinedWraithEnzyme</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>4</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_IratusQueenExtract</li><li>WNG_RefinedWraithEnzyme</li><li>Neutroamine</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_IratusQueenRestorative>1</WNG_IratusQueenRestorative></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1890</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_RefinedWraithEnzyme</defName>
+    <label>make refined Wraith enzyme</label>
+    <description>Manufacture refined Wraith enzyme using WNG's dedicated production chain.</description>
+    <jobString>Making refined Wraith enzyme.</jobString>
+    <workAmount>900</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_WraithEnzymeRefinement</researchPrerequisite>
+    <skillRequirements><Intellectual>7</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_RawWraithEnzyme</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_RawWraithEnzyme</li><li>Neutroamine</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_RefinedWraithEnzyme>2</WNG_RefinedWraithEnzyme></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <displayPriority>2300</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithEnzymeWeaningSerum</defName>
+    <label>make Wraith enzyme weaning serum</label>
+    <description>Manufacture Wraith enzyme weaning serum using WNG's dedicated production chain.</description>
+    <jobString>Making Wraith enzyme weaning serum.</jobString>
+    <workAmount>1200</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_WraithEnzymeRefinement</researchPrerequisite>
+    <skillRequirements><Intellectual>8</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_RawWraithEnzyme</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>4</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_RawWraithEnzyme</li><li>Neutroamine</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithEnzymeWeaningSerum>2</WNG_WraithEnzymeWeaningSerum></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <displayPriority>2320</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_KassaConcentrate</defName>
+    <label>make kassa concentrate</label>
+    <description>Manufacture kassa concentrate using WNG's dedicated production chain.</description>
+    <jobString>Making kassa concentrate.</jobString>
+    <workAmount>320</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_KassaRefining</researchPrerequisite>
+    <skillRequirements><Intellectual>5</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Kassa</li></thingDefs></filter><count>6</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Kassa</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_KassaConcentrate>2</WNG_KassaConcentrate></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1800</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_KassaDistillate</defName>
+    <label>make kassa distillate</label>
+    <description>Manufacture kassa distillate using WNG's dedicated production chain.</description>
+    <jobString>Making kassa distillate.</jobString>
+    <workAmount>600</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_KassaRefining</researchPrerequisite>
+    <skillRequirements><Intellectual>7</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Kassa</li></thingDefs></filter><count>8</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Kassa</li><li>Neutroamine</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_KassaDistillate>2</WNG_KassaDistillate></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1810</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_Roshna</defName>
+    <label>make roshna</label>
+    <description>Manufacture roshna using WNG's dedicated production chain.</description>
+    <jobString>Making roshna.</jobString>
+    <workAmount>850</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_GoauldBiochemicalControl</researchPrerequisite>
+    <skillRequirements><Intellectual>6</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>6</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Neutroamine</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_Roshna>4</WNG_Roshna></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1850</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_IratusParalytic</defName>
+    <label>make Iratus paralytic</label>
+    <description>Manufacture Iratus paralytic using WNG's dedicated production chain.</description>
+    <jobString>Making Iratus paralytic.</jobString>
+    <workAmount>900</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_IratusPharmacology</researchPrerequisite>
+    <skillRequirements><Intellectual>6</Intellectual></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_IratusGlandExtract</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_IratusGlandExtract</li><li>Neutroamine</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_IratusParalytic>2</WNG_IratusParalytic></products>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <displayPriority>1880</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_WraithCommandArmor</defName>
+    <label>make wraith command armor</label>
+    <description>Grow a command-grade Wraith living combat shell in the dedicated Wraith production chain.</description>
+    <jobString>Growing wraith command armor.</jobString>
+    <workAmount>42000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_AdvancedCarapace</researchPrerequisite>
+    <skillRequirements><Crafting>9</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>75</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithCommandArmor>1</WNG_WraithCommandArmor></products>
+    <recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_HumanFormFieldArmor</defName>
+    <label>make human-form replicator field armour</label>
+    <description>Manufacture human-form replicator field armour using WNG's precursor fabrication chain.</description>
+    <jobString>Making human-form replicator field armour.</jobString>
+    <workAmount>36000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>7</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Synthread</li></thingDefs></filter><count>30</count></li>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>45</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>2</count></li>
+      <li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>12</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Synthread</li><li>Plasteel</li><li>ComponentSpacer</li><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_HumanFormFieldArmor>1</WNG_HumanFormFieldArmor></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_Make_HumanFormCommandArmor</defName>
+    <label>make human-form replicator command armour</label>
+    <description>Manufacture human-form replicator command armour using WNG's precursor fabrication chain.</description>
+    <jobString>Making human-form replicator command armour.</jobString>
+    <workAmount>62000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Crafting>9</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>90</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>4</count></li>
+      <li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>18</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>ComponentSpacer</li><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_HumanFormCommandArmor>1</WNG_HumanFormCommandArmor></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+</Defs>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_ReplicatorStudy</defName>
+    <label>replicator study</label>
+    <description>Study block-Replicator architecture and controller-domain behavior closely enough to reuse recovered command fragments safely.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites><li>Machining</li></prerequisites>
+    <requiredAnalyzed>
+      <li>WNG_ReplicatorMatter</li>
+    </requiredAnalyzed>
+  
+    <researchViewX>12</researchViewX><researchViewY>10.5</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WNG_NaniteAnalysis</defName>
+    <label>nanite analysis</label>
+    <description>Formalise the coordinated microscopic-machine principles observed in human-form Replicators and Asuran-derived technology.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites><li>MicroelectronicsBasics</li></prerequisites>
+    <requiredAnalyzed>
+      <li>WNG_RecoveredPrecursorPulseRifle</li>
+    </requiredAnalyzed>
+  
+    <researchViewX>13.5</researchViewX><researchViewY>10.5</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WNG_AsuranCollectiveSystems</defName>
+    <label>Asuran collective systems</label>
+    <description>Formalise distributed nanite identity and local peer coordination into engineered control architecture.</description>
+    <baseCost>2200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites><li>WNG_NaniteAnalysis</li></prerequisites>
+  
+    <researchViewX>15</researchViewX><researchViewY>10.5</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WNG_PrecursorFabrication</defName>
+    <label>Asuran fabrication</label>
+    <description>Reconstruct the precision fabrication methods needed to manufacture stable Asuran-derived devices.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites><li>WNG_NaniteAnalysis</li><li>Fabrication</li></prerequisites>
+  
+    <researchViewX>15</researchViewX><researchViewY>11.5</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WNG_SovereignLatticeControl</defName>
+    <label>sovereign neural lattice control</label>
+    <description>Combine Asuran collective-control theory with studied Replicator domains to fabricate a bounded physical neural controller lattice. The implant grants multi-unit target-specific authority without conferring Queen identity.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <prerequisites>
+      <li>WNG_AsuranCollectiveSystems</li>
+      <li>WNG_ReplicatorStudy</li>
+      <li>WNG_PrecursorFabrication</li>
+    </prerequisites>
+  
+    <researchViewX>16.5</researchViewX><researchViewY>10.5</researchViewY>
+  </ResearchProjectDef>
+</Defs>

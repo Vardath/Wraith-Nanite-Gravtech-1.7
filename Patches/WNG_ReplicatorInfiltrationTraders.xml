@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/TraderKindDef[defName="Orbital_BulkGoods" or defName="Caravan_Outlander_BulkGoods" or defName="Orbital_Exotic" or defName="Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+    <value>
+      <li Class="WraithNaniteGravtech.StockGenerator_ReplicatorSealedSalvage">
+        <thingDef>WNG_SealedMachineSalvage</thingDef>
+        <chance>0.035</chance>
+      </li>
+    </value>
+  </Operation>
+</Patch>

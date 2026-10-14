@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>WNG_AncientArchaeologyCache</defName>
+    <label>buried Ancient survey cache</label>
+    <description>A small precursor archaeology cache containing damaged Ancient control and vacuum-containment artifacts.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_AncientArchaeologyCache</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString><requiresFaction>false</requiresFaction><wantsThreatPoints>true</wantsThreatPoints><minThreatPoints>250</minThreatPoints><considerEnteringAsAttack>false</considerEnteringAsAttack><selectionWeight>0</selectionWeight>
+    <arrivedLetter>The survey coordinates resolve to a buried Ancient cache. A fractured drone core and a degraded vacuum-containment shell should be recoverable near the site's centre.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+  </SitePartDef>
+</Defs>

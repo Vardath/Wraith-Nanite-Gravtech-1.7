@@ -1,0 +1,3301 @@
+{
+  "id": "wraith_commander_carapace",
+  "item": "WNG_CommanderCarapace",
+  "faction": "Wraith",
+  "output_dir": "Wraith",
+  "stargate": {
+    "sources": [
+      {
+        "url": "https://www.stargate-fusion.com/fiches/coulisses/23-costumes-uniformes/5733-commandant-wraith-lunion-fait-la-force.html",
+        "role": "screen-used Wraith male commander costume / Propworx",
+        "required_terms": [
+          "trenchcoat",
+          "cuir",
+          "reptile",
+          "laçage"
+        ]
+      },
+      {
+        "url": "https://www.stargate-fusion.com/fiches/6511-costume-commandant-wraith.html",
+        "role": "screen-used Wraith male costume / Propstore",
+        "required_terms": [
+          "cuir souple",
+          "panneaux texturés",
+          "gilet"
+        ]
+      },
+      {
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/",
+        "role": "Stargate Atlantis costume designer Val Halverson",
+        "required_terms": [
+          "WRAITH COSTUME",
+          "6-8 COW HIDES",
+          "CONTRAST LEATHER"
+        ]
+      },
+      {
+        "url": "https://www.gateworld.net/news/2010/07/propworx-stargate-auctions-week-23/",
+        "role": "screen-used Wraith drone wardrobe context",
+        "required_terms": [
+          "Wraith Drone Costume",
+          "footsoldiers"
+        ]
+      }
+    ],
+    "minimum_live_sources": 3,
+    "design": {
+      "materials": [
+        "dark green-black cowhide leather base garment",
+        "black reptile-pattern leather vest and shoulder tailoring",
+        "aged dark silver hard-rubber carapace",
+        "dark simulated-bone shoulder and thigh armour",
+        "black leather lacing, belt and closures"
+      ],
+      "construction": [
+        "continuous fitted leather Wraith commander uniform under armour",
+        "reptile-pattern leather upper vest and yoke",
+        "one integrated torso carapace rather than plate stacks",
+        "solid ridged bone shoulder shells with leather saddles below them",
+        "narrow thigh guards rather than circular knee rings",
+        "side/back lacing and small metal closures",
+        "chest self-destruct device under a translucent protective cover"
+      ],
+      "motifs": [
+        "screen-used Wraith leather tailoring",
+        "organic cast-rubber armour",
+        "bone/chitin striation",
+        "predatory worn handmade construction",
+        "subtle asymmetry and production wear"
+      ],
+      "avoid": [
+        "historical WNG apparel",
+        "flat coloured polygons",
+        "white rings",
+        "bright outlines",
+        "panel stacks",
+        "cyan piping",
+        "generic marine armour",
+        "superhero breastplate",
+        "ship parts on clothing"
+      ]
+    }
+  },
+  "rimworld": {
+    "family": "PowerArmor",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "tile_scale": 0.78
+  },
+  "paint": {
+    "engine": "raster_studio_v1",
+    "base_material": "green_leather",
+    "materials": {
+      "green_leather": {
+        "kind": "leather",
+        "shadow": [
+          3,
+          6,
+          4
+        ],
+        "mid": [
+          20,
+          31,
+          24
+        ],
+        "high": [
+          70,
+          86,
+          73
+        ],
+        "roughness": 0.61,
+        "body": 0.58,
+        "normal_strength": 1.75,
+        "surface_height": 0.014,
+        "spec_power": 11,
+        "spec_strength": 0.27,
+        "specular_tint": [
+          24,
+          29,
+          25
+        ]
+      },
+      "reptile": {
+        "kind": "reptile",
+        "shadow": [
+          3,
+          4,
+          4
+        ],
+        "mid": [
+          18,
+          23,
+          21
+        ],
+        "high": [
+          65,
+          74,
+          68
+        ],
+        "roughness": 0.55,
+        "body": 0.6,
+        "normal_strength": 1.95,
+        "surface_height": 0.011,
+        "spec_power": 12,
+        "spec_strength": 0.3,
+        "specular_tint": [
+          22,
+          25,
+          23
+        ]
+      },
+      "black_leather": {
+        "kind": "leather",
+        "shadow": [
+          2,
+          3,
+          3
+        ],
+        "mid": [
+          12,
+          16,
+          14
+        ],
+        "high": [
+          44,
+          51,
+          47
+        ],
+        "roughness": 0.65,
+        "body": 0.52,
+        "normal_strength": 1.6,
+        "surface_height": 0.01,
+        "spec_power": 10,
+        "spec_strength": 0.22,
+        "specular_tint": [
+          18,
+          20,
+          19
+        ]
+      },
+      "carapace": {
+        "kind": "rubber",
+        "shadow": [
+          16,
+          20,
+          19
+        ],
+        "mid": [
+          52,
+          62,
+          58
+        ],
+        "high": [
+          118,
+          132,
+          125
+        ],
+        "roughness": 0.59,
+        "body": 0.8,
+        "normal_strength": 3.55,
+        "surface_height": 0.009,
+        "spec_power": 8,
+        "spec_strength": 0.38,
+        "specular_tint": [
+          30,
+          35,
+          33
+        ]
+      },
+      "bone": {
+        "kind": "bone",
+        "shadow": [
+          28,
+          31,
+          30
+        ],
+        "mid": [
+          70,
+          77,
+          74
+        ],
+        "high": [
+          134,
+          143,
+          137
+        ],
+        "roughness": 0.69,
+        "body": 0.88,
+        "normal_strength": 3.75,
+        "surface_height": 0.009,
+        "spec_power": 6,
+        "spec_strength": 0.2,
+        "specular_tint": [
+          17,
+          18,
+          17
+        ]
+      }
+    },
+    "views": {
+      "south": {
+        "folds": [
+          {
+            "points": [
+              [
+                0.17,
+                0.2
+              ],
+              [
+                0.16,
+                0.53
+              ],
+              [
+                0.18,
+                0.9
+              ]
+            ],
+            "width": 0.018,
+            "strength": 0.65
+          },
+          {
+            "points": [
+              [
+                0.83,
+                0.2
+              ],
+              [
+                0.84,
+                0.53
+              ],
+              [
+                0.82,
+                0.9
+              ]
+            ],
+            "width": 0.018,
+            "strength": 0.58
+          },
+          {
+            "points": [
+              [
+                0.34,
+                0.28
+              ],
+              [
+                0.32,
+                0.58
+              ],
+              [
+                0.34,
+                0.88
+              ]
+            ],
+            "width": 0.013,
+            "strength": 0.34
+          }
+        ],
+        "components": [
+          {
+            "name": "broad reptile commander vest",
+            "material": "reptile",
+            "contour": [
+              [
+                0.245,
+                0.055
+              ],
+              [
+                0.755,
+                0.055
+              ],
+              [
+                0.715,
+                0.235
+              ],
+              [
+                0.685,
+                0.47
+              ],
+              [
+                0.62,
+                0.645
+              ],
+              [
+                0.385,
+                0.65
+              ],
+              [
+                0.315,
+                0.49
+              ],
+              [
+                0.285,
+                0.24
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.36,
+                    0.11
+                  ],
+                  [
+                    0.385,
+                    0.55
+                  ]
+                ],
+                "width": 0.012,
+                "height": 0.38
+              },
+              {
+                "points": [
+                  [
+                    0.64,
+                    0.105
+                  ],
+                  [
+                    0.61,
+                    0.55
+                  ]
+                ],
+                "width": 0.012,
+                "height": 0.31
+              },
+              {
+                "points": [
+                  [
+                    0.46,
+                    0.15
+                  ],
+                  [
+                    0.445,
+                    0.49
+                  ]
+                ],
+                "width": 0.008,
+                "height": 0.19
+              }
+            ],
+            "shadow": 26,
+            "shadow_radius": 6,
+            "feather": 1.2,
+            "edge_irregularity": 0.0025
+          },
+          {
+            "name": "screen-used organic front carapace",
+            "material": "carapace",
+            "contour": [
+              [
+                0.285,
+                0.195
+              ],
+              [
+                0.325,
+                0.158
+              ],
+              [
+                0.39,
+                0.132
+              ],
+              [
+                0.465,
+                0.122
+              ],
+              [
+                0.535,
+                0.132
+              ],
+              [
+                0.615,
+                0.145
+              ],
+              [
+                0.675,
+                0.185
+              ],
+              [
+                0.715,
+                0.245
+              ],
+              [
+                0.72,
+                0.315
+              ],
+              [
+                0.69,
+                0.39
+              ],
+              [
+                0.635,
+                0.465
+              ],
+              [
+                0.575,
+                0.525
+              ],
+              [
+                0.505,
+                0.565
+              ],
+              [
+                0.445,
+                0.555
+              ],
+              [
+                0.38,
+                0.515
+              ],
+              [
+                0.33,
+                0.455
+              ],
+              [
+                0.295,
+                0.385
+              ],
+              [
+                0.275,
+                0.305
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.495,
+                    0.17
+                  ],
+                  [
+                    0.49,
+                    0.3
+                  ],
+                  [
+                    0.5,
+                    0.51
+                  ]
+                ],
+                "width": 0.01815,
+                "height": 0.9204
+              },
+              {
+                "points": [
+                  [
+                    0.36,
+                    0.235
+                  ],
+                  [
+                    0.405,
+                    0.285
+                  ],
+                  [
+                    0.43,
+                    0.39
+                  ],
+                  [
+                    0.465,
+                    0.465
+                  ]
+                ],
+                "width": 0.014849999999999999,
+                "height": 0.59
+              },
+              {
+                "points": [
+                  [
+                    0.655,
+                    0.225
+                  ],
+                  [
+                    0.6,
+                    0.285
+                  ],
+                  [
+                    0.575,
+                    0.385
+                  ],
+                  [
+                    0.545,
+                    0.46
+                  ]
+                ],
+                "width": 0.014849999999999999,
+                "height": 0.5428
+              },
+              {
+                "points": [
+                  [
+                    0.375,
+                    0.43
+                  ],
+                  [
+                    0.44,
+                    0.49
+                  ],
+                  [
+                    0.5,
+                    0.515
+                  ],
+                  [
+                    0.575,
+                    0.465
+                  ]
+                ],
+                "width": 0.01155,
+                "height": 0.413
+              },
+              {
+                "points": [
+                  [
+                    0.46,
+                    0.215
+                  ],
+                  [
+                    0.425,
+                    0.19
+                  ],
+                  [
+                    0.385,
+                    0.205
+                  ]
+                ],
+                "width": 0.009899999999999999,
+                "height": 0.28319999999999995
+              }
+            ],
+            "shadow": 37,
+            "shadow_radius": 9,
+            "feather": 1.6,
+            "edge_irregularity": 0.0045,
+            "clear_cover": true,
+            "clear_cover_strength": 0.54
+          },
+          {
+            "name": "left black leather shoulder saddle",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.055,
+                0.16
+              ],
+              [
+                0.105,
+                0.105
+              ],
+              [
+                0.18,
+                0.075
+              ],
+              [
+                0.255,
+                0.085
+              ],
+              [
+                0.31,
+                0.13
+              ],
+              [
+                0.31,
+                0.19
+              ],
+              [
+                0.25,
+                0.245
+              ],
+              [
+                0.16,
+                0.255
+              ],
+              [
+                0.085,
+                0.22
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.1,
+                    0.19
+                  ],
+                  [
+                    0.17,
+                    0.145
+                  ],
+                  [
+                    0.26,
+                    0.145
+                  ]
+                ],
+                "width": 0.01,
+                "height": 0.18
+              }
+            ],
+            "shadow": 19,
+            "shadow_radius": 5,
+            "feather": 1.5,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "left command shoulder bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.04,
+                0.145
+              ],
+              [
+                0.075,
+                0.1
+              ],
+              [
+                0.13,
+                0.065
+              ],
+              [
+                0.195,
+                0.05
+              ],
+              [
+                0.255,
+                0.062
+              ],
+              [
+                0.3,
+                0.095
+              ],
+              [
+                0.315,
+                0.135
+              ],
+              [
+                0.295,
+                0.18
+              ],
+              [
+                0.245,
+                0.215
+              ],
+              [
+                0.18,
+                0.235
+              ],
+              [
+                0.11,
+                0.225
+              ],
+              [
+                0.06,
+                0.19
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.075,
+                    0.17
+                  ],
+                  [
+                    0.13,
+                    0.12
+                  ],
+                  [
+                    0.21,
+                    0.095
+                  ],
+                  [
+                    0.29,
+                    0.12
+                  ]
+                ],
+                "width": 0.0126,
+                "height": 0.5663999999999999
+              },
+              {
+                "points": [
+                  [
+                    0.105,
+                    0.2
+                  ],
+                  [
+                    0.165,
+                    0.155
+                  ],
+                  [
+                    0.24,
+                    0.14
+                  ],
+                  [
+                    0.3,
+                    0.155
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.4012
+              },
+              {
+                "points": [
+                  [
+                    0.15,
+                    0.22
+                  ],
+                  [
+                    0.205,
+                    0.18
+                  ],
+                  [
+                    0.275,
+                    0.178
+                  ]
+                ],
+                "width": 0.009000000000000001,
+                "height": 0.28319999999999995
+              }
+            ],
+            "shadow": 38,
+            "shadow_radius": 8,
+            "feather": 1.5,
+            "edge_irregularity": 0.006
+          },
+          {
+            "name": "right black leather shoulder saddle",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.95,
+                0.155
+              ],
+              [
+                0.9,
+                0.105
+              ],
+              [
+                0.825,
+                0.08
+              ],
+              [
+                0.75,
+                0.09
+              ],
+              [
+                0.695,
+                0.135
+              ],
+              [
+                0.69,
+                0.195
+              ],
+              [
+                0.75,
+                0.245
+              ],
+              [
+                0.84,
+                0.255
+              ],
+              [
+                0.915,
+                0.215
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.9,
+                    0.185
+                  ],
+                  [
+                    0.83,
+                    0.145
+                  ],
+                  [
+                    0.74,
+                    0.15
+                  ]
+                ],
+                "width": 0.01,
+                "height": 0.16
+              }
+            ],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.5,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "right command shoulder bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.965,
+                0.138
+              ],
+              [
+                0.925,
+                0.094
+              ],
+              [
+                0.865,
+                0.062
+              ],
+              [
+                0.795,
+                0.052
+              ],
+              [
+                0.735,
+                0.07
+              ],
+              [
+                0.695,
+                0.105
+              ],
+              [
+                0.682,
+                0.145
+              ],
+              [
+                0.7,
+                0.185
+              ],
+              [
+                0.75,
+                0.22
+              ],
+              [
+                0.815,
+                0.237
+              ],
+              [
+                0.885,
+                0.222
+              ],
+              [
+                0.94,
+                0.182
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.94,
+                    0.165
+                  ],
+                  [
+                    0.88,
+                    0.115
+                  ],
+                  [
+                    0.8,
+                    0.102
+                  ],
+                  [
+                    0.7,
+                    0.13
+                  ]
+                ],
+                "width": 0.0126,
+                "height": 0.531
+              },
+              {
+                "points": [
+                  [
+                    0.915,
+                    0.202
+                  ],
+                  [
+                    0.85,
+                    0.158
+                  ],
+                  [
+                    0.775,
+                    0.145
+                  ],
+                  [
+                    0.7,
+                    0.162
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.36579999999999996
+              },
+              {
+                "points": [
+                  [
+                    0.87,
+                    0.222
+                  ],
+                  [
+                    0.815,
+                    0.185
+                  ],
+                  [
+                    0.735,
+                    0.182
+                  ]
+                ],
+                "width": 0.009000000000000001,
+                "height": 0.2596
+              }
+            ],
+            "shadow": 36,
+            "shadow_radius": 8,
+            "feather": 1.5,
+            "edge_irregularity": 0.0055
+          },
+          {
+            "name": "left black leather chap inset",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.055,
+                0.72
+              ],
+              [
+                0.105,
+                0.68
+              ],
+              [
+                0.19,
+                0.665
+              ],
+              [
+                0.265,
+                0.7
+              ],
+              [
+                0.3,
+                0.78
+              ],
+              [
+                0.295,
+                0.9
+              ],
+              [
+                0.255,
+                0.975
+              ],
+              [
+                0.16,
+                0.995
+              ],
+              [
+                0.09,
+                0.955
+              ],
+              [
+                0.055,
+                0.86
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.105,
+                    0.74
+                  ],
+                  [
+                    0.115,
+                    0.92
+                  ]
+                ],
+                "width": 0.01,
+                "height": 0.16
+              }
+            ],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.4,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "left narrow thigh bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.075,
+                0.745
+              ],
+              [
+                0.115,
+                0.705
+              ],
+              [
+                0.17,
+                0.688
+              ],
+              [
+                0.225,
+                0.705
+              ],
+              [
+                0.265,
+                0.75
+              ],
+              [
+                0.278,
+                0.81
+              ],
+              [
+                0.265,
+                0.865
+              ],
+              [
+                0.28,
+                0.915
+              ],
+              [
+                0.245,
+                0.96
+              ],
+              [
+                0.19,
+                0.982
+              ],
+              [
+                0.14,
+                0.955
+              ],
+              [
+                0.105,
+                0.905
+              ],
+              [
+                0.1,
+                0.845
+              ],
+              [
+                0.072,
+                0.795
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.115,
+                    0.765
+                  ],
+                  [
+                    0.145,
+                    0.835
+                  ],
+                  [
+                    0.145,
+                    0.925
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.44839999999999997
+              },
+              {
+                "points": [
+                  [
+                    0.18,
+                    0.73
+                  ],
+                  [
+                    0.2,
+                    0.81
+                  ],
+                  [
+                    0.2,
+                    0.94
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.34219999999999995
+              },
+              {
+                "points": [
+                  [
+                    0.235,
+                    0.76
+                  ],
+                  [
+                    0.245,
+                    0.84
+                  ],
+                  [
+                    0.23,
+                    0.91
+                  ]
+                ],
+                "width": 0.009000000000000001,
+                "height": 0.236
+              }
+            ],
+            "shadow": 32,
+            "shadow_radius": 7,
+            "feather": 1.5,
+            "edge_irregularity": 0.0055
+          },
+          {
+            "name": "right black leather chap inset",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.945,
+                0.705
+              ],
+              [
+                0.89,
+                0.675
+              ],
+              [
+                0.805,
+                0.67
+              ],
+              [
+                0.735,
+                0.705
+              ],
+              [
+                0.7,
+                0.785
+              ],
+              [
+                0.71,
+                0.9
+              ],
+              [
+                0.755,
+                0.98
+              ],
+              [
+                0.84,
+                0.995
+              ],
+              [
+                0.91,
+                0.95
+              ],
+              [
+                0.945,
+                0.85
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.895,
+                    0.735
+                  ],
+                  [
+                    0.885,
+                    0.92
+                  ]
+                ],
+                "width": 0.01,
+                "height": 0.15
+              }
+            ],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.4,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "right narrow thigh bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.93,
+                0.728
+              ],
+              [
+                0.885,
+                0.697
+              ],
+              [
+                0.83,
+                0.695
+              ],
+              [
+                0.775,
+                0.718
+              ],
+              [
+                0.735,
+                0.758
+              ],
+              [
+                0.722,
+                0.815
+              ],
+              [
+                0.74,
+                0.87
+              ],
+              [
+                0.718,
+                0.91
+              ],
+              [
+                0.755,
+                0.96
+              ],
+              [
+                0.81,
+                0.98
+              ],
+              [
+                0.86,
+                0.953
+              ],
+              [
+                0.895,
+                0.9
+              ],
+              [
+                0.9,
+                0.842
+              ],
+              [
+                0.93,
+                0.787
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.885,
+                    0.755
+                  ],
+                  [
+                    0.855,
+                    0.825
+                  ],
+                  [
+                    0.855,
+                    0.922
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.42479999999999996
+              },
+              {
+                "points": [
+                  [
+                    0.82,
+                    0.73
+                  ],
+                  [
+                    0.8,
+                    0.812
+                  ],
+                  [
+                    0.8,
+                    0.94
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.3186
+              },
+              {
+                "points": [
+                  [
+                    0.765,
+                    0.76
+                  ],
+                  [
+                    0.755,
+                    0.84
+                  ],
+                  [
+                    0.77,
+                    0.91
+                  ]
+                ],
+                "width": 0.009000000000000001,
+                "height": 0.22419999999999998
+              }
+            ],
+            "shadow": 31,
+            "shadow_radius": 7,
+            "feather": 1.5,
+            "edge_irregularity": 0.005
+          },
+          {
+            "name": "black leather waist wrap",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.2,
+                0.56
+              ],
+              [
+                0.8,
+                0.56
+              ],
+              [
+                0.77,
+                0.675
+              ],
+              [
+                0.23,
+                0.675
+              ]
+            ],
+            "relief": [],
+            "shadow": 24,
+            "shadow_radius": 6,
+            "feather": 1.1,
+            "edge_irregularity": 0.002
+          },
+          {
+            "name": "low commander collar",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.35,
+                0.025
+              ],
+              [
+                0.65,
+                0.025
+              ],
+              [
+                0.68,
+                0.1
+              ],
+              [
+                0.59,
+                0.145
+              ],
+              [
+                0.41,
+                0.145
+              ],
+              [
+                0.32,
+                0.1
+              ]
+            ],
+            "relief": [],
+            "shadow": 20,
+            "shadow_radius": 5,
+            "feather": 1,
+            "edge_irregularity": 0.002
+          }
+        ],
+        "seams": [
+          {
+            "points": [
+              [
+                0.18,
+                0.26
+              ],
+              [
+                0.17,
+                0.48
+              ],
+              [
+                0.18,
+                0.68
+              ]
+            ],
+            "stitch": true,
+            "spacing": 0.028,
+            "highlight": [
+              66,
+              76,
+              68
+            ],
+            "width": 0.0055
+          },
+          {
+            "points": [
+              [
+                0.82,
+                0.26
+              ],
+              [
+                0.83,
+                0.48
+              ],
+              [
+                0.82,
+                0.68
+              ]
+            ],
+            "stitch": true,
+            "spacing": 0.028,
+            "highlight": [
+              66,
+              76,
+              68
+            ],
+            "width": 0.0055
+          },
+          {
+            "points": [
+              [
+                0.28,
+                0.57
+              ],
+              [
+                0.5,
+                0.63
+              ],
+              [
+                0.72,
+                0.57
+              ]
+            ],
+            "stitch": true,
+            "spacing": 0.028,
+            "highlight": [
+              52,
+              59,
+              54
+            ],
+            "width": 0.0055
+          },
+          {
+            "points": [
+              [
+                0.31,
+                0.2
+              ],
+              [
+                0.39,
+                0.16
+              ],
+              [
+                0.48,
+                0.15
+              ]
+            ],
+            "stitch": false,
+            "highlight": [
+              66,
+              73,
+              69
+            ],
+            "width": 0.0055
+          }
+        ],
+        "closures": [
+          {
+            "type": "lacing",
+            "left": [
+              [
+                0.145,
+                0.35
+              ],
+              [
+                0.155,
+                0.62
+              ]
+            ],
+            "right": [
+              [
+                0.19,
+                0.35
+              ],
+              [
+                0.2,
+                0.62
+              ]
+            ],
+            "pairs": 6
+          },
+          {
+            "type": "snaps",
+            "from": [
+              0.67,
+              0.29
+            ],
+            "to": [
+              0.67,
+              0.445
+            ],
+            "count": 4,
+            "radius": 0.0038
+          },
+          {
+            "type": "self_destruct",
+            "position": [
+              0.5,
+              0.325
+            ],
+            "radius": 0.026
+          },
+          {
+            "type": "segmented_belt",
+            "from": [
+              0.245,
+              0.63
+            ],
+            "to": [
+              0.755,
+              0.63
+            ],
+            "count": 7,
+            "width": 0.019
+          }
+        ],
+        "wear": {
+          "count": 13,
+          "x_range": [
+            0.07,
+            0.93
+          ],
+          "y_range": [
+            0.15,
+            0.96
+          ],
+          "highlight": [
+            103,
+            112,
+            106
+          ]
+        }
+      },
+      "north": {
+        "folds": [
+          {
+            "points": [
+              [
+                0.18,
+                0.21
+              ],
+              [
+                0.17,
+                0.54
+              ],
+              [
+                0.19,
+                0.91
+              ]
+            ],
+            "width": 0.018,
+            "strength": 0.6
+          },
+          {
+            "points": [
+              [
+                0.82,
+                0.21
+              ],
+              [
+                0.83,
+                0.54
+              ],
+              [
+                0.81,
+                0.91
+              ]
+            ],
+            "width": 0.018,
+            "strength": 0.54
+          }
+        ],
+        "components": [
+          {
+            "name": "broad rear reptile yoke",
+            "material": "reptile",
+            "contour": [
+              [
+                0.14,
+                0.07
+              ],
+              [
+                0.86,
+                0.07
+              ],
+              [
+                0.8,
+                0.18
+              ],
+              [
+                0.665,
+                0.23
+              ],
+              [
+                0.5,
+                0.255
+              ],
+              [
+                0.335,
+                0.23
+              ],
+              [
+                0.2,
+                0.18
+              ]
+            ],
+            "relief": [],
+            "shadow": 26,
+            "shadow_radius": 6,
+            "feather": 1.2,
+            "edge_irregularity": 0.0025
+          },
+          {
+            "name": "screen-used organic rear carapace",
+            "material": "carapace",
+            "contour": [
+              [
+                0.285,
+                0.19
+              ],
+              [
+                0.33,
+                0.155
+              ],
+              [
+                0.395,
+                0.132
+              ],
+              [
+                0.47,
+                0.125
+              ],
+              [
+                0.545,
+                0.135
+              ],
+              [
+                0.62,
+                0.15
+              ],
+              [
+                0.68,
+                0.19
+              ],
+              [
+                0.715,
+                0.255
+              ],
+              [
+                0.715,
+                0.33
+              ],
+              [
+                0.68,
+                0.405
+              ],
+              [
+                0.625,
+                0.48
+              ],
+              [
+                0.56,
+                0.535
+              ],
+              [
+                0.49,
+                0.565
+              ],
+              [
+                0.425,
+                0.545
+              ],
+              [
+                0.365,
+                0.5
+              ],
+              [
+                0.32,
+                0.445
+              ],
+              [
+                0.29,
+                0.375
+              ],
+              [
+                0.272,
+                0.295
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.49,
+                    0.18
+                  ],
+                  [
+                    0.49,
+                    0.5
+                  ]
+                ],
+                "width": 0.0165,
+                "height": 0.826
+              },
+              {
+                "points": [
+                  [
+                    0.36,
+                    0.24
+                  ],
+                  [
+                    0.405,
+                    0.3
+                  ],
+                  [
+                    0.43,
+                    0.43
+                  ]
+                ],
+                "width": 0.0132,
+                "height": 0.5074
+              },
+              {
+                "points": [
+                  [
+                    0.65,
+                    0.23
+                  ],
+                  [
+                    0.595,
+                    0.3
+                  ],
+                  [
+                    0.565,
+                    0.43
+                  ]
+                ],
+                "width": 0.0132,
+                "height": 0.472
+              },
+              {
+                "points": [
+                  [
+                    0.38,
+                    0.445
+                  ],
+                  [
+                    0.47,
+                    0.51
+                  ],
+                  [
+                    0.58,
+                    0.455
+                  ]
+                ],
+                "width": 0.01155,
+                "height": 0.354
+              }
+            ],
+            "shadow": 36,
+            "shadow_radius": 9,
+            "feather": 1.6,
+            "edge_irregularity": 0.0043,
+            "clear_cover": true,
+            "clear_cover_strength": 0.52
+          },
+          {
+            "name": "left rear black leather shoulder saddle",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.055,
+                0.16
+              ],
+              [
+                0.105,
+                0.105
+              ],
+              [
+                0.18,
+                0.075
+              ],
+              [
+                0.255,
+                0.085
+              ],
+              [
+                0.31,
+                0.13
+              ],
+              [
+                0.31,
+                0.19
+              ],
+              [
+                0.25,
+                0.245
+              ],
+              [
+                0.16,
+                0.255
+              ],
+              [
+                0.085,
+                0.22
+              ]
+            ],
+            "relief": [],
+            "shadow": 19,
+            "shadow_radius": 5,
+            "feather": 1.5,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "left rear command shoulder bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.04,
+                0.145
+              ],
+              [
+                0.075,
+                0.1
+              ],
+              [
+                0.13,
+                0.065
+              ],
+              [
+                0.195,
+                0.05
+              ],
+              [
+                0.255,
+                0.062
+              ],
+              [
+                0.3,
+                0.095
+              ],
+              [
+                0.315,
+                0.135
+              ],
+              [
+                0.295,
+                0.18
+              ],
+              [
+                0.245,
+                0.215
+              ],
+              [
+                0.18,
+                0.235
+              ],
+              [
+                0.11,
+                0.225
+              ],
+              [
+                0.06,
+                0.19
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.075,
+                    0.17
+                  ],
+                  [
+                    0.13,
+                    0.12
+                  ],
+                  [
+                    0.21,
+                    0.095
+                  ],
+                  [
+                    0.29,
+                    0.12
+                  ]
+                ],
+                "width": 0.0126,
+                "height": 0.5428
+              },
+              {
+                "points": [
+                  [
+                    0.105,
+                    0.2
+                  ],
+                  [
+                    0.165,
+                    0.155
+                  ],
+                  [
+                    0.24,
+                    0.14
+                  ],
+                  [
+                    0.3,
+                    0.155
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.3776
+              }
+            ],
+            "shadow": 37,
+            "shadow_radius": 8,
+            "feather": 1.5,
+            "edge_irregularity": 0.006
+          },
+          {
+            "name": "right rear black leather shoulder saddle",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.95,
+                0.155
+              ],
+              [
+                0.9,
+                0.105
+              ],
+              [
+                0.825,
+                0.08
+              ],
+              [
+                0.75,
+                0.09
+              ],
+              [
+                0.695,
+                0.135
+              ],
+              [
+                0.69,
+                0.195
+              ],
+              [
+                0.75,
+                0.245
+              ],
+              [
+                0.84,
+                0.255
+              ],
+              [
+                0.915,
+                0.215
+              ]
+            ],
+            "relief": [],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.5,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "right rear command shoulder bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.965,
+                0.138
+              ],
+              [
+                0.925,
+                0.094
+              ],
+              [
+                0.865,
+                0.062
+              ],
+              [
+                0.795,
+                0.052
+              ],
+              [
+                0.735,
+                0.07
+              ],
+              [
+                0.695,
+                0.105
+              ],
+              [
+                0.682,
+                0.145
+              ],
+              [
+                0.7,
+                0.185
+              ],
+              [
+                0.75,
+                0.22
+              ],
+              [
+                0.815,
+                0.237
+              ],
+              [
+                0.885,
+                0.222
+              ],
+              [
+                0.94,
+                0.182
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.94,
+                    0.165
+                  ],
+                  [
+                    0.88,
+                    0.115
+                  ],
+                  [
+                    0.8,
+                    0.102
+                  ],
+                  [
+                    0.7,
+                    0.13
+                  ]
+                ],
+                "width": 0.0126,
+                "height": 0.5074
+              },
+              {
+                "points": [
+                  [
+                    0.915,
+                    0.202
+                  ],
+                  [
+                    0.85,
+                    0.158
+                  ],
+                  [
+                    0.775,
+                    0.145
+                  ],
+                  [
+                    0.7,
+                    0.162
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.354
+              }
+            ],
+            "shadow": 35,
+            "shadow_radius": 8,
+            "feather": 1.5,
+            "edge_irregularity": 0.0055
+          },
+          {
+            "name": "left rear black leather chap inset",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.055,
+                0.72
+              ],
+              [
+                0.105,
+                0.68
+              ],
+              [
+                0.19,
+                0.665
+              ],
+              [
+                0.265,
+                0.7
+              ],
+              [
+                0.3,
+                0.78
+              ],
+              [
+                0.295,
+                0.9
+              ],
+              [
+                0.255,
+                0.975
+              ],
+              [
+                0.16,
+                0.995
+              ],
+              [
+                0.09,
+                0.955
+              ],
+              [
+                0.055,
+                0.86
+              ]
+            ],
+            "relief": [],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.4,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "left rear thigh bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.075,
+                0.745
+              ],
+              [
+                0.115,
+                0.705
+              ],
+              [
+                0.17,
+                0.688
+              ],
+              [
+                0.225,
+                0.705
+              ],
+              [
+                0.265,
+                0.75
+              ],
+              [
+                0.278,
+                0.81
+              ],
+              [
+                0.265,
+                0.865
+              ],
+              [
+                0.28,
+                0.915
+              ],
+              [
+                0.245,
+                0.96
+              ],
+              [
+                0.19,
+                0.982
+              ],
+              [
+                0.14,
+                0.955
+              ],
+              [
+                0.105,
+                0.905
+              ],
+              [
+                0.1,
+                0.845
+              ],
+              [
+                0.072,
+                0.795
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.12,
+                    0.765
+                  ],
+                  [
+                    0.15,
+                    0.835
+                  ],
+                  [
+                    0.15,
+                    0.925
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.4012
+              },
+              {
+                "points": [
+                  [
+                    0.185,
+                    0.73
+                  ],
+                  [
+                    0.2,
+                    0.82
+                  ],
+                  [
+                    0.2,
+                    0.94
+                  ]
+                ],
+                "width": 0.009000000000000001,
+                "height": 0.295
+              }
+            ],
+            "shadow": 31,
+            "shadow_radius": 7,
+            "feather": 1.5,
+            "edge_irregularity": 0.0055
+          },
+          {
+            "name": "right rear black leather chap inset",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.945,
+                0.705
+              ],
+              [
+                0.89,
+                0.675
+              ],
+              [
+                0.805,
+                0.67
+              ],
+              [
+                0.735,
+                0.705
+              ],
+              [
+                0.7,
+                0.785
+              ],
+              [
+                0.71,
+                0.9
+              ],
+              [
+                0.755,
+                0.98
+              ],
+              [
+                0.84,
+                0.995
+              ],
+              [
+                0.91,
+                0.95
+              ],
+              [
+                0.945,
+                0.85
+              ]
+            ],
+            "relief": [],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.4,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "right rear thigh bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.93,
+                0.728
+              ],
+              [
+                0.885,
+                0.697
+              ],
+              [
+                0.83,
+                0.695
+              ],
+              [
+                0.775,
+                0.718
+              ],
+              [
+                0.735,
+                0.758
+              ],
+              [
+                0.722,
+                0.815
+              ],
+              [
+                0.74,
+                0.87
+              ],
+              [
+                0.718,
+                0.91
+              ],
+              [
+                0.755,
+                0.96
+              ],
+              [
+                0.81,
+                0.98
+              ],
+              [
+                0.86,
+                0.953
+              ],
+              [
+                0.895,
+                0.9
+              ],
+              [
+                0.9,
+                0.842
+              ],
+              [
+                0.93,
+                0.787
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.88,
+                    0.755
+                  ],
+                  [
+                    0.85,
+                    0.825
+                  ],
+                  [
+                    0.85,
+                    0.922
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.3894
+              },
+              {
+                "points": [
+                  [
+                    0.815,
+                    0.73
+                  ],
+                  [
+                    0.8,
+                    0.82
+                  ],
+                  [
+                    0.8,
+                    0.94
+                  ]
+                ],
+                "width": 0.009000000000000001,
+                "height": 0.28319999999999995
+              }
+            ],
+            "shadow": 30,
+            "shadow_radius": 7,
+            "feather": 1.5,
+            "edge_irregularity": 0.005
+          },
+          {
+            "name": "rear leather spine seam",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.465,
+                0.22
+              ],
+              [
+                0.535,
+                0.22
+              ],
+              [
+                0.53,
+                0.58
+              ],
+              [
+                0.47,
+                0.58
+              ]
+            ],
+            "relief": [],
+            "shadow": 20,
+            "shadow_radius": 5,
+            "feather": 1,
+            "edge_irregularity": 0.0015
+          },
+          {
+            "name": "rear waist wrap",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.21,
+                0.56
+              ],
+              [
+                0.79,
+                0.56
+              ],
+              [
+                0.77,
+                0.67
+              ],
+              [
+                0.23,
+                0.67
+              ]
+            ],
+            "relief": [],
+            "shadow": 24,
+            "shadow_radius": 6,
+            "feather": 1.1,
+            "edge_irregularity": 0.002
+          }
+        ],
+        "seams": [
+          {
+            "points": [
+              [
+                0.18,
+                0.27
+              ],
+              [
+                0.17,
+                0.49
+              ],
+              [
+                0.18,
+                0.68
+              ]
+            ],
+            "stitch": true,
+            "spacing": 0.028,
+            "highlight": [
+              64,
+              74,
+              66
+            ],
+            "width": 0.0055
+          },
+          {
+            "points": [
+              [
+                0.82,
+                0.27
+              ],
+              [
+                0.83,
+                0.49
+              ],
+              [
+                0.82,
+                0.68
+              ]
+            ],
+            "stitch": true,
+            "spacing": 0.028,
+            "highlight": [
+              64,
+              74,
+              66
+            ],
+            "width": 0.0055
+          },
+          {
+            "points": [
+              [
+                0.28,
+                0.58
+              ],
+              [
+                0.5,
+                0.64
+              ],
+              [
+                0.72,
+                0.58
+              ]
+            ],
+            "stitch": true,
+            "spacing": 0.028,
+            "highlight": [
+              50,
+              57,
+              52
+            ],
+            "width": 0.0055
+          }
+        ],
+        "closures": [
+          {
+            "type": "lacing",
+            "left": [
+              [
+                0.7,
+                0.34
+              ],
+              [
+                0.69,
+                0.61
+              ]
+            ],
+            "right": [
+              [
+                0.745,
+                0.34
+              ],
+              [
+                0.735,
+                0.61
+              ]
+            ],
+            "pairs": 6
+          },
+          {
+            "type": "segmented_belt",
+            "from": [
+              0.245,
+              0.63
+            ],
+            "to": [
+              0.755,
+              0.63
+            ],
+            "count": 7,
+            "width": 0.019
+          }
+        ],
+        "wear": {
+          "count": 12,
+          "x_range": [
+            0.07,
+            0.93
+          ],
+          "y_range": [
+            0.15,
+            0.96
+          ],
+          "highlight": [
+            100,
+            109,
+            103
+          ]
+        }
+      },
+      "east": {
+        "folds": [
+          {
+            "points": [
+              [
+                0.25,
+                0.2
+              ],
+              [
+                0.23,
+                0.54
+              ],
+              [
+                0.25,
+                0.9
+              ]
+            ],
+            "width": 0.018,
+            "strength": 0.58
+          },
+          {
+            "points": [
+              [
+                0.7,
+                0.22
+              ],
+              [
+                0.72,
+                0.54
+              ],
+              [
+                0.69,
+                0.88
+              ]
+            ],
+            "width": 0.014,
+            "strength": 0.38
+          }
+        ],
+        "components": [
+          {
+            "name": "side reptile vest",
+            "material": "reptile",
+            "contour": [
+              [
+                0.4,
+                0.07
+              ],
+              [
+                0.69,
+                0.08
+              ],
+              [
+                0.7,
+                0.49
+              ],
+              [
+                0.63,
+                0.62
+              ],
+              [
+                0.46,
+                0.56
+              ]
+            ],
+            "relief": [],
+            "shadow": 26,
+            "shadow_radius": 6,
+            "feather": 1.2,
+            "edge_irregularity": 0.0025
+          },
+          {
+            "name": "screen-used organic side carapace",
+            "material": "carapace",
+            "contour": [
+              [
+                0.265,
+                0.19
+              ],
+              [
+                0.35,
+                0.15
+              ],
+              [
+                0.47,
+                0.135
+              ],
+              [
+                0.59,
+                0.145
+              ],
+              [
+                0.68,
+                0.18
+              ],
+              [
+                0.73,
+                0.235
+              ],
+              [
+                0.745,
+                0.31
+              ],
+              [
+                0.71,
+                0.4
+              ],
+              [
+                0.635,
+                0.49
+              ],
+              [
+                0.54,
+                0.55
+              ],
+              [
+                0.445,
+                0.56
+              ],
+              [
+                0.36,
+                0.51
+              ],
+              [
+                0.3,
+                0.42
+              ],
+              [
+                0.27,
+                0.33
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.34,
+                    0.23
+                  ],
+                  [
+                    0.415,
+                    0.3
+                  ],
+                  [
+                    0.45,
+                    0.45
+                  ]
+                ],
+                "width": 0.014849999999999999,
+                "height": 0.49559999999999993
+              },
+              {
+                "points": [
+                  [
+                    0.65,
+                    0.22
+                  ],
+                  [
+                    0.595,
+                    0.32
+                  ],
+                  [
+                    0.565,
+                    0.45
+                  ]
+                ],
+                "width": 0.0132,
+                "height": 0.4012
+              },
+              {
+                "points": [
+                  [
+                    0.42,
+                    0.465
+                  ],
+                  [
+                    0.5,
+                    0.515
+                  ],
+                  [
+                    0.59,
+                    0.47
+                  ]
+                ],
+                "width": 0.01155,
+                "height": 0.3186
+              }
+            ],
+            "shadow": 35,
+            "shadow_radius": 9,
+            "feather": 1.6,
+            "edge_irregularity": 0.0043,
+            "clear_cover": true,
+            "clear_cover_strength": 0.52
+          },
+          {
+            "name": "side black leather shoulder saddle",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.12,
+                0.16
+              ],
+              [
+                0.2,
+                0.1
+              ],
+              [
+                0.34,
+                0.07
+              ],
+              [
+                0.49,
+                0.075
+              ],
+              [
+                0.63,
+                0.1
+              ],
+              [
+                0.72,
+                0.15
+              ],
+              [
+                0.73,
+                0.21
+              ],
+              [
+                0.62,
+                0.255
+              ],
+              [
+                0.42,
+                0.265
+              ],
+              [
+                0.24,
+                0.22
+              ]
+            ],
+            "relief": [],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.5,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "side ridged command shoulder bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.12,
+                0.135
+              ],
+              [
+                0.2,
+                0.082
+              ],
+              [
+                0.32,
+                0.052
+              ],
+              [
+                0.46,
+                0.05
+              ],
+              [
+                0.59,
+                0.075
+              ],
+              [
+                0.69,
+                0.115
+              ],
+              [
+                0.745,
+                0.165
+              ],
+              [
+                0.7,
+                0.21
+              ],
+              [
+                0.56,
+                0.238
+              ],
+              [
+                0.39,
+                0.235
+              ],
+              [
+                0.24,
+                0.195
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.18,
+                    0.17
+                  ],
+                  [
+                    0.31,
+                    0.12
+                  ],
+                  [
+                    0.5,
+                    0.11
+                  ],
+                  [
+                    0.67,
+                    0.145
+                  ]
+                ],
+                "width": 0.0126,
+                "height": 0.5074
+              },
+              {
+                "points": [
+                  [
+                    0.24,
+                    0.205
+                  ],
+                  [
+                    0.38,
+                    0.16
+                  ],
+                  [
+                    0.57,
+                    0.155
+                  ],
+                  [
+                    0.7,
+                    0.175
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.34219999999999995
+              }
+            ],
+            "shadow": 36,
+            "shadow_radius": 8,
+            "feather": 1.5,
+            "edge_irregularity": 0.0055
+          },
+          {
+            "name": "side black leather chap inset",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.145,
+                0.72
+              ],
+              [
+                0.21,
+                0.675
+              ],
+              [
+                0.315,
+                0.665
+              ],
+              [
+                0.4,
+                0.705
+              ],
+              [
+                0.455,
+                0.78
+              ],
+              [
+                0.465,
+                0.9
+              ],
+              [
+                0.42,
+                0.98
+              ],
+              [
+                0.3,
+                0.995
+              ],
+              [
+                0.21,
+                0.955
+              ],
+              [
+                0.16,
+                0.86
+              ]
+            ],
+            "relief": [],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.4,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "side narrow thigh bone",
+            "material": "bone",
+            "contour": [
+              [
+                0.17,
+                0.742
+              ],
+              [
+                0.235,
+                0.702
+              ],
+              [
+                0.31,
+                0.695
+              ],
+              [
+                0.38,
+                0.725
+              ],
+              [
+                0.425,
+                0.775
+              ],
+              [
+                0.44,
+                0.835
+              ],
+              [
+                0.425,
+                0.89
+              ],
+              [
+                0.44,
+                0.925
+              ],
+              [
+                0.405,
+                0.965
+              ],
+              [
+                0.335,
+                0.982
+              ],
+              [
+                0.265,
+                0.955
+              ],
+              [
+                0.215,
+                0.9
+              ],
+              [
+                0.19,
+                0.835
+              ],
+              [
+                0.165,
+                0.79
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.215,
+                    0.765
+                  ],
+                  [
+                    0.25,
+                    0.84
+                  ],
+                  [
+                    0.25,
+                    0.93
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.4012
+              },
+              {
+                "points": [
+                  [
+                    0.305,
+                    0.73
+                  ],
+                  [
+                    0.33,
+                    0.82
+                  ],
+                  [
+                    0.33,
+                    0.94
+                  ]
+                ],
+                "width": 0.0108,
+                "height": 0.295
+              }
+            ],
+            "shadow": 31,
+            "shadow_radius": 7,
+            "feather": 1.5,
+            "edge_irregularity": 0.005
+          },
+          {
+            "name": "side waist wrap",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.24,
+                0.56
+              ],
+              [
+                0.71,
+                0.56
+              ],
+              [
+                0.69,
+                0.67
+              ],
+              [
+                0.26,
+                0.67
+              ]
+            ],
+            "relief": [],
+            "shadow": 23,
+            "shadow_radius": 6,
+            "feather": 1.1,
+            "edge_irregularity": 0.002
+          },
+          {
+            "name": "side collar",
+            "material": "black_leather",
+            "contour": [
+              [
+                0.34,
+                0.035
+              ],
+              [
+                0.61,
+                0.035
+              ],
+              [
+                0.68,
+                0.13
+              ],
+              [
+                0.57,
+                0.17
+              ],
+              [
+                0.4,
+                0.16
+              ]
+            ],
+            "relief": [],
+            "shadow": 20,
+            "shadow_radius": 5,
+            "feather": 1,
+            "edge_irregularity": 0.002
+          }
+        ],
+        "seams": [
+          {
+            "points": [
+              [
+                0.24,
+                0.27
+              ],
+              [
+                0.22,
+                0.49
+              ],
+              [
+                0.23,
+                0.68
+              ]
+            ],
+            "stitch": true,
+            "spacing": 0.028,
+            "highlight": [
+              63,
+              73,
+              65
+            ],
+            "width": 0.0055
+          },
+          {
+            "points": [
+              [
+                0.68,
+                0.27
+              ],
+              [
+                0.71,
+                0.48
+              ],
+              [
+                0.69,
+                0.68
+              ]
+            ],
+            "stitch": true,
+            "spacing": 0.028,
+            "highlight": [
+              63,
+              73,
+              65
+            ],
+            "width": 0.0055
+          },
+          {
+            "points": [
+              [
+                0.27,
+                0.58
+              ],
+              [
+                0.48,
+                0.64
+              ],
+              [
+                0.68,
+                0.58
+              ]
+            ],
+            "stitch": true,
+            "spacing": 0.028,
+            "highlight": [
+              49,
+              56,
+              51
+            ],
+            "width": 0.0055
+          }
+        ],
+        "closures": [
+          {
+            "type": "lacing",
+            "left": [
+              [
+                0.22,
+                0.36
+              ],
+              [
+                0.23,
+                0.6
+              ]
+            ],
+            "right": [
+              [
+                0.27,
+                0.36
+              ],
+              [
+                0.28,
+                0.6
+              ]
+            ],
+            "pairs": 6
+          },
+          {
+            "type": "self_destruct",
+            "position": [
+              0.58,
+              0.31
+            ],
+            "radius": 0.024
+          },
+          {
+            "type": "segmented_belt",
+            "from": [
+              0.27,
+              0.63
+            ],
+            "to": [
+              0.69,
+              0.63
+            ],
+            "count": 5,
+            "width": 0.019
+          }
+        ],
+        "wear": {
+          "count": 11,
+          "x_range": [
+            0.07,
+            0.8
+          ],
+          "y_range": [
+            0.15,
+            0.96
+          ],
+          "highlight": [
+            101,
+            110,
+            104
+          ]
+        }
+      }
+    },
+    "final_contrast": 1.045,
+    "final_unsharp_radius": 0.62,
+    "final_unsharp_percent": 66,
+    "final_unsharp_threshold": 2
+  },
+  "revision": "2026-10-02-studio-v2-final-pixel-detail-pass"
+}

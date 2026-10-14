@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_WraithStargateDiplomaticEnvoy</defName>
+    <label>Wraith Stargate diplomatic envoy</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_WraithStargateDiplomaticEnvoy</workerClass>
+    <baseChance>0.022</baseChance>
+    <earliestDay>20</earliestDay>
+    <minRefireDays>24</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+</Defs>

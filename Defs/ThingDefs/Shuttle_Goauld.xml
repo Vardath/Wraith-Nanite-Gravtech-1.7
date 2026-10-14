@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Al'kesh: WNG-owned Goa'uld medium transport on Odyssey's native player-shuttle stack. -->
+  <ThingDef ParentName="ShuttleSkyfallerBase">
+    <defName>WNG_AlkeshIncoming</defName><label>Al'kesh (incoming)</label><thingClass>PassengerShuttleIncoming</thingClass>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Shuttle/WNG_AlkeshTransport</texPath><shaderType>CutoutComplex</shaderType><drawSize>(5.5,7.7)</drawSize></graphicData>
+    <size>(5,7)</size>
+    <skyfaller><anticipationSound>Shuttle_Landing</anticipationSound><anticipationSoundTicks>250</anticipationSoundTicks><ticksToImpactRange>200~250</ticksToImpactRange><minimalRoofDestruction>true</minimalRoofDestruction><shadowSize>(5.5,7.7)</shadowSize><rotationCurve><points><li>(0,30)</li><li>(0.5,5)</li><li>(0.9,-5)</li><li>(0.95,0)</li></points></rotationCurve><zPositionCurve><points><li>(0.95,2.5)</li><li>(1,0)</li></points></zPositionCurve><speedCurve><points><li>(0.6,0.6)</li><li>(0.95,0.94)</li></points></speedCurve></skyfaller>
+  </ThingDef>
+  <ThingDef ParentName="ShuttleSkyfallerBase">
+    <defName>WNG_AlkeshLeaving</defName><label>Al'kesh (leaving)</label><thingClass>PassengerShuttleLeaving</thingClass><rotatable>true</rotatable>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Shuttle/WNG_AlkeshTransport</texPath><shaderType>CutoutComplex</shaderType><drawSize>(5.5,7.7)</drawSize></graphicData>
+    <size>(5,7)</size>
+    <skyfaller><reversed>true</reversed><anticipationSound>Shuttle_Leaving</anticipationSound><anticipationSoundTicks>-10</anticipationSoundTicks><ticksToImpactRange>-40~-15</ticksToImpactRange><shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow><shadowSize>(5.5,7.7)</shadowSize><moteSpawnTime>0.05</moteSpawnTime><motesPerCell>1</motesPerCell><rotationCurve><points><li>(0,0)</li><li>(0.15,10)</li><li>(0.5,-5)</li></points></rotationCurve><zPositionCurve><points><li>(0,0)</li><li>(0.08,2)</li></points></zPositionCurve><speedCurve><points><li>(0,0.2)</li><li>(0.6,1.0)</li></points></speedCurve></skyfaller>
+  </ThingDef>
+  <ThingDef ParentName="ShuttleSkyfallerBase">
+    <defName>WNG_AlkeshBombingPass</defName><label>Al'kesh bombing pass</label><thingClass>WraithNaniteGravtech.Skyfaller_GoauldAlkeshBombingPass</thingClass><drawOffscreen>true</drawOffscreen>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Shuttle/WNG_AlkeshTransport</texPath><shaderType>CutoutComplex</shaderType><drawSize>(5.5,7.7)</drawSize></graphicData><size>(5,7)</size>
+    <skyfaller><ticksToImpactRange>165~205</ticksToImpactRange><anticipationSoundTicks>-1</anticipationSoundTicks><rotationCurve><points><li>(0,12)</li><li>(0.5,2)</li><li>(0.9,-2)</li><li>(1,0)</li></points></rotationCurve><zPositionCurve><points><li>(0,5)</li><li>(0.85,3)</li><li>(1,1.5)</li></points></zPositionCurve><speedCurve><points><li>(0,1.05)</li><li>(0.8,0.85)</li><li>(1,0.7)</li></points></speedCurve></skyfaller>
+  </ThingDef>
+  <WorldObjectDef ParentName="ShuttleWorldObjectBase">
+    <defName>WNG_AlkeshWorld</defName><label>Al'kesh</label><description>A Goa'uld Al'kesh in native Odyssey world flight.</description><expandingIconTexture>Things/Building/Goauld/Shuttle/WNG_AlkeshTransport</expandingIconTexture><expandingIconDrawSize>1</expandingIconDrawSize>
+  </WorldObjectDef>
+  <TransportShipDef>
+    <defName>WNG_Ship_Alkesh</defName><label>Al'kesh</label><shipThing>WNG_AlkeshTransport</shipThing><arrivingSkyfaller>WNG_AlkeshIncoming</arrivingSkyfaller><leavingSkyfaller>WNG_AlkeshLeaving</leavingSkyfaller><worldObject>WNG_AlkeshWorld</worldObject><maxLaunchDistance>120</maxLaunchDistance><playerShuttle>true</playerShuttle>
+  </TransportShipDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AlkeshTransport</defName><label>Al'kesh transport</label>
+    <description>A Goa'uld Al'kesh mid-range bomber and transport. Odyssey owns ordinary boarding, cargo, launch and world travel; WNG adds a physical same-map bombing run using the exact craft. It uses Chemfuel when ONAC is absent and ONAC's Goa'uld material/fuel economy when ONAC is installed.</description>
+    <thingClass>Building_PassengerShuttle</thingClass><preventDroppingThingsOn>true</preventDroppingThingsOn><altitudeLayer>Building</altitudeLayer><pathCost>50</pathCost><blockWind>true</blockWind><passability>PassThroughOnly</passability><fillPercent>0.5</fillPercent><size>(5,7)</size><drawHighlight>true</drawHighlight><highlightColor>(0.72,0.52,0.22)</highlightColor><uiIconScale>1</uiIconScale>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Shuttle/WNG_AlkeshTransport</texPath><shaderType>CutoutComplex</shaderType><drawSize>(5.5,7.7)</drawSize><shadowData><volume>(4.8,1.2,6.8)</volume><offset>(0,0,0)</offset></shadowData></graphicData>
+    <uiIconPath>Things/Building/Goauld/Shuttle/WNG_AlkeshTransport</uiIconPath>
+    <statBases><MaxHitPoints>1500</MaxHitPoints><Flammability>0.08</Flammability><WorkToBuild>62000</WorkToBuild><Mass>185</Mass><Comfort>0.68</Comfort></statBases>
+    <tickerType>Normal</tickerType><designationCategory>Misc</designationCategory><constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+    <costList><Plasteel>160</Plasteel><Gold>35</Gold><ComponentSpacer>6</ComponentSpacer><ShuttleEngine>1</ShuttleEngine></costList>
+    <canOverlapZones>true</canOverlapZones><rotatable>true</rotatable><hasInteractionCell>true</hasInteractionCell><interactionCellOffset>(0,0,-4)</interactionCellOffset><defaultPlacingRot>North</defaultPlacingRot><selectable>true</selectable><terrainAffordanceNeeded>Light</terrainAffordanceNeeded><soundImpactDefault>BulletImpact_Metal</soundImpactDefault><preventSkyfallersLandingOn>true</preventSkyfallersLandingOn><drawerType>RealtimeOnly</drawerType><repairEffect>ConstructMetal</repairEffect><forceDebugSpawnable>true</forceDebugSpawnable>
+    <building><claimable>false</claimable><destroySound>BuildingDestroyed_Metal_Big</destroySound><paintable>false</paintable><isInert>true</isInert><forcedCostLeavings><li MayRequire="Ludeon.RimWorld.Odyssey">ShuttleEngine</li></forcedCostLeavings></building>
+    <inspectorTabs><li>ITab_ContentsTransporter</li></inspectorTabs><researchPrerequisites><li>WNG_GoauldShuttles</li></researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Shuttle"><shipDef>WNG_Ship_Alkesh</shipDef></li>
+      <li Class="CompProperties_Launchable"><fuelPerTile>2.0</fuelPerTile><minFuelCost>24</minFuelCost><skyfallerLeaving>WNG_AlkeshLeaving</skyfallerLeaving><worldObjectDef>WNG_AlkeshWorld</worldObjectDef><cooldownTicks>3000</cooldownTicks><fixedLaunchDistanceMax>120</fixedLaunchDistanceMax><cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage></li>
+      <li Class="CompProperties_Transporter"><massCapacity>900</massCapacity><max1PerGroup>true</max1PerGroup><canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting><pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound><pawnExitSound>Shuttle_PawnExit</pawnExitSound><showMassInInspectString>true</showMassInInspectString></li>
+      <li Class="CompProperties_Refuelable"><fuelCapacity>360</fuelCapacity><targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>360</initialConfigurableTargetFuelLevel><fuelFilter><thingDefs><li>Chemfuel</li></thingDefs></fuelFilter><fuelLabel>Chemfuel</fuelLabel><fuelGizmoLabel>Chemfuel</fuelGizmoLabel><consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><autoRefuelPercent>1</autoRefuelPercent><showFuelGizmo>true</showFuelGizmo><drawOutOfFuelOverlay>false</drawOutOfFuelOverlay><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel></li>
+      <li Class="CompProperties_AmbientSound"><sound>ShuttleIdle_Ambience</sound></li>
+      <li Class="WraithNaniteGravtech.CompProperties_GoauldAlkeshBombingRun"><bombsPerRun>6</bombsPerRun><impactAreaRadius>8</impactAreaRadius><explosionRadiusMin>3</explosionRadiusMin><explosionRadiusMax>4.5</explosionRadiusMax><bombIntervalTicks>18</bombIntervalTicks><warmupTicks>30</warmupTicks><randomFireRadius>10</randomFireRadius><sortieFuelCost>45</sortieFuelCost><requiredCrew>1</requiredCrew></li>
+    </comps>
+    <placeWorkers><li>PlaceWorker_NotUnderRoof</li></placeWorkers><uiOrder>2610</uiOrder>
+  </ThingDef>
+
+  <!-- Death Glider: exact two-seat fighter, native shuttle travel + WNG physical two-pass sortie. -->
+  <ThingDef ParentName="ShuttleSkyfallerBase">
+    <defName>WNG_GoauldDeathGliderIncoming</defName><label>Death Glider (incoming)</label><thingClass>PassengerShuttleIncoming</thingClass>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Shuttle/WNG_GoauldDeathGlider</texPath><shaderType>CutoutComplex</shaderType><drawSize>(5.5,4.4)</drawSize></graphicData><size>(5,4)</size>
+    <skyfaller><anticipationSound>Shuttle_Landing</anticipationSound><anticipationSoundTicks>250</anticipationSoundTicks><ticksToImpactRange>200~250</ticksToImpactRange><minimalRoofDestruction>true</minimalRoofDestruction><shadowSize>(5,4)</shadowSize><rotationCurve><points><li>(0,30)</li><li>(0.5,5)</li><li>(0.9,-5)</li><li>(0.95,0)</li></points></rotationCurve><zPositionCurve><points><li>(0.95,2.5)</li><li>(1,0)</li></points></zPositionCurve><speedCurve><points><li>(0.6,0.6)</li><li>(0.95,0.94)</li></points></speedCurve></skyfaller>
+  </ThingDef>
+  <ThingDef ParentName="ShuttleSkyfallerBase">
+    <defName>WNG_GoauldDeathGliderLeaving</defName><label>Death Glider (leaving)</label><thingClass>PassengerShuttleLeaving</thingClass><rotatable>true</rotatable>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Shuttle/WNG_GoauldDeathGlider</texPath><shaderType>CutoutComplex</shaderType><drawSize>(5.5,4.4)</drawSize></graphicData><size>(5,4)</size>
+    <skyfaller><reversed>true</reversed><anticipationSound>Shuttle_Leaving</anticipationSound><anticipationSoundTicks>-10</anticipationSoundTicks><ticksToImpactRange>-40~-15</ticksToImpactRange><shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow><shadowSize>(5,4)</shadowSize><moteSpawnTime>0.05</moteSpawnTime><motesPerCell>1</motesPerCell><rotationCurve><points><li>(0,0)</li><li>(0.15,10)</li><li>(0.5,-5)</li></points></rotationCurve><zPositionCurve><points><li>(0,0)</li><li>(0.08,2)</li></points></zPositionCurve><speedCurve><points><li>(0,0.2)</li><li>(0.6,1.0)</li></points></speedCurve></skyfaller>
+  </ThingDef>
+  <WorldObjectDef ParentName="ShuttleWorldObjectBase">
+    <defName>WNG_GoauldDeathGliderWorld</defName><label>Death Glider</label><description>A Goa'uld Death Glider in short-range native Odyssey flight.</description><expandingIconTexture>Things/Building/Goauld/Shuttle/WNG_GoauldDeathGlider</expandingIconTexture><expandingIconDrawSize>1</expandingIconDrawSize>
+  </WorldObjectDef>
+  <TransportShipDef>
+    <defName>WNG_Ship_GoauldDeathGlider</defName><label>Death Glider</label><shipThing>WNG_GoauldDeathGlider</shipThing><arrivingSkyfaller>WNG_GoauldDeathGliderIncoming</arrivingSkyfaller><leavingSkyfaller>WNG_GoauldDeathGliderLeaving</leavingSkyfaller><worldObject>WNG_GoauldDeathGliderWorld</worldObject><maxLaunchDistance>35</maxLaunchDistance><playerShuttle>true</playerShuttle>
+  </TransportShipDef>
+  <ThingDef ParentName="ShuttleSkyfallerBase">
+    <defName>WNG_GoauldDeathGliderAttackPass</defName><label>Death Glider attack pass</label><thingClass>WraithNaniteGravtech.Skyfaller_GoauldDeathGliderAttackPass</thingClass><drawOffscreen>true</drawOffscreen>
+    <skyfaller><ticksToImpactRange>150~190</ticksToImpactRange><anticipationSoundTicks>-1</anticipationSoundTicks><rotationCurve><points><li>(0,18)</li><li>(0.45,3)</li><li>(0.85,-3)</li><li>(1,0)</li></points></rotationCurve><zPositionCurve><points><li>(0,5)</li><li>(0.85,3)</li><li>(1,1.5)</li></points></zPositionCurve><speedCurve><points><li>(0,1.2)</li><li>(0.8,0.9)</li><li>(1,0.7)</li></points></speedCurve></skyfaller>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_Projectile_GoauldDeathGliderStaffPulse</defName><label>Death Glider staff-cannon pulse</label><thingClass>Projectile_Explosive</thingClass>
+    <graphicData><texPath>Things/Projectile/Goauld/WNG_GoauldStaffPulse</texPath><graphicClass>Graphic_Single</graphicClass><shaderType>TransparentPostLight</shaderType><drawSize>(0.45,0.45)</drawSize></graphicData>
+    <projectile><damageDef>Bomb</damageDef><damageAmountBase>22</damageAmountBase><armorPenetrationBase>0.32</armorPenetrationBase><speed>95</speed><explosionRadius>0.8</explosionRadius><explosionChanceToStartFire>0.08</explosionChanceToStartFire><explosionDamageFalloff>true</explosionDamageFalloff></projectile>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldDeathGlider</defName><label>Death Glider</label>
+    <description>A Goa'uld two-seat fighter. Native Odyssey systems own ordinary boarding and short-range travel; WNG adds a physical two-pass staff-cannon sortie that carries this exact fighter and its exact crew through the attack instead of spawning a proxy craft.</description>
+    <thingClass>Building_PassengerShuttle</thingClass><preventDroppingThingsOn>true</preventDroppingThingsOn><altitudeLayer>Building</altitudeLayer><pathCost>50</pathCost><blockWind>true</blockWind><passability>PassThroughOnly</passability><fillPercent>0.35</fillPercent><size>(5,4)</size><drawHighlight>true</drawHighlight><highlightColor>(0.58,0.42,0.18)</highlightColor><uiIconScale>1</uiIconScale>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Shuttle/WNG_GoauldDeathGlider</texPath><shaderType>CutoutComplex</shaderType><drawSize>(5.5,4.4)</drawSize><shadowData><volume>(4.2,1,3.2)</volume><offset>(0,0,0)</offset></shadowData></graphicData>
+    <uiIconPath>Things/Building/Goauld/Shuttle/WNG_GoauldDeathGlider</uiIconPath>
+    <statBases><MaxHitPoints>1800</MaxHitPoints><Flammability>0.12</Flammability><WorkToBuild>22000</WorkToBuild><Mass>190</Mass><Comfort>0.45</Comfort></statBases>
+    <tickerType>Normal</tickerType><designationCategory>Misc</designationCategory><constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <costList><Plasteel>220</Plasteel><Gold>20</Gold><ComponentIndustrial>12</ComponentIndustrial><ComponentSpacer>3</ComponentSpacer></costList>
+    <canOverlapZones>true</canOverlapZones><rotatable>true</rotatable><hasInteractionCell>true</hasInteractionCell><interactionCellOffset>(0,0,-3)</interactionCellOffset><defaultPlacingRot>North</defaultPlacingRot><selectable>true</selectable><terrainAffordanceNeeded>Light</terrainAffordanceNeeded><soundImpactDefault>BulletImpact_Metal</soundImpactDefault><preventSkyfallersLandingOn>true</preventSkyfallersLandingOn><drawerType>RealtimeOnly</drawerType><repairEffect>ConstructMetal</repairEffect><forceDebugSpawnable>true</forceDebugSpawnable>
+    <building><claimable>false</claimable><destroySound>BuildingDestroyed_Metal_Big</destroySound><paintable>false</paintable><isInert>true</isInert></building>
+    <inspectorTabs><li>ITab_ContentsTransporter</li></inspectorTabs><researchPrerequisites><li>WNG_GoauldShuttles</li></researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Shuttle"><shipDef>WNG_Ship_GoauldDeathGlider</shipDef></li>
+      <li Class="CompProperties_Launchable"><fuelPerTile>2.6</fuelPerTile><minFuelCost>25</minFuelCost><skyfallerLeaving>WNG_GoauldDeathGliderLeaving</skyfallerLeaving><worldObjectDef>WNG_GoauldDeathGliderWorld</worldObjectDef><cooldownTicks>1800</cooldownTicks><fixedLaunchDistanceMax>35</fixedLaunchDistanceMax><cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage></li>
+      <li Class="CompProperties_Transporter"><massCapacity>220</massCapacity><max1PerGroup>true</max1PerGroup><canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting><pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound><pawnExitSound>Shuttle_PawnExit</pawnExitSound><showMassInInspectString>true</showMassInInspectString></li>
+      <li Class="CompProperties_Refuelable"><fuelCapacity>170</fuelCapacity><targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>170</initialConfigurableTargetFuelLevel><fuelFilter><thingDefs><li>Chemfuel</li></thingDefs></fuelFilter><fuelLabel>Chemfuel</fuelLabel><fuelGizmoLabel>Chemfuel</fuelGizmoLabel><consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><autoRefuelPercent>1</autoRefuelPercent><showFuelGizmo>true</showFuelGizmo><drawOutOfFuelOverlay>false</drawOutOfFuelOverlay><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel></li>
+      <li Class="CompProperties_AmbientSound"><sound>ShuttleIdle_Ambience</sound></li>
+      <li Class="WraithNaniteGravtech.CompProperties_GoauldDeathGliderMission"><attackPasses>2</attackPasses><boltsPerPass>2</boltsPerPass><acquisitionRadius>45</acquisitionRadius><sortieFuelCost>30</sortieFuelCost><requiredCrew>2</requiredCrew><projectile>WNG_Projectile_GoauldDeathGliderStaffPulse</projectile></li>
+    </comps>
+    <placeWorkers><li>PlaceWorker_NotUnderRoof</li></placeWorkers><uiOrder>2620</uiOrder>
+  </ThingDef>
+</Defs>

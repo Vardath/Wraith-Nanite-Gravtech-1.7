@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>WNG_AncientVacuumShieldEmitter</defName>
+    <label>Ancient vacuum-harmonic shield emitter</label>
+    <description>A reconstructed mature precursor defensive-field projector derived from an analyzed Ancient harmonic prism. It uses the current Odyssey shield lifecycle but projects a wider, tougher barrier than the standard Asuran emitter. The field still depletes, recharges, collapses under EMP and shuts down without the isolated Asuran family power lattice. Its current exterior visual is provisional pending the professional art pass.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2251</uiOrder>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_PrecursorShieldEmitter</texPath>
+      <drawSize>(3.4,3.4)</drawSize>
+    </graphicData>
+    <size>(3,3)</size>
+    <fillPercent>0.62</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>24</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+    <specialDisplayRadius>34.9</specialDisplayRadius>
+    <statBases>
+      <MaxHitPoints>560</MaxHitPoints>
+      <Mass>86</Mass>
+      <Beauty>14</Beauty>
+      <WorkToBuild>24000</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>360</Plasteel>
+      <Uranium>80</Uranium>
+      <GravlitePanel>150</GravlitePanel>
+      <ComponentSpacer>16</ComponentSpacer>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AncientShieldHarmonics</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility">
+        <family>Asuran</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Interactable">
+        <compClass>WraithNaniteGravtech.CompInteractable_WNGAsuranGravshipShield</compClass>
+        <ticksToActivate>180</ticksToActivate>
+        <jobString>stabilize Ancient vacuum-harmonic shield</jobString>
+        <activateTexPath>UI/Commands/ActivateGravshipShield</activateTexPath>
+        <soundActivate>WNG_PrecursorShield</soundActivate>
+        <requiresPower>false</requiresPower>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGAsuranGravshipShield">
+        <radius>34.9</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptAirProjectiles>true</interceptAirProjectiles>
+        <color>(0.56,0.88,1.0)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>1800</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>false</hitPointsRestoreInstantlyAfterCharge>
+        <startWithMaxHitPoints>false</startWithMaxHitPoints>
+        <chargeDurationTicks>12000</chargeDurationTicks>
+        <minIdleAlpha>0.22</minIdleAlpha>
+        <drawWithNoSelection>true</drawWithNoSelection>
+        <disarmedByEmpForTicks>2400</disarmedByEmpForTicks>
+        <gizmoTipKey>GravshipShieldTip</gizmoTipKey>
+        <alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo>
+        <rechargeHitPointsIntervalTicks>45</rechargeHitPointsIntervalTicks>
+        <activated>true</activated>
+        <activeDuration>7200</activeDuration>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Consumer</role>
+        <demandWatts>7200</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

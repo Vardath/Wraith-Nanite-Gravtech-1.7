@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>WNG_ReplicatorSalvageConsignment</defName>
+    <rootSelectionWeight>0.24</rootSelectionWeight>
+    <rootEarliestDay>18</rootEarliestDay>
+    <minRefireDays>32</minRefireDays>
+    <expireDaysRange>4~8</expireDaysRange>
+    <affectedByPoints>false</affectedByPoints>
+    <root Class="WraithNaniteGravtech.QuestNode_Root_ReplicatorSalvageConsignment" />
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->salvage consignment</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A freelance recovery broker is clearing a small off-world salvage lot. The manifest contains conventional industrial supplies and one sealed precision machine component recovered from wreckage. No payment is requested; accepting the offer authorizes an immediate cargo-pod delivery to an eligible settlement.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+  </QuestScriptDef>
+</Defs>

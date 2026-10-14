@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_HoffanCountermeasure</defName>
+    <label>Hoffan feeding countermeasure</label>
+    <description>Reconstruct the Hoffan protein treatment that blocks Wraith feeding chemistry. The first-generation prototype is brutally dangerous to humans, but survivors cannot be drained normally and poison Wraith that attempt to feed on them.</description>
+    <baseCost>2600</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_WraithEnzymePharmacology</li>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>9.00</researchViewX>
+    <researchViewY>5.00</researchViewY>
+  </ResearchProjectDef>
+</Defs>

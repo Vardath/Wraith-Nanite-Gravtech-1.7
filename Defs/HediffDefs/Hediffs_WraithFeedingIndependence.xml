@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_FeedingIndependent</defName>
+    <label>feeding-independent Wraith metabolism</label>
+    <description>This Wraith's Life Force metabolism has been successfully rewritten. It remains biologically and socially Wraith, but ordinary digestion has returned and feeding is no longer required. Without a Life Force reservoir, the old high-speed regenerative pathway is no longer powered.</description>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_FeedingIndependenceRejection</defName>
+    <label>feeding-independence vector rejection</label>
+    <description>The experimental metabolic rewrite failed. Competing Wraith, Iratus and retroviral signals are producing catastrophic multi-system inflammation. The crisis can burn itself out over several days, but death from organ failure is a serious risk.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.20</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <lifeThreatening>true</lifeThreatening>
+        <deathMtbDays>1.20</deathMtbDays>
+        <painOffset>0.45</painOffset>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.35</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.40</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>-0.40</offset></li>
+          <li><capacity>Breathing</capacity><offset>-0.25</offset></li>
+        </capMods>
+        <statFactors>
+          <ImmunityGainSpeed>0.55</ImmunityGainSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

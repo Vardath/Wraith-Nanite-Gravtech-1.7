@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GeneDef>
+    <defName>WNG_WhispersPredatorBiology</defName>
+    <label>Whispers predator biology</label>
+    <description>An unstable early Michael hybrid phenotype assembled from Human, Iratus/Wraith and other predatory traits. It is permanently blind, hunts through exceptional hearing, moves aggressively at close range, and continuously exudes obscuring fog in a ten-tile radius from gill-like structures in the neck.</description>
+    <iconPath>UI/WNG/Genes/WhispersPredator</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <geneClass>WraithNaniteGravtech.Anomaly.Gene_WhispersPredator</geneClass>
+    <statOffsets>
+      <MoveSpeed>0.8</MoveSpeed>
+      <MeleeHitChance>8</MeleeHitChance>
+      <MeleeDodgeChance>5</MeleeDodgeChance>
+    </statOffsets>
+    <statFactors>
+      <MeleeDamageFactor>1.6</MeleeDamageFactor>
+    </statFactors>
+    <biostatCpx>4</biostatCpx>
+    <biostatMet>-3</biostatMet>
+  </GeneDef>
+</Defs>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_WraithMatureHiveDiscovery</defName>
+    <label>mature Wraith Hive discovery</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_WraithMatureHiveDiscovery</workerClass>
+    <baseChance>0.12</baseChance>
+    <earliestDay>18</earliestDay>
+    <minRefireDays>24</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+</Defs>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_WraithDartCullingRaid</defName><label>Wraith Dart culling run</label><category>ThreatBig</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags><workerClass>WraithNaniteGravtech.IncidentWorker_WraithDartCulling</workerClass>
+    <baseChance>0.18</baseChance><earliestDay>12</earliestDay><minRefireDays>16</minRefireDays><populationEffect>None</populationEffect><pointsScaleable>false</pointsScaleable>
+  </IncidentDef>
+</Defs>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>WNG_ReconstructAncientDrone</defName>
+    <label>reconstruct Ancient drone</label>
+    <description>Fabricate one stable physical Ancient drone weapon from recovered guidance architecture.</description>
+    <jobString>Reconstructing Ancient drone.</jobString>
+    <workAmount>5500</workAmount><workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_AncientDroneControl</researchPrerequisite>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>20</count></li>
+      <li><filter><thingDefs><li>Uranium</li></thingDefs></filter><count>5</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>Uranium</li><li>ComponentSpacer</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_AncientDrone>1</WNG_AncientDrone></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_ReconstructVacuumEnergyModule</defName>
+    <label>reconstruct vacuum-energy module</label>
+    <description>Fabricate one finite sealed Ancient vacuum-energy module. The containment pocket is consumed by use and is not rechargeable.</description>
+    <jobString>Reconstructing vacuum-energy module.</jobString>
+    <workAmount>18000</workAmount><workSkill>Crafting</workSkill>
+    <researchPrerequisite>WNG_VacuumEnergyContainment</researchPrerequisite>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>120</count></li>
+      <li><filter><thingDefs><li>Uranium</li></thingDefs></filter><count>40</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>6</count></li>
+      <li><filter><thingDefs><li>Gold</li></thingDefs></filter><count>30</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>Uranium</li><li>ComponentSpacer</li><li>Gold</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_VacuumEnergyModule>1</WNG_VacuumEnergyModule></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+</Defs>

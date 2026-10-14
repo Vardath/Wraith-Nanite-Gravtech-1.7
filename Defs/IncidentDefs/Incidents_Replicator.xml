@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_ReplicatorConsumedRuinDiscovery</defName>
+    <label>Replicator-consumed ruin discovery</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_ReplicatorConsumedRuinDiscovery</workerClass>
+    <baseChance>0.12</baseChance>
+    <earliestDay>12</earliestDay>
+    <minRefireDays>24</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>false</pointsScaleable>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>WNG_ReplicatorMatterMeteorShower</defName>
+    <label>Replicator Matter fall</label>
+    <category>ThreatSmall</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_ReplicatorMatterMeteorShower</workerClass>
+    <baseChance>0.065</baseChance>
+    <earliestDay>10</earliestDay>
+    <minRefireDays>18</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>false</pointsScaleable>
+    <letterLabel>Replicator Matter fall</letterLabel>
+    <letterText>Multiple anomalous machine-matter objects are descending toward the colony. Their lattice signatures match dormant Replicator material rather than a finished swarm.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>WNG_ReplicatorContaminatedCargo</defName>
+    <label>recovered salvage cargo</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_ReplicatorContaminatedCargo</workerClass>
+    <baseChance>0.055</baseChance>
+    <earliestDay>14</earliestDay>
+    <minRefireDays>20</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>false</pointsScaleable>
+    <letterLabel>Recovered salvage cargo</letterLabel>
+    <letterText>An automated recovery beacon has routed a small cargo pod of industrial supplies and sealed machine salvage to the colony.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+  </IncidentDef>
+
+</Defs>

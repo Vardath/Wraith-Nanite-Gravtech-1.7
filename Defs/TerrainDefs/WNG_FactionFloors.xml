@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TerrainDef ParentName="FloorBase">
+    <defName>WNG_WraithLivingFloor</defName>
+    <label>living hive floor</label>
+    <description>A cultivated Wraith walking surface of interlocked chitin plates and resilient membrane. Unlike gravship substructure, this is ordinary colony/interior flooring and carries no gravship-family support role.</description>
+    <texturePath>Terrain/Wraith/WNG_WraithGravshipSubstructure</texturePath>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>245</renderPrecedence>
+    <designationCategory>Floors</designationCategory>
+    <statBases>
+      <WorkToBuild>180</WorkToBuild>
+      <Beauty>2</Beauty>
+      <Cleanliness>0.1</Cleanliness>
+      <Flammability>0.15</Flammability>
+    </statBases>
+    <costList>
+      <WNG_Biomass>2</WNG_Biomass>
+    </costList>
+    <constructEffect>ConstructDirt</constructEffect>
+    <researchPrerequisites>
+      <li>WNG_BiologicalCultivation</li>
+    </researchPrerequisites>
+  </TerrainDef>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>WNG_AsuranDeckFloor</defName>
+    <label>Asuran deck floor</label>
+    <description>A precision-laid Asuran interior deck of pale nanite-composite panels. Unlike Asuran gravship substructure, this is ordinary colony/interior flooring and carries no gravship-family support role.</description>
+    <texturePath>Terrain/Precursor/WNG_AsuranGravshipSubstructure</texturePath>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>246</renderPrecedence>
+    <designationCategory>Floors</designationCategory>
+    <statBases>
+      <WorkToBuild>420</WorkToBuild>
+      <Beauty>4</Beauty>
+      <Cleanliness>0.35</Cleanliness>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Plasteel>2</Plasteel>
+    </costList>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>WNG_PrecursorFabrication</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </TerrainDef>
+</Defs>

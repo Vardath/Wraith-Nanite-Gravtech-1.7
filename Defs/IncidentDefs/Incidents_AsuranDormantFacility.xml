@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_AsuranDormantFacilityDiscovery</defName><label>dormant Asuran facility discovery</label><category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags><workerClass>WraithNaniteGravtech.IncidentWorker_AsuranDormantFacilityDiscovery</workerClass>
+    <baseChance>0.065</baseChance><earliestDay>18</earliestDay><minRefireDays>30</minRefireDays><populationEffect>None</populationEffect><pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+</Defs>

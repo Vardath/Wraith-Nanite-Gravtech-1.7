@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_RecoveredAncientDrone</defName>
+    <label>damaged Ancient drone core</label>
+    <description>An archaeological drone core whose weapon and propulsion systems are no longer trustworthy. Its surviving guidance and neural-command structures can still be studied as a technological specimen.</description>
+    <stackLimit>1</stackLimit>
+    <tradeability>None</tradeability>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <thingCategories><li>Manufactured</li></thingCategories>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Weapon/Precursor/WNG_RecoveredAncientDrone</texPath>
+      <drawSize>(0.9,0.9)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints><Mass>4.2</Mass><MarketValue>380</MarketValue>
+      <Flammability>0</Flammability><DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>860104</analysisID>
+        <analysisRequiredRange>1~1</analysisRequiredRange>
+        <analysisDurationHours>4</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <allowRepeatAnalysis>false</allowRepeatAnalysis>
+        <canStudyInPlace>false</canStudyInPlace>
+        <activateTexPath>UI/WNG/RecoveredAncientDrone</activateTexPath>
+        <activateLabelString>Study damaged Ancient drone core</activateLabelString>
+        <activateDescString>Recover the usable guidance and command architecture from this relic.</activateDescString>
+        <jobString>studying damaged Ancient drone core</jobString>
+        <completedLetterLabel>Ancient drone control data recovered</completedLetterLabel>
+        <completedLetter>Enough intact command architecture has been recovered to begin reconstructing a safe drone-control system.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_RecoveredVacuumEnergyModule</defName>
+    <label>collapsed vacuum field shell</label>
+    <description>A damaged Ancient field enclosure from an exhausted energy module. The original reserve is gone, but the remaining lattice geometry is sufficiently intact for careful analysis.</description>
+    <stackLimit>1</stackLimit>
+    <tradeability>None</tradeability>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <thingCategories><li>Manufactured</li></thingCategories>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Resource/Precursor/WNG_RecoveredVacuumEnergyModule</texPath>
+      <drawSize>(0.85,0.85)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints><Mass>7.2</Mass><MarketValue>1600</MarketValue>
+      <Flammability>0</Flammability><DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>860105</analysisID>
+        <analysisRequiredRange>1~1</analysisRequiredRange>
+        <analysisDurationHours>6</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <allowRepeatAnalysis>false</allowRepeatAnalysis>
+        <canStudyInPlace>false</canStudyInPlace>
+        <activateTexPath>UI/WNG/RecoveredVacuumModule</activateTexPath>
+        <activateLabelString>Study collapsed vacuum field shell</activateLabelString>
+        <activateDescString>Map the surviving containment geometry without treating the relic as a usable power source.</activateDescString>
+        <jobString>studying collapsed vacuum field shell</jobString>
+        <completedLetterLabel>Vacuum field geometry recovered</completedLetterLabel>
+        <completedLetter>The surviving field geometry has been mapped well enough to investigate newly manufactured finite vacuum-energy modules.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

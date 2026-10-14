@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_AncientNeuralInterface</defName>
+    <hediffClass>Hediff_AddedPart</hediffClass>
+    <label>Ancient neural interface</label>
+    <labelNoun>Ancient neural interface</labelNoun>
+    <description>A successfully retained artificial Ancient-control translator seated against the brain's motor and sensory interface regions. It reproduces only the ATA-like neural handshake normally supplied by the Ancient technology activation gene; it grants no Asuran identity, nanite abilities, collective link or Replicator sovereignty.</description>
+    <isBad>false</isBad>
+    <spawnThingOnRemoved>WNG_AncientNeuralInterface</spawnThingOnRemoved>
+    <addedPartProps><partEfficiency>1</partEfficiency></addedPartProps>
+  </HediffDef>
+</Defs>

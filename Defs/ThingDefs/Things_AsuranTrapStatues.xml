@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ArtBuildingBase">
+    <defName>WNG_AsuranSleeperStatue</defName>
+    <label>Asuran lattice sculpture</label>
+    <description>An immaculate human-form sculpture offered by the Quiet Lattice as an example of Asuran art. Its seamless surface is built from a dense, dormant nanite lattice whose purpose is not disclosed to the buyer.</description>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tickerType>Rare</tickerType>
+    <tradeability>All</tradeability>
+    <thingCategories><li>BuildingsArt</li></thingCategories>
+    <tradeTags><li>Art</li></tradeTags>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Art/WNG_AsuranSleeperStatue</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Mass>18</Mass>
+      <Beauty>135</Beauty>
+      <MarketValue>1850</MarketValue>
+      <Flammability>0.05</Flammability>
+      <SellPriceFactor>1.05</SellPriceFactor>
+    </statBases>
+    <costList>
+      <Plasteel>35</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <WNG_AsuranNaniteSlurry>30</WNG_AsuranNaniteSlurry>
+      <Silver>100</Silver>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtSculpture</nameMaker>
+        <descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
+        <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranSleeperStatue">
+        <awakeningDelayDays>5~60</awakeningDelayDays>
+        <hostileFactionDefName>WNG_PrecursorCollective</hostileFactionDefName>
+        <pawnKindDefName>WNG_HumanFormReplicator</pawnKindDefName>
+      </li>
+    </comps>
+    <placeWorkers><li>PlaceWorker_MeditationOffsetBuildingsNear</li></placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="ArtBuildingBase">
+    <defName>WNG_AsuranFeederStatue</defName>
+    <label>Asuran shadow sculpture</label>
+    <description>A severe Asuran sculpture whose dark metallic surface seems to absorb detail from the room around it. Quiet Lattice traders describe it as a meditation on the conversion of matter into pattern.</description>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tickerType>Rare</tickerType>
+    <tradeability>All</tradeability>
+    <thingCategories><li>BuildingsArt</li></thingCategories>
+    <tradeTags><li>Art</li></tradeTags>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Art/WNG_AsuranFeederStatue</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Mass>18</Mass>
+      <Beauty>125</Beauty>
+      <MarketValue>2100</MarketValue>
+      <Flammability>0.05</Flammability>
+      <SellPriceFactor>1.05</SellPriceFactor>
+    </statBases>
+    <costList>
+      <Plasteel>40</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+      <WNG_AsuranNaniteSlurry>50</WNG_AsuranNaniteSlurry>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtSculpture</nameMaker>
+        <descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
+        <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranFeederStatue">
+        <feedingDelayDays>5~20</feedingDelayDays>
+        <maximumFeedingGlow>0.10</maximumFeedingGlow>
+        <feedingRadius>12</feedingRadius>
+        <slurryYield>35~70</slurryYield>
+        <slurryDefName>WNG_AsuranNaniteSlurry</slurryDefName>
+      </li>
+    </comps>
+    <placeWorkers><li>PlaceWorker_MeditationOffsetBuildingsNear</li></placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="ArtBuildingBase">
+    <defName>WNG_AsuranReplicatorReliquary</defName>
+    <label>Asuran reliquary sculpture</label>
+    <description>An intricate Asuran reliquary sold as a meditation on recursion and perfect form. Beneath its decorative shell, a compact Replicator lattice waits in a dormant configuration.</description>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tickerType>Rare</tickerType>
+    <tradeability>All</tradeability>
+    <thingCategories><li>BuildingsArt</li></thingCategories>
+    <tradeTags><li>Art</li></tradeTags>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Art/WNG_AsuranReplicatorReliquary</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>190</MaxHitPoints>
+      <Mass>20</Mass>
+      <Beauty>145</Beauty>
+      <MarketValue>2400</MarketValue>
+      <Flammability>0.04</Flammability>
+      <SellPriceFactor>1.05</SellPriceFactor>
+    </statBases>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <WNG_AsuranNaniteSlurry>70</WNG_AsuranNaniteSlurry>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtSculpture</nameMaker>
+        <descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
+        <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranReplicatorReliquary">
+        <releaseDelayDays>5~60</releaseDelayDays>
+        <replicatorCount>5</replicatorCount>
+        <hostileFactionDefName>WNG_ReplicatorSwarm</hostileFactionDefName>
+        <pawnKindDefName>WNG_ReplicatorDrone</pawnKindDefName>
+      </li>
+    </comps>
+    <placeWorkers><li>PlaceWorker_MeditationOffsetBuildingsNear</li></placeWorkers>
+  </ThingDef>
+
+</Defs>

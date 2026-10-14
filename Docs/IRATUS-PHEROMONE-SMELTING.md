@@ -1,0 +1,13 @@
+# Iratus pheromone perfume and reclamation (WNG 1.6)
+
+This feature is implemented in WNG itself, not Z Adaptive.
+
+## New salvage and perfume
+- `WNG_IratusPheromones` is recovered from Wraith living equipment. It is a haulable, stockpile-filterable Drugs-category resource, with in-mod RGBA PNG art at `Textures/Things/Item/Resource/WNG_IratusPheromones.png`.
+- The pheromone timer uses 250-tick rare updates and persists in savegames and split/merged stacks. **No attraction chance before 60,000 exposed ticks (one RimWorld day)**. Chance per 250-tick update starts at 0.1% at the threshold and increases linearly to 1% over the next 240,000 exposed ticks (four days). A successful arrival places 1–3 wild WNG Iratus, respecting a cap of 12 existing Iratus on that map, consumes one pheromone unit only after success, then resets the exposure timer for the rest of the stack. The existing Replicator block reassembly behavior (deterministic 30,000-tick threshold with a minimum stack of 10) was not modified.
+- Both pheromone salvage and the finished perfume are categorized `Drugs`, which is the category the vanilla `BurnDrugs` recipe accepts in both campfires and crematoriums, and both are explicitly haulable. This avoids an invasive patch to the vanilla Burn Drugs bill.
+- `WNG_IratusPerfume` is a refined perfume created at the **Drug Lab** after `DrugProduction` research: 1 Iratus pheromone + 6 psychoid leaves + 3 neutroamine -> 1 perfume. It is a haulable drug-policy-friendly Drugs-category item. Apply it to gain a `SocialImpact` stat factor **4.0** for approximately **12 in-game hours** (Hediff severity 1.0, reduction 2.0/day). It does not itself attract Iratus bugs because the hazardous raw pheromone ingredient was consumed in production.
+- The perfume has a dedicated 512x512 RGBA item texture at `Textures/Things/Item/Drug/WNG_IratusPerfume.png`. Its deterministic professional asset-generation source is `.github/artgen/generate_iratus_perfume.py`. Artwork was generated and committed inside the mod, not as a chat image.
+- Fixed direct smelt products on Wraith equipment (Iratus pheromones) and Asuran nanite equipment (Replicator blocks) remain additive to ordinary vanilla 25%-of-eligible-material recovery.
+- The new items are not assigned to an artificial special storage category; vanilla stockpiles and shelves present both under Drugs, and Burn Drugs works without changes to RimWorld's source.
+- Live game testing is still needed for pawn perfume application, optional mod interactions and Iratus arrival balance. CI checks syntax, managed compilation, resource integrity, packaging and static contracts.

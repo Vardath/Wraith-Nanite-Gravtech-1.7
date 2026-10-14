@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GeneDef>
+    <defName>WNG_ReplicatorQueenLink</defName>
+    <label>sovereign replicator lattice</label>
+    <description>A rare nanite architecture associated with the Replicator Queen phenotype. The gene itself is not sufficient to create sovereign authority: only the one exact Queen pawn registered by the vault storyline owns the command root.</description>
+    <displayCategory>Ability</displayCategory>
+    <biostatCpx>4</biostatCpx>
+    <biostatMet>-4</biostatMet>
+    <abilities>
+      <li>WNG_ReplicatorQueenDirective</li>
+      <li>WNG_ReplicatorSovereignSummon</li>
+      <li>WNG_ReplicatorSovereignReleaseSummoned</li>
+    </abilities>
+  </GeneDef>
+</Defs>

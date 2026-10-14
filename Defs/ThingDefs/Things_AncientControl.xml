@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_AncientDrone</defName>
+    <label>reconstructed Ancient drone</label>
+    <description>A newly manufactured autonomous attack drone built from recovered control principles. It remains inert inventory until a compatible, occupied control chair launches it, and each attack expends one physical drone.</description>
+    <stackLimit>12</stackLimit>
+    <tradeability>Sellable</tradeability>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>Manufactured</li></thingCategories>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Weapon/Precursor/WNG_AncientDrone</texPath>
+      <drawSize>(0.9,0.9)</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>4.5</Mass><MarketValue>1050</MarketValue>
+      <Flammability>0</Flammability><DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_AncientDroneProjectile</defName>
+    <label>guided Ancient drone</label>
+    <thingClass>WraithNaniteGravtech.Projectile_AncientDrone</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Weapon/Precursor/WNG_AncientDrone</texPath>
+      <drawSize>(0.75,0.75)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef><damageAmountBase>92</damageAmountBase>
+      <armorPenetrationBase>1.35</armorPenetrationBase><speed>68</speed>
+      <explosionRadius>1.45</explosionRadius><flyOverhead>false</flyOverhead>
+      <soundExplode>Explosion_Bomb</soundExplode>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureBase">
+    <defName>WNG_AncientControlChair</defName>
+    <label>reconstructed Ancient control chair</label>
+    <description>A powered neural command station reconstructed from Ancient principles. It only functions while a compatible operator maintains the link. The occupied chair projects a 72-cell allied command network for WNG Puddle Jumper drone control and Asuran/Ancient gravship shield switching, while its own attacks consume real manufactured drones from the finite internal reserve.</description>
+    <designationCategory>Furniture</designationCategory>
+    <researchPrerequisites><li>WNG_AncientDroneControl</li></researchPrerequisites>
+    <uiOrder>2575</uiOrder>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <size>(2,2)</size><rotatable>true</rotatable><defaultPlacingRot>South</defaultPlacingRot>
+    <hasInteractionCell>true</hasInteractionCell><interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Control/WNG_AncientControlChair</texPath>
+      <drawSize>(2.2,2.2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>520</MaxHitPoints><WorkToBuild>18000</WorkToBuild><Mass>42</Mass>
+      <Flammability>0</Flammability><Beauty>14</Beauty>
+    </statBases>
+    <costList><Plasteel>170</Plasteel><Uranium>35</Uranium><ComponentSpacer>8</ComponentSpacer><GravlitePanel>30</GravlitePanel></costList>
+    <comps>
+      <li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><basePowerConsumption>850</basePowerConsumption></li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>12</fuelCapacity>
+        <fuelFilter><thingDefs><li>WNG_AncientDrone</li></thingDefs></fuelFilter>
+        <fuelLabel>reconstructed drones</fuelLabel><fuelGizmoLabel>drone reserve</fuelGizmoLabel>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>6</initialConfigurableTargetFuelLevel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo><drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_AncientControlChair">
+        <networkRadius>72</networkRadius><droneRange>82</droneRange><droneFuelCost>1</droneFuelCost><operatorCheckInterval>60</operatorCheckInterval>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

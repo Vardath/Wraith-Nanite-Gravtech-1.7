@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_WraithEnzymeRefinement</defName>
+    <label>Wraith enzyme refinement</label>
+    <description>Stabilize raw Wraith enzyme into controlled formulations. Unlocks a lower-peak refined combat/medical stimulant and a staged dependency-treatment serum that tapers established enzyme addiction rather than deleting it instantly.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_WraithEnzymePharmacology</li>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>9.00</researchViewX>
+    <researchViewY>4.00</researchViewY>
+  </ResearchProjectDef>
+</Defs>

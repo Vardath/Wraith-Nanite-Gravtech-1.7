@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Hidden Odyssey-native Puddle Jumper variant for scripted non-player transport. -->
+  <TransportShipDef>
+    <defName>WNG_Ship_PuddleJumperNPC</defName>
+    <label>Puddle Jumper</label>
+    <shipThing>WNG_PuddleJumper_NPC</shipThing>
+    <arrivingSkyfaller>WNG_PuddleJumperIncoming</arrivingSkyfaller>
+    <leavingSkyfaller>WNG_PuddleJumperLeaving</leavingSkyfaller>
+    <worldObject>WNG_PuddleJumperWorld</worldObject>
+    <maxLaunchDistance>95</maxLaunchDistance>
+    <playerShuttle>false</playerShuttle>
+  </TransportShipDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_PuddleJumper_NPC</defName>
+    <label>Puddle Jumper</label>
+    <description>A non-player Puddle Jumper used by scripted offworld visitors. It keeps Odyssey's native shuttle, transporter and launch lifecycle, uses the same stabilized Asuran nanite-slurry fuel family as the player craft, and remains unavailable for player construction.</description>
+    <thingClass>Building_PassengerShuttle</thingClass>
+    <preventDroppingThingsOn>true</preventDroppingThingsOn>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <size>(3,5)</size>
+    <drawHighlight>true</drawHighlight>
+    <highlightColor>(0.48,0.82,0.95)</highlightColor>
+    <uiIconScale>1</uiIconScale>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Shuttle/WNG_PuddleJumper</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(4.2,5.5)</drawSize>
+      <shadowData><volume>(2.3,1.0,4.1)</volume><offset>(-0.1,0,0)</offset></shadowData>
+    </graphicData>
+    <statBases><MaxHitPoints>850</MaxHitPoints><Flammability>0</Flammability><Mass>82</Mass><Comfort>0.82</Comfort></statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>true</canOverlapZones><rotatable>true</rotatable><hasInteractionCell>true</hasInteractionCell><interactionCellOffset>(2,0,0)</interactionCellOffset><defaultPlacingRot>East</defaultPlacingRot><selectable>true</selectable><terrainAffordanceNeeded>Light</terrainAffordanceNeeded><soundImpactDefault>BulletImpact_Metal</soundImpactDefault><preventSkyfallersLandingOn>true</preventSkyfallersLandingOn><drawerType>RealtimeOnly</drawerType><repairEffect>ConstructMetal</repairEffect><forceDebugSpawnable>false</forceDebugSpawnable>
+    <building><claimable>false</claimable><deconstructible>false</deconstructible><neverBuildable>true</neverBuildable><paintable>false</paintable><isInert>true</isInert><destroySound>BuildingDestroyed_Metal_Big</destroySound></building>
+    <inspectorTabs><li>ITab_ContentsTransporter</li></inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Shuttle"><shipDef>WNG_Ship_PuddleJumperNPC</shipDef></li>
+      <li Class="CompProperties_Launchable"><fuelPerTile>0.02</fuelPerTile><minFuelCost>0.2</minFuelCost><skyfallerLeaving>WNG_PuddleJumperLeaving</skyfallerLeaving><worldObjectDef>WNG_PuddleJumperWorld</worldObjectDef><cooldownTicks>0</cooldownTicks><fixedLaunchDistanceMax>95</fixedLaunchDistanceMax></li>
+      <li Class="CompProperties_Transporter"><massCapacity>650</massCapacity><max1PerGroup>true</max1PerGroup><canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting><pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound><pawnExitSound>Shuttle_PawnExit</pawnExitSound><showMassInInspectString>true</showMassInInspectString></li>
+      <li Class="CompProperties_Refuelable"><fuelCapacity>4</fuelCapacity><targetFuelLevelConfigurable>false</targetFuelLevelConfigurable><fuelFilter><thingDefs><li>WNG_AsuranNaniteSlurry</li></thingDefs></fuelFilter><fuelLabel>Asuran nanite slurry</fuelLabel><fuelGizmoLabel>Nanite slurry</fuelGizmoLabel><consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><showFuelGizmo>false</showFuelGizmo><drawOutOfFuelOverlay>false</drawOutOfFuelOverlay><showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle><canEjectFuel>false</canEjectFuel></li>
+      <li Class="CompProperties_AmbientSound"><sound>ShuttleIdle_Ambience</sound></li>
+      <li Class="WraithNaniteGravtech.CompProperties_PuddleJumperSystems"><cloakFuelPerRareTick>0.0025</cloakFuelPerRareTick><cloakCooldownTicks>1200</cloakCooldownTicks><sensorCooldownTicks>2500</sensorCooldownTicks></li>
+      <li Class="WraithNaniteGravtech.CompProperties_HostileGateJumperIngress"><cloakTicks>900</cloakTicks><deployRetryTicks>90</deployRetryTicks><maximumDeployRetries>20</maximumDeployRetries></li>
+    </comps>
+  </ThingDef>
+</Defs>

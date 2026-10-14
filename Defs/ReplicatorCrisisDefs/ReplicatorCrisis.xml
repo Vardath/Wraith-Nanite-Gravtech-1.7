@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WraithNaniteGravtech.ReplicatorCrisisPressureTuningDef>
+    <defName>WNG_ReplicatorCrisisPressureTuning</defName>
+    <evaluationIntervalTicks>2500</evaluationIntervalTicks>
+    <matureInfestationCount>18</matureInfestationCount>
+    <exposureTicksPerTier>60000</exposureTicksPerTier>
+    <clearTicksPerDecay>120000</clearTicksPerDecay>
+    <maxPressureTier>3</maxPressureTier>
+    <matterSeedBonusPerTier>10</matterSeedBonusPerTier>
+  </WraithNaniteGravtech.ReplicatorCrisisPressureTuningDef>
+</Defs>

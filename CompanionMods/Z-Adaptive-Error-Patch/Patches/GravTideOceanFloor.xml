@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    GravTide 2026.10.09 + Ocean Floor 1.0.0 (RimWorld 1.6).
+
+    GravTide adds weather and fish tables to BiomeDef Ocean unconditionally.
+    Ocean Floor conditionally adds smaller fallback tables only if absent.
+    When Ocean Floor loads first, both mods' PatchOperations succeed, leaving
+    two baseWeatherCommonalities and two fishTypes tags under the Ocean biome.
+    These non-list XML Def siblings must be unique.
+
+    When BOTH authors' exact variants coexist, discard only Ocean Floor's
+    fallback nodes. Preserve the full GravTide weather/fish tables. If
+    GravTide loads first, Ocean Floor does not add these nodes, so this patch
+    does nothing. Ocean Floor's other features and custom defs are untouched.
+    Do not delete by sibling position: identify by authored values.
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>GravTide</li></mods>
+    <match Class="PatchOperationFindMod">
+      <mods><li>Ocean Floor</li></mods>
+      <match Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/BiomeDef[defName="Ocean" and baseWeatherCommonalities[Clear="12" and Fog="6" and Rain="8"] and baseWeatherCommonalities[Clear="18" and Fog="2" and Rain="3" and DryThunderstorm="1"]]</xpath>
+            <match Class="PatchOperationRemove">
+              <xpath>Defs/BiomeDef[defName="Ocean" and baseWeatherCommonalities[Clear="12" and Fog="6" and Rain="8"]]/baseWeatherCommonalities[Clear="18" and Fog="2" and Rain="3" and DryThunderstorm="1"]</xpath>
+            </match>
+          </li>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/BiomeDef[defName="Ocean" and fishTypes/saltwater_Common/GravTide_Fish_Sculpin and fishTypes/saltwater_Common/Fish_Tuna]</xpath>
+            <match Class="PatchOperationRemove">
+              <xpath>Defs/BiomeDef[defName="Ocean" and fishTypes/saltwater_Common/GravTide_Fish_Sculpin]/fishTypes[saltwater_Common/Fish_Tuna and saltwater_Common/Fish_Cod and saltwater_Uncommon/Fish_Marlin]</xpath>
+            </match>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+</Patch>

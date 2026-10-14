@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    2026-10-11 source-verified against workshop 3813009890 (Kindred 1.6).
+    Three named Order of Hermes pawn kinds inherit a 300/500-silver weapon
+    budget while the allowed EltexStaff costs 2000 silver in the user's
+    loaded game. Override only affected pawn kinds. Do not alter hostility,
+    faction frequency, spells, research, or other magi.
+    Guard both pre-inheritance and post-inheritance XML forms.
+  -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>/Defs/PawnKindDef[(defName="Kindred_Mage_AdeptFlame" or defName="Kindred_Mage_TheurgeMind" or defName="Kindred_Mage_TheurgeAccord") and not(weaponMoney)]</xpath>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/PawnKindDef[(defName="Kindred_Mage_AdeptFlame" or defName="Kindred_Mage_TheurgeMind" or defName="Kindred_Mage_TheurgeAccord") and not(weaponMoney)]</xpath>
+        <value><weaponMoney>2050~2900</weaponMoney></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>/Defs/PawnKindDef[(defName="Kindred_Mage_AdeptFlame" or defName="Kindred_Mage_TheurgeMind" or defName="Kindred_Mage_TheurgeAccord")]/weaponMoney[normalize-space(text())="300~900" or normalize-space(text())="500~1200"]</xpath>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/PawnKindDef[(defName="Kindred_Mage_AdeptFlame" or defName="Kindred_Mage_TheurgeMind" or defName="Kindred_Mage_TheurgeAccord")]/weaponMoney[normalize-space(text())="300~900" or normalize-space(text())="500~1200"]</xpath>
+        <value><weaponMoney>2050~2900</weaponMoney></value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

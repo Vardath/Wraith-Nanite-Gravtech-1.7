@@ -1,0 +1,407 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>WNG_WraithBoneBlade</defName>
+    <recipeMaker IsNull="True" />
+    <label>living boneblade</label>
+    <thingCategories Inherit="False"><li>WeaponsMelee</li></thingCategories>
+    <description>A compact Wraith fighting blade grown around layered cartilage, a mineralized cutting ridge and a recurved puncture point.</description>
+    <techLevel>Spacer</techLevel>
+    <smeltable>true</smeltable>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Wraith/WNG_WraithBoneBlade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.45,1.45)</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>11000</WorkToMake>
+      <Mass>1.3</Mass>
+      <EquipDelay>0.7</EquipDelay>
+    </statBases>
+    <costList>
+      <WNG_Biomass>18</WNG_Biomass>
+    </costList>
+    <weaponTags>
+      <li>WraithLineWeapon</li>
+      <li>WraithWeapon</li>
+      <li>WraithMeleeWeapon</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponMelee</li>
+    </tradeTags>
+    <tools>
+      <li>
+        <label>living grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>1.30</cooldownTime>
+        <armorPenetration>0.12</armorPenetration>
+        <chanceFactor>0.12</chanceFactor>
+      </li>
+      <li>
+        <label>recurved point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.25</cooldownTime>
+        <armorPenetration>0.34</armorPenetration>
+        <chanceFactor>0.42</chanceFactor>
+      </li>
+      <li>
+        <label>mineralized edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>1.35</cooldownTime>
+        <armorPenetration>0.30</armorPenetration>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>1</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>WNG_WraithWarGlaive</defName>
+    <recipeMaker IsNull="True" />
+    <label>living war glaive</label>
+    <thingCategories Inherit="False"><li>WeaponsMelee</li></thingCategories>
+    <description>A two-handed Wraith polearm grown around a flexible dark spine and broad mineralized crescent, built for heavy close combat.</description>
+    <techLevel>Spacer</techLevel>
+    <smeltable>true</smeltable>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Wraith/WNG_WraithWarGlaive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.9,1.9)</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>21000</WorkToMake>
+      <Mass>3.7</Mass>
+      <EquipDelay>1.1</EquipDelay>
+    </statBases>
+    <costList>
+      <WNG_Biomass>36</WNG_Biomass>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+      <li>WraithHeavyWeapon</li>
+      <li>WraithWeapon</li>
+      <li>WraithMeleeWeapon</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponMelee</li>
+    </tradeTags>
+    <tools>
+      <li>
+        <label>living haft</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.75</cooldownTime>
+        <armorPenetration>0.16</armorPenetration>
+        <chanceFactor>0.14</chanceFactor>
+      </li>
+      <li>
+        <label>hooked point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>19</power>
+        <cooldownTime>1.90</cooldownTime>
+        <armorPenetration>0.41</armorPenetration>
+        <chanceFactor>0.35</chanceFactor>
+      </li>
+      <li>
+        <label>war crescent</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.05</cooldownTime>
+        <armorPenetration>0.38</armorPenetration>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>3</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>WNG_WraithStunStaff</defName>
+    <recipeMaker IsNull="True" />
+    <label>wraith stun staff</label>
+    <thingCategories Inherit="False"><li>WeaponsRanged</li></thingCategories>
+    <description>A long grown capture staff that projects a focused neuromuscular disruption pulse while retaining a reinforced shaft for close combat.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Wraith/WNG_WraithStunStaff</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.8,1.8)</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+      <Mass>3.4</Mass>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.82</AccuracyShort>
+      <AccuracyMedium>0.20</AccuracyMedium>
+      <AccuracyLong>0.05</AccuracyLong>
+      <RangedWeapon_Cooldown>2.2</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <WNG_Biomass>24</WNG_Biomass>
+    </costList>
+    <weaponTags>
+      <li>WraithCaptureWeapon</li>
+      <li>WraithWeapon</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>reinforced staff strike</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.55</cooldownTime>
+        <armorPenetration>0.20</armorPenetration>
+        <chanceFactor>1.25</chanceFactor>
+      </li>
+    </tools>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>WNG_ProjectileStunStaff</defaultProjectile>
+        <warmupTime>0.35</warmupTime>
+        <range>12.9</range>
+        <soundCast>WNG_WraithStunStaff_Discharge</soundCast>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>2</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_ProjectileStunStaff</defName>
+    <label>staff stun discharge</label>
+    <thingClass>WraithNaniteGravtech.Projectile_WraithStunStaff</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/WNG/WNG_ProjectileStunStaff</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Stun</damageDef>
+      <damageAmountBase>45</damageAmountBase>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>WNG_WraithStunner</defName>
+    <recipeMaker IsNull="True" />
+    <label>living stunner</label>
+    <thingCategories Inherit="False"><li>WeaponsRanged</li></thingCategories>
+    <description>A grown capture weapon that launches a bioelectric neuromuscular disruption pulse intended to disable prey rather than kill it.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Wraith/WNG_WraithStunner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>2.2</Mass>
+      <AccuracyTouch>0.72</AccuracyTouch>
+      <AccuracyShort>0.78</AccuracyShort>
+      <AccuracyMedium>0.66</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <WNG_Biomass>18</WNG_Biomass>
+    </costList>
+    <weaponTags>
+      <li>WraithCaptureWeapon</li>
+      <li>WraithWeapon</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>WNG_ProjectileStunner</defaultProjectile>
+        <warmupTime>0.8</warmupTime>
+        <range>22.9</range>
+        <soundCast>WNG_WraithStunner_Fire</soundCast>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>1</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_ProjectileStunner</defName>
+    <label>stunner pulse</label>
+    <graphicData>
+      <texPath>Things/Projectile/WNG/WNG_ProjectileStunner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Stun</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <speed>65</speed>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>WNG_WraithCarbine</defName>
+    <recipeMaker IsNull="True" />
+    <label>living carbine</label>
+    <thingCategories Inherit="False"><li>WeaponsRanged</li></thingCategories>
+    <description>A compact grown carbine that fires hardened bioelectric projectiles for Wraith hunters and line warriors.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Wraith/WNG_WraithCarbine</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>3.6</Mass>
+      <AccuracyTouch>0.62</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.64</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <WNG_Biomass>28</WNG_Biomass>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+      <li>WraithLineWeapon</li>
+      <li>WraithWeapon</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>WNG_ProjectileLivingCarbine</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>27.9</range>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>WNG_WraithCarbine_Fire</soundCast>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>2</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_ProjectileLivingCarbine</defName>
+    <label>living carbine shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/WNG/WNG_ProjectileLivingCarbine</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <armorPenetrationBase>0.28</armorPenetrationBase>
+      <speed>72</speed>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>WNG_WraithHeavyBioWeapon</defName>
+    <recipeMaker IsNull="True" />
+    <label>heavy bio-weapon</label>
+    <thingCategories Inherit="False"><li>WeaponsRanged</li></thingCategories>
+    <description>A heavy grown weapon that ejects bursts of dense hypervelocity bioelectric slugs for elite Wraith warriors.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Wraith/WNG_WraithHeavyBioWeapon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>7.5</Mass>
+      <AccuracyTouch>0.58</AccuracyTouch>
+      <AccuracyShort>0.76</AccuracyShort>
+      <AccuracyMedium>0.70</AccuracyMedium>
+      <AccuracyLong>0.58</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <WNG_Biomass>55</WNG_Biomass>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+      <li>WraithHeavyWeapon</li>
+      <li>WraithWeapon</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>WNG_ProjectileHeavyBio</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>31.9</range>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>WNG_WraithHeavyBioWeapon_Fire</soundCast>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>4</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_ProjectileHeavyBio</defName>
+    <label>heavy bio shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/WNG/WNG_ProjectileHeavyBio</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>23</damageAmountBase>
+      <armorPenetrationBase>0.42</armorPenetrationBase>
+      <stoppingPower>1.2</stoppingPower>
+      <speed>95</speed>
+    </projectile>
+  </ThingDef>
+</Defs>

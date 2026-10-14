@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GeneDef>
+    <defName>WNG_AncientAffinity</defName>
+    <label>Ancient technology activation gene</label>
+    <description>The natural Ancient/ATA gene. This nervous system presents the rare authentication signal required by reconstructed Ancient technology such as control chairs and Puddle Jumpers. It supplies only the compatibility handshake; it does not confer nanite biology, collective access, sovereign authority, free research, ammunition, or power.</description>
+    <displayCategory>Ability</displayCategory>
+    <iconPath>UI/WNG/AncientAffinity</iconPath>
+    <biostatMet>0</biostatMet>
+    <biostatCpx>1</biostatCpx>
+  </GeneDef>
+</Defs>

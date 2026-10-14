@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef>
+    <defName>WNG_Biomass</defName>
+    <label>cultured Wraith biomass</label>
+    <thingCategories Inherit="False"><li>ItemsMisc</li></thingCategories>
+    <description>Dense cultivated organic feedstock used by Wraith living technology. Mature Hives consume it for tissue repair and bounded population replacement.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <stackLimit>500</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <graphicData>
+      <texPath>Things/Item/Resource/WNG_Biomass</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Mass>0.12</Mass>
+      <MarketValue>1.8</MarketValue>
+      <Flammability>0.55</Flammability>
+    </statBases>
+      <comps><li Class="CompProperties_Forbiddable"/></comps>
+</ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_HiveMetabolicHeart</defName>
+    <label>wraith hive metabolic heart</label>
+    <description>The living center of a mature Wraith Hive. A hostile lineage Heart seeds and tracks one finite local population, occupied hibernation pods, finite feeding stock, a growth chamber, sealed dormancy reserves and a real biomass supply. Population replacement never exceeds the founding cap and consumes both biomass and donor Life Force.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Wraith/Hive/WNG_HiveMetabolicHeart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>60</pathCost>
+    <fillPercent>0.75</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>850</MaxHitPoints>
+      <Mass>85</Mass>
+      <Flammability>0.18</Flammability>
+      <Beauty>-6</Beauty>
+    </statBases>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithMatureHive">
+        <checkIntervalTicks>250</checkIntervalTicks>
+        <localFeedCycleTicks>120000</localFeedCycleTicks>
+        <localFeedVictimAgeYears>2</localFeedVictimAgeYears>
+        <localFeedLifeForceGain>0.12</localFeedLifeForceGain>
+        <localFeedOnlyBelow>0.85</localFeedOnlyBelow>
+        <maxWraithsFedPerCycle>3</maxWraithsFedPerCycle>
+        <replacementRetryTicks>30000</replacementRetryTicks>
+        <replacementDonorMinimumLifeForce>0.55</replacementDonorMinimumLifeForce>
+        <replacementDonorLifeForceCost>0.25</replacementDonorLifeForceCost>
+        <newbornLifeForce>0.35</newbornLifeForce>
+        <dormantWakeLossThreshold>2</dormantWakeLossThreshold>
+        <dormantWakeRadius>18</dormantWakeRadius>
+        <heartPulseTicks>600</heartPulseTicks>
+        <heartBiomassCost>1</heartBiomassCost>
+        <heartHealPerTarget>7</heartHealPerTarget>
+        <heartMaxTargets>4</heartMaxTargets>
+        <heartRadius>24</heartRadius>
+        <startingBiomassMin>480</startingBiomassMin>
+        <startingBiomassMax>620</startingBiomassMax>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_WraithGrowthChamber</defName>
+    <label>wraith growth chamber</label>
+    <thingCategories><li>Buildings</li></thingCategories>
+    <description>A cultivated Wraith gestation organ. Player Wraith colonies use it for resource-paid caste gestation, researched Wraith augmentations, and—after dedicated research—permanent Wraith-human hybrid grafting of an exact living subject. Any conscious player Wraith, including the starting Hunter, can initiate resource-paid Hunter, Warrior, Keeper and Queen gestation. Commander gestation additionally consumes an existing Wraith biological template. Hybrid grafting instead preserves the subject as the same pawn and installs only a limited unstable Wraith phenotype. Hostile mature Hives use the same organ under their Hive Heart ecology. A Growth Chamber is produced directly at a Living Forge; it has no separate growth-chamber seed stage.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <graphicData>
+      <texPath>Things/Building/Production/WNG_GrowthChamber</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(3,2)</size>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.72</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <inspectorTabs><li>ITab_Bills</li></inspectorTabs>
+    <building><spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity></building>
+    <statBases>
+      <MaxHitPoints>620</MaxHitPoints>
+      <Mass>64</Mass>
+      <Flammability>0.22</Flammability>
+      <Beauty>-3</Beauty>
+    </statBases>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_PlayerWraithGrowthChamber" />
+      <li Class="WraithNaniteGravtech.CompProperties_WraithHybridization">
+        <baseBiomassCost>360</baseBiomassCost>
+        <baseDurationTicks>180000</baseDurationTicks>
+        <donorMinimumLifeForce>0.70</donorMinimumLifeForce>
+        <donorLifeForceCost>0.40</donorLifeForceCost>
+        <initialHybridLifeForce>0.25</initialHybridLifeForce>
+        <gravSubstructureBiomassFactor>0.70</gravSubstructureBiomassFactor>
+        <gravSubstructureDurationFactor>0.65</gravSubstructureDurationFactor>
+        <completionRetryTicks>250</completionRetryTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>WNG_WraithHibernationPod</defName>
+    <label>wraith hibernation pod</label>
+    <description>A sealed living chamber for one exact Wraith in prolonged biological hibernation. Hibernation itself is owned by the Wraith's current Life Force state; the pod does not force it. While an already-hibernating occupant rests inside, a same-faction Keeper or Queen can perform a once-daily biomass-fed maintenance cycle that replaces a small fraction of unavoidable dormant Life Force loss.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Wraith/WNG_HibernationPod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,2)</size>
+    <tickerType>Normal</tickerType>
+    <designationCategory>Furniture</designationCategory>
+    <researchPrerequisites><li>WNG_FeedingEcology</li></researchPrerequisites>
+    <costList><WNG_Biomass>70</WNG_Biomass></costList>
+    <statBases>
+      <MaxHitPoints>420</MaxHitPoints>
+      <WorkToBuild>2600</WorkToBuild>
+      <Mass>46</Mass>
+      <Flammability>0.25</Flammability>
+      <BedRestEffectiveness>1.15</BedRestEffectiveness>
+      <Comfort>0.88</Comfort>
+    </statBases>
+    <building>
+      <bed_showSleeperBody>false</bed_showSleeperBody>
+      <destroySound>BuildingDestroyed_Soft_Medium</destroySound>
+    </building>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithHibernationMaintenance">
+        <checkIntervalTicks>250</checkIntervalTicks>
+        <keeperTendIntervalTicks>60000</keeperTendIntervalTicks>
+        <biomassCost>1</biomassCost>
+        <lifeForceRestore>0.02</lifeForceRestore>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>WNG_WraithFeedingNiche</defName>
+    <label>wraith feeding niche</label>
+    <description>A living restraint and suspension cradle for one exact biological captive retained as local Wraith feeding stock. Hostile Mature Hives use it through their Hive Heart ecology and never replenish finite captives for free. A player-owned niche can also enable Keeper-ration feeding: a same-faction Keeper or Queen supervises bounded nonlethal feeding only when player Wraith actually need Life Force.</description>
+    <graphicData>
+      <texPath>Things/Building/Wraith/Storage/WNG_NutrientNiche</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,2)</size>
+    <tickerType>Normal</tickerType>
+    <designationCategory>Furniture</designationCategory>
+    <researchPrerequisites><li>WNG_FeedingEcology</li></researchPrerequisites>
+    <costList><WNG_Biomass>30</WNG_Biomass></costList>
+    <statBases>
+      <MaxHitPoints>360</MaxHitPoints>
+      <WorkToBuild>1300</WorkToBuild>
+      <Beauty>-3</Beauty>
+      <Mass>38</Mass>
+      <Flammability>0.30</Flammability>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <Comfort>0.55</Comfort>
+    </statBases>
+    <building>
+      <bed_showSleeperBody>false</bed_showSleeperBody>
+      <destroySound>BuildingDestroyed_Soft_Medium</destroySound>
+    </building>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_PlayerWraithFeedingNiche">
+        <checkIntervalTicks>250</checkIntervalTicks>
+        <cycleTicks>120000</cycleTicks>
+        <victimAgeYears>2</victimAgeYears>
+        <lifeForceGainPerWraith>0.12</lifeForceGainPerWraith>
+        <feedOnlyBelowLifeForce>0.85</feedOnlyBelowLifeForce>
+        <maxWraithsFed>3</maxWraithsFed>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_HiveDormancyVault</defName>
+    <label>sealed Wraith dormancy vault</label>
+    <description>A finite sealed reserve of dormant Wraith fighters. It is separate from the ordinary occupied hibernation population and cannot replenish itself. Damage or nearby hostile colonists wake its remaining occupants in small waves.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Wraith/Hive/WNG_HiveDormancyVault</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,3)</drawSize>
+    </graphicData>
+    <size>(2,3)</size>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <passability>Impassable</passability>
+    <fillPercent>0.95</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>720</MaxHitPoints>
+      <Mass>110</Mass>
+      <Flammability>0.12</Flammability>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithDormancyVault">
+        <dormantCount>4</dormantCount>
+        <triggerRadius>18</triggerRadius>
+        <awakenIntervalTicks>180</awakenIntervalTicks>
+        <awakenPerWave>2</awakenPerWave>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

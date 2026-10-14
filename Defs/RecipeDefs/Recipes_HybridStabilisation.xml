@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_AdministerHybridStabiliser</defName>
+    <label>administer hybrid stabiliser</label>
+    <description>Administer a temporary hybrid stabilisation dose to an already retrovirally humanized Wraith. It does not replace the ordinary suppression injection; instead it gives a short safety window against abrupt biological reversion if primary maintenance lapses.</description>
+    <workerClass>WraithNaniteGravtech.Recipe_AdministerHybridStabiliser</workerClass>
+    <jobString>Administering hybrid stabiliser to TargetA.</jobString>
+    <researchPrerequisite>WNG_HybridStabilisation</researchPrerequisite>
+    <workAmount>650</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize>
+    <skillRequirements><Medicine>8</Medicine></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_HybridStabiliserDose</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_HybridStabiliserDose</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

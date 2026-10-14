@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>WNG_AncientArchaeologyQuest</defName>
+    <rootSelectionWeight>0.12</rootSelectionWeight>
+    <rootEarliestDay>16</rootEarliestDay>
+    <minRefireDays>40</minRefireDays>
+    <expireDaysRange>10~15</expireDaysRange>
+    <affectedByPoints>false</affectedByPoints>
+    <root Class="WraithNaniteGravtech.QuestNode_Root_AncientArchaeology" />
+    <questNameRules><rulesStrings><li>questName->the buried Ancient survey cache</li></rulesStrings></questNameRules>
+    <questDescriptionRules><rulesStrings><li>questDescription->A fragmentary precursor survey record identifies a buried cache containing damaged Ancient technology. The relics are inert evidence, not ready-made weapons or power sources, but careful analysis may open a genuine reconstruction path.</li></rulesStrings></questDescriptionRules>
+  </QuestScriptDef>
+</Defs>

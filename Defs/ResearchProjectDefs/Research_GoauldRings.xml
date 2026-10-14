@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_GoauldRingTransport</defName>
+    <label>Goa'uld ring transport</label>
+    <description>Reverse-engineer Goa'uld ring transporters as a powered matter-transfer network. Ring platforms use RimWorld's native transporter loading and move the exact loaded manifest between compatible powered endpoints on currently loaded maps.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites><li>Fabrication</li></prerequisites>
+    <researchViewX>17.5</researchViewX>
+    <researchViewY>13.5</researchViewY>
+  </ResearchProjectDef>
+</Defs>

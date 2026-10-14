@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>WNG_FabricateSovereignNeuralLattice</defName>
+    <label>fabricate sovereign neural lattice</label>
+    <description>Rebuild a mechlink into a bounded many-unit Replicator controller using twenty captured Replicator Blocks and one recovered Replicator core fragment.</description>
+    <jobString>Fabricating sovereign neural lattice.</jobString>
+    <workAmount>26000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <skillRequirements><Crafting>10</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Mechlink</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>20</count></li>
+      <li><filter><thingDefs><li>WNG_ReplicatorCoreFragment</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>Mechlink</li><li>WNG_ReplicatorMatter</li><li>WNG_ReplicatorCoreFragment</li></thingDefs>
+    </fixedIngredientFilter>
+    <products><WNG_SovereignNeuralLattice>1</WNG_SovereignNeuralLattice></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+    <researchPrerequisite>WNG_SovereignLatticeControl</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>WNG_InstallSovereignNeuralLattice</defName>
+    <label>install sovereign neural lattice</label>
+    <description>Install a physical Sovereign Neural Lattice into a non-Queen human brain. A recovered quest lattice can be installed without first researching its fabrication.</description>
+    <jobString>Installing sovereign neural lattice.</jobString>
+    <workerClass>WraithNaniteGravtech.Recipe_InstallSovereignNeuralLattice</workerClass>
+    <workAmount>3000</workAmount>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_SovereignNeuralLattice</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>3</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_SovereignNeuralLattice</li><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+    <addsHediff>WNG_SovereignNeuralLattice</addsHediff>
+    <appliedOnFixedBodyParts><li>Brain</li></appliedOnFixedBodyParts>
+    <recipeUsers><li>Human</li></recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>WNG_RemoveSovereignNeuralLattice</defName>
+    <label>remove sovereign neural lattice</label>
+    <description>Remove the physical Sovereign Neural Lattice. Every block still owned through this implant is released to its exact preserved prior authority, faction and domain state.</description>
+    <jobString>Removing sovereign neural lattice.</jobString>
+    <workerClass>WraithNaniteGravtech.Recipe_RemoveSovereignNeuralLattice</workerClass>
+    <removesHediff>WNG_SovereignNeuralLattice</removesHediff>
+    <recipeUsers><li>Human</li></recipeUsers>
+  <appliedOnFixedBodyParts><li>Brain</li></appliedOnFixedBodyParts></RecipeDef>
+</Defs>

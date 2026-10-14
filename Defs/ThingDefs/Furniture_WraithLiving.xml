@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>WNG_WraithRestCradle</defName><label>wraith rest cradle</label>
+    <description>A grown sleeping cradle of warm fibrous tissue that reshapes itself around the sleeper.</description>
+    <graphicData><texPath>Things/Building/Furniture/Wraith/WNG_RestCradle</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(1,2)</drawSize></graphicData><size>(1,2)</size>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <statBases><MaxHitPoints>220</MaxHitPoints><WorkToBuild>1200</WorkToBuild><Mass>22</Mass><Flammability>0.35</Flammability><BedRestEffectiveness>1.05</BedRestEffectiveness><Comfort>0.82</Comfort><ImmunityGainSpeedFactor>1.08</ImmunityGainSpeedFactor><Beauty>4</Beauty></statBases>
+    <costList><WNG_Biomass>35</WNG_Biomass></costList><building><bed_showSleeperBody>false</bed_showSleeperBody><bed_healPerDay>7</bed_healPerDay><destroySound>BuildingDestroyed_Soft_Small</destroySound></building><leaveResourcesWhenKilled>false</leaveResourcesWhenKilled><uiOrder>2110</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>WNG_WraithRestNestDouble</defName><label>wraith double rest nest</label>
+    <description>A broad living rest nest grown for two sleepers, with flexible support tissue that conforms around each occupant.</description>
+    <graphicData><texPath>Things/Building/Furniture/Wraith/WNG_RestNestDouble</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2.05,2.05)</drawSize></graphicData><size>(2,2)</size>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <statBases><MaxHitPoints>340</MaxHitPoints><WorkToBuild>2200</WorkToBuild><Mass>38</Mass><Flammability>0.35</Flammability><BedRestEffectiveness>1.05</BedRestEffectiveness><Comfort>0.84</Comfort><ImmunityGainSpeedFactor>1.08</ImmunityGainSpeedFactor><Beauty>7</Beauty></statBases>
+    <costList><WNG_Biomass>65</WNG_Biomass></costList><building><bed_showSleeperBody>false</bed_showSleeperBody><bed_healPerDay>7</bed_healPerDay><destroySound>BuildingDestroyed_Soft_Medium</destroySound></building><leaveResourcesWhenKilled>false</leaveResourcesWhenKilled><uiOrder>2111</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>WNG_WraithGrowthSeat</defName><label>wraith growth seat</label><description>A grown chair whose flexible ribs and soft membrane reshape themselves around the sitter.</description>
+    <replaceTags><li>Chair</li></replaceTags><graphicData><texPath>Things/Building/Furniture/Wraith/WNG_GrowthSeat</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(1,1)</drawSize></graphicData>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <altitudeLayer>Building</altitudeLayer><statBases><MaxHitPoints>150</MaxHitPoints><WorkToBuild>700</WorkToBuild><Mass>6</Mass><Flammability>0.35</Flammability><Beauty>5</Beauty><Comfort>0.72</Comfort></statBases><socialPropernessMatters>true</socialPropernessMatters><costList><WNG_Biomass>18</WNG_Biomass></costList><pathCost>30</pathCost><fillPercent>0.35</fillPercent><defaultPlacingRot>South</defaultPlacingRot><uiOrder>2440</uiOrder><building><isSittable>true</isSittable><destroySound>BuildingDestroyed_Soft_Small</destroySound></building>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>WNG_WraithLounge</defName><label>wraith living lounge</label><description>A two-person organic couch grown from layered membrane, cartilage and springy support fibres.</description>
+    <replaceTags><li>Chair</li></replaceTags><graphicData><texPath>Things/Building/Furniture/Wraith/WNG_LivingLounge</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2,1)</drawSize></graphicData><size>(2,1)</size>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <altitudeLayer>Building</altitudeLayer><statBases><MaxHitPoints>260</MaxHitPoints><WorkToBuild>1600</WorkToBuild><Mass>28</Mass><Flammability>0.35</Flammability><Beauty>8</Beauty><Comfort>0.86</Comfort></statBases><socialPropernessMatters>true</socialPropernessMatters><costList><WNG_Biomass>42</WNG_Biomass></costList><pathCost>30</pathCost><fillPercent>0.40</fillPercent><defaultPlacingRot>South</defaultPlacingRot><uiOrder>2441</uiOrder><building><isSittable>true</isSittable><multiSittable>true</multiSittable><destroySound>BuildingDestroyed_Soft_Medium</destroySound></building>
+  </ThingDef>
+
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>WNG_WraithFeastTableSmall</defName><label>wraith feast table (1x2)</label><description>A compact living table grown around a rigid cartilage lattice.</description>
+    <graphicData><texPath>Things/Building/Furniture/Wraith/WNG_FeastTable1x2</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(1,2)</drawSize></graphicData><size>(1,2)</size>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <statBases><MaxHitPoints>190</MaxHitPoints><WorkToBuild>800</WorkToBuild><Mass>12</Mass><Flammability>0.35</Flammability><Beauty>4</Beauty></statBases><costList><WNG_Biomass>24</WNG_Biomass></costList><leaveResourcesWhenKilled>false</leaveResourcesWhenKilled><uiOrder>2340</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>WNG_WraithFeastTable</defName><label>wraith feast table (2x2)</label><description>A broad living dining surface supported by branching organic ribs.</description>
+    <graphicData><texPath>Things/Building/Furniture/Wraith/WNG_FeastTable2x2</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2,2)</drawSize></graphicData><size>(2,2)</size><rotatable>false</rotatable>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <statBases><MaxHitPoints>280</MaxHitPoints><WorkToBuild>1300</WorkToBuild><Mass>20</Mass><Flammability>0.35</Flammability><Beauty>7</Beauty></statBases><costList><WNG_Biomass>42</WNG_Biomass></costList><leaveResourcesWhenKilled>false</leaveResourcesWhenKilled><uiOrder>2341</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="TableBase">
+    <defName>WNG_WraithBedsideNode</defName><label>wraith bedside node</label><description>A small symbiotic organ-table that settles beside a rest cradle and emits soothing warmth and low-frequency vibration.</description><surfaceType>Item</surfaceType>
+    <graphicData><texPath>Things/Building/Furniture/Wraith/WNG_BedsideNode</texPath><graphicClass>Graphic_Multi</graphicClass></graphicData>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <statBases><MaxHitPoints>120</MaxHitPoints><WorkToBuild>500</WorkToBuild><Mass>5</Mass><Flammability>0.35</Flammability><Beauty>3</Beauty></statBases><costList><WNG_Biomass>12</WNG_Biomass></costList><placeWorkers><li>PlaceWorker_ShowFacilitiesConnections</li></placeWorkers><comps><li Class="CompProperties_Facility"><statOffsets><Comfort>0.05</Comfort></statOffsets><maxSimultaneous>1</maxSimultaneous><mustBePlacedAdjacentCardinalToBedHead>true</mustBePlacedAdjacentCardinalToBedHead></li></comps><staticSunShadowHeight>0</staticSunShadowHeight><castEdgeShadows>false</castEdgeShadows><leaveResourcesWhenKilled>false</leaveResourcesWhenKilled><uiOrder>2120</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="LampBase">
+    <defName>WNG_WraithLumenOrgan</defName><label>wraith lumen organ</label><description>A translucent cultivated organ that converts ordinary colony power into a soft bioluminescent glow.</description>
+    <graphicData><texPath>Things/Building/Furniture/Wraith/WNG_LumenOrgan</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <costList><WNG_Biomass>12</WNG_Biomass></costList><statBases><MaxHitPoints>120</MaxHitPoints><Mass>4</Mass><Flammability>0.35</Flammability><Beauty>4</Beauty></statBases>
+    <comps Inherit="False"><li Class="CompProperties_Flickable"/><li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><basePowerConsumption>15</basePowerConsumption></li><li Class="CompProperties_Glower"><glowRadius>12</glowRadius><glowColor>(118,166,124,0)</glowColor></li></comps>
+  </ThingDef>
+
+  <ThingDef ParentName="LampBase">
+    <defName>WNG_WraithWallLumen</defName><thingClass>Building</thingClass><label>wraith wall lumen</label><description>A flat luminous membrane grown against a wall and supplied by ordinary colony power.</description><rotatable>true</rotatable>
+    <graphicData><texPath>Things/Building/Furniture/Wraith/WNG_WallLumen</texPath><graphicClass>Graphic_Multi</graphicClass><drawOffsetNorth>(0,0,0.34)</drawOffsetNorth><drawOffsetSouth>(0,0,-0.34)</drawOffsetSouth><drawOffsetWest>(-0.34,0,0)</drawOffsetWest><drawOffsetEast>(0.34,0,0)</drawOffsetEast><damageData><enabled>false</enabled></damageData></graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_BiologicalCultivation</li></researchPrerequisites>
+    <costList><WNG_Biomass>8</WNG_Biomass></costList><statBases><MaxHitPoints>80</MaxHitPoints><Mass>1.5</Mass><Flammability>0.35</Flammability><Beauty>3</Beauty></statBases>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <minifiedDrawOffset>(0, 0, 0.2)</minifiedDrawOffset>
+    <building><isEdifice>false</isEdifice><isAttachment>true</isAttachment></building>
+    <placeWorkers><li>Placeworker_AttachedToWall</li></placeWorkers>
+    <comps><li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><basePowerConsumption>12</basePowerConsumption></li><li Class="CompProperties_Glower"><glowRadius>10</glowRadius><glowColor>(118,166,124,0)</glowColor></li></comps>
+  </ThingDef>
+</Defs>

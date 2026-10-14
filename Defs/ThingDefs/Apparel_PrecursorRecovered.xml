@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Retained Precursor field armour. Current visual reuse is deliberately temporary:
+    the gameplay/economy contract is restored now and the art remains open for the
+    planned professional replacement pass.
+  -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_PrecursorFieldArmor</defName>
+    <recipeMaker IsNull="True" />
+    <label>precursor field armor</label>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <description>A high-grade Ancient-derived combat shell combining dense precursor composites with field-distribution layers. Pale ceramic-metal plates route impact energy through luminous field channels while keeping the suit compact enough for ordinary field operations.</description>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_PrecursorFieldArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToMake>60000</WorkToMake>
+      <Mass>9</Mass>
+      <EquipDelay>3.5</EquipDelay>
+      <MarketValue>1850</MarketValue>
+      <ArmorRating_Sharp>1.72</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.82</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.05</ArmorRating_Heat>
+    </statBases>
+    <costList>
+      <Plasteel>70</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li>
+      </bodyPartGroups>
+      <layers><li>Shell</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_PrecursorFieldArmor</wornGraphicPath>
+      <tags><li>WNG_PrecursorArmor</li></tags>
+      <defaultOutfitTags><li>Worker</li><li>Soldier</li><li>Spacefarer</li></defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+  <!--
+    Retained personal field. The vanilla belt graphic is a temporary presentation
+    fallback only; the WNG bubble/mechanics and later professional art are separate.
+  -->
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_PrecursorUniform</defName>
+    <recipeMaker IsNull="True" />
+    <label>precursor uniform</label>
+    <thingCategories Inherit="False"><li>ApparelMisc</li></thingCategories>
+    <description>A pale Ancient-derived field uniform woven from self-aligning precursor fibers. Cyan conductor seams regulate temperature and distribute minor impacts while the close-fitted cut remains suitable beneath heavier precursor armor.</description>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_PrecursorUniform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>260</MaxHitPoints><WorkToMake>24000</WorkToMake><Mass>3</Mass><EquipDelay>2</EquipDelay><MarketValue>950</MarketValue>
+      <ArmorRating_Sharp>0.55</ArmorRating_Sharp><ArmorRating_Blunt>0.28</ArmorRating_Blunt><ArmorRating_Heat>0.58</ArmorRating_Heat>
+    </statBases>
+    <costList><Synthread>55</Synthread><Plasteel>12</Plasteel></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <layers><li>OnSkin</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_PrecursorUniform</wornGraphicPath>
+      <tags><li>WNG_PrecursorClothing</li></tags>
+      <defaultOutfitTags><li>Worker</li><li>Spacefarer</li></defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_PrecursorPersonalShield</defName>
+    <recipeMaker IsNull="True" />
+    <label>precursor personal shield</label>
+    <description>A compact Ancient-derived personal field generator. It absorbs ranged and explosive impacts, collapses under EMP, recharges after depletion, and allows the wearer to fire outward. Visual presentation remains provisional pending the professional art pass.</description>
+    <techLevel>Ultra</techLevel>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_PrecursorPersonalShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>28000</WorkToMake>
+      <Mass>2.2</Mass>
+      <EquipDelay>2</EquipDelay>
+      <MarketValue>2400</MarketValue>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <EnergyShieldEnergyMax>1</EnergyShieldEnergyMax>
+      <EnergyShieldRechargeRate>0.03</EnergyShieldRechargeRate>
+    </statBases>
+    <costList>
+      <Plasteel>25</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+      <WNG_ReplicatorMatter>8</WNG_ReplicatorMatter>
+    </costList>
+    <thingCategories Inherit="False"><li>ApparelUtility</li></thingCategories>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups><li>Waist</li></bodyPartGroups>
+      <layers><li>Belt</li></layers>
+      <tags><li>BeltDefense</li><li>WNG_PrecursorShield</li></tags>
+    </apparel>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_PrecursorPersonalShield">
+        <startingTicksToReset>1800</startingTicksToReset>
+        <minDrawSize>1.2</minDrawSize>
+        <maxDrawSize>1.55</maxDrawSize>
+        <energyLossPerDamage>0.008333334</energyLossPerDamage>
+        <energyOnReset>0.2</energyOnReset>
+        <blocksRangedWeapons>false</blocksRangedWeapons>
+      </li>
+    </comps>
+  
+    <smeltProducts><WNG_ReplicatorMatter>2</WNG_ReplicatorMatter></smeltProducts>
+  </ThingDef>
+</Defs>

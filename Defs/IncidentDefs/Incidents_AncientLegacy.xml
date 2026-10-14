@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_PrecursorLaboratoryDiscovery</defName>
+    <label>precursor laboratory discovery</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_PrecursorLaboratoryDiscovery</workerClass>
+    <baseChance>0.07</baseChance>
+    <earliestDay>18</earliestDay>
+    <minRefireDays>28</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>WNG_PrecursorVaultDiscovery</defName>
+    <label>sealed precursor vault discovery</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_PrecursorVaultDiscovery</workerClass>
+    <baseChance>0.055</baseChance>
+    <earliestDay>28</earliestDay>
+    <minRefireDays>36</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>WNG_DeceptiveSurveyAnnexDiscovery</defName>
+    <label>Ancient survey annex discovery</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_DeceptiveSurveyAnnexDiscovery</workerClass>
+    <baseChance>0.045</baseChance>
+    <earliestDay>34</earliestDay>
+    <minRefireDays>42</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+</Defs>

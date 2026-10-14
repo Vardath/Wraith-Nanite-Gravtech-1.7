@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Imago Xenotype 1.6 defines its metamorphosis gene exactly once in the
+    supplied workshop archive (3816071711). The user's combined load still
+    reported a duplicate registration. If a second concrete GeneDef with
+    this exact name is present in the aggregated Def XML, keep the FIRST
+    original and remove only subsequent duplicates. Never remove the sole
+    canonical gene or any of its references / GeneClass / cocoon components.
+    The guard does nothing when only one definition is present.
+  -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>/Defs/GeneDef[defName="Imago_Metamorphosis"][2]</xpath>
+      </li>
+      <li Class="PatchOperationRemove">
+        <xpath>/Defs/GeneDef[defName="Imago_Metamorphosis"][position() &gt; 1]</xpath>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

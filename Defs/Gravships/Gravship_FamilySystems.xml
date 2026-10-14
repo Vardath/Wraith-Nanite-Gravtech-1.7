@@ -1,0 +1,1495 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <TerrainDef ParentName="WNG_SubstructureBase">
+    <defName>WNG_WraithGravshipSubstructure</defName>
+    <label>wraith gravship substructure</label>
+    <description>A living load-bearing deck grown inside a Wraith gravitic field. It is true Odyssey substructure and belongs only to the Wraith gravship family.</description>
+    <texturePath>Terrain/Wraith/WNG_WraithGravshipSubstructure</texturePath>
+    <designationCategory>Floors</designationCategory>
+    <statBases>
+      <WorkToBuild>520</WorkToBuild>
+      <Flammability>0.12</Flammability>
+      <CleaningTimeFactor>0.9</CleaningTimeFactor>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>4</WNG_Biomass>
+      <GravlitePanel>1</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <uiOrder>1780</uiOrder>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_WraithGravshipSubstructure</li>
+      <li>PlaceWorker_BuildingsValidOverSubstructure</li>
+    </placeWorkers>
+  </TerrainDef>
+  <ThingDef ParentName="WNG_GravshipHullBase">
+    <defName>WNG_OrganicGravshipHull</defName>
+    <label>wraith gravship hull tissue</label>
+    <description>Dense self-repairing hull tissue grown over Wraith gravship substructure. The family protects itself through living-hull repair rather than a generic energy shield.</description>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>1810</uiOrder>
+    <uiIconPath>UI/WNG/Build/WNG_WraithGravshipHull</uiIconPath>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_OrganicHull_Atlas</texPath>
+      <drawSize>(1,1)</drawSize>
+      <linkType>CornerFiller</linkType><linkFlags Inherit="False"><li>Wall</li><li>Rock</li></linkFlags>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>620</MaxHitPoints>
+      <WorkToBuild>390</WorkToBuild>
+      <Flammability>0.12</Flammability>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>10</WNG_Biomass>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="Door">
+    <defName>WNG_WraithGravshipDoor</defName>
+    <label>wraith gravship sphincter</label>
+    <description>A living airtight aperture grown into a Wraith gravship hull.</description>
+    <rotatable>false</rotatable>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>1811</uiOrder>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithGravshipDoor</texPath>
+      <drawSize>(1,1)</drawSize>
+          <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>420</MaxHitPoints>
+      <WorkToBuild>720</WorkToBuild>
+      <Flammability>0.1</Flammability>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>14</WNG_Biomass>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <stuffCategories Inherit="False"/><costStuffCount>0</costStuffCount><useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <building>
+      <isAirtight>true</isAirtight>
+      <isSupportDoor>true</isSupportDoor>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <blueprintClass>Blueprint_Door</blueprintClass>
+    </building>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="WNG_GravFieldExtenderBase">
+    <defName>WNG_WraithGravFieldExtender</defName>
+    <label>wraith grav-field lobe</label>
+    <description>A living lobe extending the Wraith grav engine's substructure-support field.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2180</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithGravFieldExtender</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>380</MaxHitPoints>
+      <Mass>36</Mass>
+      <WorkToBuild>3600</WorkToBuild>
+      <Beauty>2</Beauty>
+      <Flammability>0.1</Flammability>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>45</WNG_Biomass>
+      <GravlitePanel>18</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility">
+        <family>Wraith</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <statOffsets>
+          <SubstructureSupport>250</SubstructureSupport>
+        </statOffsets>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>6</maxSimultaneous>
+        <maxDistance>18.9</maxDistance>
+        <onlyRequiresLooseConnection>true</onlyRequiresLooseConnection>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Consumer</role>
+        <demandWatts>350</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_PilotConsoleBase">
+    <defName>WNG_OrganicPilotNode</defName>
+    <label>wraith gravship pilot node</label>
+    <description>A neural command organ linked to the Wraith grav engine and the isolated Wraith neural power grid.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2200</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_OrganicPilotNode</texPath>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>260</MaxHitPoints>
+      <Mass>45</Mass>
+      <Flammability>0.1</Flammability>
+      <Beauty>3</Beauty>
+      <WorkToBuild>2500</WorkToBuild>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>70</WNG_Biomass>
+      <GravlitePanel>8</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGPilotConsole">
+        <family>Wraith</family>
+        <componentTypeDef>Controls</componentTypeDef>
+        <requiresLOS>false</requiresLOS>
+        <showMaxSimultaneous>false</showMaxSimultaneous>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>200</maxDistance>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Consumer</role>
+        <demandWatts>450</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="FuelTankBase">
+    <defName>WNG_WraithFuelBladder</defName>
+    <label>wraith bio-fluid bladder</label>
+    <description>A living Odyssey fuel reservoir. It accepts only Wraith bio-fluid and only contributes fuel when physically connected to a same-family drive through Wraith fuel conduits.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2210</uiOrder>
+    <size>(2,2)</size>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithFuelBladder</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>360</MaxHitPoints>
+      <Mass>34</Mass>
+      <Flammability>0.15</Flammability>
+      <Beauty>1</Beauty>
+      <WorkToBuild>2300</WorkToBuild>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>55</WNG_Biomass>
+      <Steel>30</Steel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelTankFacility">
+        <family>Wraith</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <providesFuel>true</providesFuel>
+        <componentTypeDef>FuelStorage</componentTypeDef>
+        <requiresLOS>false</requiresLOS>
+        <showMaxSimultaneous>false</showMaxSimultaneous>
+        <maxSimultaneous>9999</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>250</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>250</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>WNG_WraithBiofluidFuel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>wraith bio-fluid</fuelLabel>
+        <fuelGizmoLabel>Bio-fluid</fuelGizmoLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Wraith</family>
+        <role>Tank</role>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Consumer</role>
+        <demandWatts>80</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="FuelTankBase">
+    <defName>WNG_WraithLargeFuelBladder</defName>
+    <label>large wraith bio-fluid bladder</label>
+    <description>A mature living Wraith fuel reservoir for long-range gravships.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2211</uiOrder>
+    <size>(3,3)</size>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithLargeFuelBladder</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>520</MaxHitPoints>
+      <Mass>58</Mass>
+      <Flammability>0.13</Flammability>
+      <Beauty>1</Beauty>
+      <WorkToBuild>3300</WorkToBuild>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>110</WNG_Biomass>
+      <GravlitePanel>12</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+      <li>StandardGravtech</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelTankFacility">
+        <family>Wraith</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <providesFuel>true</providesFuel>
+        <componentTypeDef>FuelStorage</componentTypeDef>
+        <requiresLOS>false</requiresLOS>
+        <showMaxSimultaneous>false</showMaxSimultaneous>
+        <maxSimultaneous>9999</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>750</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>750</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>WNG_WraithBiofluidFuel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>wraith bio-fluid</fuelLabel>
+        <fuelGizmoLabel>Bio-fluid</fuelGizmoLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Wraith</family>
+        <role>Tank</role>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Consumer</role>
+        <demandWatts>120</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_WraithFuelConduit</defName>
+    <label>wraith organic fuel conduit</label>
+    <description>A living vascular line that carries Wraith bio-fluid between same-family fuel bladders and drive organs. It is not an electrical conduit.</description>
+    <thingClass>Building</thingClass>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2215</uiOrder>
+    <tickerType>Never</tickerType>
+    <graphicData>
+      <graphicClass>WraithNaniteGravtech.Graphic_LinkedWraithFuelConduit</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithFuelConduit_Atlas</texPath>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <uiIconPath>UI/WNG/Conduits/WNG_WraithFuelConduit_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Mass>1</Mass>
+      <Flammability>0.25</Flammability>
+      <WorkToBuild>70</WorkToBuild>
+    </statBases>
+    <costList>
+      <WNG_Biomass>2</WNG_Biomass>
+    </costList>
+    <researchPrerequisites>
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <passability>Standable</passability>
+    <fillPercent>0.02</fillPercent>
+    <building><isEdifice>false</isEdifice><canLandGravshipOn>true</canLandGravshipOn><canConstructInCorner>true</canConstructInCorner></building>
+    <placeWorkers>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Wraith</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Wraith</family>
+        <role>Conduit</role>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_WraithNeuralConduit</defName>
+    <label>wraith neural power conduit</label>
+    <description>A living nerve trunk carrying only Wraith-family gravship power. It cannot join vanilla or Asuran grids.</description>
+    <thingClass>Building</thingClass>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2020</uiOrder>
+    <tickerType>Never</tickerType>
+    <graphicData>
+      <graphicClass>WraithNaniteGravtech.Graphic_LinkedWraithFamilyPower</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithNeuralConduit_Atlas</texPath>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <uiIconPath>UI/WNG/Conduits/WNG_WraithNeuralConduit_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Mass>1</Mass>
+      <Flammability>0.18</Flammability>
+      <WorkToBuild>70</WorkToBuild>
+    </statBases>
+    <costList>
+      <WNG_Biomass>2</WNG_Biomass>
+    </costList>
+    <researchPrerequisites>
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <passability>Standable</passability>
+    <fillPercent>0.02</fillPercent>
+    <building><isEdifice>false</isEdifice><isPowerConduit>true</isPowerConduit><canLandGravshipOn>true</canLandGravshipOn><canConstructInCorner>true</canConstructInCorner></building>
+    <placeWorkers>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Wraith</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Conduit</role>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_WraithPowerCoupler</defName>
+    <label>wraith power coupler</label>
+    <description>An intentional electro-neural interface between a vanilla colony power net and an isolated Wraith neural grid. It never bridges directly into Asuran power.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2021</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithPowerCoupler</texPath>
+      <drawSize>(1.5,1.5)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.25</fillPercent>
+    <statBases>
+      <MaxHitPoints>260</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>12</Mass>
+      <Flammability>0.12</Flammability>
+    </statBases>
+    <costList>
+      <WNG_Biomass>30</WNG_Biomass>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Wraith</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>0</basePowerConsumption>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Coupler</role>
+        <capacityWatts>4500</capacityWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GravshipMetabolicHeart</defName>
+    <label>wraith gravship metabolic heart</label>
+    <description>A ship-grown metabolic heart supplying Wraith neural power and circulating repair biomass through nearby living hull and organs.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2022</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_GravshipMetabolicHeart</texPath>
+      <drawSize>(2.4,2.4)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.65</fillPercent>
+    <statBases>
+      <MaxHitPoints>600</MaxHitPoints>
+      <WorkToBuild>9000</WorkToBuild>
+      <Mass>54</Mass>
+      <Flammability>0.1</Flammability>
+      <Beauty>-2</Beauty>
+    </statBases>
+    <costList>
+      <WNG_Biomass>100</WNG_Biomass>
+      <GravlitePanel>12</GravlitePanel>
+    </costList>
+    <researchPrerequisites>
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Wraith</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>40</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>40</initialConfigurableTargetFuelLevel>
+        <fuelConsumptionRate>6</fuelConsumptionRate>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelFilter>
+          <thingDefs>
+            <li>WNG_Biomass</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>biomass</fuelLabel>
+        <fuelGizmoLabel>Biomass</fuelGizmoLabel>
+        <showFuelGizmo>true</showFuelGizmo>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Generator</role>
+        <capacityWatts>5500</capacityWatts>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithGravshipMetabolicRepair">
+        <pulseIntervalTicks>480</pulseIntervalTicks>
+        <radius>30</radius>
+        <maxTargetsPerPulse>5</maxTargetsPerPulse>
+        <healPerTarget>8</healPerTarget>
+        <biomassPerPulse>1</biomassPerPulse>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_SmallThrusterBase">
+    <defName>WNG_OrganicThruster</defName>
+    <label>wraith gravship drive organ</label>
+    <description>A living Odyssey drive organ. It requires matching Wraith substructure, neural power, and a physical bio-fluid feed path.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2220</uiOrder>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_OrganicThruster</texPath>
+      <drawSize>(1.2,2.2)</drawSize>
+          <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>430</MaxHitPoints>
+      <Flammability>0.12</Flammability>
+      <Beauty>2</Beauty>
+      <WorkToBuild>9800</WorkToBuild>
+      <Mass>16</Mass>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>90</WNG_Biomass>
+      <GravlitePanel>22</GravlitePanel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_GravshipThruster</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGThruster">
+        <family>Wraith</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <launchSound>WNG_OrganicGravThruster</launchSound>
+        <statOffsets>
+          <GravshipRange>10</GravshipRange>
+        </statOffsets>
+        <componentTypeDef>Thruster</componentTypeDef>
+        <exclusionAreaSize>(1,0,5)</exclusionAreaSize>
+        <exclusionAreaOffset>(0,0,-5)</exclusionAreaOffset>
+        <directionInfluence>20</directionInfluence>
+        <flameSize>4</flameSize>
+        <flameOffsetsPerDirection>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+        </flameOffsetsPerDirection>
+        <flameShaderType>MoteGlow</flameShaderType>
+        <flameShaderParameters>
+          <_MainTex>/Things/Mote/SmallThruster_Burn</_MainTex>
+        </flameShaderParameters>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>4</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Wraith</family>
+        <role>Thruster</role>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Consumer</role>
+        <demandWatts>650</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_LargeThrusterBase">
+    <defName>WNG_WraithHeavyDriveOrgan</defName>
+    <label>greater wraith drive organ</label>
+    <description>A mature high-output Wraith drive organ for large living gravships.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2221</uiOrder>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithHeavyDriveOrgan</texPath>
+      <drawSize>(2.2,2.2)</drawSize>
+          <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>620</MaxHitPoints>
+      <Flammability>0.1</Flammability>
+      <Beauty>2</Beauty>
+      <WorkToBuild>13500</WorkToBuild>
+      <Mass>27</Mass>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>150</WNG_Biomass>
+      <GravlitePanel>45</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+      <li>StandardGravtech</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_GravshipThruster</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGThruster">
+        <family>Wraith</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <launchSound>WNG_OrganicGravThruster</launchSound>
+        <statOffsets>
+          <GravshipRange>16</GravshipRange>
+        </statOffsets>
+        <componentTypeDef>Thruster</componentTypeDef>
+        <exclusionAreaSize>(2,0,7)</exclusionAreaSize>
+        <exclusionAreaOffset>(0,0,-7)</exclusionAreaOffset>
+        <directionInfluence>30</directionInfluence>
+        <flameSize>4</flameSize>
+        <flameOffsetsPerDirection>
+          <li>(0,0,1.0)</li>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+        </flameOffsetsPerDirection>
+        <flameShaderType>MoteGlow</flameShaderType>
+        <flameShaderParameters>
+          <_MainTex>/Things/Mote/LargeThruster_Burn</_MainTex>
+        </flameShaderParameters>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>6</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Wraith</family>
+        <role>Thruster</role>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Consumer</role>
+        <demandWatts>1100</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_FuelOptimizerBase">
+    <defName>WNG_WraithFuelOptimizer</defName>
+    <label>wraith drive synchronizer</label>
+    <description>A living drive regulator that reduces native Odyssey gravship fuel expenditure.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2230</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithFuelOptimizer</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>260</MaxHitPoints>
+      <Mass>34</Mass>
+      <WorkToBuild>5000</WorkToBuild>
+    </statBases>
+    <costList Inherit="False">
+      <WNG_Biomass>65</WNG_Biomass>
+      <GravlitePanel>25</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_HiveGravshipArchitecture</li>
+      <li>StandardGravtech</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility">
+        <family>Wraith</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <fuelSavingsPercent>0.3</fuelSavingsPercent>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>2</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Wraith</family>
+        <role>Consumer</role>
+        <demandWatts>250</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>WNG_AsuranGravEngine</defName>
+    <label>Asuran grav engine</label>
+    <description>A synthesized Asuran grav engine. It is a real Odyssey Building_GravEngine and only links to Asuran-family facilities.</description>
+    <thingClass>WraithNaniteGravtech.Building_WNGGravEngine</thingClass>
+    <drawerType>RealtimeOnly</drawerType>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedGravEngine</minifiedDef>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranGravEngine</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <size>(3,3)</size>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.6</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>20</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>28</Mass>
+      <GravshipRange>0</GravshipRange>
+      <SubstructureSupport>550</SubstructureSupport>
+      <MarketValue>3200</MarketValue>
+      <Beauty>9</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <deconstructible>false</deconstructible>
+      <relatedBuildCommands>
+        <li>WNG_PrecursorGravshipHull</li>
+        <li>WNG_AsuranGravshipDoor</li>
+      </relatedBuildCommands>
+      <relatedTerrain>
+        <li>WNG_AsuranGravshipSubstructure</li>
+      </relatedTerrain>
+    </building>
+    <comps>
+      <li Class="CompProperties_SubstructureFootprint">
+        <radius>18.9</radius>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>8</glowRadius>
+        <glowColor>(70,190,255,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>WNG_AsuranGravFieldExtender</li>
+          <li>WNG_PrecursorPilotConsole</li>
+          <li>WNG_AsuranFuelCell</li>
+          <li>WNG_AsuranLargeFuelCell</li>
+          <li>WNG_PrecursorVectorThruster</li>
+          <li>WNG_AsuranHeavyVectorDrive</li>
+          <li>WNG_AsuranFuelOptimizer</li>
+          <li>WNG_AsuranSignalJammer</li>
+          <li>WNG_AsuranFlightSubmind</li>
+          <li>WNG_PrecursorShieldEmitter</li>
+          <li>WNG_AncientVacuumShieldEmitter</li>
+        
+          <li>WNG_AsuranFuelConduit</li>
+          <li>WNG_AsuranPowerConduit</li>
+          <li>WNG_AsuranPowerCoupler</li>
+          <li>WNG_AsuranPowerCell</li>
+          <li>WNG_AsuranOrbitalScanner</li>
+          <li>WNG_AsuranAtmosphereRegulator</li>
+          <li>WNG_AsuranVacBarrier</li>
+        </linkableFacilities>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGAmbientLoop">
+        <sound>WNG_AsuranGravEngineAmbient</sound>
+        <repeatTicks>360</repeatTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <TerrainDef ParentName="WNG_SubstructureBase">
+    <defName>WNG_AsuranGravshipSubstructure</defName>
+    <label>Asuran gravship substructure</label>
+    <description>A precision nanite-composite deck synchronized only to an Asuran grav engine family.</description>
+    <texturePath>Terrain/Precursor/WNG_AsuranGravshipSubstructure</texturePath>
+    <designationCategory>Floors</designationCategory>
+    <statBases>
+      <WorkToBuild>650</WorkToBuild>
+      <Flammability>0</Flammability>
+      <CleaningTimeFactor>0.75</CleaningTimeFactor>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>4</Plasteel>
+      <GravlitePanel>1</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <uiOrder>1781</uiOrder>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_AsuranGravshipSubstructure</li>
+      <li>PlaceWorker_BuildingsValidOverSubstructure</li>
+    </placeWorkers>
+  </TerrainDef>
+  <ThingDef ParentName="WNG_GravshipHullBase">
+    <defName>WNG_PrecursorGravshipHull</defName>
+    <label>Asuran gravship hull</label>
+    <description>A seamless nanite-composite airtight hull grown over Asuran gravship substructure.</description>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>1812</uiOrder>
+    <uiIconPath>UI/WNG/Build/WNG_PrecursorWall</uiIconPath>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_PrecursorHull_Atlas</texPath>
+      <drawSize>(1,1)</drawSize>
+      <linkType>CornerFiller</linkType><linkFlags Inherit="False"><li>Wall</li><li>Rock</li></linkFlags>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>720</MaxHitPoints>
+      <WorkToBuild>420</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>7</Plasteel>
+      <GravlitePanel>1</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="Door">
+    <defName>WNG_AsuranGravshipDoor</defName>
+    <label>Asuran gravship door</label>
+    <description>A seamless airtight aperture in an Asuran nanite-composite hull.</description>
+    <rotatable>false</rotatable>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>1813</uiOrder>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranGravshipDoor</texPath>
+      <drawSize>(1,1)</drawSize>
+          <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>12</Plasteel>
+      <GravlitePanel>1</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <stuffCategories Inherit="False"/><costStuffCount>0</costStuffCount><useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <building>
+      <isAirtight>true</isAirtight>
+      <isSupportDoor>true</isSupportDoor>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <blueprintClass>Blueprint_Door</blueprintClass>
+    </building>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+  </ThingDef>
+  <ThingDef ParentName="WNG_GravFieldExtenderBase">
+    <defName>WNG_AsuranGravFieldExtender</defName>
+    <label>Asuran grav-field projector</label>
+    <description>A precision projector extending an Asuran grav engine's substructure-support envelope.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2181</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranGravFieldExtender</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>440</MaxHitPoints>
+      <Mass>32</Mass>
+      <WorkToBuild>4300</WorkToBuild>
+      <Beauty>7</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>55</Plasteel>
+      <GravlitePanel>30</GravlitePanel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility">
+        <family>Asuran</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <statOffsets>
+          <SubstructureSupport>250</SubstructureSupport>
+        </statOffsets>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>6</maxSimultaneous>
+        <maxDistance>18.9</maxDistance>
+        <onlyRequiresLooseConnection>true</onlyRequiresLooseConnection>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Consumer</role>
+        <demandWatts>300</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_PilotConsoleBase">
+    <defName>WNG_PrecursorPilotConsole</defName>
+    <label>Asuran gravship pilot console</label>
+    <description>A precision Asuran command console linked only to an Asuran grav engine and Asuran power lattice.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2202</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_PrecursorPilotConsole</texPath>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>42</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>10</Beauty>
+      <WorkToBuild>2800</WorkToBuild>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>80</Plasteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <GravlitePanel>8</GravlitePanel>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGPilotConsole">
+        <family>Asuran</family>
+        <componentTypeDef>Controls</componentTypeDef>
+        <requiresLOS>false</requiresLOS>
+        <showMaxSimultaneous>false</showMaxSimultaneous>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>200</maxDistance>
+      </li>      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Consumer</role>
+        <demandWatts>400</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="FuelTankBase">
+    <defName>WNG_AsuranFuelCell</defName>
+    <label>Asuran nanite-slurry fuel cell</label>
+    <description>An Odyssey fuel reservoir that accepts only stabilized Asuran nanite slurry and requires a same-family physical fuel feed.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2212</uiOrder>
+    <size>(2,2)</size>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranFuelCell</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>390</MaxHitPoints>
+      <Mass>32</Mass>
+      <Flammability>0.18</Flammability>
+      <Beauty>7</Beauty>
+      <WorkToBuild>2500</WorkToBuild>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>75</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelTankFacility">
+        <family>Asuran</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <providesFuel>true</providesFuel>
+        <componentTypeDef>FuelStorage</componentTypeDef>
+        <requiresLOS>false</requiresLOS>
+        <showMaxSimultaneous>false</showMaxSimultaneous>
+        <maxSimultaneous>9999</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>250</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>250</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>WNG_AsuranNaniteSlurry</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Asuran nanite slurry</fuelLabel>
+        <fuelGizmoLabel>Nanite slurry</fuelGizmoLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Asuran</family>
+        <role>Tank</role>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Consumer</role>
+        <demandWatts>70</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="FuelTankBase">
+    <defName>WNG_AsuranLargeFuelCell</defName>
+    <label>large Asuran nanite-slurry fuel cell</label>
+    <description>A high-density Asuran gravship fuel reservoir.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2213</uiOrder>
+    <size>(3,3)</size>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranLargeFuelCell</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>520</MaxHitPoints>
+      <Mass>55</Mass>
+      <Flammability>0.18</Flammability>
+      <Beauty>8</Beauty>
+      <WorkToBuild>3300</WorkToBuild>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>150</Plasteel>
+      <GravlitePanel>18</GravlitePanel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+      <li>StandardGravtech</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelTankFacility">
+        <family>Asuran</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <providesFuel>true</providesFuel>
+        <componentTypeDef>FuelStorage</componentTypeDef>
+        <requiresLOS>false</requiresLOS>
+        <showMaxSimultaneous>false</showMaxSimultaneous>
+        <maxSimultaneous>9999</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>750</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>750</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>WNG_AsuranNaniteSlurry</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Asuran nanite slurry</fuelLabel>
+        <fuelGizmoLabel>Nanite slurry</fuelGizmoLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Asuran</family>
+        <role>Tank</role>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Consumer</role>
+        <demandWatts>110</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranFuelConduit</defName>
+    <label>Asuran nanite fuel conduit</label>
+    <description>A shielded feed line carrying only Asuran nanite slurry between same-family cells and vector drives.</description>
+    <thingClass>Building</thingClass>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2216</uiOrder>
+    <tickerType>Never</tickerType>
+    <graphicData>
+      <graphicClass>WraithNaniteGravtech.Graphic_LinkedAsuranFuelConduit</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranFuelConduit_Atlas</texPath>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <uiIconPath>UI/WNG/Conduits/WNG_AsuranFuelConduit_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>1</Mass>
+      <Flammability>0.1</Flammability>
+      <Beauty>1</Beauty>
+      <WorkToBuild>90</WorkToBuild>
+    </statBases>
+    <costList>
+      <Plasteel>2</Plasteel>
+    </costList>
+    <researchPrerequisites>
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <passability>Standable</passability>
+    <fillPercent>0.02</fillPercent>
+    <building><isEdifice>false</isEdifice><canLandGravshipOn>true</canLandGravshipOn><canConstructInCorner>true</canConstructInCorner></building>
+    <placeWorkers>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Asuran</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Asuran</family>
+        <role>Conduit</role>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranPowerConduit</defName>
+    <label>Asuran gravship power conduit</label>
+    <description>An isolated nanite-composite power bus. It cannot join Wraith or ordinary colony grids without an explicit Asuran power coupler.</description>
+    <thingClass>Building</thingClass>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2023</uiOrder>
+    <tickerType>Never</tickerType>
+    <graphicData>
+      <graphicClass>WraithNaniteGravtech.Graphic_LinkedAsuranFamilyPower</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranPowerConduit_Atlas</texPath>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <uiIconPath>UI/WNG/Conduits/WNG_AsuranPowerConduit_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <statBases>
+      <MaxHitPoints>165</MaxHitPoints>
+      <Mass>1</Mass>
+      <Flammability>0.05</Flammability>
+      <Beauty>1</Beauty>
+      <WorkToBuild>90</WorkToBuild>
+    </statBases>
+    <costList>
+      <Plasteel>2</Plasteel>
+    </costList>
+    <researchPrerequisites>
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <passability>Standable</passability>
+    <fillPercent>0.02</fillPercent>
+    <building><isEdifice>false</isEdifice><isPowerConduit>true</isPowerConduit><canLandGravshipOn>true</canLandGravshipOn><canConstructInCorner>true</canConstructInCorner></building>
+    <placeWorkers>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Asuran</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Conduit</role>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranPowerCoupler</defName>
+    <label>Asuran power coupler</label>
+    <description>An intentional interface between a vanilla colony power net and an isolated Asuran gravship lattice. It never bridges directly into Wraith neural power.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2024</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranPowerCoupler</texPath>
+      <drawSize>(1.5,1.5)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.25</fillPercent>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>2100</WorkToBuild>
+      <Mass>10</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>4</Beauty>
+    </statBases>
+    <costList>
+      <Plasteel>35</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Asuran</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>0</basePowerConsumption>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Coupler</role>
+        <capacityWatts>6000</capacityWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranPowerCell</defName>
+    <label>Asuran vacuum power cell</label>
+    <description>A finite ship-scale Asuran power cell. It consumes reconstructed vacuum-energy modules and energizes only the Asuran family lattice.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2025</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranPowerCell</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>460</MaxHitPoints>
+      <WorkToBuild>7600</WorkToBuild>
+      <Mass>45</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>8</Beauty>
+    </statBases>
+    <costList>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <Gold>20</Gold>
+    </costList>
+    <researchPrerequisites>
+      <li>WNG_AsuranGravshipArchitecture</li>
+      <li>WNG_VacuumEnergyContainment</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Asuran</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>1</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>1</initialConfigurableTargetFuelLevel>
+        <fuelConsumptionRate>0.0666667</fuelConsumptionRate>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelFilter>
+          <thingDefs>
+            <li>WNG_VacuumEnergyModule</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>vacuum-energy module</fuelLabel>
+        <fuelGizmoLabel>Vacuum module</fuelGizmoLabel>
+        <showFuelGizmo>true</showFuelGizmo>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Generator</role>
+        <capacityWatts>8000</capacityWatts>
+      </li>
+          <li Class="WraithNaniteGravtech.CompProperties_AsuranArchiveRepair"><repairIntervalTicks>750</repairIntervalTicks><healPerPulse>4</healPerPulse><archiveRadius>55</archiveRadius></li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_SmallThrusterBase">
+    <defName>WNG_PrecursorVectorThruster</defName>
+    <label>Asuran gravship vector drive</label>
+    <description>A precision Odyssey vector drive requiring same-family power and a physical Asuran nanite-slurry feed.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2222</uiOrder>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_PrecursorVectorThruster</texPath>
+      <drawSize>(1.2,2.2)</drawSize>
+          <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>7</Beauty>
+      <WorkToBuild>12500</WorkToBuild>
+      <Mass>14</Mass>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>100</Plasteel>
+      <GravlitePanel>28</GravlitePanel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_GravshipThruster</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGThruster">
+        <family>Asuran</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <launchSound>WNG_PrecursorGravThruster</launchSound>
+        <statOffsets>
+          <GravshipRange>10</GravshipRange>
+        </statOffsets>
+        <componentTypeDef>Thruster</componentTypeDef>
+        <exclusionAreaSize>(1,0,5)</exclusionAreaSize>
+        <exclusionAreaOffset>(0,0,-5)</exclusionAreaOffset>
+        <directionInfluence>20</directionInfluence>
+        <flameSize>4</flameSize>
+        <flameOffsetsPerDirection>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+        </flameOffsetsPerDirection>
+        <flameShaderType>MoteGlow</flameShaderType>
+        <flameShaderParameters>
+          <_MainTex>/Things/Mote/SmallThruster_Burn</_MainTex>
+        </flameShaderParameters>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>4</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Asuran</family>
+        <role>Thruster</role>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Consumer</role>
+        <demandWatts>600</demandWatts>
+      </li>
+          <li Class="WraithNaniteGravtech.CompProperties_AsuranArchiveRepair"><repairIntervalTicks>750</repairIntervalTicks><healPerPulse>4</healPerPulse><archiveRadius>55</archiveRadius></li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_LargeThrusterBase">
+    <defName>WNG_AsuranHeavyVectorDrive</defName>
+    <label>greater Asuran vector drive</label>
+    <description>A high-output Asuran vector drive for full-scale precursor gravships.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2223</uiOrder>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranHeavyVectorDrive</texPath>
+      <drawSize>(2.2,2.2)</drawSize>
+          <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>700</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>9</Beauty>
+      <WorkToBuild>15500</WorkToBuild>
+      <Mass>25</Mass>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>180</Plasteel>
+      <GravlitePanel>60</GravlitePanel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+      <li>StandardGravtech</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_GravshipThruster</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGThruster">
+        <family>Asuran</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <launchSound>WNG_PrecursorGravThruster</launchSound>
+        <statOffsets>
+          <GravshipRange>16</GravshipRange>
+        </statOffsets>
+        <componentTypeDef>Thruster</componentTypeDef>
+        <exclusionAreaSize>(2,0,7)</exclusionAreaSize>
+        <exclusionAreaOffset>(0,0,-7)</exclusionAreaOffset>
+        <directionInfluence>30</directionInfluence>
+        <flameSize>4</flameSize>
+        <flameOffsetsPerDirection>
+          <li>(0,0,1.0)</li>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+          <li>(0,0,0.5)</li>
+        </flameOffsetsPerDirection>
+        <flameShaderType>MoteGlow</flameShaderType>
+        <flameShaderParameters>
+          <_MainTex>/Things/Mote/LargeThruster_Burn</_MainTex>
+        </flameShaderParameters>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>6</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint">
+        <family>Asuran</family>
+        <role>Thruster</role>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Consumer</role>
+        <demandWatts>1000</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_FuelOptimizerBase">
+    <defName>WNG_AsuranFuelOptimizer</defName>
+    <label>Asuran vector optimizer</label>
+    <description>A precision drive synchronizer reducing native Odyssey gravship fuel expenditure.</description>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2231</uiOrder>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranFuelOptimizer</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>320</MaxHitPoints>
+      <Mass>30</Mass>
+      <WorkToBuild>6200</WorkToBuild>
+    </statBases>
+    <costList Inherit="False">
+      <Plasteel>85</Plasteel>
+      <GravlitePanel>35</GravlitePanel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>WNG_AsuranGravshipArchitecture</li>
+      <li>StandardGravtech</li>
+    </researchPrerequisites>
+    <placeWorkers Inherit="False">
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility">
+        <family>Asuran</family>
+        <requiresFamilyPower>true</requiresFamilyPower>
+        <fuelSavingsPercent>0.3</fuelSavingsPercent>
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>2</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode">
+        <family>Asuran</family>
+        <role>Consumer</role>
+        <demandWatts>220</demandWatts>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

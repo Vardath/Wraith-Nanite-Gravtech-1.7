@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    WNGv1 Wraith biology is intentionally layered. These first genes own only the
+    biological Life Force/regeneration contract and native appearance constraints.
+    Telepathy, host cultivation, faction hunger, living technology and caste gear are
+    separate later subsystems and are not hidden dependencies of the core xenotype.
+  -->
+  <GeneDef>
+    <defName>WNG_LifeForceMetabolism</defName>
+    <label>life-force metabolism</label>
+    <description>This Wraith does not survive on ordinary food. Its tissues store stolen biological vitality as Life Force, which drains over time and is spent by regeneration. Severe depletion causes weakness and eventually life-force torpor; deliberate hibernation greatly slows the drain.</description>
+    <iconPath>UI/WNG/Genes/WraithLifeForce</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <minAgeActive>13</minAgeActive>
+    <geneClass>WraithNaniteGravtech.Gene_Resource_LifeForce</geneClass>
+    <resourceGizmoType>WraithNaniteGravtech.GeneGizmo_Resource_LifeForce</resourceGizmoType>
+    <resourceLabel>life force</resourceLabel>
+    <resourceDescription>{PAWN_nameDef} stores biological vitality drained from living prey. Life Force decays over time and powers Wraith regeneration. Low reserves weaken regeneration; complete depletion causes torpor. Deliberate hibernation reduces the passive drain to a tiny fraction of normal.</resourceDescription>
+    <resourceLossPerDay>0.0666667</resourceLossPerDay>
+    <resourceGizmoThresholds>
+      <li>0.15</li>
+      <li>0.40</li>
+      <li>0.70</li>
+    </resourceGizmoThresholds>
+    <showGizmoOnWorldView>true</showGizmoOnWorldView>
+    <disablesNeeds>
+      <li>Food</li>
+    </disablesNeeds>
+    <abilities>
+      <li>WNG_LifeDrain</li>
+      <li>WNG_PartialFeed</li>
+    </abilities>
+    <biostatCpx>3</biostatCpx>
+    <biostatMet>2</biostatMet>
+    <modExtensions>
+      <li Class="WraithNaniteGravtech.WraithLifeForceSettingsExtension">
+        <!-- One full reserve lasts about one quadrum when otherwise idle. -->
+        <hibernationDrainFactor>0.02</hibernationDrainFactor>
+        <starvedThreshold>0.15</starvedThreshold>
+        <torporThreshold>0.001</torporThreshold>
+        <torporRecoveryThreshold>0.08</torporRecoveryThreshold>
+
+        <!-- Regeneration scaling by current reserve. -->
+        <lowReserveThreshold>0.40</lowReserveThreshold>
+        <highReserveThreshold>0.70</highReserveThreshold>
+        <depletedRegenerationFactor>0.05</depletedRegenerationFactor>
+        <starvingRegenerationFactor>0.25</starvingRegenerationFactor>
+        <lowRegenerationFactor>0.60</lowRegenerationFactor>
+        <healthyRegenerationFactor>1.00</healthyRegenerationFactor>
+        <highRegenerationFactor>1.60</highRegenerationFactor>
+        <hibernatingRegenerationFactor>0.12</hibernatingRegenerationFactor>
+
+        <!-- Ordinary injury repair is real resource expenditure, not free healing. -->
+        <injuryHealIntervalTicks>2500</injuryHealIntervalTicks>
+        <baseInjuryHealAmount>1.5</baseInjuryHealAmount>
+        <injuryLifeForceCostPerSeverity>0.0025</injuryLifeForceCostPerSeverity>
+
+        <!-- Missing-part recovery is deliberately expensive and requires a healthy reserve. -->
+        <limbRegrowthIntervalTicks>60000</limbRegrowthIntervalTicks>
+        <limbRegrowthMinimumReserve>0.70</limbRegrowthMinimumReserve>
+        <limbRegrowthLifeForceCost>0.25</limbRegrowthLifeForceCost>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>WNG_WraithRegeneration</defName>
+    <label>wraith regeneration</label>
+    <description>Wraith tissues rebuild injury aggressively when sufficient Life Force is available. Routine healing consumes reserve in proportion to repaired injury. With a high reserve, even missing anatomy can eventually be reconstructed at substantial Life Force cost.</description>
+    <iconPath>UI/WNG/Genes/WraithRegeneration</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <geneClass>WraithNaniteGravtech.Gene_WraithRegeneration</geneClass>
+    <biostatCpx>3</biostatCpx>
+    <biostatMet>-3</biostatMet>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>WNG_HostCultivator</defName>
+    <label>host cultivator</label>
+    <description>Wraith regenerative tissues can be directed into a technological seed that consumes a biological host or corpse and grows into a Living Forge.</description>
+    <iconPath>UI/WNG/Genes/WraithRegeneration</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <abilities>
+      <li>WNG_HostSeedGestation</li>
+    </abilities>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-1</biostatMet>
+  </GeneDef>
+  <GeneDef>
+    <defName>WNG_WraithTelepathy</defName>
+    <label>wraith telepathy</label>
+    <description>Wraith nervous tissue is naturally sensitive to other minds and to the shared psychic signals of the Hive. This grants Hive Sense, deliberate hallucinatory intrusion, the retained Enthrall ability and captive-focused telepathy, while providing the biological substrate used by stronger caste-specific psychic abilities.</description>
+    <iconPath>UI/WNG/Abilities/WraithFocus</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <abilities>
+      <li>WNG_HiveSense</li>
+      <li>WNG_Hallucination</li>
+      <li>WNG_Enthrall</li>
+      <li>WNG_CaptiveExperiment</li>
+      <li>WNG_CaptiveInterrogation</li>
+    </abilities>
+    <statOffsets>
+      <PsychicSensitivity>0.20</PsychicSensitivity>
+      <PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
+    </statOffsets>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-1</biostatMet>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>WNG_HybridRegeneration</defName>
+    <label>incomplete wraith regeneration</label>
+    <description>An unstable Wraith-derived tissue lattice slowly repairs ordinary non-permanent injuries. It is deliberately weaker than true Wraith regeneration and cannot reconstruct missing anatomy.</description>
+    <iconPath>UI/WNG/Genes/WraithRegeneration</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <geneClass>WraithNaniteGravtech.Gene_WraithHybridRegeneration</geneClass>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-2</biostatMet>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>WNG_HybridLifeForce</defName>
+    <label>unstable life-force metabolism</label>
+    <description>This hybrid keeps ordinary food metabolism while carrying a small, unstable Life Force reserve. The reserve drains faster than a true Wraith's and can be replenished only by Partial Feed; complete depletion can still produce Wraith-like weakness and torpor.</description>
+    <iconPath>UI/WNG/Genes/WraithLifeForce</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <geneClass>WraithNaniteGravtech.Gene_Resource_HybridLifeForce</geneClass>
+    <resourceGizmoType>WraithNaniteGravtech.GeneGizmo_Resource_LifeForce</resourceGizmoType>
+    <resourceLabel>unstable life force</resourceLabel>
+    <resourceDescription>{PAWN_nameDef} retains ordinary nutrition but also carries a small Wraith-derived vitality reserve. Partial feeding replenishes it; full Drain Life is unavailable.</resourceDescription>
+    <resourceLossPerDay>0.10</resourceLossPerDay>
+    <resourceGizmoThresholds>
+      <li>0.06</li>
+      <li>0.16</li>
+      <li>0.28</li>
+    </resourceGizmoThresholds>
+    <showGizmoOnWorldView>true</showGizmoOnWorldView>
+    <abilities>
+      <li>WNG_PartialFeed</li>
+    </abilities>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <modExtensions>
+      <li Class="WraithNaniteGravtech.WraithLifeForceSettingsExtension">
+        <hibernationDrainFactor>1</hibernationDrainFactor>
+        <starvedThreshold>0.06</starvedThreshold>
+        <torporThreshold>0.001</torporThreshold>
+        <torporRecoveryThreshold>0.04</torporRecoveryThreshold>
+        <lowReserveThreshold>0.16</lowReserveThreshold>
+        <highReserveThreshold>0.28</highReserveThreshold>
+        <depletedRegenerationFactor>0.05</depletedRegenerationFactor>
+        <starvingRegenerationFactor>0.20</starvingRegenerationFactor>
+        <lowRegenerationFactor>0.45</lowRegenerationFactor>
+        <healthyRegenerationFactor>0.70</healthyRegenerationFactor>
+        <highRegenerationFactor>1.00</highRegenerationFactor>
+        <hibernatingRegenerationFactor>0.05</hibernatingRegenerationFactor>
+        <injuryHealIntervalTicks>5000</injuryHealIntervalTicks>
+        <baseInjuryHealAmount>0.75</baseInjuryHealAmount>
+        <injuryLifeForceCostPerSeverity>0.004</injuryLifeForceCostPerSeverity>
+        <limbRegrowthIntervalTicks>60000</limbRegrowthIntervalTicks>
+        <limbRegrowthMinimumReserve>1</limbRegrowthMinimumReserve>
+        <limbRegrowthLifeForceCost>1</limbRegrowthLifeForceCost>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>WNG_HybridTelepathy</defName>
+    <label>attenuated wraith telepathy</label>
+    <description>The hybrid can force brief contact with a biological target's surface thoughts, but lacks true Hive Sense, Enthrallment and caste-level Wraith psychic control.</description>
+    <iconPath>UI/WNG/Abilities/WraithFocus</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <abilities>
+      <li>WNG_TelepathicProbe</li>
+    </abilities>
+    <statOffsets>
+      <PsychicSensitivity>0.10</PsychicSensitivity>
+    </statOffsets>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>WNG_HybridInstability</defName>
+    <label>wraith-human genomic instability</label>
+    <description>The incomplete graft never reaches stable Wraith equilibrium. Biological and psychic systems periodically fall out of synchronisation, causing deterministic recurring instability flares.</description>
+    <iconPath>UI/WNG/Genes/HybridInstability</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <geneClass>WraithNaniteGravtech.Gene_WraithHybridInstability</geneClass>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>3</biostatMet>
+  </GeneDef>
+
+</Defs>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>WNG_CultureBiomass</defName>
+    <label>culture Wraith biomass</label>
+    <description>Digest raw biological tissue into dense cultured biomass used by Wraith living technology.</description>
+    <jobString>Culturing Wraith biomass.</jobString>
+    <workAmount>900</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <recipeUsers>
+      <li>WNG_LivingForge</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>MeatRaw</li>
+      </categories>
+    </fixedIngredientFilter>
+    <products>
+      <WNG_Biomass>16</WNG_Biomass>
+    </products>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>WNG_RecoverBiomass</defName>
+    <label>recover emergency biomass</label>
+    <description>Use a surviving Wraith growth chamber to digest raw biological tissue into a smaller emergency biomass reserve when the colony's Living Forge network has been lost. This fallback is slower and less efficient than normal Living Forge cultivation.</description>
+    <jobString>Recovering emergency Wraith biomass.</jobString>
+    <workAmount>1500</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <recipeUsers>
+      <li>WNG_WraithGrowthChamber</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>MeatRaw</li>
+      </categories>
+    </fixedIngredientFilter>
+    <products>
+      <WNG_Biomass>12</WNG_Biomass>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_GrowWraithGravEngineSeed</defName>
+    <label>grow Wraith grav-engine seed</label>
+    <description>Cultivate one dense grav-engine organ-seed. The default recipe consumes 120 Wraith biomass; the cost and work are adjustable in WNG mod settings. The seed must then consume a biological humanlike host or corpse before a real grav engine exists.</description>
+    <jobString>Growing a Wraith grav-engine seed.</jobString>
+    <workAmount>7000</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_HiveGravshipArchitecture</researchPrerequisite>
+    <recipeUsers>
+      <li>WNG_LivingForge</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WNG_Biomass</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WNG_Biomass</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <WNG_WraithGravEngineSeed>1</WNG_WraithGravEngineSeed>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_CultivateWraithGrowthChamber</defName>
+    <label>cultivate Wraith growth chamber</label>
+    <description>Cultivate a complete minified Wraith growth chamber directly from biomass. This is the whole chamber: there is no separate growth-chamber seed or planting stage.</description>
+    <jobString>Cultivating a Wraith growth chamber.</jobString>
+    <workAmount>12000</workAmount>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>WNG_FeedingEcology</researchPrerequisite>
+    <recipeUsers>
+      <li>WNG_LivingForge</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WNG_Biomass</li>
+          </thingDefs>
+        </filter>
+        <count>320</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WNG_Biomass</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <WNG_WraithGrowthChamber>1</WNG_WraithGrowthChamber>
+    </products>
+  </RecipeDef>
+
+</Defs>

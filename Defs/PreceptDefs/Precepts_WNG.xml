@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <IssueDef>
+    <defName>WNG_WraithFeeding</defName>
+    <label>Wraith feeding</label>
+  </IssueDef>
+  <HistoryEventDef>
+    <defName>WNG_WraithFedOnEnemy</defName>
+    <label>fed on an enemy for Life Force</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>WNG_WraithFedOnNonEnemy</defName>
+    <label>fed on a non-enemy for Life Force</label>
+  </HistoryEventDef>
+  <PreceptDef>
+    <defName>WNG_WraithFeeding_Forbidden</defName>
+    <issue>WNG_WraithFeeding</issue>
+    <label>forbidden</label>
+    <description>Taking Life Force from another living being is an unacceptable violation, regardless of the target.</description>
+    <impact>Low</impact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnEnemy</eventDef>
+        <thought>WNG_FedLifeForce_Forbidden</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnNonEnemy</eventDef>
+        <thought>WNG_FedLifeForce_Forbidden</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <PreceptDef>
+    <defName>WNG_WraithFeeding_EnemiesOnly</defName>
+    <issue>WNG_WraithFeeding</issue>
+    <label>enemies only</label>
+    <description>Life Force may be taken from enemies and prisoners of the colony, but feeding on others is wrong.</description>
+    <impact>Low</impact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnEnemy</eventDef>
+        <thought>WNG_FedLifeForce_EnemyApproved</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnNonEnemy</eventDef>
+        <thought>WNG_FedLifeForce_NonEnemyDisapproved</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <PreceptDef>
+    <defName>WNG_WraithFeeding_Necessary</defName>
+    <issue>WNG_WraithFeeding</issue>
+    <label>necessary</label>
+    <description>Wraith feeding is a biological necessity. It should be done without celebration or shame.</description>
+    <impact>Low</impact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnEnemy</eventDef>
+        <thought>WNG_FedLifeForce_Necessary</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnNonEnemy</eventDef>
+        <thought>WNG_FedLifeForce_Necessary</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <PreceptDef>
+    <defName>WNG_WraithFeeding_Honoured</defName>
+    <issue>WNG_WraithFeeding</issue>
+    <label>honoured</label>
+    <description>To take Life Force is an honoured expression of Wraith nature and continuity.</description>
+    <impact>Low</impact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnEnemy</eventDef>
+        <thought>WNG_FedLifeForce_Honoured</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnNonEnemy</eventDef>
+        <thought>WNG_FedLifeForce_Honoured</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <PreceptDef>
+    <defName>WNG_WraithFeeding_Sacred</defName>
+    <issue>WNG_WraithFeeding</issue>
+    <label>sacred</label>
+    <description>The transfer of Life Force is sacred: life passes through the feeder and strengthens the hive.</description>
+    <impact>Medium</impact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnEnemy</eventDef>
+        <thought>WNG_FedLifeForce_Sacred</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_WraithFedOnNonEnemy</eventDef>
+        <thought>WNG_FedLifeForce_Sacred</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <ThoughtDef>
+    <defName>WNG_FedLifeForce_Forbidden</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>forbidden feeding</label>
+        <description>I took Life Force from another living being. My beliefs condemn what I did.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>WNG_FedLifeForce_EnemyApproved</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>fed on an enemy</label>
+        <description>I fed without violating our rule: Life Force may be taken from our enemies.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>WNG_FedLifeForce_NonEnemyDisapproved</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>fed on the wrong prey</label>
+        <description>I took Life Force from someone our beliefs did not permit me to feed upon.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>WNG_FedLifeForce_Necessary</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>necessary feeding</label>
+        <description>I fed because my biology requires it. There is no shame in survival.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>WNG_FedLifeForce_Honoured</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>honoured feeding</label>
+        <description>I took Life Force and continued the strength of my kind.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>WNG_FedLifeForce_Sacred</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>sacred transfer of life</label>
+        <description>Life passed into me through the sacred act of feeding.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <IssueDef>
+    <defName>WNG_NaniteIntegration</defName>
+    <label>nanite integration</label>
+  </IssueDef>
+  <HistoryEventDef>
+    <defName>WNG_HumanFormNaniteReconstruction</defName>
+    <label>completed a human-form nanite reconstruction</label>
+  </HistoryEventDef>
+  <PreceptDef>
+    <defName>WNG_NaniteIntegration_Forbidden</defName>
+    <issue>WNG_NaniteIntegration</issue>
+    <label>forbidden</label>
+    <description>Reconstructing people as nanite synthetic beings violates the proper boundary between organism and machine.</description>
+    <impact>Low</impact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_HumanFormNaniteReconstruction</eventDef>
+        <thought>WNG_NaniteReconstruction_Forbidden</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <PreceptDef>
+    <defName>WNG_NaniteIntegration_Controlled</defName>
+    <issue>WNG_NaniteIntegration</issue>
+    <label>controlled only</label>
+    <description>Nanite reconstruction is acceptable when deliberately controlled, but it should not be treated as inherently desirable.</description>
+    <impact>Low</impact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <displayOrderInIssue>30</displayOrderInIssue>
+  </PreceptDef>
+  <PreceptDef>
+    <defName>WNG_NaniteIntegration_Desired</defName>
+    <issue>WNG_NaniteIntegration</issue>
+    <label>desired</label>
+    <description>Nanite integration is a valuable continuation of life and should be pursued deliberately.</description>
+    <impact>Low</impact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_HumanFormNaniteReconstruction</eventDef>
+        <thought>WNG_NaniteReconstruction_Desired</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <PreceptDef>
+    <defName>WNG_NaniteIntegration_Transcendent</defName>
+    <issue>WNG_NaniteIntegration</issue>
+    <label>transcendent</label>
+    <description>To continue as an exact living pattern in nanite form is a higher state of existence.</description>
+    <impact>Medium</impact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>WNG_HumanFormNaniteReconstruction</eventDef>
+        <thought>WNG_NaniteReconstruction_Transcendent</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+  <ThoughtDef>
+    <defName>WNG_NaniteReconstruction_Forbidden</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>forbidden nanite reconstruction</label>
+        <description>I crossed a boundary my beliefs say should remain intact and reconstructed a person as a nanite synthetic.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>WNG_NaniteReconstruction_Desired</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>nanite continuation</label>
+        <description>I preserved a living pattern in nanite form. This is the kind of transformation we should pursue.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>WNG_NaniteReconstruction_Transcendent</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>pattern transcended flesh</label>
+        <description>I carried a living pattern beyond the limits of flesh and into a higher synthetic continuity.</description>
+        <baseMoodEffect>7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

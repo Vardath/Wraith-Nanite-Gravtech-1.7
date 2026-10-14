@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs><IncidentDef>
+  <defName>WNG_WraithCloningInstallationDiscovery</defName><label>abandoned Wraith cloning installation discovery</label><category>Misc</category>
+  <targetTags><li>Map_PlayerHome</li></targetTags><workerClass>WraithNaniteGravtech.IncidentWorker_WraithCloningInstallationDiscovery</workerClass>
+  <baseChance>0.055</baseChance><earliestDay>18</earliestDay><minRefireDays>32</minRefireDays><populationEffect>None</populationEffect><pointsScaleable>true</pointsScaleable>
+</IncidentDef></Defs>

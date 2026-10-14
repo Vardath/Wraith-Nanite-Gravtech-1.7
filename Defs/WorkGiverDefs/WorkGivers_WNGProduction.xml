@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Vanilla WorkGiver_DoBill discovers job targets from fixedBillGiverDefs.
+    RecipeDef.recipeUsers and the Bills tab alone do NOT assign colonists to
+    custom worktables. All three WNG production benches have the normal
+    Building_WorkTable bill interface but previously lacked this registration.
+
+    Give ordinary colonists a visible Crafting-priority route for existing
+    Living Forge, Growth Chamber and Precursor/Asuran Fabricator bills.
+    Recipe research, ingredient filters and required worker skills remain
+    enforced by vanilla bill selection. Do not interfere with the separate
+    hidden Asuran-only sculpture workgiver (WNG_DoAsuranFabrication).
+  -->
+  <WorkGiverDef>
+    <defName>WNG_DoProductionBills</defName>
+    <label>operate WNG production benches</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>75</priorityInType>
+    <fixedBillGiverDefs>
+      <li>WNG_LivingForge</li>
+      <li>WNG_WraithGrowthChamber</li>
+      <li>WNG_PrecursorFabricator</li>
+    </fixedBillGiverDefs>
+    <verb>manufacture</verb>
+    <gerund>manufacturing at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>

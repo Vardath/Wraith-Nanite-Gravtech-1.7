@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_WhispersDerivedImplants</defName><label>Whispers-derived implants</label>
+    <description>Translate the sensory and neck-gill adaptations of Michael's blind fog-producing hybrids into controlled implants. The result is not hybridization: one implant amplifies auditory localisation, while a separate cultured mist gland continuously produces obscuring biological fog without conscious activation.</description>
+    <baseCost>3000</baseCost><techLevel>Spacer</techLevel>
+    <prerequisites><li>WNG_WhispersHybridAnalysis</li><li>Bionics</li></prerequisites>
+    <researchViewX>10.00</researchViewX><researchViewY>5.50</researchViewY>
+  </ResearchProjectDef>
+</Defs>

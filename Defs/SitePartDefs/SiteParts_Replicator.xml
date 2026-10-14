@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>WNG_ReplicatorConsumedRuin</defName>
+    <label>Replicator-consumed ruin</label>
+    <description>A technological ruin already stripped by Replicators. No active swarm remains, but three separated caches of ordinary self-organizing Replicator Blocks persist among the aftermath and can reconstruct if left exposed.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_ReplicatorConsumedRuin</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <requiresFaction>false</requiresFaction>
+    <wantsThreatPoints>false</wantsThreatPoints>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <selectionWeight>0</selectionWeight>
+    <arrivedLetter>The ruin has been physically consumed and stripped. No live Replicators remain, but three separated caches of ordinary Replicator Blocks survived the swarm. Uncontained stacks can reconstruct under the normal Block exposure rules.</arrivedLetter>
+    <arrivedLetterDef>ThreatSmall</arrivedLetterDef>
+  </SitePartDef>
+</Defs>

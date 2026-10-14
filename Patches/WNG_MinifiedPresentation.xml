@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[starts-with(defName,"WNG_") and minifiedDef and not(contains(defName,"Replicator")) and not(minifiedDrawScale)]</xpath>
+    <value><minifiedDrawScale>0.62</minifiedDrawScale></value>
+  </Operation>
+</Patch>

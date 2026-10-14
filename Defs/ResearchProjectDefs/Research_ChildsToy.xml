@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_ReplicatorGestation</defName>
+    <label>replicator gestation</label>
+    <description>Study captured Replicator material closely enough to deliberately gestate a domesticated Child's Toy form through standard mechanitor infrastructure.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>BasicMechtech</li>
+      <li>WNG_ReplicatorStudy</li>
+    </prerequisites>
+  
+    <researchViewX>12</researchViewX><researchViewY>12</researchViewY>
+  </ResearchProjectDef>
+</Defs>

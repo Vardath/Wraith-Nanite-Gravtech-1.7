@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>WNG_PrecursorLaboratorySite</defName>
+    <label>open precursor laboratory</label>
+    <description>An exposed Ancient-era laboratory containing surviving precursor architecture and damaged technological evidence.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_PrecursorLaboratory</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <requiresFaction>false</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>275</minThreatPoints>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <selectionWeight>0</selectionWeight>
+    <arrivedLetter>The exposed laboratory still contains intact precursor architecture and damaged evidence. Nothing here is a free functional Ancient weapons or power system, but the site may help reconstruct the technology later.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+  </SitePartDef>
+
+  <SitePartDef>
+    <defName>WNG_PrecursorVaultSite</defName>
+    <label>sealed precursor vault</label>
+    <description>A compact sealed Ancient vault whose surviving containment evidence may illuminate precursor vacuum-energy technology.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_PrecursorVault</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <requiresFaction>false</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>325</minThreatPoints>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <selectionWeight>0</selectionWeight>
+    <arrivedLetter>The vault shell is still largely intact. A degraded vacuum-containment artifact appears to have survived inside, but no complete power module is being handed to you for free.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+  </SitePartDef>
+
+  <SitePartDef>
+    <defName>WNG_DeceptiveSurveyAnnexSite</defName>
+    <label>Ancient survey annex</label>
+    <description>An apparently intact Ancient survey annex built around a quiet data core. The architecture looks legitimate, but the site's internal pattern density is unusual.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_DeceptiveSurveyAnnex</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <requiresFaction>false</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>350</minThreatPoints>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <selectionWeight>0</selectionWeight>
+    <arrivedLetter>The annex appears Ancient at first inspection. The central survey core remains silent. Approaching it may reveal whether the site is what it claims to be.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+  </SitePartDef>
+</Defs>

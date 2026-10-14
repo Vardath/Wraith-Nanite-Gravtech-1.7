@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>WNG_SovereignLatticeRecoveryQuest</defName>
+    <rootSelectionWeight>0.11</rootSelectionWeight>
+    <rootEarliestDay>14</rootEarliestDay>
+    <minRefireDays>35</minRefireDays>
+    <expireDaysRange>8~12</expireDaysRange>
+    <affectedByPoints>false</affectedByPoints>
+    <root Class="WraithNaniteGravtech.QuestNode_Root_SovereignLatticeRecovery" />
+    <questNameRules><rulesStrings><li>questName->the severed command lattice</li></rulesStrings></questNameRules>
+    <questDescriptionRules><rulesStrings><li>questDescription->A damaged precursor telemetry burst points to a field cache containing a complete Sovereign Neural Lattice. The implant is physical salvage: reach the site and recover it before abandoning the lead.</li></rulesStrings></questDescriptionRules>
+  </QuestScriptDef>
+</Defs>

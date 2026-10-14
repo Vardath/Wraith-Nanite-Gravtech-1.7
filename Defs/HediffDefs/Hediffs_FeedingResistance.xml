@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_FeedingResistance</defName>
+    <label>vital resistance therapy</label>
+    <description>A temporary anti-Wraith treatment that disrupts the biological handoff used during life-force feeding. The protection lasts about five days. It does not make the patient immune: feeding can still succeed at sharply reduced strength, while some attempts are rejected violently enough to injure the feeding link.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>300000~300000</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_FeedingResistanceStrain</defName>
+    <label>vital resistance strain</label>
+    <description>The patient's metabolism is being forced to maintain the unstable anti-feeding state. Movement, manipulation and awareness are mildly impaired while the initial treatment stress passes.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~90000</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>-0.06</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.08</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.08</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_FeedingResistanceCrisis</defName>
+    <label>life-force rejection crisis</label>
+    <description>A Wraith feeding attempt collided with active vital resistance and the victim's metabolism violently rejected the transfer. The extraction failed, but the rejection has temporarily destabilised movement, manipulation and consciousness.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>45000~45000</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>-0.10</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.08</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.15</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_FeedingRejectionBacklash</defName>
+    <label>feeding-link backlash</label>
+    <description>The Wraith's feeding link recoiled from a victim under active vital resistance. Awareness, sight and fine control are impaired while the psychic-biological feedback dissipates.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>18000~18000</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Manipulation</capacity><offset>-0.10</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.12</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.08</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TransportShipDef>
+    <defName>WNG_Ship_WraithStrikeCraftNPC</defName>
+    <label>Wraith strike craft</label>
+    <shipThing>WNG_WraithStrikeCraft_NPC</shipThing>
+    <arrivingSkyfaller>WNG_WraithStrikeCraftIncoming</arrivingSkyfaller>
+    <leavingSkyfaller>WNG_WraithStrikeCraftLeaving</leavingSkyfaller>
+    <worldObject>WNG_WraithStrikeCraftWorld</worldObject>
+    <maxLaunchDistance>105</maxLaunchDistance>
+    <playerShuttle>false</playerShuttle>
+  </TransportShipDef>
+
+  <TransportShipDef>
+    <defName>WNG_Ship_WraithCruiserNPC</defName>
+    <label>Wraith cruiser</label>
+    <shipThing>WNG_WraithCruiser_NPC</shipThing>
+    <arrivingSkyfaller>WNG_WraithCruiserIncoming</arrivingSkyfaller>
+    <leavingSkyfaller>WNG_WraithCruiserLeaving</leavingSkyfaller>
+    <worldObject>WNG_WraithCruiserWorld</worldObject>
+    <maxLaunchDistance>125</maxLaunchDistance>
+    <playerShuttle>false</playerShuttle>
+  </TransportShipDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_WraithStrikeCraft_NPC</defName>
+    <label>hostile Wraith strike craft</label>
+    <description>A non-player Wraith assault carrier used by strategic retaliation and extermination responses. It is a real Odyssey passenger shuttle carrying an exact lineage crew; after landing the crew deploys and the surviving empty organism later withdraws physically.</description>
+    <thingClass>Building_PassengerShuttle</thingClass>
+    <preventDroppingThingsOn>true</preventDroppingThingsOn>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>60</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.55</fillPercent>
+    <size>(4,6)</size>
+    <rotatable>true</rotatable>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <drawerType>RealtimeOnly</drawerType>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wraith/Shuttle/WNG_WraithStrikeCraft</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(4.4,6.6)</drawSize>
+      <shadowData><volume>(2.5,1.2,5.0)</volume><offset>(-0.1,0,0)</offset></shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>1120</MaxHitPoints>
+      <Flammability>0.10</Flammability>
+      <Mass>145</Mass>
+      <Comfort>0.64</Comfort>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+      <paintable>false</paintable>
+      <isInert>true</isInert>
+      <destroySound>BuildingDestroyed_Wood_Big</destroySound>
+    </building>
+    <inspectorTabs><li>ITab_ContentsTransporter</li></inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Shuttle"><shipDef>WNG_Ship_WraithStrikeCraftNPC</shipDef></li>
+      <li Class="CompProperties_Launchable">
+        <fuelPerTile>2.5</fuelPerTile>
+        <minFuelCost>42</minFuelCost>
+        <skyfallerLeaving>WNG_WraithStrikeCraftLeaving</skyfallerLeaving>
+        <worldObjectDef>WNG_WraithStrikeCraftWorld</worldObjectDef>
+        <cooldownTicks>3600</cooldownTicks>
+        <fixedLaunchDistanceMax>105</fixedLaunchDistanceMax>
+      </li>
+      <li Class="CompProperties_Transporter">
+        <massCapacity>900</massCapacity>
+        <max1PerGroup>true</max1PerGroup>
+        <canChangeAssignedThingsAfterStarting>false</canChangeAssignedThingsAfterStarting>
+        <showMassInInspectString>true</showMassInInspectString>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>440</fuelCapacity>
+        <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+        <fuelFilter><thingDefs><li>WNG_WraithBiofluidFuel</li></thingDefs></fuelFilter>
+        <fuelLabel>wraith bio-fluid</fuelLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <showFuelGizmo>false</showFuelGizmo>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle>
+        <canEjectFuel>false</canEjectFuel>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithCraftRegeneration">
+        <repairIntervalTicks>780</repairIntervalTicks>
+        <healPerPulse>10</healPerPulse>
+        <biomassPerPulse>1</biomassPerPulse>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithStrategicCarrierMission">
+        <leavingDefName>WNG_WraithStrikeCraftLeaving</leavingDefName>
+        <deployDelayTicks>240</deployDelayTicks>
+        <deployRetryTicks>120</deployRetryTicks>
+        <maximumDeployRetries>20</maximumDeployRetries>
+        <retreatDelayTicks>9000</retreatDelayTicks>
+      </li>
+      <li Class="CompProperties_AmbientSound"><sound>WNG_WraithDartDrive</sound></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_WraithCruiser_NPC</defName>
+    <label>hostile Wraith cruiser</label>
+    <description>A non-player Wraith cruiser used by high-intensity strategic responses. It carries an exact lineage assault crew in a real Odyssey transporter, deploys that crew only after landing, regenerates from Biomass while present, and withdraws physically if it survives.</description>
+    <thingClass>Building_PassengerShuttle</thingClass>
+    <preventDroppingThingsOn>true</preventDroppingThingsOn>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.6</fillPercent>
+    <size>(5,7)</size>
+    <rotatable>true</rotatable>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <drawerType>RealtimeOnly</drawerType>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wraith/Shuttle/WNG_WraithCruiser</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(5.5,7.7)</drawSize>
+      <shadowData><volume>(3.3,1.5,5.9)</volume><offset>(-0.1,0,0)</offset></shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>1800</MaxHitPoints>
+      <Flammability>0.08</Flammability>
+      <Mass>240</Mass>
+      <Comfort>0.70</Comfort>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+      <paintable>false</paintable>
+      <isInert>true</isInert>
+      <destroySound>BuildingDestroyed_Wood_Big</destroySound>
+    </building>
+    <inspectorTabs><li>ITab_ContentsTransporter</li></inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Shuttle"><shipDef>WNG_Ship_WraithCruiserNPC</shipDef></li>
+      <li Class="CompProperties_Launchable">
+        <fuelPerTile>3.0</fuelPerTile>
+        <minFuelCost>55</minFuelCost>
+        <skyfallerLeaving>WNG_WraithCruiserLeaving</skyfallerLeaving>
+        <worldObjectDef>WNG_WraithCruiserWorld</worldObjectDef>
+        <cooldownTicks>4800</cooldownTicks>
+        <fixedLaunchDistanceMax>125</fixedLaunchDistanceMax>
+      </li>
+      <li Class="CompProperties_Transporter">
+        <massCapacity>1650</massCapacity>
+        <max1PerGroup>true</max1PerGroup>
+        <canChangeAssignedThingsAfterStarting>false</canChangeAssignedThingsAfterStarting>
+        <showMassInInspectString>true</showMassInInspectString>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>680</fuelCapacity>
+        <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+        <fuelFilter><thingDefs><li>WNG_WraithBiofluidFuel</li></thingDefs></fuelFilter>
+        <fuelLabel>wraith bio-fluid</fuelLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <showFuelGizmo>false</showFuelGizmo>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle>
+        <canEjectFuel>false</canEjectFuel>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithCraftRegeneration">
+        <repairIntervalTicks>660</repairIntervalTicks>
+        <healPerPulse>14</healPerPulse>
+        <biomassPerPulse>1.5</biomassPerPulse>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithStrategicCarrierMission">
+        <leavingDefName>WNG_WraithCruiserLeaving</leavingDefName>
+        <deployDelayTicks>300</deployDelayTicks>
+        <deployRetryTicks>120</deployRetryTicks>
+        <maximumDeployRetries>20</maximumDeployRetries>
+        <retreatDelayTicks>10500</retreatDelayTicks>
+      </li>
+      <li Class="CompProperties_AmbientSound"><sound>WNG_WraithDartDrive</sound></li>
+    </comps>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_WraithHunterCoat</defName>
+    <recipeMaker IsNull="True" /><label>wraith hunter coat</label>
+    <thingCategories Inherit="False"><li>ApparelMisc</li></thingCategories>
+    <description>A long flexible coat grown from layered Wraith membrane, providing modest protection without the bulk of a full carapace.</description><techLevel>Spacer</techLevel>
+    <graphicData><texPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_HunterCoat</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MaxHitPoints>180</MaxHitPoints><WorkToMake>14000</WorkToMake><Mass>3.5</Mass><EquipDelay>2</EquipDelay><ArmorRating_Sharp>0.55</ArmorRating_Sharp><ArmorRating_Blunt>0.25</ArmorRating_Blunt><ArmorRating_Heat>0.4</ArmorRating_Heat></statBases>
+    <costList><WNG_Biomass>24</WNG_Biomass></costList>
+    <apparel><bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups><layers><li>Shell</li></layers><wornGraphicPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_HunterCoat</wornGraphicPath><tags><li>WraithClothing</li></tags></apparel>
+  
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>2</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_WraithWarriorCarapace</defName>
+    <recipeMaker IsNull="True" /><label>wraith warrior carapace</label>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <description>A grown shell of layered chitin and regenerative membrane that flexes with the wearer while dispersing bullets, blades and heat.</description><techLevel>Spacer</techLevel>
+    <graphicData><texPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_WarriorCarapace</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MaxHitPoints>260</MaxHitPoints><WorkToMake>24000</WorkToMake><Mass>8</Mass><EquipDelay>3.5</EquipDelay><ArmorRating_Sharp>1.25</ArmorRating_Sharp><ArmorRating_Blunt>0.55</ArmorRating_Blunt><ArmorRating_Heat>0.65</ArmorRating_Heat></statBases>
+    <costList><WNG_Biomass>45</WNG_Biomass><ComponentIndustrial>1</ComponentIndustrial></costList>
+    <apparel><bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups><layers><li>Shell</li></layers><wornGraphicPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_WarriorCarapace</wornGraphicPath><tags><li>WraithArmor</li><li>WraithWarriorArmor</li></tags><defaultOutfitTags><li>Soldier</li></defaultOutfitTags></apparel>
+  
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>3</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_WraithCommanderCarapace</defName>
+    <recipeMaker IsNull="True" /><label>wraith commander carapace</label>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <description>A denser command-grade living shell with reinforced plates around the torso, shoulders and spine.</description><techLevel>Spacer</techLevel>
+    <graphicData><texPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_CommanderCarapace</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MaxHitPoints>320</MaxHitPoints><WorkToMake>36000</WorkToMake><Mass>10</Mass><EquipDelay>4</EquipDelay><ArmorRating_Sharp>1.45</ArmorRating_Sharp><ArmorRating_Blunt>0.65</ArmorRating_Blunt><ArmorRating_Heat>0.78</ArmorRating_Heat><Beauty>3</Beauty></statBases>
+    <costList><WNG_Biomass>65</WNG_Biomass><ComponentIndustrial>2</ComponentIndustrial></costList>
+    <apparel><bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups><layers><li>Shell</li></layers><wornGraphicPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_CommanderCarapace</wornGraphicPath><tags><li>WraithArmor</li><li>WraithCommanderArmor</li></tags><defaultOutfitTags><li>Soldier</li></defaultOutfitTags></apparel>
+  
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>5</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_WraithQueenRaiment</defName>
+    <recipeMaker IsNull="True" /><label>wraith queen raiment</label>
+    <thingCategories Inherit="False"><li>ApparelMisc</li></thingCategories>
+    <description>Regal living robes grown for Wraith Queens and high-ranking brood leaders, reinforced with fine chitin ribs while remaining flowing and light.</description><techLevel>Spacer</techLevel>
+    <graphicData><texPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_QueenRaiment</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MaxHitPoints>220</MaxHitPoints><WorkToMake>26000</WorkToMake><Mass>4</Mass><EquipDelay>2.5</EquipDelay><ArmorRating_Sharp>0.72</ArmorRating_Sharp><ArmorRating_Blunt>0.32</ArmorRating_Blunt><ArmorRating_Heat>0.52</ArmorRating_Heat><Beauty>5</Beauty></statBases>
+    <costList><WNG_Biomass>38</WNG_Biomass><ComponentIndustrial>1</ComponentIndustrial></costList>
+    <apparel><bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups><layers><li>Shell</li></layers><wornGraphicPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_QueenRaiment</wornGraphicPath><tags><li>WraithClothing</li><li>WraithQueenClothing</li></tags></apparel>
+  
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>3</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_WraithUniform</defName>
+    <recipeMaker IsNull="True" />
+    <label>wraith uniform</label>
+    <thingCategories Inherit="False"><li>ApparelMisc</li></thingCategories>
+    <description>A fitted everyday Wraith uniform built from dark leather, reptile-pattern leather and flexible hive-grown fabric. It is ordinary caste-neutral clothing rather than a combat shell.</description>
+    <techLevel>Spacer</techLevel>
+    <smeltable>true</smeltable>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_WraithUniform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <WorkToMake>10000</WorkToMake>
+      <Mass>1.8</Mass>
+      <EquipDelay>1.2</EquipDelay>
+      <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.20</ArmorRating_Heat>
+    </statBases>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <layers><li>OnSkin</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_WraithUniform</wornGraphicPath>
+      <tags><li>WraithClothing</li><li>WraithUniform</li></tags>
+      <defaultOutfitTags><li>Worker</li><li>Soldier</li><li>Spacefarer</li></defaultOutfitTags>
+    </apparel>
+  
+    <smeltProducts><WNG_IratusPheromones>1</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_WraithCommandArmor</defName>
+    <recipeMaker IsNull="True" />
+    <label>wraith command armor</label>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <description>A command-grade Wraith living combat shell grown from layered dark chitin, flexible hive membrane and reinforced spinal plates. Violet-biotic conductor seams mark command status while the shell remains mobile enough for field leadership.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_WraithCommandArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>350</MaxHitPoints><WorkToMake>42000</WorkToMake><Mass>9</Mass><EquipDelay>3.8</EquipDelay>
+      <ArmorRating_Sharp>1.58</ArmorRating_Sharp><ArmorRating_Blunt>0.72</ArmorRating_Blunt><ArmorRating_Heat>0.86</ArmorRating_Heat><Beauty>4</Beauty>
+    </statBases>
+    <costList><WNG_Biomass>75</WNG_Biomass><ComponentIndustrial>2</ComponentIndustrial></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <layers><li>Shell</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Wraith/WNG_WraithCommandArmor</wornGraphicPath>
+      <tags><li>WraithArmor</li><li>WraithCommandArmor</li></tags>
+      <defaultOutfitTags><li>Soldier</li></defaultOutfitTags>
+    </apparel>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithLivingEquipmentMaturation" />
+    </comps>
+  
+    <smeltProducts><WNG_IratusPheromones>6</WNG_IratusPheromones></smeltProducts>
+  </ThingDef>
+
+</Defs>

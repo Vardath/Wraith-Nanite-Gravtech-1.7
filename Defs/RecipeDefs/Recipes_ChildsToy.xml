@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>WNG_MakeChildsToy</defName>
+    <label>gestate Child's Toy replicator</label>
+    <description>Gestate a domesticated Child's Toy Replicator as a normal player mech.</description>
+    <jobString>Gestating Child's Toy.</jobString>
+    <workAmount>1800</workAmount>
+    <gestationCycles>1</gestationCycles>
+    <formingTicks>90000</formingTicks>
+    <researchPrerequisite>WNG_ReplicatorGestation</researchPrerequisite>
+    <recipeUsers><li>MechGestator</li></recipeUsers>
+    <ingredients Inherit="False">
+      <li><filter><thingDefs><li>Steel</li></thingDefs></filter><count>35</count></li>
+      <li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>10</count></li>
+      <li><filter><thingDefs><li>SubcoreBasic</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>WNG_ReplicatorMatter</li>
+        <li>SubcoreBasic</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <WNG_ChildsToy>1</WNG_ChildsToy>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>WNG_ChildsToy</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+</Defs>

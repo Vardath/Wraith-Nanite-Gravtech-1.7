@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef ParentName="PsycastBase">
+    <defName>WNG_HiveSense</defName>
+    <label>hive sense</label>
+    <description>Extend the Wraith's natural telepathic awareness across the local area, sensing other Wraith-linked minds without revealing their exact position. The same focused state briefly sharpens sight, hearing and conscious processing. This is biological Hive perception expressed through Royalty's psychic machinery, not an implanted psylink.</description>
+    <level>0</level>
+    <iconPath>UI/WNG/Abilities/WraithFocus</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <targetRequired>false</targetRequired>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>1800~1800</cooldownTicksRange>
+    <showPsycastEffects>false</showPsycastEffects>
+    <statBases>
+      <Ability_EntropyGain>8</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+    </statBases>
+    <verbProperties>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>WNG_WraithHiveSense</soundCast>
+      <range>-1</range>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityHiveSense">
+        <radius>40</radius>
+        <focusHediff>WNG_HiveSenseFocused</focusHediff>
+      </li>
+    </comps>
+  </AbilityDef>
+  <AbilityDef ParentName="PsycastBase">
+    <defName>WNG_PredatorsPresence</defName>
+    <label>predator's presence</label>
+    <description>Press the Wraith's predatory awareness into another mind, burdening movement and concentration for a short time. Psychic sensitivity governs how strongly the target is affected.</description>
+    <level>0</level>
+    <iconPath>UI/WNG/Abilities/WraithBurden</iconPath>
+    <writeCombatLog>true</writeCombatLog>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>1200~1200</cooldownTicksRange>
+    <statBases>
+      <Ability_EntropyGain>10</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+      <Ability_Duration>12</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <warmupTime>0.25</warmupTime>
+      <soundCast>WNG_WraithHallucination</soundCast>
+      <range>19.9</range>
+      <targetParams>
+        <canTargetAnimals>true</canTargetAnimals>
+        <neverTargetIncapacitated>true</neverTargetIncapacitated>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicBurden</hediffDef>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        <psychic>true</psychic>
+        <goodwillImpact>-15</goodwillImpact>
+        <applyGoodwillImpactToLodgers>false</applyGoodwillImpactToLodgers>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  <AbilityDef ParentName="PsycastBase">
+    <defName>WNG_Compulsion</defName>
+    <label>compulsion</label>
+    <description>Impose a brief telepathic command that forces a susceptible target to approach the Wraith. The influence is short-lived and remains subject to ordinary psychic resistance.</description>
+    <level>0</level>
+    <iconPath>UI/WNG/Abilities/WraithBeckon</iconPath>
+    <writeCombatLog>true</writeCombatLog>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>2500~2500</cooldownTicksRange>
+    <statBases>
+      <Ability_EntropyGain>18</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+      <Ability_Duration>6</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>WNG_WraithTelepathicProbe</soundCast>
+      <range>17.9</range>
+      <targetParams>
+        <canTargetAnimals>true</canTargetAnimals>
+        <neverTargetIncapacitated>true</neverTargetIncapacitated>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityForceJob">
+        <compClass>CompAbilityEffect_ForceJob</compClass>
+        <jobDef>GotoMindControlled</jobDef>
+        <destination>Caster</destination>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        <psychic>true</psychic>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_TelepathicProbe</defName>
+    <label>telepathic probe</label>
+    <description>Force brief contact with a living biological target's surface thoughts. This is the attenuated telepathic technique retained by unstable Wraith-human hybrids; it does not grant Hive Sense, Enthrallment or caste-level Wraith command.</description>
+    <iconPath>UI/WNG/Abilities/WraithFocus</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>30000~30000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <soundCast>WNG_WraithTelepathicProbe</soundCast>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityHybridTelepathicProbe" />
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_CaptiveExperiment</defName>
+    <label>invasive captive experiment</label>
+    <description>Conduct a controlled invasive examination on a biological prisoner held by the Wraith's faction. The exact prisoner remains in custody and suffers temporary neurological disruption, while the examining Wraith gains a brief research-speed benefit from the observations. This does not enthrall, recruit, replace or otherwise change the prisoner's identity or faction.</description>
+    <iconPath>UI/WNG/Abilities/WraithFocus</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>120000~120000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>3</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <stunTargetOnCastStart>true</stunTargetOnCastStart>
+      <soundCast>WNG_WraithTelepathicProbe</soundCast>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityWraithCaptiveExperiment" />
+    </comps>
+  </AbilityDef>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_CaptiveInterrogation</defName>
+    <label>telepathic captive interrogation</label>
+    <description>Subject a biological prisoner held by the Wraith's faction to a sustained surface-thought interrogation. The exact prisoner remains in the same native custody and suffers the established temporary Telepathically Probed disruption, while the interrogating Wraith gains the same bounded experimental insight used by the invasive examination path. This does not feed on, enthrall, recruit, age, hybridise or replace the prisoner.</description>
+    <iconPath>UI/WNG/Abilities/WraithFocus</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>120000~120000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>3</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <stunTargetOnCastStart>true</stunTargetOnCastStart>
+      <soundCast>WNG_WraithTelepathicProbe</soundCast>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityWraithCaptiveInterrogation" />
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_Hallucination</defName>
+    <label>induce hallucination</label>
+    <description>Project a sustained false perception directly into a living biological target. For several in-game hours the exact target's movement, sight and conscious processing are impaired. This is a full-Wraith telepathic technique; it does not feed on, enthrall, age, recruit or replace the target.</description>
+    <iconPath>UI/WNG/Abilities/WraithBurden</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>60000~60000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>1.5</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <soundCast>WNG_WraithHallucination</soundCast>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityWraithHallucination">
+        <hallucinationHediff>WNG_WraithHallucination</hallucinationHediff>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="PsycastBase">
+    <defName>WNG_QueensCommand</defName>
+    <label>queen's command</label>
+    <description>Broadcast a Queen's sovereign Hive impulse to nearby allied Wraith-linked minds. The command briefly sharpens movement, combat coordination and resistance to pain without changing faction, ownership or individual identity.</description>
+    <level>0</level>
+    <iconPath>UI/WNG/Abilities/WraithFocus</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <targetRequired>false</targetRequired>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>5000~5000</cooldownTicksRange>
+    <showPsycastEffects>false</showPsycastEffects>
+    <statBases>
+      <Ability_EntropyGain>32</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0</Ability_PsyfocusCost>
+    </statBases>
+    <verbProperties>
+      <warmupTime>1</warmupTime>
+      <range>-1</range>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityQueensCommand">
+        <radius>10</radius>
+        <commandHediff>WNG_QueensCommanded</commandHediff>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

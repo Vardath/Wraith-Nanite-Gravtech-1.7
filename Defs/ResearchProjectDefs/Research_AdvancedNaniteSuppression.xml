@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_AdvancedNaniteSuppression</defName>
+    <label>advanced nanite suppression</label>
+    <description>Refine repeated EMP disruption into a bounded anti-Replicator countermeasure. Powered suppressors pulse a handful of nearby hostile block Replicators and human-form nanite synthetics with native EMP, interrupting active swarm functions only when the current EMP/interference systems actually accept the disruption.</description>
+    <baseCost>2600</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_NaniteContainment</li>
+      <li>WNG_NaniteAnalysis</li>
+    </prerequisites>
+    <researchViewX>15</researchViewX>
+    <researchViewY>12.8</researchViewY>
+  </ResearchProjectDef>
+</Defs>

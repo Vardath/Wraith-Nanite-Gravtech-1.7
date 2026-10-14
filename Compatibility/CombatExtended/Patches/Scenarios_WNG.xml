@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Starter ammunition is injected only when Combat Extended is active. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ScenarioDef[defName="WNG_WraithLandfall"]/scenario/parts</xpath>
+    <value>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_WraithCarbineCharge</thingDef><count>180</count></li>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_WraithStunnerCharge</thingDef><count>60</count></li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ScenarioDef[defName="WNG_WraithOrbit"]/scenario/parts</xpath>
+    <value>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_WraithCarbineCharge</thingDef><count>180</count></li>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_WraithStunnerCharge</thingDef><count>60</count></li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ScenarioDef[defName="WNG_HumanFormReplicatorLandfall"]/scenario/parts</xpath>
+    <value>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_PrecursorPulseCell</thingDef><count>240</count></li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ScenarioDef[defName="WNG_HumanFormReplicatorOrbit"]/scenario/parts</xpath>
+    <value>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_PrecursorPulseCell</thingDef><count>240</count></li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ScenarioDef[defName="WNG_WraithQueenLandfall"]/scenario/parts</xpath>
+    <value>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_WraithCarbineCharge</thingDef><count>180</count></li>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_WraithStunnerCharge</thingDef><count>60</count></li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ScenarioDef[defName="WNG_WraithCommandCell"]/scenario/parts</xpath>
+    <value>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_WraithCarbineCharge</thingDef><count>180</count></li>
+      <li Class="ScenPart_StartingThing_Defined"><def>StartingThing_Defined</def><thingDef>WNG_CE_Ammo_WraithStunnerCharge</thingDef><count>60</count></li>
+    </value>
+  </Operation>
+</Patch>

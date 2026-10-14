@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="DrugBase">
+    <defName>WNG_Roshna</defName>
+    <recipeMaker IsNull="True" />
+    <label>roshna</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>A blue Goa'uld maintenance compound designed to make a population physiologically dependent on continued supply. Roshna offers no meaningful recreational benefit: its value is coercive. A first dose establishes a permanent chemical dependence, and regular redosing becomes necessary for survival.</description>
+    <descriptionHyperlinks>
+      <HediffDef>WNG_RoshnaDependence</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Goauld/WNG_Roshna</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <stackLimit>50</stackLimit>
+    <tradeability>All</tradeability>
+    <statBases>
+      <MarketValue>48</MarketValue>
+      <Mass>0.08</Mass>
+      <DeteriorationRate>0.5</DeteriorationRate>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <foodType>Fluid, Processed</foodType>
+      <drugCategory>Medical</drugCategory>
+      <ingestSound>Ingest_Drink</ingestSound>
+      <ingestCommandString>Drink {0}</ingestCommandString>
+      <ingestReportString>Drinking {0}.</ingestReportString>
+      <chairSearchRadius>0</chairSearchRadius>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <tableDesired>false</tableDesired>
+      <outcomeDoers />
+    </ingestible>
+    <costList>
+      <Neutroamine>6</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>WNG_Roshna</chemical>
+        <addictiveness>1.0</addictiveness>
+        <needLevelOffset>0.90</needLevelOffset>
+        <listOrder>1150</listOrder>
+      </li>
+    </comps>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <allowedArchonexusCount>50</allowedArchonexusCount>
+  </ThingDef>
+
+  <ChemicalDef>
+    <defName>WNG_Roshna</defName>
+    <label>roshna</label>
+    <addictionHediff>WNG_RoshnaDependence</addictionHediff>
+    <canBinge>false</canBinge>
+    <generateAddictionGenes>false</generateAddictionGenes>
+  </ChemicalDef>
+
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Chemical_WNG_Roshna</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>roshna</label>
+    <description>This person's physiology has been altered to require regular Roshna. Continued doses maintain stability; withdrawal becomes progressively life-threatening and the dependence does not resolve naturally.</description>
+    <listPriority>48</listPriority>
+    <fallPerDay>0.18</fallPerDay>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+  </NeedDef>
+
+  <HediffDef ParentName="AddictionBase">
+    <defName>WNG_RoshnaDependence</defName>
+    <label>roshna dependence</label>
+    <description>Engineered physiological dependence on Goa'uld Roshna. Regular doses maintain normal function. Without continued supply, systemic regulation begins to fail; prolonged withdrawal is fatal. This dependence does not fade through abstinence.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <chemicalNeed>Chemical_WNG_Roshna</chemicalNeed>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li />
+      <li>
+        <label>unmet</label>
+        <painOffset>0.25</painOffset>
+        <lifeThreatening>true</lifeThreatening>
+        <deathMtbDays>4</deathMtbDays>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.20</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.20</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>-0.20</offset></li>
+          <li><capacity>Breathing</capacity><offset>-0.10</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>WNG_RoshnaWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>WNG_RoshnaDependence</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <stages>
+      <li><visible>false</visible></li>
+      <li>
+        <label>roshna withdrawal</label>
+        <description>My body is failing without Roshna. I need another dose.</description>
+        <baseMoodEffect>-18</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

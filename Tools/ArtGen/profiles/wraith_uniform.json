@@ -1,0 +1,1581 @@
+{
+  "id": "wraith_uniform",
+  "item": "WNG_WraithUniform",
+  "faction": "Wraith",
+  "purpose": "Everyday Wraith uniform derived from Stargate Atlantis male Wraith production clothing: a fitted green-black leather uniform/vest ensemble with black reptile-pattern leather, practical hidden closures, side/back lacing and subdued shoulder construction. It must read as real Stargate wardrobe beneath armour, not as a generic sci-fi bodysuit or segmented armour.",
+  "stage_1_stargate": {
+    "sources": [
+      {
+        "url": "https://www.stargate-fusion.com/fiches/coulisses/23-costumes-uniformes/5733-commandant-wraith-lunion-fait-la-force.html",
+        "role": "screen_used_wraith_male_costume_primary",
+        "required_terms": [
+          "trenchcoat",
+          "cuir",
+          "reptile",
+          "laçage"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.stargate-fusion.com/fiches/6511-costume-commandant-wraith.html",
+        "role": "screen_used_wraith_male_layering_and_wear",
+        "required_terms": [
+          "gilet",
+          "cuir",
+          "laçage",
+          "boutons-pression"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/",
+        "role": "costume_designer_primary_wraith_construction",
+        "required_terms": [
+          "WRAITH COSTUME",
+          "THREE PIECES",
+          "COW HIDES",
+          "CONTRAST LEATHER"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.gateworld.net/news/2010/07/propworx-stargate-auctions-week-23/",
+        "role": "wraith_drone_production_costume_context",
+        "required_terms": [
+          "Wraith Drone Costume",
+          "footsoldiers",
+          "undergarment"
+        ],
+        "image_policy": "og_and_relevant"
+      },
+      {
+        "url": "https://www.gateworld.net/atlantis/s2/allies/transcript/",
+        "role": "screen_costume_variation_context",
+        "required_terms": [
+          "black jacket",
+          "long dark brown coat",
+          "Wraith"
+        ],
+        "image_policy": "metadata_only"
+      }
+    ],
+    "minimum_live_sources": 3,
+    "minimum_visual_references": 1,
+    "primary_research_basis": [
+      "Propworx screen-used Wraith male costume: green leather, black reptile-pattern leather vest, snaps, zipper, side/back lacing, leather trousers, gauntlets and motorcycle boots",
+      "Val Halverson costume-designer Q&A: Wraith costumes are generally three-piece builds using 6–8 cow hides plus contrast leather, gauntlets and belts; later male designs use subtle differentiation rather than loud rank geometry",
+      "screen-used Todd/commander costume evidence for long leather vest construction, concealed closures, textured gauntlets and production wear"
+    ],
+    "design_rules": {
+      "material_priority": [
+        [
+          "dark_green_black_leather_uniform_shell",
+          0.38
+        ],
+        [
+          "black_reptile_pattern_leather_vest_and_yoke",
+          0.24
+        ],
+        [
+          "black_soft_leather_side_and_sleeve_structure",
+          0.16
+        ],
+        [
+          "subtle_dark_woven_underlayer",
+          0.08
+        ],
+        [
+          "snaps_zipper_lacing_and_belt_hardware",
+          0.07
+        ],
+        [
+          "production_wear_and_rubbed_edges",
+          0.05
+        ],
+        [
+          "restrained_organic_wraith_surface_detail",
+          0.02
+        ]
+      ],
+      "construction": [
+        "fitted waist-length Wraith leather uniform rather than a long coat",
+        "black reptile-pattern leather central vest and shoulder yoke",
+        "dark green-black soft leather body and sleeves",
+        "narrow contrast-leather collar and front placket",
+        "hidden snaps and short zipper-like front closure",
+        "side/back lacing for fit and visible handmade construction",
+        "low-profile waistband/belt seam suitable beneath Wraith armour",
+        "subtle asymmetry and production wear",
+        "three-piece Wraith costume logic simplified for ordinary non-command clothing"
+      ],
+      "motifs": [
+        "predatory fitted Wraith tailoring",
+        "reptile leather texture",
+        "vertical vest/placket rhythm",
+        "practical leather construction",
+        "dark organic restraint rather than luminous technology",
+        "wardrobe continuity with Wraith commanders and hunters without their rank silhouette"
+      ],
+      "avoid": [
+        "armour plates",
+        "anonymous panels",
+        "purple armour",
+        "cyan piping",
+        "generic futuristic bodysuit",
+        "ship fins",
+        "superhero symmetry",
+        "flat vector geometry",
+        "large rank ornaments",
+        "cloud noise",
+        "bright glowing faction lines"
+      ]
+    }
+  },
+  "stage_2_rimworld": {
+    "implementation_mode": "svg_family_deformed",
+    "vanilla_family": "ShirtButton",
+    "tile_family": "ShirtButton",
+    "tile_scale": 0.86,
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "facings": [
+      "south",
+      "north",
+      "east",
+      "west"
+    ],
+    "silhouette_rule": "vanilla_shirtbutton_alpha_authoritative",
+    "readability_rule": "must read as fitted everyday Wraith clothing at 192x192 and remain suitable beneath later field/command armour; no long-coat or armour silhouette invention"
+  },
+  "stage_3_synthesis": {
+    "wNG_quality_benchmarks": [
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithDart_south.png",
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithStrikeCraft_south.png",
+      "Textures/Things/Building/Wraith/Shuttle/WNG_WraithCruiser_south.png"
+    ],
+    "historical_continuity": [],
+    "renderer": "costume_blueprint_v2",
+    "post_downsample_contrast": 1.12,
+    "tile_contrast": 1.08,
+    "palette": {
+      "leather_shadow": [
+        4,
+        6,
+        5
+      ],
+      "leather_mid": [
+        20,
+        28,
+        23
+      ],
+      "leather_high": [
+        74,
+        88,
+        77
+      ],
+      "contrast_shadow": [
+        3,
+        4,
+        4
+      ],
+      "contrast_mid": [
+        15,
+        18,
+        17
+      ],
+      "contrast_high": [
+        54,
+        59,
+        56
+      ],
+      "reptile_shadow": [
+        3,
+        4,
+        4
+      ],
+      "reptile_mid": [
+        20,
+        23,
+        22
+      ],
+      "reptile_high": [
+        72,
+        78,
+        74
+      ],
+      "metal": [
+        120,
+        118,
+        114
+      ],
+      "biotech": [
+        56,
+        70,
+        64
+      ]
+    },
+    "materials": {
+      "green_black_leather": {
+        "kind": "leather",
+        "shadow": [
+          4,
+          7,
+          5
+        ],
+        "mid": [
+          22,
+          31,
+          25
+        ],
+        "high": [
+          79,
+          94,
+          81
+        ],
+        "roughness": 0.52,
+        "grain": 0.09,
+        "specular_tint": [
+          26,
+          30,
+          27
+        ]
+      },
+      "black_reptile": {
+        "kind": "reptile_leather",
+        "shadow": [
+          3,
+          4,
+          4
+        ],
+        "mid": [
+          24,
+          28,
+          26
+        ],
+        "high": [
+          84,
+          91,
+          86
+        ],
+        "roughness": 0.47,
+        "grain": 0.07,
+        "specular_tint": [
+          29,
+          29,
+          28
+        ]
+      },
+      "black_leather": {
+        "kind": "leather",
+        "shadow": [
+          2,
+          3,
+          3
+        ],
+        "mid": [
+          14,
+          17,
+          16
+        ],
+        "high": [
+          51,
+          56,
+          53
+        ],
+        "roughness": 0.55,
+        "grain": 0.07,
+        "specular_tint": [
+          24,
+          25,
+          24
+        ]
+      },
+      "dark_woven": {
+        "kind": "uniform_fabric",
+        "shadow": [
+          3,
+          5,
+          4
+        ],
+        "mid": [
+          14,
+          20,
+          17
+        ],
+        "high": [
+          47,
+          57,
+          50
+        ],
+        "roughness": 0.7,
+        "grain": 0.1,
+        "specular_tint": [
+          15,
+          18,
+          16
+        ]
+      },
+      "deep_green_leather": {
+        "kind": "leather",
+        "shadow": [
+          3,
+          6,
+          4
+        ],
+        "mid": [
+          17,
+          25,
+          20
+        ],
+        "high": [
+          62,
+          75,
+          65
+        ],
+        "roughness": 0.58,
+        "grain": 0.1,
+        "specular_tint": [
+          21,
+          25,
+          22
+        ]
+      }
+    },
+    "garment_contract": {
+      "max_single_piece_fraction": 0.32,
+      "min_base_garment_visible_fraction": 0.43,
+      "max_semantic_pieces_per_view": 10,
+      "min_seams_per_view": 3
+    },
+    "garment_blueprint": {
+      "design_class": "uniform",
+      "base_material": "green_black_leather",
+      "views": {
+        "south": {
+          "folds": [
+            {
+              "points": [
+                [
+                  0.24,
+                  0.18
+                ],
+                [
+                  0.22,
+                  0.52
+                ],
+                [
+                  0.24,
+                  0.88
+                ]
+              ],
+              "width": 0.018,
+              "strength": 0.62
+            },
+            {
+              "points": [
+                [
+                  0.76,
+                  0.18
+                ],
+                [
+                  0.78,
+                  0.52
+                ],
+                [
+                  0.76,
+                  0.88
+                ]
+              ],
+              "width": 0.018,
+              "strength": 0.58
+            },
+            {
+              "points": [
+                [
+                  0.39,
+                  0.23
+                ],
+                [
+                  0.4,
+                  0.54
+                ],
+                [
+                  0.39,
+                  0.84
+                ]
+              ],
+              "width": 0.013,
+              "strength": 0.38
+            }
+          ],
+          "pieces": [
+            {
+              "name": "reptile leather fitted vest",
+              "role": "vest",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.31,
+                  0.075
+                ],
+                [
+                  0.69,
+                  0.075
+                ],
+                [
+                  0.64,
+                  0.28
+                ],
+                [
+                  0.6,
+                  0.66
+                ],
+                [
+                  0.55,
+                  0.78
+                ],
+                [
+                  0.45,
+                  0.78
+                ],
+                [
+                  0.4,
+                  0.66
+                ],
+                [
+                  0.36,
+                  0.28
+                ]
+              ]
+            },
+            {
+              "name": "reptile shoulder yoke",
+              "role": "yoke",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.22,
+                  0.075
+                ],
+                [
+                  0.78,
+                  0.075
+                ],
+                [
+                  0.72,
+                  0.155
+                ],
+                [
+                  0.61,
+                  0.19
+                ],
+                [
+                  0.5,
+                  0.205
+                ],
+                [
+                  0.39,
+                  0.19
+                ],
+                [
+                  0.28,
+                  0.155
+                ]
+              ]
+            },
+            {
+              "name": "narrow contrast collar",
+              "role": "collar",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.37,
+                  0.035
+                ],
+                [
+                  0.63,
+                  0.035
+                ],
+                [
+                  0.66,
+                  0.115
+                ],
+                [
+                  0.58,
+                  0.16
+                ],
+                [
+                  0.42,
+                  0.16
+                ],
+                [
+                  0.34,
+                  0.115
+                ]
+              ]
+            },
+            {
+              "name": "front closure placket",
+              "role": "placket",
+              "material": "dark_woven",
+              "points": [
+                [
+                  0.475,
+                  0.16
+                ],
+                [
+                  0.525,
+                  0.16
+                ],
+                [
+                  0.525,
+                  0.68
+                ],
+                [
+                  0.475,
+                  0.68
+                ]
+              ]
+            },
+            {
+              "name": "low profile uniform waistband",
+              "role": "waistband",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.25,
+                  0.755
+                ],
+                [
+                  0.75,
+                  0.755
+                ],
+                [
+                  0.745,
+                  0.805
+                ],
+                [
+                  0.255,
+                  0.805
+                ]
+              ]
+            }
+          ],
+          "seams": [
+            {
+              "points": [
+                [
+                  0.31,
+                  0.22
+                ],
+                [
+                  0.3,
+                  0.54
+                ],
+                [
+                  0.31,
+                  0.81
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.035,
+              "highlight": [
+                82,
+                88,
+                82
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.69,
+                  0.22
+                ],
+                [
+                  0.7,
+                  0.54
+                ],
+                [
+                  0.69,
+                  0.81
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.035,
+              "highlight": [
+                82,
+                88,
+                82
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.22,
+                  0.76
+                ],
+                [
+                  0.5,
+                  0.8
+                ],
+                [
+                  0.78,
+                  0.76
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.038,
+              "highlight": [
+                68,
+                70,
+                67
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.18,
+                  0.18
+                ],
+                [
+                  0.26,
+                  0.22
+                ],
+                [
+                  0.3,
+                  0.3
+                ]
+              ],
+              "stitch": false,
+              "highlight": [
+                70,
+                75,
+                71
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.35,
+                  0.17
+                ],
+                [
+                  0.39,
+                  0.38
+                ],
+                [
+                  0.4,
+                  0.66
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                89,
+                96,
+                89
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.65,
+                  0.17
+                ],
+                [
+                  0.61,
+                  0.38
+                ],
+                [
+                  0.6,
+                  0.66
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                89,
+                96,
+                89
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.1,
+                  0.19
+                ],
+                [
+                  0.19,
+                  0.15
+                ],
+                [
+                  0.29,
+                  0.23
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                75,
+                82,
+                76
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.9,
+                  0.19
+                ],
+                [
+                  0.81,
+                  0.15
+                ],
+                [
+                  0.71,
+                  0.23
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                75,
+                82,
+                76
+              ]
+            }
+          ],
+          "closures": [
+            {
+              "type": "zipper",
+              "from": [
+                0.5,
+                0.18
+              ],
+              "to": [
+                0.5,
+                0.58
+              ],
+              "teeth": 9
+            },
+            {
+              "type": "snaps",
+              "from": [
+                0.53,
+                0.25
+              ],
+              "to": [
+                0.53,
+                0.53
+              ],
+              "count": 4,
+              "radius": 0.005
+            },
+            {
+              "type": "lacing",
+              "left": [
+                [
+                  0.17,
+                  0.39
+                ],
+                [
+                  0.18,
+                  0.66
+                ]
+              ],
+              "right": [
+                [
+                  0.215,
+                  0.39
+                ],
+                [
+                  0.225,
+                  0.66
+                ]
+              ],
+              "pairs": 5
+            }
+          ],
+          "wear": {
+            "seed": 51,
+            "count": 4,
+            "x_range": [
+              0.12,
+              0.88
+            ],
+            "y_range": [
+              0.22,
+              0.8
+            ],
+            "highlight": [
+              126,
+              135,
+              125
+            ]
+          }
+        },
+        "north": {
+          "folds": [
+            {
+              "points": [
+                [
+                  0.23,
+                  0.19
+                ],
+                [
+                  0.21,
+                  0.52
+                ],
+                [
+                  0.23,
+                  0.87
+                ]
+              ],
+              "width": 0.018,
+              "strength": 0.58
+            },
+            {
+              "points": [
+                [
+                  0.77,
+                  0.19
+                ],
+                [
+                  0.79,
+                  0.52
+                ],
+                [
+                  0.77,
+                  0.87
+                ]
+              ],
+              "width": 0.018,
+              "strength": 0.54
+            }
+          ],
+          "pieces": [
+            {
+              "name": "reptile back yoke",
+              "role": "yoke",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.22,
+                  0.075
+                ],
+                [
+                  0.78,
+                  0.075
+                ],
+                [
+                  0.72,
+                  0.175
+                ],
+                [
+                  0.61,
+                  0.215
+                ],
+                [
+                  0.5,
+                  0.23
+                ],
+                [
+                  0.39,
+                  0.215
+                ],
+                [
+                  0.28,
+                  0.175
+                ]
+              ]
+            },
+            {
+              "name": "central fitted back insert",
+              "role": "back_insert",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.39,
+                  0.2
+                ],
+                [
+                  0.61,
+                  0.2
+                ],
+                [
+                  0.59,
+                  0.69
+                ],
+                [
+                  0.55,
+                  0.78
+                ],
+                [
+                  0.45,
+                  0.78
+                ],
+                [
+                  0.41,
+                  0.69
+                ]
+              ]
+            },
+            {
+              "name": "rear collar",
+              "role": "collar",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.36,
+                  0.035
+                ],
+                [
+                  0.64,
+                  0.035
+                ],
+                [
+                  0.66,
+                  0.12
+                ],
+                [
+                  0.58,
+                  0.16
+                ],
+                [
+                  0.42,
+                  0.16
+                ],
+                [
+                  0.34,
+                  0.12
+                ]
+              ]
+            },
+            {
+              "name": "rear uniform waistband",
+              "role": "waistband",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.25,
+                  0.755
+                ],
+                [
+                  0.75,
+                  0.755
+                ],
+                [
+                  0.745,
+                  0.805
+                ],
+                [
+                  0.255,
+                  0.805
+                ]
+              ]
+            }
+          ],
+          "seams": [
+            {
+              "points": [
+                [
+                  0.31,
+                  0.24
+                ],
+                [
+                  0.3,
+                  0.52
+                ],
+                [
+                  0.31,
+                  0.8
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.035,
+              "highlight": [
+                81,
+                86,
+                81
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.69,
+                  0.24
+                ],
+                [
+                  0.7,
+                  0.52
+                ],
+                [
+                  0.69,
+                  0.8
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.035,
+              "highlight": [
+                81,
+                86,
+                81
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.22,
+                  0.76
+                ],
+                [
+                  0.5,
+                  0.8
+                ],
+                [
+                  0.78,
+                  0.76
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.038,
+              "highlight": [
+                67,
+                69,
+                66
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.5,
+                  0.26
+                ],
+                [
+                  0.5,
+                  0.72
+                ]
+              ],
+              "stitch": false,
+              "highlight": [
+                63,
+                68,
+                64
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.39,
+                  0.22
+                ],
+                [
+                  0.4,
+                  0.46
+                ],
+                [
+                  0.42,
+                  0.68
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                86,
+                93,
+                86
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.61,
+                  0.22
+                ],
+                [
+                  0.6,
+                  0.46
+                ],
+                [
+                  0.58,
+                  0.68
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                86,
+                93,
+                86
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.1,
+                  0.2
+                ],
+                [
+                  0.19,
+                  0.15
+                ],
+                [
+                  0.29,
+                  0.24
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                74,
+                81,
+                75
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.9,
+                  0.2
+                ],
+                [
+                  0.81,
+                  0.15
+                ],
+                [
+                  0.71,
+                  0.24
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                74,
+                81,
+                75
+              ]
+            }
+          ],
+          "closures": [
+            {
+              "type": "lacing",
+              "left": [
+                [
+                  0.7,
+                  0.36
+                ],
+                [
+                  0.69,
+                  0.65
+                ]
+              ],
+              "right": [
+                [
+                  0.745,
+                  0.36
+                ],
+                [
+                  0.735,
+                  0.65
+                ]
+              ],
+              "pairs": 5
+            }
+          ],
+          "wear": {
+            "seed": 52,
+            "count": 3,
+            "x_range": [
+              0.12,
+              0.88
+            ],
+            "y_range": [
+              0.22,
+              0.8
+            ],
+            "highlight": [
+              122,
+              131,
+              121
+            ]
+          }
+        },
+        "east": {
+          "folds": [
+            {
+              "points": [
+                [
+                  0.3,
+                  0.18
+                ],
+                [
+                  0.28,
+                  0.51
+                ],
+                [
+                  0.3,
+                  0.86
+                ]
+              ],
+              "width": 0.017,
+              "strength": 0.58
+            },
+            {
+              "points": [
+                [
+                  0.67,
+                  0.22
+                ],
+                [
+                  0.7,
+                  0.53
+                ],
+                [
+                  0.68,
+                  0.83
+                ]
+              ],
+              "width": 0.014,
+              "strength": 0.4
+            }
+          ],
+          "pieces": [
+            {
+              "name": "side reptile fitted vest",
+              "role": "vest",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.44,
+                  0.09
+                ],
+                [
+                  0.67,
+                  0.09
+                ],
+                [
+                  0.69,
+                  0.64
+                ],
+                [
+                  0.62,
+                  0.78
+                ],
+                [
+                  0.49,
+                  0.68
+                ]
+              ]
+            },
+            {
+              "name": "side reptile shoulder yoke",
+              "role": "yoke",
+              "material": "black_reptile",
+              "points": [
+                [
+                  0.25,
+                  0.08
+                ],
+                [
+                  0.47,
+                  0.045
+                ],
+                [
+                  0.69,
+                  0.105
+                ],
+                [
+                  0.72,
+                  0.18
+                ],
+                [
+                  0.57,
+                  0.22
+                ],
+                [
+                  0.34,
+                  0.205
+                ]
+              ]
+            },
+            {
+              "name": "side contrast collar",
+              "role": "collar",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.34,
+                  0.04
+                ],
+                [
+                  0.61,
+                  0.04
+                ],
+                [
+                  0.67,
+                  0.13
+                ],
+                [
+                  0.57,
+                  0.18
+                ],
+                [
+                  0.4,
+                  0.17
+                ]
+              ]
+            },
+            {
+              "name": "side closure placket",
+              "role": "placket",
+              "material": "dark_woven",
+              "points": [
+                [
+                  0.51,
+                  0.18
+                ],
+                [
+                  0.565,
+                  0.18
+                ],
+                [
+                  0.575,
+                  0.65
+                ],
+                [
+                  0.52,
+                  0.66
+                ]
+              ]
+            },
+            {
+              "name": "side waistband",
+              "role": "waistband",
+              "material": "black_leather",
+              "points": [
+                [
+                  0.26,
+                  0.755
+                ],
+                [
+                  0.69,
+                  0.755
+                ],
+                [
+                  0.68,
+                  0.805
+                ],
+                [
+                  0.27,
+                  0.805
+                ]
+              ]
+            }
+          ],
+          "seams": [
+            {
+              "points": [
+                [
+                  0.3,
+                  0.24
+                ],
+                [
+                  0.3,
+                  0.53
+                ],
+                [
+                  0.31,
+                  0.79
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.035,
+              "highlight": [
+                79,
+                84,
+                79
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.68,
+                  0.25
+                ],
+                [
+                  0.7,
+                  0.52
+                ],
+                [
+                  0.68,
+                  0.79
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.035,
+              "highlight": [
+                75,
+                80,
+                76
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.23,
+                  0.76
+                ],
+                [
+                  0.47,
+                  0.8
+                ],
+                [
+                  0.7,
+                  0.76
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.038,
+              "highlight": [
+                65,
+                68,
+                65
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.22,
+                  0.18
+                ],
+                [
+                  0.36,
+                  0.22
+                ],
+                [
+                  0.47,
+                  0.29
+                ]
+              ],
+              "stitch": false,
+              "highlight": [
+                67,
+                72,
+                68
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.43,
+                  0.2
+                ],
+                [
+                  0.46,
+                  0.4
+                ],
+                [
+                  0.48,
+                  0.66
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                87,
+                94,
+                87
+              ]
+            },
+            {
+              "points": [
+                [
+                  0.14,
+                  0.2
+                ],
+                [
+                  0.27,
+                  0.15
+                ],
+                [
+                  0.39,
+                  0.23
+                ]
+              ],
+              "stitch": true,
+              "stitch_spacing": 0.032,
+              "highlight": [
+                73,
+                80,
+                74
+              ]
+            }
+          ],
+          "closures": [
+            {
+              "type": "zipper",
+              "from": [
+                0.54,
+                0.2
+              ],
+              "to": [
+                0.55,
+                0.57
+              ],
+              "teeth": 8
+            },
+            {
+              "type": "snaps",
+              "from": [
+                0.58,
+                0.28
+              ],
+              "to": [
+                0.59,
+                0.52
+              ],
+              "count": 3,
+              "radius": 0.005
+            }
+          ],
+          "wear": {
+            "seed": 53,
+            "count": 3,
+            "x_range": [
+              0.14,
+              0.78
+            ],
+            "y_range": [
+              0.22,
+              0.8
+            ],
+            "highlight": [
+              120,
+              129,
+              120
+            ]
+          }
+        }
+      }
+    },
+    "quality": {
+      "silhouette_iou_min": 0.985,
+      "max_luminous_area_fraction": 0.001,
+      "min_local_contrast": 17,
+      "max_symmetry_score": 0.96,
+      "microdetail_scale_px": [
+        1,
+        5
+      ],
+      "render_scale": 4
+    },
+    "painting_mode": "raster_brush_v3"
+  },
+  "profile_revision": "2026-10-02-wraith-uniform-costume-blueprint-v2-final-visual-raster-v3-ready"
+}

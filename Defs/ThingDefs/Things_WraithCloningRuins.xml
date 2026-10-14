@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_DeadWraithGestationCocoon</defName><label>dead Wraith gestation cocoon</label>
+    <description>A collapsed, nonfunctional gestation cocoon from an abandoned Wraith cloning installation. It cannot produce or incubate any pawn.</description>
+    <thingClass>Building</thingClass><graphicData><texPath>Things/Building/Production/WNG_GrowthChamber</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.25,1.7)</drawSize></graphicData>
+    <size>(1,2)</size><passability>PassThroughOnly</passability><fillPercent>0.45</fillPercent><statBases><MaxHitPoints>130</MaxHitPoints><Mass>22</Mass><Flammability>0.6</Flammability><Beauty>-5</Beauty></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_CollapsedCloneNutrientManifold</defName><label>collapsed clone nutrient manifold</label>
+    <description>A dead distribution organ that once supplied gestation bays. It has no fuel, production or cloning function.</description>
+    <thingClass>Building</thingClass><graphicData><texPath>Things/Building/Wraith/Power/WNG_BioelectricOrgan</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2,2)</drawSize></graphicData>
+    <size>(2,2)</size><passability>PassThroughOnly</passability><fillPercent>0.5</fillPercent><statBases><MaxHitPoints>220</MaxHitPoints><Mass>42</Mass><Flammability>0.55</Flammability><Beauty>-7</Beauty></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_DrainedLifeForceDonorDais</defName><label>drained life-force donor dais</label>
+    <description>A dead transfer dais from a Wraith cloning complex. Its biological conduits are dry and it cannot feed, drain or transfer Life Force.</description>
+    <thingClass>Building</thingClass><graphicData><texPath>Things/Building/Wraith/Storage/WNG_NutrientNiche</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.4,1.4)</drawSize></graphicData>
+    <size>(1,1)</size><passability>PassThroughOnly</passability><fillPercent>0.4</fillPercent><statBases><MaxHitPoints>150</MaxHitPoints><Mass>18</Mass><Flammability>0.5</Flammability><Beauty>-6</Beauty></statBases>
+  </ThingDef>
+</Defs>

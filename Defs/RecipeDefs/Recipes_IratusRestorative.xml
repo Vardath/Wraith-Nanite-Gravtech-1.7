@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_ExtractIratusQueenRestorative</defName>
+    <label>extract Iratus queen restorative factors</label>
+    <description>Take a rare regenerative sample from a living, immobilized Iratus queen. The queen survives but enters the same multi-day biological recovery state as other invasive Iratus sampling.</description>
+    <workerClass>WraithNaniteGravtech.Anomaly.Recipe_ExtractIratusQueenRestorative</workerClass>
+    <jobString>Extracting restorative factors from TargetA.</jobString>
+    <researchPrerequisite>WNG_IratusQueenRestoration</researchPrerequisite>
+    <workAmount>2600</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgeryOutcomeEffect>SurgeryOutcomeMinorFailure</surgeryOutcomeEffect>
+    <surgerySuccessChanceFactor>0.85</surgerySuccessChanceFactor>
+    <skillRequirements><Medicine>10</Medicine></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_AdministerIratusQueenRestorative</defName>
+    <label>administer Iratus queen restorative</label>
+    <description>Administer the queen-derived restorative to a Wraith under intensive medical supervision. The reaction is usually fatal. A survivor experiences immediate injury repair followed by a short period of extreme regeneration.</description>
+    <workerClass>WraithNaniteGravtech.Anomaly.Recipe_AdministerIratusQueenRestorative</workerClass>
+    <jobString>Administering Iratus queen restorative to TargetA.</jobString>
+    <researchPrerequisite>WNG_IratusQueenRestoration</researchPrerequisite>
+    <workAmount>1800</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgeryOutcomeEffect>SurgeryOutcomeMinorFailure</surgeryOutcomeEffect>
+    <surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+    <skillRequirements><Medicine>10</Medicine></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_IratusQueenRestorative</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_IratusQueenRestorative</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

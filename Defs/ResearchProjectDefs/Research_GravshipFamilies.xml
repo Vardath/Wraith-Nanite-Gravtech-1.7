@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_HiveGravshipArchitecture</defName>
+    <label>mature Wraith gravship architecture</label>
+    <description>Grow full living Wraith gravships around the biological grav engine: substructure, hull tissue, neural power, bio-fluid plumbing, pilot organs and ship-scale drive systems.</description>
+    <baseCost>6200</baseCost><techLevel>Ultra</techLevel>
+    <prerequisites><li>WNG_CruiserBiology</li><li>AdvancedGravtech</li></prerequisites>
+  
+    <researchViewX>20</researchViewX><researchViewY>9</researchViewY>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>WNG_AsuranGravshipArchitecture</defName>
+    <label>Asuran gravship architecture</label>
+    <description>Reconstruct a full Asuran gravship as an Odyssey-native nanite-composite family with isolated power and nanite-slurry propulsion networks.</description>
+    <baseCost>6500</baseCost><techLevel>Ultra</techLevel>
+    <prerequisites><li>WNG_SkimmerSystems</li><li>WNG_PrecursorFabrication</li><li>AdvancedGravtech</li></prerequisites>
+  
+    <researchViewX>22.5</researchViewX><researchViewY>10.4</researchViewY>
+  </ResearchProjectDef>
+</Defs>

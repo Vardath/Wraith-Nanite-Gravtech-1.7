@@ -1,0 +1,1 @@
+Nine authored south-facing masters are transferred as base64 chunks. Installer reconstructs them, validates 512x512 RGBA transparent margins, derives north/east/west rotations, and writes all 45 live pawn sprites.

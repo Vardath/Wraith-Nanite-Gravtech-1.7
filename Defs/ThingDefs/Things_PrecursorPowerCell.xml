@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_PrecursorPowerCell</defName>
+    <label>precursor power cell</label>
+    <description>A compact Asuran field-storage cell for an ordinary colony electrical grid. It stores a large finite charge with high round-trip efficiency and remains vulnerable to EMP disruption. It does not generate power, consume vacuum-energy modules, or participate in the isolated Asuran gravship power lattice.</description>
+    <thingClass>Building_Battery</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/Precursor/Power/WNG_PrecursorPowerCell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.15,1.15)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.45</fillPercent>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>BuildingsPower</li></thingCategories>
+    <designationCategory>Power</designationCategory>
+    <researchPrerequisites><li>WNG_PrecursorEnergySystems</li></researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <statBases>
+      <MaxHitPoints>220</MaxHitPoints>
+      <WorkToBuild>2200</WorkToBuild>
+      <Mass>12</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>4</Beauty>
+    </statBases>
+    <costList>
+      <Plasteel>55</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>1800</storedEnergyMax>
+        <efficiency>0.92</efficiency>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs><li>EMP</li></affectedDamageDefs>
+        <useLargeEMPEffecter>false</useLargeEMPEffecter>
+      </li>
+          <li Class="WraithNaniteGravtech.CompProperties_AsuranArchiveRepair"><repairIntervalTicks>900</repairIntervalTicks><healPerPulse>3</healPerPulse><archiveRadius>45</archiveRadius></li>
+    </comps>
+    <uiOrder>2024</uiOrder>
+  </ThingDef>
+</Defs>

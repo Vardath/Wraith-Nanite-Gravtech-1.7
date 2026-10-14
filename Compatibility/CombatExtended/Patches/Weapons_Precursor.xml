@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_PrecursorPulseRifle</defName>
+    <statBases>
+      <Mass>4.1</Mass><RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.35</SightsEfficiency><ShotSpread>0.07</ShotSpread><SwayFactor>0.55</SwayFactor><Bulk>3.4</Bulk>
+    </statBases>
+    <Properties>
+      <recoilAmount>0.65</recoilAmount><verbClass>CombatExtended.Verb_ShootCE</verbClass><hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>WNG_CE_Projectile_PrecursorPulse</defaultProjectile><warmupTime>0.85</warmupTime><range>30.9</range>
+      <ticksBetweenBurstShots>10</ticksBetweenBurstShots><burstShotCount>3</burstShotCount>
+    </Properties>
+    <AmmoUser><magazineSize>36</magazineSize><reloadTime>2.7</reloadTime><ammoSet>WNG_CE_AmmoSet_PrecursorPulse</ammoSet></AmmoUser>
+    <FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+  </Operation>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_RecoveredPrecursorPulseRifle</defName>
+    <statBases>
+      <Mass>4.1</Mass><RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.28</SightsEfficiency><ShotSpread>0.085</ShotSpread><SwayFactor>0.62</SwayFactor><Bulk>3.4</Bulk>
+    </statBases>
+    <Properties>
+      <recoilAmount>0.70</recoilAmount><verbClass>CombatExtended.Verb_ShootCE</verbClass><hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>WNG_CE_Projectile_PrecursorPulse</defaultProjectile><warmupTime>0.85</warmupTime><range>30.9</range>
+      <ticksBetweenBurstShots>10</ticksBetweenBurstShots><burstShotCount>3</burstShotCount>
+    </Properties>
+    <AmmoUser><magazineSize>36</magazineSize><reloadTime>2.7</reloadTime><ammoSet>WNG_CE_AmmoSet_PrecursorPulse</ammoSet></AmmoUser>
+    <FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+  </Operation>
+
+</Patch>

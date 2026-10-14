@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="BodyPartProstheticBase">
+    <defName>WNG_WhispersAcousticNode</defName>
+    <recipeMaker IsNull="True" />
+    <label>Whispers acoustic sensory node</label>
+    <thingCategories Inherit="False"><li>BodyPartsBionic</li></thingCategories>
+    <description>A cultured neural-auditory implant reconstructed from Whispers hybrid biopsy tissue. It reproduces part of the hybrid's extreme sound-localisation network without imposing blindness or other Michael-hybrid physiology.</description>
+    <graphicData>
+      <texPath>Things/Item/Whispers/WNG_WhispersAcousticNode</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1450</MarketValue>
+      <Mass>0.08</Mass>
+    </statBases>
+    <costList>
+      <WNG_WhispersHybridTissue>2</WNG_WhispersHybridTissue>
+      <Neutroamine>4</Neutroamine>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+  </ThingDef>
+  <ThingDef ParentName="BodyPartProstheticBase">
+    <defName>WNG_WhispersMistGland</defName>
+    <recipeMaker IsNull="True" />
+    <label>Whispers mist gland</label>
+    <thingCategories Inherit="False"><li>BodyPartsBionic</li></thingCategories>
+    <description>A cultured neck-gill organ derived from Whispers hybrid tissue. Once implanted, it continuously emits non-toxic obscuring biological mist around the bearer in the same ten-tile radius and at the same rate as a native Whispers hybrid, without changing the bearer's species.</description>
+    <graphicData>
+      <texPath>Things/Item/Whispers/WNG_WhispersMistGland</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1750</MarketValue>
+      <Mass>0.10</Mass>
+    </statBases>
+    <costList>
+      <WNG_WhispersHybridTissue>3</WNG_WhispersHybridTissue>
+      <Neutroamine>6</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+    </costList>
+  </ThingDef>
+</Defs>

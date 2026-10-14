@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Retained Asuran melee roles re-authored for the clean D108 architecture.
+    Material costs are preserved design evidence; combat tuning is provisional
+    until live RimWorld playtesting.
+  -->
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>WNG_AsuranPhaseBlade</defName>
+    <recipeMaker IsNull="True" />
+    <label>Asuran phase blade</label>
+    <thingCategories Inherit="False"><li>WeaponsMelee</li></thingCategories>
+    <description>A compact Asuran precision weapon that holds a narrow cutting field along a nanite-forged edge. It is light, fast and optimized for accurate close combat.</description>
+    <techLevel>Ultra</techLevel>
+    <smeltable>true</smeltable>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Precursor/WNG_AsuranPhaseBlade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.45,1.45)</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>1.2</Mass>
+      <EquipDelay>0.6</EquipDelay>
+    </statBases>
+    <costList><WNG_ReplicatorMatter>14</WNG_ReplicatorMatter></costList>
+    <weaponTags><li>WNG_PrecursorWeapon</li><li>WNG_AsuranWeapon</li></weaponTags>
+    <tradeTags><li>WeaponMelee</li></tradeTags>
+    <tools>
+      <li>
+        <label>phase edge</label><capacities><li>Cut</li></capacities>
+        <power>19</power><cooldownTime>1.05</cooldownTime><armorPenetration>0.45</armorPenetration>
+      </li>
+      <li>
+        <label>phase point</label><capacities><li>Stab</li></capacities>
+        <power>15</power><cooldownTime>1.0</cooldownTime><armorPenetration>0.42</armorPenetration><chanceFactor>0.4</chanceFactor>
+      </li>
+      <li>
+        <label>hilt strike</label><capacities><li>Blunt</li></capacities>
+        <power>6</power><cooldownTime>1.0</cooldownTime><armorPenetration>0.12</armorPenetration><chanceFactor>0.1</chanceFactor>
+      </li>
+    </tools>
+  
+    <smeltProducts><WNG_ReplicatorMatter>3</WNG_ReplicatorMatter></smeltProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>WNG_AsuranFieldLance</defName>
+    <recipeMaker IsNull="True" />
+    <label>Asuran field lance</label>
+    <thingCategories Inherit="False"><li>WeaponsMelee</li></thingCategories>
+    <description>A long Asuran polearm built around a reinforced nanite shaft and concentrated penetration field. It sacrifices the phase blade's speed for reach, stopping power and exceptional armor penetration.</description>
+    <techLevel>Ultra</techLevel>
+    <smeltable>true</smeltable>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Precursor/WNG_AsuranFieldLance</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.9,1.9)</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>3.2</Mass>
+      <EquipDelay>1.0</EquipDelay>
+    </statBases>
+    <costList><WNG_ReplicatorMatter>20</WNG_ReplicatorMatter></costList>
+    <weaponTags><li>WNG_PrecursorWeapon</li><li>WNG_AsuranWeapon</li></weaponTags>
+    <tradeTags><li>WeaponMelee</li></tradeTags>
+    <tools>
+      <li>
+        <label>field point</label><capacities><li>Stab</li></capacities>
+        <power>27</power><cooldownTime>1.8</cooldownTime><armorPenetration>0.60</armorPenetration>
+      </li>
+      <li>
+        <label>field edge</label><capacities><li>Cut</li></capacities>
+        <power>20</power><cooldownTime>1.7</cooldownTime><armorPenetration>0.48</armorPenetration><chanceFactor>0.35</chanceFactor>
+      </li>
+      <li>
+        <label>reinforced shaft</label><capacities><li>Blunt</li></capacities>
+        <power>9</power><cooldownTime>1.55</cooldownTime><armorPenetration>0.18</armorPenetration><chanceFactor>0.12</chanceFactor>
+      </li>
+    </tools>
+  
+    <smeltProducts><WNG_ReplicatorMatter>5</WNG_ReplicatorMatter></smeltProducts>
+  </ThingDef>
+</Defs>

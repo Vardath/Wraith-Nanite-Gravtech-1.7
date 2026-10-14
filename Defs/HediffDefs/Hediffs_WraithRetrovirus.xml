@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_WraithRetroviralHumanization</defName>
+    <label>retroviral Wraith humanization</label>
+    <description>Retroviral therapy is suppressing the Iratus-derived Wraith phenotype in this individual. The same pawn remains underneath the treatment, but Wraith metabolism, regeneration, host-cultivation traits and telepathy are biologically suppressed. A separate suppression injection must be given roughly daily; if maintenance lapses, the recorded Wraith biology returns.</description>
+    <hediffClass>WraithNaniteGravtech.Hediff_WraithRetroviralHumanization</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+  </HediffDef>
+</Defs>

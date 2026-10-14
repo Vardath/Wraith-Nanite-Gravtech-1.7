@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- WNG_GoauldTransportRings keeps its native Misc category.
+       WNGArchitectRouting duplicates it into WNG — Goa'uld. -->
+</Patch>

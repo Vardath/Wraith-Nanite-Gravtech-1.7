@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_AsuranCollectiveLoyalist</defName>
+    <label>collective loyalist</label>
+    <description>This nanite mind subordinates individual continuity to the strength of the collective. Reconstruction is weaker in isolation but reaches the strongest ceiling in a dense compatible lattice.</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><duplicationAllowed>false</duplicationAllowed>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_AsuranReconstructionist</defName>
+    <label>reconstructionist</label>
+    <description>This nanite mind prioritises survival, archived continuity and recovery of lost precursor capability. It keeps a strong reconstruction baseline and mediates some conflict between strongly individualist minds and dense collective pressure.</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><duplicationAllowed>false</duplicationAllowed>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_AsuranIndividualist</defName>
+    <label>individualist</label>
+    <description>This nanite mind regards the self as more than a replaceable process in the lattice. It remains capable while isolated but draws comparatively little reconstruction benefit from additional peers.</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><duplicationAllowed>false</duplicationAllowed>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_AsuranAutonomyBreak</defName>
+    <label>autonomy break</label>
+    <description>This individualist mind has temporarily rejected dense collective consensus. Its underlying ideology and faction are unchanged, but active collective reconstruction assistance is refused until the episode passes.</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><duplicationAllowed>false</duplicationAllowed>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>60000~60000</disappearsAfterTicks></li></comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_AsuranConsensusDistress</defName>
+    <label>consensus deprivation</label>
+    <description>This collective-loyalist mind has remained without compatible peers long enough for dependence on shared consensus to become disruptive.</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>true</isBad><scenarioCanAdd>false</scenarioCanAdd><duplicationAllowed>false</duplicationAllowed>
+    <stages><li><statOffsets><GlobalLearningFactor>-0.10</GlobalLearningFactor></statOffsets></li></stages>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>60000~60000</disappearsAfterTicks></li></comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_AsuranContinuityLoss</defName>
+    <label>continuity loss</label>
+    <description>This body was reconstructed from an archived pattern. The stored identity survived, but events and learning after the last backup are absent and the rebuilt mind needs time to reconcile the discontinuity.</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>true</isBad><scenarioCanAdd>false</scenarioCanAdd><duplicationAllowed>false</duplicationAllowed>
+    <stages><li><statOffsets><GlobalLearningFactor>-0.15</GlobalLearningFactor></statOffsets></li></stages>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>300000~300000</disappearsAfterTicks></li></comps>
+  </HediffDef>
+</Defs>

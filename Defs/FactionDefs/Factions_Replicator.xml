@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>WNG_ReplicatorSwarm</defName>
+    <label>replicator swarm</label>
+    <description>An autonomous network of self-organizing Replicator machines. It has no ordinary settlements, but established swarms can occasionally mount direct attacks in addition to WNG's dedicated infestation and salvage encounters.</description>
+    <basicMemberKind>WNG_ReplicatorDrone</basicMemberKind>
+    <pawnSingular>replicator</pawnSingular>
+    <pawnsPlural>replicators</pawnsPlural>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <configurationListOrderPriority>126</configurationListOrderPriority>
+    <displayInFactionSelection>true</displayInFactionSelection>
+    <hidden>false</hidden>
+    <canMakeRandomly>false</canMakeRandomly>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <factionNameMaker>NamerFactionMechanoid</factionNameMaker>
+    <canStageAttacks>true</canStageAttacks>
+    <arrivalLayerWhitelist>
+      <li>Surface</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+    </arrivalLayerWhitelist>
+    <humanlikeFaction>false</humanlikeFaction>
+    <autoFlee>false</autoFlee>
+    <canUseAvoidGrid>false</canUseAvoidGrid>
+    <techLevel>Ultra</techLevel>
+    <permanentEnemy>true</permanentEnemy>
+    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+    <allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
+    <dropPodActive>ActiveDropPodMechanoid</dropPodActive>
+    <dropPodIncoming>DropPodIncomingMechanoidRapid</dropPodIncoming>
+    <earliestRaidDays>18</earliestRaidDays>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0,0.02)</li>
+        <li>(500,0.035)</li>
+        <li>(1200,0.05)</li>
+        <li>(3000,0.07)</li>
+        <li>(100000,0.08)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,45)</li>
+        <li>(400,110)</li>
+        <li>(900,240)</li>
+        <li>(1800,550)</li>
+        <li>(100000,10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <WNG_ReplicatorDrone>20</WNG_ReplicatorDrone>
+          <WNG_ReplicatorHunter>8</WNG_ReplicatorHunter>
+          <WNG_ReplicatorBulwark>2</WNG_ReplicatorBulwark>
+          <WNG_ReplicatorTitan>0.15</WNG_ReplicatorTitan>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <colorSpectrum>
+      <li>(0.38, 0.48, 0.52)</li>
+    </colorSpectrum>
+  </FactionDef>
+</Defs>

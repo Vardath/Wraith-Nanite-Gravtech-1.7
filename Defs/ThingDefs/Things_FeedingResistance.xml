@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>WNG_VitalResistanceDose</defName>
+    <recipeMaker IsNull="True" />
+    <label>vital resistance dose</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>An experimental five-day anti-feeding treatment. It does not grant immunity to Wraith feeding: most successful transfers are reduced to a fraction of normal strength, while some feeding attempts are violently rejected. The treatment itself causes short-term systemic strain, and a rejected feeding can trigger a temporary crisis in the patient and backlash in the Wraith.</description>
+    <descriptionHyperlinks>
+      <HediffDef>WNG_FeedingResistance</HediffDef>
+      <HediffDef>WNG_FeedingResistanceStrain</HediffDef>
+      <HediffDef>WNG_FeedingResistanceCrisis</HediffDef>
+      <HediffDef>WNG_FeedingRejectionBacklash</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/WraithMedical/WNG_VitalResistanceDose</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>95</MarketValue>
+      <Mass>0.05</Mass>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>180</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestCommandString>Administer {0}</ingestCommandString>
+      <ingestReportString>Administering {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <chairSearchRadius>0</chairSearchRadius>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_FeedingResistance</hediffDef>
+          <severity>1</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_FeedingResistanceStrain</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <costList>
+      <Neutroamine>5</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>911</listOrder>
+      </li>
+    </comps>
+    <tradeability>Sellable</tradeability>
+    <tradeTags><li>ExoticMisc</li></tradeTags>
+  </ThingDef>
+</Defs>

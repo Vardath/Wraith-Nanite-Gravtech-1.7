@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Dedicated Asuran/Precursor settlement furniture. -->
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>WNG_PrecursorRestPlatform</defName><label>precursor rest platform</label>
+    <description>An adaptive precursor rest platform with a recessed field cradle, luminous alignment seams and a sculpted composite frame.</description>
+    <graphicData><texPath>Things/Building/Precursor/Furniture/WNG_PrecursorRestPlatform</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2,2)</drawSize></graphicData>
+    <size>(1,2)</size><designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <statBases><MaxHitPoints>260</MaxHitPoints><WorkToBuild>1800</WorkToBuild><Mass>24</Mass><Flammability>0.1</Flammability><BedRestEffectiveness>1.08</BedRestEffectiveness><Comfort>0.86</Comfort><ImmunityGainSpeedFactor>1.10</ImmunityGainSpeedFactor><Beauty>8</Beauty></statBases>
+    <costList><Plasteel>20</Plasteel><Steel>35</Steel><ComponentIndustrial>1</ComponentIndustrial></costList>
+    <building><bed_showSleeperBody>false</bed_showSleeperBody><bed_healPerDay>8</bed_healPerDay></building><uiOrder>2130</uiOrder>
+  </ThingDef>
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>WNG_PrecursorRestPlatformDouble</defName><label>precursor double rest platform</label>
+    <description>A broad two-person precursor rest platform with paired field cradles and a synchronized central support seam.</description>
+    <graphicData><texPath>Things/Building/Precursor/Furniture/WNG_PrecursorRestPlatformDouble</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2.2,2.2)</drawSize></graphicData>
+    <size>(2,2)</size><designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <statBases><MaxHitPoints>400</MaxHitPoints><WorkToBuild>3000</WorkToBuild><Mass>44</Mass><Flammability>0.1</Flammability><BedRestEffectiveness>1.08</BedRestEffectiveness><Comfort>0.88</Comfort><ImmunityGainSpeedFactor>1.10</ImmunityGainSpeedFactor><Beauty>12</Beauty></statBases>
+    <costList><Plasteel>35</Plasteel><Steel>60</Steel><ComponentIndustrial>2</ComponentIndustrial></costList>
+    <building><bed_showSleeperBody>false</bed_showSleeperBody><bed_healPerDay>8</bed_healPerDay></building><uiOrder>2131</uiOrder>
+  </ThingDef>
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>WNG_PrecursorFormChair</defName><label>precursor form chair</label>
+    <description>A sculpted precursor form chair whose composite shell subtly reshapes around the occupant.</description>
+    <replaceTags><li>Chair</li></replaceTags><graphicData><texPath>Things/Building/Precursor/Furniture/WNG_PrecursorFormChair</texPath><graphicClass>Graphic_Multi</graphicClass></graphicData>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <statBases><MaxHitPoints>180</MaxHitPoints><WorkToBuild>900</WorkToBuild><Mass>7</Mass><Flammability>0.1</Flammability><Beauty>8</Beauty><Comfort>0.78</Comfort></statBases>
+    <costList><Plasteel>10</Plasteel><Steel>15</Steel></costList><pathCost>30</pathCost><fillPercent>0.35</fillPercent><defaultPlacingRot>South</defaultPlacingRot>
+    <building><isSittable>true</isSittable></building><uiOrder>2450</uiOrder>
+  </ThingDef>
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>WNG_PrecursorSettee</defName><label>precursor settee</label>
+    <description>A two-person precursor settee with a seamless adaptive shell and paired field-supported seating surfaces.</description>
+    <replaceTags><li>Chair</li></replaceTags><graphicData><texPath>Things/Building/Precursor/Furniture/WNG_PrecursorSettee</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2,1)</drawSize></graphicData>
+    <size>(2,1)</size><designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <statBases><MaxHitPoints>300</MaxHitPoints><WorkToBuild>1800</WorkToBuild><Mass>32</Mass><Flammability>0.1</Flammability><Beauty>12</Beauty><Comfort>0.90</Comfort></statBases>
+    <costList><Plasteel>22</Plasteel><Steel>30</Steel><ComponentIndustrial>1</ComponentIndustrial></costList><pathCost>30</pathCost><fillPercent>0.40</fillPercent>
+    <building><isSittable>true</isSittable><multiSittable>true</multiSittable></building><uiOrder>2451</uiOrder>
+  </ThingDef>
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>WNG_PrecursorTableSmall</defName><label>precursor table (1x2)</label>
+    <description>A compact seamless precursor table with a pale composite frame and a luminous self-leveling spine.</description>
+    <graphicData><texPath>Things/Building/Precursor/Furniture/WNG_PrecursorTableSmall</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(1,2)</drawSize></graphicData>
+    <size>(1,2)</size><designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <statBases><MaxHitPoints>220</MaxHitPoints><WorkToBuild>900</WorkToBuild><Mass>14</Mass><Flammability>0.1</Flammability><Beauty>8</Beauty></statBases>
+    <costList><Plasteel>12</Plasteel><Steel>22</Steel></costList><uiOrder>2360</uiOrder>
+  </ThingDef>
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>WNG_PrecursorTable</defName><label>precursor table (2x2)</label>
+    <description>A broad self-levelling precursor table built around a recessed field hub and reinforced composite perimeter.</description>
+    <graphicData><texPath>Things/Building/Precursor/Furniture/WNG_PrecursorTable</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2,2)</drawSize></graphicData>
+    <size>(2,2)</size><rotatable>false</rotatable><designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <statBases><MaxHitPoints>340</MaxHitPoints><WorkToBuild>1500</WorkToBuild><Mass>24</Mass><Flammability>0.1</Flammability><Beauty>12</Beauty></statBases>
+    <costList><Plasteel>20</Plasteel><Steel>38</Steel></costList><uiOrder>2361</uiOrder>
+  </ThingDef>
+  <ThingDef ParentName="TableBase">
+    <defName>WNG_PrecursorBedsideConsole</defName><label>precursor bedside console</label>
+    <description>A compact bedside console that tunes nearby precursor rest-platform fields through a dedicated luminous control surface.</description>
+    <surfaceType>Item</surfaceType><graphicData><texPath>Things/Building/Precursor/Furniture/WNG_PrecursorBedsideConsole</texPath><graphicClass>Graphic_Multi</graphicClass></graphicData>
+    <designationCategory>Furniture</designationCategory><researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <statBases><MaxHitPoints>150</MaxHitPoints><WorkToBuild>700</WorkToBuild><Mass>6</Mass><Flammability>0.1</Flammability><Beauty>6</Beauty></statBases>
+    <costList><Plasteel>8</Plasteel><Steel>12</Steel><ComponentIndustrial>1</ComponentIndustrial></costList>
+    <placeWorkers><li>PlaceWorker_ShowFacilitiesConnections</li></placeWorkers><comps><li Class="CompProperties_Facility"><statOffsets><Comfort>0.07</Comfort></statOffsets><maxSimultaneous>1</maxSimultaneous><mustBePlacedAdjacentCardinalToBedHead>true</mustBePlacedAdjacentCardinalToBedHead></li></comps>
+    <uiOrder>2140</uiOrder>
+  </ThingDef>
+  <ThingDef ParentName="FurnitureBase">
+    <defName>WNG_PrecursorStoragePlinth</defName>
+    <label>Asuran equipment plinth</label>
+    <description>A clean low-profile precursor equipment surface intended for compact high-value rooms and gravship interiors. It is ordinary furniture, not a powered archive, stockpile container, or reconstruction device.</description>
+    <surfaceType>Item</surfaceType>
+    <graphicData>
+      <texPath>Things/Building/Precursor/Furniture/WNG_PrecursorStoragePlinth</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <designationCategory>Furniture</designationCategory>
+    <researchPrerequisites><li>WNG_PrecursorFabrication</li></researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>700</WorkToBuild>
+      <Beauty>3</Beauty>
+      <Mass>8</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList><Plasteel>15</Plasteel></costList>
+    <uiOrder>2142</uiOrder>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_PrecursorEnergySystems</defName>
+    <label>precursor energy systems</label>
+    <description>Extend reconstructed Asuran fabrication and collective-control theory into stable Ancient-derived field and power-control devices.</description>
+    <baseCost>3200</baseCost>
+    <techLevel>Ultra</techLevel>
+    <prerequisites>
+      <li>WNG_PrecursorFabrication</li>
+      <li>WNG_AsuranCollectiveSystems</li>
+    </prerequisites>
+  
+    <researchViewX>17.5</researchViewX><researchViewY>8.8</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WNG_PrecursorPersonalShields</defName>
+    <label>precursor personal shields</label>
+    <description>Miniaturise reconstructed precursor field control into a finite wearable shield that can absorb ranged impacts, recharge after depletion and collapse safely under EMP.</description>
+    <baseCost>4200</baseCost>
+    <techLevel>Ultra</techLevel>
+    <prerequisites><li>WNG_PrecursorEnergySystems</li></prerequisites>
+  
+    <researchViewX>19</researchViewX><researchViewY>8.8</researchViewY>
+  </ResearchProjectDef>
+</Defs>

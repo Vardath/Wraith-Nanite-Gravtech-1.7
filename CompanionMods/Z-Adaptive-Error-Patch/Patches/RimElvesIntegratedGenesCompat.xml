@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Source-verified Rim-Elves 1.6 (3028702598), installed alongside
+    Integrated Genes. Rim-Elves tries to ADD exclusionTags only when absent,
+    causing its sequence test to fail if Integrated Genes already supplies
+    exclusionTags. Preserve all exclusions from the latter and add just the
+    two values Rim-Elves intends, once each, where KindInstinct exists.
+    Does not manufacture the gene if it is actually absent.
+  -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/GeneDef[defName="KindInstinct" and not(exclusionTags)]</xpath>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/GeneDef[defName="KindInstinct" and not(exclusionTags)]</xpath>
+        <value>
+          <exclusionTags>
+            <li>SuperiorityComplex</li>
+            <li>Fanaticism</li>
+          </exclusionTags>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/GeneDef[defName="KindInstinct" and exclusionTags and not(exclusionTags/li[normalize-space(.)="SuperiorityComplex"])]</xpath>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/GeneDef[defName="KindInstinct" and exclusionTags and not(exclusionTags/li[normalize-space(.)="SuperiorityComplex"])]/exclusionTags</xpath>
+        <value><li>SuperiorityComplex</li></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/GeneDef[defName="KindInstinct" and exclusionTags and not(exclusionTags/li[normalize-space(.)="Fanaticism"])]</xpath>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/GeneDef[defName="KindInstinct" and exclusionTags and not(exclusionTags/li[normalize-space(.)="Fanaticism"])]/exclusionTags</xpath>
+        <value><li>Fanaticism</li></value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "name": "WNG Release Gate / Master Audit",
+  "static_gate": "D176",
+  "critical_static_script_count": 40,
+  "packaging_requires_static_gate": true,
+  "post_static_package_checks": [
+    "DLL/source embedded provenance parity",
+    "exact ZIP extraction/integrity",
+    "final art integrity",
+    "Steam/GitHub runtime byte parity"
+  ],
+  "live_signoff": {
+    "required": true,
+    "authority": "real RimWorld mod stack + user manual audit + Player.log",
+    "ci_must_not_claim_live_pass": true
+  }
+}

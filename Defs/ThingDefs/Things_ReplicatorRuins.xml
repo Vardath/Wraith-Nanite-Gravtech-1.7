@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_ReplicatorStrippedWallHusk</defName>
+    <label>replicator-stripped wall rib</label>
+    <description>A structural rib left after Replicators disassembled nearly all useful matter from a wall. Parallel block-sized bite marks run along the remaining spine. It is inert aftermath scenery and contains no recoverable Replicator mass.</description>
+    <graphicData>
+      <texPath>Things/Building/Replicator/Ruins/WNG_ReplicatorStrippedWallHusk</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.18</fillPercent>
+    <statBases>
+      <MaxHitPoints>95</MaxHitPoints>
+      <Mass>14</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>-2</Beauty>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_ReplicatorScouredMachineHusk</defName>
+    <label>replicator-scoured machine husk</label>
+    <description>An empty machinery frame whose motors, wiring, bearings and dense structural members were removed with unnervingly regular precision. Only low-value shell material remains. It is inert aftermath scenery and contains no recoverable Replicator mass.</description>
+    <graphicData>
+      <texPath>Things/Building/Replicator/Ruins/WNG_ReplicatorScouredMachineHusk</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.1,2.1)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.30</fillPercent>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>32</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>-4</Beauty>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_ReplicatorConsumptionScar</defName>
+    <label>replicator consumption scar</label>
+    <description>A low field of fused fragments and standardized block impressions where a swarm reduced larger machinery to feedstock. The pattern records motion and consumption rather than deliberate construction. It is inert aftermath scenery and contains no recoverable Replicator mass.</description>
+    <graphicData>
+      <texPath>Things/Building/Replicator/Ruins/WNG_ReplicatorConsumptionScar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.2,1.4)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+    <rotatable>false</rotatable>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0.05</fillPercent>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>8</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>-3</Beauty>
+    </statBases>
+  </ThingDef>
+</Defs>

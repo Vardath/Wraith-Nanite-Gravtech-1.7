@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DesignationCategoryDef>
+    <defName>WNG_WraithArchitect</defName>
+    <label>WNG — Wraith</label>
+    <description>Wraith settlement, living-technology and gravship construction. The same buildables remain available in their normal RimWorld functional categories where appropriate.</description>
+    <order>85</order>
+  </DesignationCategoryDef>
+  <DesignationCategoryDef>
+    <defName>WNG_AsuranArchitect</defName>
+    <label>WNG — Asuran</label>
+    <description>Asuran and Precursor settlement, nanite-technology and gravship construction. The same buildables remain available in their normal RimWorld functional categories where appropriate.</description>
+    <order>86</order>
+  </DesignationCategoryDef>
+  <DesignationCategoryDef>
+    <defName>WNG_GoauldArchitect</defName>
+    <label>WNG — Goa'uld</label>
+    <description>WNG-owned Goa'uld transport, shuttle and Ha'tak gravship construction. Compatible ONAC technology remains integrated without taking ownership of these WNG buildables.</description>
+    <order>87</order>
+  </DesignationCategoryDef>
+</Defs>

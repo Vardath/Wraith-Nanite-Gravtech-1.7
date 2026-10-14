@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>WNG_WraithRuinedLaboratory</defName><label>abandoned Wraith laboratory</label>
+    <description>A factionless ruin of breached living architecture, dead growth tissue and collapsed feeding equipment. It contains finite biological salvage but no functioning Wraith production shortcut.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_WraithRuinedLaboratory</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture><showFactionInInspectString>false</showFactionInInspectString><requiresFaction>false</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints><minThreatPoints>250</minThreatPoints><considerEnteringAsAttack>false</considerEnteringAsAttack><selectionWeight>0</selectionWeight>
+    <arrivedLetter>The coordinates lead to a breached, factionless Wraith laboratory. Dead biological machinery and finite salvage remain; a small remnant party may still be scavenging the site.</arrivedLetter><arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+  </SitePartDef>
+</Defs>

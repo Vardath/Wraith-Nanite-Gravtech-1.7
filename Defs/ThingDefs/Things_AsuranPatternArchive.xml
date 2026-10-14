@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranPatternArchive</defName>
+    <label>Asuran pattern archive</label>
+    <description>A powered collective relay, continuity repository and bounded technology-pattern library. It periodically records up to sixteen same-faction linked human-form nanite identities for reconstruction, can non-destructively scan a supported nearby technology specimen, and retains learned fabrication patterns while powered. Reconstructed bodies are new physical Pawns based on their latest stored identity pattern; post-backup changes and social relationships are not restored. The archive also authenticates nearby lattice traffic, can expose covert human-form infiltrators, and while powered coordinates slow nanite repair of supported same-faction Asuran structures nearby.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Precursor/Collective/WNG_AsuranPatternArchive</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.4,2.4)</drawSize>
+    </graphicData>
+    <uiIconPath>UI/WNG/Build/WNG_AsuranPatternArchive</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.55</fillPercent>
+    <tickerType>Normal</tickerType>
+    <size>(2,2)</size>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>720</MaxHitPoints>
+      <WorkToBuild>14500</WorkToBuild>
+      <Mass>48</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>12</Beauty>
+    </statBases>
+    <costList>
+      <Plasteel>180</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+      <Gold>40</Gold>
+    </costList>
+    <designationCategory>Misc</designationCategory>
+    <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+    <researchPrerequisites><li>WNG_AsuranContinuity</li></researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1600</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(90,190,225,0)</glowColor>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranPatternArchive">
+        <backupIntervalTicks>120000</backupIntervalTicks>
+        <reconstructionDelayTicks>90000</reconstructionDelayTicks>
+        <retryIntervalTicks>30000</retryIntervalTicks>
+        <maxRecords>16</maxRecords>
+        <plasteelCost>80</plasteelCost>
+        <advancedComponentCost>3</advancedComponentCost>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranTechnologyPatternLibrary">
+        <scanRadius>8</scanRadius>
+        <scanWorkTicks>30000</scanWorkTicks>
+      </li>
+          <li Class="WraithNaniteGravtech.CompProperties_AsuranArchiveRepair"><repairIntervalTicks>900</repairIntervalTicks><healPerPulse>3</healPerPulse><archiveRadius>45</archiveRadius></li>
+    </comps>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <paintable>false</paintable>
+    </building>
+    <uiOrder>2515</uiOrder>
+  </ThingDef>
+</Defs>

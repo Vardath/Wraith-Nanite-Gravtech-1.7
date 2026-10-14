@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_ReplicatorSuppressionEmitter</defName>
+    <label>anti-replicator EMP suppressor</label>
+    <description>A hardened pulse emitter derived from Replicator containment research and recovered core-fragment timing. While powered, it periodically applies native EMP to a limited number of nearby hostile WNG Replicators. Block forms are interrupted only when RimWorld's EMP stun is accepted and recorded by the current shared interference system; human-form nanite synthetics use their existing EMP-sensitive physiology. The current visual is provisional pending the professional art pass.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Replicator/Containment/WNG_ReplicatorContainmentProjector</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.5,2.5)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>45</pathCost>
+    <blockWind>false</blockWind>
+    <fillPercent>0.45</fillPercent>
+    <tickerType>Rare</tickerType>
+    <size>(2,2)</size>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>520</MaxHitPoints>
+      <WorkToBuild>10500</WorkToBuild>
+      <Mass>42</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>3</Beauty>
+    </statBases>
+    <costList>
+      <Steel>160</Steel>
+      <Plasteel>110</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Uranium>25</Uranium>
+      <WNG_ReplicatorCoreFragment>2</WNG_ReplicatorCoreFragment>
+    </costList>
+    <designationCategory>Misc</designationCategory>
+    <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>WNG_AdvancedNaniteSuppression</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>2600</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Glower">
+        <glowRadius>5.5</glowRadius>
+        <glowColor>(105,205,235,0)</glowColor>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorSuppressionEmitter">
+        <radius>13</radius>
+        <pulseIntervalTicks>1500</pulseIntervalTicks>
+        <maxTargets>6</maxTargets>
+        <empDamage>12</empDamage>
+      </li>
+    </comps>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <paintable>false</paintable>
+    </building>
+    <uiOrder>2546</uiOrder>
+  </ThingDef>
+</Defs>

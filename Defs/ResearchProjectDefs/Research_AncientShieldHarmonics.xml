@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_AncientShieldHarmonics</defName>
+    <label>Ancient shield harmonics</label>
+    <description>Use an analyzed Ancient calibration prism to reconstruct the high-energy field harmonics of mature precursor gravship shielding. The resulting emitter remains a finite Odyssey-style barrier tied to the isolated Asuran gravship lattice; EMP, depletion, recharge and insufficient family power remain real weaknesses.</description>
+    <baseCost>9200</baseCost>
+    <techLevel>Ultra</techLevel>
+    <prerequisites>
+      <li>WNG_AsuranGravshipArchitecture</li>
+      <li>WNG_VacuumEnergyContainment</li>
+      <li>AdvancedGravtech</li>
+    </prerequisites>
+    <requiredAnalyzed>
+      <li>WNG_AncientShieldHarmonicRelic</li>
+    </requiredAnalyzed>
+  
+    <researchViewX>24</researchViewX><researchViewY>10.4</researchViewY>
+  </ResearchProjectDef>
+</Defs>

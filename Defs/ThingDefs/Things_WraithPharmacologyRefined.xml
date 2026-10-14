@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>WNG_RefinedWraithEnzyme</defName>
+    <recipeMaker IsNull="True" />
+    <label>refined Wraith enzyme</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>A diluted and stabilized Wraith-enzyme formulation. It sacrifices some of the raw extract's extreme peak performance in exchange for more predictable dosing and lower overdose risk. It remains strongly habit-forming and is not a safe everyday stimulant.</description>
+    <descriptionHyperlinks>
+      <HediffDef>WNG_RefinedWraithEnzymeHigh</HediffDef>
+      <HediffDef>WNG_WraithEnzymeAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Resource/WNG_WraithBiofluidFuel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>900</WorkToMake>
+      <MarketValue>62</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <joyKind>Chemical</joyKind>
+      <joy>0.25</joy>
+      <drugCategory>Hard</drugCategory>
+      <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>80</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <chairSearchRadius>0</chairSearchRadius>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_RefinedWraithEnzymeHigh</hediffDef>
+          <severity>0.5</severity>
+          <toleranceChemical>WNG_WraithEnzyme</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.20</offset>
+          <toleranceChemical>WNG_WraithEnzyme</toleranceChemical>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <costList>
+      <WNG_RawWraithEnzyme>1</WNG_RawWraithEnzyme>
+      <Neutroamine>2</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>WNG_WraithEnzyme</chemical>
+        <addictiveness>0.04</addictiveness>
+        <existingAddictionSeverityOffset>0.12</existingAddictionSeverityOffset>
+        <needLevelOffset>0.85</needLevelOffset>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>245</listOrder>
+        <overdoseSeverityOffset>0.10~0.20</overdoseSeverityOffset>
+        <largeOverdoseChance>0.004</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>WNG_RefinedWraithEnzymeHigh</defName>
+    <label>refined Wraith enzyme</label>
+    <labelNoun>a refined Wraith enzyme dose</labelNoun>
+    <description>A controlled Wraith-enzyme formulation is enhancing physical output, pain tolerance and recovery without the full metabolic violence of raw extract.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.25</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.35</painFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.15</offset></li>
+          <li><capacity>Moving</capacity><offset>0.25</offset></li>
+          <li><capacity>Manipulation</capacity><offset>0.10</offset></li>
+          <li><capacity>Sight</capacity><offset>0.10</offset></li>
+        </capMods>
+        <statFactors>
+          <MeleeDamageFactor>1.25</MeleeDamageFactor>
+          <InjuryHealingFactor>1.5</InjuryHealingFactor>
+          <ImmunityGainSpeed>1.15</ImmunityGainSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>WNG_WraithEnzymeWeaningSerum</defName>
+    <recipeMaker IsNull="True" />
+    <label>Wraith enzyme weaning serum</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>A controlled tapering treatment made from measured Wraith enzyme, neutroamine and medical stabilizers. Each dose reduces established Wraith-enzyme dependence and temporarily relieves withdrawal pressure. Multiple doses over time are required; it does not erase addiction instantly.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/WNG_WraithBiofluidFuel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>1200</WorkToMake>
+      <MarketValue>88</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>100</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <chairSearchRadius>0</chairSearchRadius>
+      <outcomeDoers>
+        <li Class="WraithNaniteGravtech.IngestionOutcomeDoer_WraithEnzymeWeaning">
+          <severityReduction>0.12</severityReduction>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Chemical_WNG_WraithEnzyme</need>
+          <offset>0.40</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <costList>
+      <WNG_RawWraithEnzyme>1</WNG_RawWraithEnzyme>
+      <Neutroamine>4</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>980</listOrder>
+        <overdoseSeverityOffset>0.02~0.05</overdoseSeverityOffset>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>WNG_FabricateAncientNeuralInterface</defName>
+    <label>fabricate Ancient control interface</label>
+    <description>Build a compact neural translator capable of presenting the compatibility signal required by reconstructed Ancient control technology.</description>
+    <jobString>Building an Ancient control interface.</jobString>
+    <workSkill>Crafting</workSkill>
+    <workAmount>6500</workAmount>
+    <researchPrerequisite>WNG_AncientDroneControl</researchPrerequisite>
+    <ingredients>
+      <li><count>40</count><filter><thingDefs><li>Plasteel</li></thingDefs></filter></li>
+      <li><count>10</count><filter><thingDefs><li>Uranium</li></thingDefs></filter></li>
+      <li><count>3</count><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter></li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>Plasteel</li><li>Uranium</li><li>ComponentSpacer</li></thingDefs>
+    </fixedIngredientFilter>
+    <products><WNG_AncientNeuralInterface>1</WNG_AncientNeuralInterface></products>
+    <recipeUsers>
+      <li>WNG_PrecursorFabricator</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>WNG_InstallAncientNeuralInterface</defName>
+    <label>install Ancient control interface</label>
+    <description>Attempt to integrate an artificial Ancient/ATA control interface with the patient's brain. The operation itself completes cleanly, but the neural handshake is difficult to retain: each completed attempt has a 15% chance to take and an 85% chance to reject without injuring the pawn.</description>
+    <jobString>Integrating an Ancient control interface.</jobString>
+    <workerClass>WraithNaniteGravtech.Recipe_InstallAncientNeuralInterface</workerClass>
+    <workAmount>4200</workAmount>
+    <ingredients>
+      <li><count>1</count><filter><thingDefs><li>WNG_AncientNeuralInterface</li></thingDefs></filter></li>
+      <li><count>3</count><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter></li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs><li>WNG_AncientNeuralInterface</li><li>MedicineIndustrial</li></thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts><li>Brain</li></appliedOnFixedBodyParts>
+    <addsHediff>WNG_AncientNeuralInterface</addsHediff>
+    <recipeUsers><li>Human</li></recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>WNG_RemoveAncientNeuralInterface</defName>
+    <label>remove Ancient control interface</label>
+    <description>Detach an installed Ancient control interface from the brain.</description>
+    <jobString>Removing an Ancient control interface.</jobString>
+    <workAmount>3000</workAmount>
+    <removesHediff>WNG_AncientNeuralInterface</removesHediff>
+    <recipeUsers><li>Human</li></recipeUsers>
+  <appliedOnFixedBodyParts><li>Brain</li></appliedOnFixedBodyParts></RecipeDef>
+</Defs>

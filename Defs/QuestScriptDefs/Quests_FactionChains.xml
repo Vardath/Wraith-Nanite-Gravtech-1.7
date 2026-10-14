@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>WNG_WraithLegacyTrail</defName>
+    <rootSelectionWeight>0.18</rootSelectionWeight>
+    <rootEarliestDay>45</rootEarliestDay>
+    <minRefireDays>40</minRefireDays>
+    <expireDaysRange>12~18</expireDaysRange>
+    <affectedByPoints>false</affectedByPoints>
+    <root Class="WraithNaniteGravtech.QuestNode_Root_WraithLegacy" />
+    <questNameRules><rulesStrings><li>questName->the Wraith legacy trail</li></rulesStrings></questNameRules>
+    <questDescriptionRules><rulesStrings><li>questDescription->Scattered biological evidence suggests that several known Wraith sites form one lineage of technology rather than isolated ruins. Follow the trail physically from a ruined feeding laboratory through abandoned cloning infrastructure to a mature Hive.</li></rulesStrings></questDescriptionRules>
+  </QuestScriptDef>
+  <QuestScriptDef>
+    <defName>WNG_ReplicatorPatternTrail</defName>
+    <rootSelectionWeight>0.16</rootSelectionWeight>
+    <rootEarliestDay>48</rootEarliestDay>
+    <minRefireDays>40</minRefireDays>
+    <expireDaysRange>12~18</expireDaysRange>
+    <affectedByPoints>false</affectedByPoints>
+    <root Class="WraithNaniteGravtech.QuestNode_Root_ReplicatorPattern" />
+    <questNameRules><rulesStrings><li>questName->the Replicator pattern trail</li></rulesStrings></questNameRules>
+    <questDescriptionRules><rulesStrings><li>questDescription->Replicator evidence links consumed technological ruins, concealed human-form operatives and sovereign continuity. Investigate the real sites and resolve the exact infiltrator before following the pattern to the Queen vault.</li></rulesStrings></questDescriptionRules>
+  </QuestScriptDef>
+  <QuestScriptDef>
+    <defName>WNG_AncientLegacyTrail</defName>
+    <rootSelectionWeight>0.15</rootSelectionWeight>
+    <rootEarliestDay>36</rootEarliestDay>
+    <minRefireDays>40</minRefireDays>
+    <expireDaysRange>12~18</expireDaysRange>
+    <affectedByPoints>false</affectedByPoints>
+    <root Class="WraithNaniteGravtech.QuestNode_Root_AncientLegacy" />
+    <questNameRules><rulesStrings><li>questName->the Ancient legacy trail</li></rulesStrings></questNameRules>
+    <questDescriptionRules><rulesStrings><li>questDescription->Precursor field records connect an open laboratory, a sealed Ancient vault and a later dormant Asuran installation. Follow the sites in person and reconstruct the history without receiving free endgame technology.</li></rulesStrings></questDescriptionRules>
+  </QuestScriptDef>
+  <QuestScriptDef>
+    <defName>WNG_LegacyConvergence</defName>
+    <rootSelectionWeight>0.08</rootSelectionWeight>
+    <rootEarliestDay>60</rootEarliestDay>
+    <minRefireDays>120</minRefireDays>
+    <expireDaysRange>10~16</expireDaysRange>
+    <affectedByPoints>false</affectedByPoints>
+    <root Class="WraithNaniteGravtech.QuestNode_Root_WNGConvergence" />
+    <questNameRules><rulesStrings><li>questName->three histories intersect</li></rulesStrings></questNameRules>
+    <questDescriptionRules><rulesStrings><li>questDescription->With the Wraith, Replicator and Ancient/Asuran field trails complete, their records can finally be compared as intersecting histories. The technologies remain distinct; the convergence is evidence, not a free research or artifact reward.</li></rulesStrings></questDescriptionRules>
+  </QuestScriptDef>
+</Defs>

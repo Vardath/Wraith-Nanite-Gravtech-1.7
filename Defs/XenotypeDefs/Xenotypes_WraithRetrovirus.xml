@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <XenotypeDef>
+    <defName>WNG_HumanizedWraith</defName>
+    <label>humanized Wraith</label>
+    <description>A Wraith whose Iratus-derived phenotype is being actively suppressed by retroviral therapy. The individual is still the same person and retains unrelated genetics, but the standard Wraith gene set remains dormant until maintenance treatment lapses.</description>
+    <descriptionShort>A retrovirally suppressed Wraith in a temporary human phenotype.</descriptionShort>
+    <iconPath>UI/WNG/Xenotypes/HumanizedWraith</iconPath>
+    <genes />
+  </XenotypeDef>
+</Defs>

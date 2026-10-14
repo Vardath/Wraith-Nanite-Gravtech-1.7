@@ -1,0 +1,108 @@
+[h1]Wraith & Nanite Gravtech[/h1]
+[i]An unofficial, non-commercial RimWorld 1.6 expansion inspired by Stargate Atlantis and the wider Stargate universe.[/i]
+
+WNG is a large faction, race, technology and gravship expansion built around the Wraith, block Replicators, human-form Replicators/Asurans, Ancient/Precursor technology and Goa'uld gravtech.
+
+The goal is not just to add themed items. WNG gives each group its own gameplay loop, progression, threats, resources, technology and craft while using native RimWorld and Odyssey systems wherever they already provide the right behaviour.
+
+[h2]Wraith[/h2]
+[img]https://raw.githubusercontent.com/Vardath/Wraith-Nanite-Gravtech-1.6/643892a4e7aeb3937a4f5a3dc559cbf9bf5d5904/Textures/Things/Building/Wraith/Shuttle/WNG_WraithCruiser.png[/img]
+[list]
+[*]A Wraith xenotype with Hunter, Warrior, Commander, Keeper and Queen roles.
+[*]Life Force feeding, Drain Life, partial feeding, regeneration and hibernation.
+[*]Four distinct Wraith lineages: the Sable Brood, Cinder Court, Veiled Hive and Pale Covenant.
+[*]Faction-level strategic feeding pressure and feeding requests separate from ordinary pawn feeding.
+[*]Living biotechnology, biomass, grown weapons, armour, furniture, biological power and Hive infrastructure.
+[*]Wraith Darts, Strike Craft and Cruisers.
+[*]A complete Wraith living-gravship family with organic hulls, living doors, pilot nodes, grav engines, fuel organs, conduits, thrusters, sensors, atmosphere support and other Odyssey-native systems.
+[/list]
+
+[h2]Block Replicators[/h2]
+[img]https://raw.githubusercontent.com/Vardath/Wraith-Nanite-Gravtech-1.6/main/Textures/Things/Pawn/Replicator/WNG_ReplicatorDrone.png[/img]
+[img]https://raw.githubusercontent.com/Vardath/Wraith-Nanite-Gravtech-1.6/main/Textures/Things/Pawn/Replicator/WNG_ReplicatorSiegeMass.png[/img]
+[list]
+[*]A physical size hierarchy: Drone -> Hunter -> Bulwark -> Titan -> Siege Mass.
+[*]Destroying a higher form produces two operational lower-tier Replicators.
+[*]Smaller Replicators can recombine upward after a post-split delay.
+[*]Controller, Repairer, Burrower and Artillery specialists give the swarm distinct battlefield roles.
+[*]Matter assimilation and stored-matter growth rather than free spawning.
+[*]Adaptive branches for encountered technologies, including armour, ranged weapons, power, shields and gravitic systems.
+[*]EMP and containment are meaningful countermeasures.
+[*]Replicator Matter is dangerous salvage: large uncontained stores can eventually reform into hostile Replicators.
+[*]A player-side Child's Toy branch and advanced controller technology are also included.
+[/list]
+
+[h2]Human-form Replicators / Asurans[/h2]
+[img]https://raw.githubusercontent.com/Vardath/Wraith-Nanite-Gravtech-1.6/main/Textures/Things/Building/Precursor/Collective/WNG_AsuranPatternArchive_south.png[/img]
+[list]
+[*]Human-form nanite beings with Nanite Reserve physiology, self-repair and reconstruction.
+[*]The hostile Lattice Collective and the non-hostile Quiet Lattice.
+[*]Generalist, engineer, soldier and coordinator roles.
+[*]Infiltration and conceal/reveal systems.
+[*]A persistent Replicator Queen/controller storyline and block-control systems.
+[*]Neural Interface technology, Pattern Archive systems and reconstruction/copy mechanics.
+[*]Asuran weapons, armour, furniture, settlement technology and defensive systems.
+[/list]
+
+[h2]Ancient / Precursor technology[/h2]
+[img]https://raw.githubusercontent.com/Vardath/Wraith-Nanite-Gravtech-1.6/main/Textures/Things/Building/Precursor/Shuttle/WNG_PuddleJumper.png[/img]
+[img]https://raw.githubusercontent.com/Vardath/Wraith-Nanite-Gravtech-1.6/main/Textures/Things/Building/Precursor/Gravship/WNG_PrecursorPilotConsole_south.png[/img]
+[list]
+[*]Puddle Jumpers with dedicated directional art and Odyssey shuttle behaviour.
+[*]Precursor pulse weapons, personal shields and settlement shield projectors.
+[*]Rest platforms, chairs, tables, consoles, lighting and other Asuran/Precursor settlement furniture.
+[*]Pattern Archive, reconstruction and advanced energy systems.
+[*]A complete Asuran/Precursor gravship family with hulls, doors, pilot consoles, fuel and power networks, vector drives, shields, scanners, atmosphere systems and support components.
+[/list]
+
+[h2]Goa'uld technology[/h2]
+[img]https://raw.githubusercontent.com/Vardath/Wraith-Nanite-Gravtech-1.6/main/Textures/Things/Building/Goauld/Shuttle/WNG_AlkeshTransport.png[/img]
+[img]https://raw.githubusercontent.com/Vardath/Wraith-Nanite-Gravtech-1.6/main/Textures/Things/Building/Goauld/Shuttle/WNG_GoauldDeathGlider.png[/img]
+[list]
+[*]Al'kesh transport/bomber craft and Death Gliders.
+[*]Goa'uld gravship construction with themed hulls, peltac, grav engine, power, fuel, navigation, shields, plasma weapons and support systems.
+[*]Heavy plasma orbital bombardment built on RimWorld/Odyssey-native bombardment behaviour.
+[*]Transport rings and Goa'uld-related research and pharmacology, including Kassa, Nishta and Roshna systems.
+[*]Optional ONAC and RimGate Jaffa/Kree integration when those mods are installed.
+[/list]
+
+[h2]Player starts and progression[/h2]
+WNG includes four dedicated starts:
+[list]
+[*]Wraith: Landfall
+[*]Wraith: In Orbit
+[*]Human-form Replicators: Landfall
+[*]Human-form Replicators: In Orbit
+[/list]
+
+The research tree expands through Wraith living technology, Replicator containment and adaptation, Ancient/Asuran systems, gravships, Goa'uld technology, implants, pharmacology, Iratus research and related branches.
+
+[h2]Compatibility and requirements[/h2]
+[b]RimWorld version:[/b] 1.6
+
+[b]Required DLC:[/b]
+[list]
+[*]Royalty
+[*]Ideology
+[*]Biotech
+[*]Anomaly
+[*]Odyssey
+[/list]
+
+No third-party Stargate mod is required for the base WNG content.
+
+[b]Combat Extended:[/b] WNG includes Combat Extended compatibility definitions which load only when CE is active.
+
+[b]ONAC:[/b] optional integration replaces appropriate Goa'uld materials/fuels with ONAC Naquadah and Liquid Naquadria and enables additional connected content when ONAC is installed.
+
+[b]Stargates Mod:[/b] optional integration is detected automatically when [i]ccyt.stargatesmod[/i] is installed. WNG can use real Stargates for starting-map gate placement and Stargate-linked Wraith hunts/diplomatic arrivals, Replicator incursions/salvage, Quiet Lattice visits and hostile Asuran gate/Jumper missions. Stargates remains optional; WNG has no hard dependency on it.
+
+[b]RimGate Jaffa/Kree:[/b] optional Goa'uld/Jaffa interop is detected when installed.
+
+[h2]Art and development[/h2]
+WNG has its own growing library of faction-specific RimWorld-style art for Wraith, Replicator, Asuran/Precursor and Goa'uld content.
+
+[url=https://vardath.github.io/wng-art.html]Browse the live WNG Art Gallery[/url]
+
+[h2]Important note[/h2]
+WNG is an unofficial, non-commercial fan-made project. It is not affiliated with or endorsed by the owners of Stargate or by Ludeon Studios.

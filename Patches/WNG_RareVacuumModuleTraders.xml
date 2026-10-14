@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/TraderKindDef[defName="Orbital_Exotic" or defName="Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+    <value>
+      <li Class="WraithNaniteGravtech.StockGenerator_WNGRareVacuumModule">
+        <thingDef>WNG_VacuumEnergyModule</thingDef>
+        <chance>0.04</chance>
+      </li>
+    </value>
+  </Operation>
+</Patch>

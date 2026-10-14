@@ -1,0 +1,1266 @@
+{
+  "id": "human_form_uniform",
+  "item": "WNG_HumanFormUniform",
+  "faction": "Asuran",
+  "output_dir": "Precursor",
+  "stargate": {
+    "sources": [
+      {
+        "url": "https://www.gateworld.net/news/2009/08/stitches-in-time/",
+        "role": "Stargate Atlantis costume construction context",
+        "required_terms": []
+      },
+      {
+        "url": "https://www.thepropgallery.com/hero-asuran-replicator-stunner-holster",
+        "role": "screen-used Asuran prop material language",
+        "required_terms": []
+      },
+      {
+        "url": "https://www.spotern.com/en/product/8502",
+        "role": "Asuran Replicator soldier wardrobe reference",
+        "required_terms": []
+      }
+    ],
+    "minimum_live_sources": 0,
+    "design": {
+      "materials": [
+        "dark graphite engineered woven uniform cloth",
+        "muted blue-grey technical fabric",
+        "charcoal inset weave",
+        "aged gunmetal fasteners and restrained Ancient/Asuran trim"
+      ],
+      "construction": [
+        "fitted torso uniform wrapped to the vanilla RimWorld pawn body",
+        "soft high collar and shoulder yoke",
+        "central dark technical weave with tapered side tailoring",
+        "stitched curved seams and hidden closures",
+        "no separately drawn human arms or legs",
+        "inventory tile must be derived from the fitted worn sprite"
+      ],
+      "motifs": [
+        "Atlantis/Asuran precision tailoring",
+        "soft engineered textile",
+        "subtle Ancient geometric seam rhythm",
+        "screen-worn texture and gentle directional wear",
+        "low-key asymmetric cloth variation"
+      ],
+      "avoid": [
+        "flat coloured panels",
+        "white armour plates",
+        "bright white shell",
+        "vector cutout look",
+        "cyan neon piping",
+        "marine armour",
+        "superhero breastplate",
+        "humanoid mannequin limbs",
+        "ship parts on clothing"
+      ]
+    }
+  },
+  "rimworld": {
+    "family": "ShirtButton",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "tile_scale": 0.78,
+    "cover_body": true
+  },
+  "paint": {
+    "engine": "raster_studio_v1",
+    "base_material": "graphite_fabric",
+    "final_contrast": 1.045,
+    "final_unsharp_radius": 0.62,
+    "final_unsharp_percent": 62,
+    "final_unsharp_threshold": 2,
+    "materials": {
+      "graphite_fabric": {
+        "kind": "fabric",
+        "shadow": [
+          7,
+          11,
+          14
+        ],
+        "mid": [
+          39,
+          49,
+          55
+        ],
+        "high": [
+          94,
+          108,
+          114
+        ],
+        "roughness": 0.82,
+        "body": 0.5,
+        "normal_strength": 1.55,
+        "surface_height": 0.014,
+        "spec_power": 8,
+        "spec_strength": 0.12,
+        "specular_tint": [
+          14,
+          18,
+          19
+        ]
+      },
+      "bluegrey_fabric": {
+        "kind": "fabric",
+        "shadow": [
+          11,
+          16,
+          20
+        ],
+        "mid": [
+          48,
+          62,
+          69
+        ],
+        "high": [
+          105,
+          121,
+          128
+        ],
+        "roughness": 0.78,
+        "body": 0.54,
+        "normal_strength": 1.65,
+        "surface_height": 0.016,
+        "spec_power": 8,
+        "spec_strength": 0.13,
+        "specular_tint": [
+          16,
+          21,
+          23
+        ]
+      },
+      "black_weave": {
+        "kind": "fabric",
+        "shadow": [
+          3,
+          5,
+          6
+        ],
+        "mid": [
+          20,
+          27,
+          31
+        ],
+        "high": [
+          58,
+          69,
+          74
+        ],
+        "roughness": 0.86,
+        "body": 0.48,
+        "normal_strength": 1.45,
+        "surface_height": 0.013,
+        "spec_power": 7,
+        "spec_strength": 0.1,
+        "specular_tint": [
+          12,
+          15,
+          16
+        ]
+      },
+      "gunmetal_trim": {
+        "kind": "leather",
+        "shadow": [
+          16,
+          20,
+          22
+        ],
+        "mid": [
+          52,
+          61,
+          64
+        ],
+        "high": [
+          112,
+          122,
+          124
+        ],
+        "roughness": 0.63,
+        "body": 0.6,
+        "normal_strength": 1.85,
+        "surface_height": 0.009,
+        "spec_power": 11,
+        "spec_strength": 0.2,
+        "specular_tint": [
+          22,
+          25,
+          25
+        ]
+      }
+    },
+    "views": {
+      "south": {
+        "folds": [
+          {
+            "points": [
+              [
+                0.18,
+                0.18
+              ],
+              [
+                0.16,
+                0.52
+              ],
+              [
+                0.2,
+                0.9
+              ]
+            ],
+            "width": 0.015,
+            "strength": 0.42
+          },
+          {
+            "points": [
+              [
+                0.82,
+                0.18
+              ],
+              [
+                0.84,
+                0.52
+              ],
+              [
+                0.8,
+                0.9
+              ]
+            ],
+            "width": 0.015,
+            "strength": 0.38
+          },
+          {
+            "points": [
+              [
+                0.34,
+                0.3
+              ],
+              [
+                0.32,
+                0.6
+              ],
+              [
+                0.36,
+                0.88
+              ]
+            ],
+            "width": 0.01,
+            "strength": 0.22
+          },
+          {
+            "points": [
+              [
+                0.66,
+                0.3
+              ],
+              [
+                0.68,
+                0.6
+              ],
+              [
+                0.64,
+                0.88
+              ]
+            ],
+            "width": 0.01,
+            "strength": 0.2
+          }
+        ],
+        "components": [
+          {
+            "name": "soft shoulder yoke",
+            "material": "bluegrey_fabric",
+            "contour": [
+              [
+                0.12,
+                0.1
+              ],
+              [
+                0.28,
+                0.045
+              ],
+              [
+                0.5,
+                0.035
+              ],
+              [
+                0.72,
+                0.045
+              ],
+              [
+                0.88,
+                0.1
+              ],
+              [
+                0.8,
+                0.28
+              ],
+              [
+                0.66,
+                0.34
+              ],
+              [
+                0.34,
+                0.34
+              ],
+              [
+                0.2,
+                0.28
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.18,
+                    0.14
+                  ],
+                  [
+                    0.36,
+                    0.2
+                  ],
+                  [
+                    0.5,
+                    0.18
+                  ],
+                  [
+                    0.64,
+                    0.2
+                  ],
+                  [
+                    0.82,
+                    0.14
+                  ]
+                ],
+                "width": 0.014,
+                "height": 0.22
+              }
+            ],
+            "shadow": 24,
+            "shadow_radius": 6,
+            "feather": 1.8,
+            "edge_irregularity": 0.004
+          },
+          {
+            "name": "central technical weave",
+            "material": "black_weave",
+            "contour": [
+              [
+                0.37,
+                0.24
+              ],
+              [
+                0.5,
+                0.2
+              ],
+              [
+                0.63,
+                0.24
+              ],
+              [
+                0.61,
+                0.76
+              ],
+              [
+                0.55,
+                0.9
+              ],
+              [
+                0.5,
+                0.94
+              ],
+              [
+                0.45,
+                0.9
+              ],
+              [
+                0.39,
+                0.76
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.5,
+                    0.24
+                  ],
+                  [
+                    0.5,
+                    0.88
+                  ]
+                ],
+                "width": 0.012,
+                "height": 0.26
+              },
+              {
+                "points": [
+                  [
+                    0.4,
+                    0.44
+                  ],
+                  [
+                    0.5,
+                    0.48
+                  ],
+                  [
+                    0.6,
+                    0.44
+                  ]
+                ],
+                "width": 0.009,
+                "height": 0.12
+              }
+            ],
+            "shadow": 27,
+            "shadow_radius": 7,
+            "feather": 1.5,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "left tailored side inset",
+            "material": "bluegrey_fabric",
+            "contour": [
+              [
+                0.18,
+                0.31
+              ],
+              [
+                0.34,
+                0.28
+              ],
+              [
+                0.38,
+                0.42
+              ],
+              [
+                0.37,
+                0.76
+              ],
+              [
+                0.3,
+                0.91
+              ],
+              [
+                0.18,
+                0.84
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.24,
+                    0.36
+                  ],
+                  [
+                    0.27,
+                    0.62
+                  ],
+                  [
+                    0.24,
+                    0.84
+                  ]
+                ],
+                "width": 0.01,
+                "height": 0.18
+              }
+            ],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.7,
+            "edge_irregularity": 0.005,
+            "mirror": true
+          },
+          {
+            "name": "restrained waist trim",
+            "material": "gunmetal_trim",
+            "contour": [
+              [
+                0.3,
+                0.73
+              ],
+              [
+                0.7,
+                0.73
+              ],
+              [
+                0.67,
+                0.79
+              ],
+              [
+                0.33,
+                0.79
+              ]
+            ],
+            "relief": [],
+            "shadow": 14,
+            "shadow_radius": 4,
+            "feather": 1.2,
+            "edge_irregularity": 0.002
+          }
+        ],
+        "seams": [
+          {
+            "points": [
+              [
+                0.25,
+                0.3
+              ],
+              [
+                0.36,
+                0.38
+              ],
+              [
+                0.39,
+                0.74
+              ]
+            ],
+            "width": 0.004,
+            "stitch": true,
+            "spacing": 0.03,
+            "shadow": [
+              8,
+              11,
+              12
+            ],
+            "highlight": [
+              84,
+              96,
+              99
+            ],
+            "alpha": 145
+          },
+          {
+            "points": [
+              [
+                0.75,
+                0.3
+              ],
+              [
+                0.64,
+                0.38
+              ],
+              [
+                0.61,
+                0.74
+              ]
+            ],
+            "width": 0.004,
+            "stitch": true,
+            "spacing": 0.03,
+            "shadow": [
+              8,
+              11,
+              12
+            ],
+            "highlight": [
+              84,
+              96,
+              99
+            ],
+            "alpha": 145
+          },
+          {
+            "points": [
+              [
+                0.34,
+                0.83
+              ],
+              [
+                0.5,
+                0.88
+              ],
+              [
+                0.66,
+                0.83
+              ]
+            ],
+            "width": 0.004,
+            "stitch": true,
+            "spacing": 0.032,
+            "shadow": [
+              8,
+              11,
+              12
+            ],
+            "highlight": [
+              78,
+              91,
+              94
+            ],
+            "alpha": 135
+          }
+        ],
+        "closures": [
+          {
+            "type": "snaps",
+            "from": [
+              0.5,
+              0.31
+            ],
+            "to": [
+              0.5,
+              0.66
+            ],
+            "count": 4,
+            "radius": 0.004
+          }
+        ],
+        "wear": {
+          "count": 9,
+          "x_range": [
+            0.16,
+            0.84
+          ],
+          "y_range": [
+            0.18,
+            0.9
+          ],
+          "highlight": [
+            96,
+            106,
+            108
+          ]
+        }
+      },
+      "north": {
+        "folds": [
+          {
+            "points": [
+              [
+                0.2,
+                0.2
+              ],
+              [
+                0.18,
+                0.54
+              ],
+              [
+                0.21,
+                0.9
+              ]
+            ],
+            "width": 0.015,
+            "strength": 0.4
+          },
+          {
+            "points": [
+              [
+                0.8,
+                0.2
+              ],
+              [
+                0.82,
+                0.54
+              ],
+              [
+                0.79,
+                0.9
+              ]
+            ],
+            "width": 0.015,
+            "strength": 0.36
+          }
+        ],
+        "components": [
+          {
+            "name": "back shoulder yoke",
+            "material": "bluegrey_fabric",
+            "contour": [
+              [
+                0.13,
+                0.1
+              ],
+              [
+                0.3,
+                0.045
+              ],
+              [
+                0.5,
+                0.035
+              ],
+              [
+                0.7,
+                0.045
+              ],
+              [
+                0.87,
+                0.1
+              ],
+              [
+                0.79,
+                0.28
+              ],
+              [
+                0.64,
+                0.34
+              ],
+              [
+                0.36,
+                0.34
+              ],
+              [
+                0.21,
+                0.28
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.2,
+                    0.15
+                  ],
+                  [
+                    0.38,
+                    0.2
+                  ],
+                  [
+                    0.5,
+                    0.18
+                  ],
+                  [
+                    0.62,
+                    0.2
+                  ],
+                  [
+                    0.8,
+                    0.15
+                  ]
+                ],
+                "width": 0.014,
+                "height": 0.2
+              }
+            ],
+            "shadow": 24,
+            "shadow_radius": 6,
+            "feather": 1.8,
+            "edge_irregularity": 0.004
+          },
+          {
+            "name": "back central weave",
+            "material": "black_weave",
+            "contour": [
+              [
+                0.39,
+                0.25
+              ],
+              [
+                0.5,
+                0.21
+              ],
+              [
+                0.61,
+                0.25
+              ],
+              [
+                0.6,
+                0.8
+              ],
+              [
+                0.54,
+                0.92
+              ],
+              [
+                0.5,
+                0.95
+              ],
+              [
+                0.46,
+                0.92
+              ],
+              [
+                0.4,
+                0.8
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.5,
+                    0.26
+                  ],
+                  [
+                    0.5,
+                    0.9
+                  ]
+                ],
+                "width": 0.012,
+                "height": 0.24
+              }
+            ],
+            "shadow": 25,
+            "shadow_radius": 7,
+            "feather": 1.5,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "left back inset",
+            "material": "bluegrey_fabric",
+            "contour": [
+              [
+                0.2,
+                0.32
+              ],
+              [
+                0.36,
+                0.29
+              ],
+              [
+                0.39,
+                0.43
+              ],
+              [
+                0.38,
+                0.77
+              ],
+              [
+                0.31,
+                0.91
+              ],
+              [
+                0.19,
+                0.85
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.25,
+                    0.38
+                  ],
+                  [
+                    0.28,
+                    0.64
+                  ],
+                  [
+                    0.25,
+                    0.84
+                  ]
+                ],
+                "width": 0.01,
+                "height": 0.17
+              }
+            ],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.7,
+            "edge_irregularity": 0.005,
+            "mirror": true
+          },
+          {
+            "name": "back waist trim",
+            "material": "gunmetal_trim",
+            "contour": [
+              [
+                0.31,
+                0.74
+              ],
+              [
+                0.69,
+                0.74
+              ],
+              [
+                0.66,
+                0.8
+              ],
+              [
+                0.34,
+                0.8
+              ]
+            ],
+            "relief": [],
+            "shadow": 13,
+            "shadow_radius": 4,
+            "feather": 1.2,
+            "edge_irregularity": 0.002
+          }
+        ],
+        "seams": [
+          {
+            "points": [
+              [
+                0.36,
+                0.34
+              ],
+              [
+                0.4,
+                0.46
+              ],
+              [
+                0.4,
+                0.8
+              ]
+            ],
+            "width": 0.004,
+            "stitch": true,
+            "spacing": 0.03,
+            "shadow": [
+              8,
+              11,
+              12
+            ],
+            "highlight": [
+              82,
+              94,
+              97
+            ],
+            "alpha": 140
+          },
+          {
+            "points": [
+              [
+                0.64,
+                0.34
+              ],
+              [
+                0.6,
+                0.46
+              ],
+              [
+                0.6,
+                0.8
+              ]
+            ],
+            "width": 0.004,
+            "stitch": true,
+            "spacing": 0.03,
+            "shadow": [
+              8,
+              11,
+              12
+            ],
+            "highlight": [
+              82,
+              94,
+              97
+            ],
+            "alpha": 140
+          }
+        ],
+        "closures": [],
+        "wear": {
+          "count": 8,
+          "x_range": [
+            0.18,
+            0.82
+          ],
+          "y_range": [
+            0.18,
+            0.91
+          ],
+          "highlight": [
+            92,
+            103,
+            105
+          ]
+        }
+      },
+      "east": {
+        "folds": [
+          {
+            "points": [
+              [
+                0.27,
+                0.2
+              ],
+              [
+                0.25,
+                0.56
+              ],
+              [
+                0.3,
+                0.91
+              ]
+            ],
+            "width": 0.015,
+            "strength": 0.38
+          },
+          {
+            "points": [
+              [
+                0.68,
+                0.2
+              ],
+              [
+                0.72,
+                0.54
+              ],
+              [
+                0.68,
+                0.88
+              ]
+            ],
+            "width": 0.013,
+            "strength": 0.3
+          }
+        ],
+        "components": [
+          {
+            "name": "side shoulder yoke",
+            "material": "bluegrey_fabric",
+            "contour": [
+              [
+                0.2,
+                0.1
+              ],
+              [
+                0.42,
+                0.045
+              ],
+              [
+                0.67,
+                0.06
+              ],
+              [
+                0.84,
+                0.16
+              ],
+              [
+                0.77,
+                0.31
+              ],
+              [
+                0.58,
+                0.35
+              ],
+              [
+                0.3,
+                0.3
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.28,
+                    0.16
+                  ],
+                  [
+                    0.48,
+                    0.2
+                  ],
+                  [
+                    0.72,
+                    0.18
+                  ]
+                ],
+                "width": 0.014,
+                "height": 0.2
+              }
+            ],
+            "shadow": 23,
+            "shadow_radius": 6,
+            "feather": 1.8,
+            "edge_irregularity": 0.004
+          },
+          {
+            "name": "side central weave",
+            "material": "black_weave",
+            "contour": [
+              [
+                0.38,
+                0.28
+              ],
+              [
+                0.58,
+                0.23
+              ],
+              [
+                0.7,
+                0.31
+              ],
+              [
+                0.69,
+                0.78
+              ],
+              [
+                0.6,
+                0.91
+              ],
+              [
+                0.48,
+                0.94
+              ],
+              [
+                0.4,
+                0.82
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.54,
+                    0.29
+                  ],
+                  [
+                    0.55,
+                    0.86
+                  ]
+                ],
+                "width": 0.012,
+                "height": 0.22
+              }
+            ],
+            "shadow": 24,
+            "shadow_radius": 7,
+            "feather": 1.5,
+            "edge_irregularity": 0.003
+          },
+          {
+            "name": "side tailored inset",
+            "material": "bluegrey_fabric",
+            "contour": [
+              [
+                0.2,
+                0.34
+              ],
+              [
+                0.38,
+                0.3
+              ],
+              [
+                0.41,
+                0.44
+              ],
+              [
+                0.4,
+                0.78
+              ],
+              [
+                0.34,
+                0.91
+              ],
+              [
+                0.22,
+                0.84
+              ]
+            ],
+            "relief": [
+              {
+                "points": [
+                  [
+                    0.28,
+                    0.4
+                  ],
+                  [
+                    0.3,
+                    0.65
+                  ],
+                  [
+                    0.28,
+                    0.84
+                  ]
+                ],
+                "width": 0.01,
+                "height": 0.17
+              }
+            ],
+            "shadow": 18,
+            "shadow_radius": 5,
+            "feather": 1.7,
+            "edge_irregularity": 0.005
+          },
+          {
+            "name": "side waist trim",
+            "material": "gunmetal_trim",
+            "contour": [
+              [
+                0.31,
+                0.74
+              ],
+              [
+                0.68,
+                0.73
+              ],
+              [
+                0.67,
+                0.79
+              ],
+              [
+                0.33,
+                0.8
+              ]
+            ],
+            "relief": [],
+            "shadow": 13,
+            "shadow_radius": 4,
+            "feather": 1.2,
+            "edge_irregularity": 0.002
+          }
+        ],
+        "seams": [
+          {
+            "points": [
+              [
+                0.38,
+                0.34
+              ],
+              [
+                0.41,
+                0.48
+              ],
+              [
+                0.4,
+                0.8
+              ]
+            ],
+            "width": 0.004,
+            "stitch": true,
+            "spacing": 0.03,
+            "shadow": [
+              8,
+              11,
+              12
+            ],
+            "highlight": [
+              82,
+              94,
+              97
+            ],
+            "alpha": 140
+          }
+        ],
+        "closures": [
+          {
+            "type": "snaps",
+            "from": [
+              0.57,
+              0.37
+            ],
+            "to": [
+              0.58,
+              0.64
+            ],
+            "count": 3,
+            "radius": 0.004
+          }
+        ],
+        "wear": {
+          "count": 7,
+          "x_range": [
+            0.2,
+            0.78
+          ],
+          "y_range": [
+            0.18,
+            0.9
+          ],
+          "highlight": [
+            91,
+            102,
+            104
+          ]
+        }
+      }
+    }
+  }
+}

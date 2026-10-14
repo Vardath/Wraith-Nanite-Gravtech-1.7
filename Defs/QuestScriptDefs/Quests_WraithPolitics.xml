@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>WNG_WraithInterHiveMediation</defName>
+    <rootSelectionWeight>0.35</rootSelectionWeight>
+    <rootEarliestDay>20</rootEarliestDay>
+    <minRefireDays>30</minRefireDays>
+    <expireDaysRange>5~9</expireDaysRange>
+    <affectedByPoints>false</affectedByPoints>
+    <root Class="WraithNaniteGravtech.QuestNode_Root_WraithInterHiveMediation" />
+    <questNameRules>
+      <rulesStrings><li>questName->inter-hive mediation</li></rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A narrow diplomatic channel has opened between two mutable Wraith lineages. Both sides distrust one another, but cultured biomass has neutral biological value. Your colony can underwrite a bounded exchange that changes their actual native faction relationship. The exact parties, present goodwill and biomass commitment are shown below.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+  </QuestScriptDef>
+</Defs>

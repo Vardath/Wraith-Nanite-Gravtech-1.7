@@ -1,0 +1,116 @@
+{
+  "id": "wraith_uniform",
+  "item": "WNG_WraithUniform",
+  "faction": "Wraith",
+  "output_dir": "Wraith",
+  "research": {
+    "rule": "Stargate production costume and prop references first; no historical WNG apparel",
+    "status": "stage_1_locked",
+    "sources": [
+      {
+        "type": "screen_used_auction_record",
+        "title": "Propworx screen-used Wraith male commander costume record (mirrored by Stargate-Fusion)",
+        "url": "https://www.stargate-fusion.com/fiches/coulisses/23-costumes-uniformes/5733-commandant-wraith-lunion-fait-la-force.html",
+        "evidence": [
+          "Green leather outer garment and black reptile-pattern leather vest.",
+          "Front snaps and zipper closures with side/back lacing.",
+          "Leather trousers, gauntlets and boots establish the practical Wraith wardrobe material language."
+        ]
+      },
+      {
+        "type": "screen_used_auction_record",
+        "title": "Screen-used Wraith commander costume record",
+        "url": "https://www.stargate-fusion.com/fiches/6511-costume-commandant-wraith.html",
+        "evidence": [
+          "Long vest/jacket construction is primarily soft leather.",
+          "Layered textured upper-sleeve/shoulder work and visible production wear.",
+          "Lacing and snap construction support a hand-built rather than generic sci-fi finish."
+        ]
+      },
+      {
+        "type": "costume_designer_primary",
+        "title": "Val Halverson Q&A hosted by Joseph Mallozzi",
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/",
+        "evidence": [
+          "Wraith costumes were generally three-piece builds using substantial cowhide and contrast leather.",
+          "Texture was deliberately important to the costume design.",
+          "Later male Wraith differentiation was subtle rather than based on loud rank geometry."
+        ]
+      },
+      {
+        "type": "production_costume_context",
+        "title": "Wraith Drone Costume auction context",
+        "url": "https://www.gateworld.net/news/2010/07/propworx-stargate-auctions-week-23/",
+        "evidence": [
+          "Use only as supporting evidence for Wraith undergarment/material construction, not as the everyday-uniform silhouette."
+        ]
+      }
+    ],
+    "required_visual_language": [
+      "fitted waist-length everyday Wraith uniform",
+      "dark green-black worn cowhide leather",
+      "black reptile-pattern leather central vest and shoulder yoke",
+      "dark soft-leather sleeve and side structure",
+      "narrow contrast-leather collar and front placket",
+      "restrained snaps, zipper and side/back lacing",
+      "subtle production wear, creasing, rubbed edges and handmade asymmetry",
+      "ordinary caste-neutral wardrobe suitable beneath later armour"
+    ],
+    "avoid": [
+      "historical WNG apparel",
+      "generic sci-fi bodysuit",
+      "generic plate armour",
+      "large geometric panels",
+      "flat vector geometry",
+      "purple armour with cyan lines",
+      "neon or luminous piping",
+      "superhero breastplate symmetry",
+      "ship pieces attached to clothing",
+      "clean plastic surfaces",
+      "procedural material painting"
+    ]
+  },
+  "rimworld": {
+    "family": "ShirtButton",
+    "body_types": ["Male", "Female", "Thin", "Fat", "Hulk"],
+    "tile_scale": 0.86,
+    "cover_body": true
+  },
+  "masters": {
+    "south": "master_south.png",
+    "north": "master_north.png",
+    "east": "master_east.png"
+  },
+  "qa": {
+    "min_contrast": 14,
+    "max_white_fraction": 0.02,
+    "max_edge_lift": 24
+  },
+  "external_art_spec": {
+    "minimum_master_resolution": 1024,
+    "orthographic_views": ["south/front", "north/back", "east/side"],
+    "background": "transparent",
+    "instruction": "finished professional painted RimWorld apparel master, isolated garment only",
+    "silhouette": "vanilla RimWorld ShirtButton proportions and body coverage; fitted torso garment, not a long coat and not armour",
+    "source_priority": "Stargate Atlantis production Wraith leather wardrobe first",
+    "material_painting": [
+      "worn cowhide leather",
+      "reptile-pattern leather",
+      "soft folds and leather creasing",
+      "hand stitching and restrained lacing",
+      "aged dark metal snaps/zipper",
+      "rubbed edges and asymmetric wear",
+      "broad painted form lighting with recess shadows and subtle edge catches"
+    ],
+    "banned": [
+      "historical WNG clothing",
+      "procedural panels",
+      "flat vector shapes",
+      "generic sci-fi armour",
+      "glowing outlines",
+      "random polygons",
+      "cartoon blobs",
+      "realistic human anatomy or mannequin"
+    ]
+  }
+}

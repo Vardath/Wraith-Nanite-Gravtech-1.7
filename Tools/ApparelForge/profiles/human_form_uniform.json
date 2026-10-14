@@ -1,0 +1,99 @@
+{
+  "id": "human_form_uniform",
+  "item": "WNG_HumanFormUniform",
+  "faction": "Precursor",
+  "output_dir": "Precursor",
+  "research": {
+    "rule": "Stargate production costume references first; no historical WNG apparel",
+    "status": "stage_1_locked",
+    "sources": [
+      {
+        "type": "screen_used_costume_record",
+        "title": "Stargate Atlantis Asuran Replicator Soldier Uniform - screen used",
+        "url": "https://www.spotern.com/en/product/8502",
+        "evidence": [
+          "screen-used Asuran soldier uniform establishes the human-form Replicator wardrobe family"
+        ]
+      },
+      {
+        "type": "show_costume_context",
+        "title": "Stargate Atlantis costume construction interview - Christina McQuarrie",
+        "url": "https://www.gateworld.net/news/2009/08/stitches-in-time/",
+        "evidence": [
+          "Atlantis-era production uniforms use simple, readable, practical tailoring rather than generic plated sci-fi armour"
+        ]
+      },
+      {
+        "type": "asuran_prop_context",
+        "title": "Hero Asuran Replicator stunner and holster",
+        "url": "https://www.thepropgallery.com/hero-asuran-replicator-stunner-holster",
+        "evidence": [
+          "Asuran production prop language uses restrained Ancient-derived geometry, dark materials and precise detailing"
+        ]
+      }
+    ],
+    "required_visual_language": [
+      "pale silver-grey fitted precursor outer fabric",
+      "dark graphite technical underlayer",
+      "clean high collar and restrained angular Ancient/Asuran seam language",
+      "tailored uniform construction rather than battlefield armour",
+      "subtle aged metallic edging and practical waist fastenings",
+      "RimWorld pawn-shaped fitted uniform with no separately drawn humanoid limbs"
+    ],
+    "avoid": [
+      "historical WNG apparel",
+      "generic marine armour",
+      "neon piping",
+      "cyan glow lines",
+      "bulky power armour plates",
+      "ship parts on clothing",
+      "superhero breastplate",
+      "procedural replacement art"
+    ]
+  },
+  "rimworld": {
+    "family": "Duster",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "tile_scale": 0.76,
+    "cover_body": true,
+    "preserve_master_ratio": false,
+    "mapping_mode": "vanilla_clip",
+    "inventory_source": "fitted_male_south",
+    "fit_revision": "professional-master-pawn-fit-tile-from-fitted-art-v2"
+  },
+  "masters": {
+    "south": "master_south.png",
+    "north": "master_north.png",
+    "east": "master_east.png"
+  },
+  "qa": {
+    "min_contrast": 12,
+    "max_white_fraction": 0.08,
+    "max_edge_lift": 68
+  },
+  "external_art_spec": {
+    "minimum_master_resolution": 1024,
+    "orthographic_views": [
+      "south/front",
+      "north/back",
+      "east/side"
+    ],
+    "background": "transparent",
+    "instruction": "finished professional painted RimWorld apparel master",
+    "silhouette": "vanilla RimWorld Duster outer silhouette plus matching pawn body coverage; fit the finished art to the pawn silhouette, then derive inventory from that fitted art",
+    "source_priority": "screen-used Stargate Atlantis Asuran human-form uniform reference family",
+    "banned": [
+      "historical WNG clothing",
+      "generic sci-fi armour",
+      "neon piping",
+      "ship parts on clothing",
+      "procedural replacement art"
+    ]
+  }
+}

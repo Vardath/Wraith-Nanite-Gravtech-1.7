@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- WNG-owned Goa'uld shuttle reconstruction. ONAC integration is applied conditionally by patch. -->
+  <ResearchProjectDef>
+    <defName>WNG_GoauldShuttles</defName>
+    <label>Goa'uld shuttle integration</label>
+    <description>Reconstruct Goa'uld Death Gliders and Al'kesh transports on Odyssey's native shuttle stack. Without ONAC they use substitute Chemfuel propulsion; when ONAC is installed its naquadah construction and liquid-Naquadria fuel economy are restored automatically.</description>
+    <baseCost>3200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>Shuttles</li>
+    </prerequisites>
+    <researchViewX>21</researchViewX>
+    <researchViewY>12.5</researchViewY>
+  </ResearchProjectDef>
+</Defs>

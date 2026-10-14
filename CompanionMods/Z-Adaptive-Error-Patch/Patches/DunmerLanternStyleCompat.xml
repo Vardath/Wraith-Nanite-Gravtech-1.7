@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Dunmer Lamp Pack 1.6, workshop 3654943384. Its nested FindMod
+    sequence fails in the user's logged 626-mod stack. Reconstruct
+    only its confirmed style-group additions and only if the actual
+    ESCP Dunmer StyleCategoryDefs survive the current mod set.
+    Guards preserve existing designators and prevent duplicated lists.
+    No removed/renamed style categories or building defs are invented.
+  -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerStyle"][not(addDesignatorGroups)]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerStyle"][not(addDesignatorGroups)]</xpath>
+        <value><addDesignatorGroups><li>MorrowRim_DunmerFueledLanterns</li></addDesignatorGroups></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerStyle"]/addDesignatorGroups[not(li[normalize-space(.)="MorrowRim_DunmerFueledLanterns"])]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerStyle"]/addDesignatorGroups[not(li[normalize-space(.)="MorrowRim_DunmerFueledLanterns"])]</xpath>
+        <value><li>MorrowRim_DunmerFueledLanterns</li></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerStyle"][not(addDesignatorGroups)]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerStyle"][not(addDesignatorGroups)]</xpath>
+        <value><addDesignatorGroups><li>MorrowRim_DunmerElectricLanterns</li></addDesignatorGroups></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerStyle"]/addDesignatorGroups[not(li[normalize-space(.)="MorrowRim_DunmerElectricLanterns"])]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerStyle"]/addDesignatorGroups[not(li[normalize-space(.)="MorrowRim_DunmerElectricLanterns"])]</xpath>
+        <value><li>MorrowRim_DunmerElectricLanterns</li></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerAshlanderStyle"][not(addDesignators)]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerAshlanderStyle"][not(addDesignators)]</xpath>
+        <value><addDesignators><li>MorrowRim_DunmerAshlanderLanternFueled_A</li></addDesignators></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerAshlanderStyle"]/addDesignators[not(li[normalize-space(.)="MorrowRim_DunmerAshlanderLanternFueled_A"])]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerAshlanderStyle"]/addDesignators[not(li[normalize-space(.)="MorrowRim_DunmerAshlanderLanternFueled_A"])]</xpath>
+        <value><li>MorrowRim_DunmerAshlanderLanternFueled_A</li></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerAshlanderStyle"][not(addDesignators)]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerAshlanderStyle"][not(addDesignators)]</xpath>
+        <value><addDesignators><li>MorrowRim_DunmerAshlanderLanternElectric_A</li></addDesignators></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerAshlanderStyle"]/addDesignators[not(li[normalize-space(.)="MorrowRim_DunmerAshlanderLanternElectric_A"])]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/StyleCategoryDef[defName="ESCP_DunmerAshlanderStyle"]/addDesignators[not(li[normalize-space(.)="MorrowRim_DunmerAshlanderLanternElectric_A"])]</xpath>
+        <value><li>MorrowRim_DunmerAshlanderLanternElectric_A</li></value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

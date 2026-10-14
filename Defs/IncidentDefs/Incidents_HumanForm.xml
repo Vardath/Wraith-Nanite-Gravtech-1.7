@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Primary human-form infiltration path. The pawn itself remains the operative throughout:
+    cover faction/allegiance is presentation state, not a replacement pawn or proxy identity.
+  -->
+  <IncidentDef>
+    <defName>WNG_HumanFormInfiltration</defName>
+    <label>Quiet Lattice technical visitor</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_HumanFormInfiltration</workerClass>
+    <baseChance>0.045</baseChance>
+    <earliestDay>8</earliestDay>
+    <minRefireDays>12</minRefireDays>
+    <letterLabel>Quiet Lattice technical visitor</letterLabel>
+    <letterText>A lone technician from the Quiet Lattice has entered the area and requested permission to map local field interference before continuing on. Their credentials appear legitimate and they carry no visible weapon. If you distrust the visit, a drafted colonist with solid medical or intellectual training can conduct a close inspection by remaining beside the visitor for a short time.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+    <modExtensions>
+      <li Class="WraithNaniteGravtech.HumanFormInfiltrationSettingsExtension">
+        <coverFactionDefName>WNG_HumanFormEnclave</coverFactionDefName>
+        <useFactionlessCover>false</useFactionlessCover>
+        <maximumCoverTicks>30000</maximumCoverTicks>
+        <targetObservationTicks>2000</targetObservationTicks>
+        <closeInspectionTicks>720</closeInspectionTicks>
+        <closeInspectionRadius>3</closeInspectionRadius>
+        <inspectionSkillThreshold>6</inspectionSkillThreshold>
+        <suspiciousWitnessTicks>600</suspiciousWitnessTicks>
+        <suspiciousWitnessRadius>8</suspiciousWitnessRadius>
+      </li>
+    </modExtensions>
+  </IncidentDef>
+
+  <!-- Secondary cover keeps the older unaffiliated-traveller fiction as a rarer variant. -->
+  <IncidentDef>
+    <defName>WNG_HumanFormInfiltrationUnaffiliated</defName>
+    <label>unaffiliated technical traveller</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_HumanFormInfiltration</workerClass>
+    <baseChance>0.018</baseChance>
+    <earliestDay>12</earliestDay>
+    <minRefireDays>20</minRefireDays>
+    <letterLabel>Unaffiliated technical traveller</letterLabel>
+    <letterText>A lone offworld technician has entered the area claiming no faction allegiance. No weapon is visible. They say they are mapping local field interference before continuing on. If the story seems suspicious, a drafted colonist with solid medical or intellectual training can conduct a close inspection by remaining beside the traveller for a short time.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+    <modExtensions>
+      <li Class="WraithNaniteGravtech.HumanFormInfiltrationSettingsExtension">
+        <useFactionlessCover>true</useFactionlessCover>
+        <maximumCoverTicks>30000</maximumCoverTicks>
+        <targetObservationTicks>2000</targetObservationTicks>
+        <closeInspectionTicks>720</closeInspectionTicks>
+        <closeInspectionRadius>3</closeInspectionRadius>
+        <inspectionSkillThreshold>6</inspectionSkillThreshold>
+        <suspiciousWitnessTicks>600</suspiciousWitnessTicks>
+        <suspiciousWitnessRadius>8</suspiciousWitnessRadius>
+      </li>
+    </modExtensions>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>WNG_ReplicatorQueenVaultDiscovery</defName>
+    <label>sealed nanite vault discovery</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_ReplicatorQueenVaultDiscovery</workerClass>
+    <baseChance>0.075</baseChance>
+    <earliestDay>10</earliestDay>
+    <minRefireDays>12</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+
+
+  <!-- Only available while the hostile Lattice physically retains the one exact Queen. -->
+  <IncidentDef>
+    <defName>WNG_CapturedQueenSovereignStrike</defName>
+    <label>Queen-linked Replicator strike</label>
+    <category>ThreatBig</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_CapturedQueenSovereignStrike</workerClass>
+    <baseChance>0.035</baseChance>
+    <earliestDay>0</earliestDay>
+    <minRefireDays>5</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+</Defs>

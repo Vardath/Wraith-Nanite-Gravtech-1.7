@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_ReplicatorMatter</defName>
+    <label>replicator blocks</label>
+    <thingCategories Inherit="False"><li>Manufactured</li></thingCategories>
+    <description>Loose self-organizing Replicator blocks. A recovered sample can be analyzed to unlock formal Replicator study. A stack containing at least ten Blocks can reconstruct a hostile Drone after sufficient uncontained exposure, and a powered nanite containment projector pauses that hazard.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Replicator/WNG_ReplicatorMatter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>250</stackLimit>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorMatterReassembly">
+        <minimumStack>10</minimumStack>
+        <consumePerDrone>10</consumePerDrone>
+        <exposedTicksRequired>30000</exposedTicksRequired>
+      </li>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>860106</analysisID>
+        <analysisRequiredRange>1~1</analysisRequiredRange>
+        <analysisDurationHours>3</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <allowRepeatAnalysis>false</allowRepeatAnalysis>
+        <canStudyInPlace>false</canStudyInPlace>
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+        <activateLabelString>Analyze Replicator blocks</activateLabelString>
+        <activateDescString>Study the self-organizing architecture and controller signalling preserved in these physical Replicator blocks.</activateDescString>
+        <jobString>analyzing Replicator blocks</jobString>
+        <guiLabelString>Choose who should analyze the Replicator blocks</guiLabelString>
+        <inspectString>Can be analyzed to unlock Replicator study.</inspectString>
+        <completedLetterLabel>Replicator architecture mapped</completedLetterLabel>
+        <completedLetter>The recovered blocks have been mapped closely enough to begin formal Replicator research. The blocks remain physical salvage and retain their normal containment and reassembly hazard.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+    <statBases>
+      <MarketValue>6</MarketValue>
+      <Mass>0.03</Mass>
+    </statBases>
+  </ThingDef>
+
+  <!-- Powered containment mechanics/progression are current. Visuals use the approved retained Replicator-art exception; no historical containment code/Defs are imported. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_ReplicatorContainmentProjector</defName>
+    <label>nanite containment projector</label>
+    <description>A powered short-range field projector that suppresses uncontrolled block-Replicator assimilation and physical recombination, and pauses loose Replicator Block reassembly inside its field. It does not destroy contained Replicators; loss of power ends suppression immediately.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Replicator/Containment/WNG_ReplicatorContainmentProjector</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.4,2.4)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.55</fillPercent>
+    <rotatable>true</rotatable>
+    <uiIconPath>UI/WNG/Build/WNG_ReplicatorContainmentProjector</uiIconPath>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories><li>Buildings</li></thingCategories>
+    <statBases>
+      <MaxHitPoints>360</MaxHitPoints>
+      <WorkToBuild>4200</WorkToBuild>
+      <Mass>45</Mass>
+      <Flammability>0.15</Flammability>
+      <Beauty>2</Beauty>
+    </statBases>
+    <costList>
+      <Steel>120</Steel>
+      <Plasteel>35</Plasteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <designationCategory>Security</designationCategory>
+    <uiOrder>1650</uiOrder>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <researchPrerequisites>
+      <li>WNG_NaniteContainment</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1200</basePowerConsumption>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorContainmentProjector">
+        <radius>8.5</radius>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

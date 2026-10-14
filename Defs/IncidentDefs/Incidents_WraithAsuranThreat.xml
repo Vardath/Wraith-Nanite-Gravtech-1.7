@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_WraithAsuranExtermination</defName>
+    <label>Wraith anti-Asuran extermination</label>
+    <category>ThreatBig</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_WraithAsuranExtermination</workerClass>
+    <baseChance>0</baseChance>
+    <earliestDay>0</earliestDay>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+</Defs>

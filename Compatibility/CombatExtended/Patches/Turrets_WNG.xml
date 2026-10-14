@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Fixed defensive turrets remain ammo-less/internal-energy systems in CE. -->
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_Gun_WraithLivingTurret</defName>
+    <statBases>
+      <Mass>18</Mass>
+      <RangedWeapon_Cooldown>3.1</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.1</SightsEfficiency>
+      <ShotSpread>0.11</ShotSpread>
+      <SwayFactor>0.8</SwayFactor>
+    </statBases>
+    <Properties>
+      <recoilAmount>1.4</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>WNG_CE_Projectile_WraithHeavy</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <range>31.9</range>
+      <minRange>2</minRange>
+      <burstShotCount>3</burstShotCount>
+      <ticksBetweenBurstShots>13</ticksBetweenBurstShots>
+      <soundCast>WNG_WraithHeavyBioWeapon_Fire</soundCast>
+      <muzzleFlashScale>5</muzzleFlashScale>
+      <recoilPattern>Mounted</recoilPattern>
+    </Properties>
+    <FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="WNG_WraithLivingTurret"]/thingClass</xpath>
+    <value><thingClass>CombatExtended.Building_TurretGunCE</thingClass></value>
+  </Operation>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>WNG_Gun_AsuranAutoturret</defName>
+    <statBases>
+      <Mass>16</Mass>
+      <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.45</SightsEfficiency>
+      <ShotSpread>0.045</ShotSpread>
+      <SwayFactor>0.25</SwayFactor>
+    </statBases>
+    <Properties>
+      <recoilAmount>0.55</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>WNG_CE_Projectile_PrecursorPulse</defaultProjectile>
+      <warmupTime>0</warmupTime>
+      <range>36.9</range>
+      <minRange>2</minRange>
+      <burstShotCount>3</burstShotCount>
+      <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+      <soundCast>WNG_PrecursorPulseRifle_Fire</soundCast>
+      <muzzleFlashScale>5</muzzleFlashScale>
+      <recoilPattern>Mounted</recoilPattern>
+    </Properties>
+    <FireModes><aiAimMode>AimedShot</aiAimMode></FireModes>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="WNG_AsuranAutoturret"]/thingClass</xpath>
+    <value><thingClass>CombatExtended.Building_TurretGunCE</thingClass></value>
+  </Operation>
+</Patch>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs><SitePartDef>
+  <defName>WNG_WraithCloningInstallation</defName><label>abandoned Wraith cloning installation</label>
+  <description>A mostly sealed Wraith population-production ruin containing dead gestation cocoons, collapsed nutrient transfer machinery and a drained donor dais. No live cloning system remains.</description>
+  <workerClass>WraithNaniteGravtech.SitePartWorker_WraithCloningInstallation</workerClass>
+  <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture><showFactionInInspectString>false</showFactionInInspectString><requiresFaction>false</requiresFaction>
+  <wantsThreatPoints>true</wantsThreatPoints><minThreatPoints>300</minThreatPoints><considerEnteringAsAttack>false</considerEnteringAsAttack><selectionWeight>0</selectionWeight>
+  <arrivedLetter>A mostly sealed Wraith cloning installation lies ahead. Its gestation systems are dead, though finite biological salvage may remain and a Keeper-led reclamation party is possible.</arrivedLetter><arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+</SitePartDef></Defs>

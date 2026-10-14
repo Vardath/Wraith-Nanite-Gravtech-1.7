@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_ReplicatorMaterialFragile</defName>
+    <label>fragile replication material</label>
+    <description>This exact block Replicator body is assembled from comparatively weak physical matter. It moves slightly more easily but offers less resistance to sharp, blunt and thermal damage.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>-0.08</ArmorRating_Sharp>
+          <ArmorRating_Blunt>-0.05</ArmorRating_Blunt>
+          <ArmorRating_Heat>-0.03</ArmorRating_Heat>
+        </statOffsets>
+        <statFactors><MoveSpeed>1.08</MoveSpeed></statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_ReplicatorMaterialStandard</defName>
+    <label>standard replication material</label>
+    <description>This exact block Replicator body is assembled from ordinary structural matter with no special durability advantage or penalty.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <stages><li /></stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_ReplicatorMaterialHardened</defName>
+    <label>hardened replication material</label>
+    <description>This exact block Replicator body contains unusually durable structural matter. Its body resists physical and thermal damage better, at a small mobility cost.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.08</ArmorRating_Heat>
+        </statOffsets>
+        <statFactors><MoveSpeed>0.96</MoveSpeed></statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_ReplicatorMaterialUltra</defName>
+    <label>ultra-dense replication material</label>
+    <description>This exact block Replicator body contains exceptionally resilient structural matter. It is substantially harder to damage, but the denser body moves more slowly.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.34</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.24</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.16</ArmorRating_Heat>
+        </statOffsets>
+        <statFactors><MoveSpeed>0.90</MoveSpeed></statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

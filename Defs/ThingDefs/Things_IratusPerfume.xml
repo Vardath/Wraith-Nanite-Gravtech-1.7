@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>WNG_IratusPerfume</defName>
+    <label>Iratus pheromone perfume</label>
+    <description>A stabilized aromatic concentrate blended from salvaged Iratus pheromones, psychoid leaves and neutroamine. Applied to the body as a short-lived social fragrance, it dramatically amplifies the wearer's social impact for about twelve hours. Its refined carrier neutralizes the raw lure that would otherwise attract Iratus bugs.</description>
+    <recipeMaker IsNull="True" />
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <alwaysHaulable>true</alwaysHaulable>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Item/Drug/WNG_IratusPerfume</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <stackLimit>25</stackLimit>
+    <statBases>
+      <MarketValue>90</MarketValue>
+      <Mass>0.06</Mass>
+      <WorkToMake>1100</WorkToMake>
+      <DeteriorationRate>1.5</DeteriorationRate>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <foodType>Fluid, Processed</foodType>
+      <drugCategory>Social</drugCategory>
+      <baseIngestTicks>140</baseIngestTicks>
+      <ingestSound>Ingest_Drink</ingestSound>
+      <ingestCommandString>Apply {0}</ingestCommandString>
+      <ingestReportString>Applying {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <chairSearchRadius>0</chairSearchRadius>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_IratusPerfumeInfluence</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <costList>
+      <WNG_IratusPheromones>1</WNG_IratusPheromones>
+      <PsychoidLeaves>6</PsychoidLeaves>
+      <Neutroamine>3</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>880</listOrder>
+        <addictiveness>0</addictiveness>
+        <overdoseSeverityOffset>0~0</overdoseSeverityOffset>
+      </li>
+    </comps>
+    <tradeability>Sellable</tradeability>
+  </ThingDef>
+  <HediffDef>
+    <defName>WNG_IratusPerfumeInfluence</defName>
+    <label>Iratus perfume influence</label>
+    <description>A stabilized psychoid-pheromone perfume is temporarily amplifying the subject's perceived social presence, charisma and persuasive impact. It does not attract Iratus bugs once refined into perfume.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <maxSeverity>1</maxSeverity>
+    <initialSeverity>1</initialSeverity>
+    <isBad>false</isBad>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <SocialImpact>4.0</SocialImpact>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

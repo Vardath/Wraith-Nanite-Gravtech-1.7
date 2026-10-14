@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_WraithEnzymePharmacology</defName>
+    <label>Wraith enzyme pharmacology</label>
+    <description>Combine comparative xenobiology with Wraith feeding physiology to isolate and safely handle the enzyme responsible for their extraordinary physical performance and prey-support biology. Unlocks raw Wraith enzyme harvesting from living donors and corpses. The raw compound is powerful, highly addictive and medically dangerous; safer refined formulations require later research.</description>
+    <baseCost>2200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_ComparativeXenobiology</li>
+      <li>WNG_FeedingEcology</li>
+    </prerequisites>
+    <researchViewX>8.00</researchViewX>
+    <researchViewY>4.00</researchViewY>
+  </ResearchProjectDef>
+</Defs>

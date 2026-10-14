@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_HybridStabilisation</defName>
+    <label>hybrid stabilisation</label>
+    <description>Combine retroviral Wraith suppression with comparative Iratus and Michael-hybrid biology to buffer unstable partial transformation. Stabilisation does not cure Wraith-derived biology and does not replace the normal suppression cocktail; it provides a temporary biological safety window against abrupt reversion if primary maintenance lapses.</description>
+    <baseCost>4200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_WraithRetroviralTherapy</li>
+      <li>WNG_WhispersHybridAnalysis</li>
+      <li>WNG_IratusPharmacology</li>
+    </prerequisites>
+    <researchViewX>11.50</researchViewX>
+    <researchViewY>4.75</researchViewY>
+  </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Accepted human-form combat shell recovered for the player human-form starts. -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_HumanFormCombatArmor</defName>
+    <recipeMaker IsNull="True" />
+    <label>human-form replicator combat armor</label>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <description>A close-fitted combat shell of plasteel, field mesh and self-repairing precursor composites.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData><texPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_HumanFormCombatArmor</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases>
+      <MaxHitPoints>340</MaxHitPoints><WorkToMake>52000</WorkToMake><Mass>7.5</Mass><EquipDelay>3</EquipDelay>
+      <ArmorRating_Sharp>1.58</ArmorRating_Sharp><ArmorRating_Blunt>0.68</ArmorRating_Blunt><ArmorRating_Heat>0.9</ArmorRating_Heat>
+    </statBases>
+    <costList><Plasteel>80</Plasteel><ComponentSpacer>3</ComponentSpacer></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <layers><li>Shell</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_HumanFormCombatArmor</wornGraphicPath>
+      <tags><li>WNG_HumanFormArmor</li><li>WNG_PrecursorArmor</li></tags>
+      <defaultOutfitTags><li>Worker</li><li>Soldier</li><li>Spacefarer</li></defaultOutfitTags>
+    </apparel>
+  
+    <smeltProducts><WNG_ReplicatorMatter>2</WNG_ReplicatorMatter></smeltProducts>
+  </ThingDef>
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_HumanFormUniform</defName>
+    <recipeMaker IsNull="True" />
+    <label>human-form replicator uniform</label>
+    <thingCategories Inherit="False"><li>ApparelMisc</li></thingCategories>
+    <description>A fitted pale uniform assembled from self-aligning precursor fibers. It provides modest environmental and combat protection while serving as ordinary human-form Replicator attire rather than a battlefield shell.</description>
+    <techLevel>Spacer</techLevel>
+    <!-- Dedicated clean uniform art remains part of the later non-Replicator presentation pass.
+         Until then this retained apparel reuses current clean human-form artwork rather than old forbidden bytes. -->
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_HumanFormUniform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>220</MaxHitPoints>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2.5</Mass>
+      <EquipDelay>1.8</EquipDelay>
+      <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.45</ArmorRating_Heat>
+    </statBases>
+    <costList>
+      <Synthread>45</Synthread>
+      <Plasteel>10</Plasteel>
+      <WNG_ReplicatorMatter>8</WNG_ReplicatorMatter>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li>
+      </bodyPartGroups>
+      <layers><li>Shell</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_HumanFormUniform</wornGraphicPath>
+      <tags><li>WNG_HumanFormClothing</li></tags>
+      <defaultOutfitTags><li>Worker</li><li>Soldier</li><li>Spacefarer</li></defaultOutfitTags>
+    </apparel>
+  
+    <smeltProducts><WNG_ReplicatorMatter>2</WNG_ReplicatorMatter></smeltProducts>
+  </ThingDef>
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_HumanFormFieldArmor</defName>
+    <recipeMaker IsNull="True" />
+    <label>human-form replicator field armour</label>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <description>A mobile Asuran field shell built over a fitted human-form uniform. White precursor composite plates carry crimson inset material and restrained gold trim, providing substantial protection without the mass of the dedicated combat shell.</description>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_HumanFormFieldArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints><WorkToMake>36000</WorkToMake><Mass>5.5</Mass><EquipDelay>2.5</EquipDelay><MarketValue>1450</MarketValue>
+      <ArmorRating_Sharp>1.25</ArmorRating_Sharp><ArmorRating_Blunt>0.52</ArmorRating_Blunt><ArmorRating_Heat>0.78</ArmorRating_Heat>
+    </statBases>
+    <costList><Synthread>30</Synthread><Plasteel>45</Plasteel><ComponentSpacer>2</ComponentSpacer><WNG_ReplicatorMatter>12</WNG_ReplicatorMatter></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <layers><li>Shell</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_HumanFormFieldArmor</wornGraphicPath>
+      <tags><li>WNG_HumanFormArmor</li><li>WNG_HumanFormFieldArmor</li></tags>
+      <defaultOutfitTags><li>Worker</li><li>Soldier</li><li>Spacefarer</li></defaultOutfitTags>
+    </apparel>
+  
+    <smeltProducts><WNG_ReplicatorMatter>3</WNG_ReplicatorMatter></smeltProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>WNG_HumanFormCommandArmor</defName>
+    <recipeMaker IsNull="True" />
+    <label>human-form replicator command armour</label>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <description>A command-grade Asuran human-form combat shell. Ivory precursor composite plates are reinforced with crimson rank panels, antique-gold command tracery and a compact command core for battlefield coordination.</description>
+    <techLevel>Ultra</techLevel>
+    <graphicData><texPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_HumanFormCommandArmor</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases>
+      <MaxHitPoints>390</MaxHitPoints><WorkToMake>62000</WorkToMake><Mass>8.5</Mass><EquipDelay>3.5</EquipDelay><MarketValue>2250</MarketValue>
+      <ArmorRating_Sharp>1.72</ArmorRating_Sharp><ArmorRating_Blunt>0.76</ArmorRating_Blunt><ArmorRating_Heat>1.00</ArmorRating_Heat><Beauty>4</Beauty>
+    </statBases>
+    <costList><Plasteel>90</Plasteel><ComponentSpacer>4</ComponentSpacer><WNG_ReplicatorMatter>18</WNG_ReplicatorMatter></costList>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <layers><li>Shell</li></layers>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Precursor/WNG_HumanFormCommandArmor</wornGraphicPath>
+      <tags><li>WNG_HumanFormArmor</li><li>WNG_HumanFormCommandArmor</li></tags>
+      <defaultOutfitTags><li>Soldier</li><li>Spacefarer</li></defaultOutfitTags>
+    </apparel>
+  
+    <smeltProducts><WNG_ReplicatorMatter>4</WNG_ReplicatorMatter></smeltProducts>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_BiopsyWhispersHybrid</defName>
+    <label>biopsy Whispers hybrid</label>
+    <description>Take a controlled sample from the altered auditory structures and neck-gill tissue of a living Whispers hybrid. The exact pawn survives, but useful repeat sampling requires several days of recovery.</description>
+    <workerClass>WraithNaniteGravtech.Anomaly.Recipe_BiopsyWhispersHybrid</workerClass>
+    <jobString>Biopsying TargetA's hybrid sensory tissues.</jobString>
+    <researchPrerequisite>WNG_ComparativeXenobiology</researchPrerequisite>
+    <workAmount>1800</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgeryOutcomeEffect>SurgeryOutcomeMinorFailure</surgeryOutcomeEffect>
+    <surgerySuccessChanceFactor>0.90</surgerySuccessChanceFactor>
+    <skillRequirements><Medicine>8</Medicine></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

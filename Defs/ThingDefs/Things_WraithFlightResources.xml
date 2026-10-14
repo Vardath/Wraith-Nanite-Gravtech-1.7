@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_WraithBiofluidFuel</defName><label>wraith bio-fluid propellant</label>
+    <thingCategories Inherit="False"><li>Manufactured</li></thingCategories>
+    <description>A dense cultivated biochemical propellant expressed by living Wraith industry. This first shuttle-stage implementation is a normal haulable resource accepted by Wraith Darts; the later gravship fuel-network layer remains separate.</description>
+    <graphicData><texPath>Things/Item/Resource/WNG_WraithBiofluidFuel</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <stackLimit>150</stackLimit><statBases><MarketValue>3.8</MarketValue><Mass>0.12</Mass><Flammability>0.55</Flammability></statBases>
+  </ThingDef>
+</Defs>

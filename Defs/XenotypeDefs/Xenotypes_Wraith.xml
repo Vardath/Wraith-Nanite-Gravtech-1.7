@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <XenotypeDef>
+    <defName>WNG_Wraith</defName>
+    <label>wraith</label>
+    <description>A predatory humanlike Wraith phenotype built around stolen Life Force and powerful biological regeneration. Wraith castes are social and functional roles of this same biological identity rather than separate races.</description>
+    <descriptionShort>Predatory humanlike Wraith biology sustained by stolen Life Force.</descriptionShort>
+    <iconPath>UI/WNG/Xenotypes/Wraith</iconPath>
+    <genes>
+      <li>WNG_LifeForceMetabolism</li>
+      <li>WNG_WraithRegeneration</li>
+      <li>WNG_HostCultivator</li>
+      <li>WNG_WraithTelepathy</li>
+      <li>Hair_SnowWhite</li>
+      <li>Hair_LongOnly</li>
+      <li>Hair_Grayless</li>
+      <li>Beard_NoBeardOnly</li>
+      <li>Skin_LightGray</li>
+    </genes>
+  </XenotypeDef>
+</Defs>

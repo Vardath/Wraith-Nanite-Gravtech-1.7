@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_PredatorReflexOrgan</defName><label>predator reflex organ</label><labelNoun>a predator reflex organ</labelNoun>
+    <description>A Wraith-derived reflex organ that sharpens target tracking, close-quarters evasion and predatory response timing. D108 balance values remain provisional pending playtesting.</description>
+    <spawnThingOnRemoved>WNG_PredatorReflexOrgan</spawnThingOnRemoved>
+    <stages><li><statOffsets><ShootingAccuracyPawn>3</ShootingAccuracyPawn><MeleeDodgeChance>4</MeleeDodgeChance></statOffsets></li></stages>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_MyomerReinforcementGland</defName><label>myomer reinforcement gland</label><labelNoun>a myomer reinforcement gland</labelNoun>
+    <description>A cultivated Wraith gland that reinforces neuromuscular output. D108 balance values remain provisional pending playtesting.</description>
+    <spawnThingOnRemoved>WNG_MyomerReinforcementGland</spawnThingOnRemoved>
+    <stages><li><capMods><li><capacity>Manipulation</capacity><postFactor>1.12</postFactor></li></capMods><statFactors><MeleeDamageFactor>1.12</MeleeDamageFactor></statFactors></li></stages>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_RegenerativeVesicle</defName><label>regenerative vesicle</label><labelNoun>a regenerative vesicle</labelNoun>
+    <description>A living Wraith vesicle that accelerates ordinary tissue repair and reduces bleeding. It does not regenerate missing parts or erase permanent scars.</description>
+    <spawnThingOnRemoved>WNG_RegenerativeVesicle</spawnThingOnRemoved>
+    <stages><li><naturalHealingFactor>1.45</naturalHealingFactor><totalBleedFactor>0.75</totalBleedFactor></li></stages>
+    <comps>
+      <li Class="WraithNaniteGravtech.HediffCompProperties_ImplantRegeneration">
+        <intervalTicks>2400</intervalTicks>
+        <healAmount>0.55</healAmount>
+        <pauseDuringNaniteEMP>false</pauseDuringNaniteEMP>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_MetabolicReserveNode</defName><label>metabolic reserve node</label><labelNoun>a metabolic reserve node</labelNoun>
+    <description>A Wraith metabolic node that reduces food demand and slows exhaustion. D108 balance values remain provisional pending playtesting.</description>
+    <spawnThingOnRemoved>WNG_MetabolicReserveNode</spawnThingOnRemoved>
+    <stages><li><hungerRateFactor>0.82</hungerRateFactor><restFallFactor>0.85</restFallFactor></li></stages>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_SensoryCrownOrgan</defName><label>sensory crown organ</label><labelNoun>a sensory crown organ</labelNoun>
+    <description>A Wraith neural-sensory crown that heightens sight, hearing and low-level psychic sensitivity. D108 balance values remain provisional pending playtesting.</description>
+    <spawnThingOnRemoved>WNG_SensoryCrownOrgan</spawnThingOnRemoved>
+    <stages><li><capMods><li><capacity>Sight</capacity><postFactor>1.15</postFactor></li><li><capacity>Hearing</capacity><postFactor>1.15</postFactor></li></capMods><statOffsets><PsychicSensitivity>0.10</PsychicSensitivity></statOffsets></li></stages>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_VitalFeedbackOrgan</defName><label>vital feedback organ</label><labelNoun>a vital feedback organ</labelNoun>
+    <description>A defensive Wraith-derived organ that interrupts hostile Wraith life-force transfer and feeds a painful bioelectric backlash into the attacking feeder.</description>
+    <spawnThingOnRemoved>WNG_VitalFeedbackOrgan</spawnThingOnRemoved>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_NaniteMotorLattice</defName><label>nanite motor lattice</label><labelNoun>a nanite motor lattice</labelNoun>
+    <description>An Asuran-derived motor lattice that reinforces movement, manipulation and weapon alignment. D108 balance values remain provisional pending playtesting.</description>
+    <spawnThingOnRemoved>WNG_NaniteMotorLattice</spawnThingOnRemoved>
+    <stages><li><capMods><li><capacity>Manipulation</capacity><postFactor>1.10</postFactor></li></capMods><statOffsets><MoveSpeed>0.30</MoveSpeed><ShootingAccuracyPawn>2</ShootingAccuracyPawn></statOffsets></li></stages>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_AutonomicEfficiencyLattice</defName><label>autonomic efficiency lattice</label><labelNoun>an autonomic efficiency lattice</labelNoun>
+    <description>An Asuran autonomic lattice that reduces metabolic and rest demand. D108 balance values remain provisional pending playtesting.</description>
+    <spawnThingOnRemoved>WNG_AutonomicEfficiencyLattice</spawnThingOnRemoved>
+    <stages><li><hungerRateFactor>0.78</hungerRateFactor><restFallFactor>0.78</restFallFactor></li></stages>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_AdaptiveSensorMesh</defName><label>adaptive sensor mesh</label><labelNoun>an adaptive sensor mesh</labelNoun>
+    <description>An Asuran sensory mesh that improves sight, hearing and ranged target acquisition. D108 balance values remain provisional pending playtesting.</description>
+    <spawnThingOnRemoved>WNG_AdaptiveSensorMesh</spawnThingOnRemoved>
+    <stages><li><capMods><li><capacity>Sight</capacity><postFactor>1.20</postFactor></li><li><capacity>Hearing</capacity><postFactor>1.20</postFactor></li></capMods><statOffsets><ShootingAccuracyPawn>3</ShootingAccuracyPawn></statOffsets></li></stages>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_ReconstructionMicroforge</defName><label>reconstruction microforge</label><labelNoun>a reconstruction microforge</labelNoun>
+    <description>A compact Asuran microforge that slowly repairs ordinary non-permanent injuries. It cannot erase scars, replace missing parts or resurrect the dead. D108 repair rate remains provisional pending playtesting.</description>
+    <hediffClass>WraithNaniteGravtech.Hediff_ReconstructionMicroforge</hediffClass>
+    <spawnThingOnRemoved>WNG_ReconstructionMicroforge</spawnThingOnRemoved>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>WNG_EMPShuntLattice</defName><label>EMP shunt lattice</label><labelNoun>an EMP shunt lattice</labelNoun>
+    <description>An Asuran shunt lattice that shortens disruptive EMP cascades through nanite physiology. It does not grant EMP immunity.</description>
+    <spawnThingOnRemoved>WNG_EMPShuntLattice</spawnThingOnRemoved>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_GravEngineSeedIncubation</defName>
+    <label>wraith grav-engine incubation</label>
+    <description>A Wraith grav engine is growing through this host's tissues. The gestation heavily incapacitates the host. If the host survives to maturity, the host is consumed and one minified grav engine emerges. Death before maturity destroys the immature organ.</description>
+    <hediffClass>WraithNaniteGravtech.Hediff_GravEngineSeedIncubation</hediffClass>
+    <isBad>true</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <stages>
+      <li>
+        <label>incubating</label>
+        <capMods>
+          <li><capacity>Moving</capacity><setMax>0.05</setMax></li>
+          <li><capacity>Consciousness</capacity><setMax>0.35</setMax></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

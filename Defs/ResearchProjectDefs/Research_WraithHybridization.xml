@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_ForbiddenHybridization</defName>
+    <label>wraith-human hybridisation</label>
+    <description>Combine Wraith genetic manipulation with feeding-resistance research to graft a limited Wraith-derived phenotype into an existing living humanlike. The Growth Chamber mutates the exact subject in place: ordinary nutrition remains, only a small unstable Life Force reserve and Partial Feed are gained, regeneration cannot rebuild missing anatomy, telepathy is limited to a surface-thought probe, and recurring instability flares remain a permanent cost.</description>
+    <baseCost>4200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_WraithRetroviralTherapy</li>
+      <li>WNG_HoffanCountermeasure</li>
+    </prerequisites>
+    <researchViewX>11.50</researchViewX>
+    <researchViewY>5.50</researchViewY>
+  </ResearchProjectDef>
+</Defs>

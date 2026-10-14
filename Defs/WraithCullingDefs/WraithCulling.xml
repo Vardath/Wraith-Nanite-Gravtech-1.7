@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WraithNaniteGravtech.WraithCullingTuningDef>
+    <defName>WNG_WraithCullingTuning</defName>
+    <custodyCheckIntervalTicks>600</custodyCheckIntervalTicks>
+    <rescueOfferDelayTicks>60000</rescueOfferDelayTicks>
+    <rescueRetryDelayTicks>120000</rescueRetryDelayTicks>
+    <rescueSiteDurationTicks>720000</rescueSiteDurationTicks>
+    <maxCaptivesPerRescueSite>3</maxCaptivesPerRescueSite>
+    <rescueSiteMinDistance>6</rescueSiteMinDistance>
+    <rescueSiteMaxDistance>18</rescueSiteMaxDistance>
+    <baseRescueThreatPoints>450</baseRescueThreatPoints>
+    <threatPerCaptive>175</threatPerCaptive>
+    <threatPerFailure>250</threatPerFailure>
+    <captivityPressureIntervalTicks>120000</captivityPressureIntervalTicks>
+    <captiveAgeYearsPerPressure>2</captiveAgeYearsPerPressure>
+    <maxCaptivityStage>4</maxCaptivityStage>
+    <threatPerCaptivityStage>125</threatPerCaptivityStage>
+    <storytellerThreatFactor>0.65</storytellerThreatFactor>
+  </WraithNaniteGravtech.WraithCullingTuningDef>
+</Defs>

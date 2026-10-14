@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_WraithAugmentation</defName>
+    <label>Wraith augmentation</label>
+    <description>Apply advanced Wraith cultivation and feeding-ecology knowledge to grow stable biological augmentations for humanlike hosts.</description>
+    <baseCost>2400</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites><li>WNG_AdvancedCarapace</li><li>WNG_FeedingEcology</li></prerequisites>
+  
+    <researchViewX>16.5</researchViewX><researchViewY>8</researchViewY>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>WNG_AsuranAugmentation</defName>
+    <label>Asuran augmentation</label>
+    <description>Combine Asuran precision fabrication with collective-system theory to manufacture stable nanite augmentation lattices.</description>
+    <baseCost>3200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites><li>WNG_PrecursorFabrication</li><li>WNG_AsuranCollectiveSystems</li></prerequisites>
+  
+    <researchViewX>17</researchViewX><researchViewY>11.5</researchViewY>
+  </ResearchProjectDef>
+</Defs>

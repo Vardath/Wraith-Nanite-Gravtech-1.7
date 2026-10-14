@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_WhispersHybridAnalysis</defName>
+    <label>Whispers hybrid analysis</label>
+    <description>Formalize the study of Michael's abandoned blind predator hybrids: their extreme auditory compensation, irreversible Human/Iratus-derived restructuring, and fog-producing neck-gill system. This research forms the prerequisite for derived acoustic-sensory and biological mist technologies.</description>
+    <tab>Anomaly</tab>
+    <prerequisites>
+      <li>WNG_ComparativeXenobiology</li>
+    </prerequisites>
+    <requiredAnalyzed>
+      <li>WNG_WhispersHybridStudyGate</li>
+    </requiredAnalyzed>
+    <knowledgeCost>10</knowledgeCost>
+    <knowledgeCategory>Basic</knowledgeCategory>
+    <researchViewX>9.00</researchViewX>
+    <researchViewY>5.50</researchViewY>
+    <customUnlockTexts>
+      <li>Unlocks the WNG prerequisite path for hybrid-derived hearing and passive, continuously emitting mist-gland implants.</li>
+    </customUnlockTexts>
+  </ResearchProjectDef>
+</Defs>

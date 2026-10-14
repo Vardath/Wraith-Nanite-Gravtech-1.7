@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_WraithRetroviralTherapy</defName>
+    <label>Wraith retroviral therapy</label>
+    <description>Use comparative Iratus/Wraith genetics to recreate the retroviral treatment that suppresses the Iratus-derived elements of Wraith biology. The initial retrovirus can force a Wraith into a humanized state, but a separate suppression injection must be given roughly daily or the Wraith phenotype reasserts itself.</description>
+    <baseCost>3600</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_IratusPharmacology</li>
+      <li>WNG_WraithEnzymeRefinement</li>
+    </prerequisites>
+    <researchViewX>10.50</researchViewX>
+    <researchViewY>4.00</researchViewY>
+  </ResearchProjectDef>
+</Defs>

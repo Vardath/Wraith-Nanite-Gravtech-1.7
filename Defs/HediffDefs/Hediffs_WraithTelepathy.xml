@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_HiveSenseFocused</defName>
+    <label>hive sense focus</label>
+    <description>The Wraith is actively extending its awareness through nearby minds and biological signals, sharpening perception at the cost of divided attention.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>15000~15000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Sight</capacity><offset>0.10</offset></li>
+          <li><capacity>Hearing</capacity><offset>0.10</offset></li>
+          <li><capacity>Consciousness</capacity><offset>0.04</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_QueensCommanded</defName>
+    <label>queen's command</label>
+    <description>A Wraith Queen's telepathic command is synchronizing this mind with the nearby Hive, briefly sharpening movement and combat coordination while hardening the body against pain shock.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800~1800</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.35</MoveSpeed>
+          <MeleeHitChance>0.08</MeleeHitChance>
+          <ShootingAccuracyPawn>0.08</ShootingAccuracyPawn>
+          <PainShockThreshold>0.08</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>WNG_WraithHallucination</defName>
+    <label>wraith hallucinations</label>
+    <description>The target's senses are being flooded with a Wraith-generated false perception. Movement, sight and conscious processing are impaired until the psychic imprint fades.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>12000~24000</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>-0.12</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.12</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.18</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    WNGv1 Wraith lineages are ordinary RimWorld factions. Their raids therefore do not
+    require Stargates, ONAC or any custom corridor system. Strategic feeding hunger is
+    deliberately not encoded directly in these FactionDefs; the current faction-instance
+    hunger registry owns that state on top of these exact lineages.
+  -->
+
+  <FactionDef ParentName="FactionBase">
+    <defName>WNG_WraithSableBrood</defName>
+    <label>Sable Brood</label>
+    <fixedName>The Sable Brood</fixedName>
+    <description>An uncompromising predatory Wraith Hive lineage that regards outsiders primarily as feeding stock and rival Hives as competitors for territory, captives and living technology.</description>
+    <basicMemberKind>WNG_WraithWarrior</basicMemberKind>
+    <pawnSingular>wraith</pawnSingular>
+    <pawnsPlural>wraith</pawnsPlural>
+    <leaderTitle>queen</leaderTitle>
+    <fixedLeaderKinds><li>WNG_WraithQueen</li></fixedLeaderKinds>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>120</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <settlementGenerationWeight>0.36</settlementGenerationWeight>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <techLevel>Spacer</techLevel>
+    <humanlikeFaction>true</humanlikeFaction>
+    <permanentEnemy>true</permanentEnemy>
+    <earliestRaidDays>8</earliestRaidDays>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <autoFlee>false</autoFlee>
+    <rescueesCanJoin>false</rescueesCanJoin>
+    <backstoryFilters>
+      <li><categories><li>Outlander</li><li>Offworld</li></categories></li>
+    </backstoryFilters>
+    <allowedArrivalTemperatureRange>-50~55</allowedArrivalTemperatureRange>
+    <colorSpectrum><li>(0.20,0.24,0.22)</li><li>(0.35,0.22,0.28)</li></colorSpectrum>
+    <xenotypeSet><xenotypeChances><WNG_Wraith>1</WNG_Wraith></xenotypeChances></xenotypeSet>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0,0.07)</li>
+        <li>(1200,0.09)</li>
+        <li>(3000,0.10)</li>
+        <li>(100000,0.11)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve><points><li>(0,95)</li><li>(500,145)</li><li>(1400,230)</li><li>(3000,320)</li><li>(100000,10000)</li></points></maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef><commonality>100</commonality>
+        <options><WNG_WraithHunter>6</WNG_WraithHunter><WNG_WraithWarrior>16</WNG_WraithWarrior><WNG_WraithCommander>3</WNG_WraithCommander></options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options><WNG_WraithHunter>5</WNG_WraithHunter><WNG_WraithWarrior>12</WNG_WraithWarrior><WNG_WraithKeeper>1</WNG_WraithKeeper><WNG_WraithCommander>3</WNG_WraithCommander></options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>WNG_WraithCinderCourt</defName>
+    <label>Cinder Court</label>
+    <fixedName>The Cinder Court</fixedName>
+    <description>A militant Queen-led Wraith Hive that contests territory and feeding access aggressively, but whose hostility is political rather than biologically absolute. Its relationship with outsiders can change.</description>
+    <basicMemberKind>WNG_WraithWarrior</basicMemberKind>
+    <pawnSingular>wraith</pawnSingular><pawnsPlural>wraith</pawnsPlural><leaderTitle>queen</leaderTitle>
+    <fixedLeaderKinds><li>WNG_WraithQueen</li></fixedLeaderKinds>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart><maxCountAtGameStart>1</maxCountAtGameStart><maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>121</configurationListOrderPriority><canMakeRandomly>true</canMakeRandomly><settlementGenerationWeight>0.24</settlementGenerationWeight>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath><factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker><settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <techLevel>Spacer</techLevel><humanlikeFaction>true</humanlikeFaction><permanentEnemy>false</permanentEnemy><earliestRaidDays>10</earliestRaidDays><canSiege>true</canSiege><canStageAttacks>true</canStageAttacks><autoFlee>false</autoFlee><rescueesCanJoin>false</rescueesCanJoin>
+    <backstoryFilters><li><categories><li>Outlander</li><li>Offworld</li></categories></li></backstoryFilters>
+    <allowedArrivalTemperatureRange>-50~55</allowedArrivalTemperatureRange>
+    <colorSpectrum><li>(0.31,0.16,0.17)</li><li>(0.46,0.25,0.18)</li></colorSpectrum>
+    <xenotypeSet><xenotypeChances><WNG_Wraith>1</WNG_Wraith></xenotypeChances></xenotypeSet>
+    <raidCommonalityFromPointsCurve><points><li>(0,0.055)</li><li>(1500,0.07)</li><li>(100000,0.08)</li></points></raidCommonalityFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve><points><li>(0,95)</li><li>(500,145)</li><li>(1400,230)</li><li>(3000,320)</li><li>(100000,10000)</li></points></maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li><kindDef>Combat</kindDef><commonality>100</commonality><options><WNG_WraithHunter>5</WNG_WraithHunter><WNG_WraithWarrior>18</WNG_WraithWarrior><WNG_WraithCommander>4</WNG_WraithCommander></options></li>
+      <li><kindDef>Peaceful</kindDef><commonality>35</commonality><options><WNG_WraithHunter>3</WNG_WraithHunter><WNG_WraithWarrior>3</WNG_WraithWarrior><WNG_WraithKeeper>1</WNG_WraithKeeper><WNG_WraithCommander>0.5</WNG_WraithCommander></options></li>
+      <li><kindDef>Settlement</kindDef><options><WNG_WraithHunter>4</WNG_WraithHunter><WNG_WraithWarrior>13</WNG_WraithWarrior><WNG_WraithKeeper>2</WNG_WraithKeeper><WNG_WraithCommander>4</WNG_WraithCommander></options></li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>WNG_WraithVeiledHive</defName>
+    <label>Veiled Hive</label>
+    <fixedName>The Veiled Hive</fixedName>
+    <description>A cautious Wraith Hive that prefers concealment, selective feeding and negotiated access over open territorial war. It remains predatory and dangerous, but does not begin by treating every outsider as an immediate enemy.</description>
+    <basicMemberKind>WNG_WraithHunter</basicMemberKind>
+    <pawnSingular>wraith</pawnSingular><pawnsPlural>wraith</pawnsPlural><leaderTitle>queen</leaderTitle>
+    <fixedLeaderKinds><li>WNG_WraithQueen</li></fixedLeaderKinds>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart><maxCountAtGameStart>1</maxCountAtGameStart><maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>122</configurationListOrderPriority><canMakeRandomly>true</canMakeRandomly><settlementGenerationWeight>0.16</settlementGenerationWeight>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath><factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker><settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <techLevel>Spacer</techLevel><humanlikeFaction>true</humanlikeFaction><permanentEnemy>false</permanentEnemy><earliestRaidDays>12</earliestRaidDays><canSiege>true</canSiege><canStageAttacks>true</canStageAttacks><autoFlee>true</autoFlee><rescueesCanJoin>false</rescueesCanJoin>
+    <backstoryFilters><li><categories><li>Outlander</li><li>Offworld</li></categories></li></backstoryFilters>
+    <allowedArrivalTemperatureRange>-50~55</allowedArrivalTemperatureRange>
+    <colorSpectrum><li>(0.18,0.29,0.28)</li><li>(0.27,0.36,0.31)</li></colorSpectrum>
+    <xenotypeSet><xenotypeChances><WNG_Wraith>1</WNG_Wraith></xenotypeChances></xenotypeSet>
+    <raidCommonalityFromPointsCurve><points><li>(0,0.025)</li><li>(1800,0.035)</li><li>(100000,0.04)</li></points></raidCommonalityFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve><points><li>(0,95)</li><li>(500,145)</li><li>(1400,230)</li><li>(3000,320)</li><li>(100000,10000)</li></points></maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li><kindDef>Combat</kindDef><commonality>100</commonality><options><WNG_WraithHunter>12</WNG_WraithHunter><WNG_WraithWarrior>8</WNG_WraithWarrior><WNG_WraithCommander>1.5</WNG_WraithCommander></options></li>
+      <li><kindDef>Peaceful</kindDef><commonality>80</commonality><options><WNG_WraithHunter>6</WNG_WraithHunter><WNG_WraithWarrior>3</WNG_WraithWarrior><WNG_WraithKeeper>2</WNG_WraithKeeper><WNG_WraithCommander>0.5</WNG_WraithCommander></options></li>
+      <li><kindDef>Settlement</kindDef><options><WNG_WraithHunter>8</WNG_WraithHunter><WNG_WraithWarrior>8</WNG_WraithWarrior><WNG_WraithKeeper>2</WNG_WraithKeeper><WNG_WraithCommander>1.5</WNG_WraithCommander></options></li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>WNG_WraithPaleCovenant</defName>
+    <label>Pale Covenant</label>
+    <fixedName>The Pale Covenant</fixedName>
+    <description>A Wraith exile/offshoot lineage that has abandoned indiscriminate predation. Its members remain biologically dependent on Life Force, but can negotiate and coexist when supplied by less destructive means.</description>
+    <basicMemberKind>WNG_WraithWarrior</basicMemberKind>
+    <pawnSingular>wraith</pawnSingular><pawnsPlural>wraith</pawnsPlural><leaderTitle>elder</leaderTitle>
+    <fixedLeaderKinds><li>WNG_WraithKeeper</li></fixedLeaderKinds>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart><maxCountAtGameStart>1</maxCountAtGameStart><maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>123</configurationListOrderPriority><canMakeRandomly>true</canMakeRandomly><settlementGenerationWeight>0.16</settlementGenerationWeight>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath><factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker><settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <techLevel>Spacer</techLevel><humanlikeFaction>true</humanlikeFaction><permanentEnemy>false</permanentEnemy><earliestRaidDays>12</earliestRaidDays><canSiege>true</canSiege><canStageAttacks>true</canStageAttacks><autoFlee>true</autoFlee><rescueesCanJoin>true</rescueesCanJoin>
+    <backstoryFilters><li><categories><li>Outlander</li><li>Offworld</li></categories></li></backstoryFilters>
+    <allowedArrivalTemperatureRange>-50~55</allowedArrivalTemperatureRange>
+    <colorSpectrum><li>(0.63,0.68,0.66)</li><li>(0.43,0.49,0.47)</li></colorSpectrum>
+    <xenotypeSet><xenotypeChances><WNG_Wraith>1</WNG_Wraith></xenotypeChances></xenotypeSet>
+    <raidCommonalityFromPointsCurve><points><li>(0,0.02)</li><li>(1800,0.03)</li><li>(100000,0.035)</li></points></raidCommonalityFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve><points><li>(0,95)</li><li>(500,145)</li><li>(1400,230)</li><li>(3000,320)</li><li>(100000,10000)</li></points></maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li><kindDef>Combat</kindDef><commonality>100</commonality><options><WNG_WraithHunter>6</WNG_WraithHunter><WNG_WraithWarrior>8</WNG_WraithWarrior><WNG_WraithCommander>1</WNG_WraithCommander></options></li>
+      <li><kindDef>Peaceful</kindDef><commonality>100</commonality><options><WNG_WraithHunter>3</WNG_WraithHunter><WNG_WraithWarrior>4</WNG_WraithWarrior><WNG_WraithKeeper>2</WNG_WraithKeeper><WNG_WraithCommander>0.4</WNG_WraithCommander></options></li>
+      <li><kindDef>Settlement</kindDef><options><WNG_WraithHunter>4</WNG_WraithHunter><WNG_WraithWarrior>6</WNG_WraithWarrior><WNG_WraithKeeper>2</WNG_WraithKeeper><WNG_WraithCommander>1</WNG_WraithCommander></options></li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

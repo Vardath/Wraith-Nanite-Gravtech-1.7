@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- NPC-only Odyssey recovery carrier. This is deliberately not a player Puddle Jumper
+       progression object; it borrows the native passenger-shuttle stack solely so Queen
+       capture has a real CompTransporter + CompLaunchable departure boundary. -->
+  <TransportShipDef>
+    <defName>WNG_Ship_AsuranQueenRecoveryCarrier</defName>
+    <label>Asuran recovery carrier</label>
+    <shipThing>WNG_AsuranQueenRecoveryCarrier</shipThing>
+    <arrivingSkyfaller>PassengerShuttleIncoming</arrivingSkyfaller>
+    <leavingSkyfaller>PassengerShuttleLeaving</leavingSkyfaller>
+    <worldObject>PassengerShuttle</worldObject>
+    <maxLaunchDistance>12</maxLaunchDistance>
+    <playerShuttle>false</playerShuttle>
+  </TransportShipDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranQueenRecoveryCarrier</defName>
+    <label>Asuran recovery carrier</label>
+    <description>A compact autonomous Lattice recovery craft. This NPC-only carrier uses Odyssey's real shuttle transporter and launch machinery for the Replicator Queen recovery operation.</description>
+    <thingClass>Building_PassengerShuttle</thingClass>
+    <preventDroppingThingsOn>true</preventDroppingThingsOn>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <size>(3,5)</size>
+    <drawHighlight>true</drawHighlight>
+    <highlightColor>(0.48,0.82,0.95)</highlightColor>
+    <uiIconScale>1</uiIconScale>
+    <uiIconPath>UI/WNG/Build/WNG_AsuranQueenRecoveryCarrier</uiIconPath>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Shuttle/WNG_AsuranQueenRecoveryCarrier</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(3,5)</drawSize>
+      <shadowData><volume>(1.8,1.0,4.1)</volume><offset>(-0.1,0,0)</offset></shadowData>
+    </graphicData>
+    <statBases><MaxHitPoints>700</MaxHitPoints><Flammability>0.2</Flammability><Mass>110</Mass><Comfort>0.75</Comfort></statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>true</canOverlapZones>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(2,0,0)</interactionCellOffset>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <drawerType>RealtimeOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>false</forceDebugSpawnable>
+    <building><claimable>false</claimable><deconstructible>false</deconstructible><paintable>false</paintable><isInert>true</isInert><destroySound>BuildingDestroyed_Metal_Big</destroySound></building>
+    <inspectorTabs><li>ITab_ContentsTransporter</li></inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Shuttle"><shipDef>WNG_Ship_AsuranQueenRecoveryCarrier</shipDef></li>
+      <li Class="CompProperties_Launchable">
+        <fuelPerTile>0.5</fuelPerTile><minFuelCost>1</minFuelCost>
+        <skyfallerLeaving>PassengerShuttleLeaving</skyfallerLeaving>
+        <worldObjectDef>PassengerShuttle</worldObjectDef>
+        <cooldownTicks>0</cooldownTicks><fixedLaunchDistanceMax>12</fixedLaunchDistanceMax>
+      </li>
+      <li Class="CompProperties_Transporter">
+        <massCapacity>650</massCapacity><max1PerGroup>true</max1PerGroup>
+        <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+        <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound><pawnExitSound>Shuttle_PawnExit</pawnExitSound>
+        <showMassInInspectString>true</showMassInInspectString>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>100</fuelCapacity><targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+        <fuelFilter><thingDefs><li>Chemfuel</li></thingDefs></fuelFilter>
+        <fuelLabel>internal flight reserve</fuelLabel><fuelGizmoLabel>internal flight reserve</fuelGizmoLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><showFuelGizmo>false</showFuelGizmo>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay><showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle>
+        <canEjectFuel>false</canEjectFuel>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_NeuralInterface</defName>
+    <label>neural interface</label>
+    <description>Establish a touch-range nanite interface with another living biological humanlike mind. Player operators can rewrite allegiance, impose a valid captive state, copy learned skills and passions, or reconstruct a fresh human-form copy. Copy fabrication spends its Nanite Reserve only after a usable body has been placed.</description>
+    <iconPath>UI/WNG/Abilities/NeuralInterface</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>5000~5000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityNaniteInterface">
+        <copyReserveCost>0.60</copyReserveCost>
+        <fallbackCopyPawnKind>WNG_HumanFormCopy</fallbackCopyPawnKind>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_HumanFormConsume</defName>
+    <label>assimilate matter</label>
+    <description>Consume a chosen physical item, building, natural rock, plant, roof, floor or ground layer as synthetic feedstock. Unlike block Replicators this never creates offspring: the consumed matter replenishes this human-form synthetic's ordinary Food need and Nanite Reserve.</description>
+    <iconPath>UI/WNG/Genes/NaniteReserve</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <hostile>false</hostile>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetItems>true</canTargetItems>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetPlants>true</canTargetPlants>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetEntities>false</canTargetEntities>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityHumanFormConsume">
+        <minimumFoodFraction>0.08</minimumFoodFraction>
+        <foodFractionPerSqrtMass>0.02</foodFractionPerSqrtMass>
+        <maximumFoodFraction>0.50</maximumFoodFraction>
+        <minimumReserveGain>0.06</minimumReserveGain>
+        <reserveGainPerSqrtMass>0.015</reserveGainPerSqrtMass>
+        <maximumReserveGain>0.40</maximumReserveGain>
+        <substrateFoodFraction>0.15</substrateFoodFraction>
+        <substrateReserveGain>0.10</substrateReserveGain>
+      </li>
+    </comps>
+  </AbilityDef>
+  <AbilityDef>
+    <defName>WNG_AsuranFabricateReplicatorBlocks</defName>
+    <label>fabricate Replicator blocks</label>
+    <description>Any player-controlled Asuran-derived pawn, human-form Replicator copy or custom xenotype bearing an active WNG Nanite Reserve gene can condense reserve into 25 physical Replicator Blocks for fabrication. The blocks are ordinary WNG Replicator Matter after creation and retain their normal containment and self-assembly hazards. The Nanite Reserve cost is configurable in WNG mod settings.</description>
+    <iconPath>UI/WNG/Abilities/AsuranReplicatorBlocks</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <hostile>false</hostile>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0.5</warmupTime>
+      <range>-1</range>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams><canTargetSelf>true</canTargetSelf></targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityAsuranReplicatorMatter">
+        <blockCount>25</blockCount>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

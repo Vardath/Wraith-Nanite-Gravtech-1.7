@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Combat Extended-only ammunition. This folder is loaded only when
+    CETeam.CombatExtended is active, so ordinary WNG play remains ammo-free.
+    Each ranged WNG weapon receives its own ammunition identity even where
+    a family shares retained visual language.
+  -->
+
+  <!-- ==================== Wraith ammo sets ==================== -->
+  <CombatExtended.AmmoSetDef>
+    <defName>WNG_CE_AmmoSet_WraithStunStaff</defName>
+    <label>Wraith stun-staff biocharge</label>
+    <ammoTypes><WNG_CE_Ammo_WraithStunStaffCharge>WNG_CE_Projectile_WraithStunStaff</WNG_CE_Ammo_WraithStunStaffCharge></ammoTypes>
+  </CombatExtended.AmmoSetDef>
+  <CombatExtended.AmmoSetDef>
+    <defName>WNG_CE_AmmoSet_WraithStunner</defName>
+    <label>Wraith stunner biocharge</label>
+    <ammoTypes><WNG_CE_Ammo_WraithStunnerCharge>WNG_CE_Projectile_WraithStunner</WNG_CE_Ammo_WraithStunnerCharge></ammoTypes>
+  </CombatExtended.AmmoSetDef>
+  <CombatExtended.AmmoSetDef>
+    <defName>WNG_CE_AmmoSet_WraithCarbine</defName>
+    <label>Wraith carbine biocharge</label>
+    <ammoTypes><WNG_CE_Ammo_WraithCarbineCharge>WNG_CE_Projectile_WraithCarbine</WNG_CE_Ammo_WraithCarbineCharge></ammoTypes>
+  </CombatExtended.AmmoSetDef>
+  <CombatExtended.AmmoSetDef>
+    <defName>WNG_CE_AmmoSet_WraithHeavy</defName>
+    <label>Wraith heavy biocharge</label>
+    <ammoTypes><WNG_CE_Ammo_WraithHeavyCharge>WNG_CE_Projectile_WraithHeavy</WNG_CE_Ammo_WraithHeavyCharge></ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+  <!-- ==================== Replicator ammo sets ==================== -->
+  <CombatExtended.AmmoSetDef>
+    <defName>WNG_CE_AmmoSet_ReplicatorPulse</defName>
+    <label>Replicator pulse cell</label>
+    <ammoTypes><WNG_CE_Ammo_ReplicatorPulseCell>WNG_CE_Projectile_ReplicatorPulse</WNG_CE_Ammo_ReplicatorPulseCell></ammoTypes>
+  </CombatExtended.AmmoSetDef>
+  <CombatExtended.AmmoSetDef>
+    <defName>WNG_CE_AmmoSet_ReplicatorDisruptor</defName>
+    <label>Replicator disruption cell</label>
+    <ammoTypes><WNG_CE_Ammo_ReplicatorDisruptorCell>WNG_CE_Projectile_ReplicatorDisruptor</WNG_CE_Ammo_ReplicatorDisruptorCell></ammoTypes>
+  </CombatExtended.AmmoSetDef>
+  <CombatExtended.AmmoSetDef>
+    <defName>WNG_CE_AmmoSet_ReplicatorArtillery</defName>
+    <label>Replicator artillery cell</label>
+    <ammoTypes><WNG_CE_Ammo_ReplicatorArtilleryCell>WNG_CE_Projectile_ReplicatorArtillery</WNG_CE_Ammo_ReplicatorArtilleryCell></ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+  <!-- ==================== Wraith ammunition ==================== -->
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="SpacerSmallAmmoBase">
+    <defName>WNG_CE_Ammo_WraithStunStaffCharge</defName>
+    <label>stun-staff biocharge</label>
+    <description>A sealed living electrocyte pack grown to recharge a Wraith stun staff under Combat Extended. Wraith weapons do not require ammunition when Combat Extended is absent.</description>
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_StackCount</graphicClass></graphicData>
+    <statBases><Mass>0.025</Mass><Bulk>0.02</Bulk></statBases>
+    <ammoClass>Charged</ammoClass>
+    <cookOffProjectile>WNG_CE_Projectile_WraithStunStaff</cookOffProjectile>
+  </ThingDef>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="SpacerSmallAmmoBase">
+    <defName>WNG_CE_Ammo_WraithStunnerCharge</defName>
+    <label>stunner biocharge</label>
+    <description>A compact living bioelectric charge grown for the Wraith stunner under Combat Extended.</description>
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_StackCount</graphicClass></graphicData>
+    <statBases><Mass>0.018</Mass><Bulk>0.015</Bulk></statBases>
+    <ammoClass>Charged</ammoClass>
+    <cookOffProjectile>WNG_CE_Projectile_WraithStunner</cookOffProjectile>
+  </ThingDef>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="SpacerSmallAmmoBase">
+    <defName>WNG_CE_Ammo_WraithCarbineCharge</defName>
+    <label>carbine biocharge</label>
+    <description>A dense electro-organ charge grown for a Wraith living carbine under Combat Extended.</description>
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_StackCount</graphicClass></graphicData>
+    <statBases><Mass>0.022</Mass><Bulk>0.018</Bulk></statBases>
+    <ammoClass>Charged</ammoClass>
+    <cookOffProjectile>WNG_CE_Projectile_WraithCarbine</cookOffProjectile>
+  </ThingDef>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="SpacerMediumAmmoBase">
+    <defName>WNG_CE_Ammo_WraithHeavyCharge</defName>
+    <label>heavy biocharge</label>
+    <description>A reinforced high-output living charge grown for a Wraith heavy bio-weapon under Combat Extended.</description>
+    <graphicData><texPath>Things/Item/Resource/WNG_Biomass</texPath><graphicClass>Graphic_StackCount</graphicClass></graphicData>
+    <statBases><Mass>0.065</Mass><Bulk>0.045</Bulk></statBases>
+    <ammoClass>Charged</ammoClass>
+    <cookOffProjectile>WNG_CE_Projectile_WraithHeavy</cookOffProjectile>
+  </ThingDef>
+
+  <!-- ==================== Replicator ammunition ==================== -->
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="SpacerSmallAmmoBase">
+    <defName>WNG_CE_Ammo_ReplicatorPulseCell</defName>
+    <label>Replicator pulse cell</label>
+    <description>A compact matrix of Replicator Blocks configured as consumable pulse-emitter feedstock for Combat Extended.</description>
+    <graphicData><texPath>Things/Item/Resource/Replicator/WNG_ReplicatorMatter</texPath><graphicClass>Graphic_StackCount</graphicClass></graphicData>
+    <statBases><Mass>0.018</Mass><Bulk>0.012</Bulk></statBases>
+    <ammoClass>Charged</ammoClass>
+    <cookOffProjectile>WNG_CE_Projectile_ReplicatorPulse</cookOffProjectile>
+  </ThingDef>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="SpacerSmallAmmoBase">
+    <defName>WNG_CE_Ammo_ReplicatorDisruptorCell</defName>
+    <label>Replicator disruption cell</label>
+    <description>A phase-tuned Replicator cell configured to feed a specialist shield-disruption emitter under Combat Extended.</description>
+    <graphicData><texPath>Things/Item/Resource/Replicator/WNG_ReplicatorMatter</texPath><graphicClass>Graphic_StackCount</graphicClass></graphicData>
+    <statBases><Mass>0.03</Mass><Bulk>0.02</Bulk></statBases>
+    <ammoClass>Ionized</ammoClass>
+    <cookOffProjectile>WNG_CE_Projectile_ReplicatorDisruptor</cookOffProjectile>
+  </ThingDef>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="SpacerMediumAmmoBase">
+    <defName>WNG_CE_Ammo_ReplicatorArtilleryCell</defName>
+    <label>Replicator artillery cell</label>
+    <description>A dense Replicator charge matrix configured for the Artillery body's long-range pulse array under Combat Extended.</description>
+    <graphicData><texPath>Things/Item/Resource/Replicator/WNG_ReplicatorMatter</texPath><graphicClass>Graphic_StackCount</graphicClass></graphicData>
+    <statBases><Mass>0.075</Mass><Bulk>0.05</Bulk></statBases>
+    <ammoClass>ChargedAP</ammoClass>
+    <cookOffProjectile>WNG_CE_Projectile_ReplicatorArtillery</cookOffProjectile>
+  </ThingDef>
+
+  <!-- ==================== CE projectiles ==================== -->
+  <ThingDef ParentName="BaseBulletCE">
+    <defName>WNG_CE_Projectile_WraithStunStaff</defName><label>Wraith stun-staff discharge</label>
+    <graphicData><texPath>Things/Projectile/Charge_Small</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE"><damageDef>Stun</damageDef><damageAmountBase>45</damageAmountBase><speed>100</speed></projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseBulletCE">
+    <defName>WNG_CE_Projectile_WraithStunner</defName><label>Wraith stunner pulse</label>
+    <graphicData><texPath>Things/Projectile/Charge_Small</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE"><damageDef>Stun</damageDef><damageAmountBase>10</damageAmountBase><speed>65</speed></projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseBulletCE">
+    <defName>WNG_CE_Projectile_WraithCarbine</defName><label>Wraith carbine bio-bolt</label>
+    <graphicData><texPath>Things/Projectile/Charge_Small</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE"><damageDef>Bullet</damageDef><damageAmountBase>15</damageAmountBase><armorPenetrationSharp>8</armorPenetrationSharp><armorPenetrationBlunt>27</armorPenetrationBlunt><speed>72</speed></projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseBulletCE">
+    <defName>WNG_CE_Projectile_WraithHeavy</defName><label>Wraith heavy bio-slug</label>
+    <graphicData><texPath>Things/Projectile/ChargeLanceShot</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE"><damageDef>Bullet</damageDef><damageAmountBase>23</damageAmountBase><armorPenetrationSharp>14</armorPenetrationSharp><armorPenetrationBlunt>42</armorPenetrationBlunt><speed>95</speed></projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseBulletCE">
+    <defName>WNG_CE_Projectile_ReplicatorPulse</defName><label>Replicator pulse</label>
+    <graphicData><texPath>Things/Projectile/Charge_Small</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE"><damageDef>Bullet</damageDef><damageAmountBase>9</damageAmountBase><armorPenetrationSharp>5</armorPenetrationSharp><armorPenetrationBlunt>20</armorPenetrationBlunt><speed>70</speed></projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseBulletCE">
+    <defName>WNG_CE_Projectile_ReplicatorDisruptor</defName><label>Replicator phase-disruption pulse</label>
+    <graphicData><texPath>Things/Projectile/WNG_ReplicatorShieldDisruptor</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE"><damageDef>EMP</damageDef><damageAmountBase>6</damageAmountBase><speed>58</speed></projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseBulletCE">
+    <defName>WNG_CE_Projectile_ReplicatorArtillery</defName><label>Replicator artillery pulse</label>
+    <graphicData><texPath>Things/Projectile/Charge_Small</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE"><damageDef>Bullet</damageDef><damageAmountBase>16</damageAmountBase><armorPenetrationSharp>10</armorPenetrationSharp><armorPenetrationBlunt>34</armorPenetrationBlunt><speed>62</speed></projectile>
+  </ThingDef>
+
+  <!-- ==================== Explicit crafting recipes ==================== -->
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>WNG_CE_Make_WraithStunStaffCharge</defName><label>grow stun-staff biocharges x30</label><jobString>Growing stun-staff biocharges.</jobString>
+    <researchPrerequisite>WNG_LivingWeapons</researchPrerequisite><workAmount>600</workAmount><workSkill>Crafting</workSkill>
+    <ingredients><li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>2</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_CE_Ammo_WraithStunStaffCharge>30</WNG_CE_Ammo_WraithStunStaffCharge></products><recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>WNG_CE_Make_WraithStunnerCharge</defName><label>grow stunner biocharges x60</label><jobString>Growing stunner biocharges.</jobString>
+    <researchPrerequisite>WNG_LivingWeapons</researchPrerequisite><workAmount>800</workAmount><workSkill>Crafting</workSkill>
+    <ingredients><li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>3</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_CE_Ammo_WraithStunnerCharge>60</WNG_CE_Ammo_WraithStunnerCharge></products><recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>WNG_CE_Make_WraithCarbineCharge</defName><label>grow carbine biocharges x90</label><jobString>Growing carbine biocharges.</jobString>
+    <researchPrerequisite>WNG_LivingWeapons</researchPrerequisite><workAmount>1000</workAmount><workSkill>Crafting</workSkill>
+    <ingredients><li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>6</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_CE_Ammo_WraithCarbineCharge>90</WNG_CE_Ammo_WraithCarbineCharge></products><recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>WNG_CE_Make_WraithHeavyCharge</defName><label>grow heavy biocharges x60</label><jobString>Growing heavy biocharges.</jobString>
+    <researchPrerequisite>WNG_AdvancedCarapace</researchPrerequisite><workAmount>1300</workAmount><workSkill>Crafting</workSkill>
+    <ingredients><li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>8</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_CE_Ammo_WraithHeavyCharge>60</WNG_CE_Ammo_WraithHeavyCharge></products><recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>WNG_CE_Make_ReplicatorPulseCell</defName><label>configure Replicator pulse cells x90</label><jobString>Configuring Replicator pulse cells.</jobString>
+    <researchPrerequisite>WNG_ReplicatorGestation</researchPrerequisite><workAmount>1200</workAmount><workSkill>Crafting</workSkill>
+    <ingredients><li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>1</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_CE_Ammo_ReplicatorPulseCell>90</WNG_CE_Ammo_ReplicatorPulseCell></products><recipeUsers><li>AmmoBench</li></recipeUsers>
+  </RecipeDef>
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>WNG_CE_Make_ReplicatorDisruptorCell</defName><label>configure Replicator disruption cells x30</label><jobString>Configuring Replicator disruption cells.</jobString>
+    <researchPrerequisite>WNG_ReplicatorGestation</researchPrerequisite><workAmount>1500</workAmount><workSkill>Crafting</workSkill>
+    <ingredients><li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>1</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_CE_Ammo_ReplicatorDisruptorCell>30</WNG_CE_Ammo_ReplicatorDisruptorCell></products><recipeUsers><li>AmmoBench</li></recipeUsers>
+  </RecipeDef>
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>WNG_CE_Make_ReplicatorArtilleryCell</defName><label>configure Replicator artillery cells x30</label><jobString>Configuring Replicator artillery cells.</jobString>
+    <researchPrerequisite>WNG_ReplicatorGestation</researchPrerequisite><workAmount>2200</workAmount><workSkill>Crafting</workSkill>
+    <ingredients><li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>2</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_CE_Ammo_ReplicatorArtilleryCell>30</WNG_CE_Ammo_ReplicatorArtilleryCell></products><recipeUsers><li>AmmoBench</li></recipeUsers>
+  </RecipeDef>
+</Defs>

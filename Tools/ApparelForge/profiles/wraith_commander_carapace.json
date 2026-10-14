@@ -1,0 +1,125 @@
+{
+  "id": "wraith_commander_carapace",
+  "item": "WNG_CommanderCarapace",
+  "faction": "Wraith",
+  "output_dir": "Wraith",
+  "research": {
+    "rule": "Stargate production costume and prop references first; no historical WNG apparel",
+    "status": "stage_1_locked",
+    "sources": [
+      {
+        "type": "costume_designer_primary",
+        "title": "Val Halverson Q&A hosted by Stargate Atlantis writer/producer Joseph Mallozzi (2008-10-25)",
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/",
+        "evidence": [
+          "Wraith costumes were generally three pieces and used roughly 6-8 cow hides plus contrast leather for detail, gauntlets and belts.",
+          "Season 4-5 male Wraith were differentiated with subtler details rather than large redesigns.",
+          "Todd was treated as tall and regal; costume changes in season 5 were made for actor comfort rather than stated rank coding.",
+          "Wraith costumes were operationally difficult because of snaps, Velcro and weight.",
+          "Halverson mixed textures deliberately because texture read well in HD."
+        ]
+      },
+      {
+        "type": "screen_used_auction_record",
+        "title": "Propworx Stargate Live Auction 2 lot 149 - Wraith costume from The Hive (record mirrored by Stargate-Fusion)",
+        "url": "https://www.stargate-fusion.com/fiches/coulisses/23-costumes-uniformes/5733-commandant-wraith-lunion-fait-la-force.html",
+        "evidence": [
+          "Green leather trenchcoat with front zipper.",
+          "Black reptile-pattern leather vest with epaulettes and decorative reptile-leather panels.",
+          "Front snap and zipper closures plus side/back lacing.",
+          "Black leather trousers with stretch panel.",
+          "Reptile-pattern leather gauntlets with Velcro closures and black leather motorcycle boots."
+        ]
+      },
+      {
+        "type": "screen_used_auction_record",
+        "title": "Propstore Wraith costume record (record mirrored by Stargate-Fusion)",
+        "url": "https://www.stargate-fusion.com/fiches/6511-costume-commandant-wraith.html",
+        "evidence": [
+          "Long jacket, long vest, leather trousers, gauntlets and belt.",
+          "Construction is primarily soft leather.",
+          "Layered textured panels on the upper sleeves build the shoulder form."
+        ]
+      },
+      {
+        "type": "screen_used_material_reference",
+        "title": "Propworx Wraith Drone Uniform, lot 68 - production catalogue record",
+        "url": "https://abcdocz.com/doc/68928/",
+        "evidence": [
+          "Black leather under-vest supporting hard-rubber silver front/back carapace.",
+          "Rubber simulated-bone silver shoulder armour.",
+          "Rubber simulated-bone thigh, knee and shin protection on black leather components.",
+          "Closures use side clasps, snaps, zippers, rear lacing and Velcro.",
+          "Use this source for authentic Wraith armour materials and fastening logic only; do not copy the drone rank silhouette into the commander."
+        ]
+      }
+    ],
+    "required_visual_language": [
+      "dark green-black soft cowhide leather as the dominant garment material",
+      "black reptile-pattern leather inserts and layered shoulder/upper-arm texture",
+      "hand-built three-piece Wraith costume logic rather than segmented futuristic plate",
+      "visible but restrained lacing, snaps, zippers, clasps and aged dark hardware",
+      "production wear: rubbed edges, leather creasing, scuffs and asymmetric use",
+      "small command-grade reinforcement using screen-used Wraith hard-rubber silver carapace and simulated-bone material language",
+      "regal command presence through silhouette and construction density, not bright colour or neon"
+    ],
+    "rank_and_design_interpretation": [
+      "Do not invent explicit colour-coded rank language: the available costume-designer evidence says later male Wraith differentiation was subtle.",
+      "Commander should read as a refined, heavier version of male Wraith wardrobe, not as a drone in larger armour.",
+      "The leather costume is primary; hard-rubber/simulated-bone carapace is secondary reinforcement required by the mod item's armoured gameplay role.",
+      "Keep the shoulder treatment layered and textural; avoid geometric pauldrons."
+    ],
+    "avoid": [
+      "historical WNG apparel",
+      "generic sci-fi plate armour",
+      "large geometric armour panels",
+      "neon or luminous rank piping",
+      "white rings or glowing outlines",
+      "ship geometry attached to clothing",
+      "clean plastic surfaces",
+      "symmetrical superhero breastplates",
+      "copying the Wraith drone silhouette"
+    ]
+  },
+  "rimworld": {
+    "family": "PowerArmor",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "tile_scale": 0.78
+  },
+  "masters": {
+    "south": "master_south.png",
+    "north": "master_north.png",
+    "east": "master_east.png"
+  },
+  "qa": {
+    "min_contrast": 14,
+    "max_white_fraction": 0.015,
+    "max_edge_lift": 22
+  },
+  "external_art_spec": {
+    "minimum_master_resolution": 1024,
+    "orthographic_views": [
+      "south/front",
+      "north/back",
+      "east/side"
+    ],
+    "background": "transparent",
+    "instruction": "finished professional painted RimWorld apparel master, not a concept sketch",
+    "silhouette": "match vanilla RimWorld PowerArmor proportions; do not invent a human anatomy silhouette",
+    "source_priority": "Stargate production wardrobe and prop references only",
+    "banned": [
+      "historical WNG clothing",
+      "procedural panels",
+      "flat vector shapes",
+      "generic sci-fi armour",
+      "neon piping",
+      "ship parts on clothing"
+    ]
+  }
+}

@@ -1,0 +1,578 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef Name="WNG_ReplicatorBlockBase" ParentName="BaseMechanoid" Abstract="True">
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <MoveSpeed>4.0</MoveSpeed>
+      <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.18</ArmorRating_Heat>
+      <PsychicSensitivity>0.20</PsychicSensitivity>
+    </statBases>
+    <race>
+      <body>Mech_Light</body>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>WNG_ReplicatorAutonomous</thinkTreeMain>
+      <thinkTreeConstant IsNull="True" />
+      <baseBodySize>0.55</baseBodySize>
+      <baseHealthScale>0.75</baseHealthScale>
+      <flightStartChanceOnJobStart>0</flightStartChanceOnJobStart>
+      <flightSpeedFactor>1.32</flightSpeedFactor>
+      <hasCorpse>false</hasCorpse>
+      <hasMeat>false</hasMeat>
+      <mechWeightClass>Light</mechWeightClass>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+    <butcherProducts>
+      <WNG_ReplicatorMatter>1</WNG_ReplicatorMatter>
+    </butcherProducts>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorDomain" />
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorTemporaryAsuranState" />
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorSovereignState" />
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorInterference" />
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorStepAudio">
+        <stepElectric>WNG_ReplicatorStepElectric</stepElectric>
+        <stepMetalA>WNG_ReplicatorStepMetalA</stepMetalA>
+        <stepMetalB>WNG_ReplicatorStepMetalB</stepMetalB>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorAdaptation">
+        <antiShieldEvidenceThreshold>18</antiShieldEvidenceThreshold>
+        <antiShieldSampleIntervalTicks>300</antiShieldSampleIntervalTicks>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorMaterialProfile" />
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorAdaptationEffects">
+        <materialAssimilationTimeFactor>0.85</materialAssimilationTimeFactor>
+        <powerRegenerationIntervalFactor>0.65</powerRegenerationIntervalFactor>
+        <powerRegenerationHealFactor>1.35</powerRegenerationHealFactor>
+        <armorDeflectionChance>0.12</armorDeflectionChance>
+        <shieldRechargeTicks>1800</shieldRechargeTicks>
+        <rangedWeaponDef>WNG_ReplicatorPulseCaster</rangedWeaponDef>
+        <antiShieldWeaponDef>WNG_ReplicatorShieldDisruptor</antiShieldWeaponDef>
+        <gravFlightHediffDef>WNG_ReplicatorAdaptGravFlight</gravFlightHediffDef>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorRegeneration">
+        <intervalTicks>600</intervalTicks>
+        <healAmount>0.20</healAmount>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorThreatResponse">
+        <selfDefenseTicks>900</selfDefenseTicks>
+        <swarmAlertTicks>1800</swarmAlertTicks>
+        <swarmResponseChance>0.24</swarmResponseChance>
+        <swarmResponseRadius>40</swarmResponseRadius>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="WraithNaniteGravtech.ReplicatorBlockExtension">
+        <assimilationTicks>300</assimilationTicks>
+        <assimilationOffspringCount>2</assimilationOffspringCount>
+        <hostilePopulationCap>120</hostilePopulationCap>
+        <assimilationSearchRadius>60</assimilationSearchRadius>
+      </li>
+    </modExtensions>
+    <tools>
+      <li>
+        <label>block limbs</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>2.2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+  </ThingDef>
+  <ThingDef ParentName="WNG_ReplicatorBlockBase">
+    <defName>WNG_ReplicatorDrone</defName>
+    <label>replicator drone</label>
+    <description>The irreducible mobile block form of an autonomous Replicator swarm. Two compatible Drones can reorganize into a Hunter.</description>
+    <killedLeavings>
+      <WNG_ReplicatorMatter>3</WNG_ReplicatorMatter>
+    </killedLeavings>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorHierarchy">
+        <upgradePawnKind>WNG_ReplicatorHunter</upgradePawnKind>
+        <unitsRequired>2</unitsRequired>
+        <assemblyRadius>7</assemblyRadius>
+        <assemblyCheckTicks>2500</assemblyCheckTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_ReplicatorBlockBase">
+    <defName>WNG_ReplicatorHunter</defName>
+    <label>replicator hunter</label>
+    <description>A fast pursuit form assembled from two compatible Drones. Two Hunters can reorganize into a Bulwark; genuine destruction releases two Drones.</description>
+    <statBases>
+      <MarketValue>1450</MarketValue>
+      <MoveSpeed>5.4</MoveSpeed>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.20</ArmorRating_Heat>
+    </statBases>
+    <race>
+      <baseBodySize>0.85</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechWeightClass>Light</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>scything limbs</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>13</power>
+        <cooldownTime>1.35</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorHierarchy">
+        <upgradePawnKind>WNG_ReplicatorBulwark</upgradePawnKind>
+        <unitsRequired>2</unitsRequired>
+        <assemblyRadius>8</assemblyRadius>
+        <assemblyCheckTicks>2500</assemblyCheckTicks>
+        <splitChildPawnKind>WNG_ReplicatorDrone</splitChildPawnKind>
+        <splitCount>2</splitCount>
+        <splitRecombineDelayTicks>2500</splitRecombineDelayTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_ReplicatorBlockBase">
+    <defName>WNG_ReplicatorBulwark</defName>
+    <label>replicator bulwark</label>
+    <description>A dense armored block form assembled from two compatible Hunters. Two Bulwarks can reorganize into a Titan; genuine destruction releases two Hunters.</description>
+    <statBases>
+      <MarketValue>3900</MarketValue>
+      <MoveSpeed>3.25</MoveSpeed>
+      <ArmorRating_Blunt>0.38</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.34</ArmorRating_Heat>
+    </statBases>
+    <race>
+      <baseBodySize>1.45</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>armored crusher</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Cut</li>
+        </capacities>
+        <power>22</power>
+        <cooldownTime>2.1</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorHierarchy">
+        <upgradePawnKind>WNG_ReplicatorTitan</upgradePawnKind>
+        <unitsRequired>2</unitsRequired>
+        <assemblyRadius>9</assemblyRadius>
+        <assemblyCheckTicks>2500</assemblyCheckTicks>
+        <splitChildPawnKind>WNG_ReplicatorHunter</splitChildPawnKind>
+        <splitCount>2</splitCount>
+        <splitRecombineDelayTicks>2500</splitRecombineDelayTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_ReplicatorBlockBase">
+    <defName>WNG_ReplicatorTitan</defName>
+    <label>replicator titan</label>
+    <description>A siege-scale block construct assembled from two compatible Bulwarks. Two Titans can reorganize into a Siege Mass; genuine destruction releases two Bulwarks.</description>
+    <statBases>
+      <MarketValue>9000</MarketValue>
+      <MoveSpeed>2.65</MoveSpeed>
+      <ArmorRating_Blunt>0.52</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.66</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.42</ArmorRating_Heat>
+    </statBases>
+    <race>
+      <baseBodySize>2.4</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>siege mandibles</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Cut</li>
+        </capacities>
+        <power>34</power>
+        <cooldownTime>2.7</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorHierarchy">
+        <upgradePawnKind>WNG_ReplicatorSiegeMass</upgradePawnKind>
+        <unitsRequired>2</unitsRequired>
+        <assemblyRadius>10</assemblyRadius>
+        <assemblyCheckTicks>2500</assemblyCheckTicks>
+        <splitChildPawnKind>WNG_ReplicatorBulwark</splitChildPawnKind>
+        <splitCount>2</splitCount>
+        <splitRecombineDelayTicks>2500</splitRecombineDelayTicks>
+      </li>
+          <li Class="WraithNaniteGravtech.CompProperties_ReplicatorCoreFragmentSalvage"><dropChance>0.08</dropChance></li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_ReplicatorBlockBase">
+    <defName>WNG_ReplicatorSiegeMass</defName>
+    <label>replicator siege mass</label>
+    <description>The largest ordinary concentration in the physical block hierarchy. Genuine destruction releases two operational Titans rather than making the constituent swarm disappear.</description>
+    <statBases>
+      <MarketValue>19000</MarketValue>
+      <MoveSpeed>1.85</MoveSpeed>
+      <ArmorRating_Blunt>0.58</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.48</ArmorRating_Heat>
+    </statBases>
+    <race>
+      <baseBodySize>3.8</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>devouring ram</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Cut</li>
+        </capacities>
+        <power>48</power>
+        <cooldownTime>3.2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorHierarchy">
+        <splitChildPawnKind>WNG_ReplicatorTitan</splitChildPawnKind>
+        <splitCount>2</splitCount>
+        <splitRecombineDelayTicks>2500</splitRecombineDelayTicks>
+      </li>
+          <li Class="WraithNaniteGravtech.CompProperties_ReplicatorCoreFragmentSalvage"><dropChance>0.15</dropChance></li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_ReplicatorBlockBase">
+    <defName>WNG_ReplicatorController</defName>
+    <label>replicator controller</label>
+    <description>A mature-swarm coordination body reorganized from an existing Hunter or Bulwark. It improves same-faction assimilation and recombination while functional, but the swarm remains autonomous if it is destroyed.</description>
+    <statBases>
+      <MarketValue>3100</MarketValue>
+      <MoveSpeed>3.75</MoveSpeed>
+      <ArmorRating_Blunt>0.27</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.29</ArmorRating_Heat>
+    </statBases>
+    <race>
+      <thinkTreeMain>WNG_ReplicatorController</thinkTreeMain>
+      <baseBodySize>1.20</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>coordination limbs</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Cut</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+    <killedLeavings>
+      <WNG_ReplicatorMatter>6</WNG_ReplicatorMatter>
+    </killedLeavings>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorController" />
+          <li Class="WraithNaniteGravtech.CompProperties_ReplicatorCoreFragmentSalvage"><dropChance>0.35</dropChance></li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_ReplicatorBlockBase">
+    <defName>WNG_ReplicatorRepairer</defName>
+    <label>replicator repairer</label>
+    <description>A Hunter-mass support body reorganized from existing swarm mass after the lineage learns suitable power technology. It prioritizes repairing seriously damaged allied block Replicators and remains vulnerable to EMP and powered containment.</description>
+    <statBases>
+      <MarketValue>1550</MarketValue>
+      <MoveSpeed>4.35</MoveSpeed>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.20</ArmorRating_Heat>
+    </statBases>
+    <race>
+      <thinkTreeMain>WNG_ReplicatorRepairer</thinkTreeMain>
+      <baseBodySize>0.85</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechWeightClass>Light</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>repair limbs</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Cut</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.75</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorHierarchy">
+        <splitChildPawnKind>WNG_ReplicatorDrone</splitChildPawnKind>
+        <splitCount>2</splitCount>
+        <splitRecombineDelayTicks>2500</splitRecombineDelayTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_ReplicatorBlockBase">
+    <defName>WNG_ReplicatorBurrower</defName>
+    <label>replicator burrower</label>
+    <description>A Hunter-mass structural specialist reorganized after the swarm learns robust armor/material techniques. It prioritizes physical access blockers and powered containment while preserving the swarm's consume-first ecology.</description>
+    <statBases>
+      <MarketValue>1650</MarketValue>
+      <MoveSpeed>4.75</MoveSpeed>
+      <ArmorRating_Blunt>0.24</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.36</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.20</ArmorRating_Heat>
+    </statBases>
+    <race>
+      <thinkTreeMain>WNG_ReplicatorBurrower</thinkTreeMain>
+      <baseBodySize>0.90</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechWeightClass>Light</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>breaching mandibles</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.65</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorHierarchy">
+        <splitChildPawnKind>WNG_ReplicatorDrone</splitChildPawnKind>
+        <splitCount>2</splitCount>
+        <splitRecombineDelayTicks>2500</splitRecombineDelayTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="WNG_ReplicatorBlockBase">
+    <defName>WNG_ReplicatorArtillery</defName>
+    <label>replicator artillery</label>
+    <description>A Bulwark-mass long-range support body formed only after the swarm has learned both ranged-weapon and power technology. Its integrated artillery organ participates only in the existing bounded self-defense and retaliation system.</description>
+    <statBases>
+      <MarketValue>4100</MarketValue>
+      <MoveSpeed>3.15</MoveSpeed>
+      <ArmorRating_Blunt>0.34</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.48</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.30</ArmorRating_Heat>
+    </statBases>
+    <race>
+      <baseBodySize>1.45</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>support limbs</label>
+        <capacities><li>Blunt</li></capacities>
+        <power>14</power>
+        <cooldownTime>2.1</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorArtillery">
+        <integratedWeaponDef>WNG_ReplicatorArtilleryCaster</integratedWeaponDef>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorHierarchy">
+        <splitChildPawnKind>WNG_ReplicatorHunter</splitChildPawnKind>
+        <splitCount>2</splitCount>
+        <splitRecombineDelayTicks>2500</splitRecombineDelayTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ReplicatorDrone</defName>
+    <label>replicator drone</label>
+    <race>WNG_ReplicatorDrone</race>
+    <defaultFactionDef>WNG_ReplicatorSwarm</defaultFactionDef>
+    <combatPower>35</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorDrone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>0.85</drawSize>
+          <shadowData>
+            <volume>(0.22, 0.28, 0.22)</volume>
+            <offset>(0,0,-0.12)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ReplicatorHunter</defName>
+    <label>replicator hunter</label>
+    <race>WNG_ReplicatorHunter</race>
+    <defaultFactionDef>WNG_ReplicatorSwarm</defaultFactionDef>
+    <combatPower>95</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorHunter</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>1.25</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ReplicatorBulwark</defName>
+    <label>replicator bulwark</label>
+    <race>WNG_ReplicatorBulwark</race>
+    <defaultFactionDef>WNG_ReplicatorSwarm</defaultFactionDef>
+    <combatPower>230</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorBulwark</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>1.8</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ReplicatorTitan</defName>
+    <label>replicator titan</label>
+    <race>WNG_ReplicatorTitan</race>
+    <defaultFactionDef>WNG_ReplicatorSwarm</defaultFactionDef>
+    <combatPower>520</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorTitan</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>2.6</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ReplicatorSiegeMass</defName>
+    <label>replicator siege mass</label>
+    <race>WNG_ReplicatorSiegeMass</race>
+    <defaultFactionDef>WNG_ReplicatorSwarm</defaultFactionDef>
+    <combatPower>980</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorSiegeMass</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>3.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ReplicatorController</defName>
+    <label>replicator controller</label>
+    <race>WNG_ReplicatorController</race>
+    <defaultFactionDef>WNG_ReplicatorSwarm</defaultFactionDef>
+    <combatPower>125</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorController</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>1.45</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ReplicatorRepairer</defName>
+    <label>replicator repairer</label>
+    <race>WNG_ReplicatorRepairer</race>
+    <defaultFactionDef>WNG_ReplicatorSwarm</defaultFactionDef>
+    <combatPower>75</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorRepairer</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>1.20</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ReplicatorBurrower</defName>
+    <label>replicator burrower</label>
+    <race>WNG_ReplicatorBurrower</race>
+    <defaultFactionDef>WNG_ReplicatorSwarm</defaultFactionDef>
+    <combatPower>90</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorBurrower</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>1.25</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ReplicatorArtillery</defName>
+    <label>replicator artillery</label>
+    <race>WNG_ReplicatorArtillery</race>
+    <defaultFactionDef>WNG_ReplicatorSwarm</defaultFactionDef>
+    <combatPower>180</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorArtillery</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>1.85</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+</Defs>

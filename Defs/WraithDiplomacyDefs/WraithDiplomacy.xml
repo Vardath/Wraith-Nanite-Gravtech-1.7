@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WraithNaniteGravtech.WraithPragmaticDiplomacyTuningDef>
+    <defName>WNG_WraithPragmaticDiplomacyTuning</defName>
+    <checkIntervalTicks>1200</checkIntervalTicks>
+    <initialOfferMinTicks>240000</initialOfferMinTicks>
+    <initialOfferMaxTicks>420000</initialOfferMaxTicks>
+    <repeatOfferMinTicks>420000</repeatOfferMinTicks>
+    <repeatOfferMaxTicks>720000</repeatOfferMaxTicks>
+    <retryOfferTicks>60000</retryOfferTicks>
+
+    <cinderBiomassCost>100</cinderBiomassCost>
+    <cinderBiomassGoodwill>18</cinderBiomassGoodwill>
+    <cinderDeclineGoodwill>-4</cinderDeclineGoodwill>
+
+    <veiledBiomassCost>65</veiledBiomassCost>
+    <veiledBiomassGoodwill>15</veiledBiomassGoodwill>
+    <veiledMedicineCost>5</veiledMedicineCost>
+    <veiledNeutroamineCost>8</veiledNeutroamineCost>
+    <veiledMedicalGoodwill>10</veiledMedicalGoodwill>
+
+    <paleBiomassCost>40</paleBiomassCost>
+    <paleBiomassGoodwill>14</paleBiomassGoodwill>
+    <paleMedicineCost>4</paleMedicineCost>
+    <paleNeutroamineCost>5</paleNeutroamineCost>
+    <paleMedicalGoodwill>12</paleMedicalGoodwill>
+  </WraithNaniteGravtech.WraithPragmaticDiplomacyTuningDef>
+</Defs>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef>
+    <defName>WNG_AsuranLatticeIntrusion</defName>
+    <label>intrude on Replicator lattice</label>
+    <description>Inject a temporary Asuran control pattern into one hostile block Replicator. Small bodies can be reversibly hijacked; larger or specialist bodies instead suffer bounded command suppression. The original controller state is preserved for restoration, and EMP or powered containment can interrupt the intrusion.</description>
+    <iconPath>UI/WNG/Abilities/AsuranLatticeIntrusion</iconPath>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>15000~15000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>2.5</warmupTime>
+      <range>20</range>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+      <soundCast>WNG_NaniteNeuralInterface</soundCast>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityAsuranLatticeIntrusion">
+        <droneOverrideTicks>15000</droneOverrideTicks>
+        <hunterOverrideTicks>9000</hunterOverrideTicks>
+        <bulwarkSuppressionTicks>6000</bulwarkSuppressionTicks>
+        <titanSuppressionTicks>4500</titanSuppressionTicks>
+        <controllerSuppressionTicks>7500</controllerSuppressionTicks>
+        <siegeSuppressionTicks>3000</siegeSuppressionTicks>
+        <specialistSuppressionTicks>6000</specialistSuppressionTicks>
+        <peerDurationBonus>0.08</peerDurationBonus>
+        <maxPeerBonusCount>3</maxPeerBonusCount>
+        <shieldResistanceFactor>0.75</shieldResistanceFactor>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

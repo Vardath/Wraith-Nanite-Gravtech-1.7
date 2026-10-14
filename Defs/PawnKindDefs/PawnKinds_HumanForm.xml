@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef Name="WNG_NaniteHumanoidBase" Abstract="True">
+    <race>Human</race>
+    <useFactionXenotypes>false</useFactionXenotypes>
+    <xenotypeSet>
+      <xenotypeChances><WNG_NanitePrecursor>1</WNG_NanitePrecursor></xenotypeChances>
+    </xenotypeSet>
+    <minGenerationAge>20</minGenerationAge>
+    <maxGenerationAge>80</maxGenerationAge>
+    <allowOldAgeInjuries>false</allowOldAgeInjuries>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <apparelMoney>5000~5000</apparelMoney>
+    <apparelTags Inherit="False"/>
+    <gearHealthRange>0.9~1</gearHealthRange>
+    <itemQuality>Good</itemQuality>
+    <initialWillRange>12~24</initialWillRange>
+    <initialResistanceRange>18~32</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_NaniteHumanoidBase">
+    <defName>WNG_PrecursorEngineer</defName>
+    <label>precursor engineer</label>
+    <combatPower>110</combatPower>
+    <isFighter>false</isFighter>
+    <weaponMoney>1005~1400</weaponMoney>
+    <weaponTags><li>WNG_PrecursorWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_HumanFormUniform</li></apparelRequired>
+    <backstoryFiltersOverride>
+      <li><categories><li>AsuranOrigin</li><li>AsuranEngineerAdult</li></categories></li>
+    </backstoryFiltersOverride>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_NaniteHumanoidBase">
+    <defName>WNG_PrecursorSoldier</defName>
+    <label>precursor soldier</label>
+    <combatPower>220</combatPower>
+    <isFighter>true</isFighter>
+    <weaponMoney>1005~2200</weaponMoney>
+    <weaponTags><li>WNG_PrecursorWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_PrecursorFieldArmor</li></apparelRequired>
+    <backstoryFiltersOverride>
+      <li><categories><li>AsuranOrigin</li><li>AsuranSoldierAdult</li></categories></li>
+    </backstoryFiltersOverride>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_NaniteHumanoidBase">
+    <defName>WNG_PrecursorCommander</defName>
+    <label>precursor coordinator</label>
+    <combatPower>300</combatPower>
+    <isFighter>true</isFighter>
+    <factionLeader>true</factionLeader>
+    <weaponMoney>1400~3000</weaponMoney>
+    <weaponTags><li>WNG_PrecursorWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_PrecursorCommandArmor</li></apparelRequired>
+    <itemQuality>Excellent</itemQuality>
+    <backstoryFiltersOverride>
+      <li><categories><li>AsuranOrigin</li><li>AsuranCommanderAdult</li></categories></li>
+    </backstoryFiltersOverride>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_NaniteHumanoidBase">
+    <defName>WNG_HumanFormReplicator</defName>
+    <label>human-form replicator</label>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances><WNG_HumanFormReplicator>1</WNG_HumanFormReplicator></xenotypeChances>
+    </xenotypeSet>
+    <combatPower>180</combatPower>
+    <isFighter>true</isFighter>
+    <weaponMoney>1005~1600</weaponMoney>
+    <weaponTags><li>WNG_PrecursorWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_HumanFormCombatArmor</li></apparelRequired>
+    <initialWillRange>0~0</initialWillRange>
+    <initialResistanceRange>0~0</initialResistanceRange>
+    <backstoryFiltersOverride>
+      <li><categories><li>AsuranOrigin</li><li>AsuranHumanFormAdult</li></categories></li>
+    </backstoryFiltersOverride>
+  </PawnKindDef>
+
+  <!-- Covert human-form body: uses ordinary-looking cover clothing rather than the visible Asuran uniform. -->
+  <PawnKindDef ParentName="WNG_NaniteHumanoidBase">
+    <defName>WNG_HumanFormInfiltrator</defName>
+    <label>human-form traveller</label>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances><WNG_HumanFormReplicator>1</WNG_HumanFormReplicator></xenotypeChances>
+    </xenotypeSet>
+    <combatPower>160</combatPower>
+    <isFighter>true</isFighter>
+    <apparelMoney>180~420</apparelMoney>
+    <apparelTags><li>IndustrialBasic</li></apparelTags>
+    <apparelAllowHeadgearChance>0.30</apparelAllowHeadgearChance>
+    <initialWillRange>0~0</initialWillRange>
+    <initialResistanceRange>0~0</initialResistanceRange>
+    <backstoryFiltersOverride>
+      <li><categories><li>AsuranOrigin</li><li>AsuranHumanFormAdult</li></categories></li>
+    </backstoryFiltersOverride>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_NaniteHumanoidBase">
+    <defName>WNG_PlayerHumanFormReplicator</defName>
+    <label>player human-form replicator</label>
+    <defaultFactionDef>PlayerColony</defaultFactionDef>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances><WNG_HumanFormReplicator>1</WNG_HumanFormReplicator></xenotypeChances>
+    </xenotypeSet>
+    <combatPower>180</combatPower>
+    <isFighter>true</isFighter>
+    <weaponMoney>1005~1600</weaponMoney>
+    <weaponTags><li>WNG_PrecursorWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_HumanFormUniform</li></apparelRequired>
+    <initialWillRange>0~0</initialWillRange>
+    <initialResistanceRange>0~0</initialResistanceRange>
+    <backstoryFiltersOverride>
+      <li><categories><li>AsuranOrigin</li><li>AsuranPlayerAdult</li></categories></li>
+    </backstoryFiltersOverride>
+  </PawnKindDef>
+  <!-- Internal fresh-body fallback used only by Neural Interface reconstruction. -->
+  <PawnKindDef ParentName="WNG_NaniteHumanoidBase">
+    <defName>WNG_HumanFormCopy</defName>
+    <label>reconstructed human-form copy</label>
+    <defaultFactionDef>PlayerColony</defaultFactionDef>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances><WNG_NanitePrecursor>1</WNG_NanitePrecursor></xenotypeChances>
+    </xenotypeSet>
+    <combatPower>120</combatPower>
+    <isFighter>false</isFighter>
+    <apparelRequired><li>WNG_HumanFormUniform</li></apparelRequired>
+    <initialWillRange>0~0</initialWillRange>
+    <initialResistanceRange>0~0</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_NaniteHumanoidBase">
+    <defName>WNG_ReplicatorQueenChild</defName>
+    <label>replicator child</label>
+    <xenotypeSet Inherit="False"><xenotypeChances><WNG_HumanFormReplicator>1</WNG_HumanFormReplicator></xenotypeChances></xenotypeSet>
+    <fixedGender>Female</fixedGender>
+    <minGenerationAge>13.01</minGenerationAge>
+    <maxGenerationAge>13.99</maxGenerationAge>
+    <allowOldAgeInjuries>false</allowOldAgeInjuries>
+    <combatPower>55</combatPower>
+    <isFighter>false</isFighter>
+    <apparelRequired><li>WNG_HumanFormUniform</li></apparelRequired>
+    <apparelMoney>5000~5000</apparelMoney>
+    <weaponMoney>0</weaponMoney>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <initialWillRange>0~0</initialWillRange>
+    <initialResistanceRange>0~0</initialResistanceRange>
+  </PawnKindDef>
+
+</Defs>

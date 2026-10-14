@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>WNG_HoffanSerum</defName>
+    <recipeMaker IsNull="True" />
+    <label>prototype Hoffan serum</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>An experimental anti-Wraith inoculation reconstructed from Hoffan research principles and Wraith biochemical samples. A successful inoculation permanently blocks ordinary Wraith feeding and poisons a Wraith that attempts it, but this first-generation formulation has a 50% chance to trigger fatal systemic failure in the recipient. Survivors also suffer reduced immune response.</description>
+    <descriptionHyperlinks>
+      <HediffDef>WNG_HoffanProtection</HediffDef>
+      <HediffDef>WNG_HoffanFatalReaction</HediffDef>
+      <HediffDef>WNG_HoffanWraithPoisoning</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Resource/WNG_WraithBiofluidFuel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(0.70,0.85,0.95)</color>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>180</MarketValue>
+      <Mass>0.08</Mass>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>100</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestCommandString>Inoculate with {0}</ingestCommandString>
+      <ingestReportString>Inoculating with {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <chairSearchRadius>0</chairSearchRadius>
+      <outcomeDoers>
+        <li Class="WraithNaniteGravtech.IngestionOutcomeDoer_HoffanSerum">
+          <fatalReactionChance>0.50</fatalReactionChance>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <costList>
+      <WNG_RawWraithEnzyme>1</WNG_RawWraithEnzyme>
+      <Neutroamine>10</Neutroamine>
+      <MedicineIndustrial>2</MedicineIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>910</listOrder>
+      </li>
+    </comps>
+    <tradeability>Sellable</tradeability>
+    <tradeTags><li>ExoticMisc</li></tradeTags>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,99 @@
+{
+  "id": "wraith_warrior_carapace",
+  "item": "WNG_WarriorCarapace",
+  "faction": "Wraith",
+  "output_dir": "Wraith",
+  "research": {
+    "rule": "Stargate production costume and prop references first; no historical WNG apparel",
+    "status": "stage_1_locked",
+    "sources": [
+      {
+        "type": "screen_used_material_reference",
+        "title": "Propworx Wraith Drone Uniform, production catalogue record",
+        "url": "https://abcdocz.com/doc/68928/",
+        "evidence": [
+          "black leather under-vest supports hard-rubber silver front and back carapace",
+          "rubber simulated-bone silver shoulder armour",
+          "silver thigh, knee and shin armour over black leather components",
+          "clasps, snaps, zippers, rear lacing and Velcro provide practical fastening logic"
+        ]
+      },
+      {
+        "type": "production_costume_context",
+        "title": "GateWorld Propworx Stargate auction coverage - Wraith Drone Costume",
+        "url": "https://www.gateworld.net/news/2010/07/propworx-stargate-auctions-week-23/",
+        "evidence": [
+          "Wraith drone/footsoldier costume establishes the warrior-rank armour family"
+        ]
+      },
+      {
+        "type": "costume_designer_primary",
+        "title": "Val Halverson Q&A hosted by Joseph Mallozzi",
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/",
+        "evidence": [
+          "Wraith wardrobe construction is leather-heavy, practical and texture-driven"
+        ]
+      }
+    ],
+    "required_visual_language": [
+      "silver hard-rubber grown torso carapace as the dominant armour read",
+      "black leather under-vest and flexible jointing visible between shell courses",
+      "simulated-bone layered shoulder protection",
+      "dark regenerative membrane at articulations",
+      "small practical straps, lacing, clasps and worn edges",
+      "organic insect/reptile articulation rather than machine-cut sci-fi panels",
+      "restrained chest biotech/self-destruct detail only"
+    ],
+    "avoid": [
+      "historical WNG apparel",
+      "generic marine armour",
+      "flat vector panels",
+      "neon piping",
+      "purple geometric shapes",
+      "clean white sci-fi plating",
+      "ship geometry attached to clothing",
+      "superhero breastplate"
+    ]
+  },
+  "rimworld": {
+    "family": "PowerArmor",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "tile_scale": 0.78
+  },
+  "masters": {
+    "south": "master_south.png",
+    "north": "master_north.png",
+    "east": "master_east.png"
+  },
+  "qa": {
+    "min_contrast": 14,
+    "max_white_fraction": 0.035,
+    "max_edge_lift": 28
+  },
+  "external_art_spec": {
+    "minimum_master_resolution": 1024,
+    "orthographic_views": [
+      "south/front",
+      "north/back",
+      "east/side"
+    ],
+    "background": "transparent",
+    "instruction": "finished professional painted RimWorld apparel master, not a concept sketch",
+    "silhouette": "match vanilla RimWorld PowerArmor proportions; do not invent a human anatomy silhouette",
+    "source_priority": "Stargate production Wraith drone/footsoldier wardrobe and prop references",
+    "banned": [
+      "historical WNG clothing",
+      "procedural panels",
+      "flat vector shapes",
+      "generic sci-fi armour",
+      "neon piping",
+      "ship parts on clothing"
+    ]
+  }
+}

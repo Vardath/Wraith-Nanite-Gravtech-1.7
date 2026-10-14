@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_HostileAsuranGateJumper</defName>
+    <label>concealed Asuran Stargate strike</label>
+    <category>ThreatBig</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_HostileAsuranGateJumper</workerClass>
+    <baseChance>0.03</baseChance>
+    <earliestDay>18</earliestDay>
+    <minRefireDays>20</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>false</pointsScaleable>
+    <letterLabel>Concealed Asuran gate ingress</letterLabel>
+    <letterText>A hostile Lattice signal has resolved through the colony's Stargate. Sensors cannot immediately fix the arriving craft: a Puddle Jumper is holding a finite cloak beside the gate with an Asuran boarding party still physically aboard. Damage, fuel loss or time can collapse the concealment before the exact crew deploys.</letterText>
+    <letterDef>ThreatBig</letterDef>
+  </IncidentDef>
+</Defs>

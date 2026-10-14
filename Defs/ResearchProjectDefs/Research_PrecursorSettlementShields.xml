@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_PrecursorSettlementShields</defName>
+    <label>precursor settlement shields</label>
+    <description>Scale compact precursor field control into a fixed ground projector. The resulting settlement field protects a bounded area from incoming hostile projectiles while allowing defenders inside the perimeter to fire outward. It remains power-hungry, finite, EMP-sensitive and distinct from gravship shielding.</description>
+    <baseCost>5600</baseCost>
+    <techLevel>Ultra</techLevel>
+    <prerequisites>
+      <li>WNG_PrecursorPersonalShields</li>
+    </prerequisites>
+  
+    <researchViewX>20.5</researchViewX><researchViewY>8.8</researchViewY>
+  </ResearchProjectDef>
+</Defs>

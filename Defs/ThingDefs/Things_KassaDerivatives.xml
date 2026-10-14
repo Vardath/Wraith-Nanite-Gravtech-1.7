@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>WNG_KassaConcentrate</defName>
+    <recipeMaker IsNull="True" />
+    <label>kassa concentrate</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>A concentrated preparation of kassa psycho-stimulants stripped away from most of the crop's bulk nutrition. The result is faster, stronger and substantially more habit-forming than eating the grain itself. It shares the same underlying Kassa dependence.</description>
+    <descriptionHyperlinks>
+      <HediffDef>WNG_KassaConcentrateHigh</HediffDef>
+      <HediffDef>WNG_KassaTolerance</HediffDef>
+      <HediffDef>WNG_KassaAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Goauld/WNG_KassaConcentrate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>320</WorkToMake>
+      <MarketValue>22</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.65</joy>
+      <drugCategory>Hard</drugCategory>
+      <baseIngestTicks>150</baseIngestTicks>
+      <ingestSound>Ingest_Snort</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Take {0}</ingestCommandString>
+      <ingestReportString>Taking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_KassaConcentrateHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>WNG_Kassa</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.25</offset>
+          <toleranceChemical>WNG_Kassa</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_KassaTolerance</hediffDef>
+          <toleranceChemical>WNG_Kassa</toleranceChemical>
+          <severity>0.050</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <costList>
+      <WNG_Kassa>6</WNG_Kassa>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>WNG_Kassa</chemical>
+        <addictiveness>0.12</addictiveness>
+        <minToleranceToAddict>0.00</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.25</existingAddictionSeverityOffset>
+        <needLevelOffset>0.90</needLevelOffset>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>126</listOrder>
+        <overdoseSeverityOffset>0.10~0.20</overdoseSeverityOffset>
+        <largeOverdoseChance>0.005</largeOverdoseChance>
+      </li>
+      <li Class="WraithNaniteGravtech.Trade.CompProperties_KassaMarketDemand">
+        <demandPerUnit>0.60</demandPerUnit>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>WNG_KassaConcentrateHigh</defName>
+    <label>kassa concentrate high</label>
+    <labelNoun>a kassa concentrate high</labelNoun>
+    <description>Concentrated Kassa stimulants are producing an intense euphoric drive and short-lived physical activation.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(0.9,0.3,0.8)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.75</painFactor>
+        <statFactors>
+          <RestFallRateFactor>0.50</RestFallRateFactor>
+        </statFactors>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>0.10</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>WNG_KassaConcentrateHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>WNG_KassaConcentrateHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>kassa rush</label>
+        <description>Everything feels urgent, bright and easy.</description>
+        <baseMoodEffect>22</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>WNG_KassaDistillate</defName>
+    <recipeMaker IsNull="True" />
+    <label>kassa distillate</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>A high-purity Kassa derivative produced by aggressive solvent extraction and pharmaceutical stabilization. The dose delivers a violent stimulant/euphoric peak with a correspondingly extreme dependency and overdose profile.</description>
+    <descriptionHyperlinks>
+      <HediffDef>WNG_KassaDistillateHigh</HediffDef>
+      <HediffDef>WNG_KassaTolerance</HediffDef>
+      <HediffDef>WNG_KassaAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Goauld/WNG_KassaDistillate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>600</WorkToMake>
+      <MarketValue>40</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <foodType>Processed, Fluid</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.85</joy>
+      <drugCategory>Hard</drugCategory>
+      <baseIngestTicks>80</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_KassaDistillateHigh</hediffDef>
+          <severity>0.85</severity>
+          <toleranceChemical>WNG_Kassa</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.40</offset>
+          <toleranceChemical>WNG_Kassa</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_KassaTolerance</hediffDef>
+          <toleranceChemical>WNG_Kassa</toleranceChemical>
+          <severity>0.070</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <costList>
+      <WNG_Kassa>8</WNG_Kassa>
+      <Neutroamine>1</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>WNG_Kassa</chemical>
+        <addictiveness>0.18</addictiveness>
+        <minToleranceToAddict>0.00</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.35</existingAddictionSeverityOffset>
+        <needLevelOffset>1.00</needLevelOffset>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>127</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.015</largeOverdoseChance>
+      </li>
+      <li Class="WraithNaniteGravtech.Trade.CompProperties_KassaMarketDemand">
+        <demandPerUnit>1.20</demandPerUnit>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>WNG_KassaDistillateHigh</defName>
+    <label>kassa distillate high</label>
+    <labelNoun>a kassa distillate high</labelNoun>
+    <description>High-purity Kassa alkaloids are driving the nervous system far beyond normal limits.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(0.9,0.15,0.7)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.4</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.50</painFactor>
+        <statFactors>
+          <RestFallRateFactor>0.35</RestFallRateFactor>
+        </statFactors>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.10</offset></li>
+          <li><capacity>Moving</capacity><offset>0.20</offset></li>
+          <li><capacity>Manipulation</capacity><offset>0.10</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>WNG_KassaDistillateHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>WNG_KassaDistillateHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>kassa distillate rush</label>
+        <description>I can do anything. I need more.</description>
+        <baseMoodEffect>32</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

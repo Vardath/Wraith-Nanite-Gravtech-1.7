@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_WraithStargateHunt</defName>
+    <label>Wraith Stargate hunting party</label>
+    <category>ThreatBig</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_WraithStargateHunt</workerClass>
+    <baseChance>0.055</baseChance>
+    <earliestDay>18</earliestDay>
+    <minRefireDays>24</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+</Defs>

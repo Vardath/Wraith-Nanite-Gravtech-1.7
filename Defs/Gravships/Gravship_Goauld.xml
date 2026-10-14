@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Standalone WNG fallback uses vanilla materials/fuels. Optional ONAC integration swaps Goa'uld economy/fuels when ONAC is active. -->
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>WNG_GoauldGravEngine</defName><label>Ha'tak grav engine</label>
+    <description>The gravitic heart of a Ha'tak mothership. It is a real Odyssey grav engine and links only to the Goa'uld family systems physically mounted on its own substructure.</description>
+    <thingClass>WraithNaniteGravtech.Building_WNGGravEngine</thingClass><drawerType>RealtimeOnly</drawerType><tickerType>Normal</tickerType><minifiedDef>MinifiedGravEngine</minifiedDef>
+    <designationCategory>Misc</designationCategory><uiOrder>2055</uiOrder><constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldGravEngine</texPath><drawSize>(3,3)</drawSize></graphicData>
+    <size>(3,3)</size><castEdgeShadows>true</castEdgeShadows><fillPercent>0.6</fillPercent><passability>PassThroughOnly</passability><pathCost>20</pathCost><canOverlapZones>false</canOverlapZones>
+    <statBases><MaxHitPoints>1150</MaxHitPoints><Mass>40</Mass><GravshipRange>0</GravshipRange><SubstructureSupport>600</SubstructureSupport><MarketValue>4100</MarketValue><Beauty>5</Beauty><Flammability>0</Flammability><WorkToBuild>20000</WorkToBuild></statBases>
+    <costList Inherit="False"><Uranium>120</Uranium><Plasteel>220</Plasteel><Gold>60</Gold><ComponentSpacer>10</ComponentSpacer></costList>
+    <researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <building><ai_neverTrashThis>true</ai_neverTrashThis><deconstructible>false</deconstructible><relatedBuildCommands><li>WNG_GoauldGravshipHull</li><li>WNG_GoauldGravshipDoor</li></relatedBuildCommands><relatedTerrain><li>WNG_GoauldGravshipSubstructure</li></relatedTerrain></building>
+    <comps>
+      <li Class="CompProperties_SubstructureFootprint"><radius>18.9</radius></li>
+      <li Class="CompProperties_Glower"><glowRadius>8</glowRadius><glowColor>(255,170,55,0)</glowColor></li>
+      <li Class="CompProperties_AffectedByFacilities"><linkableFacilities><li>WNG_GoauldGravFieldProjector</li><li>WNG_GoauldPeltac</li><li>WNG_GoauldNaquadriaTank</li><li>WNG_GoauldLargeNaquadriaTank</li><li>WNG_GoauldSmallSublightDrive</li><li>WNG_GoauldLargeSublightDrive</li><li>WNG_GoauldFuelOptimizer</li><li>WNG_GoauldSignalJammer</li><li>WNG_GoauldNavigationCrystal</li><li>WNG_GoauldGravshipShield</li><li>WNG_GoauldHeavyPlasmaBattery</li>
+          <li>WNG_GoauldFuelConduit</li>
+          <li>WNG_GoauldPowerConduit</li>
+          <li>WNG_GoauldPowerCoupler</li>
+          <li>WNG_GoauldNaquadahPowerCore</li>
+          <li>WNG_GoauldOrbitalScanner</li>
+          <li>WNG_GoauldLifeSupport</li>
+          <li>WNG_GoauldVacBarrier</li>
+        </linkableFacilities></li>
+    </comps>
+  </ThingDef>
+
+  <TerrainDef ParentName="WNG_SubstructureBase">
+    <defName>WNG_GoauldGravshipSubstructure</defName><label>Ha'tak gravship substructure</label>
+    <description>A naquadah-reinforced mothership deck synchronized to the Ha'tak grav engine. Its Heavy affordance supports substantial internal equipment such as transport rings.</description>
+    <texturePath>Terrain/Goauld/WNG_GoauldGravshipSubstructure</texturePath><designationCategory>Floors</designationCategory>
+    <affordances Inherit="False"><li>Walkable</li><li>Light</li><li>Heavy</li><li>Substructure</li></affordances>
+    <statBases><WorkToBuild>700</WorkToBuild><Flammability>0</Flammability><CleaningTimeFactor>0.8</CleaningTimeFactor></statBases>
+    <costList Inherit="False"><Uranium>2</Uranium><Plasteel>3</Plasteel></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites><uiOrder>1785</uiOrder>
+    <placeWorkers Inherit="False"><li>WraithNaniteGravtech.PlaceWorker_GoauldGravshipSubstructure</li><li>PlaceWorker_BuildingsValidOverSubstructure</li></placeWorkers>
+  </TerrainDef>
+
+  <ThingDef ParentName="WNG_GravshipHullBase">
+    <defName>WNG_GoauldGravshipHull</defName><label>Ha'tak gravship hull</label>
+    <description>Dense airtight naquadah-reinforced armor forming the angular outer shell of a Ha'tak.</description>
+    <designationCategory>Structure</designationCategory><uiOrder>1805</uiOrder>
+    <uiIconPath>UI/WNG/Build/WNG_GoauldGravshipHull</uiIconPath>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldHull_Atlas</texPath><drawSize>(1,1)</drawSize><linkType>CornerFiller</linkType><linkFlags Inherit="False"><li>Wall</li><li>Rock</li></linkFlags></graphicData>
+    <statBases><MaxHitPoints>860</MaxHitPoints><WorkToBuild>540</WorkToBuild><Flammability>0</Flammability></statBases>
+    <costList Inherit="False"><Uranium>3</Uranium><Plasteel>5</Plasteel></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <placeWorkers Inherit="False"><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="Door">
+    <defName>WNG_GoauldGravshipDoor</defName><label>Ha'tak pressure door</label>
+    <description>A heavy Goa'uld pressure door sealing internal Ha'tak compartments.</description>
+    <rotatable>false</rotatable>
+    <designationCategory>Structure</designationCategory><uiOrder>1806</uiOrder>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldGravshipDoor</texPath><drawSize>(1,1)</drawSize><linkFlags><li>Wall</li><li>Rock</li></linkFlags></graphicData>
+    <statBases><MaxHitPoints>720</MaxHitPoints><WorkToBuild>700</WorkToBuild><Flammability>0</Flammability></statBases>
+    <costList Inherit="False"><Uranium>6</Uranium><Plasteel>12</Plasteel></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <stuffCategories Inherit="False"/><costStuffCount>0</costStuffCount><useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <building>
+      <isAirtight>true</isAirtight>
+      <isSupportDoor>true</isSupportDoor>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <blueprintClass>Blueprint_Door</blueprintClass>
+      <paintable>false</paintable>
+    </building>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="WNG_PilotConsoleBase">
+    <defName>WNG_GoauldPeltac</defName><label>Ha'tak pel'tac</label>
+    <description>The command and flight-control station of a Goa'uld mothership, coupled directly to the Ha'tak grav engine and isolated ship-power grid.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2105</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldPeltac</texPath><drawSize>(3.6,2.5)</drawSize></graphicData>
+    <statBases><MaxHitPoints>360</MaxHitPoints><Mass>48</Mass><Flammability>0</Flammability><Beauty>6</Beauty><WorkToBuild>4200</WorkToBuild></statBases>
+    <costList Inherit="False"><Uranium>18</Uranium><Plasteel>90</Plasteel><Gold>25</Gold><ComponentIndustrial>5</ComponentIndustrial></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <placeWorkers Inherit="False"><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps Inherit="False">
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGPilotConsole"><family>Goauld</family><componentTypeDef>Controls</componentTypeDef><requiresLOS>false</requiresLOS><showMaxSimultaneous>false</showMaxSimultaneous><maxSimultaneous>1</maxSimultaneous><maxDistance>200</maxDistance></li>
+      
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>500</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="WNG_GravFieldExtenderBase">
+    <defName>WNG_GoauldGravFieldProjector</defName><label>Ha'tak grav-field projector</label>
+    <description>A Goa'uld gravitic projector extending the Ha'tak engine's native substructure-support envelope.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2305</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldGravFieldProjector</texPath><drawSize>(2,2)</drawSize></graphicData>
+    <statBases><MaxHitPoints>420</MaxHitPoints><Mass>32</Mass><WorkToBuild>4200</WorkToBuild><Beauty>3</Beauty><Flammability>0</Flammability></statBases>
+    <costList Inherit="False"><Uranium>20</Uranium><Plasteel>65</Plasteel><ComponentSpacer>1</ComponentSpacer></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <placeWorkers Inherit="False"><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><statOffsets><SubstructureSupport>250</SubstructureSupport></statOffsets><requiresLOS>false</requiresLOS><maxSimultaneous>6</maxSimultaneous><maxDistance>18.9</maxDistance><onlyRequiresLooseConnection>true</onlyRequiresLooseConnection></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>350</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="FuelTankBase">
+    <defName>WNG_GoauldNaquadriaTank</defName><label>Ha'tak liquid-Naquadria reservoir</label>
+    <description>A compact Ha'tak propellant reservoir accepting only ONAC Liquid Naquadria and feeding only same-family Goa'uld drives.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2155</uiOrder><size>(2,2)</size><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldNaquadriaTank</texPath><drawSize>(2,2)</drawSize></graphicData>
+    <statBases><MaxHitPoints>360</MaxHitPoints><Mass>32</Mass><Flammability>0.08</Flammability><Beauty>2</Beauty><WorkToBuild>2800</WorkToBuild></statBases>
+    <costList Inherit="False"><Uranium>18</Uranium><Plasteel>90</Plasteel><Gold>10</Gold></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers Inherit="False"><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelTankFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><providesFuel>true</providesFuel><componentTypeDef>FuelStorage</componentTypeDef><requiresLOS>false</requiresLOS><showMaxSimultaneous>false</showMaxSimultaneous><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="CompProperties_Refuelable"><fuelCapacity>250</fuelCapacity><targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>250</initialConfigurableTargetFuelLevel><fuelFilter><thingDefs><li>Chemfuel</li></thingDefs></fuelFilter><fuelLabel>Chemfuel</fuelLabel><fuelGizmoLabel>Chemfuel</fuelGizmoLabel><consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><autoRefuelPercent>1</autoRefuelPercent><showFuelGizmo>true</showFuelGizmo><canEjectFuel>true</canEjectFuel></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint"><family>Goauld</family><role>Tank</role></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>80</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="FuelTankBase">
+    <defName>WNG_GoauldLargeNaquadriaTank</defName><label>large Ha'tak liquid-Naquadria reservoir</label>
+    <description>A high-capacity Ha'tak propellant reservoir accepting only ONAC Liquid Naquadria.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2156</uiOrder><size>(3,3)</size><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldLargeNaquadriaTank</texPath><drawSize>(3,3)</drawSize></graphicData>
+    <statBases><MaxHitPoints>560</MaxHitPoints><Mass>60</Mass><Flammability>0.08</Flammability><Beauty>3</Beauty><WorkToBuild>3900</WorkToBuild></statBases>
+    <costList Inherit="False"><Uranium>40</Uranium><Plasteel>150</Plasteel><Gold>18</Gold><ComponentIndustrial>2</ComponentIndustrial></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers Inherit="False"><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelTankFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><providesFuel>true</providesFuel><componentTypeDef>FuelStorage</componentTypeDef><requiresLOS>false</requiresLOS><showMaxSimultaneous>false</showMaxSimultaneous><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="CompProperties_Refuelable"><fuelCapacity>750</fuelCapacity><targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>750</initialConfigurableTargetFuelLevel><fuelFilter><thingDefs><li>Chemfuel</li></thingDefs></fuelFilter><fuelLabel>Chemfuel</fuelLabel><fuelGizmoLabel>Chemfuel</fuelGizmoLabel><consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><autoRefuelPercent>1</autoRefuelPercent><showFuelGizmo>true</showFuelGizmo><canEjectFuel>true</canEjectFuel></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint"><family>Goauld</family><role>Tank</role></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>120</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldFuelConduit</defName><label>Ha'tak fuel conduit</label>
+    <description>A sealed Goa'uld feed line carrying only Liquid Naquadria between same-family reservoirs and drives.</description>
+    <thingClass>Building</thingClass>
+    <altitudeLayer>Conduits</altitudeLayer><designationCategory>Misc</designationCategory><uiOrder>2158</uiOrder><tickerType>Never</tickerType>
+    <graphicData><graphicClass>WraithNaniteGravtech.Graphic_LinkedGoauldFuelConduit</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldFuelConduit_Atlas</texPath><drawSize>(1,1)</drawSize></graphicData><uiIconPath>UI/WNG/Conduits/WNG_GoauldFuelConduit_MenuIcon</uiIconPath><uiIconScale>0.7</uiIconScale>
+    <statBases><MaxHitPoints>160</MaxHitPoints><Mass>1</Mass><Flammability>0</Flammability><Beauty>0</Beauty><WorkToBuild>100</WorkToBuild></statBases><costList><Uranium>1</Uranium></costList><researchPrerequisites><li>WNG_GoauldGravships</li></researchPrerequisites><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded><passability>Standable</passability><fillPercent>0.02</fillPercent>
+    <building><isEdifice>false</isEdifice><canLandGravshipOn>true</canLandGravshipOn><canConstructInCorner>true</canConstructInCorner></building>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li><li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint"><family>Goauld</family><role>Conduit</role></li></comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldPowerConduit</defName><label>Ha'tak power conduit</label>
+    <description>A naquadah-lined ship power bus isolated from Wraith, Asuran and ordinary colony grids unless a deliberate Ha'tak coupler is installed.</description>
+    <thingClass>Building</thingClass>
+    <altitudeLayer>Conduits</altitudeLayer><designationCategory>Power</designationCategory><uiOrder>2005</uiOrder><tickerType>Never</tickerType>
+    <graphicData><graphicClass>WraithNaniteGravtech.Graphic_LinkedGoauldFamilyPower</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldPowerConduit_Atlas</texPath><drawSize>(1,1)</drawSize></graphicData><uiIconPath>UI/WNG/Conduits/WNG_GoauldPowerConduit_MenuIcon</uiIconPath><uiIconScale>0.7</uiIconScale>
+    <statBases><MaxHitPoints>170</MaxHitPoints><Mass>1</Mass><Flammability>0</Flammability><Beauty>0</Beauty><WorkToBuild>100</WorkToBuild></statBases><costList><Uranium>1</Uranium></costList><researchPrerequisites><li>WNG_GoauldGravships</li></researchPrerequisites><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded><passability>Standable</passability><fillPercent>0.02</fillPercent>
+    <building><isEdifice>false</isEdifice><isPowerConduit>true</isPowerConduit><canLandGravshipOn>true</canLandGravshipOn><canConstructInCorner>true</canConstructInCorner></building>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li><li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Conduit</role></li></comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldPowerCoupler</defName><label>Ha'tak power coupler</label>
+    <description>An intentional interface between a vanilla colony power net and the isolated Goa'uld ship grid. It does not bridge Wraith or Asuran family power.</description>
+    <thingClass>Building</thingClass><designationCategory>Power</designationCategory><uiOrder>2006</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldPowerCoupler</texPath><drawSize>(1.5,1.5)</drawSize></graphicData><size>(1,1)</size><passability>PassThroughOnly</passability><fillPercent>0.25</fillPercent>
+    <statBases><MaxHitPoints>320</MaxHitPoints><WorkToBuild>2200</WorkToBuild><Mass>10</Mass><Flammability>0</Flammability><Beauty>2</Beauty></statBases><costList><Uranium>8</Uranium><Plasteel>25</Plasteel><ComponentIndustrial>2</ComponentIndustrial></costList><researchPrerequisites><li>WNG_GoauldGravships</li></researchPrerequisites><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li><li Class="CompProperties_Flickable"/><li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><basePowerConsumption>0</basePowerConsumption></li><li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Coupler</role><capacityWatts>8000</capacityWatts></li></comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldNaquadahPowerCore</defName><label>Ha'tak naquadah power core</label>
+    <description>A finite naquadah reactor feeding only the Ha'tak family power grid. Solid ONAC Naquadah is consumed slowly while the ship grid carries load.</description>
+    <thingClass>Building</thingClass><designationCategory>Power</designationCategory><uiOrder>2007</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldNaquadahPowerCore</texPath><drawSize>(2,2)</drawSize></graphicData><size>(2,2)</size><passability>PassThroughOnly</passability><fillPercent>0.5</fillPercent>
+    <statBases><MaxHitPoints>780</MaxHitPoints><WorkToBuild>15000</WorkToBuild><Mass>80</Mass><Flammability>0</Flammability><Beauty>5</Beauty></statBases><costList><Uranium>100</Uranium><Plasteel>180</Plasteel><ComponentSpacer>6</ComponentSpacer><Gold>30</Gold></costList><researchPrerequisites><li>WNG_GoauldGravships</li></researchPrerequisites><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Refuelable"><fuelCapacity>20</fuelCapacity><targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>20</initialConfigurableTargetFuelLevel><fuelConsumptionRate>0.75</fuelConsumptionRate><consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><fuelFilter><thingDefs><li>Uranium</li></thingDefs></fuelFilter><fuelLabel>Uranium</fuelLabel><fuelGizmoLabel>Uranium</fuelGizmoLabel><showFuelGizmo>true</showFuelGizmo></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Generator</role><capacityWatts>12000</capacityWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="WNG_SmallThrusterBase">
+    <defName>WNG_GoauldSmallSublightDrive</defName><label>Ha'tak sublight drive</label>
+    <description>A compact Goa'uld gravship drive requiring both the Ha'tak power grid and a physical Liquid-Naquadria feed.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2320</uiOrder><tickerType>Rare</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldSmallSublightDrive</texPath><drawSize>(1.2,2.2)</drawSize><linkFlags><li>Wall</li><li>Rock</li></linkFlags></graphicData>
+    <statBases><MaxHitPoints>560</MaxHitPoints><Flammability>0</Flammability><Beauty>3</Beauty><WorkToBuild>12500</WorkToBuild><Mass>18</Mass></statBases><costList Inherit="False"><Uranium>28</Uranium><Plasteel>105</Plasteel><ComponentIndustrial>4</ComponentIndustrial></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <placeWorkers Inherit="False"><li>PlaceWorker_GravshipThruster</li><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGThruster"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><statOffsets><GravshipRange>10</GravshipRange></statOffsets><componentTypeDef>Thruster</componentTypeDef><exclusionAreaSize>(1,0,5)</exclusionAreaSize><exclusionAreaOffset>(0,0,-5)</exclusionAreaOffset><directionInfluence>20</directionInfluence><flameSize>4</flameSize><flameOffsetsPerDirection><li>(0,0,0.5)</li><li>(0,0,0.5)</li><li>(0,0,0.5)</li><li>(0,0,0.5)</li></flameOffsetsPerDirection><flameShaderType>MoteGlow</flameShaderType><flameShaderParameters><_MainTex>/Things/Mote/SmallThruster_Burn</_MainTex></flameShaderParameters><requiresLOS>false</requiresLOS><maxSimultaneous>4</maxSimultaneous><maxDistance>500</maxDistance></li><li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint"><family>Goauld</family><role>Thruster</role></li><li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>700</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="WNG_LargeThrusterBase">
+    <defName>WNG_GoauldLargeSublightDrive</defName><label>greater Ha'tak sublight drive</label>
+    <description>A high-output Goa'uld drive for a full Ha'tak mothership.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2321</uiOrder><tickerType>Rare</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldLargeSublightDrive</texPath><drawSize>(2.2,2.2)</drawSize><linkFlags><li>Wall</li><li>Rock</li></linkFlags></graphicData>
+    <statBases><MaxHitPoints>760</MaxHitPoints><Flammability>0</Flammability><Beauty>4</Beauty><WorkToBuild>16500</WorkToBuild><Mass>32</Mass></statBases><costList Inherit="False"><Uranium>52</Uranium><Plasteel>170</Plasteel><ComponentSpacer>3</ComponentSpacer></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li><li>StandardGravtech</li></researchPrerequisites>
+    <placeWorkers Inherit="False"><li>PlaceWorker_GravshipThruster</li><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGThruster"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><statOffsets><GravshipRange>16</GravshipRange></statOffsets><componentTypeDef>Thruster</componentTypeDef><exclusionAreaSize>(2,0,7)</exclusionAreaSize><exclusionAreaOffset>(0,0,-7)</exclusionAreaOffset><directionInfluence>30</directionInfluence><flameSize>4</flameSize><flameOffsetsPerDirection><li>(0,0,1.0)</li><li>(0,0,0.5)</li><li>(0,0,0.5)</li><li>(0,0,0.5)</li></flameOffsetsPerDirection><flameShaderType>MoteGlow</flameShaderType><flameShaderParameters><_MainTex>/Things/Mote/LargeThruster_Burn</_MainTex></flameShaderParameters><requiresLOS>false</requiresLOS><maxSimultaneous>6</maxSimultaneous><maxDistance>500</maxDistance></li><li Class="WraithNaniteGravtech.CompProperties_WNGFuelEndpoint"><family>Goauld</family><role>Thruster</role></li><li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>1200</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="WNG_FuelOptimizerBase">
+    <defName>WNG_GoauldFuelOptimizer</defName><label>Ha'tak drive synchronizer</label>
+    <description>A Goa'uld drive regulator reducing native Odyssey gravship fuel expenditure.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2330</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldFuelOptimizer</texPath><drawSize>(2,2)</drawSize></graphicData>
+    <statBases><MaxHitPoints>360</MaxHitPoints><Mass>34</Mass><WorkToBuild>6500</WorkToBuild></statBases><costList Inherit="False"><Uranium>30</Uranium><Plasteel>90</Plasteel><ComponentIndustrial>4</ComponentIndustrial></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li><li>StandardGravtech</li></researchPrerequisites>
+    <placeWorkers Inherit="False"><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps><li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><fuelSavingsPercent>0.25</fuelSavingsPercent><requiresLOS>false</requiresLOS><maxSimultaneous>2</maxSimultaneous><maxDistance>500</maxDistance></li><li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>250</demandWatts></li></comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>WNG_GoauldGravshipShield</defName><label>Ha'tak shield emitter</label>
+    <description>A Goa'uld mothership defensive-field emitter using RimWorld's native projectile-interceptor lifecycle while drawing only from the isolated Ha'tak power grid.</description>
+    <designationCategory>Security</designationCategory><uiOrder>2380</uiOrder><tickerType>Normal</tickerType><drawerType>MapMeshAndRealTime</drawerType><drawOffscreen>true</drawOffscreen>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldGravshipShield</texPath><drawSize>(3,3)</drawSize></graphicData><size>(3,3)</size><fillPercent>0.6</fillPercent><passability>PassThroughOnly</passability><pathCost>20</pathCost><canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded><constructionSkillPrerequisite>10</constructionSkillPrerequisite><resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed><specialDisplayRadius>25.9</specialDisplayRadius>
+    <statBases><MaxHitPoints>500</MaxHitPoints><Mass>72</Mass><WorkToBuild>16000</WorkToBuild><Flammability>0</Flammability><Beauty>5</Beauty></statBases><costList Inherit="False"><Uranium>90</Uranium><Plasteel>220</Plasteel><ComponentSpacer>8</ComponentSpacer><Gold>40</Gold></costList><researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li><li>AdvancedGravtech</li></researchPrerequisites>
+    <placeWorkers Inherit="False"><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>1</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Interactable"><compClass>WraithNaniteGravtech.CompInteractable_WNGGoauldGravshipShield</compClass><ticksToActivate>120</ticksToActivate><jobString>activate</jobString><activateTexPath>UI/Commands/ActivateGravshipShield</activateTexPath><soundActivate>GravshipShieldGenerator_Activate</soundActivate><requiresPower>false</requiresPower><targetingParameters><canTargetBuildings>false</canTargetBuildings><canTargetAnimals>false</canTargetAnimals><canTargetMechs>false</canTargetMechs><onlyTargetControlledPawns>true</onlyTargetControlledPawns></targetingParameters></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGoauldGravshipShield"><radius>25.9</radius><interceptGroundProjectiles>true</interceptGroundProjectiles><interceptAirProjectiles>true</interceptAirProjectiles><color>(1.0,0.62,0.18)</color><reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect><activeSound>BulletShield_Ambience</activeSound><hitPoints>850</hitPoints><hitPointsRestoreInstantlyAfterCharge>false</hitPointsRestoreInstantlyAfterCharge><startWithMaxHitPoints>false</startWithMaxHitPoints><chargeDurationTicks>9000</chargeDurationTicks><minIdleAlpha>0.18</minIdleAlpha><drawWithNoSelection>true</drawWithNoSelection><disarmedByEmpForTicks>1800</disarmedByEmpForTicks><gizmoTipKey>GravshipShieldTip</gizmoTipKey><alwaysShowHitpointsGizmo>true</alwaysShowHitpointsGizmo><rechargeHitPointsIntervalTicks>90</rechargeHitPointsIntervalTicks><activated>true</activated><activeDuration>6500</activeDuration></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>3200</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldHeavyPlasmaBattery</defName><label>Ha'tak heavy plasma battery</label>
+    <description>A heavy Goa'uld shipboard plasma battery. Native turret AI owns local targeting and firing; its power state is supplied by the exact Ha'tak family grid rather than a hidden vanilla power connection. From an Odyssey Orbit map, the same physical battery can designate a different already-generated Surface map within range for a native RimWorld orbital bombardment.</description>
+    <thingClass>Building_TurretGun</thingClass><tickerType>Normal</tickerType><graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldHeavyPlasmaBattery</texPath><drawSize>(2,2)</drawSize></graphicData><altitudeLayer>Building</altitudeLayer><size>(2,2)</size><rotatable>true</rotatable><passability>PassThroughOnly</passability><pathCost>50</pathCost><fillPercent>0.4</fillPercent><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory><researchPrerequisites><li>WNG_GoauldGravships</li></researchPrerequisites><constructionSkillPrerequisite>9</constructionSkillPrerequisite><uiOrder>2385</uiOrder>
+    <statBases><MaxHitPoints>560</MaxHitPoints><Flammability>0</Flammability><WorkToBuild>13000</WorkToBuild><Mass>115</Mass><Beauty>2</Beauty><ShootingAccuracyTurret>0.96</ShootingAccuracyTurret></statBases><costList><Uranium>55</Uranium><Plasteel>160</Plasteel><Gold>30</Gold><ComponentIndustrial>8</ComponentIndustrial><ComponentSpacer>3</ComponentSpacer></costList>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/><li Class="WraithNaniteGravtech.CompProperties_WNGGoauldFamilyPowerProxy"/><li Class="CompProperties_Flickable"/>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>false</requiresFamilyPower><requiresLOS>false</requiresLOS><showMaxSimultaneous>false</showMaxSimultaneous><maxSimultaneous>8</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>1800</demandWatts></li>
+      <li Class="WraithNaniteGravtech.CompProperties_GoauldHatakOrbitalBombardment"><maxWorldRangeTiles>12</maxWorldRangeTiles><cooldownTicks>60000</cooldownTicks><impactAreaRadius>12</impactAreaRadius><explosionRadiusRange>2.8~4.0</explosionRadiusRange><bombIntervalTicks>18</bombIntervalTicks><warmupTicks>120</warmupTicks><randomFireRadius>14</randomFireRadius></li>
+    </comps>
+    <building><turretGunDef>WNG_Gun_GoauldHeavyPlasmaCannon</turretGunDef><turretBurstWarmupTime>1.2</turretBurstWarmupTime><turretBurstCooldownTime>3.8</turretBurstCooldownTime><turretTopDrawSize>2.2</turretTopDrawSize></building>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li><li>WraithNaniteGravtech.PlaceWorker_InRangeOfGoauldGravEngine</li></placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGun">
+    <defName>WNG_Gun_GoauldHeavyPlasmaCannon</defName><label>Ha'tak heavy plasma cannon</label><description>The firing assembly of a Ha'tak heavy plasma battery.</description><smeltable>false</smeltable>
+    <graphicData><texPath>Things/Building/Goauld/Gravship/WNG_GoauldHeavyPlasmaBatteryTop</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><MarketValue>900</MarketValue><Mass>45</Mass><AccuracyTouch>0.35</AccuracyTouch><AccuracyShort>0.72</AccuracyShort><AccuracyMedium>0.86</AccuracyMedium><AccuracyLong>0.80</AccuracyLong><RangedWeapon_Cooldown>3.8</RangedWeapon_Cooldown></statBases>
+    <weaponTags><li>TurretGun</li></weaponTags>
+    <verbs><li><verbClass>Verb_Shoot</verbClass><defaultProjectile>WNG_Projectile_GoauldHeavyPlasma</defaultProjectile><warmupTime>0</warmupTime><range>45.9</range><forcedMissRadius>5</forcedMissRadius><minRange>6</minRange><burstShotCount>3</burstShotCount><ticksBetweenBurstShots>16</ticksBetweenBurstShots><soundCast>ChargeLance_Fire</soundCast><muzzleFlashScale>12</muzzleFlashScale></li></verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_Projectile_GoauldHeavyPlasma</defName><label>Ha'tak heavy plasma pulse</label><thingClass>Projectile_Explosive</thingClass>
+    <graphicData><texPath>Things/Projectile/Goauld/WNG_GoauldHeavyPlasma</texPath><graphicClass>Graphic_Single</graphicClass><shaderType>TransparentPostLight</shaderType><drawSize>(0.7,0.7)</drawSize></graphicData>
+    <projectile><damageDef>Bomb</damageDef><damageAmountBase>38</damageAmountBase><armorPenetrationBase>0.55</armorPenetrationBase><speed>85</speed><explosionRadius>1.6</explosionRadius><explosionChanceToStartFire>0.12</explosionChanceToStartFire><explosionDamageFalloff>true</explosionDamageFalloff></projectile>
+  </ThingDef>
+</Defs>

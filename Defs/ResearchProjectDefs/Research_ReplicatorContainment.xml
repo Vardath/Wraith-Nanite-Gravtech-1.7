@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_NaniteContainment</defName>
+    <label>replicator containment</label>
+    <description>Apply studied block-Replicator behavior to powered nanite-suppression fields. Unlocks the Replicator containment projector, which pauses loose-block reconstruction and suppresses uncontrolled Replicator growth activity inside its powered field.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>WNG_ReplicatorStudy</li>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+  
+    <researchViewX>13.5</researchViewX><researchViewY>12</researchViewY>
+  </ResearchProjectDef>
+</Defs>

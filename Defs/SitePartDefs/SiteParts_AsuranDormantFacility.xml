@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>WNG_AsuranDormantFacility</defName><label>dormant Asuran facility</label>
+    <description>An unusually intact, clearly Asuran facility centred on a dark pattern core, silent relays and empty reconstruction plinths. The core may wake a finite Lattice defensive cadre if approached.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_AsuranDormantFacility</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture><showFactionInInspectString>false</showFactionInInspectString><requiresFaction>false</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints><minThreatPoints>350</minThreatPoints><considerEnteringAsAttack>false</considerEnteringAsAttack><selectionWeight>0</selectionWeight>
+    <arrivedLetter>The facility is unmistakably Asuran: pale composite walls, a dark central continuity core, silent relays and empty reconstruction plinths. Nothing is active yet.</arrivedLetter><arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+  </SitePartDef>
+</Defs>

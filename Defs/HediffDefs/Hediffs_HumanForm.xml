@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_NaniteEMPReceiver</defName>
+    <label>nanite electromagnetic receptor</label>
+    <description>An internal receiver used by the human-form nanite body to notice disruptive electromagnetic events and route them into the dedicated EMP-disruption state.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <isBad>false</isBad>
+    <comps><li Class="WraithNaniteGravtech.HediffCompProperties_NaniteEMPReceiver" /></comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_NaniteEMPDisruption</defName>
+    <label>nanite coordination disruption</label>
+    <description>An EMP has desynchronized the body's nanite control network. Mobility and work efficiency fall while reconstruction is suspended, until the swarm can establish coherent timing again.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <statFactors>
+          <WorkSpeedGlobal>0.50</WorkSpeedGlobal>
+          <MedicalTendSpeed>0.65</MedicalTendSpeed>
+          <MoveSpeed>0.55</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>2400~4200</disappearsAfterTicks></li></comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_AsuranCollectiveState</defName>
+    <label>local collective connectivity</label>
+    <description>A readout of this synthetic pawn's current same-faction human-form network density. It is informational only; the actual reconstruction modifier belongs to the Collective Link system, and EMP disruption severs participation.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <stages>
+      <li><minSeverity>0</minSeverity><label>isolated</label></li>
+      <li><minSeverity>0.25</minSeverity><label>linked</label></li>
+      <li><minSeverity>0.5</minSeverity><label>meshed</label></li>
+      <li><minSeverity>0.75</minSeverity><label>dense collective</label></li>
+    </stages>
+  </HediffDef>
+</Defs>

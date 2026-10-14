@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>WNG_MichaelsExperiments</defName>
+    <label>Michael's abandoned experiments</label>
+    <fixedName>Michael's Abandoned Experiments</fixedName>
+    <description>Uncontrolled biological experiments left behind by Michael. This hidden faction exists only to give the feral hybrids stable hostility and command ownership; it does not represent a functioning polity.</description>
+    <basicMemberKind>WNG_WhispersHybrid</basicMemberKind>
+    <pawnSingular>hybrid</pawnSingular>
+    <pawnsPlural>hybrids</pawnsPlural>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <hidden>true</hidden>
+    <canMakeRandomly>false</canMakeRandomly>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <humanlikeFaction>true</humanlikeFaction>
+    <permanentEnemy>true</permanentEnemy>
+    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+    <raidsForbidden>true</raidsForbidden>
+    <autoFlee>false</autoFlee>
+    <rescueesCanJoin>false</rescueesCanJoin>
+    <techLevel>Spacer</techLevel>
+    <allowedArrivalTemperatureRange>-60~60</allowedArrivalTemperatureRange>
+    <colorSpectrum><li>(0.28,0.34,0.32)</li></colorSpectrum>
+    <xenotypeSet><xenotypeChances><WNG_WhispersHybrid>1</WNG_WhispersHybrid></xenotypeChances></xenotypeSet>
+    <backstoryFilters>
+      <li><categories><li>Outlander</li><li>Offworld</li></categories></li>
+    </backstoryFilters>
+    <maxPawnCostPerTotalPointsCurve>
+      <points><li>(200,175)</li><li>(100000,10000)</li></points>
+    </maxPawnCostPerTotalPointsCurve>
+  </FactionDef>
+</Defs>

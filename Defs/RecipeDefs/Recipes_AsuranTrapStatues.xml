@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>Make_WNG_AsuranSleeperStatue</defName>
+    <label>make Asuran lattice sculpture</label>
+    <description>Manufacture an Asuran lattice sculpture from nanite slurry and advanced materials. Only an Asuran nanite synthetic can perform the pattern-forming work.</description>
+    <jobString>Making Asuran lattice sculpture.</jobString>
+    <workAmount>32000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Artistic</workSkill>
+    <requiredGiverWorkType>WNG_AsuranFabrication</requiredGiverWorkType>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Artistic>6</Artistic></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>35</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>WNG_AsuranNaniteSlurry</li></thingDefs></filter><count>30</count></li>
+      <li><filter><thingDefs><li>Silver</li></thingDefs></filter><count>100</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>ComponentSpacer</li><li>WNG_AsuranNaniteSlurry</li><li>Silver</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_AsuranSleeperStatue>1</WNG_AsuranSleeperStatue></products>
+    <recipeUsers>
+      <li>TableSculpting</li>
+    </recipeUsers>
+    <effectWorking>Sculpt</effectWorking>
+    <soundWorking>Recipe_Sculpt</soundWorking>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Make_WNG_AsuranFeederStatue</defName>
+    <label>make Asuran shadow sculpture</label>
+    <description>Manufacture an Asuran shadow sculpture from nanite slurry and advanced materials. Only an Asuran nanite synthetic can perform the pattern-forming work.</description>
+    <jobString>Making Asuran shadow sculpture.</jobString>
+    <workAmount>36000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Artistic</workSkill>
+    <requiredGiverWorkType>WNG_AsuranFabrication</requiredGiverWorkType>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Artistic>6</Artistic></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>40</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>2</count></li>
+      <li><filter><thingDefs><li>WNG_AsuranNaniteSlurry</li></thingDefs></filter><count>50</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>ComponentSpacer</li><li>WNG_AsuranNaniteSlurry</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_AsuranFeederStatue>1</WNG_AsuranFeederStatue></products>
+    <recipeUsers>
+      <li>TableSculpting</li>
+    </recipeUsers>
+    <effectWorking>Sculpt</effectWorking>
+    <soundWorking>Recipe_Sculpt</soundWorking>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Make_WNG_AsuranReplicatorReliquary</defName>
+    <label>make Asuran reliquary sculpture</label>
+    <description>Manufacture an Asuran reliquary sculpture from nanite slurry and advanced materials. Only an Asuran nanite synthetic can perform the pattern-forming work.</description>
+    <jobString>Making Asuran reliquary sculpture.</jobString>
+    <workAmount>42000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Artistic</workSkill>
+    <requiredGiverWorkType>WNG_AsuranFabrication</requiredGiverWorkType>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+    <skillRequirements><Artistic>6</Artistic></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>50</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>3</count></li>
+      <li><filter><thingDefs><li>WNG_AsuranNaniteSlurry</li></thingDefs></filter><count>70</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Plasteel</li><li>ComponentSpacer</li><li>WNG_AsuranNaniteSlurry</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_AsuranReplicatorReliquary>1</WNG_AsuranReplicatorReliquary></products>
+    <recipeUsers>
+      <li>TableSculpting</li>
+    </recipeUsers>
+    <effectWorking>Sculpt</effectWorking>
+    <soundWorking>Recipe_Sculpt</soundWorking>
+  </RecipeDef>
+</Defs>

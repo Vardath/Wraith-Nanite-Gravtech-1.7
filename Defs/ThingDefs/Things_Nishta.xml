@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseMakeableGrenade">
+    <defName>WNG_NishtaCanister</defName>
+    <recipeMaker IsNull="True" />
+    <label>Nish'ta dispersal canister</label>
+    <description>A single-use canister containing a cultured Goa'uld Nish'ta conditioning organism. On impact it disperses a visible aerosol; susceptible humanlike pawns inside the cloud can be conditioned to the thrower's faction until electrically deprogrammed. Survivors of proper electrical clearance become resistant to reinfection.</description>
+    <graphicData>
+      <texPath>Things/Item/Goauld/WNG_NishtaCanister</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.3</uiIconScale>
+    <soundInteract>Interact_Grenade</soundInteract>
+    <techLevel>Spacer</techLevel>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MarketValue>310</MarketValue>
+      <Mass>0.8</Mass>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+      <WorkToMake>9000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>10</Steel>
+      <Neutroamine>6</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <weaponTags Inherit="False">
+      <li>GrenadeSmoke</li>
+    </weaponTags>
+    <thingCategories>
+      <li>Grenades</li>
+    </thingCategories>
+    <smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <label>throw Nish'ta canister</label>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>12.9</range>
+        <forcedMissRadius>1.3</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <noiseRadius>3</noiseRadius>
+        <soundCast>ThrowGrenade</soundCast>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams><canTargetLocations>true</canTargetLocations></targetParams>
+        <defaultProjectile>WNG_ProjectileNishtaCanister</defaultProjectile>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+      </li>
+    </verbs>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable"/>
+      <li><compClass>CompEquippable</compClass></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>WNG_ProjectileNishtaCanister</defName>
+    <label>Nish'ta canister</label>
+    <thingClass>WraithNaniteGravtech.Projectile_NishtaCanister</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Goauld/WNG_ProjectileNishtaCanister</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <speed>12</speed>
+      <damageDef>Smoke</damageDef>
+      <explosionRadius>3.0</explosionRadius>
+      <postExplosionGasType>BlindSmoke</postExplosionGasType>
+      <arcHeightFactor>2</arcHeightFactor>
+      <shadowSize>0.4</shadowSize>
+      <screenShakeFactor>0.2</screenShakeFactor>
+    </projectile>
+  </ThingDef>
+</Defs>

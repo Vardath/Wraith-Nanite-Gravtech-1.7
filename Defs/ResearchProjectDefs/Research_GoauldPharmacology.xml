@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_GoauldBiochemicalControl</defName>
+    <label>Goa'uld biochemical control</label>
+    <description>Apply comparative xenobiology and advanced drug synthesis to Goa'uld biochemical coercion systems. Unlocks Roshna, a maintenance drug engineered to create permanent physiological dependence. Later work in this branch can reproduce Nish'ta and other Goa'uld biochemical control agents while leaving externally owned Stargate pharmacology to its source mod.</description>
+    <baseCost>1600</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_ComparativeXenobiology</li>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>2.20</researchViewY>
+  </ResearchProjectDef>
+</Defs>

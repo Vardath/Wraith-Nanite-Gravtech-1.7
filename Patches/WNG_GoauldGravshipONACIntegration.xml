@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>ONAC</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldGravEngine"]/costList/Uranium</xpath><value><ONAC_Naquadah>120</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/TerrainDef[defName="WNG_GoauldGravshipSubstructure"]/costList/Uranium</xpath><value><ONAC_Naquadah>2</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldGravshipHull"]/costList/Uranium</xpath><value><ONAC_Naquadah>3</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldGravshipDoor"]/costList/Uranium</xpath><value><ONAC_Naquadah>6</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldPeltac"]/costList/Uranium</xpath><value><ONAC_Naquadah>18</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldGravFieldProjector"]/costList/Uranium</xpath><value><ONAC_Naquadah>20</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldNaquadriaTank"]/costList/Uranium</xpath><value><ONAC_Naquadah>18</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldLargeNaquadriaTank"]/costList/Uranium</xpath><value><ONAC_Naquadah>40</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldFuelConduit"]/costList/Uranium</xpath><value><ONAC_Naquadah>1</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldPowerConduit"]/costList/Uranium</xpath><value><ONAC_Naquadah>1</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldPowerCoupler"]/costList/Uranium</xpath><value><ONAC_Naquadah>8</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldNaquadahPowerCore"]/costList/Uranium</xpath><value><ONAC_Naquadah>100</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldSmallSublightDrive"]/costList/Uranium</xpath><value><ONAC_Naquadah>28</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldLargeSublightDrive"]/costList/Uranium</xpath><value><ONAC_Naquadah>52</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldFuelOptimizer"]/costList/Uranium</xpath><value><ONAC_Naquadah>30</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldGravshipShield"]/costList/Uranium</xpath><value><ONAC_Naquadah>90</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldHeavyPlasmaBattery"]/costList/Uranium</xpath><value><ONAC_Naquadah>55</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldOrbitalScanner"]/costList/Uranium</xpath><value><ONAC_Naquadah>30</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldLifeSupport"]/costList/Uranium</xpath><value><ONAC_Naquadah>12</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldVacBarrier"]/costList/Uranium</xpath><value><ONAC_Naquadah>8</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldNavigationCrystal"]/costList/Uranium</xpath><value><ONAC_Naquadah>18</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldSignalJammer"]/costList/Uranium</xpath><value><ONAC_Naquadah>35</ONAC_Naquadah></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldNaquadriaTank"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs/li</xpath><value><li>ONAC_LiquidNaquadria</li></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldNaquadriaTank"]/comps/li[@Class="CompProperties_Refuelable"]/fuelLabel</xpath><value><fuelLabel>Liquid Naquadria</fuelLabel></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldNaquadriaTank"]/comps/li[@Class="CompProperties_Refuelable"]/fuelGizmoLabel</xpath><value><fuelGizmoLabel>Liquid Naquadria</fuelGizmoLabel></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldLargeNaquadriaTank"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs/li</xpath><value><li>ONAC_LiquidNaquadria</li></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldLargeNaquadriaTank"]/comps/li[@Class="CompProperties_Refuelable"]/fuelLabel</xpath><value><fuelLabel>Liquid Naquadria</fuelLabel></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldLargeNaquadriaTank"]/comps/li[@Class="CompProperties_Refuelable"]/fuelGizmoLabel</xpath><value><fuelGizmoLabel>Liquid Naquadria</fuelGizmoLabel></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldNaquadahPowerCore"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs/li</xpath><value><li>ONAC_Naquadah</li></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldNaquadahPowerCore"]/comps/li[@Class="CompProperties_Refuelable"]/fuelLabel</xpath><value><fuelLabel>Naquadah</fuelLabel></value></li>
+      <li Class="PatchOperationReplace"><xpath>Defs/ThingDef[defName="WNG_GoauldNaquadahPowerCore"]/comps/li[@Class="CompProperties_Refuelable"]/fuelGizmoLabel</xpath><value><fuelGizmoLabel>Naquadah</fuelGizmoLabel></value></li>
+    </operations>
+    </match>
+  </Operation>
+</Patch>

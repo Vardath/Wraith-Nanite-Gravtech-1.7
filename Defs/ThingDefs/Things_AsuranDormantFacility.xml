@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranDormantPatternCore</defName>
+    <label>dormant Asuran pattern core</label>
+    <description>An unusually intact but sealed Asuran continuity core. It stores no usable colonist identities, supplies no power and cannot reconstruct anyone. After a brief map-arrival grace period, nearby free colonists may wake its finite defensive cadre exactly once.</description>
+    <thingClass>Building</thingClass><drawerType>MapMeshAndRealTime</drawerType><tickerType>Rare</tickerType>
+    <graphicData><texPath>Things/Building/Precursor/Collective/WNG_AsuranDormantPatternCore</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2,2)</drawSize></graphicData>
+    <size>(2,2)</size><rotatable>false</rotatable><passability>PassThroughOnly</passability><fillPercent>0.7</fillPercent>
+    <statBases><MaxHitPoints>480</MaxHitPoints><Mass>70</Mass><Flammability>0</Flammability><Beauty>8</Beauty></statBases>
+    <comps><li Class="WraithNaniteGravtech.CompProperties_DormantAsuranCore"><graceTicks>900</graceTicks><triggerRadius>14</triggerRadius><minimumDefenders>2</minimumDefenders><maximumDefenders>4</maximumDefenders></li></comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranDormantRelay</defName><label>silent Asuran relay</label>
+    <description>An inert collective relay from a dormant Asuran facility. Its lattice is dark; it provides no collective-network, power or reconstruction function.</description>
+    <thingClass>Building</thingClass><graphicData><texPath>Things/Building/Precursor/Control/WNG_AsuranDormantRelay</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(1,1)</drawSize></graphicData>
+    <size>(1,1)</size><passability>PassThroughOnly</passability><fillPercent>0.35</fillPercent>
+    <statBases><MaxHitPoints>210</MaxHitPoints><Mass>18</Mass><Flammability>0</Flammability><Beauty>5</Beauty></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranDormantReconstructionPlinth</defName><label>empty Asuran reconstruction plinth</label>
+    <description>An empty reconstruction plinth whose active pattern hardware has been removed. It cannot copy, repair, reconstruct or store any pawn.</description>
+    <thingClass>Building</thingClass><graphicData><texPath>Things/Building/Precursor/Control/WNG_AsuranDormantReconstructionPlinth</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(1.2,1.2)</drawSize></graphicData>
+    <size>(1,1)</size><passability>PassThroughOnly</passability><fillPercent>0.4</fillPercent>
+    <statBases><MaxHitPoints>240</MaxHitPoints><Mass>22</Mass><Flammability>0</Flammability><Beauty>6</Beauty></statBases>
+  </ThingDef>
+</Defs>

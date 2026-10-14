@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_AncientDroneControl</defName>
+    <label>reconstructed Ancient drone control</label>
+    <description>Turn analysis of a damaged original drone core into a reproducible neural-control and guidance system. The recovered relic remains evidence only; usable drones must be newly manufactured.</description>
+    <techLevel>Ultra</techLevel>
+    <baseCost>5200</baseCost>
+    <researchViewX>17.5</researchViewX>
+    <researchViewY>10.4</researchViewY>
+    <prerequisites>
+      <li>WNG_PrecursorFabrication</li>
+      <li>WNG_AsuranCollectiveSystems</li>
+    </prerequisites>
+    <requiredAnalyzed><li>WNG_RecoveredAncientDrone</li></requiredAnalyzed>
+  </ResearchProjectDef>
+</Defs>

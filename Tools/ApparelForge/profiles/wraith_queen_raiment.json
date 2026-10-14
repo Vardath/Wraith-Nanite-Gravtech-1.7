@@ -1,0 +1,79 @@
+{
+  "id": "wraith_queen_raiment",
+  "item": "WNG_QueenRaiment",
+  "faction": "Wraith",
+  "output_dir": "Wraith",
+  "research": {
+    "rule": "Stargate production costume and prop references first; no historical WNG apparel",
+    "status": "stage_1_locked",
+    "sources": [
+      {
+        "type": "screen_used_auction_record",
+        "title": "Teyla Wraith Queen costume - Propworx Live Auction 2",
+        "url": "https://www.stargate-fusion.com/fiches/coulisses/23-costumes-uniformes/5691-costume-wraith-teyla-la-nouvelle-reine.html",
+        "evidence": [
+          "gold reptile-pattern leather half-jacket",
+          "black patterned velvet sleeves",
+          "gold-and-black corset with integrated collar and chest straps",
+          "split lower garment with glossy black leather side panels"
+        ]
+      },
+      {
+        "type": "costume_designer_primary",
+        "title": "Val Halverson Wraith costume Q&A",
+        "url": "https://josephmallozzi.com/2008/10/25/october-25-2008-stargate-atlantis-constume-designer-val-halverson-answers-your-questions/"
+      }
+    ],
+    "required_visual_language": [
+      "gold-black reptile leather",
+      "black patterned velvet",
+      "fitted corset and high collar",
+      "split royal riding-skirt robe",
+      "gloss black leather side inserts",
+      "weathered aged gold organic trim",
+      "regal Wraith tailoring rather than generic armour"
+    ],
+    "avoid": [
+      "historical WNG apparel",
+      "purple generic sci-fi armour",
+      "neon piping",
+      "flat vector plates",
+      "ship parts",
+      "clean plastic surfaces"
+    ]
+  },
+  "rimworld": {
+    "family": "RoyalRobe",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "tile_scale": 0.82,
+    "cover_body": true
+  },
+  "masters": {
+    "south": "master_south.png",
+    "north": "master_north.png",
+    "east": "master_east.png"
+  },
+  "qa": {
+    "min_contrast": 14,
+    "max_white_fraction": 0.04,
+    "max_edge_lift": 60
+  },
+  "external_art_spec": {
+    "minimum_master_resolution": 1024,
+    "orthographic_views": [
+      "south/front",
+      "north/back",
+      "east/side"
+    ],
+    "background": "transparent",
+    "instruction": "finished professional painted RimWorld apparel master",
+    "silhouette": "vanilla RimWorld RoyalRobe outer silhouette with matching vanilla body coverage union so the worn texture covers the pawn body correctly",
+    "source_priority": "Stargate production Wraith Queen wardrobe first"
+  }
+}

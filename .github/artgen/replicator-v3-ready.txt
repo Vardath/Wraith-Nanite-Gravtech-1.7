@@ -1,0 +1,3 @@
+Professional six-legged Replicator pawn art v3 installed on main.
+Burrower structural-breach art family replaced with the professional block-form finish on 2026-09-22.
+This marker forces the standard validation and managed playtest build to run against the generated art commit.

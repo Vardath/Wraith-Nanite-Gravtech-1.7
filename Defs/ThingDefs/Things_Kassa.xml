@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="PlantBase">
+    <defName>Plant_WNG_Kassa</defName>
+    <label>kassa plant</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>A tall offworld grain crop cultivated for dense, sweet kernels. Kassa is highly nutritious and commercially attractive, but its natural psychoactive chemistry creates severe chemical dependence with repeated consumption.</description>
+    <statBases>
+      <MaxHitPoints>125</MaxHitPoints>
+      <Nutrition>0.35</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/CornPlant</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <color>(0.80,0.70,0.55)</color>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <fertilityMin>0.70</fertilityMin>
+      <fertilitySensitivity>0.65</fertilitySensitivity>
+      <dieIfLeafless>true</dieIfLeafless>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>WNG_Kassa</harvestedThingDef>
+      <harvestYield>5</harvestYield>
+      <sowTags>
+        <li>Ground</li>
+      </sowTags>
+      <sowMinSkill>4</sowMinSkill>
+      <sowResearchPrerequisites>
+        <li>WNG_KassaCultivation</li>
+      </sowResearchPrerequisites>
+      <topWindExposure>0.30</topWindExposure>
+      <growDays>8.5</growDays>
+      <immatureGraphicPath>Things/Plant/CornPlant_Immature</immatureGraphicPath>
+      <visualSizeRange>0.5~1.3</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+      <humanFoodPlant>true</humanFoodPlant>
+      <drugForHarvestPurposes>true</drugForHarvestPurposes>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="DrugBase">
+    <defName>WNG_Kassa</defName>
+    <label>kassa</label>
+    <thingCategories Inherit="False"><li>Drugs</li></thingCategories>
+    <description>Dense kernels from the kassa plant. Kassa is nutritious enough to serve as a staple food, keeps well, and is valuable in trade. Its appeal comes with a severe cost: repeated consumption rapidly establishes a persistent chemical dependency.</description>
+    <descriptionHyperlinks>
+      <HediffDef>WNG_KassaSatiation</HediffDef>
+      <HediffDef>WNG_KassaTolerance</HediffDef>
+      <HediffDef>WNG_KassaAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <tradeability>All</tradeability>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Goauld/WNG_Kassa</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>5.5</MarketValue>
+      <Mass>0.08</Mass>
+      <DeteriorationRate>2</DeteriorationRate>
+      <Nutrition>0.35</Nutrition>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <baseIngestTicks>120</baseIngestTicks>
+      <chairSearchRadius>8</chairSearchRadius>
+      <preferability>RawTasty</preferability>
+      <tasteThought></tasteThought>
+      <foodType>VegetableOrFruit</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.12</joy>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <canAutoSelectAsFoodForCaravan>true</canAutoSelectAsFoodForCaravan>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_KassaSatiation</hediffDef>
+          <severity>0.5</severity>
+          <toleranceChemical>WNG_Kassa</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WNG_KassaTolerance</hediffDef>
+          <toleranceChemical>WNG_Kassa</toleranceChemical>
+          <severity>0.035</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>60</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+      <li Class="CompProperties_Drug">
+        <chemical>WNG_Kassa</chemical>
+        <addictiveness>0.08</addictiveness>
+        <minToleranceToAddict>0.00</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.18</existingAddictionSeverityOffset>
+        <needLevelOffset>0.75</needLevelOffset>
+        <listOrder>125</listOrder>
+      </li>
+      <li Class="WraithNaniteGravtech.Trade.CompProperties_KassaMarketDemand">
+        <demandPerUnit>0.05</demandPerUnit>
+      </li>
+    </comps>
+    <allowedArchonexusCount>100</allowedArchonexusCount>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>WNG_KassaSatiation</defName>
+    <label>kassa satiation</label>
+    <labelNoun>kassa satiation</labelNoun>
+    <description>Kassa alkaloids are producing a mild reinforcing calm alongside the food's unusually dense nutrition.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0.65,0.15)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>WNG_KassaSatiation</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>WNG_KassaSatiation</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>kassa satiation</label>
+        <description>Kassa is filling, warm, and extremely easy to want again.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ChemicalDef>
+    <defName>WNG_Kassa</defName>
+    <label>kassa</label>
+    <addictionHediff>WNG_KassaAddiction</addictionHediff>
+    <toleranceHediff>WNG_KassaTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.9</onGeneratedAddictedToleranceChance>
+    <generateAddictionGenes>false</generateAddictionGenes>
+  </ChemicalDef>
+
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Chemical_WNG_Kassa</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>kassa</label>
+    <description>This person has developed a strong chemical dependence on kassa and must consume it regularly to avoid withdrawal.</description>
+    <listPriority>45</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>WNG_KassaTolerance</defName>
+    <label>kassa tolerance</label>
+    <description>Repeated kassa consumption has reduced sensitivity to its reinforcing chemistry.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.018</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>WNG_Kassa</chemical>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddictionBase">
+    <defName>WNG_KassaAddiction</defName>
+    <label>kassa addiction</label>
+    <description>A severe dependence on kassa. Long-term consumption rewires reward and metabolic regulation strongly enough that ordinary food feels unsatisfying and prolonged abstinence produces debilitating withdrawal.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <chemicalNeed>Chemical_WNG_Kassa</chemicalNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.020</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li />
+      <li>
+        <label>withdrawal</label>
+        <socialFightChanceFactor>2.0</socialFightChanceFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.15</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.15</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.10</offset></li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Binging_DrugExtreme</mentalState>
+            <mtbDays>25</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>WNG_KassaWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>WNG_KassaAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <stages>
+      <li><visible>false</visible></li>
+      <li>
+        <label>kassa withdrawal</label>
+        <description>Nothing fills the hollow feeling. I need kassa.</description>
+        <baseMoodEffect>-28</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

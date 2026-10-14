@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef MayRequire="idolord.ONAC">
+    <defName>WNG_OnacReplicatorThreatResponse</defName>
+    <label>System-Lord anti-Replicator sortie</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_OnacReplicatorThreatResponse</workerClass>
+    <baseChance>0.04</baseChance>
+    <earliestDay>18</earliestDay>
+    <minRefireDays>18</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>false</pointsScaleable>
+  </IncidentDef>
+</Defs>

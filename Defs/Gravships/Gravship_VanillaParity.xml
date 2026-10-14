@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    D110 Odyssey gravship parity.
+    These defs deliberately reuse CURRENT WNG art only as temporary presentation so this systems
+    pass cannot create missing texture paths. The next dedicated art pass replaces each reused
+    graphic with professional role-specific Stargate-family art.
+  -->
+
+  <!-- ============================== WRAITH ============================== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_WraithOrbitalSensorOrgan</defName>
+    <label>wraith orbital sensory organ</label>
+    <description>A ship-grown sensory lobe that performs Odyssey's native orbital-scanner role, passively finding irregular objects in orbit while connected to the Wraith neural grid.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Misc</designationCategory><uiOrder>2242</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Wraith/Gravship/WNG_WraithSignalVeil</texPath><drawSize>(2,2)</drawSize></graphicData>
+    <size>(2,2)</size><fillPercent>0.4</fillPercent><passability>PassThroughOnly</passability><pathCost>20</pathCost>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded><constructionSkillPrerequisite>8</constructionSkillPrerequisite><canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <statBases><MaxHitPoints>350</MaxHitPoints><Mass>42</Mass><WorkToBuild>9000</WorkToBuild><Flammability>0.1</Flammability><Beauty>2</Beauty></statBases>
+    <costList><WNG_Biomass>95</WNG_Biomass><GravlitePanel>35</GravlitePanel></costList>
+    <researchPrerequisites><li>WNG_HiveGravshipArchitecture</li><li>OrbitalTech</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li><li>PlaceWorker_NotUnderRoof</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Wraith</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerProxy"><family>Wraith</family><basePowerConsumption>0</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li><compClass>CompOrbitalScanner</compClass></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Wraith</family><role>Consumer</role><demandWatts>500</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_WraithAtmosphereOrgan</defName>
+    <label>wraith atmosphere organ</label>
+    <description>A vascular life-support organ that performs Odyssey's native oxygen-pump function, restoring breathable pressure to sealed Wraith gravship rooms.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Misc</designationCategory><uiOrder>2243</uiOrder><tickerType>Rare</tickerType>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Wraith/Gravship/WNG_GravshipMetabolicHeart</texPath><drawSize>(1.5,1.5)</drawSize></graphicData>
+    <size>(1,1)</size><fillPercent>0.35</fillPercent><passability>PassThroughOnly</passability>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded><constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+    <statBases><MaxHitPoints>260</MaxHitPoints><Mass>18</Mass><WorkToBuild>4200</WorkToBuild><Flammability>0.12</Flammability><Beauty>1</Beauty></statBases>
+    <costList><WNG_Biomass>55</WNG_Biomass><GravlitePanel>12</GravlitePanel></costList>
+    <researchPrerequisites><li>WNG_HiveGravshipArchitecture</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Wraith</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerProxy"><family>Wraith</family><basePowerConsumption>0</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_OxygenPusher"><requiresPower>true</requiresPower><airPerSecondPerHundredCells>0.1</airPerSecondPerHundredCells></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Wraith</family><role>Consumer</role><demandWatts>200</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DoorBase">
+    <defName>WNG_WraithVacuumMembrane</defName>
+    <label>wraith vacuum membrane</label>
+    <description>A living pressure membrane using Odyssey's native vacuum-barrier behavior. When energized by the Wraith neural grid it allows passage while preventing atmosphere and heat from bleeding into vacuum.</description>
+    <rotatable>false</rotatable>
+    <thingClass>Building_VacBarrier</thingClass>
+    <designationCategory>Structure</designationCategory><uiOrder>1812</uiOrder><tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithGravshipDoor</texPath>
+      <drawSize>(1.5,1.5)</drawSize>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData><enabled>false</enabled></damageData>
+    </graphicData>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <statBases><MaxHitPoints>300</MaxHitPoints><WorkToBuild>950</WorkToBuild><Flammability>0.08</Flammability></statBases>
+    <costList Inherit="False"><WNG_Biomass>20</WNG_Biomass><GravlitePanel>4</GravlitePanel></costList>
+    <researchPrerequisites Inherit="False"><li>WNG_HiveGravshipArchitecture</li></researchPrerequisites>
+    <stuffCategories Inherit="False"/><costStuffCount>0</costStuffCount><useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <building>
+      <isAirtight>true</isAirtight>
+      <isSupportDoor>true</isSupportDoor>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <blueprintClass>Blueprint_Door</blueprintClass>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Wraith/Gravship/WNG_WraithGravshipDoor</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(1.5,1.5)</drawSize>
+      </blueprintGraphicData>
+    </building>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Wraith</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerProxy"><family>Wraith</family><basePowerConsumption>0</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Wraith</family><role>Consumer</role><demandWatts>100</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>WNG_WraithNavigationCortex</defName>
+    <label>wraith navigation cortex</label>
+    <description>A semi-autonomous flight cortex performing the vanilla pilot-subpersona role. Up to two active cortices reduce Wraith gravship launch risk through Odyssey's native launch-quality system.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2244</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Wraith/Gravship/WNG_OrganicPilotNode</texPath><drawSize>(1.4,1.4)</drawSize></graphicData>
+    <size>(1,1)</size><fillPercent>0.35</fillPercent><passability>PassThroughOnly</passability><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>240</MaxHitPoints><Mass>12</Mass><WorkToBuild>5200</WorkToBuild><Flammability>0.1</Flammability><Beauty>2</Beauty></statBases>
+    <costList><WNG_Biomass>65</WNG_Biomass><GravlitePanel>10</GravlitePanel></costList>
+    <researchPrerequisites><li>WNG_HiveGravshipArchitecture</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireWraithGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Wraith</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>2</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Wraith</family><role>Consumer</role><demandWatts>120</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <!-- ============================== ASURAN ============================== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranOrbitalScanner</defName>
+    <label>Asuran orbital scanner</label>
+    <description>A high-resolution Ancient-derived sensor array using Odyssey's native orbital-scanner logic while drawing only from the Asuran power lattice.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Misc</designationCategory><uiOrder>2245</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Precursor/Gravship/WNG_AsuranSignalJammer</texPath><drawSize>(2,2)</drawSize></graphicData>
+    <size>(2,2)</size><fillPercent>0.4</fillPercent><passability>PassThroughOnly</passability><pathCost>20</pathCost>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded><constructionSkillPrerequisite>9</constructionSkillPrerequisite><canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <statBases><MaxHitPoints>420</MaxHitPoints><Mass>38</Mass><WorkToBuild>10500</WorkToBuild><Flammability>0</Flammability><Beauty>7</Beauty></statBases>
+    <costList><Plasteel>120</Plasteel><GravlitePanel>40</GravlitePanel><ComponentSpacer>3</ComponentSpacer></costList>
+    <researchPrerequisites><li>WNG_AsuranGravshipArchitecture</li><li>OrbitalTech</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li><li>PlaceWorker_NotUnderRoof</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Asuran</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerProxy"><family>Asuran</family><basePowerConsumption>0</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li><compClass>CompOrbitalScanner</compClass></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Asuran</family><role>Consumer</role><demandWatts>500</demandWatts></li>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranArchiveRepair"><repairIntervalTicks>750</repairIntervalTicks><healPerPulse>4</healPerPulse><archiveRadius>55</archiveRadius></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_AsuranAtmosphereRegulator</defName>
+    <label>Asuran atmosphere regulator</label>
+    <description>An Ancient-derived atmospheric regulator using Odyssey's native oxygen-pump behavior to repressurize sealed Asuran gravship compartments.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Misc</designationCategory><uiOrder>2246</uiOrder><tickerType>Rare</tickerType>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Precursor/Gravship/WNG_AsuranPowerCell</texPath><drawSize>(1.4,1.4)</drawSize></graphicData>
+    <size>(1,1)</size><fillPercent>0.35</fillPercent><passability>PassThroughOnly</passability><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>320</MaxHitPoints><Mass>15</Mass><WorkToBuild>5000</WorkToBuild><Flammability>0</Flammability><Beauty>6</Beauty></statBases>
+    <costList><Plasteel>60</Plasteel><GravlitePanel>15</GravlitePanel><ComponentIndustrial>2</ComponentIndustrial></costList>
+    <researchPrerequisites><li>WNG_AsuranGravshipArchitecture</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Asuran</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerProxy"><family>Asuran</family><basePowerConsumption>0</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_OxygenPusher"><requiresPower>true</requiresPower><airPerSecondPerHundredCells>0.1</airPerSecondPerHundredCells></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Asuran</family><role>Consumer</role><demandWatts>200</demandWatts></li>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranArchiveRepair"><repairIntervalTicks>750</repairIntervalTicks><healPerPulse>4</healPerPulse><archiveRadius>55</archiveRadius></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DoorBase">
+    <defName>WNG_AsuranVacBarrier</defName>
+    <label>Asuran vacuum barrier</label>
+    <description>A precision force threshold using Odyssey's native vacuum-barrier behavior. When the Asuran lattice is powered it permits passage without allowing atmosphere or heat to escape.</description>
+    <rotatable>false</rotatable>
+    <thingClass>Building_VacBarrier</thingClass>
+    <designationCategory>Structure</designationCategory><uiOrder>1813</uiOrder><tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Precursor/Gravship/WNG_AsuranGravshipDoor</texPath>
+      <drawSize>(1.5,1.5)</drawSize>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData><enabled>false</enabled></damageData>
+    </graphicData>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <statBases><MaxHitPoints>400</MaxHitPoints><WorkToBuild>1100</WorkToBuild><Flammability>0</Flammability></statBases>
+    <costList Inherit="False"><Plasteel>35</Plasteel><GravlitePanel>8</GravlitePanel><ComponentIndustrial>1</ComponentIndustrial></costList>
+    <researchPrerequisites Inherit="False"><li>WNG_AsuranGravshipArchitecture</li></researchPrerequisites>
+    <stuffCategories Inherit="False"/><costStuffCount>0</costStuffCount><useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <building>
+      <isAirtight>true</isAirtight>
+      <isSupportDoor>true</isSupportDoor>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <blueprintClass>Blueprint_Door</blueprintClass>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Precursor/Gravship/WNG_AsuranGravshipDoor</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(1.5,1.5)</drawSize>
+      </blueprintGraphicData>
+    </building>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Asuran</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerProxy"><family>Asuran</family><basePowerConsumption>0</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Asuran</family><role>Consumer</role><demandWatts>100</demandWatts></li>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranArchiveRepair"><repairIntervalTicks>750</repairIntervalTicks><healPerPulse>4</healPerPulse><archiveRadius>55</archiveRadius></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>WNG_AsuranFlightSubmind</defName>
+    <label>Asuran flight submind</label>
+    <description>A narrow collective submind specialized in gravship trajectory control. It fills Odyssey's pilot-subpersona role; up to two active subminds improve native gravlaunch quality.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2247</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Precursor/Gravship/WNG_AsuranFlightSubmind</texPath><drawSize>(1.4,1.4)</drawSize></graphicData>
+    <size>(1,1)</size><fillPercent>0.35</fillPercent><passability>PassThroughOnly</passability><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>340</MaxHitPoints><Mass>10</Mass><WorkToBuild>6200</WorkToBuild><Flammability>0</Flammability><Beauty>8</Beauty></statBases>
+    <costList><Plasteel>75</Plasteel><GravlitePanel>15</GravlitePanel><ComponentSpacer>2</ComponentSpacer></costList>
+    <researchPrerequisites><li>WNG_AsuranGravshipArchitecture</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireAsuranGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Asuran</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>2</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Asuran</family><role>Consumer</role><demandWatts>100</demandWatts></li>
+      <li Class="WraithNaniteGravtech.CompProperties_AsuranArchiveRepair"><repairIntervalTicks>750</repairIntervalTicks><healPerPulse>4</healPerPulse><archiveRadius>55</archiveRadius></li>
+    </comps>
+  </ThingDef>
+
+  <!-- ============================== GOA'ULD ============================== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldOrbitalScanner</defName>
+    <label>Ha'tak orbital scanner</label>
+    <description>A Goa'uld long-range sensor array using Odyssey's native orbital-scanner logic to detect irregular objects in orbit.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Misc</designationCategory><uiOrder>2390</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldPeltac</texPath><drawSize>(2,2)</drawSize></graphicData>
+    <size>(2,2)</size><fillPercent>0.4</fillPercent><passability>PassThroughOnly</passability><pathCost>20</pathCost>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded><constructionSkillPrerequisite>9</constructionSkillPrerequisite><canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <statBases><MaxHitPoints>480</MaxHitPoints><Mass>45</Mass><WorkToBuild>11000</WorkToBuild><Flammability>0</Flammability><Beauty>4</Beauty></statBases>
+    <costList><Uranium>30</Uranium><Plasteel>100</Plasteel><Gold>15</Gold><ComponentSpacer>3</ComponentSpacer></costList>
+    <researchPrerequisites><li>WNG_GoauldGravships</li><li>OrbitalTech</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li><li>PlaceWorker_NotUnderRoof</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerProxy"><family>Goauld</family><basePowerConsumption>0</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li><compClass>CompOrbitalScanner</compClass></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>500</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldLifeSupport</defName>
+    <label>Ha'tak life-support regulator</label>
+    <description>A naquadah-powered atmospheric system using Odyssey's native oxygen-pump behavior to maintain pressure aboard a Ha'tak.</description>
+    <thingClass>Building</thingClass>
+    <designationCategory>Misc</designationCategory><uiOrder>2391</uiOrder><tickerType>Rare</tickerType>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldNaquadahPowerCore</texPath><drawSize>(1.4,1.4)</drawSize></graphicData>
+    <size>(1,1)</size><fillPercent>0.35</fillPercent><passability>PassThroughOnly</passability><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>380</MaxHitPoints><Mass>18</Mass><WorkToBuild>5500</WorkToBuild><Flammability>0</Flammability><Beauty>3</Beauty></statBases>
+    <costList><Uranium>12</Uranium><Plasteel>55</Plasteel><ComponentIndustrial>2</ComponentIndustrial></costList>
+    <researchPrerequisites><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerProxy"><family>Goauld</family><basePowerConsumption>0</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_OxygenPusher"><requiresPower>true</requiresPower><airPerSecondPerHundredCells>0.1</airPerSecondPerHundredCells></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>200</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DoorBase">
+    <defName>WNG_GoauldVacBarrier</defName>
+    <label>Ha'tak vacuum barrier</label>
+    <description>A Goa'uld pressure field using Odyssey's native vacuum-barrier behavior, allowing passage while a powered naquadah field retains atmosphere and heat.</description>
+    <rotatable>false</rotatable>
+    <thingClass>Building_VacBarrier</thingClass>
+    <designationCategory>Structure</designationCategory><uiOrder>1807</uiOrder><tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Goauld/Gravship/WNG_GoauldGravshipDoor</texPath>
+      <drawSize>(1.5,1.5)</drawSize>
+      <linkFlags><li>Wall</li><li>Rock</li></linkFlags>
+      <damageData><enabled>false</enabled></damageData>
+    </graphicData>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <statBases><MaxHitPoints>460</MaxHitPoints><WorkToBuild>1300</WorkToBuild><Flammability>0</Flammability></statBases>
+    <costList Inherit="False"><Uranium>8</Uranium><Plasteel>25</Plasteel></costList>
+    <researchPrerequisites Inherit="False"><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <stuffCategories Inherit="False"/><costStuffCount>0</costStuffCount><useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <building>
+      <isAirtight>true</isAirtight>
+      <isSupportDoor>true</isSupportDoor>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <blueprintClass>Blueprint_Door</blueprintClass>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Goauld/Gravship/WNG_GoauldGravshipDoor</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(1.5,1.5)</drawSize>
+      </blueprintGraphicData>
+    </building>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_DoorLearnOpeningSpeed</li>
+      <li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>9999</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerProxy"><family>Goauld</family><basePowerConsumption>0</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>100</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>WNG_GoauldNavigationCrystal</defName>
+    <label>Ha'tak navigation crystal</label>
+    <description>A dedicated Goa'uld flight-calculation crystal filling Odyssey's pilot-subpersona role. Up to two active navigation crystals improve native gravlaunch quality.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2392</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldPeltac</texPath><drawSize>(1.4,1.4)</drawSize></graphicData>
+    <size>(1,1)</size><fillPercent>0.35</fillPercent><passability>PassThroughOnly</passability><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>320</MaxHitPoints><Mass>10</Mass><WorkToBuild>6500</WorkToBuild><Flammability>0</Flammability><Beauty>5</Beauty></statBases>
+    <costList><Uranium>18</Uranium><Plasteel>55</Plasteel><Gold>18</Gold><ComponentSpacer>2</ComponentSpacer></costList>
+    <researchPrerequisites><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><maxSimultaneous>2</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>120</demandWatts></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>WNG_GoauldSignalJammer</defName>
+    <label>Ha'tak signal masker</label>
+    <description>A Goa'uld subspace interference array performing Odyssey's native signal-jammer role, allowing a properly equipped Ha'tak to reach defended orbital destinations.</description>
+    <designationCategory>Misc</designationCategory><uiOrder>2393</uiOrder><tickerType>Normal</tickerType>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Goauld/Gravship/WNG_GoauldFuelOptimizer</texPath><drawSize>(2,2)</drawSize></graphicData>
+    <size>(2,2)</size><fillPercent>0.5</fillPercent><passability>PassThroughOnly</passability><terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>460</MaxHitPoints><Mass>55</Mass><WorkToBuild>10500</WorkToBuild><Flammability>0</Flammability><Beauty>4</Beauty></statBases>
+    <costList><Uranium>35</Uranium><Plasteel>110</Plasteel><Gold>20</Gold><ComponentSpacer>4</ComponentSpacer></costList>
+    <researchPrerequisites><li>WNG_GoauldGravships</li></researchPrerequisites>
+    <placeWorkers><li>WraithNaniteGravtech.PlaceWorker_RequireGoauldGravshipSubstructure</li></placeWorkers>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGGravshipFacility"><family>Goauld</family><requiresFamilyPower>true</requiresFamilyPower><requiresLOS>false</requiresLOS><componentTypeDef>SignalJammer</componentTypeDef><maxSimultaneous>1</maxSimultaneous><maxDistance>500</maxDistance></li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGFamilyPowerNode"><family>Goauld</family><role>Consumer</role><demandWatts>900</demandWatts></li>
+    </comps>
+  </ThingDef>
+</Defs>

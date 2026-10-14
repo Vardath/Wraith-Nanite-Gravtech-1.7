@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SpecialThingFilterDef>
+    <defName>WNG_NonWraithCorpse</defName>
+    <label>non-Wraith corpse</label>
+    <parentCategory>CorpsesHumanlike</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <configurable>false</configurable>
+    <workerClass>WraithNaniteGravtech.SpecialThingFilterWorker_NonWraithCorpse</workerClass>
+  </SpecialThingFilterDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_ExtractWraithEnzymeLiving</defName>
+    <label>extract Wraith enzyme</label>
+    <description>Medically tap the biochemical enzyme system of a living Wraith. The procedure produces one dose of raw Wraith enzyme and directly depletes the donor's Life Force reserve.</description>
+    <workerClass>WraithNaniteGravtech.Recipe_ExtractWraithEnzyme</workerClass>
+    <jobString>Extracting Wraith enzyme.</jobString>
+    <workAmount>900</workAmount>
+    <researchPrerequisite>WNG_WraithEnzymePharmacology</researchPrerequisite>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <isViolation>true</isViolation>
+    <anesthetize>false</anesthetize>
+    <workSkillLearnFactor>2</workSkillLearnFactor>
+    <descriptionHyperlinks><ThingDef>WNG_RawWraithEnzyme</ThingDef></descriptionHyperlinks>
+    <uiIconThing>WNG_RawWraithEnzyme</uiIconThing>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_RenderWraithEnzymeFromCorpse</defName>
+    <label>render Wraith enzyme</label>
+    <description>Recover concentrated enzyme from a Wraith corpse before the relevant tissues become unusable. The corpse is consumed by the extraction process.</description>
+    <jobString>Rendering Wraith enzyme from corpse.</jobString>
+    <workAmount>1400</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Medicine</workSkill>
+    <researchPrerequisite>WNG_WraithEnzymePharmacology</researchPrerequisite>
+    <recipeUsers><li>DrugLab</li></recipeUsers>
+    <ingredients>
+      <li>
+        <filter><categories><li>CorpsesHumanlike</li></categories></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories><li>CorpsesHumanlike</li></categories>
+      <specialFiltersToDisallow><li>WNG_NonWraithCorpse</li></specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <thingDefs><li>Corpse_Human</li></thingDefs>
+      <specialFiltersToDisallow><li>WNG_NonWraithCorpse</li></specialFiltersToDisallow>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesColonist</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">AllowCorpsesSlave</li>
+        <li>AllowCorpsesStranger</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+    <products><WNG_RawWraithEnzyme>2</WNG_RawWraithEnzyme></products>
+  </RecipeDef>
+</Defs>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_CorpseLivingForgeIncubation</defName>
+    <label>incubating Wraith tissue</label>
+    <thingCategories Inherit="False"><li>ItemsMisc</li></thingCategories>
+    <description>A biological corpse consumed into a developing mass of Wraith living technology. After one day it matures into a minified Living Forge.</description>
+    <stackLimit>1</stackLimit>
+    <tickerType>Rare</tickerType>
+    <tradeability>None</tradeability>
+    <graphicData>
+      <texPath>Things/Item/Resource/WNG_Biomass</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0</MarketValue>
+      <Mass>18</Mass>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Flammability>0.45</Flammability>
+    </statBases>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_CorpseLivingForgeIncubation">
+        <incubationTicks>60000</incubationTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BenchBase">
+    <defName>WNG_LivingForge</defName>
+    <label>living forge</label>
+    <description>A grown biomechanical Wraith workshop. Its tissues shape and cultivate Wraith living technology rather than machining inert components.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/WNG_LivingForge</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(3,2)</size>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <MaxHitPoints>600</MaxHitPoints>
+      <Flammability>0.35</Flammability>
+      <Mass>90</Mass>
+      <MarketValue>850</MarketValue>
+    </statBases>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGAmbientLoop">
+        <sound>WNG_LivingForgeAmbient</sound>
+        <repeatTicks>360</repeatTicks>
+      </li>
+    </comps>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+  </ThingDef>
+</Defs>

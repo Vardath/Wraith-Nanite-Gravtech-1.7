@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkTypeDef>
+    <defName>WNG_AsuranFabrication</defName>
+    <labelShort>Asuran fabrication</labelShort>
+    <pawnLabel>Asuran fabricator</pawnLabel>
+    <gerundLabel>Asuran fabricating</gerundLabel>
+    <description>Hidden work routing for Asuran-only nanite pattern fabrication.</description>
+    <verb>fabricate</verb>
+    <visible>false</visible>
+    <naturalPriority>500</naturalPriority>
+    <alwaysStartActive>true</alwaysStartActive>
+    <requireCapableColonist>true</requireCapableColonist>
+    <workTags><li>ManualSkilled</li><li>Artistic</li></workTags>
+    <relevantSkills><li>Artistic</li></relevantSkills>
+  </WorkTypeDef>
+</Defs>

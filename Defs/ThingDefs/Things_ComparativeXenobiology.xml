@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Internal discovery marker. Never intentionally spawned; it exists so native
+       ResearchProjectDef.requiredAnalyzed can represent a save-persistent diversity gate. -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_AnimalDiversitySurvey</defName>
+    <label>diverse animal specimens</label>
+    <description>A completed comparative survey of multiple distinct ordinary animal species.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/WNG_Biomass</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <selectable>false</selectable>
+    <alwaysHaulable>false</alwaysHaulable>
+    <tradeability>None</tradeability>
+    <generateAllowChance>0</generateAllowChance>
+    <comps>
+      <li Class="WraithNaniteGravtech.Anomaly.CompProperties_WNGStudyGateAnalyzable">
+        <analysisID>860108</analysisID>
+        <analysisRequiredRange>1</analysisRequiredRange>
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

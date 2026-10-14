@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- RimShips 1.6 / NeuralCat.RimShips / workshop 3689132119.
+       RimShipCore extends GravshipComponentBase but omits minifiedDef.
+       The RimWorld engine log falls back to generic MinifiedThing.
+       RimShips itself uses a distinct ParentName=MinifiedThing wrapper
+       for its optional MultiFloors grav engine. Apply that same pattern
+       only to the concrete RimShipCore, without editing ship travel. -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>/Defs/ThingDef[defName="RimShipCore" and (not(minifiedDef) or minifiedDef="MinifiedThing") ]</xpath>
+      </li>
+      <li Class="PatchOperationTest">
+        <xpath>/Defs[not(ThingDef[defName="ZAdaptive_MinifiedRimShipCore"])]</xpath>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs</xpath>
+        <value>
+          <ThingDef ParentName="MinifiedThing">
+            <defName>ZAdaptive_MinifiedRimShipCore</defName>
+          </ThingDef>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>/Defs/ThingDef[defName="RimShipCore" and not(minifiedDef)]</xpath>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="RimShipCore" and not(minifiedDef)]</xpath>
+        <value>
+          <minifiedDef>ZAdaptive_MinifiedRimShipCore</minifiedDef>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>/Defs/ThingDef[defName="RimShipCore"]/minifiedDef[normalize-space(.)="MinifiedThing"]</xpath>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="RimShipCore"]/minifiedDef[normalize-space(.)="MinifiedThing"]</xpath>
+        <value>
+          <minifiedDef>ZAdaptive_MinifiedRimShipCore</minifiedDef>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

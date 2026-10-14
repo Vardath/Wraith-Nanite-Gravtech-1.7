@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_LifeDrain</defName>
+    <label>feed deeply</label>
+    <description>Make full feeding contact with any living biological target, including an active hostile pawn. The feeding is a melee attack: the victim takes mild torso damage, loses about fifty biological years of vitality and receives the life-drained state; the Wraith restores its Life Force and becomes about five biological years younger, never below age eighteen. A second full feeding on a target that has not recovered is lethal.</description>
+    <iconPath>UI/WNG/Genes/WraithLifeForce</iconPath>
+    <hostile>true</hostile>
+    <aiCanUse>true</aiCanUse>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>2500~2500</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <stunTargetOnCastStart>true</stunTargetOnCastStart>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <neverTargetHostileFaction>false</neverTargetHostileFaction>
+      </targetParams>
+      <soundCast>WNG_WraithLifeDrain</soundCast>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityLifeDrain">
+        <lifeForceGain>1</lifeForceGain>
+        <victimAgeYears>50</victimAgeYears>
+        <casterRejuvenationYears>5</casterRejuvenationYears>
+        <minimumCasterAgeYears>18</minimumCasterAgeYears>
+        <killIfAlreadyDrained>true</killIfAlreadyDrained>
+        <addLifeDrainedHediff>true</addLifeDrainedHediff>
+        <addFedRecentlyHediff>true</addFedRecentlyHediff>
+        <torsoDamage>4</torsoDamage>
+      </li>
+    </comps>
+  </AbilityDef>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_PartialFeed</defName>
+    <label>take a partial feeding</label>
+    <description>Take a limited portion of any living biological target's vitality, including an active hostile pawn. The feeding is a melee attack that causes light torso damage; the victim ages about ten biological years and is temporarily weakened, while the Wraith restores roughly one third of its Life Force and becomes about one year younger, with the same age-eighteen floor.</description>
+    <iconPath>UI/WNG/Genes/WraithLifeForce</iconPath>
+    <hostile>true</hostile>
+    <aiCanUse>true</aiCanUse>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>1500~1500</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>1.25</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <stunTargetOnCastStart>true</stunTargetOnCastStart>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <neverTargetHostileFaction>false</neverTargetHostileFaction>
+      </targetParams>
+      <soundCast>WNG_WraithPartialFeed</soundCast>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityLifeDrain">
+        <lifeForceGain>0.34</lifeForceGain>
+        <victimAgeYears>10</victimAgeYears>
+        <casterRejuvenationYears>1</casterRejuvenationYears>
+        <torsoDamage>2</torsoDamage>
+        <minimumCasterAgeYears>18</minimumCasterAgeYears>
+        <killIfAlreadyDrained>false</killIfAlreadyDrained>
+        <addLifeDrainedHediff>true</addLifeDrainedHediff>
+        <addFedRecentlyHediff>true</addFedRecentlyHediff>
+      </li>
+    </comps>
+  </AbilityDef>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_Enthrall</defName>
+    <label>enthrall</label>
+    <description>Overwhelm the will of a downed humanlike pawn or any prisoner and bind that exact pawn into slavery under the Wraith's faction.</description>
+    <iconPath>UI/WNG/Abilities/WraithBeckon</iconPath>
+    <hostile>true</hostile>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>5000~5000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>1.5</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityEnthrall" />
+    </comps>
+  </AbilityDef>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>WNG_ReturnLife</defName>
+    <label>return life</label>
+    <description>Return a large share of a Wraith Queen's stored vitality to another living biological humanlike. The recipient can recover up to ten biological years and the temporary feeding-trauma state is cleared. The transfer costs two thirds of a full Life Force reserve, cannot make an adult younger than eighteen, cannot resurrect the dead and does not repair unrelated injuries.</description>
+    <iconPath>UI/WNG/Genes/WraithRegeneration</iconPath>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>600000~600000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>3</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityReturnLife">
+        <lifeForceCost>0.66</lifeForceCost>
+        <restoredAgeYears>10</restoredAgeYears>
+        <minimumTargetAgeYears>18</minimumTargetAgeYears>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

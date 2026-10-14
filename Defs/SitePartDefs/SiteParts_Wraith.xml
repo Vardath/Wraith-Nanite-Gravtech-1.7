@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>WNG_WraithMatureHive</defName>
+    <label>mature Wraith Hive</label>
+    <description>A functioning Wraith feeding settlement belonging to one exact lineage. Its local population, hibernators, feeding stock and replacement cycle exist physically on the generated site map.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_WraithMatureHive</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/SleepingPawns</expandingIconTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>500</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <selectionWeight>0</selectionWeight>
+    <arrivedLetter>A mature Wraith Hive occupies this region. Its inhabitants maintain real feeding stock, hibernation chambers and a bounded local replacement cycle.</arrivedLetter>
+    <arrivedLetterDef>ThreatBig</arrivedLetterDef>
+  </SitePartDef>
+
+  <SitePartDef>
+    <defName>WNG_WraithHoldingSite</defName>
+    <label>Wraith holding site</label>
+    <description>A temporary Wraith holding site containing exact pawns taken by culling technology. Defeating or diplomatically neutralizing the guards releases those same captives.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_WraithHoldingSite</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/SleepingPawns</expandingIconTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>350</minThreatPoints>
+    <considerEnteringAsAttack>true</considerEnteringAsAttack>
+    <selectionWeight>0</selectionWeight>
+    <arrivedLetter>This Wraith site is holding people removed by culling technology. The captives are the exact pawns who were taken.</arrivedLetter>
+    <arrivedLetterDef>ThreatBig</arrivedLetterDef>
+  </SitePartDef>
+</Defs>

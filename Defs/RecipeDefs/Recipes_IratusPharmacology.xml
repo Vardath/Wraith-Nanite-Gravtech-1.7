@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_ExtractIratusBiologicals</defName>
+    <label>extract Iratus biologicals</label>
+    <description>Take a controlled glandular and secretion sample from a living, immobilized Iratus bug. The exact animal survives the operation and enters a multi-day recovery period before it can be sampled again.</description>
+    <workerClass>WraithNaniteGravtech.Anomaly.Recipe_ExtractIratusBiologicals</workerClass>
+    <jobString>Extracting Iratus biologicals from TargetA.</jobString>
+    <researchPrerequisite>WNG_IratusPharmacology</researchPrerequisite>
+    <workAmount>1800</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgeryOutcomeEffect>SurgeryOutcomeMinorFailure</surgeryOutcomeEffect>
+    <surgerySuccessChanceFactor>0.90</surgerySuccessChanceFactor>
+    <skillRequirements><Medicine>7</Medicine></skillRequirements>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>MedicineIndustrial</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_AdministerIratusParalytic</defName>
+    <label>administer Iratus paralytic</label>
+    <description>Inject a measured dose of Iratus-derived paralytic into a living biological patient, producing short-duration neuromuscular immobilisation for handling or medical restraint.</description>
+    <workerClass>WraithNaniteGravtech.Anomaly.Recipe_AdministerIratusParalytic</workerClass>
+    <jobString>Administering Iratus paralytic to TargetA.</jobString>
+    <researchPrerequisite>WNG_IratusPharmacology</researchPrerequisite>
+    <workAmount>600</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
+    <skillRequirements><Medicine>4</Medicine></skillRequirements>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>WNG_IratusParalytic</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_IratusParalytic</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

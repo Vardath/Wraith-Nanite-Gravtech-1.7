@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThinkTreeDef>
+    <defName>WNG_ReplicatorAutonomous</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalDeactivated" MayRequire="Ludeon.RimWorld.Odyssey">
+          <subNodes>
+            <li Class="JobGiver_Deactivated" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>BerserkMechanoid</state>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <li Class="JobGiver_Berserk" />
+                <li Class="JobGiver_WanderAnywhere">
+                  <maxDanger>Deadly</maxDanger>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_QueuedJob" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorDefense" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateStructuralCell" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilate" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateCell" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateBiological" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorBiologicalHunt" />
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="JobGiver_IdleError" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  <ThinkTreeDef>
+    <defName>WNG_ReplicatorController</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalDeactivated" MayRequire="Ludeon.RimWorld.Odyssey">
+          <subNodes>
+            <li Class="JobGiver_Deactivated" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>BerserkMechanoid</state>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <li Class="JobGiver_Berserk" />
+                <li Class="JobGiver_WanderAnywhere">
+                  <maxDanger>Deadly</maxDanger>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_QueuedJob" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorDefense" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateStructuralCell" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilate" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateCell" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateBiological" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorBiologicalHunt" />
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="JobGiver_IdleError" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  <ThinkTreeDef>
+    <defName>WNG_ReplicatorRepairer</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalDeactivated" MayRequire="Ludeon.RimWorld.Odyssey">
+          <subNodes>
+            <li Class="JobGiver_Deactivated" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>BerserkMechanoid</state>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <li Class="JobGiver_Berserk" />
+                <li Class="JobGiver_WanderAnywhere">
+                  <maxDanger>Deadly</maxDanger>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_QueuedJob" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorDefense" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorRepair" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateStructuralCell" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilate" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateCell" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateBiological" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorBiologicalHunt" />
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="JobGiver_IdleError" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  <ThinkTreeDef>
+    <defName>WNG_ReplicatorBurrower</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree"><treeDef>Despawned</treeDef></li>
+        <li Class="ThinkNode_ConditionalDeactivated" MayRequire="Ludeon.RimWorld.Odyssey"><subNodes><li Class="JobGiver_Deactivated" /></subNodes></li>
+        <li Class="ThinkNode_Subtree"><treeDef>Downed</treeDef></li>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>BerserkMechanoid</state>
+          <subNodes><li Class="ThinkNode_Priority"><subNodes><li Class="JobGiver_Berserk" /><li Class="JobGiver_WanderAnywhere"><maxDanger>Deadly</maxDanger></li></subNodes></li></subNodes>
+        </li>
+        <li Class="ThinkNode_QueuedJob" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorDefense" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorBurrowerBreach" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateStructuralCell" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilate" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateCell" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorAssimilateBiological" />
+        <li Class="WraithNaniteGravtech.JobGiver_ReplicatorBiologicalHunt" />
+        <li Class="ThinkNode_Subtree"><treeDef>LordDuty</treeDef></li>
+        <li Class="ThinkNode_Tagger"><tagToGive>Idle</tagToGive><subNodes><li Class="JobGiver_WanderAnywhere"><maxDanger>Deadly</maxDanger></li></subNodes></li>
+        <li Class="JobGiver_IdleError" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+</Defs>

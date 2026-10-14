@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_WraithFeedingIndependence</defName>
+    <label>Wraith feeding independence</label>
+    <description>Combine Wraith retroviral suppression with Iratus queen regenerative biology to attempt a permanent metabolic rewrite: restore ordinary digestion while excising the Life Force dependency. The first-generation treatment is extraordinarily unstable and can trigger catastrophic systemic rejection.</description>
+    <baseCost>5200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_WraithRetroviralTherapy</li>
+      <li>WNG_IratusQueenRestoration</li>
+    </prerequisites>
+    <researchViewX>11.50</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+</Defs>

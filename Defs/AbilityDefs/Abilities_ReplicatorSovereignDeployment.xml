@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef>
+    <defName>WNG_ReplicatorSovereignSummon</defName>
+    <label>deploy replicator swarm</label>
+    <description>Deploy ten physical Replicator Drones and bind them to the exact Queen or implanted Sovereign Neural Lattice bearer. The ten are created as one latent autonomous swarm, so releasing them later restores the whole group as a coordinated feral force.</description>
+    <iconPath>Things/Item/Implant/WNG_SovereignNeuralLattice</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>60000~60000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>1.5</warmupTime>
+      <range>-1</range>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams><canTargetSelf>true</canTargetSelf></targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityReplicatorSovereignSummon">
+        <summonCount>10</summonCount>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>WNG_ReplicatorSovereignReleaseSummoned</defName>
+    <label>release summoned swarm</label>
+    <description>Sever sovereign control over every summoned Replicator on this map. The exact Drones remain physically present, revert to the Replicator swarm faction, and recover their shared feral controller-domain. This is irreversible through this command and the released swarm is hostile to the colony.</description>
+    <iconPath>Things/Item/Implant/WNG_SovereignNeuralLattice</iconPath>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0</warmupTime>
+      <range>-1</range>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams><canTargetSelf>true</canTargetSelf></targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_AbilityReplicatorSovereignReleaseSummoned" />
+    </comps>
+  </AbilityDef>
+</Defs>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_ReplicatorStargateSalvage</defName>
+    <label>contaminated Stargate salvage</label>
+    <category>ThreatSmall</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_ReplicatorStargateSalvage</workerClass>
+    <baseChance>0.03</baseChance>
+    <earliestDay>14</earliestDay>
+    <letterLabel>Contaminated Stargate salvage</letterLabel>
+    <letterText>Apparently inert modular machine substrate has appeared near the colony's Stargate after off-world traffic. It is not an active Replicator, but its internal lattice may become dangerous if the material is left unsecured.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>WNG_ReplicatorStargateAssault</defName>
+    <label>Replicator Stargate incursion</label>
+    <category>ThreatBig</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_ReplicatorStargateAssault</workerClass>
+    <baseChance>0.02</baseChance>
+    <earliestDay>22</earliestDay>
+    <letterLabel>Replicators through the gate</letterLabel>
+    <letterText>The Stargate has opened onto a hostile Replicator-controlled corridor. Primitive block forms are entering through the exact gate, with bounded follow-on redials possible while that same corridor remains usable.</letterText>
+    <letterDef>ThreatBig</letterDef>
+  </IncidentDef>
+
+</Defs>

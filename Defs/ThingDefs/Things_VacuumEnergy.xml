@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_VacuumEnergyModule</defName>
+    <label>finite vacuum-energy module</label>
+    <description>A newly manufactured sealed field lattice containing a finite metastable energy reserve. It is consumable fuel rather than a perpetual battery; continuous operation of one extraction tap depletes a full module in about fifteen days.</description>
+    <stackLimit>4</stackLimit><tradeability>All</tradeability><alwaysHaulable>true</alwaysHaulable><drawGUIOverlay>true</drawGUIOverlay>
+    <thingCategories><li>Manufactured</li></thingCategories>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Item/Resource/Precursor/WNG_VacuumEnergyModule</texPath><drawSize>(0.85,0.85)</drawSize></graphicData>
+    <statBases><Mass>8</Mass><MarketValue>9800</MarketValue><Flammability>0</Flammability><DeteriorationRate>0</DeteriorationRate></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_VacuumEnergyTap</defName>
+    <label>vacuum-energy extraction tap</label>
+    <description>A high-output power frame that draws a finite reserve from one sealed module into the colony grid. When active it supplies 15,000 W; switching it off halts consumption and preserves the remaining reserve.</description>
+    <thingCategories><li>BuildingsPower</li></thingCategories><designationCategory>Power</designationCategory>
+    <researchPrerequisites><li>WNG_VacuumEnergyContainment</li></researchPrerequisites><uiOrder>2025</uiOrder><constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <size>(2,2)</size><rotatable>true</rotatable><defaultPlacingRot>South</defaultPlacingRot><tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType><altitudeLayer>Building</altitudeLayer><passability>PassThroughOnly</passability><pathCost>40</pathCost>
+    <blockWind>true</blockWind><castEdgeShadows>true</castEdgeShadows><fillPercent>0.55</fillPercent><minifiedDef>MinifiedThing</minifiedDef><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <graphicData><graphicClass>Graphic_Multi</graphicClass><texPath>Things/Building/Precursor/Power/WNG_VacuumEnergyTap</texPath><drawSize>(2.4,2.4)</drawSize></graphicData>
+    <costList><Plasteel>220</Plasteel><Uranium>80</Uranium><ComponentSpacer>10</ComponentSpacer><GravlitePanel>45</GravlitePanel></costList>
+    <statBases><MaxHitPoints>650</MaxHitPoints><WorkToBuild>26000</WorkToBuild><Mass>95</Mass><Flammability>0</Flammability><Beauty>12</Beauty></statBases>
+    <comps>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>1</fuelCapacity><fuelConsumptionRate>0.0666667</fuelConsumptionRate>
+        <fuelFilter><thingDefs><li>WNG_VacuumEnergyModule</li></thingDefs></fuelFilter>
+        <fuelLabel>finite vacuum-energy module</fuelLabel><fuelGizmoLabel>remaining vacuum reserve</fuelGizmoLabel>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable><initialConfigurableTargetFuelLevel>1</initialConfigurableTargetFuelLevel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed><autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo><drawOutOfFuelOverlay>false</drawOutOfFuelOverlay><showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle><canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_VacuumEnergyPower"><basePowerConsumption>0</basePowerConsumption><transmitsPower>true</transmitsPower><generatedPower>15000</generatedPower></li>
+      <li Class="CompProperties_Stunnable"><affectedDamageDefs><li>EMP</li></affectedDamageDefs><useLargeEMPEffecter>true</useLargeEMPEffecter></li>
+    </comps>
+  </ThingDef>
+</Defs>

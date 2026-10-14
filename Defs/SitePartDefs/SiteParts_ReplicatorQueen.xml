@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>WNG_ReplicatorQueenVault</defName>
+    <label>sealed nanite vault</label>
+    <description>An unclaimed precursor-era vault containing an exact human-form nanite signature inside a real ancient cryptosleep chamber.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_ReplicatorQueenVault</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/SleepingPawns</expandingIconTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <requiresFaction>false</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>350</minThreatPoints>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <selectionWeight>0</selectionWeight>
+    <arrivedLetter>The anomalous nanite signal originates from an intact ancient cryptosleep chamber somewhere on this site.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+  </SitePartDef>
+</Defs>

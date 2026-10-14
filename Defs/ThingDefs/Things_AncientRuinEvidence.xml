@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_RuinedAncientDiagnosticConsole</defName>
+    <label>fractured precursor diagnostic console</label>
+    <description>A dead precursor diagnostic station recovered as environmental evidence. Its field geometry is broken and its original data is no longer directly accessible. This ruin has no research, power, fabrication or control function.</description>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Precursor/Gravship/WNG_PrecursorPilotConsole</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.2,1.2)</drawSize>
+    </graphicData>
+    <size>(2,1)</size><rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability><fillPercent>0.30</fillPercent>
+    <statBases><MaxHitPoints>170</MaxHitPoints><Mass>24</Mass><Flammability>0</Flammability><Beauty>-1</Beauty></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_FracturedAncientContainmentCradle</defName>
+    <label>fractured precursor containment cradle</label>
+    <description>The broken shell of a precursor containment apparatus. Its field vanes are missing and the central emitter bed is cold. It is inert ruin evidence, not functioning containment.</description>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Precursor/Collective/WNG_AsuranPatternArchive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.3,2.3)</drawSize>
+    </graphicData>
+    <size>(2,2)</size><rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability><fillPercent>0.36</fillPercent>
+    <statBases><MaxHitPoints>230</MaxHitPoints><Mass>46</Mass><Flammability>0</Flammability><Beauty>-1</Beauty></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_InertAncientDroneRack</defName>
+    <label>inert precursor drone rack</label>
+    <description>A damaged storage-and-service rack once used for compact precursor drones. Its sockets and launch channels are dead. It cannot arm, guide, manufacture or repair drones.</description>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Precursor/Gravship/WNG_PrecursorPilotConsole</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.1,1.25)</drawSize>
+    </graphicData>
+    <size>(2,1)</size><rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability><fillPercent>0.28</fillPercent>
+    <statBases><MaxHitPoints>185</MaxHitPoints><Mass>31</Mass><Flammability>0</Flammability><Beauty>0</Beauty></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_CollapsedAncientFieldProjector</defName>
+    <label>collapsed precursor field projector</label>
+    <description>A laboratory-scale field projector whose stabilising structure has collapsed. The emitter is cold and incomplete. It provides no shield, power, containment or gravitic effect.</description>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Precursor/Gravship/WNG_PrecursorShieldEmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.3,2.3)</drawSize>
+    </graphicData>
+    <size>(2,2)</size><rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability><fillPercent>0.34</fillPercent>
+    <statBases><MaxHitPoints>210</MaxHitPoints><Mass>41</Mass><Flammability>0</Flammability><Beauty>-2</Beauty></statBases>
+  </ThingDef>
+</Defs>

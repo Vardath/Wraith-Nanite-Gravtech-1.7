@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Genuine friendly Quiet-Lattice delegation. CatCraft owns inbound Stargate handling;
+       WNG owns only the visit and physical NPC Puddle-Jumper departure. -->
+  <IncidentDef>
+    <defName>WNG_QuietLatticeStargateVisit</defName>
+    <label>Quiet Lattice Stargate delegation</label>
+    <category>Misc</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_QuietLatticeStargateVisit</workerClass>
+    <baseChance>0.024</baseChance>
+    <earliestDay>12</earliestDay>
+    <minRefireDays>18</minRefireDays>
+    <letterLabel>Quiet Lattice delegation</letterLabel>
+    <letterText>An incoming wormhole resolves into a genuine Quiet Lattice delegation. They have used the colony's Stargate through its own native network and request a short peaceful visit. Their return courier will arrive separately by Puddle Jumper.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+  </IncidentDef>
+</Defs>

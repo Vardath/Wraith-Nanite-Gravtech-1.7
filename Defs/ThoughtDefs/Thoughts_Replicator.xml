@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>WNG_ChildsToyNearby</defName>
+    <workerClass>WraithNaniteGravtech.ThoughtWorker_ChildsToyNearby</workerClass>
+    <stages>
+      <li>
+        <label>delightful little replicator</label>
+        <description>That little machine is oddly charming when it is behaving itself.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

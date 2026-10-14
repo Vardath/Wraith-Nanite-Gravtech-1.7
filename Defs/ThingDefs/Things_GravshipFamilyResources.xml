@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_AsuranNaniteSlurry</defName>
+    <label>Asuran nanite slurry</label>
+    <thingCategories Inherit="False"><li>Manufactured</li></thingCategories>
+    <description>A stabilized finite suspension of Replicator-derived nanites in a gravitic carrier. Asuran gravship fuel cells and the player Puddle Jumper accept it as finite propellant.</description>
+    <graphicData><texPath>Things/Item/Resource/WNG_AsuranNaniteSlurry</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <stackLimit>150</stackLimit>
+    <statBases><MarketValue>9.5</MarketValue><Mass>0.10</Mass><Flammability>0.18</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>WNG_MinifiedAsuranGravEngine</defName>
+    <label>minified Asuran grav engine</label>
+    <thingCategories Inherit="False"><li>Buildings</li></thingCategories>
+    <description>A complete Asuran grav engine packaged for installation.</description>
+    <thingClass>WraithNaniteGravtech.MinifiedAsuranGravEngine</thingClass>
+    <category>Item</category><useHitPoints>true</useHitPoints><selectable>true</selectable><altitudeLayer>Item</altitudeLayer>
+    <scatterableOnMapGen>false</scatterableOnMapGen><tickerType>Normal</tickerType><drawerType>RealtimeOnly</drawerType>
+    <alwaysHaulable>true</alwaysHaulable><rotatable>false</rotatable><pathCost>15</pathCost>
+    <statBases><MaxHitPoints>100</MaxHitPoints><Mass>28</Mass><Flammability>0</Flammability><MarketValue>3200</MarketValue></statBases>
+    <comps><li Class="CompProperties_Forbiddable"/></comps>
+  </ThingDef>
+</Defs>

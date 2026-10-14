@@ -1,0 +1,123 @@
+{
+  "id": "precursor_uniform",
+  "item": "WNG_PrecursorUniform",
+  "faction": "Precursor",
+  "output_dir": "Precursor",
+  "research": {
+    "rule": "Stargate / Lantean canon and production costume references first; no historical WNG apparel input",
+    "status": "stage_1_locked",
+    "sources": [
+      {
+        "type": "canon_episode",
+        "title": "Stargate Atlantis - Before I Sleep",
+        "url": "https://www.gateworld.net/atlantis/s1/before-i-sleep/",
+        "evidence": [
+          "living Lanteans are shown in Atlantis in their own era",
+          "Ancient / Lantean presentation is refined, pale, practical and non-militaristic"
+        ]
+      },
+      {
+        "type": "canon_transcript",
+        "title": "Before I Sleep transcript",
+        "url": "https://www.gateworld.net/atlantis/s1/before-i-sleep/transcript/",
+        "evidence": [
+          "Dr. Weir is clothed in a long white Lantean-era dress during the Ancient flashback",
+          "supports pale flowing Ancient textile rather than generic plated armour"
+        ]
+      },
+      {
+        "type": "production_costume_context",
+        "title": "Stitches In Time - Christina McQuarrie",
+        "url": "https://www.gateworld.net/news/2009/08/stitches-in-time/",
+        "evidence": [
+          "Stargate costume design prioritised believable fabricated clothing and practical tailoring"
+        ]
+      }
+    ],
+    "required_visual_language": [
+      "pale ivory-silver engineered cloth",
+      "graphite technical underweave",
+      "tall soft split collar",
+      "long tailored Lantean field-tunic fall",
+      "restrained blue conductor embroidery",
+      "aged silver fasteners and seams",
+      "soft woven folds, stitching and rubbed wear",
+      "original Ancient-derived field uniform, not Asuran combat armour"
+    ],
+    "avoid": [
+      "historical WNG apparel as an art source",
+      "flat coloured panels",
+      "white plastic armour plates",
+      "generic marine armour",
+      "neon cyan piping",
+      "ship parts on clothing",
+      "vector icon look",
+      "procedural placeholder appearance"
+    ]
+  },
+  "rimworld": {
+    "family": "Duster",
+    "body_types": [
+      "Male",
+      "Female",
+      "Thin",
+      "Fat",
+      "Hulk"
+    ],
+    "tile_scale": 0.8,
+    "cover_body": true,
+    "preserve_master_ratio": false,
+    "mapping_mode": "master_silhouette",
+    "master_silhouette_mapping": {
+      "south": {
+        "width_scale": 1.02,
+        "height_scale": 1.04,
+        "x_offset": 0,
+        "y_offset": 0.015
+      },
+      "north": {
+        "width_scale": 1.02,
+        "height_scale": 1.04,
+        "x_offset": 0,
+        "y_offset": 0.015
+      },
+      "east": {
+        "width_scale": 0.98,
+        "height_scale": 1.04,
+        "x_offset": 0,
+        "y_offset": 0.015
+      }
+    },
+    "inventory_source": "fitted_male_south",
+    "fit_revision": "step12-stargate-first-finished-master-pawn-fit-v1"
+  },
+  "masters": {
+    "south": "master_south.png",
+    "north": "master_north.png",
+    "east": "master_east.png"
+  },
+  "qa": {
+    "min_contrast": 13,
+    "max_white_fraction": 0.24,
+    "max_edge_lift": 40
+  },
+  "external_art_spec": {
+    "minimum_master_resolution": 1024,
+    "orthographic_views": [
+      "south/front",
+      "north/back",
+      "east/side"
+    ],
+    "background": "transparent",
+    "instruction": "finished professional hand-painted RimWorld apparel master generated from Stargate Lantean design research before pawn fitting",
+    "silhouette": "finished master defines garment silhouette; RimWorld geometry is only the body anchor/envelope; inventory tile is derived from fitted worn art",
+    "source_priority": "canon Stargate Atlantis Lantean / Ancient clothing and production-costume construction",
+    "banned": [
+      "historical WNG clothing as input",
+      "generic sci-fi armour",
+      "neon piping",
+      "ship parts",
+      "flat procedural replacement art"
+    ]
+  }
+}

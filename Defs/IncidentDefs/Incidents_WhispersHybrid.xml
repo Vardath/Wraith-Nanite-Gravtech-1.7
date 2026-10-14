@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>WNG_WhispersHybridEscape</defName>
+    <label>Whispers in the fog</label>
+    <category>ThreatBig</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.Anomaly.IncidentWorker_WhispersHybridEscape</workerClass>
+    <letterLabel>Whispers in the fog</letterLabel>
+    <letterText>A bank of unnatural fog is moving in from the edge of the colony. Shapes are clicking and moving inside it. Sensors identify unstable Human/Iratus-derived biology consistent with one of Michael's abandoned early hybrid experiments. The creatures appear blind, but they are tracking sound.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>0.10</baseChance>
+    <earliestDay>20</earliestDay>
+    <minRefireDays>24</minRefireDays>
+    <minThreatPoints>300</minThreatPoints>
+    <pointsScaleable>true</pointsScaleable>
+    <populationEffect>None</populationEffect>
+  </IncidentDef>
+</Defs>

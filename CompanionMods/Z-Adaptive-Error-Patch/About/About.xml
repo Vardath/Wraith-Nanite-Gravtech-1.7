@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Z Adaptive Error Patch</name>
+  <author>Vardath</author>
+  <packageId>vardath.adaptiveerrorpatch</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>Private late-loading compatibility and error-cancellation layer for Vardath's RimWorld 1.6 modlist. Uses guarded XML repairs plus narrowly targeted runtime sanitation where XML alone cannot safely correct the active mod stack.</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>vanillaexpanded.gravship</li>
+    <li>rainna.giantmode</li>
+    <li>eltwofour.mantodeanrace</li>
+    <li>smallpond.gp</li>
+    <li>gg.culinarycraft</li>
+    <li>superherogenesbase.mod</li>
+    <li>superherogenes.villains</li>
+    <li>superherogenes.heroes</li>
+    <li>ferny.characterdevelopment</li>
+    <li>ferny.captureexpansion</li>
+    <li>torann.arimworldofmagic</li>
+    <li>zal.lotrwizardry</li>
+    <li>smashphil.vehicleframework</li>
+    <li>gravtide.mod</li>
+    <li>local.kindred</li>
+    <li>tanyavonhart.kindred</li>
+    <li>we1tall.depths</li>
+    <li>mlie.jurassicrimworld</li>
+    <li>m00nl1ght.GeologicalLandforms</li>
+    <li>cruesoe.autonamebabies</li>
+    <li>anthony.cranialspecimens</li>
+    <li>nozome.mapmodeframework</li>
+    <li>xyzf.mechanoidmechanitor</li>
+    <li>NeuralCat.RimShips</li>
+    <li>rim.job.world</li>
+    <li>turnovus.biotech.integratedgenes</li>
+    <li>vexedtrees980.rimelvesbiotech</li>
+    <li>ferny.progressiongravship</li>
+    <li>sirmashedpotato.morrowrim.dunmerlamppack</li>
+    <li>escp.dunmer</li>
+    <li>jdubarb.spaceservices</li>
+    <li>QF_Patch</li>
+  </loadAfter>
+</ModMetaData>

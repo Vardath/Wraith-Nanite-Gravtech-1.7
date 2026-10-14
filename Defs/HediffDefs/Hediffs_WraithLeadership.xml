@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_QueenAuthority</defName>
+    <label>queen's hive authority</label>
+    <description>A living Wraith Queen is coordinating this pawn through the local hive network. Shared intent sharpens movement, manipulation and conscious response.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <duplicationAllowed>false</duplicationAllowed>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>0.04</offset></li>
+          <li><capacity>Manipulation</capacity><offset>0.05</offset></li>
+          <li><capacity>Consciousness</capacity><offset>0.04</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_RegentAuthority</defName>
+    <label>provisional hive coordination</label>
+    <description>An acting Wraith regent is holding the local hive network together after the loss of its Queen. Coordination has returned, but remains weaker than true Queen authority.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <duplicationAllowed>false</duplicationAllowed>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>0.02</offset></li>
+          <li><capacity>Manipulation</capacity><offset>0.025</offset></li>
+          <li><capacity>Consciousness</capacity><offset>0.02</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_QueenlessDisruption</defName>
+    <label>queenless hive disruption</label>
+    <description>The local Wraith hive has lost an established Queen and has not yet resolved succession. Telepathic command fragments into competing impulses, impairing coordination and conscious response.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <duplicationAllowed>false</duplicationAllowed>
+    <stages>
+      <li>
+        <capMods>
+          <li><capacity>Moving</capacity><offset>-0.06</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.08</offset></li>
+          <li><capacity>Consciousness</capacity><offset>-0.08</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.04</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_ActingHiveRegent</defName>
+    <label>acting hive regent</label>
+    <description>This Wraith has assumed provisional local authority after the loss of a true Queen. The role can restore basic hive coordination, but it does not equal a Queen's biological and psychic command.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <duplicationAllowed>false</duplicationAllowed>
+  </HediffDef>
+</Defs>

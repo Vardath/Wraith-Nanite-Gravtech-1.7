@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>WNG_StabilizeAsuranNaniteSlurry</defName>
+    <label>stabilize Asuran nanite slurry</label>
+    <description>Disassemble physical Replicator Blocks into a controlled nanite suspension for Asuran propulsion and Puddle Jumper fuel.</description>
+    <jobString>Stabilizing Asuran nanite slurry.</jobString>
+    <workAmount>1800</workAmount><workSkill>Crafting</workSkill>
+    <skillRequirements><Crafting>8</Crafting></skillRequirements>
+    <ingredients><li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>10</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_AsuranNaniteSlurry>20</WNG_AsuranNaniteSlurry></products>
+    <recipeUsers><li>WNG_PrecursorFabricator</li></recipeUsers>
+    <researchPrerequisite>WNG_PrecursorFabrication</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_SynthesizeAsuranGravEngine</defName>
+    <label>synthesize Asuran grav engine</label>
+    <description>Synthesize a complete Asuran grav engine from finite Replicator material, precision composite and advanced components.</description>
+    <jobString>Synthesizing an Asuran grav engine.</jobString>
+    <workAmount>32000</workAmount><workSkill>Crafting</workSkill>
+    <skillRequirements><Crafting>10</Crafting></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_ReplicatorMatter</li></thingDefs></filter><count>60</count></li>
+      <li><filter><thingDefs><li>Plasteel</li></thingDefs></filter><count>140</count></li>
+      <li><filter><thingDefs><li>ComponentSpacer</li></thingDefs></filter><count>6</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_ReplicatorMatter</li><li>Plasteel</li><li>ComponentSpacer</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_MinifiedAsuranGravEngine>1</WNG_MinifiedAsuranGravEngine></products>
+    <recipeUsers><li>WNG_PrecursorFabricator</li></recipeUsers>
+    <researchPrerequisite>WNG_AsuranGravshipArchitecture</researchPrerequisite>
+  </RecipeDef>
+</Defs>

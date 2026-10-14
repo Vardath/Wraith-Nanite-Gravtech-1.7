@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_BiologicalCultivation</defName>
+    <label>biological cultivation</label>
+    <description>Learn to direct Wraith regenerative tissue into stable technological organs. Unlocks host-seed cultivation for the first Living Forge and basic grown settlement tissues.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
+  
+    <researchViewX>12</researchViewX><researchViewY>7</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WNG_LivingWeapons</defName>
+    <label>living weapons</label>
+    <description>Shape cultivated Wraith tissue into purpose-grown capture weapons and lethal bio-organic arms.</description>
+    <baseCost>1400</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_BiologicalCultivation</li>
+      <li>Machining</li>
+    </prerequisites>
+  
+    <researchViewX>13.5</researchViewX><researchViewY>8</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WNG_AdvancedCarapace</defName>
+    <label>advanced carapace cultivation</label>
+    <description>Grow reinforced living shells, command-grade carapaces and heavier Wraith combat organisms.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_LivingWeapons</li>
+    </prerequisites>
+  
+    <researchViewX>15</researchViewX><researchViewY>8</researchViewY>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>WNG_FeedingEcology</defName>
+    <label>wraith feeding ecology</label>
+    <description>Organise Wraith feeding reserves and long-cycle dormancy into a stable life-force ecology. Unlocks player construction of feeding niches and hibernation pods without merging local colony feeding with strategic Hive hunger.</description>
+    <baseCost>1300</baseCost><techLevel>Industrial</techLevel>
+    <prerequisites><li>WNG_BiologicalCultivation</li></prerequisites>
+  
+    <researchViewX>13.5</researchViewX><researchViewY>7</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WNG_BioelectricOrgans</defName>
+    <label>bioelectric organs</label>
+    <description>Grow organs that consume cultured biomass to generate electricity and living cells that store it for ordinary colony power networks.</description>
+    <baseCost>1200</baseCost><techLevel>Industrial</techLevel>
+    <prerequisites><li>WNG_BiologicalCultivation</li><li>Batteries</li></prerequisites>
+  
+    <researchViewX>13.5</researchViewX><researchViewY>9</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

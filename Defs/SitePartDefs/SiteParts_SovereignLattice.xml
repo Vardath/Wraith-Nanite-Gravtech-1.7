@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>WNG_SovereignLatticeCache</defName>
+    <label>severed command-lattice cache</label>
+    <description>A precursor field cache containing one physical Sovereign Neural Lattice.</description>
+    <workerClass>WraithNaniteGravtech.SitePartWorker_SovereignLatticeCache</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <requiresFaction>false</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>300</minThreatPoints>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <selectionWeight>0</selectionWeight>
+    <arrivedLetter>The cache signal resolves to a compact precursor storage site. A complete Sovereign Neural Lattice should be physically present somewhere near the site's centre.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+  </SitePartDef>
+</Defs>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_NishtaDeprogrammingShock</defName>
+    <label>electrically clear Nish'ta</label>
+    <description>Use monitored electrical shock to kill an active Nish'ta conditioning organism while supporting the patient's breathing and circulation. Successful clearance restores the victim's prior allegiance and leaves resistance to reinfection.</description>
+    <workerClass>WraithNaniteGravtech.Recipe_NishtaDeprogrammingShock</workerClass>
+    <jobString>Electrically clearing Nish'ta from TargetA.</jobString>
+    <researchPrerequisite>WNG_NishtaBiocontrol</researchPrerequisite>
+    <workAmount>1600</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgeryOutcomeEffect>SurgeryOutcomeMinorFailure</surgeryOutcomeEffect>
+    <surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+    <skillRequirements>
+      <Medicine>6</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineIndustrial</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

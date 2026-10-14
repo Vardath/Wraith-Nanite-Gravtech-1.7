@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_IratusQueenRestoration</defName>
+    <label>Iratus queen restoration</label>
+    <description>Reconstruct the ancient Wraith treatment in which an Iratus queen could sometimes restore a terminally ill Wraith. WNG's controlled version isolates queen-specific regenerative factors and stabilizes them with refined Wraith enzyme. The treatment remains extraordinarily dangerous and is unsuitable for ordinary humans.</description>
+    <baseCost>3200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_IratusPharmacology</li>
+      <li>WNG_WraithEnzymeRefinement</li>
+    </prerequisites>
+    <researchViewX>9.50</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+</Defs>

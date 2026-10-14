@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>WNG_CultivateWraithBiofluid</defName><label>cultivate wraith bio-fluid</label><jobString>Cultivating Wraith bio-fluid.</jobString>
+    <workAmount>900</workAmount><workSkill>Intellectual</workSkill><researchPrerequisite>WNG_OrganicFlight</researchPrerequisite>
+    <ingredients><li><filter><thingDefs><li>WNG_Biomass</li></thingDefs></filter><count>8</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_Biomass</li></thingDefs></fixedIngredientFilter>
+    <products><WNG_WraithBiofluidFuel>16</WNG_WraithBiofluidFuel></products>
+    <recipeUsers><li>WNG_LivingForge</li></recipeUsers>
+  </RecipeDef>
+</Defs>

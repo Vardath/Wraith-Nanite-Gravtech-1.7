@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_IratusPharmacology</defName>
+    <label>Iratus xenopharmacology</label>
+    <description>Turn comparative study of Iratus feeding biology into usable medicine. Careful sampling of living specimens isolates regenerative and neuromuscular secretions without destroying the organism, while drug-lab stabilization converts those secretions into a powerful short-duration paralytic. This is the first practical Iratus-derived pharmacology node; restorative and hybrid applications require later research.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_ComparativeXenobiology</li>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>8.50</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+</Defs>

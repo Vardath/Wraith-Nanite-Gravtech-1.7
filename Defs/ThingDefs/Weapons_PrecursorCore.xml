@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Accepted precursor field weapon recovered for the player human-form starts. -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>WNG_PrecursorPulseRifle</defName>
+    <recipeMaker IsNull="True" />
+    <label>precursor pulse rifle</label>
+    <thingCategories Inherit="False"><li>WeaponsRanged</li></thingCategories>
+    <description>A precise high-energy rifle built around compact field accelerators and self-aligning emitter geometry. Its internals are maintained by precursor nanite systems.</description>
+    <techLevel>Spacer</techLevel>
+    <equippedAngleOffset>180</equippedAngleOffset>
+    <graphicData><texPath>Things/Item/Weapon/Precursor/WNG_PrecursorPulseRifle</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases>
+      <WorkToMake>42000</WorkToMake><Mass>4.1</Mass>
+      <AccuracyTouch>0.62</AccuracyTouch><AccuracyShort>0.80</AccuracyShort><AccuracyMedium>0.76</AccuracyMedium><AccuracyLong>0.66</AccuracyLong>
+      <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+    </statBases>
+    <costList><Plasteel>45</Plasteel><ComponentSpacer>2</ComponentSpacer></costList>
+    <weaponTags><li>WNG_PrecursorWeapon</li></weaponTags>
+    <tradeTags><li>WeaponRanged</li></tradeTags>
+    <weaponClasses><li>RangedLight</li></weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>WNG_ProjectilePrecursorPulse</defaultProjectile>
+        <warmupTime>0.85</warmupTime><range>30.9</range><ticksBetweenBurstShots>10</ticksBetweenBurstShots><burstShotCount>3</burstShotCount>
+        <soundCast>WNG_PrecursorPulseRifle_Fire</soundCast><soundCastTail>GunTail_Medium</soundCastTail>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_ProjectilePrecursorPulse</defName>
+    <label>precursor pulse</label>
+    <graphicData><texPath>Things/Projectile/WNG/WNG_ProjectilePrecursorPulse</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile><damageDef>Bullet</damageDef><damageAmountBase>18</damageAmountBase><armorPenetrationBase>0.38</armorPenetrationBase><speed>90</speed></projectile>
+  </ThingDef>
+</Defs>

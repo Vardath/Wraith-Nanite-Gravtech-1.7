@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_AsuranContinuity</defName>
+    <label>Asuran pattern continuity</label>
+    <description>Store periodically refreshed synthetic identity patterns in a powered Asuran archive and reconstruct a destroyed archived body from its last viable state at substantial material cost. Anything learned or socially changed after the last backup is genuinely lost.</description>
+    <baseCost>3400</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>WNG_AsuranCollectiveSystems</li>
+      <li>WNG_PrecursorFabrication</li>
+    </prerequisites>
+  
+    <researchViewX>18</researchViewX><researchViewY>11.5</researchViewY>
+  </ResearchProjectDef>
+</Defs>

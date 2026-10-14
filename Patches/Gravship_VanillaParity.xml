@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Family equivalents of Odyssey's PilotSubpersonaCore participate in the exact native launch-quality calculation. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RitualOutcomeEffectDef[defName="GravshipLaunch"]/comps</xpath>
+    <value>
+      <li Class="RitualOutcomeComp_GravshipFacilities">
+        <label>wraith navigation cortex</label>
+        <facilityQualityOffsets>
+          <li><key>WNG_WraithNavigationCortex</key><value>0.15</value></li>
+        </facilityQualityOffsets>
+      </li>
+      <li Class="RitualOutcomeComp_GravshipFacilities">
+        <label>Asuran flight submind</label>
+        <facilityQualityOffsets>
+          <li><key>WNG_AsuranFlightSubmind</key><value>0.15</value></li>
+        </facilityQualityOffsets>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Goa'uld parity exists only when ONAC is actually active and its Defs survived MayRequire. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="WNG_GoauldNavigationCrystal"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/RitualOutcomeEffectDef[defName="GravshipLaunch"]/comps</xpath>
+      <value>
+        <li Class="RitualOutcomeComp_GravshipFacilities">
+          <label>Ha'tak navigation crystal</label>
+          <facilityQualityOffsets>
+            <li><key>WNG_GoauldNavigationCrystal</key><value>0.15</value></li>
+          </facilityQualityOffsets>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

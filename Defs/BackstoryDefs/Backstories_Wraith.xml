@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <BackstoryDef>
+    <defName>WNG_WraithOrigin_HiveCrecheBroodling</defName>
+    <slot>Childhood</slot>
+    <title>brood alcove youth</title>
+    <titleShort>brood youth</titleShort>
+    <description>[PAWN_nameDef] spent [PAWN_possessive] first years in crowded nursery chambers where every gesture carried a lesson about rank, danger and restraint. Before [PAWN_pronoun] was old enough to join a hunt, [PAWN_pronoun] already knew how to hold ground and read another creature's intent.</description>
+    <skillGains><Melee>2</Melee><Social>1</Social></skillGains>
+    <spawnCategories><li>WraithOrigin</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_WraithOrigin_LivingShipBroodling</defName>
+    <slot>Childhood</slot>
+    <title>organ-deck youth</title>
+    <titleShort>organ-deck youth</titleShort>
+    <description>[PAWN_nameDef] grew up aboard a vessel whose walls healed, flexed and answered to careful tending. [PAWN_pronoun] learned early that Wraith machines are living systems, and that keeping them useful requires observation more than brute force.</description>
+    <skillGains><Crafting>2</Crafting><Intellectual>1</Intellectual></skillGains>
+    <spawnCategories><li>WraithOrigin</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_WraithOrigin_FeedingCourtWard</defName>
+    <slot>Childhood</slot>
+    <title>reserve-chamber ward</title>
+    <titleShort>reserve ward</titleShort>
+    <description>[PAWN_nameDef] was raised near chambers where prey were kept alive for future feeding. The work around [PAWN_objective] demanded attention to wounds, fear and hunger alike, leaving [PAWN_objective] unusually observant of living bodies.</description>
+    <skillGains><Medicine>2</Medicine><Social>1</Social></skillGains>
+    <spawnCategories><li>WraithOrigin</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_CullingPathfinder</defName>
+    <slot>Adulthood</slot>
+    <title>culling outrider</title>
+    <titleShort>outrider</titleShort>
+    <description>[PAWN_nameDef] moved ahead of culling forces to study terrain, patrol routes and likely escape paths. A successful outing depended on finding a way in without warning the prey and a way out with captives still alive.</description>
+    <skillGains><Shooting>4</Shooting><Intellectual>1</Intellectual></skillGains>
+    <spawnCategories><li>WraithHunterAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_PreyStalker</defName>
+    <slot>Adulthood</slot>
+    <title>solitary pursuer</title>
+    <titleShort>pursuer</titleShort>
+    <description>[PAWN_nameDef] hunted travellers and stragglers beyond settlement walls, often for days at a time. [PAWN_pronoun] became skilled at deciding whether a target should be taken at range, rushed, or followed until capture was safer.</description>
+    <skillGains><Shooting>3</Shooting><Melee>2</Melee></skillGains>
+    <spawnCategories><li>WraithHunterAdult</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_CarapaceLineguard</defName>
+    <slot>Adulthood</slot>
+    <title>assault carapace guard</title>
+    <titleShort>carapace guard</titleShort>
+    <description>[PAWN_nameDef] fought in the dense centre of Wraith assaults, absorbing fire while quicker hunters searched for openings. Years of hard contact made [PAWN_objective] more comfortable advancing under pressure than waiting behind cover.</description>
+    <skillGains><Melee>4</Melee><Shooting>2</Shooting></skillGains>
+    <spawnCategories><li>WraithWarriorAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_BoardingWarrior</defName>
+    <slot>Adulthood</slot>
+    <title>hull breach fighter</title>
+    <titleShort>breach fighter</titleShort>
+    <description>[PAWN_nameDef] specialised in fighting through airlocks, corridors and damaged hull sections where lines of fire vanished in seconds. [PAWN_pronoun] trained to switch between ranged and close combat without hesitation.</description>
+    <skillGains><Melee>3</Melee><Shooting>3</Shooting></skillGains>
+    <spawnCategories><li>WraithWarriorAdult</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_HiveTactician</defName>
+    <slot>Adulthood</slot>
+    <title>war-cell coordinator</title>
+    <titleShort>coordinator</titleShort>
+    <description>[PAWN_nameDef] directed several small hunting and assault groups at once, translating a senior Wraith's intent into practical orders. The role rewarded fast judgement, clear authority and enough weapons training to survive when coordination failed.</description>
+    <skillGains><Social>3</Social><Intellectual>2</Intellectual><Shooting>1</Shooting></skillGains>
+    <spawnCategories><li>WraithCommanderAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_CullingCommander</defName>
+    <slot>Adulthood</slot>
+    <title>harvest strike leader</title>
+    <titleShort>strike leader</titleShort>
+    <description>[PAWN_nameDef] commanded raids where destroying resistance was secondary to returning with viable prey. [PAWN_pronoun] learned to keep aggressive subordinates focused on extraction, timing and the survival of the captured.</description>
+    <skillGains><Social>3</Social><Shooting>3</Shooting></skillGains>
+    <spawnCategories><li>WraithCommanderAdult</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_DormancyKeeper</defName>
+    <slot>Adulthood</slot>
+    <title>hibernation tender</title>
+    <titleShort>hibernation tender</titleShort>
+    <description>[PAWN_nameDef] watched over sleeping Wraith during long dormant intervals, maintaining cradle organs and correcting biological failures before they became fatal. The work demanded steady medical judgement and careful technical attention.</description>
+    <skillGains><Medicine>4</Medicine><Intellectual>2</Intellectual></skillGains>
+    <spawnCategories><li>WraithKeeperAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_FeedingSteward</defName>
+    <slot>Adulthood</slot>
+    <title>feeding reserve keeper</title>
+    <titleShort>reserve keeper</titleShort>
+    <description>[PAWN_nameDef] managed a finite population of prey through lean periods, deciding who could feed and how much damage the captives could survive. [PAWN_pronoun] needed enough medical skill to preserve the reserve and enough presence to deny hungry Wraith.</description>
+    <skillGains><Medicine>3</Medicine><Social>2</Social><Intellectual>1</Intellectual></skillGains>
+    <spawnCategories><li>WraithKeeperAdult</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_LineageSovereign</defName>
+    <slot>Adulthood</slot>
+    <title>lineage arbiter</title>
+    <titleShort>lineage arbiter</titleShort>
+    <description>[PAWN_nameDef] held together a dangerous lineage by deciding disputes, feeding priorities, migrations and wars. [PAWN_possessive] authority depended as much on anticipating consequences as on making others obey.</description>
+    <skillGains><Social>4</Social><Intellectual>2</Intellectual></skillGains>
+    <spawnCategories><li>WraithQueenAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_BroodMatriarch</defName>
+    <slot>Adulthood</slot>
+    <title>brood continuity matriarch</title>
+    <titleShort>brood matriarch</titleShort>
+    <description>[PAWN_nameDef] supervised the biological continuity of a hive across births, losses and long periods of scarcity. [PAWN_pronoun] combined political command with practical knowledge of Wraith health and population planning.</description>
+    <skillGains><Social>3</Social><Medicine>2</Medicine><Intellectual>1</Intellectual></skillGains>
+    <spawnCategories><li>WraithQueenAdult</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_SeveredCullingScout</defName>
+    <slot>Adulthood</slot>
+    <title>orphaned hunt scout</title>
+    <titleShort>orphaned scout</titleShort>
+    <description>[PAWN_nameDef] lost contact with the hive during a distant hunt and survived without its normal support. [PAWN_pronoun] learned to repair what [PAWN_pronoun] could, negotiate when violence was wasteful and make decisions without a superior voice.</description>
+    <skillGains><Shooting>3</Shooting><Crafting>1</Crafting><Social>1</Social></skillGains>
+    <spawnCategories><li>WraithPlayerAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_HiveDefector</defName>
+    <slot>Adulthood</slot>
+    <title>self-exiled Wraith</title>
+    <titleShort>self-exile</titleShort>
+    <description>[PAWN_nameDef] chose exile rather than continued obedience to [PAWN_possessive] former hive. Independent survival forced [PAWN_objective] to explain unfamiliar needs to outsiders, study alternatives and manage [PAWN_possessive] own health without a caste structure behind [PAWN_objective].</description>
+    <skillGains><Social>2</Social><Intellectual>2</Intellectual><Medicine>1</Medicine></skillGains>
+    <spawnCategories><li>WraithPlayerAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_WraithAdult_StrandedCultivator</defName>
+    <slot>Adulthood</slot>
+    <title>living-tech salvager</title>
+    <titleShort>tech salvager</titleShort>
+    <description>[PAWN_nameDef] survived after an isolated Wraith holding collapsed, keeping fragments of living technology functional with scarce biomass and improvised tools. The experience made [PAWN_objective] patient with damaged systems and reluctant to waste biological resources.</description>
+    <skillGains><Crafting>3</Crafting><Intellectual>2</Intellectual><Medicine>1</Medicine></skillGains>
+    <spawnCategories><li>WraithPlayerAdult</li></spawnCategories>
+  </BackstoryDef>
+</Defs>

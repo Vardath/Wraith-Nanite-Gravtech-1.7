@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_SkimmerSystems</defName>
+    <label>Ancient skimmer and shuttle systems</label>
+    <description>Integrate reconstructed Ancient neural control, Asuran nanite propulsion and Odyssey shuttle engineering into a compact Puddle Jumper transport.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <researchViewX>21</researchViewX><researchViewY>10.4</researchViewY>
+    <prerequisites>
+      <li>Shuttles</li>
+      <li>WNG_AncientDroneControl</li>
+      <li>WNG_VacuumEnergyContainment</li>
+    </prerequisites>
+  </ResearchProjectDef>
+</Defs>

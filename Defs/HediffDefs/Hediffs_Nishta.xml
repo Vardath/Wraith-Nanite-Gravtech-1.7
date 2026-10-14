@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_NishtaConditioning</defName>
+    <label>Nish'ta conditioning</label>
+    <description>A living Goa'uld conditioning organism has colonized the nervous system, leaving the victim exceptionally open to imposed loyalty and suggestion. The organism persists until killed by a sufficiently strong electrical shock or controlled medical deprogramming.</description>
+    <hediffClass>WraithNaniteGravtech.Hediff_NishtaConditioning</hediffClass>
+    <isBad>true</isBad>
+    <alwaysShowSeverity>false</alwaysShowSeverity>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>WNG_NishtaResistance</defName>
+    <label>Nish'ta resistance</label>
+    <description>This pawn has survived electrical clearance of Nish'ta. The prior infection has left the nervous system resistant to renewed colonization by the same conditioning organism.</description>
+    <isBad>false</isBad>
+    <alwaysShowSeverity>false</alwaysShowSeverity>
+  </HediffDef>
+</Defs>

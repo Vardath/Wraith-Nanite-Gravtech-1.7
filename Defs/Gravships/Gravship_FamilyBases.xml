@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Named abstract inheritance contracts. Do not use concrete Odyssey DefNames as ParentName. -->
+  <ThingDef Name="WNG_GravshipHullBase" ParentName="Wall" Abstract="True">
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <building><isAirtight>true</isAirtight><isPlaceOverableWall>true</isPlaceOverableWall></building>
+    <stuffCategories Inherit="False"><li>Metallic</li></stuffCategories>
+    <comps Inherit="False"/>
+  </ThingDef>
+
+  <ThingDef Name="WNG_GravFieldExtenderBase" ParentName="GravshipComponentBase" Abstract="True">
+    <fillPercent>0.4</fillPercent><passability>PassThroughOnly</passability><pathCost>14</pathCost><canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite><resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+    <comps>
+      <li Class="CompProperties_SubstructureFootprint"><radius>16.9</radius></li>
+      <li Class="CompProperties_Glower"><glowRadius>2</glowRadius><glowColor>(0,218,255,0)</glowColor></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="WNG_PilotConsoleBase" ParentName="GravshipComponentBase" Abstract="True">
+    <size>(3,2)</size><rotatable>true</rotatable><fillPercent>0.4</fillPercent><passability>PassThroughOnly</passability><pathCost>14</pathCost><canOverlapZones>false</canOverlapZones>
+    <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed><constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+    <hasInteractionCell>true</hasInteractionCell><interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <comps Inherit="False"/>
+  </ThingDef>
+
+  <ThingDef Name="WNG_SmallThrusterBase" ParentName="ThrusterBase" Abstract="True">
+    <size>(1,2)</size><constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+    <comps><li Class="CompProperties_Breakdownable"/></comps>
+  </ThingDef>
+
+  <ThingDef Name="WNG_LargeThrusterBase" ParentName="ThrusterBase" Abstract="True">
+    <size>(2,2)</size><constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+    <comps><li Class="CompProperties_Breakdownable"/></comps>
+  </ThingDef>
+
+  <ThingDef Name="WNG_FuelOptimizerBase" ParentName="GravshipComponentBase" Abstract="True">
+    <size>(2,2)</size><fillPercent>0.4</fillPercent><passability>PassThroughOnly</passability><pathCost>20</pathCost><canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+  </ThingDef>
+
+  <TerrainDef Name="WNG_SubstructureBase" ParentName="FloorBase" Abstract="True">
+    <fertility>0</fertility><edgeType>Hard</edgeType><renderPrecedence>399</renderPrecedence><constructEffect>ConstructMetal</constructEffect>
+    <isPaintable>false</isPaintable><isFoundation>true</isFoundation><preventCraters>true</preventCraters><canEverTerraform>false</canEverTerraform>
+    <affordances><li>Substructure</li></affordances>
+    <requireInspectedGravEngine>true</requireInspectedGravEngine>
+    <terrainAffordanceNeeded>Walkable</terrainAffordanceNeeded>
+    <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+    <tags><li>Substructure</li></tags>
+  </TerrainDef>
+</Defs>

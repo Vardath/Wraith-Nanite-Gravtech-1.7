@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="LightMechanoidGunRanged">
+    <defName>WNG_ReplicatorPulseCaster</defName>
+    <label>integrated Replicator pulse caster</label>
+    <thingCategories Inherit="False"><li>WeaponsRanged</li></thingCategories>
+    <description>A compact ranged emitter reproduced from assimilated weapon technology. It is an integrated Replicator machine organ and is destroyed if separated from its body.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Replicator/WNG_ReplicatorPulseCaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.8,0.8)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.35</Mass>
+      <AccuracyTouch>0.62</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.58</AccuracyMedium>
+      <AccuracyLong>0.34</AccuracyLong>
+      <RangedWeapon_Cooldown>2.15</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>ReplicatorIntegrated</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>WNG_ReplicatorPulseProjectile</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>19.9</range>
+        <ticksBetweenBurstShots>13</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>WNG_ReplicatorPulseCaster_Fire</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+      </li>
+    </verbs>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_ReplicatorPulseProjectile</defName>
+    <label>Replicator pulse</label>
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>9</damageAmountBase>
+      <armorPenetrationBase>0.20</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="LightMechanoidGunRanged">
+    <defName>WNG_ReplicatorShieldDisruptor</defName>
+    <label>integrated Replicator phase disruptor</label>
+    <thingCategories Inherit="False"><li>WeaponsRanged</li></thingCategories>
+    <description>A phase-tuned emitter grown after repeated real shield engagements. Its focused EMP harmonics collapse vulnerable barriers rather than granting universal shield immunity.</description>
+    <techLevel>Ultra</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Replicator/WNG_ReplicatorShieldDisruptor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.82,0.82)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.45</Mass>
+      <AccuracyTouch>0.70</AccuracyTouch>
+      <AccuracyShort>0.78</AccuracyShort>
+      <AccuracyMedium>0.56</AccuracyMedium>
+      <AccuracyLong>0.18</AccuracyLong>
+      <RangedWeapon_Cooldown>3.4</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>ReplicatorIntegrated</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>WNG_ReplicatorShieldDisruptorProjectile</defaultProjectile>
+        <warmupTime>1.15</warmupTime>
+        <range>17.9</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_ChargeBlaster</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+      </li>
+    </verbs>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_ReplicatorShieldDisruptorProjectile</defName>
+    <label>Replicator phase-disruption pulse</label>
+    <graphicData>
+      <texPath>Things/Projectile/WNG_ReplicatorShieldDisruptor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.42,0.42)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>EMP</damageDef>
+      <damageAmountBase>6</damageAmountBase>
+      <armorPenetrationBase>0</armorPenetrationBase>
+      <speed>58</speed>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="LightMechanoidGunRanged">
+    <defName>WNG_ReplicatorArtilleryCaster</defName>
+    <label>integrated Replicator artillery caster</label>
+    <thingCategories Inherit="False"><li>WeaponsRanged</li></thingCategories>
+    <description>A long-range twin pulse array grown into the dedicated Artillery body. Its larger paired emitter assembly is an integrated Replicator machine organ and is destroyed if separated from its body.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Weapon/Replicator/WNG_ReplicatorArtilleryCaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.05,1.05)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.8</Mass>
+      <AccuracyTouch>0.46</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.82</AccuracyMedium>
+      <AccuracyLong>0.74</AccuracyLong>
+      <RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>ReplicatorIntegrated</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>WNG_ReplicatorArtilleryProjectile</defaultProjectile>
+        <warmupTime>2.4</warmupTime>
+        <range>43.9</range>
+        <ticksBetweenBurstShots>18</ticksBetweenBurstShots>
+        <burstShotCount>2</burstShotCount>
+        <soundCast>Shot_ChargeBlaster</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+      </li>
+    </verbs>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>WNG_ReplicatorArtilleryProjectile</defName>
+    <label>Replicator artillery pulse</label>
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>16</damageAmountBase>
+      <armorPenetrationBase>0.34</armorPenetrationBase>
+      <speed>62</speed>
+    </projectile>
+  </ThingDef>
+</Defs>

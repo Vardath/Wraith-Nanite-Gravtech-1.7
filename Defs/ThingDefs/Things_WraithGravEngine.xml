@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_WraithGravEngineSeed</defName>
+    <label>wraith grav-engine seed</label>
+    <thingCategories Inherit="False"><li>Manufactured</li></thingCategories>
+    <description>A dense cultivated Wraith organ-seed carrying the developmental pattern of a full grav engine. Use it on a biological humanlike host or corpse; the host is consumed when the engine finishes growing.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/WNG_Biomass</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MarketValue>850</MarketValue>
+      <Mass>3</Mass>
+    </statBases>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_WraithGravEngineSeed" />
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_CorpseGravEngineIncubation</defName>
+    <label>incubating Wraith grav-engine tissue</label>
+    <thingCategories Inherit="False"><li>Manufactured</li></thingCategories>
+    <description>A biological corpse consumed into a developing Wraith grav-engine organ. Once mature, the tissue becomes one minified real grav engine.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/WNG_Biomass</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Rare</tickerType>
+    <stackLimit>1</stackLimit>
+    <tradeability>None</tradeability>
+    <statBases>
+      <MarketValue>0</MarketValue>
+      <Mass>20</Mass>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+    </statBases>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_CorpseGravEngineIncubation" />
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>WNG_WraithGravEngine</defName>
+    <label>wraith grav engine</label>
+    <description>A fully grown Wraith grav engine: a living gravitic heart grown through a biological host. It uses Odyssey's native gravship engine behavior.</description>
+    <thingClass>WraithNaniteGravtech.Building_WNGGravEngine</thingClass>
+    <drawerType>RealtimeOnly</drawerType>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedGravEngine</minifiedDef>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Wraith/Gravship/WNG_WraithGravEngine</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <size>(3,3)</size>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.6</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>20</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>900</MaxHitPoints>
+      <Mass>32</Mass>
+      <MarketValue>2600</MarketValue>
+      <Beauty>4</Beauty>
+      <Flammability>0</Flammability>
+      <SubstructureSupport>500</SubstructureSupport>
+      <GravshipRange>0</GravshipRange>
+    </statBases>
+    <building>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <deconstructible>false</deconstructible>
+      <relatedBuildCommands>
+        <li>WNG_OrganicGravshipHull</li>
+        <li>WNG_WraithGravshipDoor</li>
+      </relatedBuildCommands>
+      <relatedTerrain>
+        <li>WNG_WraithGravshipSubstructure</li>
+      </relatedTerrain>
+    </building>
+    <comps>
+      <li Class="CompProperties_SubstructureFootprint">
+        <radius>18.9</radius>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>8</glowRadius>
+        <glowColor>(45,225,190,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>WNG_WraithGravFieldExtender</li>
+          <li>WNG_OrganicPilotNode</li>
+          <li>WNG_WraithFuelBladder</li>
+          <li>WNG_WraithLargeFuelBladder</li>
+          <li>WNG_OrganicThruster</li>
+          <li>WNG_WraithHeavyDriveOrgan</li>
+          <li>WNG_WraithFuelOptimizer</li>
+          <li>WNG_WraithSignalVeil</li>
+          <li>WNG_WraithNavigationCortex</li>
+        
+          <li>WNG_WraithFuelConduit</li>
+          <li>WNG_WraithNeuralConduit</li>
+          <li>WNG_WraithPowerCoupler</li>
+          <li>WNG_GravshipMetabolicHeart</li>
+          <li>WNG_WraithOrbitalSensorOrgan</li>
+          <li>WNG_WraithAtmosphereOrgan</li>
+          <li>WNG_WraithVacuumMembrane</li>
+        </linkableFacilities>
+      </li>
+      <li Class="WraithNaniteGravtech.CompProperties_WNGAmbientLoop">
+        <sound>WNG_WraithGravEngineAmbient</sound>
+        <repeatTicks>360</repeatTicks>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

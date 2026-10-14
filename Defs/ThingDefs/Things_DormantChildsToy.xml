@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_DormantChildsToy</defName>
+    <label>dormant Child's Toy</label>
+    <description>A small articulated Replicator artifact assembled from precise metallic blocks. It has no obvious power source, but its dormant lattice can be deliberately awakened into a colony Child's Toy. Activation does not provide Mechanitor control; an uncontrolled Toy will eventually become a hostile Replicator Drone.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Replicator/WNG_ReplicatorCoreFragment</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.85,0.85)</drawSize>
+    </graphicData>
+    <thingCategories><li>Manufactured</li></thingCategories>
+    <stackLimit>1</stackLimit>
+    <alwaysHaulable>true</alwaysHaulable>
+    <tradeability>All</tradeability>
+    <statBases>
+      <MarketValue>950</MarketValue>
+      <Mass>0.65</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_DormantChildsToyArtifact">
+        <pawnKindDef>WNG_ChildsToy</pawnKindDef>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

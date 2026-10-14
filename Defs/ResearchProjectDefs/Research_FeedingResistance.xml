@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>WNG_FeedingResistance</defName>
+    <label>vital resistance therapy</label>
+    <description>Study the biological failure points in Wraith feeding and deliberately provoke them in a treated human body. Unlocks a costly temporary resistance dose that sharply weakens successful feeding for several days and can sometimes reject a feeding attempt entirely, at the cost of treatment strain and possible rejection crisis.</description>
+    <baseCost>2200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>WNG_BiologicalCultivation</li>
+      <li>DrugProduction</li>
+    </prerequisites>
+  
+    <researchViewX>15</researchViewX><researchViewY>7</researchViewY>
+  </ResearchProjectDef>
+</Defs>

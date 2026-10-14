@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Retained middle defensive tier: personal -> settlement -> gravship.
+    Uses dedicated Asuran settlement-projector presentation distinct from gravship emitters.
+  -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_PrecursorSettlementShield</defName>
+    <label>precursor settlement shield projector</label>
+    <description>A fixed Asuran defensive-field projector for ground settlements. While powered and switched on it maintains a 14.9-cell field that destroys hostile projectiles entering from outside while allowing defenders within the perimeter to fire outward. The field has finite charge, must recover after sustained fire, collapses under EMP and cannot function as a gravship shield component.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Precursor/Shield/WNG_PrecursorSettlementShield</texPath>
+      <drawSize>(2.3,2.3)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>20</pathCost>
+    <fillPercent>0.55</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <specialDisplayRadius>14.9</specialDisplayRadius>
+    <designationCategory>Security</designationCategory>
+    <uiOrder>2580</uiOrder>
+    <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+    <statBases>
+      <MaxHitPoints>420</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <WorkToBuild>16000</WorkToBuild>
+      <Mass>46</Mass>
+    </statBases>
+    <costList>
+      <Plasteel>160</Plasteel>
+      <ComponentSpacer>8</ComponentSpacer>
+      <WNG_AsuranNaniteSlurry>48</WNG_AsuranNaniteSlurry>
+    </costList>
+    <researchPrerequisites>
+      <li>WNG_PrecursorSettlementShields</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1800</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="WraithNaniteGravtech.CompProperties_PrecursorSettlementShield">
+        <radius>14.9</radius>
+        <energyMax>500</energyMax>
+        <rechargePerTick>0.025</rechargePerTick>
+        <resetDelayTicks>3000</resetDelayTicks>
+        <empDisableTicks>3000</empDisableTicks>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_AncientShieldHarmonicRelic</defName>
+    <label>Ancient shield harmonic prism</label>
+    <description>An inert, damaged precursor calibration prism recovered from a mature shield system. It projects no usable barrier, but surviving phase geometry preserves an Ancient reference for high-energy shield harmonics. It must be analyzed before a stronger gravship emitter can be reconstructed. The current relic visual is provisional pending the professional art pass.</description>
+    <stackLimit>1</stackLimit>
+    <tradeability>None</tradeability>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <thingCategories><li>Manufactured</li></thingCategories>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Resource/Precursor/WNG_RecoveredVacuumEnergyModule</texPath>
+      <drawSize>(0.82,0.82)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>110</MaxHitPoints>
+      <MarketValue>4200</MarketValue>
+      <Mass>5.5</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>860110</analysisID>
+        <analysisRequiredRange>1~1</analysisRequiredRange>
+        <analysisDurationHours>5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <allowRepeatAnalysis>false</allowRepeatAnalysis>
+        <canStudyInPlace>false</canStudyInPlace>
+        <activateTexPath>UI/WNG/RecoveredVacuumModule</activateTexPath>
+        <activateLabelString>Analyze Ancient shield prism</activateLabelString>
+        <activateDescString>Map the surviving phase relationships in this inert Ancient shield-calibration relic.</activateDescString>
+        <jobString>analyzing Ancient shield harmonics</jobString>
+        <completedLetterLabel>Ancient shield harmonics mapped</completedLetterLabel>
+        <completedLetter>The recovered prism's surviving phase geometry has been mapped. The relic remains inert, but it now provides a genuine Ancient reference for reconstructing a high-energy gravship shield.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

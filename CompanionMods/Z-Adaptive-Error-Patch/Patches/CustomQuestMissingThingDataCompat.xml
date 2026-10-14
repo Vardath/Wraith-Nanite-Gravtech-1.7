@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Current 2026-10-12 Custom Quest Framework content references
+    RSH_BloodWallTorch and RSH_Stairs through QuestEditor_Library.ThingData,
+    although neither concrete ThingDef resolves in the active mod stack.
+
+    Remove only the complete broken ThingData entry (never a working item or
+    unrelated quest field) when the named concrete ThingDef is absent.
+    This intentionally does not fabricate a RimShips/other-mod building,
+    change quest reward logic, or suppress missing-reference messages globally.
+    The original content mod must still be updated for fully functional quests.
+  -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/ThingDef[defName="RSH_BloodWallTorch" and not(translate(normalize-space(@Abstract), "TRUE", "true")="true")]</xpath>
+        <success>Invert</success>
+      </li>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/*//*[@Class="QuestEditor_Library.ThingData" and .//*[normalize-space(text())="RSH_BloodWallTorch"]]</xpath>
+      </li>
+      <li Class="PatchOperationRemove">
+        <xpath>Defs/*//*[@Class="QuestEditor_Library.ThingData" and .//*[normalize-space(text())="RSH_BloodWallTorch"]]</xpath>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/ThingDef[defName="RSH_Stairs" and not(translate(normalize-space(@Abstract), "TRUE", "true")="true")]</xpath>
+        <success>Invert</success>
+      </li>
+      <li Class="PatchOperationTest">
+        <xpath>Defs/*//*[@Class="QuestEditor_Library.ThingData" and .//*[normalize-space(text())="RSH_Stairs"]]</xpath>
+      </li>
+      <li Class="PatchOperationRemove">
+        <xpath>Defs/*//*[@Class="QuestEditor_Library.ThingData" and .//*[normalize-space(text())="RSH_Stairs"]]</xpath>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

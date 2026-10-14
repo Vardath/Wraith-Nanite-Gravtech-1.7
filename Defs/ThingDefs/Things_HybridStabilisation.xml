@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_HybridStabiliserDose</defName>
+    <recipeMaker IsNull="True" />
+    <label>hybrid stabiliser dose</label>
+    <thingCategories Inherit="False"><li>Medicine</li></thingCategories>
+    <description>A short-lived biological stabilisation cocktail built from Wraith, Iratus and Michael-hybrid material. It cannot initiate humanisation and it cannot cure Wraith ancestry. When administered to an already retrovirally humanized Wraith, it temporarily buffers the suppressed phenotype against abrupt reversion if ordinary maintenance treatment lapses.</description>
+    <graphicData>
+      <texPath>Things/Item/WraithMedical/WNG_HybridStabiliserDose</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>10</stackLimit>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>420</MarketValue>
+      <Mass>0.05</Mass>
+      <MaxHitPoints>45</MaxHitPoints>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <costList>
+      <WNG_WhispersHybridTissue>1</WNG_WhispersHybridTissue>
+      <WNG_IratusGlandExtract>1</WNG_IratusGlandExtract>
+      <WNG_RefinedWraithEnzyme>1</WNG_RefinedWraithEnzyme>
+      <Neutroamine>4</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+    </costList>
+    <tradeability>Sellable</tradeability>
+    <tradeTags><li>ExoticMisc</li></tradeTags>
+  </ThingDef>
+</Defs>

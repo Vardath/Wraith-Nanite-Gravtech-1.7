@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef MayRequire="idolord.ONAC">
+    <defName>WNG_GoauldDeathGliderStrike</defName>
+    <label>System-Lord Death Glider strike</label>
+    <category>ThreatBig</category>
+    <targetTags><li>Map_PlayerHome</li></targetTags>
+    <workerClass>WraithNaniteGravtech.IncidentWorker_GoauldDeathGliderStrike</workerClass>
+    <baseChance>0.07</baseChance>
+    <earliestDay>12</earliestDay>
+    <minRefireDays>14</minRefireDays>
+    <populationEffect>None</populationEffect>
+    <pointsScaleable>false</pointsScaleable>
+    <letterLabel>Death Glider strike</letterLabel>
+    <letterText>A hostile System Lord has dispatched a two-seat Death Glider against the colony. The fighter and its Jaffa crew are physically committed to two staff-cannon passes rather than represented by an abstract raid. If the exact craft survives the second pass, it physically withdraws with the same crew aboard.</letterText>
+    <letterDef>ThreatBig</letterDef>
+  </IncidentDef>
+</Defs>

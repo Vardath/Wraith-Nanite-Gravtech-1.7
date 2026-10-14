@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef>
+    <defName>WNG_ReleaseWhispersMist</defName><label>release predatory mist</label>
+    <description>Contract the implanted Whispers mist gland and flood a ten-tile radius with dense obscuring biological fog. The fog is non-toxic but strongly interferes with ranged sightlines.</description>
+    <iconPath>UI/WNG/Abilities/WraithMist</iconPath><displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted><disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted><targetRequired>false</targetRequired><hostile>false</hostile><casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>15000~15000</cooldownTicksRange>
+    <verbProperties><verbClass>Verb_CastAbility</verbClass><warmupTime>0.25</warmupTime><range>-1</range><drawAimPie>false</drawAimPie><requireLineOfSight>false</requireLineOfSight><targetParams><canTargetSelf>true</canTargetSelf></targetParams></verbProperties>
+    <comps><li Class="WraithNaniteGravtech.Anomaly.CompProperties_AbilityWhispersMist"><radius>10</radius><gasPerCell>44</gasPerCell></li></comps>
+  </AbilityDef>
+</Defs>

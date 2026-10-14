@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>WNG_IratusQueen</defName>
+    <label>Iratus queen</label>
+    <race>WNG_IratusBug</race>
+    <combatPower>145</combatPower>
+    <ecoSystemWeight>0.18</ecoSystemWeight>
+    <wildGroupSize>1</wildGroupSize>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Iratus/WNG_IratusQueen</texPath>
+          <drawSize>1.65</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Iratus/WNG_IratusQueenDessicated</texPath>
+          <drawSize>1.65</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_SealedMachineSalvage</defName>
+    <label>sealed machine salvage</label>
+    <description>A compact recovered machine assembly inside a precision salvage casing. It appears inert in transit, but prolonged exposure after being physically placed on a map degrades the seal. If it ruptures, the carrier releases ordinary Replicator Matter and is consumed.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Replicator/WNG_ReplicatorCoreFragment</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.10,1.10)</drawSize>
+    </graphicData>
+    <thingCategories><li>Manufactured</li></thingCategories>
+    <stackLimit>1</stackLimit>
+    <alwaysHaulable>true</alwaysHaulable>
+    <tradeability>All</tradeability>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MarketValue>360</MarketValue>
+      <Mass>4.0</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="WraithNaniteGravtech.CompProperties_SealedMachineSalvage">
+        <minimumSpawnedTicks>12000</minimumSpawnedTicks>
+        <maximumSpawnedTicks>24000</maximumSpawnedTicks>
+        <matterCount>12</matterCount>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

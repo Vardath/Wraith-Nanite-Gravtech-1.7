@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Intentionally no blanket designationCategory replacement.
+
+    Every WNG buildable keeps its native RimWorld functional category
+    (Structure, Furniture, Power, Production, Floors, Security, Misc, etc.).
+    Source/WraithNaniteGravtech/UI/WNGArchitectRouting.cs duplicates the
+    same build designators into the three family tabs and, for gravship
+    construction, into Odyssey's native gravship category.
+  -->
+</Patch>

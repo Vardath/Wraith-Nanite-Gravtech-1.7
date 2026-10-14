@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>WNG_AdministerFeedingIndependenceVector</defName>
+    <label>attempt Wraith feeding-independence therapy</label>
+    <description>Administer the experimental metabolic gene vector to an active Wraith. A successful rewrite permanently restores ordinary digestion and removes the Life Force feeding system; rejection can cause catastrophic systemic illness.</description>
+    <workerClass>WraithNaniteGravtech.Recipe_AdministerFeedingIndependenceVector</workerClass>
+    <jobString>Attempting feeding-independence therapy on TargetA.</jobString>
+    <researchPrerequisite>WNG_WraithFeedingIndependence</researchPrerequisite>
+    <workAmount>1800</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>true</anesthetize>
+    <skillRequirements><Medicine>12</Medicine></skillRequirements>
+    <ingredients>
+      <li><filter><thingDefs><li>WNG_FeedingIndependenceVector</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>WNG_FeedingIndependenceVector</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

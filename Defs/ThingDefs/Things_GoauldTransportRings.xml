@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WNG_GoauldTransportRings</defName>
+    <label>Goa'uld transport rings</label>
+    <description>A recessed circular Goa'uld matter-transport platform. Five transport rings rise around the passenger area during activation, then retract into the floor. Load people, animals, mechs or cargo using RimWorld's native transporter controls, then transfer the complete exact manifest to another powered ring platform on this map or another currently loaded map. A blocked receiver aborts the whole activation instead of partially materializing the load.</description>
+    <thingClass>Building</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>Things/Building/Goauld/WNG_GoauldTransportRings</texPath><drawSize>(3,3)</drawSize></graphicData>
+    <uiIconPath>Things/Building/Goauld/WNG_GoauldTransportRings</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>8</pathCost>
+    <fillPercent>0.15</fillPercent>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>600</MaxHitPoints><WorkToBuild>8000</WorkToBuild><Mass>65</Mass><Flammability>0</Flammability><Beauty>2</Beauty></statBases>
+    <costList><Steel>100</Steel><Plasteel>120</Plasteel><Gold>40</Gold><ComponentIndustrial>6</ComponentIndustrial><ComponentSpacer>2</ComponentSpacer></costList>
+    <designationCategory>Misc</designationCategory>
+    <researchPrerequisites><li>WNG_GoauldRingTransport</li></researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <building><isInert>true</isInert><destroySound>BuildingDestroyed_Metal_Big</destroySound></building>
+    <comps>
+      <li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><basePowerConsumption>450</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Transporter"><massCapacity>2000</massCapacity><max1PerGroup>true</max1PerGroup><canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting><pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound><pawnExitSound>Shuttle_PawnExit</pawnExitSound><showMassInInspectString>true</showMassInInspectString></li>
+      <li Class="WraithNaniteGravtech.CompProperties_GoauldTransportRings"><cooldownTicks>300</cooldownTicks><arrivalRadius>4</arrivalRadius><requirePower>true</requirePower></li>
+    </comps>
+    <inspectorTabs><li>ITab_ContentsTransporter</li></inspectorTabs>
+    <uiOrder>2460</uiOrder>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>WNG_ReprocessReplicatorMatter</defName>
+    <label>reprocess replicator blocks</label>
+    <description>Thermally and mechanically disrupt ten loose Replicator Blocks until their self-organizing structure is inert, recovering a small amount of ordinary steel. The blocks are consumed permanently; this is a disposal route, not an analysis or containment shortcut.</description>
+    <jobString>Reprocessing Replicator blocks.</jobString>
+    <workAmount>900</workAmount>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>ElectricSmelter</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WNG_ReplicatorMatter</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WNG_ReplicatorMatter</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Steel>6</Steel>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>WNG_DestroyReplicatorCoreFragment</defName>
+    <label>destroy replicator core fragment</label>
+    <description>Irreversibly melt a recovered Replicator command-lattice fragment, sacrificing the reusable control substrate and recovering a little inert steel. This deliberately removes the fragment from future Sovereign Neural Lattice or suppression-system use.</description>
+    <jobString>Destroying a Replicator core fragment.</jobString>
+    <workAmount>1200</workAmount>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>ElectricSmelter</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WNG_ReplicatorCoreFragment</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WNG_ReplicatorCoreFragment</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Steel>8</Steel>
+    </products>
+  </RecipeDef>
+</Defs>

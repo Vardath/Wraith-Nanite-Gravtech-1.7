@@ -1,0 +1,660 @@
+{
+  "schema": 1,
+  "description": "Permanent named regression catalogue for bugs actually encountered during WNG 1.6 rebuild/audit work.",
+  "regressions": [
+    {
+      "id": "H001_all_bills_unavailable",
+      "title": "All crafting bills unavailable",
+      "tests": [
+        ".github/artqa/bill_recipe_regression.py",
+        ".github/artqa/production_routing.py",
+        ".github/artqa/third_party_recipe_preservation.py",
+        ".github/artqa/null_type_lifecycle.py"
+      ],
+      "guards": [
+        {
+          "path": ".github/artqa/production_routing.py",
+          "contains": [
+            "live recipeMaker is forbidden; use an explicit WNG RecipeDef"
+          ]
+        },
+        {
+          "path": "Defs/RecipeDefs/Recipes_WNGItemCrafting.xml",
+          "contains": [
+            "Explicit WNG item crafting recipes",
+            "<recipeUsers>"
+          ]
+        },
+        {
+          "path": "Source/WraithNaniteGravtech/WNGDefSanitizer.cs",
+          "contains": [
+            "protect market-value and bill enumeration",
+            "entry.thingDef == null"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H002_vanilla_recipes_disappeared",
+      "title": "Vanilla recipes disappeared from workbenches",
+      "tests": [
+        ".github/artqa/bill_recipe_regression.py",
+        ".github/artqa/third_party_recipe_preservation.py"
+      ],
+      "guards": [
+        {
+          "path": ".github/artqa/bill_recipe_regression.py",
+          "contains": [
+            "AvailableOnNow",
+            "global"
+          ]
+        },
+        {
+          "path": ".github/artqa/third_party_recipe_preservation.py",
+          "contains": [
+            "global recipe collections",
+            "approved_external_routes",
+            "Missing approved external recipe route"
+          ]
+        },
+        {
+          "path": ".github/artqa/production_routing.py",
+          "contains": [
+            "approved_external_routes",
+            "Missing approved vanilla workstation route"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H027_childs_toy_vanilla_mech_gestation",
+      "title": "Child's Toy lost the vanilla Mechanitor gestation path",
+      "tests": [
+        ".github/artqa/bill_recipe_regression.py",
+        ".github/artqa/production_routing.py",
+        ".github/artqa/third_party_recipe_preservation.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/RecipeDefs/Recipes_ChildsToy.xml",
+          "contains": [
+            "ParentName=\"LightMechanoidRecipe\"",
+            "<li>MechGestator</li>",
+            "<researchPrerequisite>WNG_ReplicatorGestation</researchPrerequisite>"
+          ],
+          "not_contains": [
+            "<li>WNG_PrecursorFabricator</li>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H003_nanotech_nanofabricator_truncated",
+      "title": "Nanotech Overpower Nanofabricator recipe list truncated",
+      "tests": [
+        ".github/artqa/third_party_recipe_preservation.py"
+      ],
+      "guards": [
+        {
+          "path": ".github/artqa/third_party_recipe_preservation.py",
+          "contains": [
+            "Nanofabricator",
+            "Lyn.NTO",
+            "Nanotech Overpower"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H004_normal_construction_became_free",
+      "title": "Normal WNG construction became free/instant",
+      "tests": [
+        ".github/artqa/construction_god_mode.py",
+        ".github/artqa/economy.py",
+        ".github/artqa/dev_mode_parity.py"
+      ],
+      "guards": [
+        {
+          "path": "Source/WraithNaniteGravtech/UI/WNGArchitectRouting.cs",
+          "contains": [
+            "if (!DebugSettings.godMode)",
+            "return base.CanDesignateCell(c);",
+            "base.DesignateSingleCell(c);"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H005_dev_spawn_broke_normal_building",
+      "title": "Developer spawning convenience broke normal Architect costs",
+      "tests": [
+        ".github/artqa/dev_mode_parity.py",
+        ".github/artqa/construction_god_mode.py"
+      ],
+      "guards": [
+        {
+          "path": "Source/WraithNaniteGravtech/UI/WNGGameplayAccessibility.cs",
+          "contains": [
+            "def.forceDebugSpawnable = true;"
+          ],
+          "not_contains": [
+            "costList",
+            "researchPrerequisites",
+            "DebugSettings.godMode"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H006_asuran_goauld_pilot_engine_link_broken",
+      "title": "Asuran/Goa'uld gravship pilot console to grav engine link broken",
+      "tests": [
+        ".github/artqa/gravship_connectivity.py",
+        ".github/artqa/building_comp.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/Gravships/Gravship_FamilySystems.xml",
+          "contains": [
+            "CompProperties_WNGPilotConsole",
+            "WNG_AsuranGravEngine",
+            "WNG_PrecursorPilotConsole"
+          ]
+        },
+        {
+          "path": "Defs/Gravships/Gravship_Goauld.xml",
+          "contains": [
+            "CompProperties_WNGPilotConsole",
+            "WNG_GoauldGravEngine",
+            "WNG_GoauldPeltac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H007_asurans_spawned_naked",
+      "title": "Asurans spawned naked",
+      "tests": [
+        ".github/artqa/pawn_generation.py",
+        ".github/artqa/apparel_equipment_retention.py"
+      ],
+      "guards": [
+        {
+          "path": "Source/WraithNaniteGravtech/Asurans/AsuranDefaultApparel.cs",
+          "contains": [
+            "EnsureRoleApparel",
+            "WNG_HumanFormCombatArmor",
+            "WNG_HumanFormUniform"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H008_wraith_or_asuran_gear_dropped",
+      "title": "Wraith/Asuran generated gear was immediately stripped or dropped",
+      "tests": [
+        ".github/artqa/apparel_equipment_retention.py",
+        ".github/artqa/pawn_generation.py"
+      ],
+      "guards": [
+        {
+          "path": ".github/artqa/apparel_equipment_retention.py",
+          "contains": [
+            "StripGeneratedGear(copy)",
+            "EnsureRoleApparel(copy)",
+            "WNG_HumanFormCopy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H009_weapons_rendered_backwards",
+      "title": "WNG weapons rendered backwards",
+      "tests": [
+        ".github/artqa/weapon_orientation_rendering.py"
+      ],
+      "guards": [
+        {
+          "path": ".github/artqa/weapon_orientation_rendering.py",
+          "contains": [
+            "equippedAngleOffset",
+            "weapon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H010_replicator_split_disappeared",
+      "title": "Higher Replicators vanished instead of splitting on death",
+      "tests": [
+        ".github/artqa/replicator_death_split.py",
+        ".github/artqa/replicator_state_machine.py"
+      ],
+      "guards": [
+        {
+          "path": "Source/WraithNaniteGravtech/Replicators/ReplicatorHierarchy.cs",
+          "contains": [
+            "TryEmitDeathSplit(previousMap);",
+            "splitEmitted = true;",
+            "PawnGenerator.GeneratePawn(childKind, faction)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H011_siege_mass_inert",
+      "title": "Replicator Siege Mass was inert",
+      "tests": [
+        ".github/artqa/replicator_state_machine.py",
+        ".github/artqa/replicator_death_split.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/ThingDefs/Races_Replicator.xml",
+          "contains": [
+            "WNG_ReplicatorSiegeMass",
+            "WNG_ReplicatorTitan"
+          ]
+        },
+        {
+          "path": "Source/WraithNaniteGravtech/Replicators/ReplicatorCrisisPressure.cs",
+          "contains": [
+            "HasHostileSiegeMass"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H012_family_walls_doors_power_fuel_broken",
+      "title": "WNG family walls/doors/power/fuel/gravship components miswired",
+      "tests": [
+        ".github/artqa/gravship_connectivity.py",
+        ".github/artqa/building_comp.py",
+        ".github/artqa/texture_graphic_family.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/Gravships/Gravship_FamilySystems.xml",
+          "contains": [
+            "family>Asuran",
+            "requiresFamilyPower",
+            "providesFuel"
+          ]
+        },
+        {
+          "path": "Defs/Gravships/Gravship_Goauld.xml",
+          "contains": [
+            "family>Goauld",
+            "requiresFamilyPower",
+            "providesFuel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H013_themed_wall_art_missing",
+      "title": "Wraith/Asuran themed walls had missing or wrong art",
+      "tests": [
+        ".github/artqa/texture_graphic_family.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/ThingDefs/Things_PrecursorStructures.xml",
+          "contains": [
+            "WNG_PrecursorHull_Atlas"
+          ]
+        },
+        {
+          "path": "Textures/Things/Building/Precursor/Gravship/WNG_PrecursorHull_Atlas.png",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "id": "H014_alkesh_missing",
+      "title": "Al'kesh shuttle missing",
+      "tests": [
+        ".github/artqa/vehicle_shuttle_geometry.py",
+        ".github/artqa/texture_graphic_family.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/ThingDefs/Shuttle_Goauld.xml",
+          "contains": [
+            "WNG_AlkeshTransport",
+            "WNG_AlkeshIncoming",
+            "WNG_AlkeshLeaving"
+          ]
+        },
+        {
+          "path": "Textures/Things/Building/Goauld/Shuttle/WNG_AlkeshTransport.png",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "id": "H015_shuttle_art_scale_too_small",
+      "title": "WNG shuttle art rendered at incorrect tiny scale",
+      "tests": [
+        ".github/artqa/vehicle_shuttle_geometry.py"
+      ],
+      "guards": [
+        {
+          "path": ".github/artqa/vehicle_shuttle_geometry.py",
+          "contains": [
+            "drawSize",
+            "size",
+            "WNG_AlkeshTransport",
+            "WNG_PuddleJumper"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H016_architect_family_tabs_missing",
+      "title": "Wraith/Asuran/Goa'uld Architect categories missing",
+      "tests": [
+        ".github/artqa/architect_menu.py",
+        ".github/artqa/ui.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/DesignationCategoryDefs/WNG_Architect.xml",
+          "contains": [
+            "WNG_WraithArchitect",
+            "WNG_AsuranArchitect",
+            "WNG_GoauldArchitect"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H017_asuran_wraith_turrets_missing_or_powered",
+      "title": "Asuran/Wraith defensive turrets missing or wrongly required power",
+      "tests": [
+        ".github/artqa/building_comp.py",
+        ".github/artqa/architect_menu.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/ThingDefs/Things_DefensiveTurrets.xml",
+          "contains": [
+            "WNG_WraithLivingTurret",
+            "WNG_AsuranAutoturret"
+          ],
+          "not_contains": [
+            "CompProperties_PowerTrader"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H018_wraith_children_lost_food_before_13",
+      "title": "Wraith children stopped using ordinary Food before age 13",
+      "tests": [
+        ".github/artqa/wraith_feeding.py",
+        ".github/artqa/health_gene.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/GeneDefs/Genes_Wraith.xml",
+          "contains": [
+            "<minAgeActive>13</minAgeActive>",
+            "<li>Food</li>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H019_human_form_copy_child_age_lost",
+      "title": "Human-form copy/reconstruction failed to preserve child age",
+      "tests": [
+        ".github/artqa/human_form_asuran_copy.py",
+        ".github/artqa/pawn_generation.py"
+      ],
+      "guards": [
+        {
+          "path": "Source/WraithNaniteGravtech/Asurans/NeuralInterface.cs",
+          "contains": [
+            "copy.ageTracker.AgeBiologicalTicks",
+            "CopyExactPattern(subject, copy)"
+          ]
+        },
+        {
+          "path": "Defs/PawnKindDefs/PawnKinds_HumanForm.xml",
+          "contains": [
+            "WNG_ReplicatorQueenChild",
+            "<minGenerationAge>13.01</minGenerationAge>",
+            "<maxGenerationAge>13.99</maxGenerationAge>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H020_gravcore_implant_living_and_corpse",
+      "title": "Wraith grav-engine seed failed on living hosts or corpses",
+      "tests": [
+        ".github/artqa/health_gene.py",
+        ".github/artqa/surgery.py",
+        ".github/artqa/save_load_migration.py",
+        ".github/artqa/gravship_connectivity.py"
+      ],
+      "guards": [
+        {
+          "path": "Source/WraithNaniteGravtech/Wraith/WraithGravEngine.cs",
+          "contains": [
+            "TryImplantCorpse(corpse);",
+            "Hediff_GravEngineSeedIncubation",
+            "CorpseGravEngineIncubationUtility.TryBegin",
+            "WNG_CorpseGravEngineIncubation",
+            "TryPrepareMinifiedGravEngine",
+            "TryPlacePrepared(minified, pawn.Position, pawn.Map, out reason)",
+            "pawn.Destroy(DestroyMode.Vanish)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H021_local_wraith_feeding_opened_strategic_request",
+      "title": "Ordinary Wraith feeding triggered strategic faction request/refusal UI",
+      "tests": [
+        ".github/artqa/wraith_feeding.py"
+      ],
+      "guards": [
+        {
+          "path": "Source/WraithNaniteGravtech/Wraith/WraithPlayerFeedingNiche.cs",
+          "contains": [
+            "strategic faction",
+            "WraithStrategicHungerRegistry"
+          ]
+        },
+        {
+          "path": ".github/artqa/wraith_feeding.py",
+          "contains": [
+            "Ordinary feeding transaction must remain local",
+            "CreateRequestFeeders"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H022_transport_arrival_save_load_base_missing",
+      "title": "Custom transporter arrival actions omitted base.ExposeData",
+      "tests": [
+        ".github/artqa/save_load_migration.py"
+      ],
+      "guards": [
+        {
+          "path": "Source/WraithNaniteGravtech/Asurans/ReplicatorQueenRecovery.cs",
+          "min_occurrences": {
+            "public override void ExposeData()": 3,
+            "base.ExposeData();": 3
+          }
+        },
+        {
+          "path": "Source/WraithNaniteGravtech/Compatibility/QuietLatticeStargateVisit.cs",
+          "contains": [
+            "TransportersArrivalAction_QuietLatticeDeparture"
+          ],
+          "min_occurrences": {
+            "base.ExposeData();": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "H023_controller_matter_amplification",
+      "title": "Replicator Controller death amplified 6 Blocks into 9",
+      "tests": [
+        ".github/artqa/resource_conservation.py",
+        ".github/artqa/replicator_death_split.py"
+      ],
+      "guards": [
+        {
+          "path": ".github/artqa/resource_conservation.py",
+          "contains": [
+            "Controller can be formed from Hunter first",
+            "controller_yield",
+            "source_floor"
+          ]
+        },
+        {
+          "path": "Defs/ThingDefs/Races_Replicator.xml",
+          "contains": [
+            "WNG_ReplicatorController",
+            "<WNG_ReplicatorMatter>6</WNG_ReplicatorMatter>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H024_player_human_form_had_no_block_source",
+      "title": "Player Human-form Replicators had no practical Replicator Block acquisition path",
+      "tests": [
+        ".github/artqa/resource_conservation.py",
+        ".github/artqa/health_gene.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/AbilityDefs/Abilities_HumanForm.xml",
+          "contains": [
+            "WNG_AsuranFabricateReplicatorBlocks",
+            "<blockCount>25</blockCount>"
+          ]
+        },
+        {
+          "path": "Defs/GeneDefs/Genes_HumanForm.xml",
+          "contains": [
+            "WNG_NaniteReserve",
+            "WNG_AsuranFabricateReplicatorBlocks"
+          ]
+        },
+        {
+          "path": "Source/WraithNaniteGravtech/WNGSettings.cs",
+          "contains": [
+            "asuranBlockFabricationCost = 0.50f",
+            "Nanite Reserve cost to create 25 Replicator Blocks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H027_player_hunter_cannot_gestate_queen",
+      "title": "Player Hunter start could not initiate caste gestation and player Queens were unavailable",
+      "tests": [
+        ".github/artqa/pawn_generation.py",
+        ".github/artqa/workgiver_worktype.py"
+      ],
+      "guards": [
+        {
+          "path": "Source/WraithNaniteGravtech/Wraith/WraithGrowthChamber.cs",
+          "contains": [
+            "WNG_WraithQueen",
+            "QueenBiomass = 460",
+            "QueenTicks = 360000",
+            "WraithHiveEcologyUtility.IsWraith(p))"
+          ],
+          "not_contains": [
+            "Queens are excluded"
+          ]
+        },
+        {
+          "path": "Defs/PawnKindDefs/PawnKinds_Wraith.xml",
+          "contains": [
+            "WNG_PlayerWraithHunter",
+            "WNG_WraithQueen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H028_custom_nanite_gene_pawn_loses_block_ability",
+      "title": "Asuran gene-bearing and copied human-form pawns could not use nanite reserve to fabricate Replicator blocks",
+      "tests": [
+        ".github/artqa/resource_conservation.py",
+        ".github/artqa/human_form_asuran_copy.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/GeneDefs/Genes_HumanForm.xml",
+          "contains": [
+            "<abilities><li>WNG_AsuranFabricateReplicatorBlocks</li></abilities>"
+          ]
+        },
+        {
+          "path": "Source/WraithNaniteGravtech/Asurans/AsuranReplicatorMatterFabrication.cs",
+          "contains": [
+            "reserve.CanSpend(cost)",
+            "reserve.TrySpend(cost)",
+            "AsuranCollectiveUtility.IsDisrupted(caster)"
+          ],
+          "not_contains": [
+            "caster.genes?.Xenotype?.defName"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H025_required_apparel_generation_budget",
+      "title": "Required Wraith/Asuran apparel intermittently failed generation because mandatory gear exceeded pawn apparel budget",
+      "tests": [
+        ".github/artqa/pawn_generation.py",
+        ".github/artqa/apparel_equipment_retention.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/PawnKindDefs/PawnKinds_Wraith.xml",
+          "contains": [
+            "<apparelMoney>5000~5000</apparelMoney>",
+            "<apparelTags Inherit=\"False\"/>"
+          ]
+        },
+        {
+          "path": "Defs/PawnKindDefs/PawnKinds_HumanForm.xml",
+          "contains": [
+            "<apparelMoney>5000~5000</apparelMoney>",
+            "<apparelTags Inherit=\"False\"/>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H026_replicator_child_generation_contract",
+      "title": "Replicator Queen child retried age generation 300 times and inherited the parent Asuran xenotype",
+      "tests": [
+        ".github/artqa/pawn_generation.py",
+        ".github/artqa/human_form_asuran_copy.py"
+      ],
+      "guards": [
+        {
+          "path": "Defs/PawnKindDefs/PawnKinds_HumanForm.xml",
+          "contains": [
+            "<xenotypeSet Inherit=\"False\"><xenotypeChances><WNG_HumanFormReplicator>1</WNG_HumanFormReplicator></xenotypeChances></xenotypeSet>",
+            "<minGenerationAge>13.01</minGenerationAge>",
+            "<maxGenerationAge>13.99</maxGenerationAge>"
+          ]
+        }
+      ]
+    }
+  ]
+}

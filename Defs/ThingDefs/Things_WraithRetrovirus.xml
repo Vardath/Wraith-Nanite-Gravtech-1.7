@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_WraithRetrovirusDose</defName>
+    <recipeMaker IsNull="True" />
+    <label>Wraith retrovirus dose</label>
+    <thingCategories Inherit="False"><li>Medicine</li></thingCategories>
+    <description>A cultured retroviral injection engineered to suppress the Iratus-derived portions of Wraith biology while leaving the treated individual's identity intact. One dose initiates humanization; it does not maintain the state without the separate suppression drug.</description>
+    <graphicData>
+      <texPath>Things/Item/WraithMedical/WNG_WraithRetrovirusDose</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>10</stackLimit>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>360</MarketValue>
+      <Mass>0.06</Mass>
+      <MaxHitPoints>50</MaxHitPoints>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <costList>
+      <WNG_IratusGlandExtract>1</WNG_IratusGlandExtract>
+      <WNG_RefinedWraithEnzyme>1</WNG_RefinedWraithEnzyme>
+      <Neutroamine>6</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+    </costList>
+    <tradeability>Sellable</tradeability>
+    <tradeTags><li>ExoticMisc</li></tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_WraithSuppressionDose</defName>
+    <recipeMaker IsNull="True" />
+    <label>Wraith suppression injection</label>
+    <thingCategories Inherit="False"><li>Medicine</li></thingCategories>
+    <description>A maintenance drug used after Wraith retroviral humanization. It suppresses re-emergence of the Wraith phenotype for a little more than one day. Doses do not stack into long-term immunity: treatment must remain regular.</description>
+    <graphicData>
+      <texPath>Things/Item/WraithMedical/WNG_WraithSuppressionDose</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>20</stackLimit>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>95</MarketValue>
+      <Mass>0.04</Mass>
+      <MaxHitPoints>45</MaxHitPoints>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <costList>
+      <WNG_RefinedWraithEnzyme>1</WNG_RefinedWraithEnzyme>
+      <Neutroamine>4</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+    </costList>
+    <tradeability>Sellable</tradeability>
+    <tradeTags><li>ExoticMisc</li></tradeTags>
+  </ThingDef>
+</Defs>

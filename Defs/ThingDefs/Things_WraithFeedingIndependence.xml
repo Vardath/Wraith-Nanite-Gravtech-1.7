@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WNG_FeedingIndependenceVector</defName>
+    <recipeMaker IsNull="True" />
+    <label>feeding-independence gene vector</label>
+    <thingCategories Inherit="False"><li>Medicine</li></thingCategories>
+    <description>An unstable late-generation retroviral vector carrying Iratus-queen regenerative controls and Wraith enzyme stabilisers. In a Wraith it can permanently replace Life Force metabolism with ordinary digestion, but systemic rejection remains dangerously common.</description>
+    <graphicData>
+      <texPath>Things/Item/WraithMedical/WNG_FeedingIndependenceVector</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>10</stackLimit>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>950</MarketValue>
+      <Mass>0.08</Mass>
+      <MaxHitPoints>50</MaxHitPoints>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <costList>
+      <WNG_WraithRetrovirusDose>1</WNG_WraithRetrovirusDose>
+      <WNG_IratusQueenExtract>1</WNG_IratusQueenExtract>
+      <WNG_RefinedWraithEnzyme>2</WNG_RefinedWraithEnzyme>
+      <Neutroamine>8</Neutroamine>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <tradeability>Sellable</tradeability>
+    <tradeTags><li>ExoticMisc</li></tradeTags>
+  </ThingDef>
+</Defs>

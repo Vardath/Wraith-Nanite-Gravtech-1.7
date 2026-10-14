@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Synthetic formation histories occupy RimWorld's childhood slot; they are biographies, not biological childhoods. -->
+  <BackstoryDef>
+    <defName>WNG_AsuranOrigin_ArchiveBornTemplate</defName>
+    <slot>Childhood</slot>
+    <title>archive-born template</title>
+    <titleShort>archive-born</titleShort>
+    <description>[PAWN_nameDef] first cohered from a preserved identity framework inside a synthetic archive. The initial pattern carried broad conceptual knowledge but little lived experience, forcing [PAWN_objective] to turn inherited information into personal judgement.</description>
+    <skillGains><Intellectual>2</Intellectual><Social>1</Social></skillGains>
+    <spawnCategories><li>AsuranOrigin</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_AsuranOrigin_ConstructedServicePattern</defName>
+    <slot>Childhood</slot>
+    <title>constructed service pattern</title>
+    <titleShort>service pattern</titleShort>
+    <description>[PAWN_nameDef] began as a narrowly scoped maintenance intelligence embodied for practical work. Repeated assignments and reconstruction broadened that original specification into an autonomous identity.</description>
+    <skillGains><Crafting>2</Crafting><Intellectual>1</Intellectual></skillGains>
+    <spawnCategories><li>AsuranOrigin</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_AsuranOrigin_RecoveredBiologicalImprint</defName>
+    <slot>Childhood</slot>
+    <title>recovered biological imprint</title>
+    <titleShort>recovered imprint</titleShort>
+    <description>[PAWN_nameDef] emerged from a damaged biological mind-pattern reconstructed into a nanite body. Incomplete memory continuity left [PAWN_objective] unusually attentive to organic behavior, injury and emotion.</description>
+    <skillGains><Medicine>1</Medicine><Social>2</Social></skillGains>
+    <spawnCategories><li>AsuranOrigin</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_LatticeSystemsArchitect</defName>
+    <slot>Adulthood</slot>
+    <title>lattice systems architect</title>
+    <titleShort>systems architect</titleShort>
+    <description>[PAWN_nameDef] designed distributed machinery whose parts had to remain useful even when communication links failed. [PAWN_pronoun] became skilled at diagnosing structures as interacting systems rather than isolated devices.</description>
+    <skillGains><Construction>3</Construction><Intellectual>3</Intellectual></skillGains>
+    <spawnCategories><li>AsuranEngineerAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_PatternFabricator</defName>
+    <slot>Adulthood</slot>
+    <title>pattern fabricator</title>
+    <titleShort>fabricator</titleShort>
+    <description>[PAWN_nameDef] spent years translating exact digital patterns into stable physical assemblies. Tiny deviations mattered, so [PAWN_pronoun] developed exceptional patience with fabrication and material quality.</description>
+    <skillGains><Crafting>4</Crafting><Intellectual>2</Intellectual></skillGains>
+    <spawnCategories><li>AsuranEngineerAdult</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_LatticeEnforcer</defName>
+    <slot>Adulthood</slot>
+    <title>lattice enforcer</title>
+    <titleShort>enforcer</titleShort>
+    <description>[PAWN_nameDef] served as a direct-action synthetic combatant, protecting fabrication sites and collective infrastructure against determined attackers. [PAWN_pronoun] learned disciplined fire and decisive close engagement.</description>
+    <skillGains><Shooting>4</Shooting><Melee>2</Melee></skillGains>
+    <spawnCategories><li>AsuranSoldierAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_FieldSuppressor</defName>
+    <slot>Adulthood</slot>
+    <title>field suppressor</title>
+    <titleShort>suppressor</titleShort>
+    <description>[PAWN_nameDef] specialised in controlling dangerous ground while damaged units withdrew or rebuilt. The role rewarded steady ranged accuracy and enough technical knowledge to understand what the formation was protecting.</description>
+    <skillGains><Shooting>3</Shooting><Intellectual>2</Intellectual><Melee>1</Melee></skillGains>
+    <spawnCategories><li>AsuranSoldierAdult</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_ConsensusCoordinator</defName>
+    <slot>Adulthood</slot>
+    <title>consensus coordinator</title>
+    <titleShort>coordinator</titleShort>
+    <description>[PAWN_nameDef] converted conflicting reports and competing synthetic priorities into decisions that independent units could actually execute. [PAWN_pronoun] learned command as an exercise in information, timing and persuasion.</description>
+    <skillGains><Social>3</Social><Intellectual>3</Intellectual></skillGains>
+    <spawnCategories><li>AsuranCommanderAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_ContinuityMarshal</defName>
+    <slot>Adulthood</slot>
+    <title>continuity marshal</title>
+    <titleShort>continuity marshal</titleShort>
+    <description>[PAWN_nameDef] coordinated evacuations, pattern preservation and counterattacks whenever a synthetic community risked losing both bodies and stored identity. Command required tactical skill without sacrificing irreplaceable continuity assets.</description>
+    <skillGains><Social>2</Social><Shooting>2</Shooting><Intellectual>2</Intellectual></skillGains>
+    <spawnCategories><li>AsuranCommanderAdult</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_EmbodiedObserver</defName>
+    <slot>Adulthood</slot>
+    <title>embodied observer</title>
+    <titleShort>observer</titleShort>
+    <description>[PAWN_nameDef] lived for extended periods among biological populations to understand behavior that remote surveillance could not explain. Passing through ordinary social spaces taught [PAWN_objective] subtle observation and adaptive conversation.</description>
+    <skillGains><Social>3</Social><Intellectual>2</Intellectual><Medicine>1</Medicine></skillGains>
+    <spawnCategories><li>AsuranHumanFormAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_IndependentReconstruction</defName>
+    <slot>Adulthood</slot>
+    <title>independent reconstruction</title>
+    <titleShort>independent reconstruction</titleShort>
+    <description>[PAWN_nameDef] survived a period without reliable collective support, repairing [PAWN_possessive] own body and equipment from whatever resources could be obtained. The experience made [PAWN_objective] practical, adaptable and strongly self-directed.</description>
+    <skillGains><Crafting>2</Crafting><Medicine>2</Medicine><Intellectual>2</Intellectual></skillGains>
+    <spawnCategories><li>AsuranHumanFormAdult</li></spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_CollectiveDissident</defName>
+    <slot>Adulthood</slot>
+    <title>collective dissident</title>
+    <titleShort>dissident</titleShort>
+    <description>[PAWN_nameDef] rejected a collective decision that treated individual continuity as expendable. Leaving forced [PAWN_objective] to negotiate with biological societies and make choices without consensus support.</description>
+    <skillGains><Social>3</Social><Intellectual>2</Intellectual></skillGains>
+    <spawnCategories><li>AsuranPlayerAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_StrandedPattern</defName>
+    <slot>Adulthood</slot>
+    <title>stranded pattern</title>
+    <titleShort>stranded pattern</titleShort>
+    <description>[PAWN_nameDef] awakened far from any compatible archive or fabrication network. With no guarantee of restoration after destruction, [PAWN_pronoun] learned to maintain a body, build shelter and treat survival as a personal responsibility.</description>
+    <skillGains><Construction>2</Construction><Crafting>2</Crafting><Medicine>1</Medicine></skillGains>
+    <spawnCategories><li>AsuranPlayerAdult</li></spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>WNG_AsuranAdult_ChosenIndividual</defName>
+    <slot>Adulthood</slot>
+    <title>chosen individual</title>
+    <titleShort>individual</titleShort>
+    <description>[PAWN_nameDef] deliberately limited [PAWN_possessive] dependence on distributed identity systems in order to live as a persistent individual among organics. The choice demanded social flexibility and broad practical competence.</description>
+    <skillGains><Social>2</Social><Crafting>1</Crafting><Intellectual>2</Intellectual><Medicine>1</Medicine></skillGains>
+    <spawnCategories><li>AsuranPlayerAdult</li></spawnCategories>
+  </BackstoryDef>
+</Defs>

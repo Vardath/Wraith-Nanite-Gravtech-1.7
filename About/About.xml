@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Wraith &amp; Nanite Gravtech</name>
+  <author>Vardath</author>
+  <packageId>vardath.wraithnanitegravtech</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+    <li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>ludeon.rimworld.royalty</packageId>
+      <displayName>Royalty</displayName>
+    </li>
+    <li>
+      <packageId>ludeon.rimworld.ideology</packageId>
+      <displayName>Ideology</displayName>
+    </li>
+    <li>
+      <packageId>ludeon.rimworld.biotech</packageId>
+      <displayName>Biotech</displayName>
+    </li>
+    <li>
+      <packageId>ludeon.rimworld.anomaly</packageId>
+      <displayName>Anomaly</displayName>
+    </li>
+    <li>
+      <packageId>ludeon.rimworld.odyssey</packageId>
+      <displayName>Odyssey</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>ccyt.stargatesmod</li>
+    <li>idolord.onac</li>
+    <li>cravemode.rimgatejaffakreebiotech</li>
+    <li>CETeam.CombatExtended</li>
+  </loadAfter>
+  <description>Unofficial, non-commercial fan-made RimWorld 1.6 / 1.7 (1.7 unstable beta) expansion inspired by Stargate Atlantis and the wider Stargate universe.
+
+Play with or against Wraith, block Replicators, human-form Replicators/Asurans, and advanced Goa'uld/Precursor technology. Wraith gameplay includes Life Force feeding, regeneration, hibernation, Hunters/Warriors/Commanders/Keepers/Queens, four Hive lineages, strategic feeding pressure, living weapons, furniture, biotechnology and organic gravships.
+
+Block Replicators use a Drone -&gt; Hunter -&gt; Bulwark -&gt; Titan -&gt; Siege Mass hierarchy. Larger forms split into smaller operational forms when destroyed; smaller forms can recombine upward after a delay. Controller, Repairer, Burrower and Artillery specialists support the swarm, assimilation can unlock adaptive capabilities, and dangerous Replicator Matter can reform if it is not safely contained.
+
+Human-form nanite beings add Lattice factions, infiltration, Queen/controller systems, Neural Interface and Pattern Archive technology. Ancient/Asuran content includes Puddle Jumpers, pulse weapons, personal and settlement shields, furniture, pilot systems and a complete themed Odyssey gravship family. Wraith Darts, Strike Craft and Cruisers, Al'kesh and Death Gliders, Goa'uld gravship systems, transport rings and related pharmacology expand the wider setting.
+
+Includes seven Wraith/human-form player starts on the surface or in orbit and uses RimWorld/Odyssey native systems wherever practical. Requires Harmony, Royalty, Ideology, Biotech, Anomaly and Odyssey. Combat Extended compatibility definitions are included. Optional integration is detected automatically for the Stargates mod (ccyt.stargatesmod), ONAC and RimGate Jaffa/Kree; Stargates can provide real gate-linked starts, visits, hunts and incursions without becoming a hard dependency.</description>
+</ModMetaData>

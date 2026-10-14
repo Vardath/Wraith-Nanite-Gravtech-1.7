@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <XenotypeDef>
+    <defName>WNG_WhispersHybrid</defName>
+    <label>Whispers hybrid</label>
+    <description>An abandoned early-generation hybrid from Michael's experiments. Human captives were irreversibly altered with Iratus/Wraith and additional predatory traits. These creatures are blind, hunt by sound, emit a predatory fog from neck gills, retain an unstable Life Force reserve that must be replenished by partial feeding, and possess only attenuated Wraith telepathy.</description>
+    <descriptionShort>A blind, sound-hunting lesser Wraith with fog, partial feeding, unstable Life Force and attenuated telepathy.</descriptionShort>
+    <iconPath>UI/WNG/Xenotypes/WhispersHybrid</iconPath>
+    <genes>
+      <li>WNG_WhispersPredatorBiology</li>
+      <li>WNG_HybridLifeForce</li>
+      <li>WNG_HybridTelepathy</li>
+      <li>Skin_LightGray</li>
+      <li>Hair_BaldOnly</li>
+      <li>Beard_NoBeardOnly</li>
+    </genes>
+  </XenotypeDef>
+</Defs>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>WNG_SovereignNeuralLattice</defName>
+    <label>sovereign neural lattice</label>
+    <description>A physical WNG controller implant. Its bearer can maintain a bounded sovereign domain over multiple exact block Replicators, but does not become a Queen and receives none of the Queen's innate identity or unrestricted authority.</description>
+    <hediffClass>WraithNaniteGravtech.Hediff_SovereignNeuralLattice</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <addedPartProps><partEfficiency>1</partEfficiency></addedPartProps>
+  </HediffDef>
+</Defs>

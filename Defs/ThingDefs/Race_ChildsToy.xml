@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseMechanoid">
+    <defName>WNG_ChildsToy</defName>
+    <label>Child's Toy replicator</label>
+    <description>A deliberately domesticated Replicator built as a colony mech. While actively controlled by a Mechanitor it behaves as an ordinary player mech and never reproduces on its own. A controlled Toy can be ordered to consume a chosen physical object and reorganize it into two additional Toys if the same Mechanitor has bandwidth for both. If left uncontrolled continuously for one day, it reorganizes into a hostile Replicator Drone.</description>
+    <statBases>
+      <MarketValue>450</MarketValue>
+      <MoveSpeed>4.0</MoveSpeed>
+      <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.18</ArmorRating_Heat>
+      <PsychicSensitivity>0.20</PsychicSensitivity>
+      <BandwidthCost>1</BandwidthCost>
+    </statBases>
+    <race>
+      <body>Mech_Light</body>
+      <intelligence>ToolUser</intelligence>
+      <!-- Use the vanilla Lifter hauling work type without replacing Mechanitor control. -->
+      <mechEnabledWorkTypes><li>Hauling</li></mechEnabledWorkTypes>
+      <thinkTreeMain>Mechanoid</thinkTreeMain>
+      <baseBodySize>0.55</baseBodySize>
+      <baseHealthScale>0.75</baseHealthScale>
+      <hasCorpse>false</hasCorpse>
+      <hasMeat>false</hasMeat>
+      <mechWeightClass>Light</mechWeightClass>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+    <butcherProducts>
+      <WNG_ReplicatorMatter>1</WNG_ReplicatorMatter>
+    </butcherProducts>
+    <comps Inherit="False">
+      <li Class="WraithNaniteGravtech.CompProperties_ChildsToyOverseerSubject">
+        <uncontrolledTicksToFeral>60000</uncontrolledTicksToFeral>
+        <replicationWorkTicks>300</replicationWorkTicks>
+        <replicationOffspringCount>2</replicationOffspringCount>
+      </li>
+      <li Class="CompProperties_MechRepairable" />
+      <li Class="WraithNaniteGravtech.CompProperties_ReplicatorAdaptation">
+        <antiShieldEvidenceThreshold>18</antiShieldEvidenceThreshold>
+        <antiShieldSampleIntervalTicks>300</antiShieldSampleIntervalTicks>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <label>block limbs</label>
+        <capacities><li>Blunt</li></capacities>
+        <power>6</power>
+        <cooldownTime>2.2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>WNG_ChildsToy</defName>
+    <label>Child's Toy replicator</label>
+    <race>WNG_ChildsToy</race>
+    <combatPower>30</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Replicator/WNG_ReplicatorDrone</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Cutout</shaderType>
+          <drawSize>0.85</drawSize>
+          <shadowData>
+            <volume>(0.22, 0.28, 0.22)</volume>
+            <offset>(0,0,-0.12)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+</Defs>

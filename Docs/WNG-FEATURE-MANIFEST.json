@@ -1,0 +1,560 @@
+{
+  "schema": 1,
+  "description": "Machine-readable manifest of major WNG runtime feature families and their required Defs, class-bearing source, assets and tests.",
+  "features": [
+    {
+      "id": "core_settings_reconciliation",
+      "title": "Core settings and gene/ability reconciliation",
+      "detectors": [
+        "Source/WraithNaniteGravtech/WNGSettings.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/WNGSettings.cs",
+        "Source/WraithNaniteGravtech/WNGGeneAbilityReconciler.cs"
+      ],
+      "required_defs": [
+        "Defs/AbilityDefs/*.xml",
+        "Defs/GeneDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/WNGSettings.cs",
+        "Source/WraithNaniteGravtech/WNGGeneAbilityReconciler.cs"
+      ],
+      "required_assets": [
+        "Textures/UI/WNG/Abilities/*.png"
+      ],
+      "tests": [
+        ".github/artqa/ui.py",
+        ".github/artqa/health_gene.py",
+        ".github/artqa/null_type_lifecycle.py"
+      ]
+    },
+    {
+      "id": "wraith_gameplay",
+      "title": "Wraith biology, feeding, politics and living technology",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Wraith/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Wraith/*.cs"
+      ],
+      "required_defs": [
+        "Defs/FactionDefs/Factions_Wraith.xml",
+        "Defs/GeneDefs/Genes_Wraith.xml",
+        "Defs/AbilityDefs/Abilities_Wraith*.xml",
+        "Defs/WraithDiplomacyDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Wraith/WraithPlayerFeedingNiche.cs",
+        "Source/WraithNaniteGravtech/Wraith/WraithLivingTechnology.cs",
+        "Source/WraithNaniteGravtech/Wraith/WraithStrategicHunger.cs"
+      ],
+      "required_assets": [
+        "Textures/**/*Wraith*.png"
+      ],
+      "tests": [
+        ".github/artqa/wraith_feeding.py",
+        ".github/artqa/health_gene.py",
+        ".github/artqa/apparel_equipment_retention.py",
+        ".github/artqa/faction_audit.py"
+      ]
+    },
+    {
+      "id": "replicator_swarm",
+      "title": "Block Replicator hierarchy, adaptation, containment and matter",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Replicators/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Replicators/*.cs"
+      ],
+      "required_defs": [
+        "Defs/ThingDefs/Races_Replicator.xml",
+        "Defs/ThingDefs/Things_ReplicatorMatter.xml",
+        "Defs/ReplicatorCrisisDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Replicators/ReplicatorHierarchy.cs",
+        "Source/WraithNaniteGravtech/Replicators/ReplicatorMatterReassembly.cs",
+        "Source/WraithNaniteGravtech/Replicators/ReplicatorAdaptation.cs"
+      ],
+      "required_assets": [
+        "Textures/**/*Replicator*.png"
+      ],
+      "tests": [
+        ".github/artqa/replicator_state_machine.py",
+        ".github/artqa/replicator_death_split.py",
+        ".github/artqa/resource_conservation.py"
+      ]
+    },
+    {
+      "id": "human_form_asurans",
+      "title": "Human-form Replicators and Asurans",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Asurans/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Asuran/*.cs",
+        "Source/WraithNaniteGravtech/Asurans/*.cs"
+      ],
+      "required_defs": [
+        "Defs/AbilityDefs/Abilities_Asuran*.xml",
+        "Defs/RecipeDefs/Recipes_Asuran*.xml",
+        "Defs/ThingDefs/Things_Asuran*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Asurans/NanitePhysiology.cs",
+        "Source/WraithNaniteGravtech/Asurans/HumanFormAssimilation.cs",
+        "Source/WraithNaniteGravtech/Asurans/AsuranCollective.cs",
+        "Source/WraithNaniteGravtech/Asurans/AsuranReplicatorMatterFabrication.cs"
+      ],
+      "required_assets": [
+        "Textures/**/*Asuran*.png",
+        "Textures/UI/WNG/Abilities/AsuranReplicatorBlocks.png"
+      ],
+      "tests": [
+        ".github/artqa/human_form_asuran_copy.py",
+        ".github/artqa/health_gene.py",
+        ".github/artqa/resource_conservation.py",
+        ".github/artqa/faction_audit.py"
+      ]
+    },
+    {
+      "id": "ancient_precursor",
+      "title": "Ancient and Precursor technology",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Ancient/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Ancient/*.cs"
+      ],
+      "required_defs": [
+        "Defs/ThingDefs/*Precursor*.xml",
+        "Defs/ResearchProjectDefs/Research_Precursor*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Ancient/AncientControlNetwork.cs",
+        "Source/WraithNaniteGravtech/Ancient/CompVacuumEnergyPower.cs"
+      ],
+      "required_assets": [
+        "Textures/**/*Ancient*.png",
+        "Textures/**/*Precursor*.png"
+      ],
+      "tests": [
+        ".github/artqa/research_progression.py",
+        ".github/artqa/building_comp.py",
+        ".github/artqa/incident_quest.py"
+      ]
+    },
+    {
+      "id": "goauld_systems",
+      "title": "Goa'uld technology, pharmacology and missions",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Goauld/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Goauld/*.cs"
+      ],
+      "required_defs": [
+        "Defs/ThingDefs/*Goauld*.xml",
+        "Defs/ResearchProjectDefs/Research_Goauld*.xml",
+        "Defs/Gravships/Gravship_Goauld.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Goauld/GoauldGravshipSystems.cs",
+        "Source/WraithNaniteGravtech/Goauld/GoauldTransportRings.cs",
+        "Source/WraithNaniteGravtech/Goauld/NishtaConditioning.cs"
+      ],
+      "required_assets": [
+        "Textures/**/*Goauld*.png"
+      ],
+      "tests": [
+        ".github/artqa/gravship_connectivity.py",
+        ".github/artqa/vehicle_shuttle_geometry.py",
+        ".github/artqa/incident_quest.py"
+      ]
+    },
+    {
+      "id": "gravship_families",
+      "title": "Wraith, Asuran and Goa'uld gravship systems",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Gravships/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Gravships/*.cs"
+      ],
+      "required_defs": [
+        "Defs/Gravships/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Gravships/GravshipFamilySystems.cs",
+        "Source/WraithNaniteGravtech/Gravships/GravshipVanillaParity.cs"
+      ],
+      "required_assets": [
+        "Textures/Things/Building/*/Gravship/*.png",
+        "Textures/Terrain/*/*.png"
+      ],
+      "tests": [
+        ".github/artqa/gravship_connectivity.py",
+        ".github/artqa/building_comp.py",
+        ".github/artqa/texture_graphic_family.py"
+      ]
+    },
+    {
+      "id": "shuttles",
+      "title": "Puddle Jumper, Wraith and Goa'uld shuttle systems",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Shuttles/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Shuttles/*.cs"
+      ],
+      "required_defs": [
+        "Defs/ThingDefs/Shuttle_*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Shuttles/PuddleJumperSystems.cs",
+        "Source/WraithNaniteGravtech/Shuttles/WraithDartSystems.cs"
+      ],
+      "required_assets": [
+        "Textures/Things/Building/*/Shuttle/*.png"
+      ],
+      "tests": [
+        ".github/artqa/vehicle_shuttle_geometry.py",
+        ".github/artqa/ship_alpha_audit.py"
+      ]
+    },
+    {
+      "id": "player_scenarios",
+      "title": "WNG landfall and orbital starts",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Scenarios/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Scenarios/*.cs"
+      ],
+      "required_defs": [
+        "Defs/ScenarioDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Scenarios/WNGStartingGravship.cs"
+      ],
+      "required_assets": [],
+      "assets_not_applicable": "Scenario logic has no unique runtime art requirement beyond the pawn/ship assets owned by their feature families.",
+      "tests": [
+        ".github/artqa/worldgen.py",
+        ".github/artqa/pawn_generation.py"
+      ]
+    },
+    {
+      "id": "signature_equipment",
+      "title": "Signature apparel and equipment retention",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Equipment/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Equipment/*.cs"
+      ],
+      "required_defs": [
+        "Defs/ThingDefs/Apparel_*.xml",
+        "Defs/ThingDefs/Weapons_*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Equipment/WNGSignatureGearRetention.cs"
+      ],
+      "required_assets": [
+        "Textures/Things/Pawn/Humanlike/Apparel/**/*.png"
+      ],
+      "tests": [
+        ".github/artqa/apparel_equipment_retention.py",
+        ".github/artqa/weapon_orientation_rendering.py"
+      ]
+    },
+    {
+      "id": "implants",
+      "title": "WNG implant systems",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Implants/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Implants/*.cs"
+      ],
+      "required_defs": [
+        "Defs/HediffDefs/Hediffs_ImplantsCore.xml",
+        "Defs/RecipeDefs/Recipes_ImplantsCore.xml",
+        "Defs/ThingDefs/Things_ImplantsCore.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Implants/WNGImplantSystems.cs"
+      ],
+      "required_assets": [
+        "Textures/Things/Item/Implant/*.png"
+      ],
+      "tests": [
+        ".github/artqa/surgery.py",
+        ".github/artqa/health_gene.py"
+      ]
+    },
+    {
+      "id": "anomaly_iratus_whispers",
+      "title": "Anomaly, Iratus and Whispers systems",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Anomaly/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Anomaly/*.cs"
+      ],
+      "required_defs": [
+        "Defs/ThingDefs/*Iratus*.xml",
+        "Defs/ThingDefs/*Whispers*.xml",
+        "Defs/ResearchProjectDefs/Research_Iratus*.xml",
+        "Defs/ResearchProjectDefs/Research_Whispers*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Anomaly/IratusAttachment.cs",
+        "Source/WraithNaniteGravtech/Anomaly/WhispersHybrid.cs"
+      ],
+      "required_assets": [
+        "Textures/**/*Iratus*.png",
+        "Textures/**/*Whispers*.png"
+      ],
+      "tests": [
+        ".github/artqa/health_gene.py",
+        ".github/artqa/incident_quest.py",
+        ".github/artqa/pawn_generation.py"
+      ]
+    },
+    {
+      "id": "royalty_telepathy",
+      "title": "Royalty-linked Wraith telepathy",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Royalty/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Royalty/*.cs"
+      ],
+      "required_defs": [
+        "Defs/AbilityDefs/Abilities_WraithTelepathy.xml",
+        "Defs/HediffDefs/Hediffs_WraithTelepathy.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Royalty/WraithTelepathy.cs"
+      ],
+      "required_assets": [
+        "Textures/UI/WNG/Abilities/Wraith*.png"
+      ],
+      "tests": [
+        ".github/artqa/cross_reference.py",
+        ".github/artqa/runtime_exception.py"
+      ]
+    },
+    {
+      "id": "ideology_events",
+      "title": "Ideology integration and conflict events",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Ideology/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Ideology/*.cs"
+      ],
+      "required_defs": [
+        "Defs/PreceptDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Ideology/WNGIdeologyEvents.cs"
+      ],
+      "required_assets": [],
+      "assets_not_applicable": "Ideology integration uses RimWorld/precept UI and does not require a unique WNG texture.",
+      "tests": [
+        ".github/artqa/incident_quest.py",
+        ".github/artqa/cross_reference.py"
+      ]
+    },
+    {
+      "id": "audio",
+      "title": "WNG ambient and gameplay audio",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Audio/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Audio/*.cs"
+      ],
+      "required_defs": [
+        "Defs/SoundDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Audio/WNGAmbientLoop.cs"
+      ],
+      "required_assets": [
+        "Sounds/WNG/*.wav"
+      ],
+      "tests": [
+        ".github/artqa/release_package_integrity.py",
+        ".github/artqa/runtime_exception.py"
+      ]
+    },
+    {
+      "id": "trade",
+      "title": "WNG trade and market systems",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Trade/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Trade/*.cs"
+      ],
+      "required_defs": [
+        "Defs/TraderKindDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Trade/KassaMarketDemand.cs"
+      ],
+      "required_assets": [
+        "Textures/**/*Kassa*.png"
+      ],
+      "tests": [
+        ".github/artqa/economy.py",
+        ".github/artqa/faction_audit.py"
+      ]
+    },
+    {
+      "id": "story_chains",
+      "title": "WNG story chains, incidents and quests",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Story/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Story/*.cs"
+      ],
+      "required_defs": [
+        "Defs/QuestScriptDefs/*.xml",
+        "Defs/IncidentDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Story/WNGStoryChains.cs"
+      ],
+      "required_assets": [],
+      "assets_not_applicable": "Story-chain orchestration uses feature-owned pawn/building/item assets rather than a unique Story texture family.",
+      "tests": [
+        ".github/artqa/incident_quest.py",
+        ".github/artqa/save_load_migration.py"
+      ]
+    },
+    {
+      "id": "optional_compatibility",
+      "title": "Optional Stargates, ONAC, RimGate and other compatibility",
+      "detectors": [
+        "Source/WraithNaniteGravtech/Compatibility/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/Compatibility/*.cs"
+      ],
+      "required_defs": [
+        "Compatibility/**/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/Compatibility/WNGExternalCompatibilityApi.cs",
+        "Source/WraithNaniteGravtech/Compatibility/StartingMapStargate.cs"
+      ],
+      "required_assets": [],
+      "assets_not_applicable": "Compatibility code reuses the runtime assets owned by WNG and the optional mods it integrates with.",
+      "tests": [
+        ".github/artqa/optional_mod_matrix.py",
+        ".github/artqa/load_order.py",
+        ".github/artqa/patch_blast_radius.py",
+        ".github/artqa/removal_safety.py"
+      ]
+    },
+    {
+      "id": "ui_architect_accessibility",
+      "title": "UI, Architect routing and developer accessibility",
+      "detectors": [
+        "Source/WraithNaniteGravtech/UI/*.cs"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/UI/*.cs"
+      ],
+      "required_defs": [
+        "Defs/DesignationCategoryDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/UI/WNGArchitectRouting.cs",
+        "Source/WraithNaniteGravtech/UI/WNGGameplayAccessibility.cs"
+      ],
+      "required_assets": [
+        "Textures/UI/WNG/**/*.png"
+      ],
+      "tests": [
+        ".github/artqa/ui.py",
+        ".github/artqa/architect_menu.py",
+        ".github/artqa/dev_mode_parity.py"
+      ]
+    },
+    {
+      "id": "research_progression",
+      "title": "Research progression and unlock graph",
+      "detectors": [
+        "Defs/ResearchProjectDefs/*.xml"
+      ],
+      "source_globs": [],
+      "required_defs": [
+        "Defs/ResearchProjectDefs/*.xml"
+      ],
+      "required_class_files": [],
+      "classes_not_applicable": "ResearchProjectDefs are declarative; runtime consumers are owned by the feature entries above.",
+      "required_assets": [],
+      "assets_not_applicable": "Research uses RimWorld research UI and feature-owned icons/content.",
+      "tests": [
+        ".github/artqa/research_progression.py",
+        ".github/artqa/cross_reference.py"
+      ]
+    },
+    {
+      "id": "construction_crafting_economy",
+      "title": "Construction, crafting and resource economy",
+      "detectors": [
+        "Defs/RecipeDefs/*.xml"
+      ],
+      "source_globs": [
+        "Source/WraithNaniteGravtech/WNGDefSanitizer.cs"
+      ],
+      "required_defs": [
+        "Defs/RecipeDefs/*.xml",
+        "Defs/ThingDefs/*.xml"
+      ],
+      "required_class_files": [
+        "Source/WraithNaniteGravtech/WNGDefSanitizer.cs"
+      ],
+      "required_assets": [],
+      "assets_not_applicable": "Economy validation concerns resource/work contracts rather than a dedicated asset family.",
+      "tests": [
+        ".github/artqa/construction_god_mode.py",
+        ".github/artqa/bill_recipe_regression.py",
+        ".github/artqa/economy.py",
+        ".github/artqa/resource_conservation.py"
+      ]
+    },
+    {
+      "id": "distribution_release",
+      "title": "GitHub and Steam release packaging/provenance",
+      "detectors": [
+        ".github/artqa/build_release_package.py"
+      ],
+      "source_globs": [],
+      "required_defs": [
+        "About/About.xml",
+        "LoadFolders.xml"
+      ],
+      "required_class_files": [],
+      "classes_not_applicable": "Distribution tooling is Python/workflow infrastructure rather than runtime C#.",
+      "required_assets": [
+        "About/Preview.png",
+        "About/ModIcon.png"
+      ],
+      "tests": [
+        ".github/artqa/release_package_integrity.py",
+        ".github/artqa/dll_source_parity.py",
+        ".github/artqa/steam_packaging.py"
+      ]
+    }
+  ]
+}

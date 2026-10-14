@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- RimShips Patches/Genes.xml assumes three specific Det's Avaloi
+       xenotypes exist and stops its entire FindMod sequence if the first
+       one (LTS_Hydragon) is absent. Preserve only extant xenotypes and
+       valid RimShips genes. Independent guards prevent duplicates or
+       fabrication of old/removed Avaloi XenotypeDefs. -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>/Defs/XenotypeDef[defName="LTS_Hydragon" and genes and not(genes/li[normalize-space(.)="SeaShip_WaterResistance_Total"])]</xpath></li>
+      <li Class="PatchOperationTest"><xpath>/Defs/GeneDef[defName="SeaShip_WaterResistance_Total"]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/XenotypeDef[defName="LTS_Hydragon" and genes and not(genes/li[normalize-space(.)="SeaShip_WaterResistance_Total"])]/genes</xpath>
+        <value><li>SeaShip_WaterResistance_Total</li></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>/Defs/XenotypeDef[defName="LTS_Hydragon" and genes and not(genes/li[normalize-space(.)="SeaShip_MoveSpeed_Underwater"])]</xpath></li>
+      <li Class="PatchOperationTest"><xpath>/Defs/GeneDef[defName="SeaShip_MoveSpeed_Underwater"]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/XenotypeDef[defName="LTS_Hydragon" and genes and not(genes/li[normalize-space(.)="SeaShip_MoveSpeed_Underwater"])]/genes</xpath>
+        <value><li>SeaShip_MoveSpeed_Underwater</li></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>/Defs/XenotypeDef[defName="LTS_Mucorins" and genes and not(genes/li[normalize-space(.)="SeaShip_WaterResistance_Total"])]</xpath></li>
+      <li Class="PatchOperationTest"><xpath>/Defs/GeneDef[defName="SeaShip_WaterResistance_Total"]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/XenotypeDef[defName="LTS_Mucorins" and genes and not(genes/li[normalize-space(.)="SeaShip_WaterResistance_Total"])]/genes</xpath>
+        <value><li>SeaShip_WaterResistance_Total</li></value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationTest"><xpath>/Defs/XenotypeDef[defName="LTS_Nexarii" and genes and not(genes/li[normalize-space(.)="SeaShip_MoveSpeed_Underwater"])]</xpath></li>
+      <li Class="PatchOperationTest"><xpath>/Defs/GeneDef[defName="SeaShip_MoveSpeed_Underwater"]</xpath></li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/XenotypeDef[defName="LTS_Nexarii" and genes and not(genes/li[normalize-space(.)="SeaShip_MoveSpeed_Underwater"])]/genes</xpath>
+        <value><li>SeaShip_MoveSpeed_Underwater</li></value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

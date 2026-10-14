@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    All castes remain one Wraith xenotype. The restored living-equipment catalog now supplies
+    caste-appropriate weapon tags and required apparel without turning caste into race.
+    Native WNG backstory pools are mapped per caste; the player-start Hunter variant remains the same biological caste.
+  -->
+  <PawnKindDef Name="WNG_WraithPawnBase" Abstract="True">
+    <race>Human</race>
+    <useFactionXenotypes>false</useFactionXenotypes>
+    <xenotypeSet>
+      <xenotypeChances>
+        <WNG_Wraith>1</WNG_Wraith>
+      </xenotypeChances>
+    </xenotypeSet>
+    <minGenerationAge>20</minGenerationAge>
+    <maxGenerationAge>180</maxGenerationAge>
+    <allowOldAgeInjuries>false</allowOldAgeInjuries>
+    <isFighter>true</isFighter>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <apparelMoney>5000~5000</apparelMoney>
+    <apparelTags Inherit="False"/>
+    <gearHealthRange>0.75~1</gearHealthRange>
+    <itemQuality>Normal</itemQuality>
+    <initialWillRange>8~18</initialWillRange>
+    <initialResistanceRange>12~28</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_WraithPawnBase">
+    <defName>WNG_WraithHunter</defName>
+    <label>wraith hunter</label>
+    <description>A mobile Wraith hunter used for stalking, culling and capture work. Hunter is a caste role within the common Wraith xenotype, not a separate race.</description>
+    <backstoryFiltersOverride>
+      <li><categories><li>WraithOrigin</li><li>WraithHunterAdult</li></categories></li>
+    </backstoryFiltersOverride>
+    <combatPower>95</combatPower>
+    <weaponMoney>250~700</weaponMoney>
+    <weaponTags><li>WraithCaptureWeapon</li><li>WraithLineWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_WraithHunterCoat</li></apparelRequired>
+    <abilities><li>WNG_PredatorsPresence</li></abilities>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_WraithPawnBase">
+    <defName>WNG_WraithWarrior</defName>
+    <label>wraith warrior</label>
+    <description>A frontline Wraith warrior caste intended for direct combat and Hive defense.</description>
+    <backstoryFiltersOverride>
+      <li><categories><li>WraithOrigin</li><li>WraithWarriorAdult</li></categories></li>
+    </backstoryFiltersOverride>
+    <combatPower>145</combatPower>
+    <weaponMoney>400~1000</weaponMoney>
+    <weaponTags><li>WraithLineWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_WraithWarriorCarapace</li></apparelRequired>
+    <abilities><li>WNG_PredatorsPresence</li></abilities>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_WraithPawnBase">
+    <defName>WNG_WraithCommander</defName>
+    <label>wraith commander</label>
+    <description>A senior combat and command caste that coordinates Wraith forces without constituting a separate biological race.</description>
+    <backstoryFiltersOverride>
+      <li><categories><li>WraithOrigin</li><li>WraithCommanderAdult</li></categories></li>
+    </backstoryFiltersOverride>
+    <combatPower>230</combatPower>
+    <weaponMoney>900~1800</weaponMoney>
+    <weaponTags><li>WraithHeavyWeapon</li><li>WraithLineWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_WraithCommanderCarapace</li></apparelRequired>
+    <abilities><li>WNG_PredatorsPresence</li><li>WNG_Compulsion</li></abilities>
+    <itemQuality>Good</itemQuality>
+    <initialWillRange>14~26</initialWillRange>
+    <initialResistanceRange>20~36</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_WraithPawnBase">
+    <defName>WNG_WraithKeeper</defName>
+    <label>wraith keeper</label>
+    <description>A senior caretaker caste entrusted with dormant Hive populations, feeding reserves and long-duration biological systems.</description>
+    <backstoryFiltersOverride>
+      <li><categories><li>WraithOrigin</li><li>WraithKeeperAdult</li></categories></li>
+    </backstoryFiltersOverride>
+    <combatPower>185</combatPower>
+    <weaponMoney>650~1400</weaponMoney>
+    <weaponTags><li>WraithCaptureWeapon</li><li>WraithLineWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_WraithKeeperMantle</li></apparelRequired>
+    <abilities><li>WNG_Compulsion</li></abilities>
+    <minGenerationAge>45</minGenerationAge>
+    <maxGenerationAge>240</maxGenerationAge>
+    <itemQuality>Good</itemQuality>
+    <initialWillRange>16~28</initialWillRange>
+    <initialResistanceRange>22~38</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WNG_WraithPawnBase">
+    <defName>WNG_WraithQueen</defName>
+    <label>wraith queen</label>
+    <description>A Wraith Queen: the reproductive and political center of a Hive lineage. Queen is a caste and authority role of the same Wraith biological identity.</description>
+    <backstoryFiltersOverride>
+      <li><categories><li>WraithOrigin</li><li>WraithQueenAdult</li></categories></li>
+    </backstoryFiltersOverride>
+    <combatPower>320</combatPower>
+    <weaponMoney>1000~2200</weaponMoney>
+    <weaponTags><li>WraithHeavyWeapon</li><li>WraithLineWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_WraithQueenRaiment</li></apparelRequired>
+    <abilities><li>WNG_PredatorsPresence</li><li>WNG_Compulsion</li><li>WNG_QueensCommand</li><li>WNG_ReturnLife</li></abilities>
+    <factionLeader>true</factionLeader>
+    <fixedGender>Female</fixedGender>
+    <minGenerationAge>35</minGenerationAge>
+    <maxGenerationAge>260</maxGenerationAge>
+    <itemQuality>Excellent</itemQuality>
+    <initialWillRange>18~30</initialWillRange>
+    <initialResistanceRange>25~40</initialResistanceRange>
+  </PawnKindDef>
+
+
+  <!-- Scenario-only generation variant: same Hunter caste/body/equipment, but uses the independent/player Wraith biography pool. -->
+  <PawnKindDef ParentName="WNG_WraithPawnBase">
+    <defName>WNG_PlayerWraithHunter</defName>
+    <label>wraith hunter</label>
+    <description>A player-aligned Wraith hunter. This is the same Hunter caste and Wraith xenotype as WNG_WraithHunter; the distinct PawnKind exists only so player starts can use independent Wraith histories without leaking those biographies into NPC Hive hunters.</description>
+    <defaultFactionDef>PlayerColony</defaultFactionDef>
+    <combatPower>95</combatPower>
+    <weaponMoney>250~700</weaponMoney>
+    <weaponTags><li>WraithCaptureWeapon</li><li>WraithLineWeapon</li></weaponTags>
+    <apparelRequired><li>WNG_WraithHunterCoat</li></apparelRequired>
+    <abilities><li>WNG_PredatorsPresence</li></abilities>
+    <backstoryFiltersOverride>
+      <li><categories><li>WraithOrigin</li><li>WraithPlayerAdult</li></categories></li>
+    </backstoryFiltersOverride>
+  </PawnKindDef>
+</Defs>
