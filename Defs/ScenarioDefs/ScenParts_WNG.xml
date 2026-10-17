@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Internal, non-selectable scenario part for the Wraith Commander start. -->
+  <ScenPartDef>
+    <defName>WNG_StartingCasteReinforcements</defName>
+    <label>Wraith Commander warrior reinforcements</label>
+    <scenPartClass>WraithNaniteGravtech.ScenPart_WNGStartingCasteReinforcements</scenPartClass>
+    <category>Misc</category>
+    <selectionWeight>0</selectionWeight>
+  </ScenPartDef>
+</Defs>
