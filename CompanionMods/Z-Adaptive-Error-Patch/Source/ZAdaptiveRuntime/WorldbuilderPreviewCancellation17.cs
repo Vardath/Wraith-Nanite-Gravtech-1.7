@@ -27,13 +27,12 @@ namespace ZAdaptiveRuntime
         private static FieldInfo overhaulEnabledField;
         private static bool pendingGenerate;
         private static bool cancelNoticeLogged;
-        private static bool failureLogged;
 
         internal static void Install(Harmony harmony)
         {
             // This fault is specific to 1.7's managed runtime. Preserve 1.6's
             // existing Worldbuilder implementation and mod compatibility.
-            if (VersionControl.CurrentVersionMajor < 1 || VersionControl.CurrentVersionMinor < 7)
+            if (VersionControl.CurrentMajor < 1 || VersionControl.CurrentMinor < 7)
                 return;
 
             Type wb = AccessTools.TypeByName("Worldbuilder.WorldbuilderMod");
