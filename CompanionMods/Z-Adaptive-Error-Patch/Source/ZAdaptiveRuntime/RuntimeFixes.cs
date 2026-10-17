@@ -47,6 +47,7 @@ namespace ZAdaptiveRuntime
             TryInstallRuntimeHook("PatchGraphicSingleAtlasInsertion", () => PatchGraphicSingleAtlasInsertion(harmony));
             TryInstallRuntimeHook("PatchGraphicRequestNullPath", () => PatchGraphicRequestNullPath(harmony));
             TryInstallRuntimeHook("PatchGraphicInitRequests", () => PatchGraphicInitRequests(harmony));
+            TryInstallRuntimeHook("PatchFacilityPlacementPreview", () => FacilityPlacementPreviewGuard.Install(harmony));
             TryInstallRuntimeHook("PatchInvalidEquipmentDrops", () => PatchInvalidEquipmentDrops(harmony));
             TryInstallRuntimeHook("PatchFireDefinitiveEdition", () => PatchFireDefinitiveEdition(harmony));
             TryInstallRuntimeHook("PatchPsychicShockTarget", () => PatchPsychicShockTarget(harmony));
