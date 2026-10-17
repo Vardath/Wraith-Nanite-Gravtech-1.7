@@ -62,6 +62,7 @@ namespace ZAdaptiveRuntime
             TryInstallRuntimeHook("PatchGiddyUpDeathInitGuard", () => PatchGiddyUpDeathInitGuard(harmony));
             TryInstallRuntimeHook("PatchMissingIdeoApparelTipGuard", () => PatchMissingIdeoApparelTipGuard(harmony));
             TryInstallRuntimeHook("WorldgenDiagnostics", () => PatchWorldGenerationDiagnostics(harmony));
+            TryInstallRuntimeHook("WorldbuilderCooperativePreviewCancel", () => WorldbuilderPreviewCancellation17.Install(harmony));
             TryInstallRuntimeHook("MAPSameIdeoInit", () => PatchMechanoidMechanitorIdeoInitialization(harmony));
             TryInstallRuntimeHook("ObeliskLetterUI", () => PatchObeliskLetterChoices(harmony));
             TryInstallRuntimeHook("GridCellTemperatureBounds", () => PatchGridCellTemperatureBounds(harmony));
