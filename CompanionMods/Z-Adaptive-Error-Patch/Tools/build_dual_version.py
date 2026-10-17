@@ -73,11 +73,19 @@ for version in ("1.6", "1.7"):
     shutil.copy2(dll, path)
     dlls[version] = hashlib.sha256(data).hexdigest()
 
-# No legacy XML patch ever loads in the Waylith branch.
+# Only individually verified 1.7 XML patches may load on Waylith.
+# Never copy the legacy 1.6 patch folder into the 1.7 load path.
 v17 = ET.parse(MOD / "LoadFolders.xml").getroot().find("v1.7")
 active17 = {(li.text or "").strip() for li in v17.findall("li")}
 assert active17 == {"/", "1.7"}
-assert not (MOD / "1.7" / "Patches").exists(), "Unverified XML leaked into 1.7"
+verified_17 = {"KindredSmeltCompat17.xml"}
+source_17 = ROOT / "1.7" / "Patches"
+actual_17 = {p.name for p in source_17.glob("*.xml")} if source_17.is_dir() else set()
+assert actual_17 == verified_17, f"Unexpected/missing 1.7 patches: {sorted(actual_17 ^ verified_17)}"
+shutil.copytree(source_17, MOD / "1.7" / "Patches")
+for file in (MOD / "1.7" / "Patches").rglob("*.xml"):
+    ET.parse(file)
+assert {p.name for p in (MOD / "1.7" / "Patches").glob("*.xml")} == verified_17
 assert (MOD / "1.6" / "Patches").is_dir()
 assert not (MOD / "Assemblies").exists(), "Global assembly would load in both versions"
 

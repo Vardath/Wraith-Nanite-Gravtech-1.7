@@ -23,8 +23,11 @@ the same behaviour at runtime. Treat the 1.7 port as experimental
 until real Waylith play-testing confirms its behaviour.
 
 In particular, 1.6-specific targeted fixes for other mods cannot
-be assumed valid or necessary in 1.7; add individually verified 1.7
-patches under `1.7/Patches` once source versions/logs are available.
+be assumed valid or necessary in 1.7. The packaged `1.7/Patches`
+allowlist contains only `KindredSmeltCompat17.xml`, conditionally disabling
+zero-output smelting on named Kindred ThingDefs confirmed by the
+2026-10-17 RimWorld 1.7 Player.log. It does not invent salvage materials.
+All other older XML repairs remain quarantined in `1.6/Patches`.
 The old GravTide diving-animal think-tree defect is still not silently
 patched or suppressed.
 
